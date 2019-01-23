@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.Droid FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS FirstBuild="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D17D7D17-D02D-47C2-8267-4C74CA153181">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.Volunesia.iOS>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
+    <Files>
+      <File FileName="iOS/Main.storyboard" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Volunesia FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
