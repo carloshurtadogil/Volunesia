@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Volunesia.Models
 {
-    class NonprofitRepresentative : User
+    public class NonprofitRepresentative
     {
-        public string Position { get; set; }
-        public bool Poster { get; set; }
-        public bool Reviewer { get; set; }
-        public bool RepsManager { get; set; }
+        // Nonprofit Representative's position title
+        public string Position    { get; set; }
+
+        // Flag to determine if representative can post an event
+        public bool   Poster      { get; set; }
+
+        // Flag to determine if representative can review an application
+        public bool   Reviewer    { get; set; }
+
+        // Flag to determine if representative can add, remove, or edit another representative and their permissions
+        public bool   RepsManager { get; set; }
     }
 }

@@ -24,7 +24,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Volunteer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Enumerations\" />

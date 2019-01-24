@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Volunesia.Models
 {
     public class VolunteerHistory
     {
-        public Dictionary<Event, int> volunteeringHours { get; set; }
+        // List of events that the user has attended and hours they have inputted
+        public Dictionary<Event, int> VolunteeringHours { get; set; }
     }
-
 }
