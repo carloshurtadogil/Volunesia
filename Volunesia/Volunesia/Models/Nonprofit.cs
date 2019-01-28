@@ -6,10 +6,10 @@ namespace Volunesia.Models
 {
     public class Nonprofit
     {
-        public int nonProfitID { get; set; }
-        public string nonProfitName { get; set; }
-        public string primaryRepresentative { get; set; }
-        public string defaultPhone { get; set; }
-        public string zipCode { get; set; }
+        public int NonProfitID { get; set; }
+        public string NonProfitName { get; set; }
+        public string PrimaryRepresentative { get; set; }
+        public string DefaultPhone { get; set; }
+        public string ZipCode { get; set; }
     }
 }

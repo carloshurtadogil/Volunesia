@@ -6,8 +6,8 @@ namespace Volunesia.Models
 {
     public class Volunteer : User
     {
-        public string personalDescription { get; set; }
-        public int level { get; set; }
-        public long minutes { get; set; }
+        public string PersonalDescription { get; set; }
+        public int Level { get; set; }
+        public long Minutes { get; set; }
     }
 }

@@ -9,11 +9,23 @@
     <Import_RootNamespace>Volunesia</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EventCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LevelExperience.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Status.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Attendee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BadgeCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Event.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Nonprofit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NonprofitRepresentative.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Post.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Review.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Roster.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Volunteer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\NonprofitRepresentative.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerHistory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Event.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Enumerations\" />
   </ItemGroup>
 </Project>
