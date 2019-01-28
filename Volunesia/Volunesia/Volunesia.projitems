@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Models\EventCategory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LevelExperience.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Roster.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Status.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Attendee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BadgeCategory.cs" />
