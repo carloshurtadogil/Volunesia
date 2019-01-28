@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Volunesia.Models
 {
-    class Status
+    public class Status
     {
         public enum Statuses { WillAttend, Cancelled, NoShow, Attended }
     }

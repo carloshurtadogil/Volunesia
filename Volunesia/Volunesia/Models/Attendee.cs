@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Volunesia.Models
 {
-    class Attendee
+    public class Attendee
     {
         public Status ReservationStatus { get; set; }
         public bool Attended { get; set; }
