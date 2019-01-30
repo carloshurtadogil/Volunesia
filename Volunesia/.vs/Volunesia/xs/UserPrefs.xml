@@ -14,6 +14,9 @@
       <File FileName="Volunesia/Models/BadgeCategory.cs" Line="18" Column="2" />
       <File FileName="Volunesia/Models/User.cs" Line="1" Column="1" />
       <File FileName="Volunesia/Services/AppData.cs" Line="10" Column="14" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="24" Column="10" />
+      <File FileName="iOS/ViewController.cs" Line="42" Column="101" />
+      <File FileName="iOS/AlertShow.cs" Line="6" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
