@@ -25,5 +25,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IAuthenticationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AppData.cs" />
   </ItemGroup>
 </Project>
