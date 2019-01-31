@@ -1,22 +1,17 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus" />
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS FirstBuild="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D17D7D17-D02D-47C2-8267-4C74CA153181">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam />
-  </MonoDevelop.Ide.ItemProperties.Volunesia.iOS>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.337B7002-D859-47D2-9BB2-01A08B21AFA1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="Volunesia/Models/Attendee.cs" Line="13" Column="86" />
-      <File FileName="Volunesia/Models/NonprofitRepresentative.cs" Line="19" Column="1" />
-      <File FileName="Volunesia/Models/Nonprofit.cs" Line="16" Column="1" />
-      <File FileName="Volunesia/Models/VolunteerHistory.cs" Line="5" Column="2" />
-      <File FileName="Volunesia/Models/Event.cs" Line="5" Column="6" />
-      <File FileName="Volunesia/Models/BadgeCategory.cs" Line="18" Column="2" />
-      <File FileName="Volunesia/Models/User.cs" Line="1" Column="1" />
       <File FileName="Volunesia/Services/AppData.cs" Line="10" Column="14" />
-      <File FileName="iOS/Services/AppData_iOS.cs" Line="24" Column="10" />
-      <File FileName="iOS/ViewController.cs" Line="42" Column="101" />
-      <File FileName="iOS/AlertShow.cs" Line="6" Column="35" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="10" Column="6" />
+      <File FileName="iOS/ViewController.cs" Line="44" Column="14" />
+      <File FileName="iOS/AlertShow.cs" Line="14" Column="63" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/Entitlements.plist" />
+      <File FileName="../../../../../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/iOS/Xamarin.iOS.Common.targets" Line="646" Column="3" />
+      <File FileName="iOS/Main.cs" Line="21" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

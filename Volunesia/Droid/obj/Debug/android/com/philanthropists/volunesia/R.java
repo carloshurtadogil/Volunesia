@@ -256,11 +256,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int line3=0x7f0b0001;
         public static final int media_actions=0x7f0b001a;
         public static final int myButton=0x7f0b0013;
+        public static final int nonProfitButton=0x7f0b0029;
         public static final int none=0x7f0b0007;
         public static final int normal=0x7f0b0012;
         public static final int notification_background=0x7f0b0024;
         public static final int notification_main_column=0x7f0b001d;
         public static final int notification_main_column_container=0x7f0b001c;
+        public static final int randomButton=0x7f0b002a;
         public static final int right_icon=0x7f0b0023;
         public static final int right_side=0x7f0b001e;
         public static final int standard=0x7f0b0009;
@@ -269,6 +271,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int text2=0x7f0b0003;
         public static final int time=0x7f0b001f;
         public static final int title=0x7f0b0004;
+        public static final int volunteerButton=0x7f0b0028;
         public static final int wide=0x7f0b000a;
     }
     public static final class integer {
@@ -293,6 +296,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int notification_template_media_custom=0x7f04000d;
         public static final int notification_template_part_chronometer=0x7f04000e;
         public static final int notification_template_part_time=0x7f04000f;
+        public static final int register=0x7f040010;
+        public static final int volunteerregister=0x7f040011;
     }
     public static final class mipmap {
         public static final int icon=0x7f030000;

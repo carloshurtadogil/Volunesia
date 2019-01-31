@@ -16,6 +16,7 @@ namespace Volunesia.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            AppData_iOS.GetInstance();
 
             // Perform any additional setup after loading the view, typically from a nib.
             Button.AccessibilityIdentifier = "myButton";
@@ -26,20 +27,30 @@ namespace Volunesia.iOS
             };
         }
 
+        partial void FBButton_TouchUpInside(UIButton sender)
+        {
+            //AlertShow.Show(this, "Success", "Button clicked");
+            //FirebaseTest();
+        }
+
 
         public void FirebaseTest () 
         {
-            AppData_iOS.auth.CreateUser( "carlos.hurtado@volunesia.com", 
+            AppData_iOS.Auth.CreateUser( "carlos.hurtado@volunesia.com", 
                                          "PasswordTest",
                                          (user, error) => {
                                              if (error != null)
+                                             {
+                                                 AlertShow.Show(this, "Error", error.ToString());
                                                  return;
+                                             }
                                              object[] keys = { "key1" };
                                              object[] vals = { "val1" };
 
                                              NSDictionary TestDict = NSDictionary.FromObjectsAndKeys(vals, keys);
 
                                              AppData_iOS.DataNode.GetChild("test").SetValue(TestDict);
+                                             AlertShow.Show(this, "Success", "Firebase Test was a success");
                                          }); 
         }
 

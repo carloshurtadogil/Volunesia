@@ -16,11 +16,24 @@ namespace Volunesia.iOS
         [Outlet]
         UIKit.UIButton Button { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton FBButton { get; set; }
+
+        [Action ("FBButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void FBButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (Button != null) {
                 Button.Dispose ();
                 Button = null;
+            }
+
+            if (FBButton != null) {
+                FBButton.Dispose ();
+                FBButton = null;
             }
         }
     }

@@ -9,18 +9,18 @@ namespace Volunesia.iOS.Services
     public class AppData_iOS
     {
         private static AppData_iOS Instance;
-        public static DatabaseReference DataNode { get; set; }
+        public static DatabaseReference DataNode  { get; set; }
         public static DatabaseReference UsersNode { get; set; }
-        public static Auth auth;
+        public static Auth Auth;
 
         private AppData_iOS()
         {
-            App.Configure();
+            Firebase.Core.App.Configure();
             DataNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("data");
             UsersNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("users");
-            auth = Auth.DefaultInstance;
+            Auth = Auth.DefaultInstance;
         }
 
         public static AppData_iOS GetInstance()
