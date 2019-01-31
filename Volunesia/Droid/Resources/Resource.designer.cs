@@ -435,6 +435,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0b0013
 			public const int myButton = 2131427347;
 			
+			// aapt resource value: 0x7f0b0029
+			public const int nonProfitButton = 2131427369;
+			
 			// aapt resource value: 0x7f0b0007
 			public const int none = 2131427335;
 			
@@ -449,6 +452,9 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0b001c
 			public const int notification_main_column_container = 2131427356;
+			
+			// aapt resource value: 0x7f0b002a
+			public const int randomButton = 2131427370;
 			
 			// aapt resource value: 0x7f0b0023
 			public const int right_icon = 2131427363;
@@ -473,6 +479,9 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0b0004
 			public const int title = 2131427332;
+			
+			// aapt resource value: 0x7f0b0028
+			public const int volunteerButton = 2131427368;
 			
 			// aapt resource value: 0x7f0b000a
 			public const int wide = 2131427338;
@@ -559,6 +568,12 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f04000f
 			public const int notification_template_part_time = 2130968591;
+			
+			// aapt resource value: 0x7f040010
+			public const int Register = 2130968592;
+			
+			// aapt resource value: 0x7f040011
+			public const int VolunteerRegister = 2130968593;
 			
 			static Layout()
 			{

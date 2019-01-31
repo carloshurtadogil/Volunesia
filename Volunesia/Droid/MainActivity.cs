@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace Volunesia.Droid
 {
-    [Activity(Label = "Volunesia", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Volunesia",  MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
