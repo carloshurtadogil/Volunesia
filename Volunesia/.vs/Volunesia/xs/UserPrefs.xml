@@ -1,19 +1,9 @@
-﻿<Properties StartupConfiguration="{1E32EF1C-BD4B-4999-BF7C-A40E5C31006C}|Default">
+﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.337B7002-D859-47D2-9BB2-01A08B21AFA1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MainActivity.cs">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.80A66189-6B7A-4F8C-9BC1-2BA3107FB2D6" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Volunesia/Services/AppData.cs" Line="10" Column="14" />
-      <File FileName="iOS/Services/AppData_iOS.cs" Line="12" Column="51" />
-      <File FileName="iOS/ViewController.cs" Line="44" Column="14" />
-      <File FileName="iOS/AlertShow.cs" Line="14" Column="63" />
-      <File FileName="iOS/Info.plist" />
-      <File FileName="iOS/Entitlements.plist" />
-      <File FileName="../../../../../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/iOS/Xamarin.iOS.Common.targets" Line="646" Column="3" />
-      <File FileName="iOS/Main.cs" Line="21" Column="1" />
-      <File FileName="Droid/google-services.json" Line="4" Column="60" />
-      <File FileName="../../../../../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="341" Column="33" />
-      <File FileName="Droid/MainActivity.cs" Line="22" Column="26" />
+      <File FileName="iOS/Main.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

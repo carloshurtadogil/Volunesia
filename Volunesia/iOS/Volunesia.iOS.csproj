@@ -110,6 +110,17 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024x1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60x60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120 2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120 2 copy.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120 2 copy 2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180x180 copy.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -133,9 +144,15 @@
     </Compile>
     <Compile Include="Services\AppData_iOS.cs" />
     <Compile Include="AlertShow.cs" />
+    <Compile Include="RegistrationViewController.cs" />
+    <Compile Include="RegistrationViewController.designer.cs">
+      <DependentUpon>RegistrationViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\Ombre BG.png" />
+    <BundleResource Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

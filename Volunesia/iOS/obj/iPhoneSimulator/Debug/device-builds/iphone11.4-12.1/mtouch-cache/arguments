@@ -1,4 +1,4 @@
 # Version: 12.2.1.13 (d15-9: a4332c90)
 # [first argument, ignore] # @/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/response-file.rsp
 /Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.13/lib/mtouch/mtouch.exe \
-	'--gcc_flags=-ObjC -ObjC -lc++ -lsqlite3 -lz -ObjC -lc++ -lsqlite3 -lz' \
+	'--gcc_flags=-ObjC -lc++ -lsqlite3 -lz -ObjC -lc++ -lsqlite3 -lz -ObjC -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker \"/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/Entitlements.xcent\"' \

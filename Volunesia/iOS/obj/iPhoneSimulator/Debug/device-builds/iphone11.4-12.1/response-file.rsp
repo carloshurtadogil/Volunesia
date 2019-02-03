@@ -11,8 +11,6 @@
 --abi=x86_64
 "--symbollist=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/mtouch-symbols.list"
 --dsym=no
---framework=/Users/carloshurtado/Library/Caches/XamarinBuildDownload/FInstncID-3.2.1/Frameworks/FirebaseInstanceID.framework
---framework=Security
 --framework=/Users/carloshurtado/Library/Caches/XamarinBuildDownload/FAnlytcs-5.1.4/Frameworks/FirebaseAnalytics.framework
 --framework=AddressBook
 --framework=AdSupport
@@ -21,12 +19,14 @@
 --framework=SystemConfiguration
 --framework=/Users/carloshurtado/Library/Caches/XamarinBuildDownload/FAnlytcs-5.1.4/Frameworks/FirebaseCoreDiagnostics.framework
 --framework=/Users/carloshurtado/Library/Caches/XamarinBuildDownload/GAppM-5.1.4/Frameworks/GoogleAppMeasurement.framework
+--framework=Security
 --framework=UIKit
+--framework=/Users/carloshurtado/Library/Caches/XamarinBuildDownload/FInstncID-3.3.0/Frameworks/FirebaseInstanceID.framework
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Analytics.5.1.4.1/lib/Xamarin.iOS10/Firebase.Analytics.dll"
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Auth.5.0.4.1/lib/Xamarin.iOS10/Firebase.Auth.dll"
-"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Core.5.1.3/lib/Xamarin.iOS10/Firebase.Core.dll"
+"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Core.5.1.8/lib/Xamarin.iOS10/Firebase.Core.dll"
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Database.5.0.3/lib/Xamarin.iOS10/Firebase.Database.dll"
-"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.InstanceID.3.2.1/lib/Xamarin.iOS10/Firebase.InstanceID.dll"
+"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.InstanceID.3.3.0/lib/Xamarin.iOS10/Firebase.InstanceID.dll"
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Newtonsoft.Json.12.0.1/lib/netstandard2.0/Newtonsoft.Json.dll"
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll
@@ -176,9 +176,9 @@
 -r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Analytics.5.1.4.1/lib/Xamarin.iOS10/Firebase.Analytics.dll"
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Auth.5.0.4.1/lib/Xamarin.iOS10/Firebase.Auth.dll"
-"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Core.5.1.3/lib/Xamarin.iOS10/Firebase.Core.dll"
+"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Core.5.1.8/lib/Xamarin.iOS10/Firebase.Core.dll"
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.Database.5.0.3/lib/Xamarin.iOS10/Firebase.Database.dll"
-"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.InstanceID.3.2.1/lib/Xamarin.iOS10/Firebase.InstanceID.dll"
+"-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Xamarin.Firebase.iOS.InstanceID.3.3.0/lib/Xamarin.iOS10/Firebase.InstanceID.dll"
 "-r=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/packages/Newtonsoft.Json.12.0.1/lib/netstandard2.0/Newtonsoft.Json.dll"
 --target-framework=Xamarin.iOS,v1.0
 "--root-assembly=/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhoneSimulator/Debug/Volunesia.iOS.exe"

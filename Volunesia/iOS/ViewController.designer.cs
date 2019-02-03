@@ -18,22 +18,48 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton FBButton { get; set; }
+        UIKit.UIImageView BackgroundImageView { get; set; }
 
-        [Action ("FBButton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void FBButton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UIButton LoginButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView LogoImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SignupButton { get; set; }
+
+        [Action ("LoginButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void LoginButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("SignupButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SignupButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (Button != null) {
-                Button.Dispose ();
-                Button = null;
+            if (BackgroundImageView != null) {
+                BackgroundImageView.Dispose ();
+                BackgroundImageView = null;
             }
 
-            if (FBButton != null) {
-                FBButton.Dispose ();
-                FBButton = null;
+            if (LoginButton != null) {
+                LoginButton.Dispose ();
+                LoginButton = null;
+            }
+
+            if (LogoImage != null) {
+                LogoImage.Dispose ();
+                LogoImage = null;
+            }
+
+            if (SignupButton != null) {
+                SignupButton.Dispose ();
+                SignupButton = null;
             }
         }
     }
