@@ -1,0 +1,4 @@
+# Version: 12.2.1.13 (d15-9: a4332c90)
+# [first argument, ignore] # @/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/response-file.rsp
+/Library/Frameworks/Xamarin.iOS.framework/Versions/12.2.1.13/lib/mtouch/mtouch.exe \
+	'--gcc_flags=-ObjC -lc++ -lsqlite3 -lz -ObjC -lc++ -lsqlite3 -lz -ObjC' \

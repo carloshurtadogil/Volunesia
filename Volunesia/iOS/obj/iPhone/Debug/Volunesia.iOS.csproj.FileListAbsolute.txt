@@ -1,0 +1,25 @@
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Volunesia.iOS.exe
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Volunesia.iOS.pdb
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Firebase.Analytics.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Firebase.Auth.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Firebase.Core.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Firebase.Database.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Firebase.InstanceID.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Newtonsoft.Json.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Newtonsoft.Json.pdb
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Newtonsoft.Json.xml
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/ibtool/_BundleResourceWithLogicalName.items
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/actool/_PartialAppManifest.items
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/actool/_BundleResourceWithLogicalName.items
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/coremlc/_PartialAppManifest.items
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/coremlc/_BundleResourceWithLogicalName.items
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/optimized/Images/logo.png
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/optimized/Images/Ombre BG.png
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/optimized/Images/NonprofitBtn.png
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/optimized/Images/VolunteerBtn.png
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/optimized/GoogleService-Info.plist
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/optimized/
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/Volunesia.iOS.csproj.CoreCompileInputs.cache
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/Volunesia.iOS.csproj.CopyComplete
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/Volunesia.iOS.exe
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/Volunesia.iOS.pdb
