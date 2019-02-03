@@ -14,5 +14,15 @@ namespace Volunesia.iOS
         {
             this.DismissViewController(true, null);
         }
+
+        partial void VolunteerBtn_TouchUpInside(UIButton sender)
+        {
+            AlertShow.Show(this, "Volunteer", "To be added");
+        }
+
+        partial void NonprofitBtn_TouchUpInside(UIButton sender)
+        {
+            AlertShow.Show(this, "Nonprofit", "To be added");
+        }
     }
 }

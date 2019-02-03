@@ -22,9 +22,25 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView BackgroundImage { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton NonprofitBtn { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton VolunteerBtn { get; set; }
+
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("NonprofitBtn_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void NonprofitBtn_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("VolunteerBtn_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void VolunteerBtn_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -36,6 +52,16 @@ namespace Volunesia.iOS
             if (BackgroundImage != null) {
                 BackgroundImage.Dispose ();
                 BackgroundImage = null;
+            }
+
+            if (NonprofitBtn != null) {
+                NonprofitBtn.Dispose ();
+                NonprofitBtn = null;
+            }
+
+            if (VolunteerBtn != null) {
+                VolunteerBtn.Dispose ();
+                VolunteerBtn = null;
             }
         }
     }

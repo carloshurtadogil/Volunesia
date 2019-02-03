@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.80A66189-6B7A-4F8C-9BC1-2BA3107FB2D6" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Volunesia/Models/Nonprofit.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/RegistrationViewController.cs" Line="20" Column="44" />
+      <File FileName="iOS/ViewController.cs" Line="60" Column="1" />
+      <File FileName="Volunesia/Models/Nonprofit.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
