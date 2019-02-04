@@ -149,6 +149,10 @@
     <Compile Include="RegistrationViewController.designer.cs">
       <DependentUpon>RegistrationViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserTypeSelectionController.cs" />
+    <Compile Include="UserTypeSelectionController.designer.cs">
+      <DependentUpon>UserTypeSelectionController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -156,6 +160,7 @@
     <BundleResource Include="Resources\Images\Ombre BG.png" />
     <BundleResource Include="Resources\Images\NonprofitBtn.png" />
     <BundleResource Include="Resources\Images\VolunteerBtn.png" />
+    <BundleResource Include="Resources\Images\ContinueBtn.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

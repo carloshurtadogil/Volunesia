@@ -12,17 +12,20 @@ namespace Volunesia.iOS
 
         partial void BackButton_TouchUpInside(UIButton sender)
         {
-            this.DismissViewController(true, null);
+            ViewController vc = this.Storyboard.InstantiateViewController("BaseView") as ViewController;
+            if (vc != null)
+            {
+                this.NavigationController.PushViewController(vc, true);
+            }
         }
 
-        partial void VolunteerBtn_TouchUpInside(UIButton sender)
+        partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "Volunteer", "To be added");
-        }
-
-        partial void NonprofitBtn_TouchUpInside(UIButton sender)
-        {
-            AlertShow.Show(this, "Nonprofit", "To be added");
+            UserTypeSelectionController utsc = this.Storyboard.InstantiateViewController("UserTypeSelectionController") as UserTypeSelectionController;
+            if (utsc != null)
+            {
+                this.NavigationController.PushViewController(utsc, true);
+            }
         }
     }
 }

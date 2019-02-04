@@ -52,7 +52,11 @@ namespace Volunesia.iOS
 
         partial void SignupButton_TouchUpInside(UIButton sender)
         {
-            this.PerformSegue("ToRVCSegue_id", sender);
+            RegistrationViewController rvc = this.Storyboard.InstantiateViewController("RegistrationView") as RegistrationViewController;
+            if (rvc != null)
+            {
+                this.NavigationController.PushViewController(rvc, true);
+            }
         }
 
     }

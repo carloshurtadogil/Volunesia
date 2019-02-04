@@ -24,23 +24,39 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton NonprofitBtn { get; set; }
+        UIKit.UIButton ContinueButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton VolunteerBtn { get; set; }
+        UIKit.UILabel FirstNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField FirstNameTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LastNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LastNameTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel QuestionLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel StatementLabel { get; set; }
 
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
 
-        [Action ("NonprofitBtn_TouchUpInside:")]
+        [Action ("ContinueButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void NonprofitBtn_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("VolunteerBtn_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void VolunteerBtn_TouchUpInside (UIKit.UIButton sender);
+        partial void ContinueButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -54,14 +70,39 @@ namespace Volunesia.iOS
                 BackgroundImage = null;
             }
 
-            if (NonprofitBtn != null) {
-                NonprofitBtn.Dispose ();
-                NonprofitBtn = null;
+            if (ContinueButton != null) {
+                ContinueButton.Dispose ();
+                ContinueButton = null;
             }
 
-            if (VolunteerBtn != null) {
-                VolunteerBtn.Dispose ();
-                VolunteerBtn = null;
+            if (FirstNameLabel != null) {
+                FirstNameLabel.Dispose ();
+                FirstNameLabel = null;
+            }
+
+            if (FirstNameTextfield != null) {
+                FirstNameTextfield.Dispose ();
+                FirstNameTextfield = null;
+            }
+
+            if (LastNameLabel != null) {
+                LastNameLabel.Dispose ();
+                LastNameLabel = null;
+            }
+
+            if (LastNameTextfield != null) {
+                LastNameTextfield.Dispose ();
+                LastNameTextfield = null;
+            }
+
+            if (QuestionLabel != null) {
+                QuestionLabel.Dispose ();
+                QuestionLabel = null;
+            }
+
+            if (StatementLabel != null) {
+                StatementLabel.Dispose ();
+                StatementLabel = null;
             }
         }
     }
