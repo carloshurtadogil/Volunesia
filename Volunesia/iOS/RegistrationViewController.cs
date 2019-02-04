@@ -12,20 +12,31 @@ namespace Volunesia.iOS
 
         partial void BackButton_TouchUpInside(UIButton sender)
         {
-            ViewController vc = this.Storyboard.InstantiateViewController("BaseView") as ViewController;
-            if (vc != null)
-            {
-                this.NavigationController.PushViewController(vc, true);
-            }
+            DismissViewController(true, null);
         }
 
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            UserTypeSelectionController utsc = this.Storyboard.InstantiateViewController("UserTypeSelectionController") as UserTypeSelectionController;
-            if (utsc != null)
+            this.PerformSegue("ToTypeOptionSegue_id", sender);
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+
+            if (segue.Identifier == "ToTypeOptionSegue_id")
             {
-                this.NavigationController.PushViewController(utsc, true);
+                var utsc = (UserTypeSelectionController)segue.DestinationViewController;
+                if (utsc != null)
+                {
+                    utsc.LoadView();
+                }
+            }
+            else
+            {
+                AlertShow.Show(this, "Failed", "");
             }
         }
+
     }
 }

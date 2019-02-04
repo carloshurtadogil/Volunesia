@@ -12,12 +12,7 @@ namespace Volunesia.iOS
 
         partial void BackButton_TouchUpInside(UIButton sender)
         {
-            /*
-            RegistrationViewController rvc = this.Storyboard.InstantiateViewController("RegistrationViewController") as RegistrationViewController;
-            if (rvc != null)
-            {
-                this.NavigationController.PushViewController(rvc, true);
-            }*/
+            DismissViewController(true, null);
         }
     }
 }
