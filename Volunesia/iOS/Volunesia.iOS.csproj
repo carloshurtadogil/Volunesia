@@ -153,6 +153,10 @@
     <Compile Include="UserTypeSelectionController.designer.cs">
       <DependentUpon>UserTypeSelectionController.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmailRegistrationViewController.cs" />
+    <Compile Include="EmailRegistrationViewController.designer.cs">
+      <DependentUpon>EmailRegistrationViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

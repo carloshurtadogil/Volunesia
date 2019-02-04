@@ -65,6 +65,7 @@ namespace Volunesia.iOS
                 var rvc = (RegistrationViewController)segue.DestinationViewController;
                 if(rvc != null) 
                 {
+
                     rvc.LoadView(); 
                 }
             }

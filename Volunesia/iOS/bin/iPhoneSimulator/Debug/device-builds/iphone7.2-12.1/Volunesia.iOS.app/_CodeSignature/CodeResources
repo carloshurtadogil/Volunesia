@@ -692,29 +692,41 @@
 		<data>
 		7umWGRw/Ny/LR9M1+WyAVaybiaU=
 		</data>
+		<key>Main.storyboardc/10109-view-10110.nib</key>
+		<data>
+		G+TE+usN/8KD97HXcE1xBUBG7es=
+		</data>
 		<key>Main.storyboardc/3217-view-3218.nib</key>
 		<data>
-		79vqi2amWzaUYQ32S7ecciaIDS0=
+		IrgIZ9kC+ztQ0zHYCL9EBz0D5xo=
 		</data>
 		<key>Main.storyboardc/5717-view-5718.nib</key>
 		<data>
-		Z564rqrD4bmtjn2iGe8wZ3wWXqw=
+		dfpq89Xmo9T4RlXtqW5Y1nbsbgo=
 		</data>
 		<key>Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		g77SwN6pfam6kZ/f10GtxD55XAo=
+		b4+OW4aXg6biU7l2iNrgN7czESU=
 		</data>
 		<key>Main.storyboardc/BaseView.nib</key>
 		<data>
-		PLIj4OBvaeglBcTP9mC074ZdwEw=
+		fyhcHVikCJjAZ/19u75QPmkLEaY=
+		</data>
+		<key>Main.storyboardc/EmailRegistrationView.nib</key>
+		<data>
+		WmQ4mlwlfrhZHlsCqGxqM2XeiHo=
+		</data>
+		<key>Main.storyboardc/EmailRegistrationViewController.nib</key>
+		<data>
+		D0wa3w1W3eaq36iihkSwxDCwnuI=
 		</data>
 		<key>Main.storyboardc/Info.plist</key>
 		<data>
-		ExiQyFy/vnD/8M7hD3phXptOtzc=
+		W3Mrg7asxwReS2EWEcuNqiYfkoA=
 		</data>
 		<key>Main.storyboardc/RegistrationView.nib</key>
 		<data>
-		t84NjQHaC4Xuts5zS1IPpoeaM1A=
+		bGiyPqhNmWLKQmoBkCcqP/aeW8I=
 		</data>
 		<key>Main.storyboardc/UINavigationController-7003.nib</key>
 		<data>
@@ -730,7 +742,7 @@
 		</data>
 		<key>Main.storyboardc/UserTypeSelectionController.nib</key>
 		<data>
-		aa5YpI4j/mlgP0c7cqNk8G7e2q0=
+		CkYauSOBYmm1Bn1F6detAhX5zU0=
 		</data>
 		<key>Mono.Security.dll</key>
 		<data>
@@ -778,11 +790,11 @@
 		</data>
 		<key>Volunesia.iOS.exe</key>
 		<data>
-		I5PfDdI1AXZftWv45Y0cSCD8jgM=
+		6ebLbe1jEKPm9vtkQKOiX52ie3U=
 		</data>
 		<key>Volunesia.iOS.pdb</key>
 		<data>
-		1nPPIDBFr43IX/9y9htlYxZzdW4=
+		RKbcEWKj1Cqn/YgmwuoVqqYUuEc=
 		</data>
 		<key>Xamarin.iOS.dll</key>
 		<data>
@@ -2692,70 +2704,103 @@
 			Itiq6uqz/EIBb40EENlXplxO0hNJWp9VTgXUQ34ib/0=
 			</data>
 		</dict>
+		<key>Main.storyboardc/10109-view-10110.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			G+TE+usN/8KD97HXcE1xBUBG7es=
+			</data>
+			<key>hash2</key>
+			<data>
+			126AN1qvYYGJc433iYf7j6cWil8JakZABInskhO1xkI=
+			</data>
+		</dict>
 		<key>Main.storyboardc/3217-view-3218.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			79vqi2amWzaUYQ32S7ecciaIDS0=
+			IrgIZ9kC+ztQ0zHYCL9EBz0D5xo=
 			</data>
 			<key>hash2</key>
 			<data>
-			uIlkL6ymmqlSiGIYsjd8r4lss6zKeocfVNHrVdvqWSk=
+			SYfb6bkty22RxTCDSSC08b/cwuR6oUrdYBalRNiDtZo=
 			</data>
 		</dict>
 		<key>Main.storyboardc/5717-view-5718.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Z564rqrD4bmtjn2iGe8wZ3wWXqw=
+			dfpq89Xmo9T4RlXtqW5Y1nbsbgo=
 			</data>
 			<key>hash2</key>
 			<data>
-			+C8ltyMeJpIdzXnJbbRTpH3qtm211tqQY48jkvN4o8c=
+			93TSXU0t3ysI0Z0ycuc1pENDereOQT+AC2+yKdDzwqc=
 			</data>
 		</dict>
 		<key>Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g77SwN6pfam6kZ/f10GtxD55XAo=
+			b4+OW4aXg6biU7l2iNrgN7czESU=
 			</data>
 			<key>hash2</key>
 			<data>
-			CFJqTVGsUyPZPXau5MZhs+VyVbVoqoiiOp5u8fqrdJ0=
+			fVtnjPX0EMGVESI6qP87IJ6jVE5oSL9HLdlO4+FZ6e8=
 			</data>
 		</dict>
 		<key>Main.storyboardc/BaseView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PLIj4OBvaeglBcTP9mC074ZdwEw=
+			fyhcHVikCJjAZ/19u75QPmkLEaY=
 			</data>
 			<key>hash2</key>
 			<data>
-			gKrCHwERajuPl/RInxPQggHFIyXPL9yi6DD+OCfK5vM=
+			cVnb/1U2LhdwsmB4cchZfPj4Ncs6oDnjHLL4uJwPagg=
+			</data>
+		</dict>
+		<key>Main.storyboardc/EmailRegistrationView.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WmQ4mlwlfrhZHlsCqGxqM2XeiHo=
+			</data>
+			<key>hash2</key>
+			<data>
+			lCqJKGrMmlGatW69jVUVTG0Sps/s9sC4GxALfwMxoTo=
+			</data>
+		</dict>
+		<key>Main.storyboardc/EmailRegistrationViewController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			D0wa3w1W3eaq36iihkSwxDCwnuI=
+			</data>
+			<key>hash2</key>
+			<data>
+			7qPLkWMjKLZcGdYw0JKpP/r1VHbS8dvTrcpRSSdS5wM=
 			</data>
 		</dict>
 		<key>Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ExiQyFy/vnD/8M7hD3phXptOtzc=
+			W3Mrg7asxwReS2EWEcuNqiYfkoA=
 			</data>
 			<key>hash2</key>
 			<data>
-			XAcv8XwoG/bKhcbKM97iNsRv3D5DgS+tpLNl8GoCWqo=
+			b/OOxqb2mgI2KJ6IESzoM5tfyBFOgP1c07dpQQG499w=
 			</data>
 		</dict>
 		<key>Main.storyboardc/RegistrationView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			t84NjQHaC4Xuts5zS1IPpoeaM1A=
+			bGiyPqhNmWLKQmoBkCcqP/aeW8I=
 			</data>
 			<key>hash2</key>
 			<data>
-			xs4Xr5ChT/zQx0l3rirwq64e96fP6T51gBEfvtFpI6Q=
+			IA5L8afSRrq9PfqXVdlbOIzTINqc7phryskWKbpndbM=
 			</data>
 		</dict>
 		<key>Main.storyboardc/UINavigationController-7003.nib</key>
@@ -2795,11 +2840,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aa5YpI4j/mlgP0c7cqNk8G7e2q0=
+			CkYauSOBYmm1Bn1F6detAhX5zU0=
 			</data>
 			<key>hash2</key>
 			<data>
-			56DbVBlX/nfy2Nefh9NfQfukutGkqz5sbBBFdEvSLjk=
+			kV1pewgV1cZQp4N2om90RXSWQAiort1QOg3T+Mkate0=
 			</data>
 		</dict>
 		<key>Mono.Security.dll</key>
@@ -2916,22 +2961,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			I5PfDdI1AXZftWv45Y0cSCD8jgM=
+			6ebLbe1jEKPm9vtkQKOiX52ie3U=
 			</data>
 			<key>hash2</key>
 			<data>
-			TWKsSfm/4sE139sur/siZXtOj1ang3jI/1gvcd6oyso=
+			p7XxNx3nKBy11to/Ii373vbiuBceFKsE1GF6lztEZvk=
 			</data>
 		</dict>
 		<key>Volunesia.iOS.pdb</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1nPPIDBFr43IX/9y9htlYxZzdW4=
+			RKbcEWKj1Cqn/YgmwuoVqqYUuEc=
 			</data>
 			<key>hash2</key>
 			<data>
-			av1BZ1yX+mZkIefCrceMUASYUSEst0UXjOqksqykacM=
+			mkhoiI41xoZqA3ZibekTN9dCczwfHBbqb/OJ38VCBNg=
 			</data>
 		</dict>
 		<key>Xamarin.iOS.dll</key>

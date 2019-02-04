@@ -16,6 +16,11 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/LaunchScreen.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc/10109-view-10110.nib">
+      <LogicalName>Main.storyboardc/10109-view-10110.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc/3217-view-3218.nib">
       <LogicalName>Main.storyboardc/3217-view-3218.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -33,6 +38,11 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc/BaseView.nib">
       <LogicalName>Main.storyboardc/BaseView.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc/EmailRegistrationViewController.nib">
+      <LogicalName>Main.storyboardc/EmailRegistrationViewController.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhoneSimulator/Debug/device-builds/iphone7.2-12.1/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
