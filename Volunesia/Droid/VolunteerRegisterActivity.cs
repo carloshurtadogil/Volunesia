@@ -42,16 +42,25 @@ namespace Volunesia.Droid
 
         public void PerformVolunteerRegistration(object sender, EventArgs e)
         {
+            bool passwordSuccess = true;
+            bool emailSuccess = true;
             CredentialsVerification credVerification = new CredentialsVerification();
-            if(credVerification.CheckIfPasswordsMatch(password.Text, confirmPassword.Text))
+            if(!credVerification.CheckIfPasswordsMatch(password.Text, confirmPassword.Text))
             {
-                
+                passwordSuccess = false;
+            }
+
+            if (!credVerification.CheckIfEmailIsValid(emailAddress.Text))
+            {
+                emailSuccess = true;
+            }
+
+            if(passwordSuccess && emailSuccess)
+            {
+                AppData_Droid.GetInstance(this);
+                AppData_Droid.Auth.CreateUserWithEmailAndPassword(emailAddress.Text, password.Text);
+              
             }
         }
-
-
-        
-
-
     }
 }
