@@ -29,7 +29,9 @@ namespace Volunesia.iOS
 
         partial void NonprofitButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "Nonprofit", "To be implemented");
+            NonprofitRegistration npr = new NonprofitRegistration();
+            npr.CreateNonprofitUser(FirstName, LastName, Email, Password, this);
+            AlertShow.Show(this, "Nonprofit", ("User " + FirstName + " " + LastName +" Added"));
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)

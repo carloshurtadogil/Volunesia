@@ -13,6 +13,9 @@ namespace Volunesia.iOS.Services
 
         public void AddNonprofitUserDataToFirebase(string firstname, string lastname, string email, string UID) 
         {
+            firstname = firstname.Trim();
+            lastname  = lastname.Trim();
+            email     = email.Trim(); 
             object[] keys = { "first", "last", "email", "type" };
             object[] vals = { firstname, lastname, email, "NP" };
 

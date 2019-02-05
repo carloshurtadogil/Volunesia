@@ -1,21 +1,21 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D17D7D17-D02D-47C2-8267-4C74CA153181" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/NonprofitRegistration.cs">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d38b374887f0c304b9afdb8cdf76da4524b8df7c" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/EmailRegistrationViewController.cs">
     <Files>
       <File FileName="iOS/ViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/RegistrationViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/EmailRegistrationViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/EmailRegistrationViewController.cs" Line="20" Column="10" />
       <File FileName="iOS/Services/AppData_iOS.cs" Line="1" Column="1" />
-      <File FileName="iOS/UserTypeSelectionController.cs" Line="1" Column="1" />
+      <File FileName="iOS/UserTypeSelectionController.cs" Line="34" Column="86" />
       <File FileName="Volunesia/Models/User.cs" Line="1" Column="1" />
       <File FileName="Volunesia/Models/Volunteer.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Services/NonprofitRegistration.cs" Line="25" Column="32" />
+      <File FileName="iOS/Services/NonprofitRegistration.cs" Line="18" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

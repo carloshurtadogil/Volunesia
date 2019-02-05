@@ -27,8 +27,6 @@ namespace Volunesia.iOS
 
             if (ValidCredentials())
             {
-                NonprofitRegistration npr = new NonprofitRegistration();
-                npr.CreateNonprofitUser(FirstName, LastName, EmailTextfield.Text, PasswordTextfield.Text, this);
                 this.PerformSegue("ToUserTypeSelectionSegue_id", sender);
             }
         }
