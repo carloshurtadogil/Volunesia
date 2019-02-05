@@ -122,7 +122,9 @@ int id center_vertical 0x7f0a0014
 int id chronometer 0x7f0a0032
 int id clip_horizontal 0x7f0a0015
 int id clip_vertical 0x7f0a0016
+int id confirmPasswordField 0x7f0a003f
 int id dark 0x7f0a000f
+int id emailAddressField 0x7f0a003d
 int id end 0x7f0a0017
 int id end_padder 0x7f0a0039
 int id fill 0x7f0a0018
@@ -146,7 +148,8 @@ int id normal 0x7f0a0024
 int id notification_background 0x7f0a0036
 int id notification_main_column 0x7f0a002f
 int id notification_main_column_container 0x7f0a002e
-int id randomButton 0x7f0a003c
+int id passwordField 0x7f0a003e
+int id registerVolunteerButton 0x7f0a0040
 int id right 0x7f0a001c
 int id right_icon 0x7f0a0035
 int id right_side 0x7f0a0030
@@ -161,6 +164,7 @@ int id text2 0x7f0a0006
 int id time 0x7f0a0031
 int id title 0x7f0a0007
 int id top 0x7f0a001e
+int id usernameField 0x7f0a003c
 int id volunteerButton 0x7f0a003a
 int id wide 0x7f0a000d
 int integer cancel_button_image_alpha 0x7f050001

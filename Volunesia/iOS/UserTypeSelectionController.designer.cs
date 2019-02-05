@@ -38,6 +38,14 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("NonprofitButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void NonprofitButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("VolunteerButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void VolunteerButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (BackButton != null) {

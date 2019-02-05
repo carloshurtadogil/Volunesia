@@ -12,5 +12,10 @@ namespace Volunesia.Models
         public string LastName     { get; set; }
         //The user's email (will serve as their login identifier)
         public string EmailAddress { get; set; }
+        //The user's User ID (will connect to user's data)
+        public string UID          { get; set; }
+        //Flag to determine if user is nonprofit representative or volunteer
+        public string UserType     { get; set; }
+
     }
 }

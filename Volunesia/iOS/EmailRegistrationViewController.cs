@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using System.Text.RegularExpressions;
 using UIKit;
+using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
 {
@@ -23,8 +24,11 @@ namespace Volunesia.iOS
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
             //ToUserTypeSelectionSegue_id
+
             if (ValidCredentials())
             {
+                NonprofitRegistration npr = new NonprofitRegistration();
+                npr.CreateNonprofitUser(FirstName, LastName, EmailTextfield.Text, PasswordTextfield.Text, this);
                 this.PerformSegue("ToUserTypeSelectionSegue_id", sender);
             }
         }
@@ -51,7 +55,7 @@ namespace Volunesia.iOS
             }
             else
             {
-                AlertShow.Show(this, "Failed", "");
+                AlertShow.Show(this, "Segue Failure", "EmailRegistrationViewController.cs");
             }
         }
 

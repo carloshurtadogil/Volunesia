@@ -455,8 +455,14 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int clip_vertical = 2131361814;
 			
+			// aapt resource value: 0x7f0a003f
+			public const int confirmPasswordField = 2131361855;
+			
 			// aapt resource value: 0x7f0a000f
 			public const int dark = 2131361807;
+			
+			// aapt resource value: 0x7f0a003d
+			public const int emailAddressField = 2131361853;
 			
 			// aapt resource value: 0x7f0a0017
 			public const int end = 2131361815;
@@ -527,8 +533,11 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a002e
 			public const int notification_main_column_container = 2131361838;
 			
-			// aapt resource value: 0x7f0a003c
-			public const int randomButton = 2131361852;
+			// aapt resource value: 0x7f0a003e
+			public const int passwordField = 2131361854;
+			
+			// aapt resource value: 0x7f0a0040
+			public const int registerVolunteerButton = 2131361856;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int right = 2131361820;
@@ -571,6 +580,9 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0a001e
 			public const int top = 2131361822;
+			
+			// aapt resource value: 0x7f0a003c
+			public const int usernameField = 2131361852;
 			
 			// aapt resource value: 0x7f0a003a
 			public const int volunteerButton = 2131361850;

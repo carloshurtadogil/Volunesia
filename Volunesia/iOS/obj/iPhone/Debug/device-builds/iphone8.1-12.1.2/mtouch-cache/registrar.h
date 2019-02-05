@@ -18,6 +18,8 @@
 @class AppDelegate;
 @class ViewController;
 @class RegistrationViewController;
+@class UserTypeSelectionController;
+@class EmailRegistrationViewController;
 @class __NSObject_Disposer;
 @class FIRActionCodeInfo;
 @class FIRActionCodeSettings;
@@ -99,6 +101,7 @@
 	-(void) setSignupButton:(UIButton *)p0;
 	-(void) viewDidLoad;
 	-(void) didReceiveMemoryWarning;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) LoginButton_TouchUpInside:(UIButton *)p0;
 	-(void) SignupButton_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
@@ -108,8 +111,13 @@
 }
 	@property (nonatomic, assign) UIButton * BackButton;
 	@property (nonatomic, assign) UIImageView * BackgroundImage;
-	@property (nonatomic, assign) UIButton * NonprofitBtn;
-	@property (nonatomic, assign) UIButton * VolunteerBtn;
+	@property (nonatomic, assign) UIButton * ContinueButton;
+	@property (nonatomic, assign) UILabel * FirstNameLabel;
+	@property (nonatomic, assign) UITextField * FirstNameTextfield;
+	@property (nonatomic, assign) UILabel * LastNameLabel;
+	@property (nonatomic, assign) UITextField * LastNameTextfield;
+	@property (nonatomic, assign) UILabel * QuestionLabel;
+	@property (nonatomic, assign) UILabel * StatementLabel;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
@@ -118,13 +126,92 @@
 	-(void) setBackButton:(UIButton *)p0;
 	-(UIImageView *) BackgroundImage;
 	-(void) setBackgroundImage:(UIImageView *)p0;
-	-(UIButton *) NonprofitBtn;
-	-(void) setNonprofitBtn:(UIButton *)p0;
-	-(UIButton *) VolunteerBtn;
-	-(void) setVolunteerBtn:(UIButton *)p0;
+	-(UIButton *) ContinueButton;
+	-(void) setContinueButton:(UIButton *)p0;
+	-(UILabel *) FirstNameLabel;
+	-(void) setFirstNameLabel:(UILabel *)p0;
+	-(UITextField *) FirstNameTextfield;
+	-(void) setFirstNameTextfield:(UITextField *)p0;
+	-(UILabel *) LastNameLabel;
+	-(void) setLastNameLabel:(UILabel *)p0;
+	-(UITextField *) LastNameTextfield;
+	-(void) setLastNameTextfield:(UITextField *)p0;
+	-(UILabel *) QuestionLabel;
+	-(void) setQuestionLabel:(UILabel *)p0;
+	-(UILabel *) StatementLabel;
+	-(void) setStatementLabel:(UILabel *)p0;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) BackButton_TouchUpInside:(UIButton *)p0;
-	-(void) NonprofitBtn_TouchUpInside:(UIButton *)p0;
-	-(void) VolunteerBtn_TouchUpInside:(UIButton *)p0;
+	-(void) ContinueButton_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface UserTypeSelectionController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * BackButton;
+	@property (nonatomic, assign) UIImageView * BackgroundImage;
+	@property (nonatomic, assign) UIButton * NonprofitButton;
+	@property (nonatomic, assign) UILabel * QuestionLabel;
+	@property (nonatomic, assign) UIButton * VolunteerButton;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) BackButton;
+	-(void) setBackButton:(UIButton *)p0;
+	-(UIImageView *) BackgroundImage;
+	-(void) setBackgroundImage:(UIImageView *)p0;
+	-(UIButton *) NonprofitButton;
+	-(void) setNonprofitButton:(UIButton *)p0;
+	-(UILabel *) QuestionLabel;
+	-(void) setQuestionLabel:(UILabel *)p0;
+	-(UIButton *) VolunteerButton;
+	-(void) setVolunteerButton:(UIButton *)p0;
+	-(void) BackButton_TouchUpInside:(UIButton *)p0;
+	-(void) NonprofitButton_TouchUpInside:(UIButton *)p0;
+	-(void) VolunteerButton_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface EmailRegistrationViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * BackButton;
+	@property (nonatomic, assign) UIImageView * BackgroundImage;
+	@property (nonatomic, assign) UILabel * ConfirmPasswordLabel;
+	@property (nonatomic, assign) UITextField * ConfirmPasswordTextfield;
+	@property (nonatomic, assign) UIButton * ContinueButton;
+	@property (nonatomic, assign) UILabel * EmailLabel;
+	@property (nonatomic, assign) UITextField * EmailTextfield;
+	@property (nonatomic, assign) UILabel * LoginRequestLabel;
+	@property (nonatomic, assign) UITextField * PasswordTextfield;
+	@property (nonatomic, assign) UILabel * PaswordLabel;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) BackButton;
+	-(void) setBackButton:(UIButton *)p0;
+	-(UIImageView *) BackgroundImage;
+	-(void) setBackgroundImage:(UIImageView *)p0;
+	-(UILabel *) ConfirmPasswordLabel;
+	-(void) setConfirmPasswordLabel:(UILabel *)p0;
+	-(UITextField *) ConfirmPasswordTextfield;
+	-(void) setConfirmPasswordTextfield:(UITextField *)p0;
+	-(UIButton *) ContinueButton;
+	-(void) setContinueButton:(UIButton *)p0;
+	-(UILabel *) EmailLabel;
+	-(void) setEmailLabel:(UILabel *)p0;
+	-(UITextField *) EmailTextfield;
+	-(void) setEmailTextfield:(UITextField *)p0;
+	-(UILabel *) LoginRequestLabel;
+	-(void) setLoginRequestLabel:(UILabel *)p0;
+	-(UITextField *) PasswordTextfield;
+	-(void) setPasswordTextfield:(UITextField *)p0;
+	-(UILabel *) PaswordLabel;
+	-(void) setPaswordLabel:(UILabel *)p0;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) BackButton_TouchUpInside:(UIButton *)p0;
+	-(void) ContinueButton_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 

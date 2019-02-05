@@ -60378,8 +60378,8 @@ ldr x16, [x16, #8]
 .word 0xf9408231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2851e40
-.word 0xd2851e40
+.word 0xd2852100
+.word 0xd2852100
 bl _p_229
 .word 0xaa0003e1
 .word 0xd2801280
@@ -60404,8 +60404,8 @@ bl _p_75
 .word 0xf940e231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2852900
-.word 0xd2852900
+.word 0xd2852bc0
+.word 0xd2852bc0
 bl _p_229
 .word 0xaa0003e1
 .word 0xd2801280
@@ -72404,8 +72404,8 @@ ldr x16, [x16, #720]
 .word 0xf940aa31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd281f260
-.word 0xd281f260
+.word 0xd281f520
+.word 0xd281f520
 bl _p_229
 .word 0xaa0003e1
 .word 0xd2800a80
@@ -73434,7 +73434,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #744]
 br x16
-.word 10265
+.word 10279
 	.no_dead_strip plt_intptr_op_Explicit_intptr
 plt_intptr_op_Explicit_intptr:
 _p_2:
@@ -73442,7 +73442,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #752]
 br x16
-.word 10270
+.word 10284
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_get_Target
 plt_ObjCRuntime_BlockLiteral_get_Target:
 _p_3:
@@ -73450,7 +73450,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #760]
 br x16
-.word 10275
+.word 10289
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSError_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSError_intptr:
 _p_4:
@@ -73458,7 +73458,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #768]
 br x16
-.word 10280
+.word 10294
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_5:
@@ -73466,7 +73466,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #776]
 br x16
-.word 10292
+.word 10306
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_6:
@@ -73474,7 +73474,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #784]
 br x16
-.word 10327
+.word 10341
 	.no_dead_strip plt_intptr_op_Explicit_void_
 plt_intptr_op_Explicit_void_:
 _p_7:
@@ -73482,7 +73482,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #792]
 br x16
-.word 10335
+.word 10349
 	.no_dead_strip plt_ObjCRuntime_Trampolines__Block_copy_intptr
 plt_ObjCRuntime_Trampolines__Block_copy_intptr:
 _p_8:
@@ -73490,7 +73490,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #800]
 br x16
-.word 10340
+.word 10354
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DApplyActionCodeHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DApplyActionCodeHandler:
 _p_9:
@@ -73498,7 +73498,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #808]
 br x16
-.word 10342
+.word 10356
 	.no_dead_strip plt_ObjCRuntime_Trampolines__Block_release_intptr
 plt_ObjCRuntime_Trampolines__Block_release_intptr:
 _p_10:
@@ -73506,7 +73506,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #816]
 br x16
-.word 10354
+.word 10368
 	.no_dead_strip plt__jit_icall_ves_icall_thread_finish_async_abort
 plt__jit_icall_ves_icall_thread_finish_async_abort:
 _p_11:
@@ -73514,7 +73514,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #824]
 br x16
-.word 10356
+.word 10370
 	.no_dead_strip plt_object_Finalize
 plt_object_Finalize:
 _p_12:
@@ -73522,7 +73522,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #832]
 br x16
-.word 10394
+.word 10408
 	.no_dead_strip plt_intptr_op_Equality_intptr_intptr
 plt_intptr_op_Equality_intptr_intptr:
 _p_13:
@@ -73530,7 +73530,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #840]
 br x16
-.word 10399
+.word 10413
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_IsManagedBlock_intptr
 plt_ObjCRuntime_BlockLiteral_IsManagedBlock_intptr:
 _p_14:
@@ -73538,7 +73538,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #848]
 br x16
-.word 10404
+.word 10418
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_15:
@@ -73546,7 +73546,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #856]
 br x16
-.word 10409
+.word 10423
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDApplyActionCodeHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDApplyActionCodeHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_16:
@@ -73554,7 +73554,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #864]
 br x16
-.word 10441
+.word 10455
 	.no_dead_strip plt_Foundation_NSObject_get_Handle
 plt_Foundation_NSObject_get_Handle:
 _p_17:
@@ -73562,7 +73562,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #872]
 br x16
-.word 10443
+.word 10457
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthDataResult_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthDataResult_intptr:
 _p_18:
@@ -73570,7 +73570,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #880]
 br x16
-.word 10448
+.word 10462
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthDataResultHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthDataResultHandler:
 _p_19:
@@ -73578,7 +73578,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #888]
 br x16
-.word 10460
+.word 10474
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAuthDataResultHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAuthDataResultHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_20:
@@ -73586,7 +73586,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #896]
 br x16
-.word 10472
+.word 10486
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_User_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_User_intptr:
 _p_21:
@@ -73594,7 +73594,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #904]
 br x16
-.word 10474
+.word 10488
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthResultHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthResultHandler:
 _p_22:
@@ -73602,7 +73602,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #912]
 br x16
-.word 10486
+.word 10500
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAuthResultHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAuthResultHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_23:
@@ -73610,7 +73610,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #920]
 br x16
-.word 10498
+.word 10512
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_Auth_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_Auth_intptr:
 _p_24:
@@ -73618,7 +73618,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #928]
 br x16
-.word 10500
+.word 10514
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthStateDidChangeListenerHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthStateDidChangeListenerHandler:
 _p_25:
@@ -73626,7 +73626,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #936]
 br x16
-.word 10512
+.word 10526
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAuthStateDidChangeListenerHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAuthStateDidChangeListenerHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_26:
@@ -73634,7 +73634,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #944]
 br x16
-.word 10524
+.word 10538
 	.no_dead_strip plt_Foundation_NSString_FromHandle_intptr
 plt_Foundation_NSString_FromHandle_intptr:
 _p_27:
@@ -73642,7 +73642,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #952]
 br x16
-.word 10526
+.word 10540
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthTokenHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthTokenHandler:
 _p_28:
@@ -73650,7 +73650,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #960]
 br x16
-.word 10531
+.word 10545
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAuthTokenHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAuthTokenHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_29:
@@ -73658,7 +73658,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #968]
 br x16
-.word 10543
+.word 10557
 	.no_dead_strip plt_Foundation_NSString_CreateNative_string
 plt_Foundation_NSString_CreateNative_string:
 _p_30:
@@ -73666,7 +73666,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #976]
 br x16
-.word 10545
+.word 10559
 	.no_dead_strip plt_Foundation_NSString_ReleaseNative_intptr
 plt_Foundation_NSString_ReleaseNative_intptr:
 _p_31:
@@ -73674,7 +73674,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #984]
 br x16
-.word 10550
+.word 10564
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthTokenResult_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthTokenResult_intptr:
 _p_32:
@@ -73682,7 +73682,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #992]
 br x16
-.word 10555
+.word 10569
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthTokenResultHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAuthTokenResultHandler:
 _p_33:
@@ -73690,7 +73690,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1000]
 br x16
-.word 10567
+.word 10581
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAuthTokenResultHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAuthTokenResultHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_34:
@@ -73698,7 +73698,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1008]
 br x16
-.word 10579
+.word 10593
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_ActionCodeInfo_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_ActionCodeInfo_intptr:
 _p_35:
@@ -73706,7 +73706,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1016]
 br x16
-.word 10581
+.word 10595
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DCheckActionCodeHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DCheckActionCodeHandler:
 _p_36:
@@ -73714,7 +73714,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1024]
 br x16
-.word 10593
+.word 10607
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDCheckActionCodeHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDCheckActionCodeHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_37:
@@ -73722,7 +73722,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1032]
 br x16
-.word 10605
+.word 10619
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DConfirmPasswordResetHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DConfirmPasswordResetHandler:
 _p_38:
@@ -73730,7 +73730,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1040]
 br x16
-.word 10607
+.word 10621
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDConfirmPasswordResetHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDConfirmPasswordResetHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_39:
@@ -73738,7 +73738,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1048]
 br x16
-.word 10619
+.word 10633
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DIdTokenDidChangeListenerHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DIdTokenDidChangeListenerHandler:
 _p_40:
@@ -73746,7 +73746,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1056]
 br x16
-.word 10621
+.word 10635
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDIdTokenDidChangeListenerHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDIdTokenDidChangeListenerHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_41:
@@ -73754,7 +73754,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1064]
 br x16
-.word 10633
+.word 10647
 	.no_dead_strip plt_Foundation_NSArray_StringArrayFromHandle_intptr
 plt_Foundation_NSArray_StringArrayFromHandle_intptr:
 _p_42:
@@ -73762,7 +73762,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1072]
 br x16
-.word 10635
+.word 10649
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DProviderQueryHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DProviderQueryHandler:
 _p_43:
@@ -73770,7 +73770,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1080]
 br x16
-.word 10640
+.word 10654
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDProviderQueryHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDProviderQueryHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_44:
@@ -73778,7 +73778,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1088]
 br x16
-.word 10652
+.word 10666
 	.no_dead_strip plt_Foundation_NSArray_FromStrings_string__
 plt_Foundation_NSArray_FromStrings_string__:
 _p_45:
@@ -73786,7 +73786,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1096]
 br x16
-.word 10654
+.word 10668
 	.no_dead_strip plt_Foundation_NSObject_Dispose
 plt_Foundation_NSObject_Dispose:
 _p_46:
@@ -73794,7 +73794,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1104]
 br x16
-.word 10659
+.word 10673
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSendEmailVerificationHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSendEmailVerificationHandler:
 _p_47:
@@ -73802,7 +73802,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1112]
 br x16
-.word 10664
+.word 10678
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDSendEmailVerificationHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDSendEmailVerificationHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_48:
@@ -73810,7 +73810,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1120]
 br x16
-.word 10676
+.word 10690
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSendPasswordResetHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSendPasswordResetHandler:
 _p_49:
@@ -73818,7 +73818,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1128]
 br x16
-.word 10678
+.word 10692
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDSendPasswordResetHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDSendPasswordResetHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_50:
@@ -73826,7 +73826,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1136]
 br x16
-.word 10690
+.word 10704
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSendSignInLinkToEmailHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSendSignInLinkToEmailHandler:
 _p_51:
@@ -73834,7 +73834,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1144]
 br x16
-.word 10692
+.word 10706
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDSendSignInLinkToEmailHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDSendSignInLinkToEmailHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_52:
@@ -73842,7 +73842,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1152]
 br x16
-.word 10704
+.word 10718
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSignInMethodQueryHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DSignInMethodQueryHandler:
 _p_53:
@@ -73850,7 +73850,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1160]
 br x16
-.word 10707
+.word 10721
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDSignInMethodQueryHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDSignInMethodQueryHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_54:
@@ -73858,7 +73858,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1168]
 br x16
-.word 10719
+.word 10733
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DUserProfileChangeHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DUserProfileChangeHandler:
 _p_55:
@@ -73866,7 +73866,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1176]
 br x16
-.word 10722
+.word 10736
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDUserProfileChangeHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDUserProfileChangeHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_56:
@@ -73874,7 +73874,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1184]
 br x16
-.word 10734
+.word 10748
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DUserUpdateHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DUserUpdateHandler:
 _p_57:
@@ -73882,7 +73882,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1192]
 br x16
-.word 10737
+.word 10751
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDUserUpdateHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDUserUpdateHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_58:
@@ -73890,7 +73890,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1200]
 br x16
-.word 10749
+.word 10763
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DVerificationResultHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DVerificationResultHandler:
 _p_59:
@@ -73898,7 +73898,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1208]
 br x16
-.word 10752
+.word 10766
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDVerificationResultHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDVerificationResultHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_60:
@@ -73906,7 +73906,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1216]
 br x16
-.word 10764
+.word 10778
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DVerifyPasswordResetCodeHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DVerifyPasswordResetCodeHandler:
 _p_61:
@@ -73914,7 +73914,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1224]
 br x16
-.word 10767
+.word 10781
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDVerifyPasswordResetCodeHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDVerifyPasswordResetCodeHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_62:
@@ -73922,7 +73922,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1232]
 br x16
-.word 10779
+.word 10793
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAction
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAction:
 _p_63:
@@ -73930,7 +73930,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1240]
 br x16
-.word 10782
+.word 10796
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAction__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAction__ctor_ObjCRuntime_BlockLiteral_:
 _p_64:
@@ -73938,7 +73938,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1248]
 br x16
-.word 10794
+.word 10808
 	.no_dead_strip plt_Firebase_Auth_Loader_ForceLoad
 plt_Firebase_Auth_Loader_ForceLoad:
 _p_65:
@@ -73946,7 +73946,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1256]
 br x16
-.word 10797
+.word 10811
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlsym_intptr_string
 plt_ObjCRuntime_Dlfcn_dlsym_intptr_string:
 _p_66:
@@ -73954,7 +73954,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1264]
 br x16
-.word 10800
+.word 10814
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_PtrToStringAnsi_intptr
 plt_System_Runtime_InteropServices_Marshal_PtrToStringAnsi_intptr:
 _p_67:
@@ -73962,7 +73962,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1272]
 br x16
-.word 10805
+.word 10819
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlclose_intptr
 plt_ObjCRuntime_Dlfcn_dlclose_intptr:
 _p_68:
@@ -73970,7 +73970,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1280]
 br x16
-.word 10810
+.word 10824
 	.no_dead_strip plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag
 plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag:
 _p_69:
@@ -73978,7 +73978,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1288]
 br x16
-.word 10815
+.word 10829
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_70:
@@ -73986,7 +73986,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1296]
 br x16
-.word 10820
+.word 10834
 	.no_dead_strip plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly
 plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly:
 _p_71:
@@ -73994,7 +73994,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1304]
 br x16
-.word 10846
+.word 10860
 	.no_dead_strip plt_Foundation_NSObject_set_IsDirectBinding_bool
 plt_Foundation_NSObject_set_IsDirectBinding_bool:
 _p_72:
@@ -74002,7 +74002,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1312]
 br x16
-.word 10851
+.word 10865
 	.no_dead_strip plt_Foundation_NSObject__ctor_intptr
 plt_Foundation_NSObject__ctor_intptr:
 _p_73:
@@ -74010,7 +74010,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1320]
 br x16
-.word 10856
+.word 10870
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_74:
@@ -74018,7 +74018,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1328]
 br x16
-.word 10861
+.word 10875
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_75:
@@ -74026,7 +74026,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1336]
 br x16
-.word 10881
+.word 10895
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_SetupBlockImpl_System_Delegate_System_Delegate_bool_string
 plt_ObjCRuntime_BlockLiteral_SetupBlockImpl_System_Delegate_System_Delegate_bool_string:
 _p_76:
@@ -74034,7 +74034,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1344]
 br x16
-.word 10909
+.word 10923
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_77:
@@ -74042,7 +74042,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1352]
 br x16
-.word 10914
+.word 10928
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_intptr:
 _p_78:
@@ -74050,7 +74050,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1360]
 br x16
-.word 10917
+.word 10931
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_CleanupBlock
 plt_ObjCRuntime_BlockLiteral_CleanupBlock:
 _p_79:
@@ -74058,7 +74058,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1368]
 br x16
-.word 10922
+.word 10936
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_80:
@@ -74066,7 +74066,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1376]
 br x16
-.word 10927
+.word 10941
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass11_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass11_0__ctor:
 _p_81:
@@ -74074,7 +74074,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1384]
 br x16
-.word 10930
+.word 10944
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_bool__ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_bool__ctor:
 _p_82:
@@ -74082,7 +74082,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1392]
 br x16
-.word 10933
+.word 10947
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_bool_get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_bool_get_Task:
 _p_83:
@@ -74090,7 +74090,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1400]
 br x16
-.word 10944
+.word 10958
 	.no_dead_strip plt_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_84:
@@ -74098,7 +74098,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1408]
 br x16
-.word 10955
+.word 10969
 	.no_dead_strip plt_Foundation_NSUrl_op_Equality_Foundation_NSUrl_Foundation_NSUrl
 plt_Foundation_NSUrl_op_Equality_Foundation_NSUrl_Foundation_NSUrl:
 _p_85:
@@ -74106,7 +74106,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1416]
 br x16
-.word 10958
+.word 10972
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass15_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass15_0__ctor:
 _p_86:
@@ -74114,7 +74114,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1424]
 br x16
-.word 10963
+.word 10977
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo__ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo__ctor:
 _p_87:
@@ -74122,7 +74122,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1432]
 br x16
-.word 10966
+.word 10980
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo_get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo_get_Task:
 _p_88:
@@ -74130,7 +74130,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1440]
 br x16
-.word 10977
+.word 10991
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr:
 _p_89:
@@ -74138,7 +74138,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1448]
 br x16
-.word 10988
+.word 11002
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass17_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass17_0__ctor:
 _p_90:
@@ -74146,7 +74146,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1456]
 br x16
-.word 10991
+.word 11005
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass19_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass19_0__ctor:
 _p_91:
@@ -74154,7 +74154,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1464]
 br x16
-.word 10994
+.word 11008
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult__ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult__ctor:
 _p_92:
@@ -74162,7 +74162,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1472]
 br x16
-.word 10997
+.word 11011
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult_get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult_get_Task:
 _p_93:
@@ -74170,7 +74170,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1480]
 br x16
-.word 11008
+.word 11022
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass21_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass21_0__ctor:
 _p_94:
@@ -74178,7 +74178,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1488]
 br x16
-.word 11019
+.word 11033
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass23_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass23_0__ctor:
 _p_95:
@@ -74186,7 +74186,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1496]
 br x16
-.word 11022
+.word 11036
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string____ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_string____ctor:
 _p_96:
@@ -74194,7 +74194,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1504]
 br x16
-.word 11025
+.word 11039
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string___get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_string___get_Task:
 _p_97:
@@ -74202,7 +74202,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1512]
 br x16
-.word 11036
+.word 11050
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass25_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass25_0__ctor:
 _p_98:
@@ -74210,7 +74210,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1520]
 br x16
-.word 11047
+.word 11061
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_99:
@@ -74218,7 +74218,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1528]
 br x16
-.word 11050
+.word 11064
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass31_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass31_0__ctor:
 _p_100:
@@ -74226,7 +74226,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1536]
 br x16
-.word 11053
+.word 11067
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass33_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass33_0__ctor:
 _p_101:
@@ -74234,7 +74234,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1544]
 br x16
-.word 11056
+.word 11070
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass35_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass35_0__ctor:
 _p_102:
@@ -74242,7 +74242,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1552]
 br x16
-.word 11059
+.word 11073
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_Int64_intptr_intptr_intptr_long
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_Int64_intptr_intptr_intptr_long:
 _p_103:
@@ -74250,7 +74250,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1560]
 br x16
-.word 11062
+.word 11076
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass38_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass38_0__ctor:
 _p_104:
@@ -74258,7 +74258,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1568]
 br x16
-.word 11065
+.word 11079
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass40_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass40_0__ctor:
 _p_105:
@@ -74266,7 +74266,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1576]
 br x16
-.word 11068
+.word 11082
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass42_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass42_0__ctor:
 _p_106:
@@ -74274,7 +74274,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1584]
 br x16
-.word 11071
+.word 11085
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass44_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass44_0__ctor:
 _p_107:
@@ -74282,7 +74282,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1592]
 br x16
-.word 11074
+.word 11088
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass46_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass46_0__ctor:
 _p_108:
@@ -74290,7 +74290,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1600]
 br x16
-.word 11077
+.word 11091
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass48_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass48_0__ctor:
 _p_109:
@@ -74298,7 +74298,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1608]
 br x16
-.word 11080
+.word 11094
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User__ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User__ctor:
 _p_110:
@@ -74306,7 +74306,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1616]
 br x16
-.word 11083
+.word 11097
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User_get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User_get_Task:
 _p_111:
@@ -74314,7 +74314,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1624]
 br x16
-.word 11094
+.word 11108
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass50_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass50_0__ctor:
 _p_112:
@@ -74322,7 +74322,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1632]
 br x16
-.word 11105
+.word 11119
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass52_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass52_0__ctor:
 _p_113:
@@ -74330,7 +74330,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1640]
 br x16
-.word 11108
+.word 11122
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass54_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass54_0__ctor:
 _p_114:
@@ -74338,7 +74338,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1648]
 br x16
-.word 11111
+.word 11125
 	.no_dead_strip plt_ApiDefinition_Messaging_bool_objc_msgSend_ref_IntPtr_intptr_intptr_intptr_
 plt_ApiDefinition_Messaging_bool_objc_msgSend_ref_IntPtr_intptr_intptr_intptr_:
 _p_115:
@@ -74346,7 +74346,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1656]
 br x16
-.word 11114
+.word 11128
 	.no_dead_strip plt_intptr_op_Inequality_intptr_intptr
 plt_intptr_op_Inequality_intptr_intptr:
 _p_116:
@@ -74354,7 +74354,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1664]
 br x16
-.word 11117
+.word 11131
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass57_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass57_0__ctor:
 _p_117:
@@ -74362,7 +74362,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1672]
 br x16
-.word 11122
+.word 11136
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr:
 _p_118:
@@ -74370,7 +74370,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1680]
 br x16
-.word 11125
+.word 11139
 	.no_dead_strip plt_Firebase_Auth_Auth__c__DisplayClass60_0__ctor
 plt_Firebase_Auth_Auth__c__DisplayClass60_0__ctor:
 _p_119:
@@ -74378,7 +74378,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1688]
 br x16
-.word 11128
+.word 11142
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string__ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_string__ctor:
 _p_120:
@@ -74386,7 +74386,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1696]
 br x16
-.word 11131
+.word 11145
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string_get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_string_get_Task:
 _p_121:
@@ -74394,7 +74394,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1704]
 br x16
-.word 11142
+.word 11156
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr:
 _p_122:
@@ -74402,7 +74402,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1712]
 br x16
-.word 11153
+.word 11167
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSData_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSData_intptr:
 _p_123:
@@ -74410,7 +74410,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1720]
 br x16
-.word 11156
+.word 11170
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_App_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_App_intptr:
 _p_124:
@@ -74418,7 +74418,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1728]
 br x16
-.word 11168
+.word 11182
 	.no_dead_strip plt_Foundation_NSObject_MarkDirty
 plt_Foundation_NSObject_MarkDirty:
 _p_125:
@@ -74426,7 +74426,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1736]
 br x16
-.word 11180
+.word 11194
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthSettings_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthSettings_intptr:
 _p_126:
@@ -74434,7 +74434,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1744]
 br x16
-.word 11185
+.word 11199
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_GetDouble_intptr_string
 plt_ObjCRuntime_Dlfcn_GetDouble_intptr_string:
 _p_127:
@@ -74442,7 +74442,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1752]
 br x16
-.word 11197
+.word 11211
 	.no_dead_strip plt_Foundation_NSString_op_Equality_Foundation_NSString_Foundation_NSString
 plt_Foundation_NSString_op_Equality_Foundation_NSString_Foundation_NSString:
 _p_128:
@@ -74450,7 +74450,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1760]
 br x16
-.word 11202
+.word 11216
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_GetStringConstant_intptr_string
 plt_ObjCRuntime_Dlfcn_GetStringConstant_intptr_string:
 _p_129:
@@ -74458,7 +74458,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1768]
 br x16
-.word 11207
+.word 11221
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_GetIntPtr_intptr_string
 plt_ObjCRuntime_Dlfcn_GetIntPtr_intptr_string:
 _p_130:
@@ -74466,7 +74466,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1776]
 br x16
-.word 11212
+.word 11226
 	.no_dead_strip plt_Foundation_NSObject_Dispose_bool
 plt_Foundation_NSObject_Dispose_bool:
 _p_131:
@@ -74474,7 +74474,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1784]
 br x16
-.word 11217
+.word 11231
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_string
 plt_ObjCRuntime_Class_GetHandle_string:
 _p_132:
@@ -74482,7 +74482,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1792]
 br x16
-.word 11222
+.word 11236
 	.no_dead_strip plt_Foundation_NSErrorException__ctor_Foundation_NSError
 plt_Foundation_NSErrorException__ctor_Foundation_NSError:
 _p_133:
@@ -74490,7 +74490,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1800]
 br x16
-.word 11227
+.word 11241
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_bool_SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_bool_SetException_System_Exception:
 _p_134:
@@ -74498,7 +74498,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1808]
 br x16
-.word 11232
+.word 11246
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_bool_SetResult_bool
 plt_System_Threading_Tasks_TaskCompletionSource_1_bool_SetResult_bool:
 _p_135:
@@ -74506,7 +74506,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1816]
 br x16
-.word 11243
+.word 11257
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo_SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo_SetException_System_Exception:
 _p_136:
@@ -74514,7 +74514,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1824]
 br x16
-.word 11254
+.word 11268
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo_SetResult_Firebase_Auth_ActionCodeInfo
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_ActionCodeInfo_SetResult_Firebase_Auth_ActionCodeInfo:
 _p_137:
@@ -74522,7 +74522,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1832]
 br x16
-.word 11265
+.word 11279
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult_SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult_SetException_System_Exception:
 _p_138:
@@ -74530,7 +74530,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1840]
 br x16
-.word 11276
+.word 11290
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult_SetResult_Firebase_Auth_AuthDataResult
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthDataResult_SetResult_Firebase_Auth_AuthDataResult:
 _p_139:
@@ -74538,7 +74538,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1848]
 br x16
-.word 11287
+.word 11301
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string___SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_string___SetException_System_Exception:
 _p_140:
@@ -74546,7 +74546,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1856]
 br x16
-.word 11298
+.word 11312
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string___SetResult_string__
 plt_System_Threading_Tasks_TaskCompletionSource_1_string___SetResult_string__:
 _p_141:
@@ -74554,7 +74554,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1864]
 br x16
-.word 11309
+.word 11323
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User_SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User_SetException_System_Exception:
 _p_142:
@@ -74562,7 +74562,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1872]
 br x16
-.word 11320
+.word 11334
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User_SetResult_Firebase_Auth_User
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_User_SetResult_Firebase_Auth_User:
 _p_143:
@@ -74570,7 +74570,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1880]
 br x16
-.word 11331
+.word 11345
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string_SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_string_SetException_System_Exception:
 _p_144:
@@ -74578,7 +74578,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1888]
 br x16
-.word 11342
+.word 11356
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_string_SetResult_string
 plt_System_Threading_Tasks_TaskCompletionSource_1_string_SetResult_string:
 _p_145:
@@ -74586,7 +74586,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1896]
 br x16
-.word 11353
+.word 11367
 	.no_dead_strip plt_Firebase_Core_Loader_ForceLoad
 plt_Firebase_Core_Loader_ForceLoad:
 _p_146:
@@ -74594,7 +74594,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1904]
 br x16
-.word 11364
+.word 11378
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_Int64_intptr_intptr_long
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_Int64_intptr_intptr_long:
 _p_147:
@@ -74602,7 +74602,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1912]
 br x16
-.word 11369
+.word 11383
 	.no_dead_strip plt_ApiDefinition_Messaging_Int64_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_Int64_objc_msgSend_intptr_intptr:
 _p_148:
@@ -74610,7 +74610,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1920]
 br x16
-.word 11372
+.word 11386
 	.no_dead_strip plt_Foundation_NSObject_InitializeHandle_intptr_string
 plt_Foundation_NSObject_InitializeHandle_intptr_string:
 _p_149:
@@ -74618,7 +74618,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1928]
 br x16
-.word 11375
+.word 11389
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_bool_IntPtr_intptr_intptr_intptr_bool_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_bool_IntPtr_intptr_intptr_intptr_bool_intptr:
 _p_150:
@@ -74626,7 +74626,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1936]
 br x16
-.word 11380
+.word 11394
 	.no_dead_strip plt_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr:
 _p_151:
@@ -74634,7 +74634,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1944]
 br x16
-.word 11383
+.word 11397
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 plt_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool:
 _p_152:
@@ -74642,7 +74642,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1952]
 br x16
-.word 11386
+.word 11400
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSUrl_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSUrl_intptr:
 _p_153:
@@ -74650,7 +74650,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1960]
 br x16
-.word 11389
+.word 11403
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDictionary_2_Foundation_NSString_Foundation_NSObject_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDictionary_2_Foundation_NSString_Foundation_NSObject_intptr:
 _p_154:
@@ -74658,7 +74658,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1968]
 br x16
-.word 11401
+.word 11415
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AdditionalUserInfo_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AdditionalUserInfo_intptr:
 _p_155:
@@ -74666,7 +74666,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1976]
 br x16
-.word 11413
+.word 11427
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDate_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDate_intptr:
 _p_156:
@@ -74674,7 +74674,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1984]
 br x16
-.word 11425
+.word 11439
 	.no_dead_strip plt_ObjCRuntime_BaseWrapper__ctor_intptr_bool
 plt_ObjCRuntime_BaseWrapper__ctor_intptr_bool:
 _p_157:
@@ -74682,7 +74682,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #1992]
 br x16
-.word 11437
+.word 11451
 	.no_dead_strip plt_ObjCRuntime_BaseWrapper_get_Handle
 plt_ObjCRuntime_BaseWrapper_get_Handle:
 _p_158:
@@ -74690,7 +74690,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2000]
 br x16
-.word 11442
+.word 11456
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_bool_IntPtr_intptr_intptr_bool_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_bool_IntPtr_intptr_intptr_bool_intptr:
 _p_159:
@@ -74698,7 +74698,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2008]
 br x16
-.word 11447
+.word 11461
 	.no_dead_strip plt_Foundation_NSObject_get_SuperHandle
 plt_Foundation_NSObject_get_SuperHandle:
 _p_160:
@@ -74706,7 +74706,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2016]
 br x16
-.word 11450
+.word 11464
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSendSuper_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSendSuper_intptr_intptr:
 _p_161:
@@ -74714,7 +74714,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2024]
 br x16
-.word 11455
+.word 11469
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_162:
@@ -74722,7 +74722,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2032]
 br x16
-.word 11458
+.word 11472
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthCredential_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_AuthCredential_intptr:
 _p_163:
@@ -74730,7 +74730,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2040]
 br x16
-.word 11461
+.word 11475
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr:
 _p_164:
@@ -74738,7 +74738,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2048]
 br x16
-.word 11473
+.word 11487
 	.no_dead_strip plt_Firebase_Auth_AuthCredential__ctor_Foundation_NSObjectFlag
 plt_Firebase_Auth_AuthCredential__ctor_Foundation_NSObjectFlag:
 _p_165:
@@ -74746,7 +74746,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2056]
 br x16
-.word 11476
+.word 11490
 	.no_dead_strip plt_Firebase_Auth_AuthCredential__ctor_intptr
 plt_Firebase_Auth_AuthCredential__ctor_intptr:
 _p_166:
@@ -74754,7 +74754,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2064]
 br x16
-.word 11479
+.word 11493
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_PhoneAuthProvider_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_PhoneAuthProvider_intptr:
 _p_167:
@@ -74762,7 +74762,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2072]
 br x16
-.word 11482
+.word 11496
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_PhoneAuthCredential_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_PhoneAuthCredential_intptr:
 _p_168:
@@ -74770,7 +74770,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2080]
 br x16
-.word 11494
+.word 11508
 	.no_dead_strip plt_Firebase_Auth_PhoneAuthProvider__c__DisplayClass8_0__ctor
 plt_Firebase_Auth_PhoneAuthProvider__c__DisplayClass8_0__ctor:
 _p_169:
@@ -74778,7 +74778,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2088]
 br x16
-.word 11506
+.word 11520
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass6_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass6_0__ctor:
 _p_170:
@@ -74786,7 +74786,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2096]
 br x16
-.word 11509
+.word 11523
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass8_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass8_0__ctor:
 _p_171:
@@ -74794,7 +74794,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2104]
 br x16
-.word 11512
+.word 11526
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass10_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass10_0__ctor:
 _p_172:
@@ -74802,7 +74802,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2112]
 br x16
-.word 11515
+.word 11529
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass12_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass12_0__ctor:
 _p_173:
@@ -74810,7 +74810,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2120]
 br x16
-.word 11518
+.word 11532
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult__ctor
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult__ctor:
 _p_174:
@@ -74818,7 +74818,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2128]
 br x16
-.word 11521
+.word 11535
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult_get_Task
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult_get_Task:
 _p_175:
@@ -74826,7 +74826,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2136]
 br x16
-.word 11532
+.word 11546
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass14_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass14_0__ctor:
 _p_176:
@@ -74834,7 +74834,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2144]
 br x16
-.word 11543
+.word 11557
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass18_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass18_0__ctor:
 _p_177:
@@ -74842,7 +74842,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2152]
 br x16
-.word 11546
+.word 11560
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass20_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass20_0__ctor:
 _p_178:
@@ -74850,7 +74850,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2160]
 br x16
-.word 11549
+.word 11563
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_UserProfileChangeRequest_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_UserProfileChangeRequest_intptr:
 _p_179:
@@ -74858,7 +74858,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2168]
 br x16
-.word 11552
+.word 11566
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass23_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass23_0__ctor:
 _p_180:
@@ -74866,7 +74866,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2176]
 br x16
-.word 11564
+.word 11578
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass25_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass25_0__ctor:
 _p_181:
@@ -74874,7 +74874,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2184]
 br x16
-.word 11567
+.word 11581
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass27_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass27_0__ctor:
 _p_182:
@@ -74882,7 +74882,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2192]
 br x16
-.word 11570
+.word 11584
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass29_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass29_0__ctor:
 _p_183:
@@ -74890,7 +74890,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2200]
 br x16
-.word 11573
+.word 11587
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass31_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass31_0__ctor:
 _p_184:
@@ -74898,7 +74898,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2208]
 br x16
-.word 11576
+.word 11590
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass33_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass33_0__ctor:
 _p_185:
@@ -74906,7 +74906,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2216]
 br x16
-.word 11579
+.word 11593
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass35_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass35_0__ctor:
 _p_186:
@@ -74914,7 +74914,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2224]
 br x16
-.word 11582
+.word 11596
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass37_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass37_0__ctor:
 _p_187:
@@ -74922,7 +74922,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2232]
 br x16
-.word 11585
+.word 11599
 	.no_dead_strip plt_Firebase_Auth_User__c__DisplayClass39_0__ctor
 plt_Firebase_Auth_User__c__DisplayClass39_0__ctor:
 _p_188:
@@ -74930,7 +74930,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2240]
 br x16
-.word 11588
+.word 11602
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_UserMetadata_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Auth_UserMetadata_intptr:
 _p_189:
@@ -74938,7 +74938,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2248]
 br x16
-.word 11591
+.word 11605
 	.no_dead_strip plt_Foundation_NSArray_ArrayFromHandle_Firebase_Auth_IUserInfo_intptr
 plt_Foundation_NSArray_ArrayFromHandle_Firebase_Auth_IUserInfo_intptr:
 _p_190:
@@ -74946,7 +74946,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2256]
 br x16
-.word 11603
+.word 11617
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult_SetException_System_Exception
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult_SetException_System_Exception:
 _p_191:
@@ -74954,7 +74954,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2264]
 br x16
-.word 11615
+.word 11629
 	.no_dead_strip plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult_SetResult_Firebase_Auth_AuthTokenResult
 plt_System_Threading_Tasks_TaskCompletionSource_1_Firebase_Auth_AuthTokenResult_SetResult_Firebase_Auth_AuthTokenResult:
 _p_192:
@@ -74962,7 +74962,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2272]
 br x16
-.word 11626
+.word 11640
 	.no_dead_strip plt_Firebase_Auth_UserProfileChangeRequest__c__DisplayClass6_0__ctor
 plt_Firebase_Auth_UserProfileChangeRequest__c__DisplayClass6_0__ctor:
 _p_193:
@@ -74970,7 +74970,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2280]
 br x16
-.word 11637
+.word 11651
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_194:
@@ -74978,7 +74978,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2288]
 br x16
-.word 11667
+.word 11681
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_195:
@@ -74986,7 +74986,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2296]
 br x16
-.word 11675
+.word 11689
 	.no_dead_strip plt_System_Threading_SpinWait_SpinOnce
 plt_System_Threading_SpinWait_SpinOnce:
 _p_196:
@@ -74994,7 +74994,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2304]
 br x16
-.word 11698
+.word 11712
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsCompleted
 plt_System_Threading_Tasks_Task_get_IsCompleted:
 _p_197:
@@ -75002,7 +75002,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2312]
 br x16
-.word 11703
+.word 11717
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentNullException_System_ExceptionArgument
 plt_System_ThrowHelper_ThrowArgumentNullException_System_ExceptionArgument:
 _p_198:
@@ -75010,7 +75010,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2320]
 br x16
-.word 11708
+.word 11722
 	.no_dead_strip plt_System_Threading_Tasks_Task_TrySetException_object
 plt_System_Threading_Tasks_Task_TrySetException_object:
 _p_199:
@@ -75018,7 +75018,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2328]
 br x16
-.word 11713
+.word 11727
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_200:
@@ -75026,7 +75026,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2336]
 br x16
-.word 11736
+.word 11750
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_201:
@@ -75034,7 +75034,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2344]
 br x16
-.word 11777
+.word 11791
 	.no_dead_strip plt_System_ThrowHelper_ThrowInvalidOperationException_System_ExceptionResource
 plt_System_ThrowHelper_ThrowInvalidOperationException_System_ExceptionResource:
 _p_202:
@@ -75042,7 +75042,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2352]
 br x16
-.word 11800
+.word 11814
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_203:
@@ -75050,7 +75050,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2360]
 br x16
-.word 11823
+.word 11837
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_204:
@@ -75058,7 +75058,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2368]
 br x16
-.word 11846
+.word 11860
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_205:
@@ -75066,7 +75066,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2376]
 br x16
-.word 11887
+.word 11901
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor
 plt_System_Threading_Tasks_Task__ctor:
 _p_206:
@@ -75074,7 +75074,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2384]
 br x16
-.word 11910
+.word 11924
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken
 plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken:
 _p_207:
@@ -75082,7 +75082,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2392]
 br x16
-.word 11915
+.word 11929
 	.no_dead_strip plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions
 plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions:
 _p_208:
@@ -75090,7 +75090,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2400]
 br x16
-.word 11920
+.word 11934
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_209:
@@ -75098,7 +75098,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2408]
 br x16
-.word 11943
+.word 11957
 	.no_dead_strip plt_System_Threading_Tasks_Task_PossiblyCaptureContext
 plt_System_Threading_Tasks_Task_PossiblyCaptureContext:
 _p_210:
@@ -75106,7 +75106,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2416]
 br x16
-.word 11966
+.word 11980
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler
 plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler:
 _p_211:
@@ -75114,7 +75114,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2424]
 br x16
-.word 11971
+.word 11985
 	.no_dead_strip plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int
 plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int:
 _p_212:
@@ -75122,7 +75122,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2432]
 br x16
-.word 11976
+.word 11990
 	.no_dead_strip plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted
 plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted:
 _p_213:
@@ -75130,7 +75130,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2440]
 br x16
-.word 11981
+.word 11995
 	.no_dead_strip plt_System_Threading_Tasks_Task_FinishStageThree
 plt_System_Threading_Tasks_Task_FinishStageThree:
 _p_214:
@@ -75138,7 +75138,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2448]
 br x16
-.word 11986
+.word 12000
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion
 plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion:
 _p_215:
@@ -75146,7 +75146,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2456]
 br x16
-.word 11991
+.word 12005
 	.no_dead_strip plt__rgctx_fetch_8
 plt__rgctx_fetch_8:
 _p_216:
@@ -75154,7 +75154,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2464]
 br x16
-.word 12014
+.word 12028
 	.no_dead_strip plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken
 plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken:
 _p_217:
@@ -75162,7 +75162,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2472]
 br x16
-.word 12037
+.word 12051
 	.no_dead_strip plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary
 plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary:
 _p_218:
@@ -75170,7 +75170,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2480]
 br x16
-.word 12042
+.word 12056
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsCompletedSuccessfully
 plt_System_Threading_Tasks_Task_get_IsCompletedSuccessfully:
 _p_219:
@@ -75178,7 +75178,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2488]
 br x16
-.word 12047
+.word 12061
 	.no_dead_strip plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool
 plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool:
 _p_220:
@@ -75186,7 +75186,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2496]
 br x16
-.word 12052
+.word 12066
 	.no_dead_strip plt__rgctx_fetch_9
 plt__rgctx_fetch_9:
 _p_221:
@@ -75194,7 +75194,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2504]
 br x16
-.word 12083
+.word 12097
 	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
 _p_222:
@@ -75202,7 +75202,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2512]
 br x16
-.word 12091
+.word 12105
 	.no_dead_strip plt__rgctx_fetch_10
 plt__rgctx_fetch_10:
 _p_223:
@@ -75210,7 +75210,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2520]
 br x16
-.word 12111
+.word 12125
 	.no_dead_strip plt__rgctx_fetch_11
 plt__rgctx_fetch_11:
 _p_224:
@@ -75218,7 +75218,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2528]
 br x16
-.word 12146
+.word 12160
 	.no_dead_strip plt__rgctx_fetch_12
 plt__rgctx_fetch_12:
 _p_225:
@@ -75226,7 +75226,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2536]
 br x16
-.word 12154
+.word 12168
 	.no_dead_strip plt__rgctx_fetch_13
 plt__rgctx_fetch_13:
 _p_226:
@@ -75234,7 +75234,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2544]
 br x16
-.word 12204
+.word 12218
 	.no_dead_strip plt__rgctx_fetch_14
 plt__rgctx_fetch_14:
 _p_227:
@@ -75242,7 +75242,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2552]
 br x16
-.word 12212
+.word 12226
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_228:
@@ -75250,7 +75250,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2560]
 br x16
-.word 12235
+.word 12249
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_229:
@@ -75258,7 +75258,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2568]
 br x16
-.word 12273
+.word 12287
 	.no_dead_strip plt__rgctx_fetch_15
 plt__rgctx_fetch_15:
 _p_230:
@@ -75266,7 +75266,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2576]
 br x16
-.word 12320
+.word 12334
 	.no_dead_strip plt__rgctx_fetch_16
 plt__rgctx_fetch_16:
 _p_231:
@@ -75274,7 +75274,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2584]
 br x16
-.word 12343
+.word 12357
 	.no_dead_strip plt__rgctx_fetch_17
 plt__rgctx_fetch_17:
 _p_232:
@@ -75282,7 +75282,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2592]
 br x16
-.word 12392
+.word 12406
 	.no_dead_strip plt__rgctx_fetch_18
 plt__rgctx_fetch_18:
 _p_233:
@@ -75290,7 +75290,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2600]
 br x16
-.word 12400
+.word 12414
 	.no_dead_strip plt__rgctx_fetch_19
 plt__rgctx_fetch_19:
 _p_234:
@@ -75298,7 +75298,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2608]
 br x16
-.word 12416
+.word 12430
 	.no_dead_strip plt__rgctx_fetch_20
 plt__rgctx_fetch_20:
 _p_235:
@@ -75306,7 +75306,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2616]
 br x16
-.word 12424
+.word 12438
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_236:
@@ -75314,7 +75314,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2624]
 br x16
-.word 12447
+.word 12461
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_237:
@@ -75322,7 +75322,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2632]
 br x16
-.word 12476
+.word 12490
 	.no_dead_strip plt__icall_native_ObjCRuntime_Trampolines__Block_copy_intptr
 plt__icall_native_ObjCRuntime_Trampolines__Block_copy_intptr:
 _p_238:
@@ -75330,7 +75330,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2640]
 br x16
-.word 12503
+.word 12517
 	.no_dead_strip plt__icall_native_ObjCRuntime_Trampolines__Block_release_intptr
 plt__icall_native_ObjCRuntime_Trampolines__Block_release_intptr:
 _p_239:
@@ -75338,7 +75338,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2648]
 br x16
-.word 12505
+.word 12519
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr:
 _p_240:
@@ -75346,7 +75346,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2656]
 br x16
-.word 12507
+.word 12521
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSendSuper_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSendSuper_intptr_intptr:
 _p_241:
@@ -75354,7 +75354,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2664]
 br x16
-.word 12510
+.word 12524
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_242:
@@ -75362,7 +75362,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2672]
 br x16
-.word 12513
+.word 12527
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_Int64_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_Int64_objc_msgSend_intptr_intptr:
 _p_243:
@@ -75370,7 +75370,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2680]
 br x16
-.word 12516
+.word 12530
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_Int64_intptr_intptr_long
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_Int64_intptr_intptr_long:
 _p_244:
@@ -75378,7 +75378,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2688]
 br x16
-.word 12519
+.word 12533
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_245:
@@ -75386,7 +75386,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2696]
 br x16
-.word 12522
+.word 12536
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr:
 _p_246:
@@ -75394,7 +75394,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2704]
 br x16
-.word 12525
+.word 12539
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool:
 _p_247:
@@ -75402,7 +75402,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2712]
 br x16
-.word 12528
+.word 12542
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_bool_IntPtr_intptr_intptr_intptr_bool_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_bool_IntPtr_intptr_intptr_intptr_bool_intptr:
 _p_248:
@@ -75410,7 +75410,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2720]
 br x16
-.word 12531
+.word 12545
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_249:
@@ -75418,7 +75418,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2728]
 br x16
-.word 12534
+.word 12548
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr:
 _p_250:
@@ -75426,7 +75426,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2736]
 br x16
-.word 12537
+.word 12551
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_ref_IntPtr_intptr_intptr_intptr_
 plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_ref_IntPtr_intptr_intptr_intptr_:
 _p_251:
@@ -75434,7 +75434,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2744]
 br x16
-.word 12540
+.word 12554
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_252:
@@ -75442,7 +75442,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2752]
 br x16
-.word 12543
+.word 12557
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr:
 _p_253:
@@ -75450,7 +75450,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2760]
 br x16
-.word 12546
+.word 12560
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_Int64_intptr_intptr_intptr_long
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_Int64_intptr_intptr_intptr_long:
 _p_254:
@@ -75458,7 +75458,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2768]
 br x16
-.word 12549
+.word 12563
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_IntPtr_intptr_intptr_bool_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_IntPtr_intptr_intptr_bool_intptr:
 _p_255:
@@ -75466,7 +75466,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2776]
 br x16
-.word 12552
+.word 12566
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_256:
@@ -75474,7 +75474,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2784]
 br x16
-.word 12555
+.word 12569
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr:
 _p_257:
@@ -75482,7 +75482,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2792]
 br x16
-.word 12558
+.word 12572
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDApplyActionCodeHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDApplyActionCodeHandler_Invoke_intptr_intptr:
 _p_258:
@@ -75490,7 +75490,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2800]
 br x16
-.word 12561
+.word 12575
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAuthDataResultHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDAuthDataResultHandler_Invoke_intptr_intptr_intptr:
 _p_259:
@@ -75498,7 +75498,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2808]
 br x16
-.word 12563
+.word 12577
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAuthResultHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDAuthResultHandler_Invoke_intptr_intptr_intptr:
 _p_260:
@@ -75506,7 +75506,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2816]
 br x16
-.word 12565
+.word 12579
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAuthStateDidChangeListenerHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDAuthStateDidChangeListenerHandler_Invoke_intptr_intptr_intptr:
 _p_261:
@@ -75514,7 +75514,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2824]
 br x16
-.word 12567
+.word 12581
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAuthTokenHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDAuthTokenHandler_Invoke_intptr_intptr_intptr:
 _p_262:
@@ -75522,7 +75522,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2832]
 br x16
-.word 12569
+.word 12583
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAuthTokenResultHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDAuthTokenResultHandler_Invoke_intptr_intptr_intptr:
 _p_263:
@@ -75530,7 +75530,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2840]
 br x16
-.word 12571
+.word 12585
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDCheckActionCodeHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDCheckActionCodeHandler_Invoke_intptr_intptr_intptr:
 _p_264:
@@ -75538,7 +75538,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2848]
 br x16
-.word 12573
+.word 12587
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDConfirmPasswordResetHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDConfirmPasswordResetHandler_Invoke_intptr_intptr:
 _p_265:
@@ -75546,7 +75546,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2856]
 br x16
-.word 12575
+.word 12589
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDIdTokenDidChangeListenerHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDIdTokenDidChangeListenerHandler_Invoke_intptr_intptr_intptr:
 _p_266:
@@ -75554,7 +75554,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2864]
 br x16
-.word 12577
+.word 12591
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDProviderQueryHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDProviderQueryHandler_Invoke_intptr_intptr_intptr:
 _p_267:
@@ -75562,7 +75562,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2872]
 br x16
-.word 12579
+.word 12593
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDSendEmailVerificationHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDSendEmailVerificationHandler_Invoke_intptr_intptr:
 _p_268:
@@ -75570,7 +75570,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2880]
 br x16
-.word 12581
+.word 12595
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDSendPasswordResetHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDSendPasswordResetHandler_Invoke_intptr_intptr:
 _p_269:
@@ -75578,7 +75578,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2888]
 br x16
-.word 12583
+.word 12597
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDSendSignInLinkToEmailHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDSendSignInLinkToEmailHandler_Invoke_intptr_intptr:
 _p_270:
@@ -75586,7 +75586,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2896]
 br x16
-.word 12585
+.word 12599
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDSignInMethodQueryHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDSignInMethodQueryHandler_Invoke_intptr_intptr_intptr:
 _p_271:
@@ -75594,7 +75594,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2904]
 br x16
-.word 12588
+.word 12602
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDUserProfileChangeHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDUserProfileChangeHandler_Invoke_intptr_intptr:
 _p_272:
@@ -75602,7 +75602,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2912]
 br x16
-.word 12591
+.word 12605
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDUserUpdateHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDUserUpdateHandler_Invoke_intptr_intptr:
 _p_273:
@@ -75610,7 +75610,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2920]
 br x16
-.word 12594
+.word 12608
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDVerificationResultHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDVerificationResultHandler_Invoke_intptr_intptr_intptr:
 _p_274:
@@ -75618,7 +75618,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2928]
 br x16
-.word 12597
+.word 12611
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDVerifyPasswordResetCodeHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDVerifyPasswordResetCodeHandler_Invoke_intptr_intptr_intptr:
 _p_275:
@@ -75626,7 +75626,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2936]
 br x16
-.word 12600
+.word 12614
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAction_Invoke_intptr
 plt_ObjCRuntime_Trampolines_SDAction_Invoke_intptr:
 _p_276:
@@ -75634,7 +75634,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2944]
 br x16
-.word 12603
+.word 12617
 	.no_dead_strip plt__rgctx_fetch_21
 plt__rgctx_fetch_21:
 _p_277:
@@ -75642,7 +75642,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2952]
 br x16
-.word 12633
+.word 12647
 	.no_dead_strip plt__rgctx_fetch_22
 plt__rgctx_fetch_22:
 _p_278:
@@ -75650,7 +75650,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2960]
 br x16
-.word 12641
+.word 12655
 	.no_dead_strip plt__rgctx_fetch_23
 plt__rgctx_fetch_23:
 _p_279:
@@ -75658,7 +75658,7 @@ adrp x16, mono_aot_Firebase_Auth_got@PAGE+8192
 add x16, x16, mono_aot_Firebase_Auth_got@PAGEOFF
 ldr x16, [x16, #2968]
 br x16
-.word 12682
+.word 12696
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -76360,13 +76360,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 1116,11168,280,770,70,391195135,0,118880
-	.long 128,8,8,8,0,25,129496,10608
+	.long 1116,11168,280,770,70,391195135,0,118894
+	.long 128,8,8,8,0,25,129512,10608
 	.long 10256,5720,0,8360,9992,6888,0,4712
 	.long 1128,10600,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 0,103,211,107,4,13,144,50,212,198,97,149,76,43,1,13
+	.byte 47,93,232,142,239,149,254,200,128,170,7,127,97,170,197,241
 	.globl _mono_aot_module_Firebase_Auth_info
 	.align 3
 _mono_aot_module_Firebase_Auth_info:

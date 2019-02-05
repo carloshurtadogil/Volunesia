@@ -50,7 +50,7 @@ namespace Volunesia.iOS
             }
             else
             {
-                AlertShow.Show(this, "Failed", "");
+                AlertShow.Show(this, "Segue Failure", "RegistrationViewController.cs");
             }
         }
 

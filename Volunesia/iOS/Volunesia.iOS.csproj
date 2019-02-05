@@ -157,6 +157,7 @@
     <Compile Include="EmailRegistrationViewController.designer.cs">
       <DependentUpon>EmailRegistrationViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\NonprofitRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

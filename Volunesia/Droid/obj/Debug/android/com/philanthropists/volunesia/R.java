@@ -434,7 +434,9 @@ containing a value of this type.
         public static final int chronometer=0x7f0a0032;
         public static final int clip_horizontal=0x7f0a0015;
         public static final int clip_vertical=0x7f0a0016;
+        public static final int confirmPasswordField=0x7f0a003f;
         public static final int dark=0x7f0a000f;
+        public static final int emailAddressField=0x7f0a003d;
         public static final int end=0x7f0a0017;
         public static final int end_padder=0x7f0a0039;
         public static final int fill=0x7f0a0018;
@@ -458,7 +460,8 @@ containing a value of this type.
         public static final int notification_background=0x7f0a0036;
         public static final int notification_main_column=0x7f0a002f;
         public static final int notification_main_column_container=0x7f0a002e;
-        public static final int randomButton=0x7f0a003c;
+        public static final int passwordField=0x7f0a003e;
+        public static final int registerVolunteerButton=0x7f0a0040;
         public static final int right=0x7f0a001c;
         public static final int right_icon=0x7f0a0035;
         public static final int right_side=0x7f0a0030;
@@ -473,6 +476,7 @@ containing a value of this type.
         public static final int time=0x7f0a0031;
         public static final int title=0x7f0a0007;
         public static final int top=0x7f0a001e;
+        public static final int usernameField=0x7f0a003c;
         public static final int volunteerButton=0x7f0a003a;
         public static final int wide=0x7f0a000d;
     }

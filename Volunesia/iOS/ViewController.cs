@@ -21,7 +21,7 @@ namespace Volunesia.iOS
 
         public void FirebaseTest () 
         {
-            AppData_iOS.Auth.CreateUser( "carlos.hurtado@volunesia.com", 
+            AppData_iOS.Auth.CreateUser( "carlos.hurtado@volunesia.co", 
                                          "PasswordTest",
                                          (user, error) => {
                                              if (error != null)
@@ -29,14 +29,16 @@ namespace Volunesia.iOS
                                                  AlertShow.Show(this, "Error", error.ToString());
                                                  return;
                                              }
+                                             /*
                                              object[] keys = { "key1" };
                                              object[] vals = { "val1" };
 
                                              NSDictionary TestDict = NSDictionary.FromObjectsAndKeys(vals, keys);
 
                                              AppData_iOS.DataNode.GetChild("test").SetValue(TestDict);
-                                             AlertShow.Show(this, "Success", "Firebase Test was a success");
-                                         }); 
+                                             AlertShow.Show(this, "Success", "Firebase Test was a success");*/
+                                         });
+            AlertShow.Show(this, "UID", AppData_iOS.Auth.CurrentUser.Uid);
         }
 
         public override void DidReceiveMemoryWarning()
@@ -47,7 +49,17 @@ namespace Volunesia.iOS
 
         partial void LoginButton_TouchUpInside(UIButton sender)
         {
+
             AlertShow.Show(this, "Login", "To be added");
+            /*
+            object[] keys = { "key1" };
+            object[] vals = { "val1" };
+
+            NSDictionary TestDict = NSDictionary.FromObjectsAndKeys(vals, keys);
+
+            AppData_iOS.UsersNode.GetChild("nonprofitreps").SetValue(TestDict);*/
+            NonprofitRegistration npr = new NonprofitRegistration();
+            //npr.AddNonprofitUserDataToFirebase("Test", "Rep", "testrep@test.com", "seerf1sg42231");
         }
 
         partial void SignupButton_TouchUpInside(UIButton sender)
@@ -71,7 +83,7 @@ namespace Volunesia.iOS
             }
             else
             {
-                AlertShow.Show(this, "Failed", "");
+                AlertShow.Show(this, "Segue Failure", "ViewController.cs");
             }
         }
 

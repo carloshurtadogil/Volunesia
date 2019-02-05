@@ -6,6 +6,17 @@
 	<dict>
 		<key>output-files</key>
 		<array>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon20x20@2x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon20x20@3x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon29x29@2x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon29x29@3x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon40x40@2x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon40x40@3x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon60x60@2x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon60x60@3x.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon60x60@2x~car.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/AppIcon60x60@3x~car.png</string>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/bundle/Assets.car</string>
 			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/partial-info.plist</string>
 		</array>
 	</dict>
@@ -14,14 +25,38 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./AppIcon.appiconset/[][watch][44x44][longLook][42mm][2x][][][2d][(null)]</string>
+				<string>./AppIcon.appiconset</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
-			<string>The app icon set "AppIcon" has an unassigned child.</string>
+			<string>A 76x76@1x app icon is required for iPad apps targeting iOS 7, 8, and 9</string>
 			<key>type</key>
-			<string>Ambiguous Content</string>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>A 76x76@2x app icon is required for iPad apps targeting iOS 7.0 and later</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone11.4-12.1/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>A 83.5x83.5@2x app icon is required for iPad apps targeting iOS 9.0 and later</string>
+			<key>type</key>
+			<string>Missing Content</string>
 		</dict>
 	</array>
 </dict>

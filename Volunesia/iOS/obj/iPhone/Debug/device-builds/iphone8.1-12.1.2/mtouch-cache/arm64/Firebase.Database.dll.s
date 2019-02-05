@@ -47560,8 +47560,8 @@ bl _p_286
 .word 0xf9455231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2801be0
-.word 0xd2801be0
+.word 0xd2801c00
+.word 0xd2801c00
 bl _p_287
 .word 0xaa0003e2
 .word 0xf94067a0
@@ -48422,7 +48422,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3784]
 br x16
-.word 5705
+.word 5711
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_get_Target
 plt_ObjCRuntime_BlockLiteral_get_Target:
 _p_2:
@@ -48430,7 +48430,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3792]
 br x16
-.word 5710
+.word 5716
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSError_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSError_intptr:
 _p_3:
@@ -48438,7 +48438,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3800]
 br x16
-.word 5715
+.word 5721
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_4:
@@ -48446,7 +48446,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3808]
 br x16
-.word 5727
+.word 5733
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_5:
@@ -48454,7 +48454,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3816]
 br x16
-.word 5762
+.word 5768
 	.no_dead_strip plt_intptr_op_Explicit_void_
 plt_intptr_op_Explicit_void_:
 _p_6:
@@ -48462,7 +48462,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3824]
 br x16
-.word 5770
+.word 5776
 	.no_dead_strip plt_ObjCRuntime_Trampolines__Block_copy_intptr
 plt_ObjCRuntime_Trampolines__Block_copy_intptr:
 _p_7:
@@ -48470,7 +48470,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3832]
 br x16
-.word 5775
+.word 5781
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseQueryCancelHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseQueryCancelHandler:
 _p_8:
@@ -48478,7 +48478,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3840]
 br x16
-.word 5777
+.word 5783
 	.no_dead_strip plt_ObjCRuntime_Trampolines__Block_release_intptr
 plt_ObjCRuntime_Trampolines__Block_release_intptr:
 _p_9:
@@ -48486,7 +48486,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3848]
 br x16
-.word 5789
+.word 5795
 	.no_dead_strip plt__jit_icall_ves_icall_thread_finish_async_abort
 plt__jit_icall_ves_icall_thread_finish_async_abort:
 _p_10:
@@ -48494,7 +48494,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3856]
 br x16
-.word 5791
+.word 5797
 	.no_dead_strip plt_object_Finalize
 plt_object_Finalize:
 _p_11:
@@ -48502,7 +48502,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3864]
 br x16
-.word 5829
+.word 5835
 	.no_dead_strip plt_intptr_op_Equality_intptr_intptr
 plt_intptr_op_Equality_intptr_intptr:
 _p_12:
@@ -48510,7 +48510,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3872]
 br x16
-.word 5834
+.word 5840
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_IsManagedBlock_intptr
 plt_ObjCRuntime_BlockLiteral_IsManagedBlock_intptr:
 _p_13:
@@ -48518,7 +48518,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3880]
 br x16
-.word 5839
+.word 5845
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_14:
@@ -48526,7 +48526,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3888]
 br x16
-.word 5844
+.word 5850
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDDatabaseQueryCancelHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDDatabaseQueryCancelHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_15:
@@ -48534,7 +48534,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3896]
 br x16
-.word 5876
+.word 5882
 	.no_dead_strip plt_Foundation_NSObject_get_Handle
 plt_Foundation_NSObject_get_Handle:
 _p_16:
@@ -48542,7 +48542,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3904]
 br x16
-.word 5878
+.word 5884
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_DataSnapshot_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_DataSnapshot_intptr:
 _p_17:
@@ -48550,7 +48550,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3912]
 br x16
-.word 5883
+.word 5889
 	.no_dead_strip plt_Foundation_NSString_FromHandle_intptr
 plt_Foundation_NSString_FromHandle_intptr:
 _p_18:
@@ -48558,7 +48558,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3920]
 br x16
-.word 5895
+.word 5901
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseQueryPreviousSiblingKeyUpdateHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseQueryPreviousSiblingKeyUpdateHandler:
 _p_19:
@@ -48566,7 +48566,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3928]
 br x16
-.word 5900
+.word 5906
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDDatabaseQueryPreviousSiblingKeyUpdateHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDDatabaseQueryPreviousSiblingKeyUpdateHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_20:
@@ -48574,7 +48574,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3936]
 br x16
-.word 5912
+.word 5918
 	.no_dead_strip plt_Foundation_NSString_CreateNative_string
 plt_Foundation_NSString_CreateNative_string:
 _p_21:
@@ -48582,7 +48582,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3944]
 br x16
-.word 5914
+.word 5920
 	.no_dead_strip plt_Foundation_NSString_ReleaseNative_intptr
 plt_Foundation_NSString_ReleaseNative_intptr:
 _p_22:
@@ -48590,7 +48590,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3952]
 br x16
-.word 5919
+.word 5925
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseQueryUpdateHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseQueryUpdateHandler:
 _p_23:
@@ -48598,7 +48598,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3960]
 br x16
-.word 5924
+.word 5930
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDDatabaseQueryUpdateHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDDatabaseQueryUpdateHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_24:
@@ -48606,7 +48606,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3968]
 br x16
-.word 5936
+.word 5942
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_DatabaseReference_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_DatabaseReference_intptr:
 _p_25:
@@ -48614,7 +48614,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3976]
 br x16
-.word 5938
+.word 5944
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseReferenceCompletionHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseReferenceCompletionHandler:
 _p_26:
@@ -48622,7 +48622,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3984]
 br x16
-.word 5950
+.word 5956
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDDatabaseReferenceCompletionHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDDatabaseReferenceCompletionHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_27:
@@ -48630,7 +48630,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #3992]
 br x16
-.word 5962
+.word 5968
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseReferenceTransactionCompletionHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseReferenceTransactionCompletionHandler:
 _p_28:
@@ -48638,7 +48638,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4000]
 br x16
-.word 5964
+.word 5970
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDDatabaseReferenceTransactionCompletionHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDDatabaseReferenceTransactionCompletionHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_29:
@@ -48646,7 +48646,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4008]
 br x16
-.word 5976
+.word 5982
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_MutableData_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_MutableData_intptr:
 _p_30:
@@ -48654,7 +48654,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4016]
 br x16
-.word 5978
+.word 5984
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseReferenceTransactionHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DDatabaseReferenceTransactionHandler:
 _p_31:
@@ -48662,7 +48662,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4024]
 br x16
-.word 5990
+.word 5996
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDDatabaseReferenceTransactionHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDDatabaseReferenceTransactionHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_32:
@@ -48670,7 +48670,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4032]
 br x16
-.word 6002
+.word 6008
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_TransactionResult_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_TransactionResult_intptr:
 _p_33:
@@ -48678,7 +48678,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4040]
 br x16
-.word 6004
+.word 6010
 	.no_dead_strip plt_Firebase_Database_Loader_ForceLoad
 plt_Firebase_Database_Loader_ForceLoad:
 _p_34:
@@ -48686,7 +48686,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4048]
 br x16
-.word 6016
+.word 6022
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_35:
@@ -48694,7 +48694,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4056]
 br x16
-.word 6042
+.word 6048
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF:
 _p_36:
@@ -48702,7 +48702,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4064]
 br x16
-.word 6064
+.word 6070
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_37:
@@ -48710,7 +48710,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4072]
 br x16
-.word 6082
+.word 6088
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_38:
@@ -48718,7 +48718,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4080]
 br x16
-.word 6102
+.word 6108
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_Foundation_NSObject_Foundation_NSObject__
 plt_Firebase_Database_DatabaseReference_VerifyArray_Foundation_NSObject_Foundation_NSObject__:
 _p_39:
@@ -48726,7 +48726,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #4088]
 br x16
-.word 6130
+.word 6136
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_40:
@@ -48734,7 +48734,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #0]
 br x16
-.word 6165
+.word 6171
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF__
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF__:
 _p_41:
@@ -48742,7 +48742,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #8]
 br x16
-.word 6187
+.word 6193
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_42:
@@ -48750,7 +48750,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #16]
 br x16
-.word 6228
+.word 6234
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_0
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_0:
 _p_43:
@@ -48758,7 +48758,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #24]
 br x16
-.word 6250
+.word 6256
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_44:
@@ -48766,7 +48766,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #32]
 br x16
-.word 6291
+.word 6297
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_1
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_1:
 _p_45:
@@ -48774,7 +48774,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #40]
 br x16
-.word 6313
+.word 6319
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_46:
@@ -48782,7 +48782,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #48]
 br x16
-.word 6354
+.word 6360
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___0
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___0:
 _p_47:
@@ -48790,7 +48790,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #56]
 br x16
-.word 6376
+.word 6382
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_48:
@@ -48798,7 +48798,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #64]
 br x16
-.word 6417
+.word 6423
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_2
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_2:
 _p_49:
@@ -48806,7 +48806,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #72]
 br x16
-.word 6439
+.word 6445
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_50:
@@ -48814,7 +48814,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #80]
 br x16
-.word 6480
+.word 6486
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___1
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___1:
 _p_51:
@@ -48822,7 +48822,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #88]
 br x16
-.word 6502
+.word 6508
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_52:
@@ -48830,7 +48830,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #96]
 br x16
-.word 6543
+.word 6549
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_3
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_3:
 _p_53:
@@ -48838,7 +48838,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #104]
 br x16
-.word 6565
+.word 6571
 	.no_dead_strip plt__rgctx_fetch_8
 plt__rgctx_fetch_8:
 _p_54:
@@ -48846,7 +48846,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #112]
 br x16
-.word 6606
+.word 6612
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___2
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___2:
 _p_55:
@@ -48854,7 +48854,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #120]
 br x16
-.word 6628
+.word 6634
 	.no_dead_strip plt__rgctx_fetch_9
 plt__rgctx_fetch_9:
 _p_56:
@@ -48862,7 +48862,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #128]
 br x16
-.word 6669
+.word 6675
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_4
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_4:
 _p_57:
@@ -48870,7 +48870,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #136]
 br x16
-.word 6691
+.word 6697
 	.no_dead_strip plt__rgctx_fetch_10
 plt__rgctx_fetch_10:
 _p_58:
@@ -48878,7 +48878,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #144]
 br x16
-.word 6732
+.word 6738
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___3
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___3:
 _p_59:
@@ -48886,7 +48886,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #152]
 br x16
-.word 6754
+.word 6760
 	.no_dead_strip plt__rgctx_fetch_11
 plt__rgctx_fetch_11:
 _p_60:
@@ -48894,7 +48894,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #160]
 br x16
-.word 6795
+.word 6801
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_5
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_5:
 _p_61:
@@ -48902,7 +48902,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #168]
 br x16
-.word 6817
+.word 6823
 	.no_dead_strip plt__rgctx_fetch_12
 plt__rgctx_fetch_12:
 _p_62:
@@ -48910,7 +48910,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #176]
 br x16
-.word 6858
+.word 6864
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___4
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___4:
 _p_63:
@@ -48918,7 +48918,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #184]
 br x16
-.word 6880
+.word 6886
 	.no_dead_strip plt__rgctx_fetch_13
 plt__rgctx_fetch_13:
 _p_64:
@@ -48926,7 +48926,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #192]
 br x16
-.word 6921
+.word 6927
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_6
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_6:
 _p_65:
@@ -48934,7 +48934,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #200]
 br x16
-.word 6943
+.word 6949
 	.no_dead_strip plt__rgctx_fetch_14
 plt__rgctx_fetch_14:
 _p_66:
@@ -48942,7 +48942,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #208]
 br x16
-.word 6984
+.word 6990
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___5
 plt_Firebase_Database_DatabaseReference_VerifyArray_T_REF_T_REF___5:
 _p_67:
@@ -48950,7 +48950,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #216]
 br x16
-.word 7006
+.word 7012
 	.no_dead_strip plt__rgctx_fetch_15
 plt__rgctx_fetch_15:
 _p_68:
@@ -48958,7 +48958,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #224]
 br x16
-.word 7047
+.word 7053
 	.no_dead_strip plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_7
 plt_Firebase_Database_DatabaseReference_VerifyValidType_T_REF_T_REF_7:
 _p_69:
@@ -48966,7 +48966,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #232]
 br x16
-.word 7069
+.word 7075
 	.no_dead_strip plt_Foundation_NSArray_FromNSObjects_int_Foundation_NSObject__
 plt_Foundation_NSArray_FromNSObjects_int_Foundation_NSObject__:
 _p_70:
@@ -48974,7 +48974,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #240]
 br x16
-.word 7087
+.word 7093
 	.no_dead_strip plt_Firebase_Database_DatabaseQuery__ctor_Foundation_NSObjectFlag
 plt_Firebase_Database_DatabaseQuery__ctor_Foundation_NSObjectFlag:
 _p_71:
@@ -48982,7 +48982,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #248]
 br x16
-.word 7092
+.word 7098
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_72:
@@ -48990,7 +48990,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #256]
 br x16
-.word 7095
+.word 7101
 	.no_dead_strip plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly
 plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly:
 _p_73:
@@ -48998,7 +48998,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #264]
 br x16
-.word 7121
+.word 7127
 	.no_dead_strip plt_Foundation_NSObject_set_IsDirectBinding_bool
 plt_Foundation_NSObject_set_IsDirectBinding_bool:
 _p_74:
@@ -49006,7 +49006,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #272]
 br x16
-.word 7126
+.word 7132
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr:
 _p_75:
@@ -49014,7 +49014,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #280]
 br x16
-.word 7131
+.word 7137
 	.no_dead_strip plt_Foundation_NSObject_InitializeHandle_intptr_string
 plt_Foundation_NSObject_InitializeHandle_intptr_string:
 _p_76:
@@ -49022,7 +49022,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #288]
 br x16
-.word 7133
+.word 7139
 	.no_dead_strip plt_Firebase_Database_DatabaseQuery__ctor_intptr
 plt_Firebase_Database_DatabaseQuery__ctor_intptr:
 _p_77:
@@ -49030,7 +49030,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #296]
 br x16
-.word 7138
+.word 7144
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr:
 _p_78:
@@ -49038,7 +49038,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #304]
 br x16
-.word 7141
+.word 7147
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_SetupBlockImpl_System_Delegate_System_Delegate_bool_string
 plt_ObjCRuntime_BlockLiteral_SetupBlockImpl_System_Delegate_System_Delegate_bool_string:
 _p_79:
@@ -49046,7 +49046,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #312]
 br x16
-.word 7143
+.word 7149
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_80:
@@ -49054,7 +49054,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #320]
 br x16
-.word 7148
+.word 7154
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_CleanupBlock
 plt_ObjCRuntime_BlockLiteral_CleanupBlock:
 _p_81:
@@ -49062,7 +49062,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #328]
 br x16
-.word 7150
+.word 7156
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_82:
@@ -49070,7 +49070,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #336]
 br x16
-.word 7155
+.word 7161
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_DatabaseQuery_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_DatabaseQuery_intptr:
 _p_83:
@@ -49078,7 +49078,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #344]
 br x16
-.word 7157
+.word 7163
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_84:
@@ -49086,7 +49086,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #352]
 br x16
-.word 7169
+.word 7175
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_nuint_intptr_intptr_System_nuint
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_nuint_intptr_intptr_System_nuint:
 _p_85:
@@ -49094,7 +49094,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #360]
 br x16
-.word 7171
+.word 7177
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 plt_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool:
 _p_86:
@@ -49102,7 +49102,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #368]
 br x16
-.word 7173
+.word 7179
 	.no_dead_strip plt_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr
 plt_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr:
 _p_87:
@@ -49110,7 +49110,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #376]
 br x16
-.word 7175
+.word 7181
 	.no_dead_strip plt_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr
 plt_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr:
 _p_88:
@@ -49118,7 +49118,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #384]
 br x16
-.word 7177
+.word 7183
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr:
 _p_89:
@@ -49126,7 +49126,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #392]
 br x16
-.word 7179
+.word 7185
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr:
 _p_90:
@@ -49134,7 +49134,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #400]
 br x16
-.word 7181
+.word 7187
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_nuint_intptr_intptr_System_nuint
 plt_ApiDefinition_Messaging_void_objc_msgSend_nuint_intptr_intptr_System_nuint:
 _p_91:
@@ -49142,7 +49142,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #408]
 br x16
-.word 7183
+.word 7189
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_92:
@@ -49150,7 +49150,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #416]
 br x16
-.word 7185
+.word 7191
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_bool_intptr_intptr_intptr_intptr_bool
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_bool_intptr_intptr_intptr_intptr_bool:
 _p_93:
@@ -49158,7 +49158,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #424]
 br x16
-.word 7187
+.word 7193
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr:
 _p_94:
@@ -49166,7 +49166,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #432]
 br x16
-.word 7189
+.word 7195
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_Database_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Database_Database_intptr:
 _p_95:
@@ -49174,7 +49174,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #440]
 br x16
-.word 7191
+.word 7197
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_string
 plt_ObjCRuntime_Class_GetHandle_string:
 _p_96:
@@ -49182,7 +49182,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #448]
 br x16
-.word 7203
+.word 7209
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSObject_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSObject_intptr:
 _p_97:
@@ -49190,7 +49190,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #456]
 br x16
-.word 7208
+.word 7214
 	.no_dead_strip plt__rgctx_fetch_16
 plt__rgctx_fetch_16:
 _p_98:
@@ -49198,7 +49198,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #464]
 br x16
-.word 7243
+.word 7249
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_T_REF_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_T_REF_intptr:
 _p_99:
@@ -49206,7 +49206,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #472]
 br x16
-.word 7266
+.word 7272
 	.no_dead_strip plt_Foundation_NSArray_ArrayFromHandle_Foundation_NSObject_intptr
 plt_Foundation_NSArray_ArrayFromHandle_Foundation_NSObject_intptr:
 _p_100:
@@ -49214,7 +49214,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #480]
 br x16
-.word 7285
+.word 7291
 	.no_dead_strip plt__rgctx_fetch_17
 plt__rgctx_fetch_17:
 _p_101:
@@ -49222,7 +49222,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #488]
 br x16
-.word 7320
+.word 7326
 	.no_dead_strip plt_Foundation_NSArray_ArrayFromHandle_T_REF_intptr
 plt_Foundation_NSArray_ArrayFromHandle_T_REF_intptr:
 _p_102:
@@ -49230,7 +49230,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #496]
 br x16
-.word 7343
+.word 7349
 	.no_dead_strip plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag
 plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag:
 _p_103:
@@ -49238,7 +49238,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #504]
 br x16
-.word 7362
+.word 7368
 	.no_dead_strip plt_Foundation_NSObject__ctor_intptr
 plt_Foundation_NSObject__ctor_intptr:
 _p_104:
@@ -49246,7 +49246,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #512]
 br x16
-.word 7367
+.word 7373
 	.no_dead_strip plt_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_105:
@@ -49254,7 +49254,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #520]
 br x16
-.word 7372
+.word 7378
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSEnumerator_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSEnumerator_intptr:
 _p_106:
@@ -49262,7 +49262,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #528]
 br x16
-.word 7374
+.word 7380
 	.no_dead_strip plt_ApiDefinition_Messaging_nuint_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_nuint_objc_msgSend_intptr_intptr:
 _p_107:
@@ -49270,7 +49270,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #536]
 br x16
-.word 7386
+.word 7392
 	.no_dead_strip plt_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr:
 _p_108:
@@ -49278,7 +49278,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #544]
 br x16
-.word 7388
+.word 7394
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_intptr:
 _p_109:
@@ -49286,7 +49286,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #552]
 br x16
-.word 7390
+.word 7396
 	.no_dead_strip plt__rgctx_fetch_18
 plt__rgctx_fetch_18:
 _p_110:
@@ -49294,7 +49294,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #560]
 br x16
-.word 7418
+.word 7424
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_T_REF_intptr_0
 plt_ObjCRuntime_Runtime_GetNSObject_T_REF_intptr_0:
 _p_111:
@@ -49302,7 +49302,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #568]
 br x16
-.word 7441
+.word 7447
 	.no_dead_strip plt__rgctx_fetch_19
 plt__rgctx_fetch_19:
 _p_112:
@@ -49310,7 +49310,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #576]
 br x16
-.word 7483
+.word 7489
 	.no_dead_strip plt_Foundation_NSArray_ArrayFromHandle_T_REF_intptr_0
 plt_Foundation_NSArray_ArrayFromHandle_T_REF_intptr_0:
 _p_113:
@@ -49318,7 +49318,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #584]
 br x16
-.word 7506
+.word 7512
 	.no_dead_strip plt__rgctx_fetch_20
 plt__rgctx_fetch_20:
 _p_114:
@@ -49326,7 +49326,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #592]
 br x16
-.word 7548
+.word 7554
 	.no_dead_strip plt_Firebase_Database_MutableData_VerifyValidType_T_REF_T_REF
 plt_Firebase_Database_MutableData_VerifyValidType_T_REF_T_REF:
 _p_115:
@@ -49334,7 +49334,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #600]
 br x16
-.word 7570
+.word 7576
 	.no_dead_strip plt_Firebase_Database_MutableData_VerifyArray_Foundation_NSObject_Foundation_NSObject__
 plt_Firebase_Database_MutableData_VerifyArray_Foundation_NSObject_Foundation_NSObject__:
 _p_116:
@@ -49342,7 +49342,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #608]
 br x16
-.word 7588
+.word 7594
 	.no_dead_strip plt__rgctx_fetch_21
 plt__rgctx_fetch_21:
 _p_117:
@@ -49350,7 +49350,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #616]
 br x16
-.word 7623
+.word 7629
 	.no_dead_strip plt_Firebase_Database_MutableData_VerifyArray_T_REF_T_REF__
 plt_Firebase_Database_MutableData_VerifyArray_T_REF_T_REF__:
 _p_118:
@@ -49358,7 +49358,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #624]
 br x16
-.word 7645
+.word 7651
 	.no_dead_strip plt__rgctx_fetch_22
 plt__rgctx_fetch_22:
 _p_119:
@@ -49366,7 +49366,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #632]
 br x16
-.word 7686
+.word 7692
 	.no_dead_strip plt_Firebase_Database_MutableData_VerifyValidType_T_REF_T_REF_0
 plt_Firebase_Database_MutableData_VerifyValidType_T_REF_T_REF_0:
 _p_120:
@@ -49374,7 +49374,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #640]
 br x16
-.word 7708
+.word 7714
 	.no_dead_strip plt_Firebase_Core_Loader_ForceLoad
 plt_Firebase_Core_Loader_ForceLoad:
 _p_121:
@@ -49382,7 +49382,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #648]
 br x16
-.word 7726
+.word 7732
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_App_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_App_intptr:
 _p_122:
@@ -49390,7 +49390,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #656]
 br x16
-.word 7731
+.word 7737
 	.no_dead_strip plt_Foundation_NSObject_MarkDirty
 plt_Foundation_NSObject_MarkDirty:
 _p_123:
@@ -49398,7 +49398,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #664]
 br x16
-.word 7743
+.word 7749
 	.no_dead_strip plt_CoreFoundation_DispatchQueue__ctor_intptr
 plt_CoreFoundation_DispatchQueue__ctor_intptr:
 _p_124:
@@ -49406,7 +49406,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #672]
 br x16
-.word 7748
+.word 7754
 	.no_dead_strip plt_CoreFoundation_DispatchQueue_op_Equality_CoreFoundation_DispatchQueue_CoreFoundation_DispatchQueue
 plt_CoreFoundation_DispatchQueue_op_Equality_CoreFoundation_DispatchQueue_CoreFoundation_DispatchQueue:
 _p_125:
@@ -49414,7 +49414,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #680]
 br x16
-.word 7753
+.word 7759
 	.no_dead_strip plt_CoreFoundation_DispatchObject_get_Handle
 plt_CoreFoundation_DispatchObject_get_Handle:
 _p_126:
@@ -49422,7 +49422,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #688]
 br x16
-.word 7758
+.word 7764
 	.no_dead_strip plt_Foundation_NSObject_Dispose_bool
 plt_Foundation_NSObject_Dispose_bool:
 _p_127:
@@ -49430,7 +49430,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #696]
 br x16
-.word 7763
+.word 7769
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDictionary_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDictionary_intptr:
 _p_128:
@@ -49438,7 +49438,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #704]
 br x16
-.word 7768
+.word 7774
 	.no_dead_strip plt__rgctx_fetch_23
 plt__rgctx_fetch_23:
 _p_129:
@@ -49446,7 +49446,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #712]
 br x16
-.word 7797
+.word 7803
 	.no_dead_strip plt__rgctx_fetch_24
 plt__rgctx_fetch_24:
 _p_130:
@@ -49454,7 +49454,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #720]
 br x16
-.word 7846
+.word 7852
 	.no_dead_strip plt__rgctx_fetch_25
 plt__rgctx_fetch_25:
 _p_131:
@@ -49462,7 +49462,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #728]
 br x16
-.word 7868
+.word 7874
 	.no_dead_strip plt__rgctx_fetch_26
 plt__rgctx_fetch_26:
 _p_132:
@@ -49470,7 +49470,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #736]
 br x16
-.word 7900
+.word 7906
 	.no_dead_strip plt_wrapper_alloc_object_Alloc_intptr
 plt_wrapper_alloc_object_Alloc_intptr:
 _p_133:
@@ -49478,7 +49478,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #744]
 br x16
-.word 7908
+.word 7914
 	.no_dead_strip plt__rgctx_fetch_27
 plt__rgctx_fetch_27:
 _p_134:
@@ -49486,7 +49486,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #752]
 br x16
-.word 7916
+.word 7922
 	.no_dead_strip plt__rgctx_fetch_28
 plt__rgctx_fetch_28:
 _p_135:
@@ -49494,7 +49494,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #760]
 br x16
-.word 7941
+.word 7947
 	.no_dead_strip plt__rgctx_fetch_29
 plt__rgctx_fetch_29:
 _p_136:
@@ -49502,7 +49502,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #768]
 br x16
-.word 7966
+.word 7972
 	.no_dead_strip plt__rgctx_fetch_30
 plt__rgctx_fetch_30:
 _p_137:
@@ -49510,7 +49510,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #776]
 br x16
-.word 7988
+.word 7994
 	.no_dead_strip plt__rgctx_fetch_31
 plt__rgctx_fetch_31:
 _p_138:
@@ -49518,7 +49518,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #784]
 br x16
-.word 8040
+.word 8046
 	.no_dead_strip plt__rgctx_fetch_32
 plt__rgctx_fetch_32:
 _p_139:
@@ -49526,7 +49526,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #792]
 br x16
-.word 8089
+.word 8095
 	.no_dead_strip plt__rgctx_fetch_33
 plt__rgctx_fetch_33:
 _p_140:
@@ -49534,7 +49534,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #800]
 br x16
-.word 8111
+.word 8117
 	.no_dead_strip plt__rgctx_fetch_34
 plt__rgctx_fetch_34:
 _p_141:
@@ -49542,7 +49542,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #808]
 br x16
-.word 8143
+.word 8149
 	.no_dead_strip plt__rgctx_fetch_35
 plt__rgctx_fetch_35:
 _p_142:
@@ -49550,7 +49550,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #816]
 br x16
-.word 8151
+.word 8157
 	.no_dead_strip plt__rgctx_fetch_36
 plt__rgctx_fetch_36:
 _p_143:
@@ -49558,7 +49558,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #824]
 br x16
-.word 8176
+.word 8182
 	.no_dead_strip plt__rgctx_fetch_37
 plt__rgctx_fetch_37:
 _p_144:
@@ -49566,7 +49566,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #832]
 br x16
-.word 8225
+.word 8231
 	.no_dead_strip plt__rgctx_fetch_38
 plt__rgctx_fetch_38:
 _p_145:
@@ -49574,7 +49574,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #840]
 br x16
-.word 8247
+.word 8253
 	.no_dead_strip plt__rgctx_fetch_39
 plt__rgctx_fetch_39:
 _p_146:
@@ -49582,7 +49582,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #848]
 br x16
-.word 8279
+.word 8285
 	.no_dead_strip plt__rgctx_fetch_40
 plt__rgctx_fetch_40:
 _p_147:
@@ -49590,7 +49590,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #856]
 br x16
-.word 8287
+.word 8293
 	.no_dead_strip plt__rgctx_fetch_41
 plt__rgctx_fetch_41:
 _p_148:
@@ -49598,7 +49598,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #864]
 br x16
-.word 8312
+.word 8318
 	.no_dead_strip plt__rgctx_fetch_42
 plt__rgctx_fetch_42:
 _p_149:
@@ -49606,7 +49606,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #872]
 br x16
-.word 8337
+.word 8343
 	.no_dead_strip plt__rgctx_fetch_43
 plt__rgctx_fetch_43:
 _p_150:
@@ -49614,7 +49614,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #880]
 br x16
-.word 8359
+.word 8365
 	.no_dead_strip plt__rgctx_fetch_44
 plt__rgctx_fetch_44:
 _p_151:
@@ -49622,7 +49622,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #888]
 br x16
-.word 8411
+.word 8417
 	.no_dead_strip plt__rgctx_fetch_45
 plt__rgctx_fetch_45:
 _p_152:
@@ -49630,7 +49630,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #896]
 br x16
-.word 8460
+.word 8466
 	.no_dead_strip plt__rgctx_fetch_46
 plt__rgctx_fetch_46:
 _p_153:
@@ -49638,7 +49638,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #904]
 br x16
-.word 8482
+.word 8488
 	.no_dead_strip plt__rgctx_fetch_47
 plt__rgctx_fetch_47:
 _p_154:
@@ -49646,7 +49646,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #912]
 br x16
-.word 8514
+.word 8520
 	.no_dead_strip plt__rgctx_fetch_48
 plt__rgctx_fetch_48:
 _p_155:
@@ -49654,7 +49654,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #920]
 br x16
-.word 8522
+.word 8528
 	.no_dead_strip plt__rgctx_fetch_49
 plt__rgctx_fetch_49:
 _p_156:
@@ -49662,7 +49662,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #928]
 br x16
-.word 8547
+.word 8553
 	.no_dead_strip plt__rgctx_fetch_50
 plt__rgctx_fetch_50:
 _p_157:
@@ -49670,7 +49670,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #936]
 br x16
-.word 8572
+.word 8578
 	.no_dead_strip plt__rgctx_fetch_51
 plt__rgctx_fetch_51:
 _p_158:
@@ -49678,7 +49678,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #944]
 br x16
-.word 8594
+.word 8600
 	.no_dead_strip plt__rgctx_fetch_52
 plt__rgctx_fetch_52:
 _p_159:
@@ -49686,7 +49686,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #952]
 br x16
-.word 8646
+.word 8652
 	.no_dead_strip plt__rgctx_fetch_53
 plt__rgctx_fetch_53:
 _p_160:
@@ -49694,7 +49694,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #960]
 br x16
-.word 8695
+.word 8701
 	.no_dead_strip plt__rgctx_fetch_54
 plt__rgctx_fetch_54:
 _p_161:
@@ -49702,7 +49702,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #968]
 br x16
-.word 8717
+.word 8723
 	.no_dead_strip plt__rgctx_fetch_55
 plt__rgctx_fetch_55:
 _p_162:
@@ -49710,7 +49710,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #976]
 br x16
-.word 8749
+.word 8755
 	.no_dead_strip plt__rgctx_fetch_56
 plt__rgctx_fetch_56:
 _p_163:
@@ -49718,7 +49718,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #984]
 br x16
-.word 8757
+.word 8763
 	.no_dead_strip plt__rgctx_fetch_57
 plt__rgctx_fetch_57:
 _p_164:
@@ -49726,7 +49726,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #992]
 br x16
-.word 8782
+.word 8788
 	.no_dead_strip plt__rgctx_fetch_58
 plt__rgctx_fetch_58:
 _p_165:
@@ -49734,7 +49734,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1000]
 br x16
-.word 8807
+.word 8813
 	.no_dead_strip plt__rgctx_fetch_59
 plt__rgctx_fetch_59:
 _p_166:
@@ -49742,7 +49742,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1008]
 br x16
-.word 8829
+.word 8835
 	.no_dead_strip plt__rgctx_fetch_60
 plt__rgctx_fetch_60:
 _p_167:
@@ -49750,7 +49750,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1016]
 br x16
-.word 8881
+.word 8887
 	.no_dead_strip plt__rgctx_fetch_61
 plt__rgctx_fetch_61:
 _p_168:
@@ -49758,7 +49758,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1024]
 br x16
-.word 8930
+.word 8936
 	.no_dead_strip plt__rgctx_fetch_62
 plt__rgctx_fetch_62:
 _p_169:
@@ -49766,7 +49766,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1032]
 br x16
-.word 8952
+.word 8958
 	.no_dead_strip plt__rgctx_fetch_63
 plt__rgctx_fetch_63:
 _p_170:
@@ -49774,7 +49774,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1040]
 br x16
-.word 8984
+.word 8990
 	.no_dead_strip plt__rgctx_fetch_64
 plt__rgctx_fetch_64:
 _p_171:
@@ -49782,7 +49782,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1048]
 br x16
-.word 8992
+.word 8998
 	.no_dead_strip plt__rgctx_fetch_65
 plt__rgctx_fetch_65:
 _p_172:
@@ -49790,7 +49790,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1056]
 br x16
-.word 9017
+.word 9023
 	.no_dead_strip plt__rgctx_fetch_66
 plt__rgctx_fetch_66:
 _p_173:
@@ -49798,7 +49798,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1064]
 br x16
-.word 9042
+.word 9048
 	.no_dead_strip plt__rgctx_fetch_67
 plt__rgctx_fetch_67:
 _p_174:
@@ -49806,7 +49806,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1072]
 br x16
-.word 9064
+.word 9070
 	.no_dead_strip plt__rgctx_fetch_68
 plt__rgctx_fetch_68:
 _p_175:
@@ -49814,7 +49814,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1080]
 br x16
-.word 9116
+.word 9122
 	.no_dead_strip plt__rgctx_fetch_69
 plt__rgctx_fetch_69:
 _p_176:
@@ -49822,7 +49822,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1088]
 br x16
-.word 9165
+.word 9171
 	.no_dead_strip plt__rgctx_fetch_70
 plt__rgctx_fetch_70:
 _p_177:
@@ -49830,7 +49830,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1096]
 br x16
-.word 9187
+.word 9193
 	.no_dead_strip plt__rgctx_fetch_71
 plt__rgctx_fetch_71:
 _p_178:
@@ -49838,7 +49838,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1104]
 br x16
-.word 9219
+.word 9225
 	.no_dead_strip plt__rgctx_fetch_72
 plt__rgctx_fetch_72:
 _p_179:
@@ -49846,7 +49846,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1112]
 br x16
-.word 9227
+.word 9233
 	.no_dead_strip plt__rgctx_fetch_73
 plt__rgctx_fetch_73:
 _p_180:
@@ -49854,7 +49854,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1120]
 br x16
-.word 9252
+.word 9258
 	.no_dead_strip plt__rgctx_fetch_74
 plt__rgctx_fetch_74:
 _p_181:
@@ -49862,7 +49862,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1128]
 br x16
-.word 9277
+.word 9283
 	.no_dead_strip plt__rgctx_fetch_75
 plt__rgctx_fetch_75:
 _p_182:
@@ -49870,7 +49870,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1136]
 br x16
-.word 9299
+.word 9305
 	.no_dead_strip plt__rgctx_fetch_76
 plt__rgctx_fetch_76:
 _p_183:
@@ -49878,7 +49878,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1144]
 br x16
-.word 9351
+.word 9357
 	.no_dead_strip plt__rgctx_fetch_77
 plt__rgctx_fetch_77:
 _p_184:
@@ -49886,7 +49886,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1152]
 br x16
-.word 9400
+.word 9406
 	.no_dead_strip plt__rgctx_fetch_78
 plt__rgctx_fetch_78:
 _p_185:
@@ -49894,7 +49894,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1160]
 br x16
-.word 9422
+.word 9428
 	.no_dead_strip plt__rgctx_fetch_79
 plt__rgctx_fetch_79:
 _p_186:
@@ -49902,7 +49902,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1168]
 br x16
-.word 9454
+.word 9460
 	.no_dead_strip plt__rgctx_fetch_80
 plt__rgctx_fetch_80:
 _p_187:
@@ -49910,7 +49910,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1176]
 br x16
-.word 9462
+.word 9468
 	.no_dead_strip plt__rgctx_fetch_81
 plt__rgctx_fetch_81:
 _p_188:
@@ -49918,7 +49918,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1184]
 br x16
-.word 9487
+.word 9493
 	.no_dead_strip plt__rgctx_fetch_82
 plt__rgctx_fetch_82:
 _p_189:
@@ -49926,7 +49926,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1192]
 br x16
-.word 9512
+.word 9518
 	.no_dead_strip plt__rgctx_fetch_83
 plt__rgctx_fetch_83:
 _p_190:
@@ -49934,7 +49934,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1200]
 br x16
-.word 9534
+.word 9540
 	.no_dead_strip plt__rgctx_fetch_84
 plt__rgctx_fetch_84:
 _p_191:
@@ -49942,7 +49942,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1208]
 br x16
-.word 9586
+.word 9592
 	.no_dead_strip plt__rgctx_fetch_85
 plt__rgctx_fetch_85:
 _p_192:
@@ -49950,7 +49950,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1216]
 br x16
-.word 9647
+.word 9653
 	.no_dead_strip plt__rgctx_fetch_86
 plt__rgctx_fetch_86:
 _p_193:
@@ -49958,7 +49958,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1224]
 br x16
-.word 9655
+.word 9661
 	.no_dead_strip plt__rgctx_fetch_87
 plt__rgctx_fetch_87:
 _p_194:
@@ -49966,7 +49966,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1232]
 br x16
-.word 9680
+.word 9686
 	.no_dead_strip plt__rgctx_fetch_88
 plt__rgctx_fetch_88:
 _p_195:
@@ -49974,7 +49974,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1240]
 br x16
-.word 9721
+.word 9727
 	.no_dead_strip plt__rgctx_fetch_89
 plt__rgctx_fetch_89:
 _p_196:
@@ -49982,7 +49982,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1248]
 br x16
-.word 9743
+.word 9749
 	.no_dead_strip plt__rgctx_fetch_90
 plt__rgctx_fetch_90:
 _p_197:
@@ -49990,7 +49990,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1256]
 br x16
-.word 9792
+.word 9798
 	.no_dead_strip plt__rgctx_fetch_91
 plt__rgctx_fetch_91:
 _p_198:
@@ -49998,7 +49998,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1264]
 br x16
-.word 9841
+.word 9847
 	.no_dead_strip plt__rgctx_fetch_92
 plt__rgctx_fetch_92:
 _p_199:
@@ -50006,7 +50006,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1272]
 br x16
-.word 9849
+.word 9855
 	.no_dead_strip plt__rgctx_fetch_93
 plt__rgctx_fetch_93:
 _p_200:
@@ -50014,7 +50014,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1280]
 br x16
-.word 9872
+.word 9878
 	.no_dead_strip plt__rgctx_fetch_94
 plt__rgctx_fetch_94:
 _p_201:
@@ -50022,7 +50022,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1288]
 br x16
-.word 9922
+.word 9928
 	.no_dead_strip plt__rgctx_fetch_95
 plt__rgctx_fetch_95:
 _p_202:
@@ -50030,7 +50030,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1296]
 br x16
-.word 9947
+.word 9953
 	.no_dead_strip plt__rgctx_fetch_96
 plt__rgctx_fetch_96:
 _p_203:
@@ -50038,7 +50038,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1304]
 br x16
-.word 9970
+.word 9976
 	.no_dead_strip plt__rgctx_fetch_97
 plt__rgctx_fetch_97:
 _p_204:
@@ -50046,7 +50046,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1312]
 br x16
-.word 10020
+.word 10026
 	.no_dead_strip plt__rgctx_fetch_98
 plt__rgctx_fetch_98:
 _p_205:
@@ -50054,7 +50054,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1320]
 br x16
-.word 10069
+.word 10075
 	.no_dead_strip plt__rgctx_fetch_99
 plt__rgctx_fetch_99:
 _p_206:
@@ -50062,7 +50062,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1328]
 br x16
-.word 10077
+.word 10083
 	.no_dead_strip plt__rgctx_fetch_100
 plt__rgctx_fetch_100:
 _p_207:
@@ -50070,7 +50070,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1336]
 br x16
-.word 10100
+.word 10106
 	.no_dead_strip plt__rgctx_fetch_101
 plt__rgctx_fetch_101:
 _p_208:
@@ -50078,7 +50078,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1344]
 br x16
-.word 10150
+.word 10156
 	.no_dead_strip plt__rgctx_fetch_102
 plt__rgctx_fetch_102:
 _p_209:
@@ -50086,7 +50086,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1352]
 br x16
-.word 10175
+.word 10181
 	.no_dead_strip plt__rgctx_fetch_103
 plt__rgctx_fetch_103:
 _p_210:
@@ -50094,7 +50094,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1360]
 br x16
-.word 10198
+.word 10204
 	.no_dead_strip plt__rgctx_fetch_104
 plt__rgctx_fetch_104:
 _p_211:
@@ -50102,7 +50102,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1368]
 br x16
-.word 10248
+.word 10254
 	.no_dead_strip plt__rgctx_fetch_105
 plt__rgctx_fetch_105:
 _p_212:
@@ -50110,7 +50110,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1376]
 br x16
-.word 10301
+.word 10307
 	.no_dead_strip plt__rgctx_fetch_106
 plt__rgctx_fetch_106:
 _p_213:
@@ -50118,7 +50118,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1384]
 br x16
-.word 10323
+.word 10329
 	.no_dead_strip plt__rgctx_fetch_107
 plt__rgctx_fetch_107:
 _p_214:
@@ -50126,7 +50126,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1392]
 br x16
-.word 10355
+.word 10361
 	.no_dead_strip plt__rgctx_fetch_108
 plt__rgctx_fetch_108:
 _p_215:
@@ -50134,7 +50134,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1400]
 br x16
-.word 10363
+.word 10369
 	.no_dead_strip plt__rgctx_fetch_109
 plt__rgctx_fetch_109:
 _p_216:
@@ -50142,7 +50142,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1408]
 br x16
-.word 10388
+.word 10394
 	.no_dead_strip plt__rgctx_fetch_110
 plt__rgctx_fetch_110:
 _p_217:
@@ -50150,7 +50150,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1416]
 br x16
-.word 10413
+.word 10419
 	.no_dead_strip plt__rgctx_fetch_111
 plt__rgctx_fetch_111:
 _p_218:
@@ -50158,7 +50158,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1424]
 br x16
-.word 10435
+.word 10441
 	.no_dead_strip plt__rgctx_fetch_112
 plt__rgctx_fetch_112:
 _p_219:
@@ -50166,7 +50166,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1432]
 br x16
-.word 10487
+.word 10493
 	.no_dead_strip plt__rgctx_fetch_113
 plt__rgctx_fetch_113:
 _p_220:
@@ -50174,7 +50174,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1440]
 br x16
-.word 10552
+.word 10558
 	.no_dead_strip plt__rgctx_fetch_114
 plt__rgctx_fetch_114:
 _p_221:
@@ -50182,7 +50182,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1448]
 br x16
-.word 10560
+.word 10566
 	.no_dead_strip plt__rgctx_fetch_115
 plt__rgctx_fetch_115:
 _p_222:
@@ -50190,7 +50190,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1456]
 br x16
-.word 10585
+.word 10591
 	.no_dead_strip plt__rgctx_fetch_116
 plt__rgctx_fetch_116:
 _p_223:
@@ -50198,7 +50198,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1464]
 br x16
-.word 10626
+.word 10632
 	.no_dead_strip plt__rgctx_fetch_117
 plt__rgctx_fetch_117:
 _p_224:
@@ -50206,7 +50206,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1472]
 br x16
-.word 10648
+.word 10654
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_225:
@@ -50214,7 +50214,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1480]
 br x16
-.word 10680
+.word 10686
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_226:
@@ -50222,7 +50222,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1488]
 br x16
-.word 10718
+.word 10724
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_227:
@@ -50230,7 +50230,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1496]
 br x16
-.word 10747
+.word 10753
 	.no_dead_strip plt__icall_native_ObjCRuntime_Trampolines__Block_copy_intptr
 plt__icall_native_ObjCRuntime_Trampolines__Block_copy_intptr:
 _p_228:
@@ -50238,7 +50238,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1504]
 br x16
-.word 10774
+.word 10780
 	.no_dead_strip plt__icall_native_ObjCRuntime_Trampolines__Block_release_intptr
 plt__icall_native_ObjCRuntime_Trampolines__Block_release_intptr:
 _p_229:
@@ -50246,7 +50246,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1512]
 br x16
-.word 10776
+.word 10782
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr:
 _p_230:
@@ -50254,7 +50254,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1520]
 br x16
-.word 10778
+.word 10784
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_231:
@@ -50262,7 +50262,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1528]
 br x16
-.word 10780
+.word 10786
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr:
 _p_232:
@@ -50270,7 +50270,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1536]
 br x16
-.word 10782
+.word 10788
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_nuint_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_nuint_objc_msgSend_intptr_intptr:
 _p_233:
@@ -50278,7 +50278,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1544]
 br x16
-.word 10784
+.word 10790
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_234:
@@ -50286,7 +50286,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1552]
 br x16
-.word 10786
+.word 10792
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool:
 _p_235:
@@ -50294,7 +50294,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1560]
 br x16
-.word 10788
+.word 10794
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_nuint_intptr_intptr_System_nuint
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_nuint_intptr_intptr_System_nuint:
 _p_236:
@@ -50302,7 +50302,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1568]
 br x16
-.word 10790
+.word 10796
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_237:
@@ -50310,7 +50310,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1576]
 br x16
-.word 10792
+.word 10798
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_238:
@@ -50318,7 +50318,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1584]
 br x16
-.word 10794
+.word 10800
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr:
 _p_239:
@@ -50326,7 +50326,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1592]
 br x16
-.word 10796
+.word 10802
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr
 plt__icall_native_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr:
 _p_240:
@@ -50334,7 +50334,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1600]
 br x16
-.word 10798
+.word 10804
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_nuint_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr:
 _p_241:
@@ -50342,7 +50342,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1608]
 br x16
-.word 10800
+.word 10806
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_intptr_intptr_long_intptr:
 _p_242:
@@ -50350,7 +50350,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1616]
 br x16
-.word 10802
+.word 10808
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_IntPtr_IntPtr_intptr_intptr_long_intptr_intptr:
 _p_243:
@@ -50358,7 +50358,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1624]
 br x16
-.word 10804
+.word 10810
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_nuint_intptr_intptr_System_nuint
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_nuint_intptr_intptr_System_nuint:
 _p_244:
@@ -50366,7 +50366,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1632]
 br x16
-.word 10806
+.word 10812
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_245:
@@ -50374,7 +50374,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1640]
 br x16
-.word 10808
+.word 10814
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_IntPtr_intptr_intptr_intptr_intptr_intptr:
 _p_246:
@@ -50382,7 +50382,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1648]
 br x16
-.word 10810
+.word 10816
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_bool_intptr_intptr_intptr_intptr_bool
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_bool_intptr_intptr_intptr_intptr_bool:
 _p_247:
@@ -50390,7 +50390,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1656]
 br x16
-.word 10812
+.word 10818
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDDatabaseQueryCancelHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDDatabaseQueryCancelHandler_Invoke_intptr_intptr:
 _p_248:
@@ -50398,7 +50398,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1664]
 br x16
-.word 10814
+.word 10820
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDDatabaseQueryPreviousSiblingKeyUpdateHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDDatabaseQueryPreviousSiblingKeyUpdateHandler_Invoke_intptr_intptr_intptr:
 _p_249:
@@ -50406,7 +50406,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1672]
 br x16
-.word 10816
+.word 10822
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDDatabaseQueryUpdateHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDDatabaseQueryUpdateHandler_Invoke_intptr_intptr:
 _p_250:
@@ -50414,7 +50414,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1680]
 br x16
-.word 10818
+.word 10824
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDDatabaseReferenceCompletionHandler_Invoke_intptr_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDDatabaseReferenceCompletionHandler_Invoke_intptr_intptr_intptr:
 _p_251:
@@ -50422,7 +50422,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1688]
 br x16
-.word 10820
+.word 10826
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDDatabaseReferenceTransactionCompletionHandler_Invoke_intptr_intptr_bool_intptr
 plt_ObjCRuntime_Trampolines_SDDatabaseReferenceTransactionCompletionHandler_Invoke_intptr_intptr_bool_intptr:
 _p_252:
@@ -50430,7 +50430,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1696]
 br x16
-.word 10822
+.word 10828
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDDatabaseReferenceTransactionHandler_Invoke_intptr_intptr
 plt_ObjCRuntime_Trampolines_SDDatabaseReferenceTransactionHandler_Invoke_intptr_intptr:
 _p_253:
@@ -50438,7 +50438,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1704]
 br x16
-.word 10824
+.word 10830
 	.no_dead_strip plt_ObjCRuntime_Runtime_TryGetNSObject_intptr
 plt_ObjCRuntime_Runtime_TryGetNSObject_intptr:
 _p_254:
@@ -50446,7 +50446,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1712]
 br x16
-.word 10826
+.word 10832
 	.no_dead_strip plt_ObjCRuntime_Class_GetClassForObject_intptr
 plt_ObjCRuntime_Class_GetClassForObject_intptr:
 _p_255:
@@ -50454,7 +50454,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1720]
 br x16
-.word 10831
+.word 10837
 	.no_dead_strip plt_intptr_op_Inequality_intptr_intptr
 plt_intptr_op_Inequality_intptr_intptr:
 _p_256:
@@ -50462,7 +50462,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1728]
 br x16
-.word 10836
+.word 10842
 	.no_dead_strip plt_ObjCRuntime_Class_Lookup_intptr
 plt_ObjCRuntime_Class_Lookup_intptr:
 _p_257:
@@ -50470,7 +50470,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1736]
 br x16
-.word 10841
+.word 10847
 	.no_dead_strip plt__rgctx_fetch_118
 plt__rgctx_fetch_118:
 _p_258:
@@ -50478,7 +50478,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1744]
 br x16
-.word 10864
+.word 10870
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_System_Type
 plt_ObjCRuntime_Class_GetHandle_System_Type:
 _p_259:
@@ -50486,7 +50486,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1752]
 br x16
-.word 10872
+.word 10878
 	.no_dead_strip plt_ObjCRuntime_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ObjCRuntime_Messaging_bool_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_260:
@@ -50494,7 +50494,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1760]
 br x16
-.word 10877
+.word 10883
 	.no_dead_strip plt__rgctx_fetch_119
 plt__rgctx_fetch_119:
 _p_261:
@@ -50502,7 +50502,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1768]
 br x16
-.word 10882
+.word 10888
 	.no_dead_strip plt_ObjCRuntime_Runtime_ConstructNSObject_T_REF_intptr_System_Type_ObjCRuntime_Runtime_MissingCtorResolution_intptr_intptr
 plt_ObjCRuntime_Runtime_ConstructNSObject_T_REF_intptr_System_Type_ObjCRuntime_Runtime_MissingCtorResolution_intptr_intptr:
 _p_262:
@@ -50510,7 +50510,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1776]
 br x16
-.word 10905
+.word 10911
 	.no_dead_strip plt__rgctx_fetch_120
 plt__rgctx_fetch_120:
 _p_263:
@@ -50518,7 +50518,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1784]
 br x16
-.word 10924
+.word 10930
 	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
 _p_264:
@@ -50526,7 +50526,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1792]
 br x16
-.word 10932
+.word 10938
 	.no_dead_strip plt_wrapper_castclass_object___castclass_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___castclass_with_cache_object_intptr_intptr:
 _p_265:
@@ -50534,7 +50534,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1800]
 br x16
-.word 10940
+.word 10946
 	.no_dead_strip plt_string_Format_string_object_object
 plt_string_Format_string_object_object:
 _p_266:
@@ -50542,7 +50542,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1808]
 br x16
-.word 10948
+.word 10954
 	.no_dead_strip plt_Foundation_NSArray_GetCount_intptr
 plt_Foundation_NSArray_GetCount_intptr:
 _p_267:
@@ -50550,7 +50550,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1816]
 br x16
-.word 10953
+.word 10959
 	.no_dead_strip plt__rgctx_fetch_121
 plt__rgctx_fetch_121:
 _p_268:
@@ -50558,7 +50558,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1824]
 br x16
-.word 10976
+.word 10982
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_269:
@@ -50566,7 +50566,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1832]
 br x16
-.word 10986
+.word 10992
 	.no_dead_strip plt__rgctx_fetch_122
 plt__rgctx_fetch_122:
 _p_270:
@@ -50574,7 +50574,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1840]
 br x16
-.word 10994
+.word 11000
 	.no_dead_strip plt_Foundation_NSArray_UnsafeGetItem_T_REF_intptr_System_nuint
 plt_Foundation_NSArray_UnsafeGetItem_T_REF_intptr_System_nuint:
 _p_271:
@@ -50582,7 +50582,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1848]
 br x16
-.word 11017
+.word 11023
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetIntPtrConstructor_System_Type
 plt_ObjCRuntime_Runtime_GetIntPtrConstructor_System_Type:
 _p_272:
@@ -50590,7 +50590,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1856]
 br x16
-.word 11036
+.word 11042
 	.no_dead_strip plt_System_Reflection_ConstructorInfo_op_Equality_System_Reflection_ConstructorInfo_System_Reflection_ConstructorInfo
 plt_System_Reflection_ConstructorInfo_op_Equality_System_Reflection_ConstructorInfo_System_Reflection_ConstructorInfo:
 _p_273:
@@ -50598,7 +50598,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1864]
 br x16
-.word 11041
+.word 11047
 	.no_dead_strip plt_ObjCRuntime_Runtime_MissingCtor_intptr_intptr_System_Type_ObjCRuntime_Runtime_MissingCtorResolution_intptr_intptr
 plt_ObjCRuntime_Runtime_MissingCtor_intptr_intptr_System_Type_ObjCRuntime_Runtime_MissingCtorResolution_intptr_intptr:
 _p_274:
@@ -50606,7 +50606,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1872]
 br x16
-.word 11046
+.word 11052
 	.no_dead_strip plt_System_Reflection_ConstructorInfo_Invoke_object__
 plt_System_Reflection_ConstructorInfo_Invoke_object__:
 _p_275:
@@ -50614,7 +50614,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1880]
 br x16
-.word 11051
+.word 11057
 	.no_dead_strip plt__rgctx_fetch_123
 plt__rgctx_fetch_123:
 _p_276:
@@ -50622,7 +50622,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1888]
 br x16
-.word 11074
+.word 11080
 	.no_dead_strip plt_Foundation_NSArray_GetAtIndex_intptr_System_nuint
 plt_Foundation_NSArray_GetAtIndex_intptr_System_nuint:
 _p_277:
@@ -50630,7 +50630,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1896]
 br x16
-.word 11082
+.word 11088
 	.no_dead_strip plt_Foundation_NSNull_get_Null
 plt_Foundation_NSNull_get_Null:
 _p_278:
@@ -50638,7 +50638,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1904]
 br x16
-.word 11087
+.word 11093
 	.no_dead_strip plt__rgctx_fetch_124
 plt__rgctx_fetch_124:
 _p_279:
@@ -50646,7 +50646,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1912]
 br x16
-.word 11110
+.word 11116
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetINativeObject_T_REF_intptr_bool
 plt_ObjCRuntime_Runtime_GetINativeObject_T_REF_intptr_bool:
 _p_280:
@@ -50654,7 +50654,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1920]
 br x16
-.word 11133
+.word 11139
 	.no_dead_strip plt__rgctx_fetch_125
 plt__rgctx_fetch_125:
 _p_281:
@@ -50662,7 +50662,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1928]
 br x16
-.word 11170
+.word 11176
 	.no_dead_strip plt__rgctx_fetch_126
 plt__rgctx_fetch_126:
 _p_282:
@@ -50670,7 +50670,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1936]
 br x16
-.word 11178
+.word 11184
 	.no_dead_strip plt_System_Type_get_IsInterface
 plt_System_Type_get_IsInterface:
 _p_283:
@@ -50678,7 +50678,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1944]
 br x16
-.word 11186
+.word 11192
 	.no_dead_strip plt_ObjCRuntime_Runtime_LookupINativeObjectImplementation_intptr_System_Type_System_Type
 plt_ObjCRuntime_Runtime_LookupINativeObjectImplementation_intptr_System_Type_System_Type:
 _p_284:
@@ -50686,7 +50686,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1952]
 br x16
-.word 11191
+.word 11197
 	.no_dead_strip plt_intptr_ToString_string
 plt_intptr_ToString_string:
 _p_285:
@@ -50694,7 +50694,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1960]
 br x16
-.word 11196
+.word 11202
 	.no_dead_strip plt_ObjCRuntime_Class_class_getName_intptr
 plt_ObjCRuntime_Class_class_getName_intptr:
 _p_286:
@@ -50702,7 +50702,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1968]
 br x16
-.word 11201
+.word 11207
 	.no_dead_strip plt__jit_icall_mono_helper_newobj_mscorlib
 plt__jit_icall_mono_helper_newobj_mscorlib:
 _p_287:
@@ -50710,7 +50710,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1976]
 br x16
-.word 11206
+.word 11212
 	.no_dead_strip plt_ObjCRuntime_ErrorHelper_CreateError_int_string_object__
 plt_ObjCRuntime_ErrorHelper_CreateError_int_string_object__:
 _p_288:
@@ -50718,7 +50718,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1984]
 br x16
-.word 11236
+.word 11242
 	.no_dead_strip plt__rgctx_fetch_127
 plt__rgctx_fetch_127:
 _p_289:
@@ -50726,7 +50726,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #1992]
 br x16
-.word 11241
+.word 11247
 	.no_dead_strip plt_ObjCRuntime_Runtime_ConstructNSObject_T_REF_intptr_System_Type_ObjCRuntime_Runtime_MissingCtorResolution_intptr_intptr_0
 plt_ObjCRuntime_Runtime_ConstructNSObject_T_REF_intptr_System_Type_ObjCRuntime_Runtime_MissingCtorResolution_intptr_intptr_0:
 _p_290:
@@ -50734,7 +50734,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #2000]
 br x16
-.word 11264
+.word 11270
 	.no_dead_strip plt__rgctx_fetch_128
 plt__rgctx_fetch_128:
 _p_291:
@@ -50742,7 +50742,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #2008]
 br x16
-.word 11283
+.word 11289
 	.no_dead_strip plt_ObjCRuntime_Runtime_ConstructINativeObject_T_REF_intptr_bool_System_Type_ObjCRuntime_Runtime_MissingCtorResolution
 plt_ObjCRuntime_Runtime_ConstructINativeObject_T_REF_intptr_bool_System_Type_ObjCRuntime_Runtime_MissingCtorResolution:
 _p_292:
@@ -50750,7 +50750,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #2016]
 br x16
-.word 11306
+.word 11312
 	.no_dead_strip plt_System_Type_get_IsByRef
 plt_System_Type_get_IsByRef:
 _p_293:
@@ -50758,7 +50758,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #2024]
 br x16
-.word 11325
+.word 11331
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetIntPtr_BoolConstructor_System_Type
 plt_ObjCRuntime_Runtime_GetIntPtr_BoolConstructor_System_Type:
 _p_294:
@@ -50766,7 +50766,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #2032]
 br x16
-.word 11330
+.word 11336
 	.no_dead_strip plt__rgctx_fetch_129
 plt__rgctx_fetch_129:
 _p_295:
@@ -50774,7 +50774,7 @@ adrp x16, mono_aot_Firebase_Database_got@PAGE+4096
 add x16, x16, mono_aot_Firebase_Database_got@PAGEOFF
 ldr x16, [x16, #2040]
 br x16
-.word 11353
+.word 11359
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -51338,13 +51338,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 472,6144,296,391,70,391195135,0,81097
-	.long 128,8,8,8,0,25,86872,5768
+	.long 472,6144,296,391,70,391195135,0,81103
+	.long 128,8,8,8,0,25,86880,5768
 	.long 5416,3528,0,4504,5336,3864,0,2808
 	.long 552,5760,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 52,210,106,157,214,35,222,178,142,117,92,221,15,243,34,185
+	.byte 194,4,138,46,250,25,106,113,86,187,105,19,91,37,182,155
 	.globl _mono_aot_module_Firebase_Database_info
 	.align 3
 _mono_aot_module_Firebase_Database_info:
