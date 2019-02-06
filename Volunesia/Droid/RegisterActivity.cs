@@ -21,6 +21,9 @@ namespace Volunesia.Droid
 
             SetContentView(Resource.Layout.Register);
 
+
+           
+
             Button volunteerSignUpButton = FindViewById<Button>(Resource.Id.volunteerButton);
             Button nonprofitSignUpButton = FindViewById<Button>(Resource.Id.nonProfitButton);
 
@@ -30,7 +33,6 @@ namespace Volunesia.Droid
 
         public void JumpToVolunteerRegisterActivity(object sender, EventArgs e)
         {
-            //
             StartActivity(typeof(VolunteerRegisterActivity));
         }
 

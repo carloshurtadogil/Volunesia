@@ -8,10 +8,14 @@ using Firebase.Auth;
 namespace Volunesia.Droid.Service
 {
 
-    public class AndroidAuthenticationService : IAuthenticationService
+    public class AndroidAuthenticationService
     {
+
+
         public Task<bool> RegisterVolunteerAsync()
         {
+
+            //AppData_Droid.Auth.CreateUserWithEmailAndPassword("", "");
             //var newUser = Firebase.Auth.FirebaseAuth.GetInstance(MainActivity.app).CreateUserWithEmailAndPasswordAsync();
             throw new NotImplementedException();
         }

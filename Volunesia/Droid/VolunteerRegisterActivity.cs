@@ -16,23 +16,16 @@ namespace Volunesia.Droid
     public class VolunteerRegisterActivity : Activity
     {
 
-        public EditText username { get; set; }
-        public EditText emailAddress { get; set; }
-        public EditText password { get; set; }
-        public EditText confirmPassword { get; set; }
+        public EditText personalDescription { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             //Set VolunteerRegister view
             SetContentView(Resource.Layout.VolunteerRegister);
 
-            username = FindViewById<EditText>(Resource.Id.usernameField);
-            emailAddress = FindViewById<EditText>(Resource.Id.emailAddressField);
-
-            password = FindViewById<EditText>(Resource.Id.passwordField);
-            confirmPassword = FindViewById<EditText>(Resource.Id.confirmPasswordField);
-
-
+            personalDescription = FindViewById<EditText>(Resource.Id.personalDescriptionField);
+            
             var registrationButton = FindViewById<Button>(Resource.Id.registerVolunteerButton);
 
             registrationButton.Click += PerformVolunteerRegistration;
@@ -42,25 +35,7 @@ namespace Volunesia.Droid
 
         public void PerformVolunteerRegistration(object sender, EventArgs e)
         {
-            bool passwordSuccess = true;
-            bool emailSuccess = true;
-            CredentialsVerification credVerification = new CredentialsVerification();
-            if(!credVerification.CheckIfPasswordsMatch(password.Text, confirmPassword.Text))
-            {
-                passwordSuccess = false;
-            }
 
-            if (!credVerification.CheckIfEmailIsValid(emailAddress.Text))
-            {
-                emailSuccess = true;
-            }
-
-            if(passwordSuccess && emailSuccess)
-            {
-                AppData_Droid.GetInstance(this);
-                AppData_Droid.Auth.CreateUserWithEmailAndPassword(emailAddress.Text, password.Text);
-              
-            }
         }
     }
 }

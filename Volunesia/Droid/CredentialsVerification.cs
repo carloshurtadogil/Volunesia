@@ -30,14 +30,14 @@ namespace Volunesia.Droid
             try
             {
                 var email = new System.Net.Mail.MailAddress(emailAddress);
-
+                
                 if (emailAddress.Equals(email.Address))
                 {
                     return true;
                 }
                 return false;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
