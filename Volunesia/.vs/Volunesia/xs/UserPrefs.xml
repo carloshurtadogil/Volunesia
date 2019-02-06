@@ -1,24 +1,22 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.d38b374887f0c304b9afdb8cdf76da4524b8df7c" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NPTypeSelectionController.cs">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D17D7D17-D02D-47C2-8267-4C74CA153181" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/AppData_iOS.cs">
     <Files>
-      <File FileName="iOS/ViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/RegistrationViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/EmailRegistrationViewController.cs" Line="30" Column="17" />
-      <File FileName="iOS/Services/AppData_iOS.cs" Line="1" Column="1" />
-      <File FileName="iOS/UserTypeSelectionController.cs" Line="32" Column="48" />
-      <File FileName="Volunesia/Models/User.cs" Line="1" Column="1" />
-      <File FileName="Volunesia/Models/Volunteer.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/Register.cs" Line="30" Column="29" />
+      <File FileName="Droid/AppData_Droid.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="33" Column="62" />
+      <File FileName="Droid/VolunteerRegisterActivity.cs" Line="47" Column="84" />
+      <File FileName="Volunesia/Models/Attendee.cs" Line="1" Column="1" />
+      <File FileName="Volunesia/Models/EventCategory.cs" Line="1" Column="1" />
+      <File FileName="Volunesia/Models/Nonprofit.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/EmailRegistrationViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Services/NonprofitRegistration.cs" Line="14" Column="9" />
-      <File FileName="iOS/Services/Register.cs" Line="37" Column="35" />
-      <File FileName="iOS/Main.cs" Line="21" Column="1" />
-      <File FileName="iOS/NPTypeSelectionController.cs" Line="15" Column="18" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

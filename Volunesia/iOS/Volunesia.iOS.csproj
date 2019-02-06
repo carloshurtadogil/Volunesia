@@ -140,30 +140,30 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services\AppData_iOS.cs" />
     <Compile Include="AlertShow.cs" />
-    <Compile Include="RegistrationViewController.cs" />
-    <Compile Include="RegistrationViewController.designer.cs">
-      <DependentUpon>RegistrationViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserTypeSelectionController.cs" />
-    <Compile Include="UserTypeSelectionController.designer.cs">
-      <DependentUpon>UserTypeSelectionController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EmailRegistrationViewController.cs" />
-    <Compile Include="EmailRegistrationViewController.designer.cs">
+    <Compile Include="Services\NonprofitRegistration.cs" />
+    <Compile Include="Services\Register.cs" />
+    <Compile Include="Controllers\EmailRegistrationViewController.cs" />
+    <Compile Include="Controllers\EmailRegistrationViewController.designer.cs">
       <DependentUpon>EmailRegistrationViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\NonprofitRegistration.cs" />
-    <Compile Include="NPTypeSelectionController.cs" />
-    <Compile Include="NPTypeSelectionController.designer.cs">
+    <Compile Include="Controllers\NPTypeSelectionController.cs" />
+    <Compile Include="Controllers\NPTypeSelectionController.designer.cs">
       <DependentUpon>NPTypeSelectionController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\Register.cs" />
+    <Compile Include="Controllers\RegistrationViewController.cs" />
+    <Compile Include="Controllers\RegistrationViewController.designer.cs">
+      <DependentUpon>RegistrationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserTypeSelectionController.cs" />
+    <Compile Include="Controllers\UserTypeSelectionController.designer.cs">
+      <DependentUpon>UserTypeSelectionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ViewController.cs" />
+    <Compile Include="Controllers\ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

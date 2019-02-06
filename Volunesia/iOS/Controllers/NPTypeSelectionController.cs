@@ -1,6 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
+using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
 {
@@ -12,6 +13,8 @@ namespace Volunesia.iOS
 
         partial void EstablishedButton_TouchUpInside(UIButton sender)
         {
+            Register r = new Register();
+            r.CreateNonprofitOrganization("Established", "Red Cross", "Charles", "563-564-4354", "90808");
             AlertShow.Show(this, "Established", "To be implemented");
         }
 

@@ -11,6 +11,7 @@ namespace Volunesia.iOS.Services
         private static AppData_iOS Instance;
         public static DatabaseReference DataNode  { get; set; }
         public static DatabaseReference UsersNode { get; set; }
+        public static DatabaseReference NonprofitNode { get; set; }
         public static Auth Auth;
 
         private AppData_iOS()
@@ -18,6 +19,8 @@ namespace Volunesia.iOS.Services
             Firebase.Core.App.Configure();
             DataNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("data");
+            NonprofitNode = Database.DefaultInstance.GetRootReference()
+                               .GetChild("nonprofitorgs");
             UsersNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("users");
             Auth = Auth.DefaultInstance;

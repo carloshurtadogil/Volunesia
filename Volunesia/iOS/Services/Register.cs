@@ -23,6 +23,15 @@ namespace Volunesia.iOS.Services
             AppData_iOS.UsersNode.GetChild(UID).SetValue(FirebaseUser);
         }
 
+        public void CreateNonprofitOrganization(string type, string name, string primaryContactUID, string phone, string zip)
+        {
+            object[] keys = { "name", "type", "primarycontact", "phone", "zip"  };
+            //object[] vals = { name, type, primaryContactUID, phone, zip };
+            object[] vals = { "Red Cross", "established", "12321291", "5625252525", "90808" };
+            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+            AppData_iOS.NonprofitNode.GetChild("1234321").SetValue(FirebaseUser);
+        }
+
         public bool CreateNonprofitUser(string firstname, string lastname, string email, string password, UIViewController view)
         {
             bool success = true;

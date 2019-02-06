@@ -481,63 +481,7 @@ exception_handling:;
 }
 
 
-static void native_to_managed_trampoline_12 (id self, SEL _cmd, MonoMethod **managed_method_ptr, UIStoryboardSegue * p0, NSObject * p1, uint32_t token_ref)
-{
-	NSObject *nsobj0 = NULL;
-	MonoObject *mobj0 = NULL;
-	int32_t created0 = false;
-	MonoType *paramtype0 = NULL;
-	NSObject *nsobj1 = NULL;
-	MonoObject *mobj1 = NULL;
-	int32_t created1 = false;
-	MonoType *paramtype1 = NULL;
-	guint32 exception_gchandle = 0;
-	MonoMethod *managed_method = *managed_method_ptr;
-	void *arg_ptrs [2];
-	MONO_ASSERT_GC_SAFE;
-	MONO_THREAD_ATTACH;
-
-	MonoObject *mthis = NULL;
-	if (self) {
-		mthis = xamarin_get_managed_object_for_ptr_fast (self, &exception_gchandle);
-		if (exception_gchandle != 0) goto exception_handling;
-	}
-	if (!managed_method) {
-		MonoReflectionMethod *reflection_method = xamarin_get_method_from_token (token_ref, &exception_gchandle);
-		if (exception_gchandle != 0) goto exception_handling;
-		managed_method = xamarin_get_reflection_method_method (reflection_method);
-		*managed_method_ptr = managed_method;
-	}
-	xamarin_check_for_gced_object (mthis, _cmd, self, managed_method, &exception_gchandle);
-	if (exception_gchandle != 0) goto exception_handling;
-	nsobj0 = (NSObject *) p0;
-	if (nsobj0) {
-		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
-		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
-		if (exception_gchandle != 0) goto exception_handling;
-		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
-	}
-	arg_ptrs [0] = mobj0;
-	nsobj1 = (NSObject *) p1;
-	if (nsobj1) {
-		paramtype1 = xamarin_get_parameter_type (managed_method, 1);
-		mobj1 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj1, false, paramtype1, &created1, _cmd, managed_method, &exception_gchandle);
-		if (exception_gchandle != 0) goto exception_handling;
-		xamarin_verify_parameter (mobj1, _cmd, self, nsobj1, 1, mono_class_from_mono_type (paramtype1), managed_method);
-	}
-	arg_ptrs [1] = mobj1;
-
-	mono_runtime_invoke (managed_method, mthis, arg_ptrs, NULL);
-
-exception_handling:;
-	MONO_THREAD_DETACH;
-	if (exception_gchandle != 0)
-		xamarin_process_managed_exception_gchandle (exception_gchandle);
-	return;
-}
-
-
-static UILabel * native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_method_ptr, uint32_t token_ref)
+static UILabel * native_to_managed_trampoline_12 (id self, SEL _cmd, MonoMethod **managed_method_ptr, uint32_t token_ref)
 {
 	MonoObject *retval = NULL;
 	guint32 exception_gchandle = 0;
@@ -583,7 +527,7 @@ exception_handling:;
 }
 
 
-static void native_to_managed_trampoline_14 (id self, SEL _cmd, MonoMethod **managed_method_ptr, UILabel * p0, uint32_t token_ref)
+static void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_method_ptr, UILabel * p0, uint32_t token_ref)
 {
 	NSObject *nsobj0 = NULL;
 	MonoObject *mobj0 = NULL;
@@ -627,7 +571,7 @@ exception_handling:;
 }
 
 
-static UITextField * native_to_managed_trampoline_15 (id self, SEL _cmd, MonoMethod **managed_method_ptr, uint32_t token_ref)
+static UITextField * native_to_managed_trampoline_14 (id self, SEL _cmd, MonoMethod **managed_method_ptr, uint32_t token_ref)
 {
 	MonoObject *retval = NULL;
 	guint32 exception_gchandle = 0;
@@ -673,7 +617,7 @@ exception_handling:;
 }
 
 
-static void native_to_managed_trampoline_16 (id self, SEL _cmd, MonoMethod **managed_method_ptr, UITextField * p0, uint32_t token_ref)
+static void native_to_managed_trampoline_15 (id self, SEL _cmd, MonoMethod **managed_method_ptr, UITextField * p0, uint32_t token_ref)
 {
 	NSObject *nsobj0 = NULL;
 	MonoObject *mobj0 = NULL;
@@ -706,6 +650,62 @@ static void native_to_managed_trampoline_16 (id self, SEL _cmd, MonoMethod **man
 		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
 	}
 	arg_ptrs [0] = mobj0;
+
+	mono_runtime_invoke (managed_method, mthis, arg_ptrs, NULL);
+
+exception_handling:;
+	MONO_THREAD_DETACH;
+	if (exception_gchandle != 0)
+		xamarin_process_managed_exception_gchandle (exception_gchandle);
+	return;
+}
+
+
+static void native_to_managed_trampoline_16 (id self, SEL _cmd, MonoMethod **managed_method_ptr, UIStoryboardSegue * p0, NSObject * p1, uint32_t token_ref)
+{
+	NSObject *nsobj0 = NULL;
+	MonoObject *mobj0 = NULL;
+	int32_t created0 = false;
+	MonoType *paramtype0 = NULL;
+	NSObject *nsobj1 = NULL;
+	MonoObject *mobj1 = NULL;
+	int32_t created1 = false;
+	MonoType *paramtype1 = NULL;
+	guint32 exception_gchandle = 0;
+	MonoMethod *managed_method = *managed_method_ptr;
+	void *arg_ptrs [2];
+	MONO_ASSERT_GC_SAFE;
+	MONO_THREAD_ATTACH;
+
+	MonoObject *mthis = NULL;
+	if (self) {
+		mthis = xamarin_get_managed_object_for_ptr_fast (self, &exception_gchandle);
+		if (exception_gchandle != 0) goto exception_handling;
+	}
+	if (!managed_method) {
+		MonoReflectionMethod *reflection_method = xamarin_get_method_from_token (token_ref, &exception_gchandle);
+		if (exception_gchandle != 0) goto exception_handling;
+		managed_method = xamarin_get_reflection_method_method (reflection_method);
+		*managed_method_ptr = managed_method;
+	}
+	xamarin_check_for_gced_object (mthis, _cmd, self, managed_method, &exception_gchandle);
+	if (exception_gchandle != 0) goto exception_handling;
+	nsobj0 = (NSObject *) p0;
+	if (nsobj0) {
+		paramtype0 = xamarin_get_parameter_type (managed_method, 0);
+		mobj0 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj0, false, paramtype0, &created0, _cmd, managed_method, &exception_gchandle);
+		if (exception_gchandle != 0) goto exception_handling;
+		xamarin_verify_parameter (mobj0, _cmd, self, nsobj0, 0, mono_class_from_mono_type (paramtype0), managed_method);
+	}
+	arg_ptrs [0] = mobj0;
+	nsobj1 = (NSObject *) p1;
+	if (nsobj1) {
+		paramtype1 = xamarin_get_parameter_type (managed_method, 1);
+		mobj1 = xamarin_get_nsobject_with_type_for_ptr_created (nsobj1, false, paramtype1, &created1, _cmd, managed_method, &exception_gchandle);
+		if (exception_gchandle != 0) goto exception_handling;
+		xamarin_verify_parameter (mobj1, _cmd, self, nsobj1, 1, mono_class_from_mono_type (paramtype1), managed_method);
+	}
+	arg_ptrs [1] = mobj1;
 
 	mono_runtime_invoke (managed_method, mthis, arg_ptrs, NULL);
 
@@ -1036,402 +1036,6 @@ exception_handling:;
 	}
 @end
 
-@implementation ViewController {
-	XamarinObject __monoObjectGCHandle;
-}
-	-(void) release
-	{
-		xamarin_release_trampoline (self, _cmd);
-	}
-
-	-(id) retain
-	{
-		return xamarin_retain_trampoline (self, _cmd);
-	}
-
-	-(int) xamarinGetGCHandle
-	{
-		return __monoObjectGCHandle.gc_handle;
-	}
-
-	-(void) xamarinSetGCHandle: (int) gc_handle
-	{
-		__monoObjectGCHandle.gc_handle = gc_handle;
-		__monoObjectGCHandle.native_object = self;
-	}
-
-
-	-(UIButton *) Button
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x7400);
-	}
-
-	-(void) setButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x7500);
-	}
-
-	-(UIImageView *) BackgroundImageView
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0x7600);
-	}
-
-	-(void) setBackgroundImageView:(UIImageView *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0x7700);
-	}
-
-	-(UIButton *) LoginButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x7800);
-	}
-
-	-(void) setLoginButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x7900);
-	}
-
-	-(UIImageView *) LogoImage
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0x7A00);
-	}
-
-	-(void) setLogoImage:(UIImageView *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0x7B00);
-	}
-
-	-(UIButton *) SignupButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x7C00);
-	}
-
-	-(void) setSignupButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x7D00);
-	}
-
-	-(void) viewDidLoad
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x7000);
-	}
-
-	-(void) didReceiveMemoryWarning
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0x7200);
-	}
-
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, p1, 0x7300);
-	}
-
-	-(void) LoginButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x7E00);
-	}
-
-	-(void) SignupButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x7F00);
-	}
-
-	-(BOOL) conformsToProtocol:(void *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
-	}
-@end
-
-@implementation RegistrationViewController {
-	XamarinObject __monoObjectGCHandle;
-}
-	-(void) release
-	{
-		xamarin_release_trampoline (self, _cmd);
-	}
-
-	-(id) retain
-	{
-		return xamarin_retain_trampoline (self, _cmd);
-	}
-
-	-(int) xamarinGetGCHandle
-	{
-		return __monoObjectGCHandle.gc_handle;
-	}
-
-	-(void) xamarinSetGCHandle: (int) gc_handle
-	{
-		__monoObjectGCHandle.gc_handle = gc_handle;
-		__monoObjectGCHandle.native_object = self;
-	}
-
-
-	-(UIButton *) BackButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x8600);
-	}
-
-	-(void) setBackButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x8700);
-	}
-
-	-(UIImageView *) BackgroundImage
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0x8800);
-	}
-
-	-(void) setBackgroundImage:(UIImageView *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0x8900);
-	}
-
-	-(UIButton *) ContinueButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x8A00);
-	}
-
-	-(void) setContinueButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x8B00);
-	}
-
-	-(UILabel *) FirstNameLabel
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0x8C00);
-	}
-
-	-(void) setFirstNameLabel:(UILabel *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x8D00);
-	}
-
-	-(UITextField *) FirstNameTextfield
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x8E00);
-	}
-
-	-(void) setFirstNameTextfield:(UITextField *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x8F00);
-	}
-
-	-(UILabel *) LastNameLabel
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0x9000);
-	}
-
-	-(void) setLastNameLabel:(UILabel *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x9100);
-	}
-
-	-(UITextField *) LastNameTextfield
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x9200);
-	}
-
-	-(void) setLastNameTextfield:(UITextField *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x9300);
-	}
-
-	-(UILabel *) QuestionLabel
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0x9400);
-	}
-
-	-(void) setQuestionLabel:(UILabel *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x9500);
-	}
-
-	-(UILabel *) StatementLabel
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0x9600);
-	}
-
-	-(void) setStatementLabel:(UILabel *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x9700);
-	}
-
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, p1, 0x8400);
-	}
-
-	-(void) BackButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9800);
-	}
-
-	-(void) ContinueButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9900);
-	}
-
-	-(BOOL) conformsToProtocol:(void *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
-	}
-@end
-
-@implementation UserTypeSelectionController {
-	XamarinObject __monoObjectGCHandle;
-}
-	-(void) release
-	{
-		xamarin_release_trampoline (self, _cmd);
-	}
-
-	-(id) retain
-	{
-		return xamarin_retain_trampoline (self, _cmd);
-	}
-
-	-(int) xamarinGetGCHandle
-	{
-		return __monoObjectGCHandle.gc_handle;
-	}
-
-	-(void) xamarinSetGCHandle: (int) gc_handle
-	{
-		__monoObjectGCHandle.gc_handle = gc_handle;
-		__monoObjectGCHandle.native_object = self;
-	}
-
-
-	-(UIButton *) BackButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xA600);
-	}
-
-	-(void) setBackButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xA700);
-	}
-
-	-(UIImageView *) BackgroundImage
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xA800);
-	}
-
-	-(void) setBackgroundImage:(UIImageView *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xA900);
-	}
-
-	-(UIButton *) NonprofitButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xAA00);
-	}
-
-	-(void) setNonprofitButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xAB00);
-	}
-
-	-(UILabel *) QuestionLabel
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xAC00);
-	}
-
-	-(void) setQuestionLabel:(UILabel *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xAD00);
-	}
-
-	-(UIButton *) VolunteerButton
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xAE00);
-	}
-
-	-(void) setVolunteerButton:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xAF00);
-	}
-
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, p1, 0xA400);
-	}
-
-	-(void) BackButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xB000);
-	}
-
-	-(void) NonprofitButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xB100);
-	}
-
-	-(void) VolunteerButton_TouchUpInside:(UIButton *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xB200);
-	}
-
-	-(BOOL) conformsToProtocol:(void *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
-	}
-@end
-
 @implementation EmailRegistrationViewController {
 	XamarinObject __monoObjectGCHandle;
 }
@@ -1460,139 +1064,139 @@ exception_handling:;
 	-(UIButton *) BackButton
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xBC00);
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x7700);
 	}
 
 	-(void) setBackButton:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xBD00);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x7800);
 	}
 
 	-(UIImageView *) BackgroundImage
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xBE00);
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0x7900);
 	}
 
 	-(void) setBackgroundImage:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xBF00);
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0x7A00);
 	}
 
 	-(UILabel *) ConfirmPasswordLabel
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xC000);
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0x7B00);
 	}
 
 	-(void) setConfirmPasswordLabel:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xC100);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0x7C00);
 	}
 
 	-(UITextField *) ConfirmPasswordTextfield
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0xC200);
+		return native_to_managed_trampoline_14 (self, _cmd, &managed_method, 0x7D00);
 	}
 
 	-(void) setConfirmPasswordTextfield:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0xC300);
+		native_to_managed_trampoline_15 (self, _cmd, &managed_method, p0, 0x7E00);
 	}
 
 	-(UIButton *) ContinueButton
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xC400);
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x7F00);
 	}
 
 	-(void) setContinueButton:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xC500);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x8000);
 	}
 
 	-(UILabel *) EmailLabel
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xC600);
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0x8100);
 	}
 
 	-(void) setEmailLabel:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xC700);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0x8200);
 	}
 
 	-(UITextField *) EmailTextfield
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0xC800);
+		return native_to_managed_trampoline_14 (self, _cmd, &managed_method, 0x8300);
 	}
 
 	-(void) setEmailTextfield:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0xC900);
+		native_to_managed_trampoline_15 (self, _cmd, &managed_method, p0, 0x8400);
 	}
 
 	-(UILabel *) LoginRequestLabel
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xCA00);
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0x8500);
 	}
 
 	-(void) setLoginRequestLabel:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xCB00);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0x8600);
 	}
 
 	-(UITextField *) PasswordTextfield
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0xCC00);
+		return native_to_managed_trampoline_14 (self, _cmd, &managed_method, 0x8700);
 	}
 
 	-(void) setPasswordTextfield:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0xCD00);
+		native_to_managed_trampoline_15 (self, _cmd, &managed_method, p0, 0x8800);
 	}
 
 	-(UILabel *) PaswordLabel
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xCE00);
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0x8900);
 	}
 
 	-(void) setPaswordLabel:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xCF00);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0x8A00);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, p1, 0xBA00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, p1, 0x7500);
 	}
 
 	-(void) BackButton_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD000);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x8B00);
 	}
 
 	-(void) ContinueButton_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD100);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x8C00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -1630,97 +1234,493 @@ exception_handling:;
 	-(UIButton *) BackButton
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xD400);
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x8F00);
 	}
 
 	-(void) setBackButton:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD500);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9000);
 	}
 
 	-(UIImageView *) BackgroundImage
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xD600);
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0x9100);
 	}
 
 	-(void) setBackgroundImage:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xD700);
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0x9200);
 	}
 
 	-(UIButton *) EstablishedButton
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xD800);
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x9300);
 	}
 
 	-(void) setEstablishedButton:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD900);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9400);
 	}
 
 	-(UIButton *) LocalButton
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xDA00);
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x9500);
 	}
 
 	-(void) setLocalButton:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xDB00);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9600);
 	}
 
 	-(UILabel *) QuestionLabel
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xDC00);
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0x9700);
 	}
 
 	-(void) setQuestionLabel:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xDD00);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0x9800);
 	}
 
 	-(UIButton *) SchoolButton
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xDE00);
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0x9900);
 	}
 
 	-(void) setSchoolButton:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xDF00);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9A00);
 	}
 
 	-(void) BackButton_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE000);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9B00);
 	}
 
 	-(void) EstablishedButton_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE100);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9C00);
 	}
 
 	-(void) LocalButton_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE200);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9D00);
 	}
 
 	-(void) SchoolButton_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE300);
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0x9E00);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
+	}
+@end
+
+@implementation RegistrationViewController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UIButton *) BackButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xA300);
+	}
+
+	-(void) setBackButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xA400);
+	}
+
+	-(UIImageView *) BackgroundImage
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xA500);
+	}
+
+	-(void) setBackgroundImage:(UIImageView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xA600);
+	}
+
+	-(UIButton *) ContinueButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xA700);
+	}
+
+	-(void) setContinueButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xA800);
+	}
+
+	-(UILabel *) FirstNameLabel
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0xA900);
+	}
+
+	-(void) setFirstNameLabel:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0xAA00);
+	}
+
+	-(UITextField *) FirstNameTextfield
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_14 (self, _cmd, &managed_method, 0xAB00);
+	}
+
+	-(void) setFirstNameTextfield:(UITextField *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_15 (self, _cmd, &managed_method, p0, 0xAC00);
+	}
+
+	-(UILabel *) LastNameLabel
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0xAD00);
+	}
+
+	-(void) setLastNameLabel:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0xAE00);
+	}
+
+	-(UITextField *) LastNameTextfield
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_14 (self, _cmd, &managed_method, 0xAF00);
+	}
+
+	-(void) setLastNameTextfield:(UITextField *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_15 (self, _cmd, &managed_method, p0, 0xB000);
+	}
+
+	-(UILabel *) QuestionLabel
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0xB100);
+	}
+
+	-(void) setQuestionLabel:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0xB200);
+	}
+
+	-(UILabel *) StatementLabel
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0xB300);
+	}
+
+	-(void) setStatementLabel:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0xB400);
+	}
+
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, p1, 0xA100);
+	}
+
+	-(void) BackButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xB500);
+	}
+
+	-(void) ContinueButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xB600);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
+	}
+@end
+
+@implementation UserTypeSelectionController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UIButton *) BackButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xC300);
+	}
+
+	-(void) setBackButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xC400);
+	}
+
+	-(UIImageView *) BackgroundImage
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xC500);
+	}
+
+	-(void) setBackgroundImage:(UIImageView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xC600);
+	}
+
+	-(UIButton *) NonprofitButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xC700);
+	}
+
+	-(void) setNonprofitButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xC800);
+	}
+
+	-(UILabel *) QuestionLabel
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_12 (self, _cmd, &managed_method, 0xC900);
+	}
+
+	-(void) setQuestionLabel:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, 0xCA00);
+	}
+
+	-(UIButton *) VolunteerButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xCB00);
+	}
+
+	-(void) setVolunteerButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xCC00);
+	}
+
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, p1, 0xC100);
+	}
+
+	-(void) BackButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xCD00);
+	}
+
+	-(void) NonprofitButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xCE00);
+	}
+
+	-(void) VolunteerButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xCF00);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
+	}
+@end
+
+@implementation ViewController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UIButton *) Button
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xD700);
+	}
+
+	-(void) setButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD800);
+	}
+
+	-(UIImageView *) BackgroundImageView
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xD900);
+	}
+
+	-(void) setBackgroundImageView:(UIImageView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xDA00);
+	}
+
+	-(UIButton *) LoginButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xDB00);
+	}
+
+	-(void) setLoginButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xDC00);
+	}
+
+	-(UIImageView *) LogoImage
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xDD00);
+	}
+
+	-(void) setLogoImage:(UIImageView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xDE00);
+	}
+
+	-(UIButton *) SignupButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xDF00);
+	}
+
+	-(void) setSignupButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE000);
+	}
+
+	-(void) viewDidLoad
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0xD300);
+	}
+
+	-(void) didReceiveMemoryWarning
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, 0xD500);
+	}
+
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, p1, 0xD600);
+	}
+
+	-(void) LoginButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE100);
+	}
+
+	-(void) SignupButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -1880,11 +1880,11 @@ exception_handling:;
 		{ NULL, 0x6B06 /* #32 'NSData' => 'Foundation.NSData, Xamarin.iOS' */ },
 		{ NULL, 0x6E06 /* #33 'NSDictionary' => 'Foundation.NSDictionary, Xamarin.iOS' */ },
 		{ NULL, 0x1400 /* #34 'AppDelegate' => 'Volunesia.iOS.AppDelegate, Volunesia.iOS' */ },
-		{ NULL, 0x1500 /* #35 'ViewController' => 'Volunesia.iOS.ViewController, Volunesia.iOS' */ },
-		{ NULL, 0x1700 /* #36 'RegistrationViewController' => 'Volunesia.iOS.RegistrationViewController, Volunesia.iOS' */ },
-		{ NULL, 0x1800 /* #37 'UserTypeSelectionController' => 'Volunesia.iOS.UserTypeSelectionController, Volunesia.iOS' */ },
-		{ NULL, 0x1900 /* #38 'EmailRegistrationViewController' => 'Volunesia.iOS.EmailRegistrationViewController, Volunesia.iOS' */ },
-		{ NULL, 0x1A00 /* #39 'NPTypeSelectionController' => 'Volunesia.iOS.NPTypeSelectionController, Volunesia.iOS' */ },
+		{ NULL, 0x1600 /* #35 'EmailRegistrationViewController' => 'Volunesia.iOS.EmailRegistrationViewController, Volunesia.iOS' */ },
+		{ NULL, 0x1700 /* #36 'NPTypeSelectionController' => 'Volunesia.iOS.NPTypeSelectionController, Volunesia.iOS' */ },
+		{ NULL, 0x1800 /* #37 'RegistrationViewController' => 'Volunesia.iOS.RegistrationViewController, Volunesia.iOS' */ },
+		{ NULL, 0x1900 /* #38 'UserTypeSelectionController' => 'Volunesia.iOS.UserTypeSelectionController, Volunesia.iOS' */ },
+		{ NULL, 0x1A00 /* #39 'ViewController' => 'Volunesia.iOS.ViewController, Volunesia.iOS' */ },
 		{ NULL, 0x8706 /* #40 '__NSObject_Disposer' => 'Foundation.NSObject+NSObject_Disposer, Xamarin.iOS' */ },
 		{ NULL, 0x5908 /* #41 'FIRActionCodeInfo' => 'Firebase.Auth.ActionCodeInfo, Firebase.Auth' */ },
 		{ NULL, 0x5A08 /* #42 'FIRActionCodeSettings' => 'Firebase.Auth.ActionCodeSettings, Firebase.Auth' */ },
@@ -1993,11 +1993,11 @@ void xamarin_create_classes () {
 	__xamarin_class_map [32].handle = objc_getClass ("NSData");
 	__xamarin_class_map [33].handle = objc_getClass ("NSDictionary");
 	__xamarin_class_map [34].handle = [AppDelegate class];
-	__xamarin_class_map [35].handle = [ViewController class];
-	__xamarin_class_map [36].handle = [RegistrationViewController class];
-	__xamarin_class_map [37].handle = [UserTypeSelectionController class];
-	__xamarin_class_map [38].handle = [EmailRegistrationViewController class];
-	__xamarin_class_map [39].handle = [NPTypeSelectionController class];
+	__xamarin_class_map [35].handle = [EmailRegistrationViewController class];
+	__xamarin_class_map [36].handle = [NPTypeSelectionController class];
+	__xamarin_class_map [37].handle = [RegistrationViewController class];
+	__xamarin_class_map [38].handle = [UserTypeSelectionController class];
+	__xamarin_class_map [39].handle = [ViewController class];
 	__xamarin_class_map [40].handle = objc_getClass ("__NSObject_Disposer");
 	__xamarin_class_map [41].handle = [FIRActionCodeInfo class];
 	__xamarin_class_map [42].handle = [FIRActionCodeSettings class];
