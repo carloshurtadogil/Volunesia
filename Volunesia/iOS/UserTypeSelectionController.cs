@@ -29,22 +29,20 @@ namespace Volunesia.iOS
 
         partial void NonprofitButton_TouchUpInside(UIButton sender)
         {
-            NonprofitRegistration npr = new NonprofitRegistration();
-            npr.CreateNonprofitUser(FirstName, LastName, Email, Password, this);
-            AlertShow.Show(this, "Nonprofit", ("User " + FirstName + " " + LastName +" Added"));
+            this.PerformSegue("ToOrgTypeSegue_id", sender);
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
 
-            if (segue.Identifier == "ToRVCSegue_id")
+            if (segue.Identifier == "ToOrgTypeSegue_id")
             {
-                var rvc = (RegistrationViewController)segue.DestinationViewController;
-                if (rvc != null)
+                var nptsc = (NPTypeSelectionController)segue.DestinationViewController;
+                if (nptsc != null)
                 {
 
-                    rvc.LoadView();
+                    nptsc.LoadView();
                 }
             }
             else

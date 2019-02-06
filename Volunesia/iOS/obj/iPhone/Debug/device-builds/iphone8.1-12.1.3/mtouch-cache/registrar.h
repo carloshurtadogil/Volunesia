@@ -20,6 +20,7 @@
 @class RegistrationViewController;
 @class UserTypeSelectionController;
 @class EmailRegistrationViewController;
+@class NPTypeSelectionController;
 @class __NSObject_Disposer;
 @class FIRActionCodeInfo;
 @class FIRActionCodeSettings;
@@ -213,6 +214,37 @@
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) BackButton_TouchUpInside:(UIButton *)p0;
 	-(void) ContinueButton_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NPTypeSelectionController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * BackButton;
+	@property (nonatomic, assign) UIImageView * BackgroundImage;
+	@property (nonatomic, assign) UIButton * EstablishedButton;
+	@property (nonatomic, assign) UIButton * LocalButton;
+	@property (nonatomic, assign) UILabel * QuestionLabel;
+	@property (nonatomic, assign) UIButton * SchoolButton;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) BackButton;
+	-(void) setBackButton:(UIButton *)p0;
+	-(UIImageView *) BackgroundImage;
+	-(void) setBackgroundImage:(UIImageView *)p0;
+	-(UIButton *) EstablishedButton;
+	-(void) setEstablishedButton:(UIButton *)p0;
+	-(UIButton *) LocalButton;
+	-(void) setLocalButton:(UIButton *)p0;
+	-(UILabel *) QuestionLabel;
+	-(void) setQuestionLabel:(UILabel *)p0;
+	-(UIButton *) SchoolButton;
+	-(void) setSchoolButton:(UIButton *)p0;
+	-(void) BackButton_TouchUpInside:(UIButton *)p0;
+	-(void) EstablishedButton_TouchUpInside:(UIButton *)p0;
+	-(void) LocalButton_TouchUpInside:(UIButton *)p0;
+	-(void) SchoolButton_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 

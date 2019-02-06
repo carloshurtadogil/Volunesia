@@ -1602,6 +1602,134 @@ exception_handling:;
 	}
 @end
 
+@implementation NPTypeSelectionController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UIButton *) BackButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xD400);
+	}
+
+	-(void) setBackButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD500);
+	}
+
+	-(UIImageView *) BackgroundImage
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_10 (self, _cmd, &managed_method, 0xD600);
+	}
+
+	-(void) setBackgroundImage:(UIImageView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, 0xD700);
+	}
+
+	-(UIButton *) EstablishedButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xD800);
+	}
+
+	-(void) setEstablishedButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xD900);
+	}
+
+	-(UIButton *) LocalButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xDA00);
+	}
+
+	-(void) setLocalButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xDB00);
+	}
+
+	-(UILabel *) QuestionLabel
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_13 (self, _cmd, &managed_method, 0xDC00);
+	}
+
+	-(void) setQuestionLabel:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0xDD00);
+	}
+
+	-(UIButton *) SchoolButton
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, 0xDE00);
+	}
+
+	-(void) setSchoolButton:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xDF00);
+	}
+
+	-(void) BackButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE000);
+	}
+
+	-(void) EstablishedButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE100);
+	}
+
+	-(void) LocalButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE200);
+	}
+
+	-(void) SchoolButton_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, 0xE300);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, 0x2E906);
+	}
+@end
+
 @interface __NSObject_Disposer : NSObject {
 }
 	-(void) release;
@@ -1756,38 +1884,39 @@ exception_handling:;
 		{ NULL, 0x1700 /* #36 'RegistrationViewController' => 'Volunesia.iOS.RegistrationViewController, Volunesia.iOS' */ },
 		{ NULL, 0x1800 /* #37 'UserTypeSelectionController' => 'Volunesia.iOS.UserTypeSelectionController, Volunesia.iOS' */ },
 		{ NULL, 0x1900 /* #38 'EmailRegistrationViewController' => 'Volunesia.iOS.EmailRegistrationViewController, Volunesia.iOS' */ },
-		{ NULL, 0x8706 /* #39 '__NSObject_Disposer' => 'Foundation.NSObject+NSObject_Disposer, Xamarin.iOS' */ },
-		{ NULL, 0x5908 /* #40 'FIRActionCodeInfo' => 'Firebase.Auth.ActionCodeInfo, Firebase.Auth' */ },
-		{ NULL, 0x5A08 /* #41 'FIRActionCodeSettings' => 'Firebase.Auth.ActionCodeSettings, Firebase.Auth' */ },
-		{ NULL, 0x5B08 /* #42 'FIRAdditionalUserInfo' => 'Firebase.Auth.AdditionalUserInfo, Firebase.Auth' */ },
-		{ NULL, 0x5C08 /* #43 'FIRAuthCredential' => 'Firebase.Auth.AuthCredential, Firebase.Auth' */ },
-		{ NULL, 0x5D08 /* #44 'FIRAuthDataResult' => 'Firebase.Auth.AuthDataResult, Firebase.Auth' */ },
-		{ NULL, 0x5E08 /* #45 'FIRAuthSettings' => 'Firebase.Auth.AuthSettings, Firebase.Auth' */ },
-		{ NULL, 0x5F08 /* #46 'FIRAuthTokenResult' => 'Firebase.Auth.AuthTokenResult, Firebase.Auth' */ },
-		{ NULL, 0x6208 /* #47 'ApiDefinition__Firebase_Auth_AuthUIDelegate' => 'Firebase.Auth.AuthUIDelegate, Firebase.Auth' */ },
-		{ NULL, 0x6308 /* #48 'FIREmailAuthProvider' => 'Firebase.Auth.EmailAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x6408 /* #49 'FIRFacebookAuthProvider' => 'Firebase.Auth.FacebookAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x6508 /* #50 'FIRGitHubAuthProvider' => 'Firebase.Auth.GitHubAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x6608 /* #51 'FIRGoogleAuthProvider' => 'Firebase.Auth.GoogleAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x6708 /* #52 'FIROAuthProvider' => 'Firebase.Auth.OAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x6808 /* #53 'FIRPhoneAuthCredential' => 'Firebase.Auth.PhoneAuthCredential, Firebase.Auth' */ },
-		{ NULL, 0x6B08 /* #54 'FIRTwitterAuthProvider' => 'Firebase.Auth.TwitterAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x7F08 /* #55 'FIRUserMetadata' => 'Firebase.Auth.UserMetadata, Firebase.Auth' */ },
-		{ NULL, 0x3F08 /* #56 'FIRAuth' => 'Firebase.Auth.Auth, Firebase.Auth' */ },
-		{ NULL, 0x6908 /* #57 'FIRPhoneAuthProvider' => 'Firebase.Auth.PhoneAuthProvider, Firebase.Auth' */ },
-		{ NULL, 0x6C08 /* #58 'FIRUser' => 'Firebase.Auth.User, Firebase.Auth' */ },
-		{ NULL, 0x8008 /* #59 'FIRUserProfileChangeRequest' => 'Firebase.Auth.UserProfileChangeRequest, Firebase.Auth' */ },
-		{ NULL, 0x80A /* #60 'FIRApp' => 'Firebase.Core.App, Firebase.Core' */ },
-		{ NULL, 0xA0A /* #61 'FIRAnalyticsConfiguration' => 'Firebase.Core.AnalyticsConfiguration, Firebase.Core' */ },
-		{ NULL, 0xB0A /* #62 'FIRConfiguration' => 'Firebase.Core.Configuration, Firebase.Core' */ },
-		{ NULL, 0xC0A /* #63 'FIROptions' => 'Firebase.Core.Options, Firebase.Core' */ },
-		{ NULL, 0x1C0C /* #64 'FIRDatabaseQuery' => 'Firebase.Database.DatabaseQuery, Firebase.Database' */ },
-		{ NULL, 0x160C /* #65 'FIRDatabaseReference' => 'Firebase.Database.DatabaseReference, Firebase.Database' */ },
-		{ NULL, 0x170C /* #66 'FIRDataSnapshot' => 'Firebase.Database.DataSnapshot, Firebase.Database' */ },
-		{ NULL, 0x180C /* #67 'FIRMutableData' => 'Firebase.Database.MutableData, Firebase.Database' */ },
-		{ NULL, 0x1B0C /* #68 'FIRDatabase' => 'Firebase.Database.Database, Firebase.Database' */ },
-		{ NULL, 0x1D0C /* #69 'FIRServerValue' => 'Firebase.Database.ServerValue, Firebase.Database' */ },
-		{ NULL, 0x1E0C /* #70 'FIRTransactionResult' => 'Firebase.Database.TransactionResult, Firebase.Database' */ },
+		{ NULL, 0x1A00 /* #39 'NPTypeSelectionController' => 'Volunesia.iOS.NPTypeSelectionController, Volunesia.iOS' */ },
+		{ NULL, 0x8706 /* #40 '__NSObject_Disposer' => 'Foundation.NSObject+NSObject_Disposer, Xamarin.iOS' */ },
+		{ NULL, 0x5908 /* #41 'FIRActionCodeInfo' => 'Firebase.Auth.ActionCodeInfo, Firebase.Auth' */ },
+		{ NULL, 0x5A08 /* #42 'FIRActionCodeSettings' => 'Firebase.Auth.ActionCodeSettings, Firebase.Auth' */ },
+		{ NULL, 0x5B08 /* #43 'FIRAdditionalUserInfo' => 'Firebase.Auth.AdditionalUserInfo, Firebase.Auth' */ },
+		{ NULL, 0x5C08 /* #44 'FIRAuthCredential' => 'Firebase.Auth.AuthCredential, Firebase.Auth' */ },
+		{ NULL, 0x5D08 /* #45 'FIRAuthDataResult' => 'Firebase.Auth.AuthDataResult, Firebase.Auth' */ },
+		{ NULL, 0x5E08 /* #46 'FIRAuthSettings' => 'Firebase.Auth.AuthSettings, Firebase.Auth' */ },
+		{ NULL, 0x5F08 /* #47 'FIRAuthTokenResult' => 'Firebase.Auth.AuthTokenResult, Firebase.Auth' */ },
+		{ NULL, 0x6208 /* #48 'ApiDefinition__Firebase_Auth_AuthUIDelegate' => 'Firebase.Auth.AuthUIDelegate, Firebase.Auth' */ },
+		{ NULL, 0x6308 /* #49 'FIREmailAuthProvider' => 'Firebase.Auth.EmailAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x6408 /* #50 'FIRFacebookAuthProvider' => 'Firebase.Auth.FacebookAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x6508 /* #51 'FIRGitHubAuthProvider' => 'Firebase.Auth.GitHubAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x6608 /* #52 'FIRGoogleAuthProvider' => 'Firebase.Auth.GoogleAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x6708 /* #53 'FIROAuthProvider' => 'Firebase.Auth.OAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x6808 /* #54 'FIRPhoneAuthCredential' => 'Firebase.Auth.PhoneAuthCredential, Firebase.Auth' */ },
+		{ NULL, 0x6B08 /* #55 'FIRTwitterAuthProvider' => 'Firebase.Auth.TwitterAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x7F08 /* #56 'FIRUserMetadata' => 'Firebase.Auth.UserMetadata, Firebase.Auth' */ },
+		{ NULL, 0x3F08 /* #57 'FIRAuth' => 'Firebase.Auth.Auth, Firebase.Auth' */ },
+		{ NULL, 0x6908 /* #58 'FIRPhoneAuthProvider' => 'Firebase.Auth.PhoneAuthProvider, Firebase.Auth' */ },
+		{ NULL, 0x6C08 /* #59 'FIRUser' => 'Firebase.Auth.User, Firebase.Auth' */ },
+		{ NULL, 0x8008 /* #60 'FIRUserProfileChangeRequest' => 'Firebase.Auth.UserProfileChangeRequest, Firebase.Auth' */ },
+		{ NULL, 0x80A /* #61 'FIRApp' => 'Firebase.Core.App, Firebase.Core' */ },
+		{ NULL, 0xA0A /* #62 'FIRAnalyticsConfiguration' => 'Firebase.Core.AnalyticsConfiguration, Firebase.Core' */ },
+		{ NULL, 0xB0A /* #63 'FIRConfiguration' => 'Firebase.Core.Configuration, Firebase.Core' */ },
+		{ NULL, 0xC0A /* #64 'FIROptions' => 'Firebase.Core.Options, Firebase.Core' */ },
+		{ NULL, 0x1C0C /* #65 'FIRDatabaseQuery' => 'Firebase.Database.DatabaseQuery, Firebase.Database' */ },
+		{ NULL, 0x160C /* #66 'FIRDatabaseReference' => 'Firebase.Database.DatabaseReference, Firebase.Database' */ },
+		{ NULL, 0x170C /* #67 'FIRDataSnapshot' => 'Firebase.Database.DataSnapshot, Firebase.Database' */ },
+		{ NULL, 0x180C /* #68 'FIRMutableData' => 'Firebase.Database.MutableData, Firebase.Database' */ },
+		{ NULL, 0x1B0C /* #69 'FIRDatabase' => 'Firebase.Database.Database, Firebase.Database' */ },
+		{ NULL, 0x1D0C /* #70 'FIRServerValue' => 'Firebase.Database.ServerValue, Firebase.Database' */ },
+		{ NULL, 0x1E0C /* #71 'FIRTransactionResult' => 'Firebase.Database.TransactionResult, Firebase.Database' */ },
 		{ NULL, 0 },
 	};
 
@@ -1820,8 +1949,8 @@ exception_handling:;
 		__xamarin_protocol_wrapper_map,
 		{ NULL, NULL },
 		7,
-		71,
-		37,
+		72,
+		38,
 		0,
 		1,
 		4,
@@ -1868,38 +1997,39 @@ void xamarin_create_classes () {
 	__xamarin_class_map [36].handle = [RegistrationViewController class];
 	__xamarin_class_map [37].handle = [UserTypeSelectionController class];
 	__xamarin_class_map [38].handle = [EmailRegistrationViewController class];
-	__xamarin_class_map [39].handle = objc_getClass ("__NSObject_Disposer");
-	__xamarin_class_map [40].handle = [FIRActionCodeInfo class];
-	__xamarin_class_map [41].handle = [FIRActionCodeSettings class];
-	__xamarin_class_map [42].handle = [FIRAdditionalUserInfo class];
-	__xamarin_class_map [43].handle = [FIRAuthCredential class];
-	__xamarin_class_map [44].handle = [FIRAuthDataResult class];
-	__xamarin_class_map [45].handle = [FIRAuthSettings class];
-	__xamarin_class_map [46].handle = [FIRAuthTokenResult class];
-	__xamarin_class_map [47].handle = [ApiDefinition__Firebase_Auth_AuthUIDelegate class];
-	__xamarin_class_map [48].handle = [FIREmailAuthProvider class];
-	__xamarin_class_map [49].handle = [FIRFacebookAuthProvider class];
-	__xamarin_class_map [50].handle = [FIRGitHubAuthProvider class];
-	__xamarin_class_map [51].handle = [FIRGoogleAuthProvider class];
-	__xamarin_class_map [52].handle = [FIROAuthProvider class];
-	__xamarin_class_map [53].handle = [FIRPhoneAuthCredential class];
-	__xamarin_class_map [54].handle = [FIRTwitterAuthProvider class];
-	__xamarin_class_map [55].handle = [FIRUserMetadata class];
-	__xamarin_class_map [56].handle = [FIRAuth class];
-	__xamarin_class_map [57].handle = [FIRPhoneAuthProvider class];
-	__xamarin_class_map [58].handle = [FIRUser class];
-	__xamarin_class_map [59].handle = [FIRUserProfileChangeRequest class];
-	__xamarin_class_map [60].handle = [FIRApp class];
-	__xamarin_class_map [61].handle = [FIRAnalyticsConfiguration class];
-	__xamarin_class_map [62].handle = [FIRConfiguration class];
-	__xamarin_class_map [63].handle = [FIROptions class];
-	__xamarin_class_map [64].handle = [FIRDatabaseQuery class];
-	__xamarin_class_map [65].handle = [FIRDatabaseReference class];
-	__xamarin_class_map [66].handle = [FIRDataSnapshot class];
-	__xamarin_class_map [67].handle = [FIRMutableData class];
-	__xamarin_class_map [68].handle = [FIRDatabase class];
-	__xamarin_class_map [69].handle = [FIRServerValue class];
-	__xamarin_class_map [70].handle = [FIRTransactionResult class];
+	__xamarin_class_map [39].handle = [NPTypeSelectionController class];
+	__xamarin_class_map [40].handle = objc_getClass ("__NSObject_Disposer");
+	__xamarin_class_map [41].handle = [FIRActionCodeInfo class];
+	__xamarin_class_map [42].handle = [FIRActionCodeSettings class];
+	__xamarin_class_map [43].handle = [FIRAdditionalUserInfo class];
+	__xamarin_class_map [44].handle = [FIRAuthCredential class];
+	__xamarin_class_map [45].handle = [FIRAuthDataResult class];
+	__xamarin_class_map [46].handle = [FIRAuthSettings class];
+	__xamarin_class_map [47].handle = [FIRAuthTokenResult class];
+	__xamarin_class_map [48].handle = [ApiDefinition__Firebase_Auth_AuthUIDelegate class];
+	__xamarin_class_map [49].handle = [FIREmailAuthProvider class];
+	__xamarin_class_map [50].handle = [FIRFacebookAuthProvider class];
+	__xamarin_class_map [51].handle = [FIRGitHubAuthProvider class];
+	__xamarin_class_map [52].handle = [FIRGoogleAuthProvider class];
+	__xamarin_class_map [53].handle = [FIROAuthProvider class];
+	__xamarin_class_map [54].handle = [FIRPhoneAuthCredential class];
+	__xamarin_class_map [55].handle = [FIRTwitterAuthProvider class];
+	__xamarin_class_map [56].handle = [FIRUserMetadata class];
+	__xamarin_class_map [57].handle = [FIRAuth class];
+	__xamarin_class_map [58].handle = [FIRPhoneAuthProvider class];
+	__xamarin_class_map [59].handle = [FIRUser class];
+	__xamarin_class_map [60].handle = [FIRUserProfileChangeRequest class];
+	__xamarin_class_map [61].handle = [FIRApp class];
+	__xamarin_class_map [62].handle = [FIRAnalyticsConfiguration class];
+	__xamarin_class_map [63].handle = [FIRConfiguration class];
+	__xamarin_class_map [64].handle = [FIROptions class];
+	__xamarin_class_map [65].handle = [FIRDatabaseQuery class];
+	__xamarin_class_map [66].handle = [FIRDatabaseReference class];
+	__xamarin_class_map [67].handle = [FIRDataSnapshot class];
+	__xamarin_class_map [68].handle = [FIRMutableData class];
+	__xamarin_class_map [69].handle = [FIRDatabase class];
+	__xamarin_class_map [70].handle = [FIRServerValue class];
+	__xamarin_class_map [71].handle = [FIRTransactionResult class];
 	xamarin_add_registration_map (&__xamarin_registration_map);
 }
 

@@ -203,6 +203,7 @@
                                 <connections>
                                     <action selector="NonprofitBtn_TouchUpInside:" destination="5725" id="5727" eventType="touchUpInside"/>
                                     <action selector="NonprofitButton_TouchUpInside:" destination="5717" id="14323" eventType="touchUpInside"/>
+                                    <segue id="14757" destination="14593" kind="show" identifier="ToOrgTypeSegue_id"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5735" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -338,6 +339,84 @@
             </objects>
             <point key="canvasLocation" x="1047" y="7"/>
         </scene>
+        <scene sceneID="14592">
+            <objects>
+                <viewController id="14593" sceneMemberID="viewController" customClass="NPTypeSelectionController" storyboardIdentifier="NPTypeSelectionController" useStoryboardIdentifierAsRestorationIdentifier="YES" modalTransitionStyle="crossDissolve">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="14613"/>
+                        <viewControllerLayoutGuide type="bottom" id="14614"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="14604">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="14595" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
+                                <rect key="frame" x="0.0" y="-13" width="375" height="684"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of nonprofit do you work for?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14597" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
+                                <rect key="frame" x="72" y="98" width="234" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14599" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="115" y="252" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/EstablishedBtn.png"/>
+                                <connections>
+                                    <action selector="VolunteerBtn_TouchUpInside:" destination="14606" id="14605" eventType="touchUpInside"/>
+                                    <action selector="EstablishedButton_TouchUpInside:" destination="14593" id="15311" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14601" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="115" y="343" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/SchoolBtn.png"/>
+                                <connections>
+                                    <action selector="NonprofitBtn_TouchUpInside:" destination="14606" id="14608" eventType="touchUpInside"/>
+                                    <action selector="SchoolButton_TouchUpInside:" destination="14593" id="15310" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14603" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="20" width="46" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40" weight="light"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="14611" id="14610" eventType="touchUpInside"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="14593" id="14612" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="15033" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="115" y="429" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/LocalBtn.png"/>
+                                <connections>
+                                    <action selector="VolunteerBtn_TouchUpInside:" destination="15035" id="15034" eventType="touchUpInside"/>
+                                    <action selector="VolunteerButton_TouchUpInside:" destination="15037" id="15036" eventType="touchUpInside"/>
+                                    <action selector="LocalButton_TouchUpInside:" destination="14593" id="15312" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="14595" id="14594"/>
+                        <outlet property="QuestionLabel" destination="14597" id="14596"/>
+                        <outlet property="EstablishedButton" destination="14599" id="name-outlet-14599"/>
+                        <outlet property="SchoolButton" destination="14601" id="name-outlet-14601"/>
+                        <outlet property="BackButton" destination="14603" id="14602"/>
+                        <outlet property="LocalButton" destination="15033" id="name-outlet-15033"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14615" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="913"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Images/logo.png" width="1030" height="1139"/>
@@ -345,5 +424,8 @@
         <image name="Images/NonprofitBtn.png" width="1194" height="454"/>
         <image name="Images/VolunteerBtn.png" width="1188" height="443"/>
         <image name="Images/ContinueBtn.png" width="1178" height="437"/>
+        <image name="Images/EstablishedBtn.png" width="1182" height="444"/>
+        <image name="Images/SchoolBtn.png" width="1172" height="440"/>
+        <image name="Images/LocalBtn.png" width="1183" height="443"/>
     </resources>
 </document>

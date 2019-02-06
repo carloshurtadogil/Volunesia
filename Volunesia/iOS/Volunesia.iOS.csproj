@@ -126,6 +126,7 @@
     <Folder Include="Models\" />
     <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -158,6 +159,11 @@
       <DependentUpon>EmailRegistrationViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\NonprofitRegistration.cs" />
+    <Compile Include="NPTypeSelectionController.cs" />
+    <Compile Include="NPTypeSelectionController.designer.cs">
+      <DependentUpon>NPTypeSelectionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Register.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -166,6 +172,9 @@
     <BundleResource Include="Resources\Images\NonprofitBtn.png" />
     <BundleResource Include="Resources\Images\VolunteerBtn.png" />
     <BundleResource Include="Resources\Images\ContinueBtn.png" />
+    <BundleResource Include="Resources\Images\EstablishedBtn.png" />
+    <BundleResource Include="Resources\Images\SchoolBtn.png" />
+    <BundleResource Include="Resources\Images\LocalBtn.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

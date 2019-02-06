@@ -21,6 +21,11 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc/14593-view-14604.nib">
+      <LogicalName>Main.storyboardc/14593-view-14604.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc/3217-view-3218.nib">
       <LogicalName>Main.storyboardc/3217-view-3218.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -48,6 +53,11 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc/Info.plist">
       <LogicalName>Main.storyboardc/Info.plist</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc/NPTypeSelectionController.nib">
+      <LogicalName>Main.storyboardc/NPTypeSelectionController.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
