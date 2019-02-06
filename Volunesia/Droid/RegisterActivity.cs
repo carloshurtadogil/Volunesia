@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Volunesia.Droid
 {
-    [Activity(Label = "RegisterActivity", MainLauncher = true)]
+    [Activity(Label = "RegisterActivity")]
     public class RegisterActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

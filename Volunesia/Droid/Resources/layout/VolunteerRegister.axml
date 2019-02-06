@@ -8,9 +8,9 @@
   android:minHeight="25px">
 
   <EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/personalDescriptionField" />
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/personalDescriptionField" />
 
   <Button
     android:text="REGISTER NOW"

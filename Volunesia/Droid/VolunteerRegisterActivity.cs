@@ -16,13 +16,16 @@ namespace Volunesia.Droid
     public class VolunteerRegisterActivity : Activity
     {
 
+        public EditText personalDescription { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             //Set VolunteerRegister view
             SetContentView(Resource.Layout.VolunteerRegister);
 
-
+            personalDescription = FindViewById<EditText>(Resource.Id.personalDescriptionField);
+            
             var registrationButton = FindViewById<Button>(Resource.Id.registerVolunteerButton);
 
             registrationButton.Click += PerformVolunteerRegistration;
