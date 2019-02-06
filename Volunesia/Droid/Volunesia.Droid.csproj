@@ -170,10 +170,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CredentialsVerification.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MainRegisterActivity.cs" />
     <Compile Include="RegisterActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondRegisterActivity.cs" />
     <Compile Include="Service\AndroidAuthenticationService.cs" />
     <Compile Include="VolunteerRegisterActivity.cs" />
     <Compile Include="AppData_Droid.cs" />
@@ -201,6 +204,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\VolunteerRegister.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MainRegister.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SecondRegister.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

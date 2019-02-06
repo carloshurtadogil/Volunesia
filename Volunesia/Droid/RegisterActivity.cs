@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Volunesia.Droid
 {
-    [Activity(Label = "RegisterActivity")]
+    [Activity(Label = "RegisterActivity", MainLauncher = true)]
     public class RegisterActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,6 +20,9 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Register);
+
+
+           
 
             Button volunteerSignUpButton = FindViewById<Button>(Resource.Id.volunteerButton);
             Button nonprofitSignUpButton = FindViewById<Button>(Resource.Id.nonProfitButton);
@@ -30,7 +33,6 @@ namespace Volunesia.Droid
 
         public void JumpToVolunteerRegisterActivity(object sender, EventArgs e)
         {
-            //
             StartActivity(typeof(VolunteerRegisterActivity));
         }
 
