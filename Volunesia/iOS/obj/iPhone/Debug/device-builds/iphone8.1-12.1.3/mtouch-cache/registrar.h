@@ -8,11 +8,14 @@
 #include <objc/message.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @class UIApplicationDelegate;
 @class UIKit_UIControlEventProxy;
 @class Foundation_NSDispatcher;
 @class __MonoMac_NSSynchronizationContextDispatcher;
+@class __Xamarin_NSTimerActionDispatcher;
 @class Foundation_NSAsyncDispatcher;
 @class __MonoMac_NSAsyncSynchronizationContextDispatcher;
 @class AppDelegate;
@@ -21,6 +24,7 @@
 @class RegistrationViewController;
 @class UserTypeSelectionController;
 @class ViewController;
+@class EstablishedNonprofitViewController;
 @class __NSObject_Disposer;
 @class FIRActionCodeInfo;
 @class FIRActionCodeSettings;
@@ -48,6 +52,8 @@
 @class FIRAnalyticsConfiguration;
 @class FIRConfiguration;
 @class FIROptions;
+@class OpenTK_Platform_iPhoneOS_CADisplayLinkTimeSource;
+@class OpenTK_Platform_iPhoneOS_iPhoneOSGameView;
 @class FIRDatabaseQuery;
 @class FIRDatabaseReference;
 @class FIRDataSnapshot;
@@ -145,6 +151,7 @@
 	-(void) setQuestionLabel:(UILabel *)p0;
 	-(UIButton *) SchoolButton;
 	-(void) setSchoolButton:(UIButton *)p0;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) BackButton_TouchUpInside:(UIButton *)p0;
 	-(void) EstablishedButton_TouchUpInside:(UIButton *)p0;
 	-(void) LocalButton_TouchUpInside:(UIButton *)p0;
@@ -163,6 +170,7 @@
 	@property (nonatomic, assign) UITextField * LastNameTextfield;
 	@property (nonatomic, assign) UILabel * QuestionLabel;
 	@property (nonatomic, assign) UILabel * StatementLabel;
+	@property (nonatomic, assign) UITextView * StoryTextView;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
@@ -185,6 +193,8 @@
 	-(void) setQuestionLabel:(UILabel *)p0;
 	-(UILabel *) StatementLabel;
 	-(void) setStatementLabel:(UILabel *)p0;
+	-(UITextView *) StoryTextView;
+	-(void) setStoryTextView:(UITextView *)p0;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) BackButton_TouchUpInside:(UIButton *)p0;
 	-(void) ContinueButton_TouchUpInside:(UIButton *)p0;
@@ -245,6 +255,51 @@
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) LoginButton_TouchUpInside:(UIButton *)p0;
 	-(void) SignupButton_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface EstablishedNonprofitViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * BackButton;
+	@property (nonatomic, assign) UIImageView * BackgroundImage;
+	@property (nonatomic, assign) UIButton * ContinueButton;
+	@property (nonatomic, assign) UILabel * EINLabel;
+	@property (nonatomic, assign) UITextField * EINTextfield;
+	@property (nonatomic, assign) UILabel * InformationStmtLabel;
+	@property (nonatomic, assign) UILabel * OrganizationNameLabel;
+	@property (nonatomic, assign) UITextField * OrganizationNameTextfield;
+	@property (nonatomic, assign) UITextField * State;
+	@property (nonatomic, assign) UILabel * ZipCodeLabel;
+	@property (nonatomic, assign) UITextField * ZipCodeTextfield;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) BackButton;
+	-(void) setBackButton:(UIButton *)p0;
+	-(UIImageView *) BackgroundImage;
+	-(void) setBackgroundImage:(UIImageView *)p0;
+	-(UIButton *) ContinueButton;
+	-(void) setContinueButton:(UIButton *)p0;
+	-(UILabel *) EINLabel;
+	-(void) setEINLabel:(UILabel *)p0;
+	-(UITextField *) EINTextfield;
+	-(void) setEINTextfield:(UITextField *)p0;
+	-(UILabel *) InformationStmtLabel;
+	-(void) setInformationStmtLabel:(UILabel *)p0;
+	-(UILabel *) OrganizationNameLabel;
+	-(void) setOrganizationNameLabel:(UILabel *)p0;
+	-(UITextField *) OrganizationNameTextfield;
+	-(void) setOrganizationNameTextfield:(UITextField *)p0;
+	-(UITextField *) State;
+	-(void) setState:(UITextField *)p0;
+	-(UILabel *) ZipCodeLabel;
+	-(void) setZipCodeLabel:(UILabel *)p0;
+	-(UITextField *) ZipCodeTextfield;
+	-(void) setZipCodeTextfield:(UITextField *)p0;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) BackButton_TouchUpInside:(UIButton *)p0;
+	-(void) ContinueButton_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -501,6 +556,20 @@
 	-(void) setTrackingID:(NSString *)p0;
 	-(id) initWithContentsOfFile:(NSString *)p0;
 	-(id) initWithGoogleAppID:(NSString *)p0 GCMSenderID:(NSString *)p1;
+@end
+
+@interface OpenTK_Platform_iPhoneOS_iPhoneOSGameView : UIView {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	+(Class) layerClass;
+	-(void) layoutSubviews;
+	-(void) willMoveToWindow:(UIWindow *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) initWithCoder:(NSCoder *)p0;
+	-(id) initWithFrame:(CGRect)p0;
 @end
 
 @interface FIRDatabaseQuery : NSObject {

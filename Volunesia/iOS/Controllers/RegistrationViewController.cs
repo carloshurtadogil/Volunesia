@@ -17,7 +17,7 @@ namespace Volunesia.iOS
 
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            if(ValidName())
+            //if(ValidName())
             {
                 this.PerformSegue("ToERVCSegue_id", sender);
             }

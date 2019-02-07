@@ -28,3 +28,7 @@
 /Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/optimized/Images/EstablishedBtn.png
 /Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/optimized/Images/SchoolBtn.png
 /Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.3/optimized/Images/LocalBtn.png
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/smartystreets-dotnet-sdk.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Xamarin.Essentials.dll
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Xamarin.Essentials.pdb
+/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/bin/iPhone/Debug/Xamarin.Essentials.xml

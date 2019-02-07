@@ -222,7 +222,7 @@ ldr x1, [x16, #208]
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801260
+.word 0xd2801d80
 .word 0xaa1103e1
 bl _p_3
 
@@ -708,10 +708,10 @@ ldr x1, [x16, #336]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801420
+.word 0xd2801f60
 .word 0xaa1103e1
 bl _p_3
-.word 0xd2800a40
+.word 0xd2801280
 .word 0xaa1103e1
 bl _p_3
 
@@ -805,7 +805,7 @@ add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x1, [x16, #360]
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf9001ba0
 .word 0xf9400bb1
@@ -1129,7 +1129,7 @@ bl _p_20
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -1230,7 +1230,7 @@ bl _p_24
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -1380,9 +1380,9 @@ ldr x0, [x16, #0]
 .word 0xd2800921
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -1480,9 +1480,9 @@ ldr x0, [x16, #0]
 .word 0xd28010a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -1504,9 +1504,9 @@ ldr x0, [x16, #0]
 .word 0xd2800921
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -1641,9 +1641,9 @@ ldr x0, [x16, #0]
 .word 0xd28018a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -1834,9 +1834,9 @@ ldr x0, [x16, #0]
 .word 0xd28010a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -2611,7 +2611,7 @@ bl _p_20
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -2712,7 +2712,7 @@ bl _p_24
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -3224,7 +3224,7 @@ bl _p_20
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -3325,7 +3325,7 @@ bl _p_24
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -3639,9 +3639,9 @@ ldr x0, [x16, #0]
 .word 0xd28061a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -3943,7 +3943,7 @@ bl _p_20
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -4044,7 +4044,7 @@ bl _p_24
 .word 0xf9402ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90027a0
 .word 0xf94013b1
@@ -4153,9 +4153,9 @@ ldr x0, [x16, #0]
 .word 0xd2806e21
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -4189,7 +4189,7 @@ bl _p_30
 .word 0xf94037a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf90033a0
 .word 0xf94017b1
@@ -4405,9 +4405,9 @@ ldr x0, [x16, #0]
 .word 0xd28076a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -4429,9 +4429,9 @@ ldr x0, [x16, #0]
 .word 0xd28079a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -4479,7 +4479,7 @@ bl _p_30
 .word 0xf9403fa1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413430
+.word 0xf941c430
 .word 0xd63f0200
 .word 0xf9003ba0
 .word 0xf9401fb1
@@ -4690,9 +4690,9 @@ ldr x0, [x16, #0]
 .word 0xd28084e1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -6282,9 +6282,9 @@ ldr x0, [x16, #0]
 .word 0xd28061a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -6526,9 +6526,9 @@ ldr x0, [x16, #0]
 .word 0xd28061a1
 bl _p_26
 .word 0xaa0003e1
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
-.word 0xd2800a60
+.word 0xd28012a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_27
@@ -7565,7 +7565,7 @@ bl _p_27
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd28011e0
+.word 0xd2801ce0
 .word 0xaa1103e1
 bl _p_3
 
@@ -7947,7 +7947,7 @@ bl _p_27
 .word 0x910003bf
 .word 0xa8cd7bfd
 .word 0xd65f03c0
-.word 0xd2801260
+.word 0xd2801d80
 .word 0xaa1103e1
 bl _p_3
 
@@ -8145,7 +8145,7 @@ bl _p_27
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd28011e0
+.word 0xd2801ce0
 .word 0xaa1103e1
 bl _p_3
 
@@ -8364,7 +8364,7 @@ bl _p_27
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd28011e0
+.word 0xd2801ce0
 .word 0xaa1103e1
 bl _p_3
 
@@ -10197,7 +10197,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1232]
 br x16
-.word 1354
+.word 1356
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_get_Target
 plt_ObjCRuntime_BlockLiteral_get_Target:
 _p_2:
@@ -10205,7 +10205,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1240]
 br x16
-.word 1359
+.word 1361
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_3:
@@ -10213,7 +10213,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1248]
 br x16
-.word 1364
+.word 1366
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_4:
@@ -10221,7 +10221,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1256]
 br x16
-.word 1399
+.word 1401
 	.no_dead_strip plt_intptr_op_Explicit_void_
 plt_intptr_op_Explicit_void_:
 _p_5:
@@ -10229,7 +10229,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1264]
 br x16
-.word 1407
+.word 1409
 	.no_dead_strip plt_ObjCRuntime_Trampolines__Block_copy_intptr
 plt_ObjCRuntime_Trampolines__Block_copy_intptr:
 _p_6:
@@ -10237,7 +10237,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1272]
 br x16
-.word 1412
+.word 1414
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAppVoidBoolHandler
 plt_ObjCRuntime_BlockLiteral_GetDelegateForBlock_ObjCRuntime_Trampolines_DAppVoidBoolHandler:
 _p_7:
@@ -10245,7 +10245,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1280]
 br x16
-.word 1414
+.word 1416
 	.no_dead_strip plt_ObjCRuntime_Trampolines__Block_release_intptr
 plt_ObjCRuntime_Trampolines__Block_release_intptr:
 _p_8:
@@ -10253,7 +10253,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1288]
 br x16
-.word 1426
+.word 1428
 	.no_dead_strip plt__jit_icall_ves_icall_thread_finish_async_abort
 plt__jit_icall_ves_icall_thread_finish_async_abort:
 _p_9:
@@ -10261,7 +10261,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1296]
 br x16
-.word 1428
+.word 1430
 	.no_dead_strip plt_object_Finalize
 plt_object_Finalize:
 _p_10:
@@ -10269,7 +10269,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1304]
 br x16
-.word 1466
+.word 1468
 	.no_dead_strip plt_intptr_op_Equality_intptr_intptr
 plt_intptr_op_Equality_intptr_intptr:
 _p_11:
@@ -10277,7 +10277,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1312]
 br x16
-.word 1471
+.word 1473
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_IsManagedBlock_intptr
 plt_ObjCRuntime_BlockLiteral_IsManagedBlock_intptr:
 _p_12:
@@ -10285,7 +10285,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1320]
 br x16
-.word 1476
+.word 1478
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_13:
@@ -10293,7 +10293,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1328]
 br x16
-.word 1481
+.word 1483
 	.no_dead_strip plt_ObjCRuntime_Trampolines_NIDAppVoidBoolHandler__ctor_ObjCRuntime_BlockLiteral_
 plt_ObjCRuntime_Trampolines_NIDAppVoidBoolHandler__ctor_ObjCRuntime_BlockLiteral_:
 _p_14:
@@ -10301,7 +10301,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1336]
 br x16
-.word 1513
+.word 1515
 	.no_dead_strip plt_Firebase_Core_Loader_ForceLoad
 plt_Firebase_Core_Loader_ForceLoad:
 _p_15:
@@ -10309,7 +10309,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1344]
 br x16
-.word 1515
+.word 1517
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlopen_string_int
 plt_ObjCRuntime_Dlfcn_dlopen_string_int:
 _p_16:
@@ -10317,7 +10317,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1352]
 br x16
-.word 1517
+.word 1519
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlsym_intptr_string
 plt_ObjCRuntime_Dlfcn_dlsym_intptr_string:
 _p_17:
@@ -10325,7 +10325,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1360]
 br x16
-.word 1522
+.word 1524
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_PtrToStringAnsi_intptr
 plt_System_Runtime_InteropServices_Marshal_PtrToStringAnsi_intptr:
 _p_18:
@@ -10333,7 +10333,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1368]
 br x16
-.word 1527
+.word 1529
 	.no_dead_strip plt_ObjCRuntime_Dlfcn_dlclose_intptr
 plt_ObjCRuntime_Dlfcn_dlclose_intptr:
 _p_19:
@@ -10341,7 +10341,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1376]
 br x16
-.word 1532
+.word 1534
 	.no_dead_strip plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag
 plt_Foundation_NSObject__ctor_Foundation_NSObjectFlag:
 _p_20:
@@ -10349,7 +10349,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1384]
 br x16
-.word 1537
+.word 1539
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_21:
@@ -10357,7 +10357,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1392]
 br x16
-.word 1542
+.word 1544
 	.no_dead_strip plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly
 plt_System_Reflection_Assembly_op_Equality_System_Reflection_Assembly_System_Reflection_Assembly:
 _p_22:
@@ -10365,7 +10365,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1400]
 br x16
-.word 1568
+.word 1570
 	.no_dead_strip plt_Foundation_NSObject_set_IsDirectBinding_bool
 plt_Foundation_NSObject_set_IsDirectBinding_bool:
 _p_23:
@@ -10373,7 +10373,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1408]
 br x16
-.word 1573
+.word 1575
 	.no_dead_strip plt_Foundation_NSObject__ctor_intptr
 plt_Foundation_NSObject__ctor_intptr:
 _p_24:
@@ -10381,7 +10381,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1416]
 br x16
-.word 1578
+.word 1580
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr:
 _p_25:
@@ -10389,7 +10389,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1424]
 br x16
-.word 1583
+.word 1585
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_26:
@@ -10397,7 +10397,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1432]
 br x16
-.word 1585
+.word 1587
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_27:
@@ -10405,7 +10405,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1440]
 br x16
-.word 1605
+.word 1607
 	.no_dead_strip plt_Foundation_NSObject_get_Handle
 plt_Foundation_NSObject_get_Handle:
 _p_28:
@@ -10413,7 +10413,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1448]
 br x16
-.word 1633
+.word 1635
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_29:
@@ -10421,7 +10421,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1456]
 br x16
-.word 1638
+.word 1640
 	.no_dead_strip plt_Foundation_NSString_CreateNative_string
 plt_Foundation_NSString_CreateNative_string:
 _p_30:
@@ -10429,7 +10429,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1464]
 br x16
-.word 1640
+.word 1642
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_31:
@@ -10437,7 +10437,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1472]
 br x16
-.word 1645
+.word 1647
 	.no_dead_strip plt_Foundation_NSString_ReleaseNative_intptr
 plt_Foundation_NSString_ReleaseNative_intptr:
 _p_32:
@@ -10445,7 +10445,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1480]
 br x16
-.word 1647
+.word 1649
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_SetupBlockImpl_System_Delegate_System_Delegate_bool_string
 plt_ObjCRuntime_BlockLiteral_SetupBlockImpl_System_Delegate_System_Delegate_bool_string:
 _p_33:
@@ -10453,7 +10453,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1488]
 br x16
-.word 1652
+.word 1654
 	.no_dead_strip plt_ObjCRuntime_BlockLiteral_CleanupBlock
 plt_ObjCRuntime_BlockLiteral_CleanupBlock:
 _p_34:
@@ -10461,7 +10461,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1496]
 br x16
-.word 1657
+.word 1659
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_35:
@@ -10469,7 +10469,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1504]
 br x16
-.word 1662
+.word 1664
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_App_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_App_intptr:
 _p_36:
@@ -10477,7 +10477,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1512]
 br x16
-.word 1664
+.word 1666
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr:
 _p_37:
@@ -10485,7 +10485,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1520]
 br x16
-.word 1676
+.word 1678
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDictionary_2_Foundation_NSString_Firebase_Core_App_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Foundation_NSDictionary_2_Foundation_NSString_Firebase_Core_App_intptr:
 _p_38:
@@ -10493,7 +10493,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1528]
 br x16
-.word 1678
+.word 1680
 	.no_dead_strip plt_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 plt_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr:
 _p_39:
@@ -10501,7 +10501,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1536]
 br x16
-.word 1690
+.word 1692
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 plt_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool:
 _p_40:
@@ -10509,7 +10509,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1544]
 br x16
-.word 1692
+.word 1694
 	.no_dead_strip plt_Foundation_NSString_FromHandle_intptr
 plt_Foundation_NSString_FromHandle_intptr:
 _p_41:
@@ -10517,7 +10517,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1552]
 br x16
-.word 1694
+.word 1696
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_Options_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_Options_intptr:
 _p_42:
@@ -10525,7 +10525,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1560]
 br x16
-.word 1699
+.word 1701
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_string
 plt_ObjCRuntime_Class_GetHandle_string:
 _p_43:
@@ -10533,7 +10533,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1568]
 br x16
-.word 1711
+.word 1713
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double
 plt_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double:
 _p_44:
@@ -10541,7 +10541,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1576]
 br x16
-.word 1716
+.word 1718
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_AnalyticsConfiguration_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_AnalyticsConfiguration_intptr:
 _p_45:
@@ -10549,7 +10549,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1584]
 br x16
-.word 1718
+.word 1720
 	.no_dead_strip plt_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long
 plt_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long:
 _p_46:
@@ -10557,7 +10557,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1592]
 br x16
-.word 1730
+.word 1732
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_Configuration_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_Firebase_Core_Configuration_intptr:
 _p_47:
@@ -10565,7 +10565,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1600]
 br x16
-.word 1732
+.word 1734
 	.no_dead_strip plt_Foundation_NSObject_InitializeHandle_intptr_string
 plt_Foundation_NSObject_InitializeHandle_intptr_string:
 _p_48:
@@ -10573,7 +10573,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1608]
 br x16
-.word 1744
+.word 1746
 	.no_dead_strip plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_49:
@@ -10581,7 +10581,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1616]
 br x16
-.word 1749
+.word 1751
 	.no_dead_strip plt_Foundation_NSZone_get_Handle
 plt_Foundation_NSZone_get_Handle:
 _p_50:
@@ -10589,7 +10589,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1624]
 br x16
-.word 1751
+.word 1753
 	.no_dead_strip plt_ObjCRuntime_Runtime_GetNSObject_intptr
 plt_ObjCRuntime_Runtime_GetNSObject_intptr:
 _p_51:
@@ -10597,7 +10597,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1632]
 br x16
-.word 1756
+.word 1758
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_52:
@@ -10605,7 +10605,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1640]
 br x16
-.word 1761
+.word 1763
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_53:
@@ -10613,7 +10613,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1648]
 br x16
-.word 1799
+.word 1801
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_54:
@@ -10621,7 +10621,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1656]
 br x16
-.word 1828
+.word 1830
 	.no_dead_strip plt__icall_native_ObjCRuntime_Trampolines__Block_copy_intptr
 plt__icall_native_ObjCRuntime_Trampolines__Block_copy_intptr:
 _p_55:
@@ -10629,7 +10629,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1664]
 br x16
-.word 1855
+.word 1857
 	.no_dead_strip plt__icall_native_ObjCRuntime_Trampolines__Block_release_intptr
 plt__icall_native_ObjCRuntime_Trampolines__Block_release_intptr:
 _p_56:
@@ -10637,7 +10637,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1672]
 br x16
-.word 1857
+.word 1859
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr:
 _p_57:
@@ -10645,7 +10645,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1680]
 br x16
-.word 1859
+.word 1861
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_58:
@@ -10653,7 +10653,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1688]
 br x16
-.word 1861
+.word 1863
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double:
 _p_59:
@@ -10661,7 +10661,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1696]
 br x16
-.word 1863
+.word 1865
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool:
 _p_60:
@@ -10669,7 +10669,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1704]
 br x16
-.word 1865
+.word 1867
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr:
 _p_61:
@@ -10677,7 +10677,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1712]
 br x16
-.word 1867
+.word 1869
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr:
 _p_62:
@@ -10685,7 +10685,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1720]
 br x16
-.word 1869
+.word 1871
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr:
 _p_63:
@@ -10693,7 +10693,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1728]
 br x16
-.word 1871
+.word 1873
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_64:
@@ -10701,7 +10701,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1736]
 br x16
-.word 1873
+.word 1875
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long
 plt__icall_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long:
 _p_65:
@@ -10709,7 +10709,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1744]
 br x16
-.word 1875
+.word 1877
 	.no_dead_strip plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 plt__icall_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr:
 _p_66:
@@ -10717,7 +10717,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1752]
 br x16
-.word 1877
+.word 1879
 	.no_dead_strip plt_ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_bool
 plt_ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_bool:
 _p_67:
@@ -10725,7 +10725,7 @@ adrp x16, mono_aot_Firebase_Core_got@PAGE+0
 add x16, x16, mono_aot_Firebase_Core_got@PAGEOFF
 ldr x16, [x16, #1760]
 br x16
-.word 1879
+.word 1881
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -11059,13 +11059,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 153,1768,68,112,70,391195135,0,16125
-	.long 128,8,8,8,0,25,17824,1688
+	.long 153,1768,68,112,70,391195135,0,16199
+	.long 128,8,8,8,0,25,17896,1688
 	.long 1416,832,0,1160,1376,936,0,664
 	.long 176,1680,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 239,229,180,90,189,83,127,75,121,145,208,70,137,217,62,104
+	.byte 214,30,124,207,111,24,145,33,82,242,193,106,91,159,161,4
 	.globl _mono_aot_module_Firebase_Core_info
 	.align 3
 _mono_aot_module_Firebase_Core_info:
@@ -11245,7 +11245,7 @@ LTDIE_9:
 	.byte 5
 	.asciz "System_DelegateData"
 
-	.byte 32,16
+	.byte 40,16
 LDIFF_SYM32=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM32
 	.byte 2,35,0,6
@@ -11258,150 +11258,155 @@ LDIFF_SYM33=LTDIE_10_REFERENCE - Ldebug_info_start
 
 LDIFF_SYM34=LDIE_STRING - Ldebug_info_start
 	.long LDIFF_SYM34
-	.byte 2,35,24,0,7
+	.byte 2,35,24,6
+	.asciz "curried_first_arg"
+
+LDIFF_SYM35=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM35
+	.byte 2,35,32,0,7
 	.asciz "System_DelegateData"
 
-LDIFF_SYM35=LTDIE_9 - Ldebug_info_start
-	.long LDIFF_SYM35
+LDIFF_SYM36=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM36
 LTDIE_9_POINTER:
 
 	.byte 13
-LDIFF_SYM36=LTDIE_9 - Ldebug_info_start
-	.long LDIFF_SYM36
+LDIFF_SYM37=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM37
 LTDIE_9_REFERENCE:
 
 	.byte 14
-LDIFF_SYM37=LTDIE_9 - Ldebug_info_start
-	.long LDIFF_SYM37
+LDIFF_SYM38=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM38
 LTDIE_5:
 
 	.byte 5
 	.asciz "System_Delegate"
 
 	.byte 104,16
-LDIFF_SYM38=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM38
+LDIFF_SYM39=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM39
 	.byte 2,35,0,6
 	.asciz "method_ptr"
 
-LDIFF_SYM39=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM39
+LDIFF_SYM40=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM40
 	.byte 2,35,16,6
 	.asciz "invoke_impl"
 
-LDIFF_SYM40=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM40
+LDIFF_SYM41=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM41
 	.byte 2,35,24,6
 	.asciz "m_target"
 
-LDIFF_SYM41=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM41
+LDIFF_SYM42=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM42
 	.byte 2,35,32,6
 	.asciz "method"
 
-LDIFF_SYM42=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM42
+LDIFF_SYM43=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM43
 	.byte 2,35,40,6
 	.asciz "delegate_trampoline"
 
-LDIFF_SYM43=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM43
+LDIFF_SYM44=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM44
 	.byte 2,35,48,6
 	.asciz "extra_arg"
 
-LDIFF_SYM44=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM44
+LDIFF_SYM45=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM45
 	.byte 2,35,56,6
 	.asciz "method_code"
 
-LDIFF_SYM45=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM45
+LDIFF_SYM46=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM46
 	.byte 2,35,64,6
 	.asciz "method_info"
 
-LDIFF_SYM46=LTDIE_6_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM46
+LDIFF_SYM47=LTDIE_6_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM47
 	.byte 2,35,72,6
 	.asciz "original_method_info"
 
-LDIFF_SYM47=LTDIE_6_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM47
+LDIFF_SYM48=LTDIE_6_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM48
 	.byte 2,35,80,6
 	.asciz "data"
 
-LDIFF_SYM48=LTDIE_9_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM48
+LDIFF_SYM49=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM49
 	.byte 2,35,88,6
 	.asciz "method_is_virtual"
 
-LDIFF_SYM49=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM49
+LDIFF_SYM50=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM50
 	.byte 2,35,96,0,7
 	.asciz "System_Delegate"
 
-LDIFF_SYM50=LTDIE_5 - Ldebug_info_start
-	.long LDIFF_SYM50
+LDIFF_SYM51=LTDIE_5 - Ldebug_info_start
+	.long LDIFF_SYM51
 LTDIE_5_POINTER:
 
 	.byte 13
-LDIFF_SYM51=LTDIE_5 - Ldebug_info_start
-	.long LDIFF_SYM51
+LDIFF_SYM52=LTDIE_5 - Ldebug_info_start
+	.long LDIFF_SYM52
 LTDIE_5_REFERENCE:
 
 	.byte 14
-LDIFF_SYM52=LTDIE_5 - Ldebug_info_start
-	.long LDIFF_SYM52
+LDIFF_SYM53=LTDIE_5 - Ldebug_info_start
+	.long LDIFF_SYM53
 LTDIE_4:
 
 	.byte 5
 	.asciz "System_MulticastDelegate"
 
 	.byte 112,16
-LDIFF_SYM53=LTDIE_5 - Ldebug_info_start
-	.long LDIFF_SYM53
+LDIFF_SYM54=LTDIE_5 - Ldebug_info_start
+	.long LDIFF_SYM54
 	.byte 2,35,0,6
 	.asciz "delegates"
 
-LDIFF_SYM54=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM54
+LDIFF_SYM55=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM55
 	.byte 2,35,104,0,7
 	.asciz "System_MulticastDelegate"
 
-LDIFF_SYM55=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM55
+LDIFF_SYM56=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM56
 LTDIE_4_POINTER:
 
 	.byte 13
-LDIFF_SYM56=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM56
+LDIFF_SYM57=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM57
 LTDIE_4_REFERENCE:
 
 	.byte 14
-LDIFF_SYM57=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM57
+LDIFF_SYM58=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM58
 LTDIE_3:
 
 	.byte 5
 	.asciz "Firebase_Core_AppVoidBoolHandler"
 
 	.byte 112,16
-LDIFF_SYM58=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM58
+LDIFF_SYM59=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM59
 	.byte 2,35,0,0,7
 	.asciz "Firebase_Core_AppVoidBoolHandler"
 
-LDIFF_SYM59=LTDIE_3 - Ldebug_info_start
-	.long LDIFF_SYM59
+LDIFF_SYM60=LTDIE_3 - Ldebug_info_start
+	.long LDIFF_SYM60
 LTDIE_3_POINTER:
 
 	.byte 13
-LDIFF_SYM60=LTDIE_3 - Ldebug_info_start
-	.long LDIFF_SYM60
+LDIFF_SYM61=LTDIE_3 - Ldebug_info_start
+	.long LDIFF_SYM61
 LTDIE_3_REFERENCE:
 
 	.byte 14
-LDIFF_SYM61=LTDIE_3 - Ldebug_info_start
-	.long LDIFF_SYM61
+LDIFF_SYM62=LTDIE_3 - Ldebug_info_start
+	.long LDIFF_SYM62
 	.byte 2
 	.asciz "ObjCRuntime.Trampolines/SDAppVoidBoolHandler:Invoke"
 	.asciz "ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_bool"
@@ -11413,37 +11418,37 @@ LDIFF_SYM61=LTDIE_3 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "block"
 
-LDIFF_SYM62=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM62
+LDIFF_SYM63=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM63
 	.byte 2,141,40,3
 	.asciz "success"
 
-LDIFF_SYM63=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM63
+LDIFF_SYM64=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM64
 	.byte 2,141,48,11
 	.asciz "V_0"
 
-LDIFF_SYM64=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM64
+LDIFF_SYM65=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM65
 	.byte 1,104,11
 	.asciz "V_1"
 
-LDIFF_SYM65=LTDIE_3_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM65
+LDIFF_SYM66=LTDIE_3_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM66
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM66=Lfde0_end - Lfde0_start
-	.long LDIFF_SYM66
+LDIFF_SYM67=Lfde0_end - Lfde0_start
+	.long LDIFF_SYM67
 Lfde0_start:
 
 	.long 0
 	.align 3
 	.quad ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_bool
 
-LDIFF_SYM67=Lme_6 - ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_bool
-	.long LDIFF_SYM67
+LDIFF_SYM68=Lme_6 - ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_bool
+	.long LDIFF_SYM68
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,150,10,151,9,68,152,8
 	.align 3
@@ -11463,16 +11468,16 @@ Lfde0_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM68=Lfde1_end - Lfde1_start
-	.long LDIFF_SYM68
+LDIFF_SYM69=Lfde1_end - Lfde1_start
+	.long LDIFF_SYM69
 Lfde1_start:
 
 	.long 0
 	.align 3
 	.quad ObjCRuntime_Trampolines_SDAppVoidBoolHandler__cctor
 
-LDIFF_SYM69=Lme_7 - ObjCRuntime_Trampolines_SDAppVoidBoolHandler__cctor
-	.long LDIFF_SYM69
+LDIFF_SYM70=Lme_7 - ObjCRuntime_Trampolines_SDAppVoidBoolHandler__cctor
+	.long LDIFF_SYM70
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -11485,56 +11490,56 @@ LTDIE_12:
 	.asciz "_DAppVoidBoolHandler"
 
 	.byte 112,16
-LDIFF_SYM70=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM70
+LDIFF_SYM71=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM71
 	.byte 2,35,0,0,7
 	.asciz "_DAppVoidBoolHandler"
 
-LDIFF_SYM71=LTDIE_12 - Ldebug_info_start
-	.long LDIFF_SYM71
+LDIFF_SYM72=LTDIE_12 - Ldebug_info_start
+	.long LDIFF_SYM72
 LTDIE_12_POINTER:
 
 	.byte 13
-LDIFF_SYM72=LTDIE_12 - Ldebug_info_start
-	.long LDIFF_SYM72
+LDIFF_SYM73=LTDIE_12 - Ldebug_info_start
+	.long LDIFF_SYM73
 LTDIE_12_REFERENCE:
 
 	.byte 14
-LDIFF_SYM73=LTDIE_12 - Ldebug_info_start
-	.long LDIFF_SYM73
+LDIFF_SYM74=LTDIE_12 - Ldebug_info_start
+	.long LDIFF_SYM74
 LTDIE_11:
 
 	.byte 5
 	.asciz "_NIDAppVoidBoolHandler"
 
 	.byte 32,16
-LDIFF_SYM74=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM74
+LDIFF_SYM75=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM75
 	.byte 2,35,0,6
 	.asciz "blockPtr"
 
-LDIFF_SYM75=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM75
+LDIFF_SYM76=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM76
 	.byte 2,35,24,6
 	.asciz "invoker"
 
-LDIFF_SYM76=LTDIE_12_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM76
+LDIFF_SYM77=LTDIE_12_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM77
 	.byte 2,35,16,0,7
 	.asciz "_NIDAppVoidBoolHandler"
 
-LDIFF_SYM77=LTDIE_11 - Ldebug_info_start
-	.long LDIFF_SYM77
+LDIFF_SYM78=LTDIE_11 - Ldebug_info_start
+	.long LDIFF_SYM78
 LTDIE_11_POINTER:
 
 	.byte 13
-LDIFF_SYM78=LTDIE_11 - Ldebug_info_start
-	.long LDIFF_SYM78
+LDIFF_SYM79=LTDIE_11 - Ldebug_info_start
+	.long LDIFF_SYM79
 LTDIE_11_REFERENCE:
 
 	.byte 14
-LDIFF_SYM79=LTDIE_11 - Ldebug_info_start
-	.long LDIFF_SYM79
+LDIFF_SYM80=LTDIE_11 - Ldebug_info_start
+	.long LDIFF_SYM80
 	.byte 2
 	.asciz "ObjCRuntime.Trampolines/NIDAppVoidBoolHandler:.ctor"
 	.asciz "ObjCRuntime_Trampolines_NIDAppVoidBoolHandler__ctor_ObjCRuntime_BlockLiteral_"
@@ -11546,27 +11551,27 @@ LDIFF_SYM79=LTDIE_11 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM80=LTDIE_11_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM80
+LDIFF_SYM81=LTDIE_11_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM81
 	.byte 1,105,3
 	.asciz "block"
 
-LDIFF_SYM81=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM81
+LDIFF_SYM82=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM82
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM82=Lfde2_end - Lfde2_start
-	.long LDIFF_SYM82
+LDIFF_SYM83=Lfde2_end - Lfde2_start
+	.long LDIFF_SYM83
 Lfde2_start:
 
 	.long 0
 	.align 3
 	.quad ObjCRuntime_Trampolines_NIDAppVoidBoolHandler__ctor_ObjCRuntime_BlockLiteral_
 
-LDIFF_SYM83=Lme_8 - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler__ctor_ObjCRuntime_BlockLiteral_
-	.long LDIFF_SYM83
+LDIFF_SYM84=Lme_8 - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler__ctor_ObjCRuntime_BlockLiteral_
+	.long LDIFF_SYM84
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10,154,9
 	.align 3
@@ -11585,22 +11590,22 @@ Lfde2_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM84=LTDIE_11_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM84
+LDIFF_SYM85=LTDIE_11_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM85
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM85=Lfde3_end - Lfde3_start
-	.long LDIFF_SYM85
+LDIFF_SYM86=Lfde3_end - Lfde3_start
+	.long LDIFF_SYM86
 Lfde3_start:
 
 	.long 0
 	.align 3
 	.quad ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Finalize
 
-LDIFF_SYM86=Lme_9 - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Finalize
-	.long LDIFF_SYM86
+LDIFF_SYM87=Lme_9 - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Finalize
+	.long LDIFF_SYM87
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -11619,27 +11624,27 @@ Lfde3_end:
 	.byte 2,118,16,3
 	.asciz "block"
 
-LDIFF_SYM87=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM87
+LDIFF_SYM88=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM88
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM88=LTDIE_3_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM88
+LDIFF_SYM89=LTDIE_3_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM89
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM89=Lfde4_end - Lfde4_start
-	.long LDIFF_SYM89
+LDIFF_SYM90=Lfde4_end - Lfde4_start
+	.long LDIFF_SYM90
 Lfde4_start:
 
 	.long 0
 	.align 3
 	.quad ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Create_intptr
 
-LDIFF_SYM90=Lme_a - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Create_intptr
-	.long LDIFF_SYM90
+LDIFF_SYM91=Lme_a - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Create_intptr
+	.long LDIFF_SYM91
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,151,12,152,11,68,153,10,154,9
 	.align 3
@@ -11658,27 +11663,27 @@ Lfde4_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM91=LTDIE_11_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM91
+LDIFF_SYM92=LTDIE_11_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM92
 	.byte 1,105,3
 	.asciz "success"
 
-LDIFF_SYM92=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM92
+LDIFF_SYM93=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM93
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM93=Lfde5_end - Lfde5_start
-	.long LDIFF_SYM93
+LDIFF_SYM94=Lfde5_end - Lfde5_start
+	.long LDIFF_SYM94
 Lfde5_start:
 
 	.long 0
 	.align 3
 	.quad ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Invoke_bool
 
-LDIFF_SYM94=Lme_b - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Invoke_bool
-	.long LDIFF_SYM94
+LDIFF_SYM95=Lme_b - ObjCRuntime_Trampolines_NIDAppVoidBoolHandler_Invoke_bool
+	.long LDIFF_SYM95
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,153,8
 	.align 3
@@ -11698,16 +11703,16 @@ Lfde5_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM95=Lfde6_end - Lfde6_start
-	.long LDIFF_SYM95
+LDIFF_SYM96=Lfde6_end - Lfde6_start
+	.long LDIFF_SYM96
 Lfde6_start:
 
 	.long 0
 	.align 3
 	.quad ApiDefinition_Messaging__cctor
 
-LDIFF_SYM96=Lme_c - ApiDefinition_Messaging__cctor
-	.long LDIFF_SYM96
+LDIFF_SYM97=Lme_c - ApiDefinition_Messaging__cctor
+	.long LDIFF_SYM97
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -11727,16 +11732,16 @@ Lfde6_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM97=Lfde7_end - Lfde7_start
-	.long LDIFF_SYM97
+LDIFF_SYM98=Lfde7_end - Lfde7_start
+	.long LDIFF_SYM98
 Lfde7_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Loader__cctor
 
-LDIFF_SYM98=Lme_17 - Firebase_Core_Loader__cctor
-	.long LDIFF_SYM98
+LDIFF_SYM99=Lme_17 - Firebase_Core_Loader__cctor
+	.long LDIFF_SYM99
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -11756,16 +11761,16 @@ Lfde7_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM99=Lfde8_end - Lfde8_start
-	.long LDIFF_SYM99
+LDIFF_SYM100=Lfde8_end - Lfde8_start
+	.long LDIFF_SYM100
 Lfde8_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Loader_ForceLoad
 
-LDIFF_SYM100=Lme_18 - Firebase_Core_Loader_ForceLoad
-	.long LDIFF_SYM100
+LDIFF_SYM101=Lme_18 - Firebase_Core_Loader_ForceLoad
+	.long LDIFF_SYM101
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -11785,16 +11790,16 @@ Lfde8_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM101=Lfde9_end - Lfde9_start
-	.long LDIFF_SYM101
+LDIFF_SYM102=Lfde9_end - Lfde9_start
+	.long LDIFF_SYM102
 Lfde9_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_get_CurrentVersion
 
-LDIFF_SYM102=Lme_19 - Firebase_Core_App_get_CurrentVersion
-	.long LDIFF_SYM102
+LDIFF_SYM103=Lme_19 - Firebase_Core_App_get_CurrentVersion
+	.long LDIFF_SYM103
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8
 	.align 3
@@ -11807,8 +11812,8 @@ LTDIE_15:
 	.asciz "_Flags"
 
 	.byte 1
-LDIFF_SYM103=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM103
+LDIFF_SYM104=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM104
 	.byte 9
 	.asciz "Disposed"
 
@@ -11833,79 +11838,79 @@ LDIFF_SYM103=LDIE_U1 - Ldebug_info_start
 	.byte 128,127,0,7
 	.asciz "_Flags"
 
-LDIFF_SYM104=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM104
+LDIFF_SYM105=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM105
 LTDIE_15_POINTER:
 
 	.byte 13
-LDIFF_SYM105=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM105
+LDIFF_SYM106=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM106
 LTDIE_15_REFERENCE:
 
 	.byte 14
-LDIFF_SYM106=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM106
+LDIFF_SYM107=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM107
 LTDIE_14:
 
 	.byte 5
 	.asciz "Foundation_NSObject"
 
 	.byte 40,16
-LDIFF_SYM107=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM107
+LDIFF_SYM108=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM108
 	.byte 2,35,0,6
 	.asciz "handle"
 
-LDIFF_SYM108=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM108
+LDIFF_SYM109=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM109
 	.byte 2,35,16,6
 	.asciz "class_handle"
 
-LDIFF_SYM109=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM109
+LDIFF_SYM110=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM110
 	.byte 2,35,24,6
 	.asciz "flags"
 
-LDIFF_SYM110=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM110
+LDIFF_SYM111=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM111
 	.byte 2,35,32,0,7
 	.asciz "Foundation_NSObject"
 
-LDIFF_SYM111=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM111
+LDIFF_SYM112=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM112
 LTDIE_14_POINTER:
 
 	.byte 13
-LDIFF_SYM112=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM112
+LDIFF_SYM113=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM113
 LTDIE_14_REFERENCE:
 
 	.byte 14
-LDIFF_SYM113=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM113
+LDIFF_SYM114=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM114
 LTDIE_13:
 
 	.byte 5
 	.asciz "Firebase_Core_App"
 
 	.byte 40,16
-LDIFF_SYM114=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM114
+LDIFF_SYM115=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM115
 	.byte 2,35,0,0,7
 	.asciz "Firebase_Core_App"
 
-LDIFF_SYM115=LTDIE_13 - Ldebug_info_start
-	.long LDIFF_SYM115
+LDIFF_SYM116=LTDIE_13 - Ldebug_info_start
+	.long LDIFF_SYM116
 LTDIE_13_POINTER:
 
 	.byte 13
-LDIFF_SYM116=LTDIE_13 - Ldebug_info_start
-	.long LDIFF_SYM116
+LDIFF_SYM117=LTDIE_13 - Ldebug_info_start
+	.long LDIFF_SYM117
 LTDIE_13_REFERENCE:
 
 	.byte 14
-LDIFF_SYM117=LTDIE_13 - Ldebug_info_start
-	.long LDIFF_SYM117
+LDIFF_SYM118=LTDIE_13 - Ldebug_info_start
+	.long LDIFF_SYM118
 	.byte 2
 	.asciz "Firebase.Core.App:get_ClassHandle"
 	.asciz "Firebase_Core_App_get_ClassHandle"
@@ -11917,22 +11922,22 @@ LDIFF_SYM117=LTDIE_13 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM118=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM118
+LDIFF_SYM119=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM119
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM119=Lfde10_end - Lfde10_start
-	.long LDIFF_SYM119
+LDIFF_SYM120=Lfde10_end - Lfde10_start
+	.long LDIFF_SYM120
 Lfde10_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_get_ClassHandle
 
-LDIFF_SYM120=Lme_1a - Firebase_Core_App_get_ClassHandle
-	.long LDIFF_SYM120
+LDIFF_SYM121=Lme_1a - Firebase_Core_App_get_ClassHandle
+	.long LDIFF_SYM121
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -11945,23 +11950,23 @@ LTDIE_16:
 	.asciz "Foundation_NSObjectFlag"
 
 	.byte 16,16
-LDIFF_SYM121=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM121
+LDIFF_SYM122=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM122
 	.byte 2,35,0,0,7
 	.asciz "Foundation_NSObjectFlag"
 
-LDIFF_SYM122=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM122
+LDIFF_SYM123=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM123
 LTDIE_16_POINTER:
 
 	.byte 13
-LDIFF_SYM123=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM123
+LDIFF_SYM124=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM124
 LTDIE_16_REFERENCE:
 
 	.byte 14
-LDIFF_SYM124=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM124
+LDIFF_SYM125=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM125
 	.byte 2
 	.asciz "Firebase.Core.App:.ctor"
 	.asciz "Firebase_Core_App__ctor_Foundation_NSObjectFlag"
@@ -11973,27 +11978,27 @@ LDIFF_SYM124=LTDIE_16 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM125=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM125
+LDIFF_SYM126=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM126
 	.byte 1,105,3
 	.asciz "t"
 
-LDIFF_SYM126=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM126
+LDIFF_SYM127=LTDIE_16_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM127
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM127=Lfde11_end - Lfde11_start
-	.long LDIFF_SYM127
+LDIFF_SYM128=Lfde11_end - Lfde11_start
+	.long LDIFF_SYM128
 Lfde11_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App__ctor_Foundation_NSObjectFlag
 
-LDIFF_SYM128=Lme_1b - Firebase_Core_App__ctor_Foundation_NSObjectFlag
-	.long LDIFF_SYM128
+LDIFF_SYM129=Lme_1b - Firebase_Core_App__ctor_Foundation_NSObjectFlag
+	.long LDIFF_SYM129
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -12012,27 +12017,27 @@ Lfde11_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM129=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM129
+LDIFF_SYM130=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM130
 	.byte 1,105,3
 	.asciz "handle"
 
-LDIFF_SYM130=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM130
+LDIFF_SYM131=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM131
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM131=Lfde12_end - Lfde12_start
-	.long LDIFF_SYM131
+LDIFF_SYM132=Lfde12_end - Lfde12_start
+	.long LDIFF_SYM132
 Lfde12_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App__ctor_intptr
 
-LDIFF_SYM132=Lme_1c - Firebase_Core_App__ctor_intptr
-	.long LDIFF_SYM132
+LDIFF_SYM133=Lme_1c - Firebase_Core_App__ctor_intptr
+	.long LDIFF_SYM133
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -12052,16 +12057,16 @@ Lfde12_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM133=Lfde13_end - Lfde13_start
-	.long LDIFF_SYM133
+LDIFF_SYM134=Lfde13_end - Lfde13_start
+	.long LDIFF_SYM134
 Lfde13_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_Configure
 
-LDIFF_SYM134=Lme_1d - Firebase_Core_App_Configure
-	.long LDIFF_SYM134
+LDIFF_SYM135=Lme_1d - Firebase_Core_App_Configure
+	.long LDIFF_SYM135
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -12074,23 +12079,23 @@ LTDIE_17:
 	.asciz "Firebase_Core_Options"
 
 	.byte 40,16
-LDIFF_SYM135=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM135
+LDIFF_SYM136=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM136
 	.byte 2,35,0,0,7
 	.asciz "Firebase_Core_Options"
 
-LDIFF_SYM136=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM136
+LDIFF_SYM137=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM137
 LTDIE_17_POINTER:
 
 	.byte 13
-LDIFF_SYM137=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM137
+LDIFF_SYM138=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM138
 LTDIE_17_REFERENCE:
 
 	.byte 14
-LDIFF_SYM138=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM138
+LDIFF_SYM139=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM139
 	.byte 2
 	.asciz "Firebase.Core.App:Configure"
 	.asciz "Firebase_Core_App_Configure_Firebase_Core_Options"
@@ -12102,22 +12107,22 @@ LDIFF_SYM138=LTDIE_17 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "options"
 
-LDIFF_SYM139=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM139
+LDIFF_SYM140=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM140
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM140=Lfde14_end - Lfde14_start
-	.long LDIFF_SYM140
+LDIFF_SYM141=Lfde14_end - Lfde14_start
+	.long LDIFF_SYM141
 Lfde14_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_Configure_Firebase_Core_Options
 
-LDIFF_SYM141=Lme_1e - Firebase_Core_App_Configure_Firebase_Core_Options
-	.long LDIFF_SYM141
+LDIFF_SYM142=Lme_1e - Firebase_Core_App_Configure_Firebase_Core_Options
+	.long LDIFF_SYM142
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8
 	.align 3
@@ -12136,32 +12141,32 @@ Lfde14_end:
 	.byte 2,118,16,3
 	.asciz "name"
 
-LDIFF_SYM142=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM142
+LDIFF_SYM143=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM143
 	.byte 1,105,3
 	.asciz "options"
 
-LDIFF_SYM143=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM143
+LDIFF_SYM144=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM144
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM144=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM144
+LDIFF_SYM145=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM145
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM145=Lfde15_end - Lfde15_start
-	.long LDIFF_SYM145
+LDIFF_SYM146=Lfde15_end - Lfde15_start
+	.long LDIFF_SYM146
 Lfde15_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_Configure_string_Firebase_Core_Options
 
-LDIFF_SYM146=Lme_1f - Firebase_Core_App_Configure_string_Firebase_Core_Options
-	.long LDIFF_SYM146
+LDIFF_SYM147=Lme_1f - Firebase_Core_App_Configure_string_Firebase_Core_Options
+	.long LDIFF_SYM147
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,152,12,153,11,68,154,10
 	.align 3
@@ -12180,37 +12185,37 @@ Lfde15_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM147=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM147
+LDIFF_SYM148=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM148
 	.byte 2,141,32,3
 	.asciz "completion"
 
-LDIFF_SYM148=LTDIE_3_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM148
+LDIFF_SYM149=LTDIE_3_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM149
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM149=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM149
+LDIFF_SYM150=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM150
 	.byte 1,104,11
 	.asciz "V_1"
 
-LDIFF_SYM150=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM150
+LDIFF_SYM151=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM151
 	.byte 3,141,192,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM151=Lfde16_end - Lfde16_start
-	.long LDIFF_SYM151
+LDIFF_SYM152=Lfde16_end - Lfde16_start
+	.long LDIFF_SYM152
 Lfde16_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_Delete_Firebase_Core_AppVoidBoolHandler
 
-LDIFF_SYM152=Lme_20 - Firebase_Core_App_Delete_Firebase_Core_AppVoidBoolHandler
-	.long LDIFF_SYM152
+LDIFF_SYM153=Lme_20 - Firebase_Core_App_Delete_Firebase_Core_AppVoidBoolHandler
+	.long LDIFF_SYM153
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,152,16,68,154,15
 	.align 3
@@ -12229,27 +12234,27 @@ Lfde16_end:
 	.byte 2,118,16,3
 	.asciz "name"
 
-LDIFF_SYM153=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM153
+LDIFF_SYM154=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM154
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM154=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM154
+LDIFF_SYM155=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM155
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM155=Lfde17_end - Lfde17_start
-	.long LDIFF_SYM155
+LDIFF_SYM156=Lfde17_end - Lfde17_start
+	.long LDIFF_SYM156
 Lfde17_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_From_string
 
-LDIFF_SYM156=Lme_21 - Firebase_Core_App_From_string
-	.long LDIFF_SYM156
+LDIFF_SYM157=Lme_21 - Firebase_Core_App_From_string
+	.long LDIFF_SYM157
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,153,12,154,11
 	.align 3
@@ -12269,16 +12274,16 @@ Lfde17_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM157=Lfde18_end - Lfde18_start
-	.long LDIFF_SYM157
+LDIFF_SYM158=Lfde18_end - Lfde18_start
+	.long LDIFF_SYM158
 Lfde18_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_GetAll
 
-LDIFF_SYM158=Lme_22 - Firebase_Core_App_GetAll
-	.long LDIFF_SYM158
+LDIFF_SYM159=Lme_22 - Firebase_Core_App_GetAll
+	.long LDIFF_SYM159
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12297,22 +12302,22 @@ Lfde18_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM159=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM159
+LDIFF_SYM160=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM160
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM160=Lfde19_end - Lfde19_start
-	.long LDIFF_SYM160
+LDIFF_SYM161=Lfde19_end - Lfde19_start
+	.long LDIFF_SYM161
 Lfde19_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_get_DataCollectionDefaultEnabled
 
-LDIFF_SYM161=Lme_23 - Firebase_Core_App_get_DataCollectionDefaultEnabled
-	.long LDIFF_SYM161
+LDIFF_SYM162=Lme_23 - Firebase_Core_App_get_DataCollectionDefaultEnabled
+	.long LDIFF_SYM162
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12331,27 +12336,27 @@ Lfde19_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM162=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM162
+LDIFF_SYM163=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM163
 	.byte 2,141,16,3
 	.asciz "value"
 
-LDIFF_SYM163=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM163
+LDIFF_SYM164=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM164
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM164=Lfde20_end - Lfde20_start
-	.long LDIFF_SYM164
+LDIFF_SYM165=Lfde20_end - Lfde20_start
+	.long LDIFF_SYM165
 Lfde20_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_set_DataCollectionDefaultEnabled_bool
 
-LDIFF_SYM165=Lme_24 - Firebase_Core_App_set_DataCollectionDefaultEnabled_bool
-	.long LDIFF_SYM165
+LDIFF_SYM166=Lme_24 - Firebase_Core_App_set_DataCollectionDefaultEnabled_bool
+	.long LDIFF_SYM166
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12371,16 +12376,16 @@ Lfde20_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM166=Lfde21_end - Lfde21_start
-	.long LDIFF_SYM166
+LDIFF_SYM167=Lfde21_end - Lfde21_start
+	.long LDIFF_SYM167
 Lfde21_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_get_DefaultInstance
 
-LDIFF_SYM167=Lme_25 - Firebase_Core_App_get_DefaultInstance
-	.long LDIFF_SYM167
+LDIFF_SYM168=Lme_25 - Firebase_Core_App_get_DefaultInstance
+	.long LDIFF_SYM168
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12399,22 +12404,22 @@ Lfde21_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM168=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM168
+LDIFF_SYM169=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM169
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM169=Lfde22_end - Lfde22_start
-	.long LDIFF_SYM169
+LDIFF_SYM170=Lfde22_end - Lfde22_start
+	.long LDIFF_SYM170
 Lfde22_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_get_Name
 
-LDIFF_SYM170=Lme_26 - Firebase_Core_App_get_Name
-	.long LDIFF_SYM170
+LDIFF_SYM171=Lme_26 - Firebase_Core_App_get_Name
+	.long LDIFF_SYM171
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12433,27 +12438,27 @@ Lfde22_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM171=LTDIE_13_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM171
+LDIFF_SYM172=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM172
 	.byte 2,141,24,11
 	.asciz "V_0"
 
-LDIFF_SYM172=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM172
+LDIFF_SYM173=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM173
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM173=Lfde23_end - Lfde23_start
-	.long LDIFF_SYM173
+LDIFF_SYM174=Lfde23_end - Lfde23_start
+	.long LDIFF_SYM174
 Lfde23_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App_get_Options
 
-LDIFF_SYM174=Lme_27 - Firebase_Core_App_get_Options
-	.long LDIFF_SYM174
+LDIFF_SYM175=Lme_27 - Firebase_Core_App_get_Options
+	.long LDIFF_SYM175
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,153,12
 	.align 3
@@ -12473,16 +12478,16 @@ Lfde23_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM175=Lfde24_end - Lfde24_start
-	.long LDIFF_SYM175
+LDIFF_SYM176=Lfde24_end - Lfde24_start
+	.long LDIFF_SYM176
 Lfde24_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_App__cctor
 
-LDIFF_SYM176=Lme_28 - Firebase_Core_App__cctor
-	.long LDIFF_SYM176
+LDIFF_SYM177=Lme_28 - Firebase_Core_App__cctor
+	.long LDIFF_SYM177
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -12495,23 +12500,23 @@ LTDIE_18:
 	.asciz "Firebase_Core_AnalyticsConfiguration"
 
 	.byte 40,16
-LDIFF_SYM177=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM177
+LDIFF_SYM178=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM178
 	.byte 2,35,0,0,7
 	.asciz "Firebase_Core_AnalyticsConfiguration"
 
-LDIFF_SYM178=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM178
+LDIFF_SYM179=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM179
 LTDIE_18_POINTER:
 
 	.byte 13
-LDIFF_SYM179=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM179
+LDIFF_SYM180=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM180
 LTDIE_18_REFERENCE:
 
 	.byte 14
-LDIFF_SYM180=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM180
+LDIFF_SYM181=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM181
 	.byte 2
 	.asciz "Firebase.Core.AnalyticsConfiguration:get_ClassHandle"
 	.asciz "Firebase_Core_AnalyticsConfiguration_get_ClassHandle"
@@ -12523,22 +12528,22 @@ LDIFF_SYM180=LTDIE_18 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM181=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM181
+LDIFF_SYM182=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM182
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM182=Lfde25_end - Lfde25_start
-	.long LDIFF_SYM182
+LDIFF_SYM183=Lfde25_end - Lfde25_start
+	.long LDIFF_SYM183
 Lfde25_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration_get_ClassHandle
 
-LDIFF_SYM183=Lme_29 - Firebase_Core_AnalyticsConfiguration_get_ClassHandle
-	.long LDIFF_SYM183
+LDIFF_SYM184=Lme_29 - Firebase_Core_AnalyticsConfiguration_get_ClassHandle
+	.long LDIFF_SYM184
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -12557,27 +12562,27 @@ Lfde25_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM184=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM184
+LDIFF_SYM185=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM185
 	.byte 1,105,3
 	.asciz "t"
 
-LDIFF_SYM185=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM185
+LDIFF_SYM186=LTDIE_16_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM186
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM186=Lfde26_end - Lfde26_start
-	.long LDIFF_SYM186
+LDIFF_SYM187=Lfde26_end - Lfde26_start
+	.long LDIFF_SYM187
 Lfde26_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration__ctor_Foundation_NSObjectFlag
 
-LDIFF_SYM187=Lme_2a - Firebase_Core_AnalyticsConfiguration__ctor_Foundation_NSObjectFlag
-	.long LDIFF_SYM187
+LDIFF_SYM188=Lme_2a - Firebase_Core_AnalyticsConfiguration__ctor_Foundation_NSObjectFlag
+	.long LDIFF_SYM188
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -12596,27 +12601,27 @@ Lfde26_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM188=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM188
+LDIFF_SYM189=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM189
 	.byte 1,105,3
 	.asciz "handle"
 
-LDIFF_SYM189=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM189
+LDIFF_SYM190=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM190
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM190=Lfde27_end - Lfde27_start
-	.long LDIFF_SYM190
+LDIFF_SYM191=Lfde27_end - Lfde27_start
+	.long LDIFF_SYM191
 Lfde27_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration__ctor_intptr
 
-LDIFF_SYM191=Lme_2b - Firebase_Core_AnalyticsConfiguration__ctor_intptr
-	.long LDIFF_SYM191
+LDIFF_SYM192=Lme_2b - Firebase_Core_AnalyticsConfiguration__ctor_intptr
+	.long LDIFF_SYM192
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -12635,27 +12640,27 @@ Lfde27_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM192=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM192
+LDIFF_SYM193=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM193
 	.byte 2,141,16,3
 	.asciz "analyticsCollectionEnabled"
 
-LDIFF_SYM193=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM193
+LDIFF_SYM194=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM194
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM194=Lfde28_end - Lfde28_start
-	.long LDIFF_SYM194
+LDIFF_SYM195=Lfde28_end - Lfde28_start
+	.long LDIFF_SYM195
 Lfde28_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration_SetAnalyticsCollectionEnabled_bool
 
-LDIFF_SYM195=Lme_2c - Firebase_Core_AnalyticsConfiguration_SetAnalyticsCollectionEnabled_bool
-	.long LDIFF_SYM195
+LDIFF_SYM196=Lme_2c - Firebase_Core_AnalyticsConfiguration_SetAnalyticsCollectionEnabled_bool
+	.long LDIFF_SYM196
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12668,28 +12673,28 @@ LTDIE_19:
 	.asciz "System_Double"
 
 	.byte 24,16
-LDIFF_SYM196=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM196
+LDIFF_SYM197=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM197
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM197=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM197
+LDIFF_SYM198=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM198
 	.byte 2,35,16,0,7
 	.asciz "System_Double"
 
-LDIFF_SYM198=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM198
+LDIFF_SYM199=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM199
 LTDIE_19_POINTER:
 
 	.byte 13
-LDIFF_SYM199=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM199
+LDIFF_SYM200=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM200
 LTDIE_19_REFERENCE:
 
 	.byte 14
-LDIFF_SYM200=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM200
+LDIFF_SYM201=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM201
 	.byte 2
 	.asciz "Firebase.Core.AnalyticsConfiguration:SetMinimumSessionInterval"
 	.asciz "Firebase_Core_AnalyticsConfiguration_SetMinimumSessionInterval_double"
@@ -12701,27 +12706,27 @@ LDIFF_SYM200=LTDIE_19 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM201=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM201
+LDIFF_SYM202=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM202
 	.byte 2,141,16,3
 	.asciz "minimumSessionInterval"
 
-LDIFF_SYM202=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM202
+LDIFF_SYM203=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM203
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM203=Lfde29_end - Lfde29_start
-	.long LDIFF_SYM203
+LDIFF_SYM204=Lfde29_end - Lfde29_start
+	.long LDIFF_SYM204
 Lfde29_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration_SetMinimumSessionInterval_double
 
-LDIFF_SYM204=Lme_2d - Firebase_Core_AnalyticsConfiguration_SetMinimumSessionInterval_double
-	.long LDIFF_SYM204
+LDIFF_SYM205=Lme_2d - Firebase_Core_AnalyticsConfiguration_SetMinimumSessionInterval_double
+	.long LDIFF_SYM205
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12740,27 +12745,27 @@ Lfde29_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM205=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM205
+LDIFF_SYM206=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM206
 	.byte 2,141,16,3
 	.asciz "sessionTimeoutInterval"
 
-LDIFF_SYM206=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM206
+LDIFF_SYM207=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM207
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM207=Lfde30_end - Lfde30_start
-	.long LDIFF_SYM207
+LDIFF_SYM208=Lfde30_end - Lfde30_start
+	.long LDIFF_SYM208
 Lfde30_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration_SetSessionTimeoutInterval_double
 
-LDIFF_SYM208=Lme_2e - Firebase_Core_AnalyticsConfiguration_SetSessionTimeoutInterval_double
-	.long LDIFF_SYM208
+LDIFF_SYM209=Lme_2e - Firebase_Core_AnalyticsConfiguration_SetSessionTimeoutInterval_double
+	.long LDIFF_SYM209
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12780,16 +12785,16 @@ Lfde30_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM209=Lfde31_end - Lfde31_start
-	.long LDIFF_SYM209
+LDIFF_SYM210=Lfde31_end - Lfde31_start
+	.long LDIFF_SYM210
 Lfde31_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration_get_SharedInstance
 
-LDIFF_SYM210=Lme_2f - Firebase_Core_AnalyticsConfiguration_get_SharedInstance
-	.long LDIFF_SYM210
+LDIFF_SYM211=Lme_2f - Firebase_Core_AnalyticsConfiguration_get_SharedInstance
+	.long LDIFF_SYM211
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -12809,16 +12814,16 @@ Lfde31_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM211=Lfde32_end - Lfde32_start
-	.long LDIFF_SYM211
+LDIFF_SYM212=Lfde32_end - Lfde32_start
+	.long LDIFF_SYM212
 Lfde32_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_AnalyticsConfiguration__cctor
 
-LDIFF_SYM212=Lme_30 - Firebase_Core_AnalyticsConfiguration__cctor
-	.long LDIFF_SYM212
+LDIFF_SYM213=Lme_30 - Firebase_Core_AnalyticsConfiguration__cctor
+	.long LDIFF_SYM213
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -12831,23 +12836,23 @@ LTDIE_20:
 	.asciz "Firebase_Core_Configuration"
 
 	.byte 40,16
-LDIFF_SYM213=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM213
+LDIFF_SYM214=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM214
 	.byte 2,35,0,0,7
 	.asciz "Firebase_Core_Configuration"
 
-LDIFF_SYM214=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM214
+LDIFF_SYM215=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM215
 LTDIE_20_POINTER:
 
 	.byte 13
-LDIFF_SYM215=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM215
+LDIFF_SYM216=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM216
 LTDIE_20_REFERENCE:
 
 	.byte 14
-LDIFF_SYM216=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM216
+LDIFF_SYM217=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM217
 	.byte 2
 	.asciz "Firebase.Core.Configuration:get_ClassHandle"
 	.asciz "Firebase_Core_Configuration_get_ClassHandle"
@@ -12859,22 +12864,22 @@ LDIFF_SYM216=LTDIE_20 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM217=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM217
+LDIFF_SYM218=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM218
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM218=Lfde33_end - Lfde33_start
-	.long LDIFF_SYM218
+LDIFF_SYM219=Lfde33_end - Lfde33_start
+	.long LDIFF_SYM219
 Lfde33_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration_get_ClassHandle
 
-LDIFF_SYM219=Lme_31 - Firebase_Core_Configuration_get_ClassHandle
-	.long LDIFF_SYM219
+LDIFF_SYM220=Lme_31 - Firebase_Core_Configuration_get_ClassHandle
+	.long LDIFF_SYM220
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -12893,27 +12898,27 @@ Lfde33_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM220=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM220
+LDIFF_SYM221=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM221
 	.byte 1,105,3
 	.asciz "t"
 
-LDIFF_SYM221=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM221
+LDIFF_SYM222=LTDIE_16_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM222
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM222=Lfde34_end - Lfde34_start
-	.long LDIFF_SYM222
+LDIFF_SYM223=Lfde34_end - Lfde34_start
+	.long LDIFF_SYM223
 Lfde34_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration__ctor_Foundation_NSObjectFlag
 
-LDIFF_SYM223=Lme_32 - Firebase_Core_Configuration__ctor_Foundation_NSObjectFlag
-	.long LDIFF_SYM223
+LDIFF_SYM224=Lme_32 - Firebase_Core_Configuration__ctor_Foundation_NSObjectFlag
+	.long LDIFF_SYM224
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -12932,27 +12937,27 @@ Lfde34_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM224=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM224
+LDIFF_SYM225=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM225
 	.byte 1,105,3
 	.asciz "handle"
 
-LDIFF_SYM225=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM225
+LDIFF_SYM226=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM226
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM226=Lfde35_end - Lfde35_start
-	.long LDIFF_SYM226
+LDIFF_SYM227=Lfde35_end - Lfde35_start
+	.long LDIFF_SYM227
 Lfde35_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration__ctor_intptr
 
-LDIFF_SYM227=Lme_33 - Firebase_Core_Configuration__ctor_intptr
-	.long LDIFF_SYM227
+LDIFF_SYM228=Lme_33 - Firebase_Core_Configuration__ctor_intptr
+	.long LDIFF_SYM228
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -12965,8 +12970,8 @@ LTDIE_21:
 	.asciz "Firebase_Core_LoggerLevel"
 
 	.byte 8
-LDIFF_SYM228=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM228
+LDIFF_SYM229=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM229
 	.byte 9
 	.asciz "Error"
 
@@ -12991,18 +12996,18 @@ LDIFF_SYM228=LDIE_I8 - Ldebug_info_start
 	.byte 7,0,7
 	.asciz "Firebase_Core_LoggerLevel"
 
-LDIFF_SYM229=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM229
+LDIFF_SYM230=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM230
 LTDIE_21_POINTER:
 
 	.byte 13
-LDIFF_SYM230=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM230
+LDIFF_SYM231=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM231
 LTDIE_21_REFERENCE:
 
 	.byte 14
-LDIFF_SYM231=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM231
+LDIFF_SYM232=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM232
 	.byte 2
 	.asciz "Firebase.Core.Configuration:SetLoggerLevel"
 	.asciz "Firebase_Core_Configuration_SetLoggerLevel_Firebase_Core_LoggerLevel"
@@ -13014,27 +13019,27 @@ LDIFF_SYM231=LTDIE_21 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM232=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM232
+LDIFF_SYM233=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM233
 	.byte 2,141,16,3
 	.asciz "loggerLevel"
 
-LDIFF_SYM233=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM233
+LDIFF_SYM234=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM234
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM234=Lfde36_end - Lfde36_start
-	.long LDIFF_SYM234
+LDIFF_SYM235=Lfde36_end - Lfde36_start
+	.long LDIFF_SYM235
 Lfde36_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration_SetLoggerLevel_Firebase_Core_LoggerLevel
 
-LDIFF_SYM235=Lme_34 - Firebase_Core_Configuration_SetLoggerLevel_Firebase_Core_LoggerLevel
-	.long LDIFF_SYM235
+LDIFF_SYM236=Lme_34 - Firebase_Core_Configuration_SetLoggerLevel_Firebase_Core_LoggerLevel
+	.long LDIFF_SYM236
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13053,27 +13058,27 @@ Lfde36_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM236=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM236
+LDIFF_SYM237=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM237
 	.byte 2,141,24,11
 	.asciz "V_0"
 
-LDIFF_SYM237=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM237
+LDIFF_SYM238=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM238
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM238=Lfde37_end - Lfde37_start
-	.long LDIFF_SYM238
+LDIFF_SYM239=Lfde37_end - Lfde37_start
+	.long LDIFF_SYM239
 Lfde37_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration_get_AnalyticsConfiguration
 
-LDIFF_SYM239=Lme_35 - Firebase_Core_Configuration_get_AnalyticsConfiguration
-	.long LDIFF_SYM239
+LDIFF_SYM240=Lme_35 - Firebase_Core_Configuration_get_AnalyticsConfiguration
+	.long LDIFF_SYM240
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,153,12
 	.align 3
@@ -13092,27 +13097,27 @@ Lfde37_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM240=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM240
+LDIFF_SYM241=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM241
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM241=LTDIE_18_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM241
+LDIFF_SYM242=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM242
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM242=Lfde38_end - Lfde38_start
-	.long LDIFF_SYM242
+LDIFF_SYM243=Lfde38_end - Lfde38_start
+	.long LDIFF_SYM243
 Lfde38_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration_set_AnalyticsConfiguration_Firebase_Core_AnalyticsConfiguration
 
-LDIFF_SYM243=Lme_36 - Firebase_Core_Configuration_set_AnalyticsConfiguration_Firebase_Core_AnalyticsConfiguration
-	.long LDIFF_SYM243
+LDIFF_SYM244=Lme_36 - Firebase_Core_Configuration_set_AnalyticsConfiguration_Firebase_Core_AnalyticsConfiguration
+	.long LDIFF_SYM244
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,154,10
 	.align 3
@@ -13132,16 +13137,16 @@ Lfde38_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM244=Lfde39_end - Lfde39_start
-	.long LDIFF_SYM244
+LDIFF_SYM245=Lfde39_end - Lfde39_start
+	.long LDIFF_SYM245
 Lfde39_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration_get_SharedInstance
 
-LDIFF_SYM245=Lme_37 - Firebase_Core_Configuration_get_SharedInstance
-	.long LDIFF_SYM245
+LDIFF_SYM246=Lme_37 - Firebase_Core_Configuration_get_SharedInstance
+	.long LDIFF_SYM246
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13161,16 +13166,16 @@ Lfde39_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM246=Lfde40_end - Lfde40_start
-	.long LDIFF_SYM246
+LDIFF_SYM247=Lfde40_end - Lfde40_start
+	.long LDIFF_SYM247
 Lfde40_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Configuration__cctor
 
-LDIFF_SYM247=Lme_38 - Firebase_Core_Configuration__cctor
-	.long LDIFF_SYM247
+LDIFF_SYM248=Lme_38 - Firebase_Core_Configuration__cctor
+	.long LDIFF_SYM248
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -13189,22 +13194,22 @@ Lfde40_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM248=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM248
+LDIFF_SYM249=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM249
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM249=Lfde41_end - Lfde41_start
-	.long LDIFF_SYM249
+LDIFF_SYM250=Lfde41_end - Lfde41_start
+	.long LDIFF_SYM250
 Lfde41_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_ClassHandle
 
-LDIFF_SYM250=Lme_39 - Firebase_Core_Options_get_ClassHandle
-	.long LDIFF_SYM250
+LDIFF_SYM251=Lme_39 - Firebase_Core_Options_get_ClassHandle
+	.long LDIFF_SYM251
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -13223,27 +13228,27 @@ Lfde41_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM251=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM251
+LDIFF_SYM252=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM252
 	.byte 1,105,3
 	.asciz "t"
 
-LDIFF_SYM252=LTDIE_16_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM252
+LDIFF_SYM253=LTDIE_16_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM253
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM253=Lfde42_end - Lfde42_start
-	.long LDIFF_SYM253
+LDIFF_SYM254=Lfde42_end - Lfde42_start
+	.long LDIFF_SYM254
 Lfde42_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options__ctor_Foundation_NSObjectFlag
 
-LDIFF_SYM254=Lme_3a - Firebase_Core_Options__ctor_Foundation_NSObjectFlag
-	.long LDIFF_SYM254
+LDIFF_SYM255=Lme_3a - Firebase_Core_Options__ctor_Foundation_NSObjectFlag
+	.long LDIFF_SYM255
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -13262,27 +13267,27 @@ Lfde42_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM255=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM255
+LDIFF_SYM256=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM256
 	.byte 1,105,3
 	.asciz "handle"
 
-LDIFF_SYM256=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM256
+LDIFF_SYM257=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM257
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM257=Lfde43_end - Lfde43_start
-	.long LDIFF_SYM257
+LDIFF_SYM258=Lfde43_end - Lfde43_start
+	.long LDIFF_SYM258
 Lfde43_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options__ctor_intptr
 
-LDIFF_SYM258=Lme_3b - Firebase_Core_Options__ctor_intptr
-	.long LDIFF_SYM258
+LDIFF_SYM259=Lme_3b - Firebase_Core_Options__ctor_intptr
+	.long LDIFF_SYM259
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10
 	.align 3
@@ -13301,32 +13306,32 @@ Lfde43_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM259=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM259
+LDIFF_SYM260=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM260
 	.byte 1,105,3
 	.asciz "plistPath"
 
-LDIFF_SYM260=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM260
+LDIFF_SYM261=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM261
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM261=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM261
+LDIFF_SYM262=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM262
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM262=Lfde44_end - Lfde44_start
-	.long LDIFF_SYM262
+LDIFF_SYM263=Lfde44_end - Lfde44_start
+	.long LDIFF_SYM263
 Lfde44_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options__ctor_string
 
-LDIFF_SYM263=Lme_3c - Firebase_Core_Options__ctor_string
-	.long LDIFF_SYM263
+LDIFF_SYM264=Lme_3c - Firebase_Core_Options__ctor_string
+	.long LDIFF_SYM264
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,152,14,153,13,68,154,12
 	.align 3
@@ -13345,42 +13350,42 @@ Lfde44_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM264=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM264
+LDIFF_SYM265=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM265
 	.byte 1,104,3
 	.asciz "googleAppId"
 
-LDIFF_SYM265=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM265
+LDIFF_SYM266=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM266
 	.byte 1,105,3
 	.asciz "gcmSenderId"
 
-LDIFF_SYM266=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM266
+LDIFF_SYM267=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM267
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM267=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM267
+LDIFF_SYM268=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM268
 	.byte 1,103,11
 	.asciz "V_1"
 
-LDIFF_SYM268=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM268
+LDIFF_SYM269=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM269
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM269=Lfde45_end - Lfde45_start
-	.long LDIFF_SYM269
+LDIFF_SYM270=Lfde45_end - Lfde45_start
+	.long LDIFF_SYM270
 Lfde45_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options__ctor_string_string
 
-LDIFF_SYM270=Lme_3d - Firebase_Core_Options__ctor_string_string
-	.long LDIFF_SYM270
+LDIFF_SYM271=Lme_3d - Firebase_Core_Options__ctor_string_string
+	.long LDIFF_SYM271
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,150,16,151,15,68,152,14,153,13,68,154,12
 	.align 3
@@ -13393,28 +13398,28 @@ LTDIE_22:
 	.asciz "Foundation_NSZone"
 
 	.byte 24,16
-LDIFF_SYM271=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM271
+LDIFF_SYM272=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM272
 	.byte 2,35,0,6
 	.asciz "<Handle>k__BackingField"
 
-LDIFF_SYM272=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM272
+LDIFF_SYM273=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM273
 	.byte 2,35,16,0,7
 	.asciz "Foundation_NSZone"
 
-LDIFF_SYM273=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM273
+LDIFF_SYM274=LTDIE_22 - Ldebug_info_start
+	.long LDIFF_SYM274
 LTDIE_22_POINTER:
 
 	.byte 13
-LDIFF_SYM274=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM274
+LDIFF_SYM275=LTDIE_22 - Ldebug_info_start
+	.long LDIFF_SYM275
 LTDIE_22_REFERENCE:
 
 	.byte 14
-LDIFF_SYM275=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM275
+LDIFF_SYM276=LTDIE_22 - Ldebug_info_start
+	.long LDIFF_SYM276
 	.byte 2
 	.asciz "Firebase.Core.Options:Copy"
 	.asciz "Firebase_Core_Options_Copy_Foundation_NSZone"
@@ -13426,27 +13431,27 @@ LDIFF_SYM275=LTDIE_22 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM276=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM276
+LDIFF_SYM277=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM277
 	.byte 2,141,24,3
 	.asciz "zone"
 
-LDIFF_SYM277=LTDIE_22_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM277
+LDIFF_SYM278=LTDIE_22_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM278
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM278=Lfde46_end - Lfde46_start
-	.long LDIFF_SYM278
+LDIFF_SYM279=Lfde46_end - Lfde46_start
+	.long LDIFF_SYM279
 Lfde46_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_Copy_Foundation_NSZone
 
-LDIFF_SYM279=Lme_3e - Firebase_Core_Options_Copy_Foundation_NSZone
-	.long LDIFF_SYM279
+LDIFF_SYM280=Lme_3e - Firebase_Core_Options_Copy_Foundation_NSZone
+	.long LDIFF_SYM280
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,154,12
 	.align 3
@@ -13465,22 +13470,22 @@ Lfde46_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM280=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM280
+LDIFF_SYM281=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM281
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM281=Lfde47_end - Lfde47_start
-	.long LDIFF_SYM281
+LDIFF_SYM282=Lfde47_end - Lfde47_start
+	.long LDIFF_SYM282
 Lfde47_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_AndroidClientId
 
-LDIFF_SYM282=Lme_3f - Firebase_Core_Options_get_AndroidClientId
-	.long LDIFF_SYM282
+LDIFF_SYM283=Lme_3f - Firebase_Core_Options_get_AndroidClientId
+	.long LDIFF_SYM283
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13499,32 +13504,32 @@ Lfde47_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM283=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM283
+LDIFF_SYM284=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM284
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM284=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM284
+LDIFF_SYM285=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM285
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM285=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM285
+LDIFF_SYM286=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM286
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM286=Lfde48_end - Lfde48_start
-	.long LDIFF_SYM286
+LDIFF_SYM287=Lfde48_end - Lfde48_start
+	.long LDIFF_SYM287
 Lfde48_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_AndroidClientId_string
 
-LDIFF_SYM287=Lme_40 - Firebase_Core_Options_set_AndroidClientId_string
-	.long LDIFF_SYM287
+LDIFF_SYM288=Lme_40 - Firebase_Core_Options_set_AndroidClientId_string
+	.long LDIFF_SYM288
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -13543,22 +13548,22 @@ Lfde48_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM288=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM288
+LDIFF_SYM289=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM289
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM289=Lfde49_end - Lfde49_start
-	.long LDIFF_SYM289
+LDIFF_SYM290=Lfde49_end - Lfde49_start
+	.long LDIFF_SYM290
 Lfde49_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_ApiKey
 
-LDIFF_SYM290=Lme_41 - Firebase_Core_Options_get_ApiKey
-	.long LDIFF_SYM290
+LDIFF_SYM291=Lme_41 - Firebase_Core_Options_get_ApiKey
+	.long LDIFF_SYM291
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13577,32 +13582,32 @@ Lfde49_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM291=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM291
+LDIFF_SYM292=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM292
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM292=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM292
+LDIFF_SYM293=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM293
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM293=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM293
+LDIFF_SYM294=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM294
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM294=Lfde50_end - Lfde50_start
-	.long LDIFF_SYM294
+LDIFF_SYM295=Lfde50_end - Lfde50_start
+	.long LDIFF_SYM295
 Lfde50_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_ApiKey_string
 
-LDIFF_SYM295=Lme_42 - Firebase_Core_Options_set_ApiKey_string
-	.long LDIFF_SYM295
+LDIFF_SYM296=Lme_42 - Firebase_Core_Options_set_ApiKey_string
+	.long LDIFF_SYM296
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -13621,22 +13626,22 @@ Lfde50_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM296=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM296
+LDIFF_SYM297=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM297
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM297=Lfde51_end - Lfde51_start
-	.long LDIFF_SYM297
+LDIFF_SYM298=Lfde51_end - Lfde51_start
+	.long LDIFF_SYM298
 Lfde51_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_BundleId
 
-LDIFF_SYM298=Lme_43 - Firebase_Core_Options_get_BundleId
-	.long LDIFF_SYM298
+LDIFF_SYM299=Lme_43 - Firebase_Core_Options_get_BundleId
+	.long LDIFF_SYM299
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13655,32 +13660,32 @@ Lfde51_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM299=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM299
+LDIFF_SYM300=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM300
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM300=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM300
+LDIFF_SYM301=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM301
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM301=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM301
+LDIFF_SYM302=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM302
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM302=Lfde52_end - Lfde52_start
-	.long LDIFF_SYM302
+LDIFF_SYM303=Lfde52_end - Lfde52_start
+	.long LDIFF_SYM303
 Lfde52_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_BundleId_string
 
-LDIFF_SYM303=Lme_44 - Firebase_Core_Options_set_BundleId_string
-	.long LDIFF_SYM303
+LDIFF_SYM304=Lme_44 - Firebase_Core_Options_set_BundleId_string
+	.long LDIFF_SYM304
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -13699,22 +13704,22 @@ Lfde52_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM304=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM304
+LDIFF_SYM305=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM305
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM305=Lfde53_end - Lfde53_start
-	.long LDIFF_SYM305
+LDIFF_SYM306=Lfde53_end - Lfde53_start
+	.long LDIFF_SYM306
 Lfde53_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_ClientId
 
-LDIFF_SYM306=Lme_45 - Firebase_Core_Options_get_ClientId
-	.long LDIFF_SYM306
+LDIFF_SYM307=Lme_45 - Firebase_Core_Options_get_ClientId
+	.long LDIFF_SYM307
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13733,32 +13738,32 @@ Lfde53_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM307=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM307
+LDIFF_SYM308=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM308
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM308=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM308
+LDIFF_SYM309=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM309
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM309=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM309
+LDIFF_SYM310=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM310
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM310=Lfde54_end - Lfde54_start
-	.long LDIFF_SYM310
+LDIFF_SYM311=Lfde54_end - Lfde54_start
+	.long LDIFF_SYM311
 Lfde54_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_ClientId_string
 
-LDIFF_SYM311=Lme_46 - Firebase_Core_Options_set_ClientId_string
-	.long LDIFF_SYM311
+LDIFF_SYM312=Lme_46 - Firebase_Core_Options_set_ClientId_string
+	.long LDIFF_SYM312
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -13777,22 +13782,22 @@ Lfde54_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM312=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM312
+LDIFF_SYM313=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM313
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM313=Lfde55_end - Lfde55_start
-	.long LDIFF_SYM313
+LDIFF_SYM314=Lfde55_end - Lfde55_start
+	.long LDIFF_SYM314
 Lfde55_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_DatabaseUrl
 
-LDIFF_SYM314=Lme_47 - Firebase_Core_Options_get_DatabaseUrl
-	.long LDIFF_SYM314
+LDIFF_SYM315=Lme_47 - Firebase_Core_Options_get_DatabaseUrl
+	.long LDIFF_SYM315
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13811,32 +13816,32 @@ Lfde55_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM315=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM315
+LDIFF_SYM316=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM316
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM316=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM316
+LDIFF_SYM317=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM317
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM317=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM317
+LDIFF_SYM318=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM318
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM318=Lfde56_end - Lfde56_start
-	.long LDIFF_SYM318
+LDIFF_SYM319=Lfde56_end - Lfde56_start
+	.long LDIFF_SYM319
 Lfde56_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_DatabaseUrl_string
 
-LDIFF_SYM319=Lme_48 - Firebase_Core_Options_set_DatabaseUrl_string
-	.long LDIFF_SYM319
+LDIFF_SYM320=Lme_48 - Firebase_Core_Options_set_DatabaseUrl_string
+	.long LDIFF_SYM320
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -13855,22 +13860,22 @@ Lfde56_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM320=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM320
+LDIFF_SYM321=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM321
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM321=Lfde57_end - Lfde57_start
-	.long LDIFF_SYM321
+LDIFF_SYM322=Lfde57_end - Lfde57_start
+	.long LDIFF_SYM322
 Lfde57_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_DeepLinkUrlScheme
 
-LDIFF_SYM322=Lme_49 - Firebase_Core_Options_get_DeepLinkUrlScheme
-	.long LDIFF_SYM322
+LDIFF_SYM323=Lme_49 - Firebase_Core_Options_get_DeepLinkUrlScheme
+	.long LDIFF_SYM323
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13889,32 +13894,32 @@ Lfde57_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM323=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM323
+LDIFF_SYM324=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM324
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM324=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM324
+LDIFF_SYM325=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM325
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM325=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM325
+LDIFF_SYM326=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM326
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM326=Lfde58_end - Lfde58_start
-	.long LDIFF_SYM326
+LDIFF_SYM327=Lfde58_end - Lfde58_start
+	.long LDIFF_SYM327
 Lfde58_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_DeepLinkUrlScheme_string
 
-LDIFF_SYM327=Lme_4a - Firebase_Core_Options_set_DeepLinkUrlScheme_string
-	.long LDIFF_SYM327
+LDIFF_SYM328=Lme_4a - Firebase_Core_Options_set_DeepLinkUrlScheme_string
+	.long LDIFF_SYM328
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -13934,16 +13939,16 @@ Lfde58_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM328=Lfde59_end - Lfde59_start
-	.long LDIFF_SYM328
+LDIFF_SYM329=Lfde59_end - Lfde59_start
+	.long LDIFF_SYM329
 Lfde59_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_DefaultInstance
 
-LDIFF_SYM329=Lme_4b - Firebase_Core_Options_get_DefaultInstance
-	.long LDIFF_SYM329
+LDIFF_SYM330=Lme_4b - Firebase_Core_Options_get_DefaultInstance
+	.long LDIFF_SYM330
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13962,22 +13967,22 @@ Lfde59_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM330=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM330
+LDIFF_SYM331=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM331
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM331=Lfde60_end - Lfde60_start
-	.long LDIFF_SYM331
+LDIFF_SYM332=Lfde60_end - Lfde60_start
+	.long LDIFF_SYM332
 Lfde60_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_GcmSenderId
 
-LDIFF_SYM332=Lme_4c - Firebase_Core_Options_get_GcmSenderId
-	.long LDIFF_SYM332
+LDIFF_SYM333=Lme_4c - Firebase_Core_Options_get_GcmSenderId
+	.long LDIFF_SYM333
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -13996,32 +14001,32 @@ Lfde60_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM333=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM333
+LDIFF_SYM334=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM334
 	.byte 2,141,32,3
 	.asciz "value"
 
-LDIFF_SYM334=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM334
+LDIFF_SYM335=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM335
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM335=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM335
+LDIFF_SYM336=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM336
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM336=Lfde61_end - Lfde61_start
-	.long LDIFF_SYM336
+LDIFF_SYM337=Lfde61_end - Lfde61_start
+	.long LDIFF_SYM337
 Lfde61_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_GcmSenderId_string
 
-LDIFF_SYM337=Lme_4d - Firebase_Core_Options_set_GcmSenderId_string
-	.long LDIFF_SYM337
+LDIFF_SYM338=Lme_4d - Firebase_Core_Options_set_GcmSenderId_string
+	.long LDIFF_SYM338
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10,68,154,9
 	.align 3
@@ -14040,22 +14045,22 @@ Lfde61_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM338=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM338
+LDIFF_SYM339=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM339
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM339=Lfde62_end - Lfde62_start
-	.long LDIFF_SYM339
+LDIFF_SYM340=Lfde62_end - Lfde62_start
+	.long LDIFF_SYM340
 Lfde62_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_GoogleAppId
 
-LDIFF_SYM340=Lme_4e - Firebase_Core_Options_get_GoogleAppId
-	.long LDIFF_SYM340
+LDIFF_SYM341=Lme_4e - Firebase_Core_Options_get_GoogleAppId
+	.long LDIFF_SYM341
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -14074,32 +14079,32 @@ Lfde62_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM341=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM341
+LDIFF_SYM342=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM342
 	.byte 2,141,32,3
 	.asciz "value"
 
-LDIFF_SYM342=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM342
+LDIFF_SYM343=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM343
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM343=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM343
+LDIFF_SYM344=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM344
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM344=Lfde63_end - Lfde63_start
-	.long LDIFF_SYM344
+LDIFF_SYM345=Lfde63_end - Lfde63_start
+	.long LDIFF_SYM345
 Lfde63_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_GoogleAppId_string
 
-LDIFF_SYM345=Lme_4f - Firebase_Core_Options_set_GoogleAppId_string
-	.long LDIFF_SYM345
+LDIFF_SYM346=Lme_4f - Firebase_Core_Options_set_GoogleAppId_string
+	.long LDIFF_SYM346
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10,68,154,9
 	.align 3
@@ -14118,22 +14123,22 @@ Lfde63_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM346=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM346
+LDIFF_SYM347=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM347
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM347=Lfde64_end - Lfde64_start
-	.long LDIFF_SYM347
+LDIFF_SYM348=Lfde64_end - Lfde64_start
+	.long LDIFF_SYM348
 Lfde64_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_ProjectId
 
-LDIFF_SYM348=Lme_50 - Firebase_Core_Options_get_ProjectId
-	.long LDIFF_SYM348
+LDIFF_SYM349=Lme_50 - Firebase_Core_Options_get_ProjectId
+	.long LDIFF_SYM349
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -14152,32 +14157,32 @@ Lfde64_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM349=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM349
+LDIFF_SYM350=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM350
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM350=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM350
+LDIFF_SYM351=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM351
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM351=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM351
+LDIFF_SYM352=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM352
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM352=Lfde65_end - Lfde65_start
-	.long LDIFF_SYM352
+LDIFF_SYM353=Lfde65_end - Lfde65_start
+	.long LDIFF_SYM353
 Lfde65_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_ProjectId_string
 
-LDIFF_SYM353=Lme_51 - Firebase_Core_Options_set_ProjectId_string
-	.long LDIFF_SYM353
+LDIFF_SYM354=Lme_51 - Firebase_Core_Options_set_ProjectId_string
+	.long LDIFF_SYM354
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -14196,22 +14201,22 @@ Lfde65_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM354=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM354
+LDIFF_SYM355=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM355
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM355=Lfde66_end - Lfde66_start
-	.long LDIFF_SYM355
+LDIFF_SYM356=Lfde66_end - Lfde66_start
+	.long LDIFF_SYM356
 Lfde66_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_StorageBucket
 
-LDIFF_SYM356=Lme_52 - Firebase_Core_Options_get_StorageBucket
-	.long LDIFF_SYM356
+LDIFF_SYM357=Lme_52 - Firebase_Core_Options_get_StorageBucket
+	.long LDIFF_SYM357
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -14230,32 +14235,32 @@ Lfde66_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM357=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM357
+LDIFF_SYM358=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM358
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM358=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM358
+LDIFF_SYM359=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM359
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM359=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM359
+LDIFF_SYM360=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM360
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM360=Lfde67_end - Lfde67_start
-	.long LDIFF_SYM360
+LDIFF_SYM361=Lfde67_end - Lfde67_start
+	.long LDIFF_SYM361
 Lfde67_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_StorageBucket_string
 
-LDIFF_SYM361=Lme_53 - Firebase_Core_Options_set_StorageBucket_string
-	.long LDIFF_SYM361
+LDIFF_SYM362=Lme_53 - Firebase_Core_Options_set_StorageBucket_string
+	.long LDIFF_SYM362
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -14274,22 +14279,22 @@ Lfde67_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM362=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM362
+LDIFF_SYM363=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM363
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM363=Lfde68_end - Lfde68_start
-	.long LDIFF_SYM363
+LDIFF_SYM364=Lfde68_end - Lfde68_start
+	.long LDIFF_SYM364
 Lfde68_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_get_TrackingId
 
-LDIFF_SYM364=Lme_54 - Firebase_Core_Options_get_TrackingId
-	.long LDIFF_SYM364
+LDIFF_SYM365=Lme_54 - Firebase_Core_Options_get_TrackingId
+	.long LDIFF_SYM365
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
@@ -14308,32 +14313,32 @@ Lfde68_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM365=LTDIE_17_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM365
+LDIFF_SYM366=LTDIE_17_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM366
 	.byte 2,141,24,3
 	.asciz "value"
 
-LDIFF_SYM366=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM366
+LDIFF_SYM367=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM367
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM367=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM367
+LDIFF_SYM368=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM368
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM368=Lfde69_end - Lfde69_start
-	.long LDIFF_SYM368
+LDIFF_SYM369=Lfde69_end - Lfde69_start
+	.long LDIFF_SYM369
 Lfde69_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options_set_TrackingId_string
 
-LDIFF_SYM369=Lme_55 - Firebase_Core_Options_set_TrackingId_string
-	.long LDIFF_SYM369
+LDIFF_SYM370=Lme_55 - Firebase_Core_Options_set_TrackingId_string
+	.long LDIFF_SYM370
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10
 	.align 3
@@ -14353,16 +14358,16 @@ Lfde69_end:
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM370=Lfde70_end - Lfde70_start
-	.long LDIFF_SYM370
+LDIFF_SYM371=Lfde70_end - Lfde70_start
+	.long LDIFF_SYM371
 Lfde70_start:
 
 	.long 0
 	.align 3
 	.quad Firebase_Core_Options__cctor
 
-LDIFF_SYM371=Lme_56 - Firebase_Core_Options__cctor
-	.long LDIFF_SYM371
+LDIFF_SYM372=Lme_56 - Firebase_Core_Options__cctor
+	.long LDIFF_SYM372
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -14377,69 +14382,69 @@ LTDIE_23:
 	.byte 16,7
 	.asciz "_<Module>"
 
-LDIFF_SYM372=LTDIE_23 - Ldebug_info_start
-	.long LDIFF_SYM372
+LDIFF_SYM373=LTDIE_23 - Ldebug_info_start
+	.long LDIFF_SYM373
 LTDIE_23_POINTER:
 
 	.byte 13
-LDIFF_SYM373=LTDIE_23 - Ldebug_info_start
-	.long LDIFF_SYM373
+LDIFF_SYM374=LTDIE_23 - Ldebug_info_start
+	.long LDIFF_SYM374
 LTDIE_23_REFERENCE:
 
 	.byte 14
-LDIFF_SYM374=LTDIE_23 - Ldebug_info_start
-	.long LDIFF_SYM374
+LDIFF_SYM375=LTDIE_23 - Ldebug_info_start
+	.long LDIFF_SYM375
 LTDIE_24:
 
 	.byte 5
 	.asciz "System_Int32"
 
 	.byte 20,16
-LDIFF_SYM375=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM375
+LDIFF_SYM376=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM376
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM376=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM376
+LDIFF_SYM377=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM377
 	.byte 2,35,16,0,7
 	.asciz "System_Int32"
 
-LDIFF_SYM377=LTDIE_24 - Ldebug_info_start
-	.long LDIFF_SYM377
+LDIFF_SYM378=LTDIE_24 - Ldebug_info_start
+	.long LDIFF_SYM378
 LTDIE_24_POINTER:
 
 	.byte 13
-LDIFF_SYM378=LTDIE_24 - Ldebug_info_start
-	.long LDIFF_SYM378
+LDIFF_SYM379=LTDIE_24 - Ldebug_info_start
+	.long LDIFF_SYM379
 LTDIE_24_REFERENCE:
 
 	.byte 14
-LDIFF_SYM379=LTDIE_24 - Ldebug_info_start
-	.long LDIFF_SYM379
+LDIFF_SYM380=LTDIE_24 - Ldebug_info_start
+	.long LDIFF_SYM380
 LTDIE_25:
 
 	.byte 5
 	.asciz "System_Array"
 
 	.byte 16,16
-LDIFF_SYM380=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM380
+LDIFF_SYM381=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM381
 	.byte 2,35,0,0,7
 	.asciz "System_Array"
 
-LDIFF_SYM381=LTDIE_25 - Ldebug_info_start
-	.long LDIFF_SYM381
+LDIFF_SYM382=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM382
 LTDIE_25_POINTER:
 
 	.byte 13
-LDIFF_SYM382=LTDIE_25 - Ldebug_info_start
-	.long LDIFF_SYM382
+LDIFF_SYM383=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM383
 LTDIE_25_REFERENCE:
 
 	.byte 14
-LDIFF_SYM383=LTDIE_25 - Ldebug_info_start
-	.long LDIFF_SYM383
+LDIFF_SYM384=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM384
 	.byte 2
 	.asciz "(wrapper_delegate-invoke)_<Module>:invoke_void_intptr_bool"
 	.asciz "wrapper_delegate_invoke__Module_invoke_void_intptr_bool_intptr_bool"
@@ -14451,57 +14456,57 @@ LDIFF_SYM383=LTDIE_25 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM384=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM384
+LDIFF_SYM385=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM385
 	.byte 1,104,3
 	.asciz "param0"
 
-LDIFF_SYM385=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM385
+LDIFF_SYM386=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM386
 	.byte 1,105,3
 	.asciz "param1"
 
-LDIFF_SYM386=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM386
+LDIFF_SYM387=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM387
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM387=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM387
+LDIFF_SYM388=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM388
 	.byte 1,103,11
 	.asciz "V_1"
 
-LDIFF_SYM388=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM388
+LDIFF_SYM389=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM389
 	.byte 1,102,11
 	.asciz "V_2"
 
-LDIFF_SYM389=LTDIE_25_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM389
+LDIFF_SYM390=LTDIE_25_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM390
 	.byte 1,101,11
 	.asciz "V_3"
 
-LDIFF_SYM390=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM390
+LDIFF_SYM391=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM391
 	.byte 1,100,11
 	.asciz "V_4"
 
-LDIFF_SYM391=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM391
+LDIFF_SYM392=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM392
 	.byte 1,99,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM392=Lfde71_end - Lfde71_start
-	.long LDIFF_SYM392
+LDIFF_SYM393=Lfde71_end - Lfde71_start
+	.long LDIFF_SYM393
 Lfde71_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_invoke__Module_invoke_void_intptr_bool_intptr_bool
 
-LDIFF_SYM393=Lme_5c - wrapper_delegate_invoke__Module_invoke_void_intptr_bool_intptr_bool
-	.long LDIFF_SYM393
+LDIFF_SYM394=Lme_5c - wrapper_delegate_invoke__Module_invoke_void_intptr_bool_intptr_bool
+	.long LDIFF_SYM394
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9
@@ -14515,23 +14520,23 @@ LTDIE_26:
 	.asciz "System_AsyncCallback"
 
 	.byte 112,16
-LDIFF_SYM394=LTDIE_4 - Ldebug_info_start
-	.long LDIFF_SYM394
+LDIFF_SYM395=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM395
 	.byte 2,35,0,0,7
 	.asciz "System_AsyncCallback"
 
-LDIFF_SYM395=LTDIE_26 - Ldebug_info_start
-	.long LDIFF_SYM395
+LDIFF_SYM396=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM396
 LTDIE_26_POINTER:
 
 	.byte 13
-LDIFF_SYM396=LTDIE_26 - Ldebug_info_start
-	.long LDIFF_SYM396
+LDIFF_SYM397=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM397
 LTDIE_26_REFERENCE:
 
 	.byte 14
-LDIFF_SYM397=LTDIE_26 - Ldebug_info_start
-	.long LDIFF_SYM397
+LDIFF_SYM398=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM398
 	.byte 2
 	.asciz "(wrapper_delegate-begin-invoke)_<Module>:begin_invoke_IAsyncResult__this___intptr_bool_AsyncCallback_object"
 	.asciz "wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___intptr_bool_AsyncCallback_object_intptr_bool_System_AsyncCallback_object"
@@ -14543,52 +14548,52 @@ LDIFF_SYM397=LTDIE_26 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM398=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM398
+LDIFF_SYM399=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM399
 	.byte 2,141,48,3
 	.asciz "param0"
 
-LDIFF_SYM399=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM399
+LDIFF_SYM400=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM400
 	.byte 2,141,56,3
 	.asciz "param1"
 
-LDIFF_SYM400=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM400
+LDIFF_SYM401=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM401
 	.byte 3,141,192,0,3
 	.asciz "param2"
 
-LDIFF_SYM401=LTDIE_26_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM401
+LDIFF_SYM402=LTDIE_26_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM402
 	.byte 3,141,200,0,3
 	.asciz "param3"
 
-LDIFF_SYM402=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM402
+LDIFF_SYM403=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM403
 	.byte 3,141,208,0,11
 	.asciz "V_0"
 
-LDIFF_SYM403=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM403
+LDIFF_SYM404=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM404
 	.byte 1,105,11
 	.asciz "V_1"
 
-LDIFF_SYM404=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM404
+LDIFF_SYM405=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM405
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM405=Lfde72_end - Lfde72_start
-	.long LDIFF_SYM405
+LDIFF_SYM406=Lfde72_end - Lfde72_start
+	.long LDIFF_SYM406
 Lfde72_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___intptr_bool_AsyncCallback_object_intptr_bool_System_AsyncCallback_object
 
-LDIFF_SYM406=Lme_5d - wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___intptr_bool_AsyncCallback_object_intptr_bool_System_AsyncCallback_object
-	.long LDIFF_SYM406
+LDIFF_SYM407=Lme_5d - wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___intptr_bool_AsyncCallback_object_intptr_bool_System_AsyncCallback_object
+	.long LDIFF_SYM407
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,150,14,151,13,68,152,12,153,11
 	.align 3
@@ -14603,18 +14608,18 @@ LTDIE_27:
 	.byte 16,7
 	.asciz "System_IAsyncResult"
 
-LDIFF_SYM407=LTDIE_27 - Ldebug_info_start
-	.long LDIFF_SYM407
+LDIFF_SYM408=LTDIE_27 - Ldebug_info_start
+	.long LDIFF_SYM408
 LTDIE_27_POINTER:
 
 	.byte 13
-LDIFF_SYM408=LTDIE_27 - Ldebug_info_start
-	.long LDIFF_SYM408
+LDIFF_SYM409=LTDIE_27 - Ldebug_info_start
+	.long LDIFF_SYM409
 LTDIE_27_REFERENCE:
 
 	.byte 14
-LDIFF_SYM409=LTDIE_27 - Ldebug_info_start
-	.long LDIFF_SYM409
+LDIFF_SYM410=LTDIE_27 - Ldebug_info_start
+	.long LDIFF_SYM410
 	.byte 2
 	.asciz "(wrapper_delegate-end-invoke)_<Module>:end_invoke_void__this___IAsyncResult"
 	.asciz "wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_IAsyncResult"
@@ -14626,37 +14631,37 @@ LDIFF_SYM409=LTDIE_27 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM410=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM410
+LDIFF_SYM411=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM411
 	.byte 2,141,48,3
 	.asciz "param0"
 
-LDIFF_SYM411=LTDIE_27_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM411
+LDIFF_SYM412=LTDIE_27_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM412
 	.byte 2,141,56,11
 	.asciz "V_0"
 
-LDIFF_SYM412=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM412
+LDIFF_SYM413=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM413
 	.byte 1,105,11
 	.asciz "V_1"
 
-LDIFF_SYM413=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM413
+LDIFF_SYM414=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM414
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM414=Lfde73_end - Lfde73_start
-	.long LDIFF_SYM414
+LDIFF_SYM415=Lfde73_end - Lfde73_start
+	.long LDIFF_SYM415
 Lfde73_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_IAsyncResult
 
-LDIFF_SYM415=Lme_5e - wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_IAsyncResult
-	.long LDIFF_SYM415
+LDIFF_SYM416=Lme_5e - wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_IAsyncResult
+	.long LDIFF_SYM416
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,150,10,151,9,68,152,8,153,7
 	.align 3
@@ -14675,52 +14680,52 @@ Lfde73_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM416=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM416
+LDIFF_SYM417=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM417
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM417=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM417
+LDIFF_SYM418=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM418
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM418=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM418
+LDIFF_SYM419=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM419
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM419=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM419
+LDIFF_SYM420=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM420
 	.byte 3,141,184,1,11
 	.asciz "V_1"
 
-LDIFF_SYM420=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM420
+LDIFF_SYM421=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM421
 	.byte 3,141,192,1,11
 	.asciz "V_2"
 
-LDIFF_SYM421=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM421
+LDIFF_SYM422=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM422
 	.byte 3,141,200,1,11
 	.asciz "V_3"
 
-LDIFF_SYM422=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM422
+LDIFF_SYM423=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM423
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM423=Lfde74_end - Lfde74_start
-	.long LDIFF_SYM423
+LDIFF_SYM424=Lfde74_end - Lfde74_start
+	.long LDIFF_SYM424
 Lfde74_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ObjCRuntime_Trampolines_DAppVoidBoolHandler_wrapper_aot_native_object_intptr_bool
 
-LDIFF_SYM424=Lme_5f - wrapper_managed_to_native_ObjCRuntime_Trampolines_DAppVoidBoolHandler_wrapper_aot_native_object_intptr_bool
-	.long LDIFF_SYM424
+LDIFF_SYM425=Lme_5f - wrapper_managed_to_native_ObjCRuntime_Trampolines_DAppVoidBoolHandler_wrapper_aot_native_object_intptr_bool
+	.long LDIFF_SYM425
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -14740,57 +14745,57 @@ Lfde74_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM425=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM425
+LDIFF_SYM426=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM426
 	.byte 1,104,3
 	.asciz "param0"
 
-LDIFF_SYM426=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM426
+LDIFF_SYM427=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM427
 	.byte 1,105,3
 	.asciz "param1"
 
-LDIFF_SYM427=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM427
+LDIFF_SYM428=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM428
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM428=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM428
+LDIFF_SYM429=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM429
 	.byte 1,103,11
 	.asciz "V_1"
 
-LDIFF_SYM429=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM429
+LDIFF_SYM430=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM430
 	.byte 1,102,11
 	.asciz "V_2"
 
-LDIFF_SYM430=LTDIE_25_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM430
+LDIFF_SYM431=LTDIE_25_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM431
 	.byte 1,101,11
 	.asciz "V_3"
 
-LDIFF_SYM431=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM431
+LDIFF_SYM432=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM432
 	.byte 1,100,11
 	.asciz "V_4"
 
-LDIFF_SYM432=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM432
+LDIFF_SYM433=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM433
 	.byte 1,99,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM433=Lfde75_end - Lfde75_start
-	.long LDIFF_SYM433
+LDIFF_SYM434=Lfde75_end - Lfde75_start
+	.long LDIFF_SYM434
 Lfde75_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_invoke__Module_invoke_bound_void_object_intptr_bool_intptr_bool
 
-LDIFF_SYM434=Lme_60 - wrapper_delegate_invoke__Module_invoke_bound_void_object_intptr_bool_intptr_bool
-	.long LDIFF_SYM434
+LDIFF_SYM435=Lme_60 - wrapper_delegate_invoke__Module_invoke_bound_void_object_intptr_bool_intptr_bool
+	.long LDIFF_SYM435
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9
@@ -14810,52 +14815,52 @@ Lfde75_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM435=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM435
+LDIFF_SYM436=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM436
 	.byte 1,105,3
 	.asciz "param0"
 
-LDIFF_SYM436=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM436
+LDIFF_SYM437=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM437
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM437=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM437
+LDIFF_SYM438=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM438
 	.byte 1,104,11
 	.asciz "V_1"
 
-LDIFF_SYM438=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM438
+LDIFF_SYM439=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM439
 	.byte 1,103,11
 	.asciz "V_2"
 
-LDIFF_SYM439=LTDIE_25_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM439
+LDIFF_SYM440=LTDIE_25_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM440
 	.byte 1,102,11
 	.asciz "V_3"
 
-LDIFF_SYM440=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM440
+LDIFF_SYM441=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM441
 	.byte 1,101,11
 	.asciz "V_4"
 
-LDIFF_SYM441=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM441
+LDIFF_SYM442=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM442
 	.byte 1,100,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM442=Lfde76_end - Lfde76_start
-	.long LDIFF_SYM442
+LDIFF_SYM443=Lfde76_end - Lfde76_start
+	.long LDIFF_SYM443
 Lfde76_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_invoke__Module_invoke_void_bool_bool
 
-LDIFF_SYM443=Lme_61 - wrapper_delegate_invoke__Module_invoke_void_bool_bool
-	.long LDIFF_SYM443
+LDIFF_SYM444=Lme_61 - wrapper_delegate_invoke__Module_invoke_void_bool_bool
+	.long LDIFF_SYM444
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8
 	.byte 154,7
@@ -14875,47 +14880,47 @@ Lfde76_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM444=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM444
+LDIFF_SYM445=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM445
 	.byte 2,141,48,3
 	.asciz "param0"
 
-LDIFF_SYM445=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM445
+LDIFF_SYM446=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM446
 	.byte 2,141,56,3
 	.asciz "param1"
 
-LDIFF_SYM446=LTDIE_26_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM446
+LDIFF_SYM447=LTDIE_26_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM447
 	.byte 3,141,192,0,3
 	.asciz "param2"
 
-LDIFF_SYM447=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM447
+LDIFF_SYM448=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM448
 	.byte 3,141,200,0,11
 	.asciz "V_0"
 
-LDIFF_SYM448=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM448
+LDIFF_SYM449=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM449
 	.byte 1,105,11
 	.asciz "V_1"
 
-LDIFF_SYM449=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM449
+LDIFF_SYM450=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM450
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM450=Lfde77_end - Lfde77_start
-	.long LDIFF_SYM450
+LDIFF_SYM451=Lfde77_end - Lfde77_start
+	.long LDIFF_SYM451
 Lfde77_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___bool_AsyncCallback_object_bool_System_AsyncCallback_object
 
-LDIFF_SYM451=Lme_62 - wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___bool_AsyncCallback_object_bool_System_AsyncCallback_object
-	.long LDIFF_SYM451
+LDIFF_SYM452=Lme_62 - wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___bool_AsyncCallback_object_bool_System_AsyncCallback_object
+	.long LDIFF_SYM452
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,150,14,151,13,68,152,12,153,11
 	.align 3
@@ -14934,42 +14939,42 @@ Lfde77_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM452=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM452
+LDIFF_SYM453=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM453
 	.byte 2,141,16,11
 	.asciz "V_0"
 
-LDIFF_SYM453=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM453
+LDIFF_SYM454=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM454
 	.byte 3,141,168,1,11
 	.asciz "V_1"
 
-LDIFF_SYM454=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM454
+LDIFF_SYM455=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM455
 	.byte 3,141,176,1,11
 	.asciz "V_2"
 
-LDIFF_SYM455=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM455
+LDIFF_SYM456=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM456
 	.byte 3,141,184,1,11
 	.asciz "V_3"
 
-LDIFF_SYM456=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM456
+LDIFF_SYM457=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM457
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM457=Lfde78_end - Lfde78_start
-	.long LDIFF_SYM457
+LDIFF_SYM458=Lfde78_end - Lfde78_start
+	.long LDIFF_SYM458
 Lfde78_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ObjCRuntime_Trampolines__Block_copy_intptr
 
-LDIFF_SYM458=Lme_63 - wrapper_managed_to_native_ObjCRuntime_Trampolines__Block_copy_intptr
-	.long LDIFF_SYM458
+LDIFF_SYM459=Lme_63 - wrapper_managed_to_native_ObjCRuntime_Trampolines__Block_copy_intptr
+	.long LDIFF_SYM459
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -14989,37 +14994,37 @@ Lfde78_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM459=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM459
+LDIFF_SYM460=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM460
 	.byte 2,141,16,11
 	.asciz "V_0"
 
-LDIFF_SYM460=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM460
+LDIFF_SYM461=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM461
 	.byte 3,141,168,1,11
 	.asciz "V_1"
 
-LDIFF_SYM461=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM461
+LDIFF_SYM462=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM462
 	.byte 3,141,176,1,11
 	.asciz "V_2"
 
-LDIFF_SYM462=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM462
+LDIFF_SYM463=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM463
 	.byte 3,141,184,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM463=Lfde79_end - Lfde79_start
-	.long LDIFF_SYM463
+LDIFF_SYM464=Lfde79_end - Lfde79_start
+	.long LDIFF_SYM464
 Lfde79_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ObjCRuntime_Trampolines__Block_release_intptr
 
-LDIFF_SYM464=Lme_64 - wrapper_managed_to_native_ObjCRuntime_Trampolines__Block_release_intptr
-	.long LDIFF_SYM464
+LDIFF_SYM465=Lme_64 - wrapper_managed_to_native_ObjCRuntime_Trampolines__Block_release_intptr
+	.long LDIFF_SYM465
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -15039,47 +15044,47 @@ Lfde79_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM465=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM465
+LDIFF_SYM466=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM466
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM466=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM466
+LDIFF_SYM467=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM467
 	.byte 2,141,24,11
 	.asciz "V_0"
 
-LDIFF_SYM467=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM467
+LDIFF_SYM468=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM468
 	.byte 3,141,176,1,11
 	.asciz "V_1"
 
-LDIFF_SYM468=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM468
+LDIFF_SYM469=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM469
 	.byte 3,141,184,1,11
 	.asciz "V_2"
 
-LDIFF_SYM469=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM469
+LDIFF_SYM470=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM470
 	.byte 3,141,192,1,11
 	.asciz "V_3"
 
-LDIFF_SYM470=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM470
+LDIFF_SYM471=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM471
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM471=Lfde80_end - Lfde80_start
-	.long LDIFF_SYM471
+LDIFF_SYM472=Lfde80_end - Lfde80_start
+	.long LDIFF_SYM472
 Lfde80_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
 
-LDIFF_SYM472=Lme_65 - wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
-	.long LDIFF_SYM472
+LDIFF_SYM473=Lme_65 - wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_intptr_intptr
+	.long LDIFF_SYM473
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9,68,155,8,156,7
@@ -15099,52 +15104,52 @@ Lfde80_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM473=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM473
+LDIFF_SYM474=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM474
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM474=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM474
+LDIFF_SYM475=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM475
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM475=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM475
+LDIFF_SYM476=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM476
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM476=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM476
+LDIFF_SYM477=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM477
 	.byte 3,141,184,1,11
 	.asciz "V_1"
 
-LDIFF_SYM477=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM477
+LDIFF_SYM478=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM478
 	.byte 3,141,192,1,11
 	.asciz "V_2"
 
-LDIFF_SYM478=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM478
+LDIFF_SYM479=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM479
 	.byte 3,141,200,1,11
 	.asciz "V_3"
 
-LDIFF_SYM479=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM479
+LDIFF_SYM480=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM480
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM480=Lfde81_end - Lfde81_start
-	.long LDIFF_SYM480
+LDIFF_SYM481=Lfde81_end - Lfde81_start
+	.long LDIFF_SYM481
 Lfde81_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
 
-LDIFF_SYM481=Lme_66 - wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
-	.long LDIFF_SYM481
+LDIFF_SYM482=Lme_66 - wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_intptr_intptr_intptr
+	.long LDIFF_SYM482
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -15164,47 +15169,47 @@ Lfde81_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM482=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM482
+LDIFF_SYM483=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM483
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM483=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM483
+LDIFF_SYM484=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM484
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM484=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM484
+LDIFF_SYM485=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM485
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM485=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM485
+LDIFF_SYM486=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM486
 	.byte 3,141,184,1,11
 	.asciz "V_1"
 
-LDIFF_SYM486=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM486
+LDIFF_SYM487=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM487
 	.byte 3,141,192,1,11
 	.asciz "V_2"
 
-LDIFF_SYM487=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM487
+LDIFF_SYM488=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM488
 	.byte 3,141,200,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM488=Lfde82_end - Lfde82_start
-	.long LDIFF_SYM488
+LDIFF_SYM489=Lfde82_end - Lfde82_start
+	.long LDIFF_SYM489
 Lfde82_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double
 
-LDIFF_SYM489=Lme_67 - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double
-	.long LDIFF_SYM489
+LDIFF_SYM490=Lme_67 - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Double_intptr_intptr_double
+	.long LDIFF_SYM490
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -15224,52 +15229,52 @@ Lfde82_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM490=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM490
+LDIFF_SYM491=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM491
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM491=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM491
+LDIFF_SYM492=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM492
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM492=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM492
+LDIFF_SYM493=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM493
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM493=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM493
+LDIFF_SYM494=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM494
 	.byte 3,141,184,1,11
 	.asciz "V_1"
 
-LDIFF_SYM494=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM494
+LDIFF_SYM495=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM495
 	.byte 3,141,192,1,11
 	.asciz "V_2"
 
-LDIFF_SYM495=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM495
+LDIFF_SYM496=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM496
 	.byte 3,141,200,1,11
 	.asciz "V_3"
 
-LDIFF_SYM496=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM496
+LDIFF_SYM497=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM497
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM497=Lfde83_end - Lfde83_start
-	.long LDIFF_SYM497
+LDIFF_SYM498=Lfde83_end - Lfde83_start
+	.long LDIFF_SYM498
 Lfde83_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
 
-LDIFF_SYM498=Lme_68 - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
-	.long LDIFF_SYM498
+LDIFF_SYM499=Lme_68 - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_bool_intptr_intptr_bool
+	.long LDIFF_SYM499
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -15289,47 +15294,47 @@ Lfde83_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM499=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM499
+LDIFF_SYM500=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM500
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM500=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM500
+LDIFF_SYM501=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM501
 	.byte 2,141,24,11
 	.asciz "V_0"
 
-LDIFF_SYM501=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM501
+LDIFF_SYM502=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM502
 	.byte 3,141,176,1,11
 	.asciz "V_1"
 
-LDIFF_SYM502=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM502
+LDIFF_SYM503=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM503
 	.byte 3,141,184,1,11
 	.asciz "V_2"
 
-LDIFF_SYM503=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM503
+LDIFF_SYM504=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM504
 	.byte 3,141,192,1,11
 	.asciz "V_3"
 
-LDIFF_SYM504=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM504
+LDIFF_SYM505=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM505
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM505=Lfde84_end - Lfde84_start
-	.long LDIFF_SYM505
+LDIFF_SYM506=Lfde84_end - Lfde84_start
+	.long LDIFF_SYM506
 Lfde84_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
 
-LDIFF_SYM506=Lme_69 - wrapper_managed_to_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
-	.long LDIFF_SYM506
+LDIFF_SYM507=Lme_69 - wrapper_managed_to_native_ApiDefinition_Messaging_bool_objc_msgSend_intptr_intptr
+	.long LDIFF_SYM507
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9,68,155,8,156,7
@@ -15349,42 +15354,42 @@ Lfde84_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM507=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM507
+LDIFF_SYM508=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM508
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM508=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM508
+LDIFF_SYM509=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM509
 	.byte 2,141,24,11
 	.asciz "V_0"
 
-LDIFF_SYM509=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM509
+LDIFF_SYM510=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM510
 	.byte 3,141,176,1,11
 	.asciz "V_1"
 
-LDIFF_SYM510=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM510
+LDIFF_SYM511=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM511
 	.byte 3,141,184,1,11
 	.asciz "V_2"
 
-LDIFF_SYM511=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM511
+LDIFF_SYM512=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM512
 	.byte 3,141,192,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM512=Lfde85_end - Lfde85_start
-	.long LDIFF_SYM512
+LDIFF_SYM513=Lfde85_end - Lfde85_start
+	.long LDIFF_SYM513
 Lfde85_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
 
-LDIFF_SYM513=Lme_6a - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
-	.long LDIFF_SYM513
+LDIFF_SYM514=Lme_6a - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_intptr_intptr
+	.long LDIFF_SYM514
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9,68,155,8,156,7
@@ -15404,47 +15409,47 @@ Lfde85_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM514=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM514
+LDIFF_SYM515=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM515
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM515=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM515
+LDIFF_SYM516=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM516
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM516=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM516
+LDIFF_SYM517=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM517
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM517=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM517
+LDIFF_SYM518=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM518
 	.byte 3,141,184,1,11
 	.asciz "V_1"
 
-LDIFF_SYM518=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM518
+LDIFF_SYM519=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM519
 	.byte 3,141,192,1,11
 	.asciz "V_2"
 
-LDIFF_SYM519=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM519
+LDIFF_SYM520=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM520
 	.byte 3,141,200,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM520=Lfde86_end - Lfde86_start
-	.long LDIFF_SYM520
+LDIFF_SYM521=Lfde86_end - Lfde86_start
+	.long LDIFF_SYM521
 Lfde86_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
 
-LDIFF_SYM521=Lme_6b - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
-	.long LDIFF_SYM521
+LDIFF_SYM522=Lme_6b - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_intptr_intptr_intptr
+	.long LDIFF_SYM522
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -15464,52 +15469,52 @@ Lfde86_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM522=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM522
+LDIFF_SYM523=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM523
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM523=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM523
+LDIFF_SYM524=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM524
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM524=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM524
+LDIFF_SYM525=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM525
 	.byte 2,141,32,3
 	.asciz "param3"
 
-LDIFF_SYM525=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM525
+LDIFF_SYM526=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM526
 	.byte 2,141,40,11
 	.asciz "V_0"
 
-LDIFF_SYM526=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM526
+LDIFF_SYM527=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM527
 	.byte 3,141,192,1,11
 	.asciz "V_1"
 
-LDIFF_SYM527=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM527
+LDIFF_SYM528=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM528
 	.byte 3,141,200,1,11
 	.asciz "V_2"
 
-LDIFF_SYM528=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM528
+LDIFF_SYM529=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM529
 	.byte 3,141,208,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM529=Lfde87_end - Lfde87_start
-	.long LDIFF_SYM529
+LDIFF_SYM530=Lfde87_end - Lfde87_start
+	.long LDIFF_SYM530
 Lfde87_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 
-LDIFF_SYM530=Lme_6c - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
-	.long LDIFF_SYM530
+LDIFF_SYM531=Lme_6c - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
+	.long LDIFF_SYM531
 	.long 0
 	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29,76,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9,68,155,8,156,7
@@ -15523,28 +15528,28 @@ LTDIE_28:
 	.asciz "System_Int64"
 
 	.byte 24,16
-LDIFF_SYM531=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM531
+LDIFF_SYM532=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM532
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM532=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM532
+LDIFF_SYM533=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM533
 	.byte 2,35,16,0,7
 	.asciz "System_Int64"
 
-LDIFF_SYM533=LTDIE_28 - Ldebug_info_start
-	.long LDIFF_SYM533
+LDIFF_SYM534=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM534
 LTDIE_28_POINTER:
 
 	.byte 13
-LDIFF_SYM534=LTDIE_28 - Ldebug_info_start
-	.long LDIFF_SYM534
+LDIFF_SYM535=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM535
 LTDIE_28_REFERENCE:
 
 	.byte 14
-LDIFF_SYM535=LTDIE_28 - Ldebug_info_start
-	.long LDIFF_SYM535
+LDIFF_SYM536=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM536
 	.byte 2
 	.asciz "(wrapper_managed-to-native)_ApiDefinition.Messaging:void_objc_msgSend_Int64"
 	.asciz "wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long"
@@ -15556,47 +15561,47 @@ LDIFF_SYM535=LTDIE_28 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM536=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM536
+LDIFF_SYM537=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM537
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM537=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM537
+LDIFF_SYM538=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM538
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM538=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM538
+LDIFF_SYM539=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM539
 	.byte 2,141,32,11
 	.asciz "V_0"
 
-LDIFF_SYM539=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM539
+LDIFF_SYM540=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM540
 	.byte 3,141,184,1,11
 	.asciz "V_1"
 
-LDIFF_SYM540=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM540
+LDIFF_SYM541=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM541
 	.byte 3,141,192,1,11
 	.asciz "V_2"
 
-LDIFF_SYM541=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM541
+LDIFF_SYM542=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM542
 	.byte 3,141,200,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM542=Lfde88_end - Lfde88_start
-	.long LDIFF_SYM542
+LDIFF_SYM543=Lfde88_end - Lfde88_start
+	.long LDIFF_SYM543
 Lfde88_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long
 
-LDIFF_SYM543=Lme_6d - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long
-	.long LDIFF_SYM543
+LDIFF_SYM544=Lme_6d - wrapper_managed_to_native_ApiDefinition_Messaging_void_objc_msgSend_Int64_intptr_intptr_long
+	.long LDIFF_SYM544
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,76,147,15,148,14,68,149,13,150,12,68,151,11,152,10,68,153,9
 	.byte 154,8,68,155,7,156,6
@@ -15616,57 +15621,57 @@ Lfde88_end:
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM544=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM544
+LDIFF_SYM545=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM545
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM545=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM545
+LDIFF_SYM546=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM546
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM546=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM546
+LDIFF_SYM547=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM547
 	.byte 2,141,32,3
 	.asciz "param3"
 
-LDIFF_SYM547=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM547
+LDIFF_SYM548=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM548
 	.byte 2,141,40,11
 	.asciz "V_0"
 
-LDIFF_SYM548=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM548
+LDIFF_SYM549=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM549
 	.byte 3,141,192,1,11
 	.asciz "V_1"
 
-LDIFF_SYM549=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM549
+LDIFF_SYM550=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM550
 	.byte 3,141,200,1,11
 	.asciz "V_2"
 
-LDIFF_SYM550=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM550
+LDIFF_SYM551=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM551
 	.byte 3,141,208,1,11
 	.asciz "V_3"
 
-LDIFF_SYM551=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM551
+LDIFF_SYM552=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM552
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM552=Lfde89_end - Lfde89_start
-	.long LDIFF_SYM552
+LDIFF_SYM553=Lfde89_end - Lfde89_start
+	.long LDIFF_SYM553
 Lfde89_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
 
-LDIFF_SYM553=Lme_6e - wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
-	.long LDIFF_SYM553
+LDIFF_SYM554=Lme_6e - wrapper_managed_to_native_ApiDefinition_Messaging_IntPtr_objc_msgSend_IntPtr_IntPtr_intptr_intptr_intptr_intptr
+	.long LDIFF_SYM554
 	.long 0
 	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29,76,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
 	.byte 154,9,68,155,8,156,7
@@ -15680,28 +15685,28 @@ LTDIE_29:
 	.asciz "System_UInt32"
 
 	.byte 20,16
-LDIFF_SYM554=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM554
+LDIFF_SYM555=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM555
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM555=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM555
+LDIFF_SYM556=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM556
 	.byte 2,35,16,0,7
 	.asciz "System_UInt32"
 
-LDIFF_SYM556=LTDIE_29 - Ldebug_info_start
-	.long LDIFF_SYM556
+LDIFF_SYM557=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM557
 LTDIE_29_POINTER:
 
 	.byte 13
-LDIFF_SYM557=LTDIE_29 - Ldebug_info_start
-	.long LDIFF_SYM557
+LDIFF_SYM558=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM558
 LTDIE_29_REFERENCE:
 
 	.byte 14
-LDIFF_SYM558=LTDIE_29 - Ldebug_info_start
-	.long LDIFF_SYM558
+LDIFF_SYM559=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM559
 LTDIE_31:
 
 	.byte 17
@@ -15710,18 +15715,18 @@ LTDIE_31:
 	.byte 16,7
 	.asciz "System_Collections_IDictionary"
 
-LDIFF_SYM559=LTDIE_31 - Ldebug_info_start
-	.long LDIFF_SYM559
+LDIFF_SYM560=LTDIE_31 - Ldebug_info_start
+	.long LDIFF_SYM560
 LTDIE_31_POINTER:
 
 	.byte 13
-LDIFF_SYM560=LTDIE_31 - Ldebug_info_start
-	.long LDIFF_SYM560
+LDIFF_SYM561=LTDIE_31 - Ldebug_info_start
+	.long LDIFF_SYM561
 LTDIE_31_REFERENCE:
 
 	.byte 14
-LDIFF_SYM561=LTDIE_31 - Ldebug_info_start
-	.long LDIFF_SYM561
+LDIFF_SYM562=LTDIE_31 - Ldebug_info_start
+	.long LDIFF_SYM562
 LTDIE_33:
 
 	.byte 17
@@ -15730,149 +15735,612 @@ LTDIE_33:
 	.byte 16,7
 	.asciz "System_Collections_Generic_IList`1"
 
-LDIFF_SYM562=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM562
+LDIFF_SYM563=LTDIE_33 - Ldebug_info_start
+	.long LDIFF_SYM563
 LTDIE_33_POINTER:
 
 	.byte 13
-LDIFF_SYM563=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM563
+LDIFF_SYM564=LTDIE_33 - Ldebug_info_start
+	.long LDIFF_SYM564
 LTDIE_33_REFERENCE:
 
 	.byte 14
-LDIFF_SYM564=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM564
+LDIFF_SYM565=LTDIE_33 - Ldebug_info_start
+	.long LDIFF_SYM565
+LTDIE_36:
+
+	.byte 17
+	.asciz "System_Collections_Generic_IEqualityComparer`1"
+
+	.byte 16,7
+	.asciz "System_Collections_Generic_IEqualityComparer`1"
+
+LDIFF_SYM566=LTDIE_36 - Ldebug_info_start
+	.long LDIFF_SYM566
+LTDIE_36_POINTER:
+
+	.byte 13
+LDIFF_SYM567=LTDIE_36 - Ldebug_info_start
+	.long LDIFF_SYM567
+LTDIE_36_REFERENCE:
+
+	.byte 14
+LDIFF_SYM568=LTDIE_36 - Ldebug_info_start
+	.long LDIFF_SYM568
+LTDIE_37:
+
+	.byte 5
+	.asciz "_KeyCollection"
+
+	.byte 24,16
+LDIFF_SYM569=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM569
+	.byte 2,35,0,6
+	.asciz "_dictionary"
+
+LDIFF_SYM570=LTDIE_35_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM570
+	.byte 2,35,16,0,7
+	.asciz "_KeyCollection"
+
+LDIFF_SYM571=LTDIE_37 - Ldebug_info_start
+	.long LDIFF_SYM571
+LTDIE_37_POINTER:
+
+	.byte 13
+LDIFF_SYM572=LTDIE_37 - Ldebug_info_start
+	.long LDIFF_SYM572
+LTDIE_37_REFERENCE:
+
+	.byte 14
+LDIFF_SYM573=LTDIE_37 - Ldebug_info_start
+	.long LDIFF_SYM573
+LTDIE_38:
+
+	.byte 5
+	.asciz "_ValueCollection"
+
+	.byte 24,16
+LDIFF_SYM574=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM574
+	.byte 2,35,0,6
+	.asciz "_dictionary"
+
+LDIFF_SYM575=LTDIE_35_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM575
+	.byte 2,35,16,0,7
+	.asciz "_ValueCollection"
+
+LDIFF_SYM576=LTDIE_38 - Ldebug_info_start
+	.long LDIFF_SYM576
+LTDIE_38_POINTER:
+
+	.byte 13
+LDIFF_SYM577=LTDIE_38 - Ldebug_info_start
+	.long LDIFF_SYM577
+LTDIE_38_REFERENCE:
+
+	.byte 14
+LDIFF_SYM578=LTDIE_38 - Ldebug_info_start
+	.long LDIFF_SYM578
+LTDIE_35:
+
+	.byte 5
+	.asciz "System_Collections_Generic_Dictionary`2"
+
+	.byte 72,16
+LDIFF_SYM579=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM579
+	.byte 2,35,0,6
+	.asciz "_buckets"
+
+LDIFF_SYM580=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM580
+	.byte 2,35,16,6
+	.asciz "_entries"
+
+LDIFF_SYM581=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM581
+	.byte 2,35,24,6
+	.asciz "_count"
+
+LDIFF_SYM582=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM582
+	.byte 2,35,56,6
+	.asciz "_freeList"
+
+LDIFF_SYM583=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM583
+	.byte 2,35,60,6
+	.asciz "_freeCount"
+
+LDIFF_SYM584=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM584
+	.byte 2,35,64,6
+	.asciz "_version"
+
+LDIFF_SYM585=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM585
+	.byte 2,35,68,6
+	.asciz "_comparer"
+
+LDIFF_SYM586=LTDIE_36_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM586
+	.byte 2,35,32,6
+	.asciz "_keys"
+
+LDIFF_SYM587=LTDIE_37_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM587
+	.byte 2,35,40,6
+	.asciz "_values"
+
+LDIFF_SYM588=LTDIE_38_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM588
+	.byte 2,35,48,0,7
+	.asciz "System_Collections_Generic_Dictionary`2"
+
+LDIFF_SYM589=LTDIE_35 - Ldebug_info_start
+	.long LDIFF_SYM589
+LTDIE_35_POINTER:
+
+	.byte 13
+LDIFF_SYM590=LTDIE_35 - Ldebug_info_start
+	.long LDIFF_SYM590
+LTDIE_35_REFERENCE:
+
+	.byte 14
+LDIFF_SYM591=LTDIE_35 - Ldebug_info_start
+	.long LDIFF_SYM591
+LTDIE_39:
+
+	.byte 17
+	.asciz "System_Runtime_Serialization_IFormatterConverter"
+
+	.byte 16,7
+	.asciz "System_Runtime_Serialization_IFormatterConverter"
+
+LDIFF_SYM592=LTDIE_39 - Ldebug_info_start
+	.long LDIFF_SYM592
+LTDIE_39_POINTER:
+
+	.byte 13
+LDIFF_SYM593=LTDIE_39 - Ldebug_info_start
+	.long LDIFF_SYM593
+LTDIE_39_REFERENCE:
+
+	.byte 14
+LDIFF_SYM594=LTDIE_39 - Ldebug_info_start
+	.long LDIFF_SYM594
+LTDIE_34:
+
+	.byte 5
+	.asciz "System_Runtime_Serialization_SerializationInfo"
+
+	.byte 88,16
+LDIFF_SYM595=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM595
+	.byte 2,35,0,6
+	.asciz "m_members"
+
+LDIFF_SYM596=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM596
+	.byte 2,35,16,6
+	.asciz "m_data"
+
+LDIFF_SYM597=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM597
+	.byte 2,35,24,6
+	.asciz "m_types"
+
+LDIFF_SYM598=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM598
+	.byte 2,35,32,6
+	.asciz "m_nameToIndex"
+
+LDIFF_SYM599=LTDIE_35_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM599
+	.byte 2,35,40,6
+	.asciz "m_currMember"
+
+LDIFF_SYM600=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM600
+	.byte 2,35,80,6
+	.asciz "m_converter"
+
+LDIFF_SYM601=LTDIE_39_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM601
+	.byte 2,35,48,6
+	.asciz "m_fullTypeName"
+
+LDIFF_SYM602=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM602
+	.byte 2,35,56,6
+	.asciz "m_assemName"
+
+LDIFF_SYM603=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM603
+	.byte 2,35,64,6
+	.asciz "objectType"
+
+LDIFF_SYM604=LTDIE_10_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM604
+	.byte 2,35,72,6
+	.asciz "isFullTypeNameSetExplicit"
+
+LDIFF_SYM605=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM605
+	.byte 2,35,84,6
+	.asciz "isAssemblyNameSetExplicit"
+
+LDIFF_SYM606=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM606
+	.byte 2,35,85,6
+	.asciz "requireSameTokenInPartialTrust"
+
+LDIFF_SYM607=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM607
+	.byte 2,35,86,0,7
+	.asciz "System_Runtime_Serialization_SerializationInfo"
+
+LDIFF_SYM608=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM608
+LTDIE_34_POINTER:
+
+	.byte 13
+LDIFF_SYM609=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM609
+LTDIE_34_REFERENCE:
+
+	.byte 14
+LDIFF_SYM610=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM610
+LTDIE_41:
+
+	.byte 5
+	.asciz "System_Reflection_TypeInfo"
+
+	.byte 24,16
+LDIFF_SYM611=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM611
+	.byte 2,35,0,0,7
+	.asciz "System_Reflection_TypeInfo"
+
+LDIFF_SYM612=LTDIE_41 - Ldebug_info_start
+	.long LDIFF_SYM612
+LTDIE_41_POINTER:
+
+	.byte 13
+LDIFF_SYM613=LTDIE_41 - Ldebug_info_start
+	.long LDIFF_SYM613
+LTDIE_41_REFERENCE:
+
+	.byte 14
+LDIFF_SYM614=LTDIE_41 - Ldebug_info_start
+	.long LDIFF_SYM614
+LTDIE_45:
+
+	.byte 5
+	.asciz "System_Reflection_ConstructorInfo"
+
+	.byte 16,16
+LDIFF_SYM615=LTDIE_7 - Ldebug_info_start
+	.long LDIFF_SYM615
+	.byte 2,35,0,0,7
+	.asciz "System_Reflection_ConstructorInfo"
+
+LDIFF_SYM616=LTDIE_45 - Ldebug_info_start
+	.long LDIFF_SYM616
+LTDIE_45_POINTER:
+
+	.byte 13
+LDIFF_SYM617=LTDIE_45 - Ldebug_info_start
+	.long LDIFF_SYM617
+LTDIE_45_REFERENCE:
+
+	.byte 14
+LDIFF_SYM618=LTDIE_45 - Ldebug_info_start
+	.long LDIFF_SYM618
+LTDIE_44:
+
+	.byte 5
+	.asciz "System_Reflection_RuntimeConstructorInfo"
+
+	.byte 16,16
+LDIFF_SYM619=LTDIE_45 - Ldebug_info_start
+	.long LDIFF_SYM619
+	.byte 2,35,0,0,7
+	.asciz "System_Reflection_RuntimeConstructorInfo"
+
+LDIFF_SYM620=LTDIE_44 - Ldebug_info_start
+	.long LDIFF_SYM620
+LTDIE_44_POINTER:
+
+	.byte 13
+LDIFF_SYM621=LTDIE_44 - Ldebug_info_start
+	.long LDIFF_SYM621
+LTDIE_44_REFERENCE:
+
+	.byte 14
+LDIFF_SYM622=LTDIE_44 - Ldebug_info_start
+	.long LDIFF_SYM622
+LTDIE_43:
+
+	.byte 5
+	.asciz "System_Reflection_MonoCMethod"
+
+	.byte 40,16
+LDIFF_SYM623=LTDIE_44 - Ldebug_info_start
+	.long LDIFF_SYM623
+	.byte 2,35,0,6
+	.asciz "mhandle"
+
+LDIFF_SYM624=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM624
+	.byte 2,35,16,6
+	.asciz "name"
+
+LDIFF_SYM625=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM625
+	.byte 2,35,24,6
+	.asciz "reftype"
+
+LDIFF_SYM626=LTDIE_10_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM626
+	.byte 2,35,32,0,7
+	.asciz "System_Reflection_MonoCMethod"
+
+LDIFF_SYM627=LTDIE_43 - Ldebug_info_start
+	.long LDIFF_SYM627
+LTDIE_43_POINTER:
+
+	.byte 13
+LDIFF_SYM628=LTDIE_43 - Ldebug_info_start
+	.long LDIFF_SYM628
+LTDIE_43_REFERENCE:
+
+	.byte 14
+LDIFF_SYM629=LTDIE_43 - Ldebug_info_start
+	.long LDIFF_SYM629
+LTDIE_42:
+
+	.byte 5
+	.asciz "System_MonoTypeInfo"
+
+	.byte 32,16
+LDIFF_SYM630=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM630
+	.byte 2,35,0,6
+	.asciz "full_name"
+
+LDIFF_SYM631=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM631
+	.byte 2,35,16,6
+	.asciz "default_ctor"
+
+LDIFF_SYM632=LTDIE_43_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM632
+	.byte 2,35,24,0,7
+	.asciz "System_MonoTypeInfo"
+
+LDIFF_SYM633=LTDIE_42 - Ldebug_info_start
+	.long LDIFF_SYM633
+LTDIE_42_POINTER:
+
+	.byte 13
+LDIFF_SYM634=LTDIE_42 - Ldebug_info_start
+	.long LDIFF_SYM634
+LTDIE_42_REFERENCE:
+
+	.byte 14
+LDIFF_SYM635=LTDIE_42 - Ldebug_info_start
+	.long LDIFF_SYM635
+LTDIE_40:
+
+	.byte 5
+	.asciz "System_RuntimeType"
+
+	.byte 48,16
+LDIFF_SYM636=LTDIE_41 - Ldebug_info_start
+	.long LDIFF_SYM636
+	.byte 2,35,0,6
+	.asciz "type_info"
+
+LDIFF_SYM637=LTDIE_42_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM637
+	.byte 2,35,24,6
+	.asciz "GenericCache"
+
+LDIFF_SYM638=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM638
+	.byte 2,35,32,6
+	.asciz "m_serializationCtor"
+
+LDIFF_SYM639=LTDIE_44_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM639
+	.byte 2,35,40,0,7
+	.asciz "System_RuntimeType"
+
+LDIFF_SYM640=LTDIE_40 - Ldebug_info_start
+	.long LDIFF_SYM640
+LTDIE_40_POINTER:
+
+	.byte 13
+LDIFF_SYM641=LTDIE_40 - Ldebug_info_start
+	.long LDIFF_SYM641
+LTDIE_40_REFERENCE:
+
+	.byte 14
+LDIFF_SYM642=LTDIE_40 - Ldebug_info_start
+	.long LDIFF_SYM642
+LTDIE_46:
+
+	.byte 5
+	.asciz "System_EventHandler`1"
+
+	.byte 112,16
+LDIFF_SYM643=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM643
+	.byte 2,35,0,0,7
+	.asciz "System_EventHandler`1"
+
+LDIFF_SYM644=LTDIE_46 - Ldebug_info_start
+	.long LDIFF_SYM644
+LTDIE_46_POINTER:
+
+	.byte 13
+LDIFF_SYM645=LTDIE_46 - Ldebug_info_start
+	.long LDIFF_SYM645
+LTDIE_46_REFERENCE:
+
+	.byte 14
+LDIFF_SYM646=LTDIE_46 - Ldebug_info_start
+	.long LDIFF_SYM646
 LTDIE_32:
 
 	.byte 5
 	.asciz "System_Runtime_Serialization_SafeSerializationManager"
 
-	.byte 32,16
-LDIFF_SYM565=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM565
+	.byte 56,16
+LDIFF_SYM647=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM647
 	.byte 2,35,0,6
 	.asciz "m_serializedStates"
 
-LDIFF_SYM566=LTDIE_33_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM566
+LDIFF_SYM648=LTDIE_33_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM648
 	.byte 2,35,16,6
+	.asciz "m_savedSerializationInfo"
+
+LDIFF_SYM649=LTDIE_34_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM649
+	.byte 2,35,24,6
 	.asciz "m_realObject"
 
-LDIFF_SYM567=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM567
-	.byte 2,35,24,0,7
+LDIFF_SYM650=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM650
+	.byte 2,35,32,6
+	.asciz "m_realType"
+
+LDIFF_SYM651=LTDIE_40_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM651
+	.byte 2,35,40,6
+	.asciz "SerializeObjectState"
+
+LDIFF_SYM652=LTDIE_46_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM652
+	.byte 2,35,48,0,7
 	.asciz "System_Runtime_Serialization_SafeSerializationManager"
 
-LDIFF_SYM568=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM568
+LDIFF_SYM653=LTDIE_32 - Ldebug_info_start
+	.long LDIFF_SYM653
 LTDIE_32_POINTER:
 
 	.byte 13
-LDIFF_SYM569=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM569
+LDIFF_SYM654=LTDIE_32 - Ldebug_info_start
+	.long LDIFF_SYM654
 LTDIE_32_REFERENCE:
 
 	.byte 14
-LDIFF_SYM570=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM570
+LDIFF_SYM655=LTDIE_32 - Ldebug_info_start
+	.long LDIFF_SYM655
 LTDIE_30:
 
 	.byte 5
 	.asciz "System_Exception"
 
 	.byte 136,1,16
-LDIFF_SYM571=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM571
+LDIFF_SYM656=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM656
 	.byte 2,35,0,6
 	.asciz "_className"
 
-LDIFF_SYM572=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM572
+LDIFF_SYM657=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM657
 	.byte 2,35,16,6
 	.asciz "_message"
 
-LDIFF_SYM573=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM573
+LDIFF_SYM658=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM658
 	.byte 2,35,24,6
 	.asciz "_data"
 
-LDIFF_SYM574=LTDIE_31_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM574
+LDIFF_SYM659=LTDIE_31_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM659
 	.byte 2,35,32,6
 	.asciz "_innerException"
 
-LDIFF_SYM575=LTDIE_30_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM575
+LDIFF_SYM660=LTDIE_30_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM660
 	.byte 2,35,40,6
 	.asciz "_helpURL"
 
-LDIFF_SYM576=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM576
+LDIFF_SYM661=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM661
 	.byte 2,35,48,6
 	.asciz "_stackTrace"
 
-LDIFF_SYM577=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM577
+LDIFF_SYM662=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM662
 	.byte 2,35,56,6
 	.asciz "_stackTraceString"
 
-LDIFF_SYM578=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM578
+LDIFF_SYM663=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM663
 	.byte 2,35,64,6
 	.asciz "_remoteStackTraceString"
 
-LDIFF_SYM579=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM579
+LDIFF_SYM664=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM664
 	.byte 2,35,72,6
 	.asciz "_remoteStackIndex"
 
-LDIFF_SYM580=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM580
+LDIFF_SYM665=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM665
 	.byte 2,35,80,6
 	.asciz "_dynamicMethods"
 
-LDIFF_SYM581=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM581
+LDIFF_SYM666=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM666
 	.byte 2,35,88,6
 	.asciz "_HResult"
 
-LDIFF_SYM582=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM582
+LDIFF_SYM667=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM667
 	.byte 2,35,96,6
 	.asciz "_source"
 
-LDIFF_SYM583=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM583
+LDIFF_SYM668=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM668
 	.byte 2,35,104,6
 	.asciz "_safeSerializationManager"
 
-LDIFF_SYM584=LTDIE_32_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM584
+LDIFF_SYM669=LTDIE_32_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM669
 	.byte 2,35,112,6
 	.asciz "captured_traces"
 
-LDIFF_SYM585=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM585
+LDIFF_SYM670=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM670
 	.byte 2,35,120,6
 	.asciz "native_trace_ips"
 
-LDIFF_SYM586=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM586
+LDIFF_SYM671=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM671
 	.byte 3,35,128,1,0,7
 	.asciz "System_Exception"
 
-LDIFF_SYM587=LTDIE_30 - Ldebug_info_start
-	.long LDIFF_SYM587
+LDIFF_SYM672=LTDIE_30 - Ldebug_info_start
+	.long LDIFF_SYM672
 LTDIE_30_POINTER:
 
 	.byte 13
-LDIFF_SYM588=LTDIE_30 - Ldebug_info_start
-	.long LDIFF_SYM588
+LDIFF_SYM673=LTDIE_30 - Ldebug_info_start
+	.long LDIFF_SYM673
 LTDIE_30_REFERENCE:
 
 	.byte 14
-LDIFF_SYM589=LTDIE_30 - Ldebug_info_start
-	.long LDIFF_SYM589
+LDIFF_SYM674=LTDIE_30 - Ldebug_info_start
+	.long LDIFF_SYM674
 	.byte 2
 	.asciz "(wrapper_native-to-managed)_ObjCRuntime.Trampolines/SDAppVoidBoolHandler:Invoke"
 	.asciz "wrapper_native_to_managed_ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_int"
@@ -15884,67 +16352,67 @@ LDIFF_SYM589=LTDIE_30 - Ldebug_info_start
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM590=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM590
+LDIFF_SYM675=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM675
 	.byte 2,141,48,3
 	.asciz "param1"
 
-LDIFF_SYM591=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM591
+LDIFF_SYM676=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM676
 	.byte 2,141,56,11
 	.asciz "V_0"
 
-LDIFF_SYM592=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM592
+LDIFF_SYM677=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM677
 	.byte 3,141,216,0,11
 	.asciz "V_1"
 
-LDIFF_SYM593=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM593
+LDIFF_SYM678=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM678
 	.byte 3,141,224,0,11
 	.asciz "V_2"
 
-LDIFF_SYM594=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM594
+LDIFF_SYM679=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM679
 	.byte 3,141,232,0,11
 	.asciz "V_3"
 
-LDIFF_SYM595=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM595
+LDIFF_SYM680=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM680
 	.byte 3,141,240,0,11
 	.asciz "V_4"
 
-LDIFF_SYM596=LTDIE_30_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM596
+LDIFF_SYM681=LTDIE_30_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM681
 	.byte 3,141,248,0,11
 	.asciz "V_5"
 
-LDIFF_SYM597=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM597
+LDIFF_SYM682=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM682
 	.byte 3,141,128,1,11
 	.asciz "V_6"
 
-LDIFF_SYM598=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM598
+LDIFF_SYM683=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM683
 	.byte 3,141,136,1,11
 	.asciz "V_7"
 
-LDIFF_SYM599=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM599
+LDIFF_SYM684=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM684
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM600=Lfde90_end - Lfde90_start
-	.long LDIFF_SYM600
+LDIFF_SYM685=Lfde90_end - Lfde90_start
+	.long LDIFF_SYM685
 Lfde90_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_native_to_managed_ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_int
 
-LDIFF_SYM601=Lme_6f - wrapper_native_to_managed_ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_int
-	.long LDIFF_SYM601
+LDIFF_SYM686=Lme_6f - wrapper_native_to_managed_ObjCRuntime_Trampolines_SDAppVoidBoolHandler_Invoke_intptr_int
+	.long LDIFF_SYM686
 	.long 0
 	.byte 12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,147,20,68,149,19,150,18,68,154,17
 	.align 3

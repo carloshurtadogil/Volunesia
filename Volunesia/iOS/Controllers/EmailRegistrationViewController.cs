@@ -25,7 +25,7 @@ namespace Volunesia.iOS
         {
             //ToUserTypeSelectionSegue_id
 
-            if (ValidCredentials())
+            //if (ValidCredentials())
             {
                 this.PerformSegue("ToUserTypeSelectionSegue_id", sender);
             }
