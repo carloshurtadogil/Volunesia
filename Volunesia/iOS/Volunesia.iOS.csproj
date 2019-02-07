@@ -174,6 +174,10 @@
     <Compile Include="Controllers\EstablishedNonprofitViewController.designer.cs">
       <DependentUpon>EstablishedNonprofitViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\WelcomeViewController.cs" />
+    <Compile Include="Controllers\WelcomeViewController.designer.cs">
+      <DependentUpon>WelcomeViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

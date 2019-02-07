@@ -137,7 +137,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="family-name" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5732" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="114" y="250" width="147" height="57"/>
+                                <rect key="frame" x="113" y="394" width="147" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
@@ -146,6 +146,23 @@
                                     <segue id="10798" destination="10109" kind="show" identifier="ToERVCSegue_id"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="18099" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="54" y="278" width="265" height="111"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
+                                    <!--2011-07-18 18:00:01 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--Thu, 31 Dec 2037 11:00:00 GMT-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18100" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="54" y="245" width="155" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
@@ -158,6 +175,7 @@
                         <outlet property="FirstNameTextfield" destination="5730" id="name-outlet-5730"/>
                         <outlet property="LastNameTextfield" destination="5731" id="name-outlet-5731"/>
                         <outlet property="ContinueButton" destination="5732" id="name-outlet-5732"/>
+                        <outlet property="BirthdayPicker" destination="18099" id="name-outlet-18099"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3219" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -576,6 +594,7 @@
                                     <action selector="NonprofitBtn_TouchUpInside:" destination="16575" id="16574" eventType="touchUpInside"/>
                                     <action selector="SchoolButton_TouchUpInside:" destination="16577" id="16576" eventType="touchUpInside"/>
                                     <action selector="ContinueButton_TouchUpInside:" destination="15924" id="16578" eventType="touchUpInside"/>
+                                    <segue id="18096" destination="17774" kind="show" identifier="EstablishedWelcomeSegue_id"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="17138" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -628,6 +647,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15926" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050" y="764"/>
+        </scene>
+        <scene sceneID="17773">
+            <objects>
+                <viewController id="17774" sceneMemberID="viewController" customClass="WelcomeViewController" storyboardIdentifier="WelcomeView" useStoryboardIdentifierAsRestorationIdentifier="YES" modalTransitionStyle="crossDissolve">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="17771"/>
+                        <viewControllerLayoutGuide type="bottom" id="17772"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="17775">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18102" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
+                                <rect key="frame" x="-4" y="-10" width="384" height="677"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18103" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/logo.png">
+                                <rect key="frame" x="34" y="65" width="307" height="334"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18104" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="16" y="430" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="18102" id="name-outlet-18102"/>
+                        <outlet property="LogoImageView" destination="18103" id="name-outlet-18103"/>
+                        <outlet property="WelcomeLabel" destination="18104" id="name-outlet-18104"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17776" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="1104"/>
         </scene>
     </scenes>
     <resources>

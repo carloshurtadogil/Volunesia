@@ -6,6 +6,10 @@ namespace Volunesia.iOS.Services
 {
     public class Register
     {
+        private bool CreateUserSuccess;
+        private string UserUid;
+        private UIViewController CurrentView;
+
         public Register()
         {
             AppData_iOS.GetInstance();
@@ -25,35 +29,61 @@ namespace Volunesia.iOS.Services
 
         public void CreateNonprofitOrganization(string type, string name, string primaryContactUID, string phone, string zip)
         {
-            object[] keys = { "name", "type", "primarycontact", "phone", "zip"  };
+            object[] keys = { "name", "type", "primarycontact", "phone", "zip" };
             //object[] vals = { name, type, primaryContactUID, phone, zip };
             object[] vals = { "Red Cross", "established", "12321291", "5625252525", "90808" };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild("1234321").SetValue(FirebaseUser);
         }
 
-        public bool CreateNonprofitUser(string firstname, string lastname, string email, string password, UIViewController view)
+        public string CreateUser(string firstname, string lastname, string email, string password, string type, UIViewController view)
         {
-            bool success = true;
+            System.Diagnostics.Debug.WriteLine("Works");
+            CurrentView = view;
+            CreateUserSuccess = true;
             AppData_iOS.Auth.CreateUser(email,
                                          password,
                                          (user, error) => {
                                              if (error != null)
                                              {
-                                                 AlertShow.Show(view, "Error", "");
+                                                 System.Diagnostics.Debug.WriteLine("Error oc");
                                                  return;
                                              }
-                                             success = true;
+                                             System.Diagnostics.Debug.WriteLine("Reached: ");
+                                             this.UserUid = user.User.Uid;
+                                             AddUserToFirebase(firstname, lastname, email, UserUid, type);
                                          });
-            if (success == true)
+            return UserUid;
+        }
+
+
+
+
+        void HandleAuthDataResultHandler(Firebase.Auth.AuthDataResult authResult, NSError error)
+        {
+            if (error != null)
             {
-                AddUserToFirebase(firstname, lastname, email, AppData_iOS.Auth.CurrentUser.Uid, "NP");
+                AlertShow.Show(CurrentView, "Error", "");
+                return;
             }
-            else
+
+            CreateUserSuccess = true;
+            UserUid = authResult.User.Uid;
+            AlertShow.Show(CurrentView, "User", UserUid);
+        }
+
+
+        void HandleAuthData(Firebase.Auth.AuthDataResult user, NSError error)
+        {
+            if (error != null)
             {
-                AlertShow.Show(view, "Failure", "");
+                AlertShow.Show(CurrentView, "Error", "");
+                return;
             }
-            return success;
+
+            CreateUserSuccess = true;
+            UserUid = user.User.Uid;
+            AlertShow.Show(CurrentView, "User", UserUid);
         }
     }
 }
