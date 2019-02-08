@@ -2,7 +2,7 @@ using Foundation;
 using System;
 using System.Text.RegularExpressions;
 using UIKit;
-using Volunesia.iOS.Services;
+using Volunesia.Services;
 
 namespace Volunesia.iOS
 {
@@ -25,13 +25,13 @@ namespace Volunesia.iOS
         {
             //ToUserTypeSelectionSegue_id
 
-            //if (ValidCredentials())
+            if (ValidCredentials())
             {
                 this.PerformSegue("ToUserTypeSelectionSegue_id", sender);
             }
         }
 
-
+        //Prepare to transition to next scene
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
@@ -44,10 +44,10 @@ namespace Volunesia.iOS
                 var rvc = (UserTypeSelectionController)segue.DestinationViewController;
                 if (rvc != null)
                 {
-                    rvc.FirstName = FirstName;
-                    rvc.LastName  = LastName;
-                    rvc.Email     = EmailTextfield.Text.Trim();
-                    rvc.Password  = PasswordTextfield.Text.Trim();
+                    rvc.NewFirstName = FirstName;
+                    rvc.NewLastName = LastName;
+                    rvc.NewEmail = EmailTextfield.Text.Trim();
+                    rvc.NewPassword = PasswordTextfield.Text.Trim();
                     rvc.LoadView();
                 }
             }
@@ -57,16 +57,18 @@ namespace Volunesia.iOS
             }
         }
 
+        //Validate the user's new credentials
         public bool ValidCredentials()
         {
             string email = Regex.Replace(EmailTextfield.Text, @"\s", "");
             string pw = Regex.Replace(PasswordTextfield.Text, @"\s", ""); 
-            string cpw = Regex.Replace(ConfirmPasswordTextfield.Text, @"\s", ""); 
+            string cpw = Regex.Replace(ConfirmPasswordTextfield.Text, @"\s", "");
+            CredentialsVerification cv = new CredentialsVerification();
 
-            if(!email.Contains("@")) //To be improved upon
+            if(email.Length > 1) //To be improved upon
             {
-                AlertShow.Show(this, "Invalid Email", "Please enter a valid email.");
-                return false;
+              //  AlertShow.Show(this, "Invalid Email", "Please enter a valid email.");
+            //    return false;
             }
 
             if(pw.Length < 8)

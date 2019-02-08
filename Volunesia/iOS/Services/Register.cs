@@ -1,13 +1,20 @@
 ﻿using System;
 using Foundation;
 using UIKit;
+using Volunesia.Services;
+using Volunesia.Models;
 
 namespace Volunesia.iOS.Services
 {
     public class Register
     {
-        private bool CreateUserSuccess;
-        private string UserUid;
+        public string NPType { get; set; }
+        public string EIN    { get; set; }
+        public string NPName { get; set; }
+        public string Zip    { get; set; }
+        public string City   { get; set; }
+        public string State  { get; set; }
+
         private UIViewController CurrentView;
 
         public Register()
@@ -15,75 +22,52 @@ namespace Volunesia.iOS.Services
             AppData_iOS.GetInstance();
         }
 
-        public void AddUserToFirebase(string firstname, string lastname, string email, string UID, string type)
-        {
-            firstname = firstname.Trim();
-            lastname = lastname.Trim();
-            email = email.Trim();
-            object[] keys = { "first", "last", "email", "type" };
-            object[] vals = { firstname, lastname, email, type };
 
-            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
-            AppData_iOS.UsersNode.GetChild(UID).SetValue(FirebaseUser);
-        }
-
-        public void CreateNonprofitOrganization(string type, string name, string primaryContactUID, string phone, string zip)
+        //Create a new User account in Firebase 
+        public void CreateUser( User NewUser, string Password, UIViewController view)
         {
-            object[] keys = { "name", "type", "primarycontact", "phone", "zip" };
-            //object[] vals = { name, type, primaryContactUID, phone, zip };
-            object[] vals = { "Red Cross", "established", "12321291", "5625252525", "90808" };
-            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
-            AppData_iOS.NonprofitNode.GetChild("1234321").SetValue(FirebaseUser);
-        }
-
-        public string CreateUser(string firstname, string lastname, string email, string password, string type, UIViewController view)
-        {
-            System.Diagnostics.Debug.WriteLine("Works");
             CurrentView = view;
-            CreateUserSuccess = true;
-            AppData_iOS.Auth.CreateUser(email,
-                                         password,
+            AppData_iOS.Auth.CreateUser( NewUser.EmailAddress,
+                                         Password,
                                          (user, error) => {
                                              if (error != null)
                                              {
-                                                 System.Diagnostics.Debug.WriteLine("Error oc");
+                                                 AlertShow.Show(view, "Create Error", "Register.CreateUser");
                                                  return;
                                              }
-                                             System.Diagnostics.Debug.WriteLine("Reached: ");
-                                             this.UserUid = user.User.Uid;
-                                             AddUserToFirebase(firstname, lastname, email, UserUid, type);
+                                             NewUser.UID = user.User.Uid;
+                                             AppData.CurUser = NewUser;
+
+                                             AddUserToFirebase(NewUser);
+                                             if(NewUser.UserType == "NP")
+                                             {
+                                                 CreateNonprofitOrganization(NewUser.UID);
+                                             }
                                          });
-            return UserUid;
+
         }
 
-
-
-
-        void HandleAuthDataResultHandler(Firebase.Auth.AuthDataResult authResult, NSError error)
+        //Add user information to Firebase.Database
+        public void AddUserToFirebase(User user)
         {
-            if (error != null)
-            {
-                AlertShow.Show(CurrentView, "Error", "");
-                return;
-            }
+            object[] keys = { "first", "last", "email", "type" };
+            object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType};
 
-            CreateUserSuccess = true;
-            UserUid = authResult.User.Uid;
-            AlertShow.Show(CurrentView, "User", UserUid);
+            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+            AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
+            AppData.CurUser = user;
         }
 
 
-        void HandleAuthData(Firebase.Auth.AuthDataResult user, NSError error)
+        //Add nonprofit information to Firebase.Database
+        public void CreateNonprofitOrganization(string UID)
         {
-            if (error != null)
-            {
-                AlertShow.Show(CurrentView, "Error", "");
-                return;
-            }
-
-            CreateUserSuccess = true;
-            UserUid = user.User.Uid;
-            AlertShow.Show(CurrentView, "User", UserUid);
+            object[] keys = { "name", "type", "primarycontact", "zip", "city", "state" };
+            object[] vals = { NPName, NPType, UID, Zip, City, State };
+            //object[] vals = { "Red Cross", "established", "12321291", "5625252525", "90808" };
+            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+            AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
         }
+
     }
 }

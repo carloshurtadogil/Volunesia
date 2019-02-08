@@ -24,10 +24,6 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIDatePicker BirthdayPicker { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ContinueButton { get; set; }
 
         [Outlet]
@@ -76,11 +72,6 @@ namespace Volunesia.iOS
             if (BackgroundImage != null) {
                 BackgroundImage.Dispose ();
                 BackgroundImage = null;
-            }
-
-            if (BirthdayPicker != null) {
-                BirthdayPicker.Dispose ();
-                BirthdayPicker = null;
             }
 
             if (ContinueButton != null) {

@@ -6,14 +6,14 @@ namespace Volunesia.iOS
 {
     public partial class WelcomeViewController : UIViewController
     {
-
+        public string FirstName { get; set; }
         public WelcomeViewController (IntPtr handle) : base (handle)
         {
         }
 
         public void SetName(string name) 
         {
-            WelcomeLabel.Text = "Welcome " + name + "!";
+            //WelcomeLabel.Text = "Welcome, " + FirstName + "!";
         }
 
     }

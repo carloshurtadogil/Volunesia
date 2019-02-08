@@ -1,13 +1,18 @@
 using Foundation;
 using System;
 using UIKit;
+using Volunesia.Models;
 using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
 {
     public partial class EstablishedNonprofitViewController : UIViewController
     {
-        private string Name;
+        //User attributes
+        public User User { get; set; }
+        public string Password  { get; set; }
+
+
         public EstablishedNonprofitViewController(IntPtr handle) : base(handle)
         {
         }
@@ -26,6 +31,7 @@ namespace Volunesia.iOS
                 var wvc = (WelcomeViewController)segue.DestinationViewController;
                 if (wvc != null)
                 {
+                    wvc.SetName(User.FirstName);
                     wvc.LoadView();
                 }
             }
@@ -39,7 +45,28 @@ namespace Volunesia.iOS
         {
             //VerifyZip();
             Register r = new Register();
-            Name = r.CreateUser("Carlos", "Hurtado", "catest@test.com", "Test.123", "NP", this);
+            if(ValidInfo())
+            {
+
+
+                string orgname = OrganizationNameTextfield.Text.Trim();
+                string ein = EINTextfield.Text.Trim();
+                string zip = ZipCodeTextfield.Text.Trim();
+                string city = CityTextfield.Text.Trim();
+                string state = StateTextfield.Text.Trim();
+
+                r.NPName = orgname;
+                r.EIN = ein;
+                r.Zip = zip;
+                r.City = city;
+                r.State = state;
+                r.NPType = "established";
+
+                r.CreateUser(User, Password, this);
+
+
+            }
+
         }
 
         public bool VerifyCity()
@@ -47,6 +74,7 @@ namespace Volunesia.iOS
             string city = CityTextfield.Text.Trim();
             if (city.Length > 0)
             {
+
                 return true;
             }
             return false;
@@ -59,6 +87,7 @@ namespace Volunesia.iOS
             {
                 return true;
             }
+
             return false;
         }
 
@@ -83,6 +112,30 @@ namespace Volunesia.iOS
             }
 
             return false;
+        }
+
+        public bool ValidInfo()
+        {
+            if (!VerifyEIN())
+            {
+                AlertShow.Show(this, "Invalid EIN", "Pleaser enter a valid EIN");
+                return false;
+            }
+            if (!ValidName())
+            {
+                AlertShow.Show(this, "Invalid Name", "Pleaser enter a valid organization name");
+                return false; 
+            }
+
+            if(!VerifyZip()) 
+            {
+                AlertShow.Show(this, "Invalid ZIP", "Pleaser enter a valid zip code.");
+                return false;
+            }
+
+
+
+            return true;
         }
     }
 }

@@ -17,13 +17,14 @@ namespace Volunesia.iOS
 
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            //if(ValidName())
+            if(ValidName())
             {
                 this.PerformSegue("ToERVCSegue_id", sender);
             }
 
         }
 
+        //Prepare to move to the next View
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
@@ -32,7 +33,6 @@ namespace Volunesia.iOS
 
             if (segue.Identifier == "ToERVCSegue_id")
             {
-                //AlertShow.Show(this, "Reached", "");
 
                 var rvc = (EmailRegistrationViewController)segue.DestinationViewController;
                 if (rvc != null)
@@ -54,6 +54,7 @@ namespace Volunesia.iOS
             }
         }
 
+        //Ensure that the user has inserted something into the First and Last name fields
         public bool ValidName() 
         {
             string fn = FirstNameTextfield.Text;

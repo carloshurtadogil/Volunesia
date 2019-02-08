@@ -1,12 +1,17 @@
 using Foundation;
 using System;
 using UIKit;
+using Volunesia.Models;
 using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
 {
     public partial class NPTypeSelectionController : UIViewController
     {
+        public User   User      { get; set; }
+        public string Password  { get; set; }
+
+
         public NPTypeSelectionController (IntPtr handle) : base (handle)
         {
         }
@@ -43,7 +48,8 @@ namespace Volunesia.iOS
                 var enpvc = (EstablishedNonprofitViewController)segue.DestinationViewController;
                 if (enpvc != null)
                 {
-
+                    enpvc.User = User;
+                    enpvc.Password  = Password;
                     enpvc.LoadView();
                 }
             }
