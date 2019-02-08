@@ -16,7 +16,8 @@ namespace Volunesia.Droid
     [Activity(Label = "SecondRegisterActivity")]
     public class SecondRegisterActivity : Activity, IOnCompleteListener
     {
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public EditText emailAddress { get; set; }
         public EditText password { get; set; }
         public EditText confirmPassword { get; set; }
@@ -26,6 +27,11 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.SecondRegister);
+
+            //Get first name and last name from last activity
+            FirstName = Intent.GetStringExtra("firstName");
+            LastName = Intent.GetStringExtra("lastName");
+
 
             emailAddress = FindViewById<EditText>(Resource.Id.emailAddressField);
             password = FindViewById<EditText>(Resource.Id.passwordField);
@@ -70,7 +76,12 @@ namespace Volunesia.Droid
             //choice as a volunteer or nonprofit
             if (task.IsSuccessful == true)
             {
-                StartActivity(typeof(RegisterActivity));
+                var credentialsIntent = new Intent(this, typeof(RegisterActivity));
+                credentialsIntent.PutExtra("firstName", FirstName);
+                credentialsIntent.PutExtra("lastName", LastName);
+                credentialsIntent.PutExtra("emailAddress", emailAddress.Text);
+                credentialsIntent.PutExtra("password", password.Text);
+                StartActivity(credentialsIntent);
             }
             //if authentication, doesn't work notify the user through an AlertDialog
             else

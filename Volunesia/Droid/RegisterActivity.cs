@@ -15,12 +15,21 @@ namespace Volunesia.Droid
     [Activity(Label = "RegisterActivity")]
     public class RegisterActivity : Activity
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
+        public string Password { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Register);
 
+            FirstName = Intent.GetStringExtra("firstName");
+            LastName= Intent.GetStringExtra("lastName");
+            EmailAddress = Intent.GetStringExtra("emailAddress");
+            Password = Intent.GetStringExtra("password");
 
            
 
@@ -33,7 +42,13 @@ namespace Volunesia.Droid
 
         public void JumpToVolunteerRegisterActivity(object sender, EventArgs e)
         {
-            StartActivity(typeof(VolunteerRegisterActivity));
+            var credentialsIntent = new Intent(this, typeof(VolunteerRegisterActivity));
+            credentialsIntent.PutExtra("firstName", FirstName);
+            credentialsIntent.PutExtra("lastName", LastName);
+            credentialsIntent.PutExtra("emailAddress", EmailAddress);
+            credentialsIntent.PutExtra("password", Password);
+
+            StartActivity(credentialsIntent);
         }
 
         public void JumpToNonprofitRegisterActivity(object sender, EventArgs e)

@@ -41,35 +41,13 @@ namespace Volunesia.Droid
         {
             if(!string.IsNullOrEmpty(firstName.Text) && !string.IsNullOrEmpty(lastName.Text))
             {
-                StartActivity(typeof(SecondRegisterActivity));
+                var intent = new Intent(this, typeof(SecondRegisterActivity));
+                intent.PutExtra("firstName", firstName.Text);
+                intent.PutExtra("lastName", lastName.Text);
+                StartActivity(intent);
             }
         }
 
-        
 
-        public void OnComplete(Task task)
-        {
-            //If Firebase authentication works, then navigate to the RegisterActivity to select
-            //choice as a volunteer or nonprofit
-            if(task.IsSuccessful == true)
-            {
-                StartActivity(typeof(RegisterActivity));
-            }
-            //if authentication, doesn't work notify the user through an AlertDialog
-            else
-            {
-                AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
-                dialogAlertConstruction.SetTitle("Authentication failure");
-                dialogAlertConstruction.SetMessage("Email entered is already in use");
-
-                dialogAlertConstruction.SetPositiveButton("GO BACK", delegate
-                {
-
-                    dialogAlertConstruction.Dispose();
-
-                }   );
-                dialogAlertConstruction.Show();
-            }
-        }
     }
 }

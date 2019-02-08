@@ -9,12 +9,18 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Firebase.Database.Query;
 
 namespace Volunesia.Droid
 {
     [Activity(Label = "VolunteerRegisterActivity")]
     public class VolunteerRegisterActivity : Activity
     {
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
+        public string Password { get; set; }
 
         public EditText personalDescription { get; set; }
 
@@ -23,6 +29,13 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
             //Set VolunteerRegister view
             SetContentView(Resource.Layout.VolunteerRegister);
+
+            FirstName = Intent.GetStringExtra("firstName");
+            LastName = Intent.GetStringExtra("lastName");
+            EmailAddress = Intent.GetStringExtra("emailAddress");
+            Password = Intent.GetStringExtra("password");
+
+
 
             personalDescription = FindViewById<EditText>(Resource.Id.personalDescriptionField);
             
@@ -36,6 +49,13 @@ namespace Volunesia.Droid
         public void PerformVolunteerRegistration(object sender, EventArgs e)
         {
 
+            Dictionary<string, string> userDictionary = new Dictionary<string, string>();
+            userDictionary.Add("email", EmailAddress);
+            userDictionary.Add("first", FirstName);
+            userDictionary.Add("last", LastName);
+            userDictionary.Add("type", "Volunteer");
+
+            AppData_Droid.UserNode.PutAsync(userDictionary);
         }
     }
 }
