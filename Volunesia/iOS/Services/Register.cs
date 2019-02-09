@@ -70,18 +70,18 @@ namespace Volunesia.iOS.Services
         //Add nonprofit information to Firebase.Database
         public void CreateNonprofitOrganization(string UID)
         {
-            object[] keys = { "name", "type", "primarycontact", "primaryphone","zip", "city", "state" };
-            object[] vals = { NPName, NPType, UID, Phone, Zip, City, State };
+            IDGenerator generator = new IDGenerator();
+            string id = generator.GenerateID();
+            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state" };
+            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
-            AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
+            AppData_iOS.NonprofitNode.GetChild(id).SetValue(FirebaseUser);
         }
 
         public void CreateSchoolOrganization(string UID)
         {
-            DateTime t = DateTime.Today;
-            TimeSpan ts = DateTime.Today.TimeOfDay;
-            EIN = t.Day.ToString() + t.Month.ToString() + t.Year.ToString() + 
-                  ts.Hours.ToString() + ts.Minutes.ToString() + ts.Seconds.ToString() + ts.Milliseconds.ToString();
+            IDGenerator generator = new IDGenerator();
+            EIN = generator.GenerateID();
 
             object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state" };
             object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State };

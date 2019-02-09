@@ -86,7 +86,7 @@ namespace Volunesia.iOS
             string zip = ZipTextfield.Text.Trim();
             if ((zip.Length >= 5) && (zip.Length <= 10))
             {
-                AlertShow.Show(this, "Invalid Zip", "Please enter a valid zip code.");
+                //AlertShow.Show(this, "Invalid Zip", "Please enter a valid zip code.");
                 return true;
             }
 
@@ -98,7 +98,7 @@ namespace Volunesia.iOS
             string city = CityTextfield.Text.Trim();
             if (city.Length > 0)
             {
-                AlertShow.Show(this, "Invalid City", "Please enter a valid city name");
+                //AlertShow.Show(this, "Invalid City", "Please enter a valid city name");
                 return true;
             }
             return false;

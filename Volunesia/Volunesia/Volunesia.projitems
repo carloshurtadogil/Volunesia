@@ -26,5 +26,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AppData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
   </ItemGroup>
 </Project>
