@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using Volunesia.Models;
 using Volunesia.iOS.Services;
+using System.Text.RegularExpressions;
 
 namespace Volunesia.iOS
 {
@@ -26,13 +27,29 @@ namespace Volunesia.iOS
         {
             base.PrepareForSegue(segue, sender);
 
-            if (segue.Identifier == "EstablishedWelcomeSegue_id")
+            if (segue.Identifier == "EstablishedToMSSegue_id")
             {
-                var wvc = (WelcomeViewController)segue.DestinationViewController;
-                if (wvc != null)
+                var msvc = (MissionStatementViewController)segue.DestinationViewController;
+                if (msvc != null)
                 {
-                    wvc.SetName(User.FirstName);
-                    wvc.LoadView();
+                    string orgname = OrganizationNameTextfield.Text.Trim();
+                    string ein = EINTextfield.Text.Trim();
+                    string phone = Regex.Replace(PhoneTextfield.Text, @"\s", "");
+                    string zip = ZipCodeTextfield.Text.Trim();
+                    string city = CityTextfield.Text.Trim();
+                    string state = StateTextfield.Text.Trim();
+
+                    msvc.CurrentUser = User;
+                    msvc.Password = Password;
+                    msvc.EIN = ein;
+                    msvc.NPName = orgname;
+                    msvc.Phone = phone;
+                    msvc.Zip = zip;
+                    msvc.City = city;
+                    msvc.State = state;
+                    msvc.NPType = "established";
+
+                    msvc.LoadView();
                 }
             }
             else
@@ -41,32 +58,13 @@ namespace Volunesia.iOS
             }
         }
 
+
+
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            //VerifyZip();
-            Register r = new Register();
             if(ValidInfo())
             {
-
-
-                string orgname = OrganizationNameTextfield.Text.Trim();
-                string ein = EINTextfield.Text.Trim();
-                string phone = PhoneTextfield.Text.Trim();
-                string zip = ZipCodeTextfield.Text.Trim();
-                string city = CityTextfield.Text.Trim();
-                string state = StateTextfield.Text.Trim();
-
-                r.NPName = orgname;
-                r.EIN = ein;
-                r.Phone = phone;
-                r.Zip = zip;
-                r.City = city;
-                r.State = state;
-                r.NPType = "established";
-
-                r.CreateUser(User, Password, this);
-
-
+                this.PerformSegue("EstablishedToMSSegue_id", sender);
             }
 
         }

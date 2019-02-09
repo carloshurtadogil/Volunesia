@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Volunesia.iOS
 {
-    [Register ("SchoolNPViewController")]
-    partial class SchoolNPViewController
+    [Register ("LocalNPViewController")]
+    partial class LocalNPViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -49,14 +49,6 @@ namespace Volunesia.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PhoneTextfield { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel SchoolNameLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField SchoolNameTextfield { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -131,16 +123,6 @@ namespace Volunesia.iOS
             if (PhoneTextfield != null) {
                 PhoneTextfield.Dispose ();
                 PhoneTextfield = null;
-            }
-
-            if (SchoolNameLabel != null) {
-                SchoolNameLabel.Dispose ();
-                SchoolNameLabel = null;
-            }
-
-            if (SchoolNameTextfield != null) {
-                SchoolNameTextfield.Dispose ();
-                SchoolNameTextfield = null;
             }
 
             if (StateLabel != null) {

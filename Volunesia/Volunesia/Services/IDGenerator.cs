@@ -7,9 +7,9 @@ namespace Volunesia.Services
         {
             DateTime t = DateTime.Now;
             TimeSpan ts = DateTime.Now.TimeOfDay;
-            string id  = t.Day.ToString() + t.Month.ToString() + t.Year.ToString() + 
-                         (ts.Hours + ts.Minutes + ts.Seconds + ts.Milliseconds);
-            return id;
+            return t.Day.ToString() + t.Month.ToString() + t.Year.ToString() + 
+                   ts.Hours.ToString() + ts.Minutes.ToString() + ts.Seconds.ToString() + ts.Milliseconds.ToString();
+
         }
 
         public string GenerateEstablishedID(string ein)

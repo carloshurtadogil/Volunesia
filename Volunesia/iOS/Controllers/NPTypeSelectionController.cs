@@ -28,7 +28,7 @@ namespace Volunesia.iOS
 
         partial void LocalButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "Local", "To be implemented");
+            this.PerformSegue("LocalToInfoSegue_id", sender);
         }
 
         partial void BackButton_TouchUpInside(UIButton sender)
@@ -39,30 +39,40 @@ namespace Volunesia.iOS
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
+            switch (segue.Identifier)
+            {
+                case "EstablishedToInfoSegue_id":
+                    var enpvc = (EstablishedNonprofitViewController)segue.DestinationViewController;
+                    if (enpvc != null)
+                    {
+                        enpvc.User = User;
+                        enpvc.Password = Password;
+                        enpvc.LoadView();
+                    }
 
-            if (segue.Identifier == "EstablishedToInfoSegue_id")
-            {
-                var enpvc = (EstablishedNonprofitViewController)segue.DestinationViewController;
-                if (enpvc != null)
-                {
-                    enpvc.User = User;
-                    enpvc.Password  = Password;
-                    enpvc.LoadView();
-                }
-            }
-            else if (segue.Identifier == "SchoolToInfoSegue_id")
-            {
-                var snpvc = (SchoolNPViewController)segue.DestinationViewController;
-                if (snpvc != null)
-                {
-                    snpvc.User = User;
-                    snpvc.Password = Password;
-                    snpvc.LoadView();
-                }
-            }
-            else
-            {
-                AlertShow.Show(this, "Segue Failure", "NPTypeSelectionController.cs");
+                    break;
+                case "SchoolToInfoSegue_id":
+                    var snpvc = (SchoolNPViewController)segue.DestinationViewController;
+                    if (snpvc != null)
+                    {
+                        snpvc.User = User;
+                        snpvc.Password = Password;
+                        snpvc.LoadView();
+                    }
+
+                    break;
+                case "LocalToInfoSegue_id":
+                    var lnpvc = (LocalNPViewController)segue.DestinationViewController;
+                    if (lnpvc != null)
+                    {
+                        lnpvc.User = User;
+                        lnpvc.Password = Password;
+                    }
+
+                    break;
+                default:
+                    AlertShow.Show(this, "Segue Failure", "NPTypeSelectionController.cs");
+                    break;
             }
         }
 

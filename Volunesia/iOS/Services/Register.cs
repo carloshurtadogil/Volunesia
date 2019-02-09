@@ -16,6 +16,7 @@ namespace Volunesia.iOS.Services
         public string City   { get; set; }
         public string State  { get; set; }
         public string Phone  { get; set; }
+        public string MissionStatement { get; set; }
 
         private UIViewController CurrentView;
 
@@ -26,7 +27,7 @@ namespace Volunesia.iOS.Services
 
 
         //Create a new User account in Firebase 
-        public void CreateUser( User NewUser, string Password, UIViewController view)
+        public void CreateUser( User NewUser, string Password, UIViewController view )
         {
             CurrentView = view;
             AppData_iOS.Auth.CreateUser( NewUser.EmailAddress,
@@ -72,8 +73,8 @@ namespace Volunesia.iOS.Services
         {
             IDGenerator generator = new IDGenerator();
             string id = generator.GenerateID();
-            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state" };
-            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State };
+            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state", "missionstatement" };
+            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State, MissionStatement };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(id).SetValue(FirebaseUser);
         }
@@ -83,8 +84,8 @@ namespace Volunesia.iOS.Services
             IDGenerator generator = new IDGenerator();
             EIN = generator.GenerateID();
 
-            object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state" };
-            object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State };
+            object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement" };
+            object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State , MissionStatement};
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
         }
