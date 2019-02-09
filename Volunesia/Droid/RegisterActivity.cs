@@ -37,7 +37,7 @@ namespace Volunesia.Droid
             Button nonprofitSignUpButton = FindViewById<Button>(Resource.Id.nonProfitButton);
 
             volunteerSignUpButton.Click += JumpToVolunteerRegisterActivity;
-            nonprofitSignUpButton.Click += JumpToNonprofitRegisterActivity;
+            nonprofitSignUpButton.Click += JumpToNonprofitTypeRegisterActivity;
         }
 
         public void JumpToVolunteerRegisterActivity(object sender, EventArgs e)
