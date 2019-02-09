@@ -18,15 +18,12 @@ namespace Volunesia.iOS
 
         partial void EstablishedButton_TouchUpInside(UIButton sender)
         {
-            //Register r = new Register();
-            //r.CreateNonprofitOrganization("Established", "Red Cross", "Charles", "563-564-4354", "90808");
-            //AlertShow.Show(this, "Established", "To be implemented");
             this.PerformSegue("EstablishedToInfoSegue_id", sender);
         }
 
         partial void SchoolButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "School", "To be implemented");
+            this.PerformSegue("SchoolToInfoSegue_id", sender);
         }
 
         partial void LocalButton_TouchUpInside(UIButton sender)
@@ -51,6 +48,16 @@ namespace Volunesia.iOS
                     enpvc.User = User;
                     enpvc.Password  = Password;
                     enpvc.LoadView();
+                }
+            }
+            else if (segue.Identifier == "SchoolToInfoSegue_id")
+            {
+                var snpvc = (SchoolNPViewController)segue.DestinationViewController;
+                if (snpvc != null)
+                {
+                    snpvc.User = User;
+                    snpvc.Password = Password;
+                    snpvc.LoadView();
                 }
             }
             else

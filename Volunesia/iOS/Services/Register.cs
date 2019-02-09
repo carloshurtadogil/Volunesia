@@ -12,8 +12,10 @@ namespace Volunesia.iOS.Services
         public string EIN    { get; set; }
         public string NPName { get; set; }
         public string Zip    { get; set; }
+        public string School { get; set; }
         public string City   { get; set; }
         public string State  { get; set; }
+        public string Phone  { get; set; }
 
         private UIViewController CurrentView;
 
@@ -39,9 +41,15 @@ namespace Volunesia.iOS.Services
                                              AppData.CurUser = NewUser;
 
                                              AddUserToFirebase(NewUser);
-                                             if(NewUser.UserType == "NP")
+                                             if(NewUser.UserType == "NP" && NPType == "established")
                                              {
+                                                 System.Diagnostics.Debug.WriteLine("established reached");
                                                  CreateNonprofitOrganization(NewUser.UID);
+                                             }
+                                             else if (NewUser.UserType == "NP" && NPType == "school")
+                                             {
+                                                 System.Diagnostics.Debug.WriteLine("School Reached");
+                                                 CreateSchoolOrganization(NewUser.UID); 
                                              }
                                          });
 
@@ -62,9 +70,21 @@ namespace Volunesia.iOS.Services
         //Add nonprofit information to Firebase.Database
         public void CreateNonprofitOrganization(string UID)
         {
-            object[] keys = { "name", "type", "primarycontact", "zip", "city", "state" };
-            object[] vals = { NPName, NPType, UID, Zip, City, State };
-            //object[] vals = { "Red Cross", "established", "12321291", "5625252525", "90808" };
+            object[] keys = { "name", "type", "primarycontact", "primaryphone","zip", "city", "state" };
+            object[] vals = { NPName, NPType, UID, Phone, Zip, City, State };
+            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+            AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
+        }
+
+        public void CreateSchoolOrganization(string UID)
+        {
+            DateTime t = DateTime.Today;
+            TimeSpan ts = DateTime.Today.TimeOfDay;
+            EIN = t.Day.ToString() + t.Month.ToString() + t.Year.ToString() + 
+                  ts.Hours.ToString() + ts.Minutes.ToString() + ts.Seconds.ToString() + ts.Milliseconds.ToString();
+
+            object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state" };
+            object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
         }

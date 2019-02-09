@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Volunesia.iOS
 {
-    [Register ("EstablishedNonprofitViewController")]
-    partial class EstablishedNonprofitViewController
+    [Register ("SchoolNPViewController")]
+    partial class SchoolNPViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,18 +36,6 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel EINLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField EINTextfield { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel InformationStmtLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel OrganizationNameLabel { get; set; }
 
         [Outlet]
@@ -56,15 +44,19 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel PhoneLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PhoneTextfield { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel StateLabel { get; set; }
+        UIKit.UILabel SchoolNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField SchoolNameTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel StatementLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -72,11 +64,11 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel ZipCodeLabel { get; set; }
+        UIKit.UILabel ZipLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField ZipCodeTextfield { get; set; }
+        UIKit.UITextField ZipTextfield { get; set; }
 
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -113,21 +105,6 @@ namespace Volunesia.iOS
                 ContinueButton = null;
             }
 
-            if (EINLabel != null) {
-                EINLabel.Dispose ();
-                EINLabel = null;
-            }
-
-            if (EINTextfield != null) {
-                EINTextfield.Dispose ();
-                EINTextfield = null;
-            }
-
-            if (InformationStmtLabel != null) {
-                InformationStmtLabel.Dispose ();
-                InformationStmtLabel = null;
-            }
-
             if (OrganizationNameLabel != null) {
                 OrganizationNameLabel.Dispose ();
                 OrganizationNameLabel = null;
@@ -138,19 +115,24 @@ namespace Volunesia.iOS
                 OrganizationNameTextfield = null;
             }
 
-            if (PhoneLabel != null) {
-                PhoneLabel.Dispose ();
-                PhoneLabel = null;
-            }
-
             if (PhoneTextfield != null) {
                 PhoneTextfield.Dispose ();
                 PhoneTextfield = null;
             }
 
-            if (StateLabel != null) {
-                StateLabel.Dispose ();
-                StateLabel = null;
+            if (SchoolNameLabel != null) {
+                SchoolNameLabel.Dispose ();
+                SchoolNameLabel = null;
+            }
+
+            if (SchoolNameTextfield != null) {
+                SchoolNameTextfield.Dispose ();
+                SchoolNameTextfield = null;
+            }
+
+            if (StatementLabel != null) {
+                StatementLabel.Dispose ();
+                StatementLabel = null;
             }
 
             if (StateTextfield != null) {
@@ -158,14 +140,14 @@ namespace Volunesia.iOS
                 StateTextfield = null;
             }
 
-            if (ZipCodeLabel != null) {
-                ZipCodeLabel.Dispose ();
-                ZipCodeLabel = null;
+            if (ZipLabel != null) {
+                ZipLabel.Dispose ();
+                ZipLabel = null;
             }
 
-            if (ZipCodeTextfield != null) {
-                ZipCodeTextfield.Dispose ();
-                ZipCodeTextfield = null;
+            if (ZipTextfield != null) {
+                ZipTextfield.Dispose ();
+                ZipTextfield = null;
             }
         }
     }

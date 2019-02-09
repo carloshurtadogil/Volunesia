@@ -51,12 +51,14 @@ namespace Volunesia.iOS
 
                 string orgname = OrganizationNameTextfield.Text.Trim();
                 string ein = EINTextfield.Text.Trim();
+                string phone = PhoneTextfield.Text.Trim();
                 string zip = ZipCodeTextfield.Text.Trim();
                 string city = CityTextfield.Text.Trim();
                 string state = StateTextfield.Text.Trim();
 
                 r.NPName = orgname;
                 r.EIN = ein;
+                r.Phone = phone;
                 r.Zip = zip;
                 r.City = city;
                 r.State = state;
