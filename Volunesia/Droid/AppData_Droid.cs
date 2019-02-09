@@ -14,6 +14,7 @@ namespace Volunesia.Droid
 
         public static ChildQuery DataNode;
         public static ChildQuery UserNode;
+        public static ChildQuery NonprofitNode;
 
         static FirebaseApp FireApp;
         public static FirebaseAuth Auth;
@@ -36,6 +37,7 @@ namespace Volunesia.Droid
             FirebaseClient rootNode = new FirebaseClient(FirebaseURL);
             DataNode = rootNode.Child("data");
             UserNode = rootNode.Child("users");
+            NonprofitNode = rootNode.Child("nonprofitorgs");
         }
 
         public static AppData_Droid GetInstance(Context inpContext)
