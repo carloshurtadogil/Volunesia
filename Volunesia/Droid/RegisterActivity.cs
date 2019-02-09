@@ -51,9 +51,14 @@ namespace Volunesia.Droid
             StartActivity(credentialsIntent);
         }
 
-        public void JumpToNonprofitRegisterActivity(object sender, EventArgs e)
+        public void JumpToNonprofitTypeRegisterActivity(object sender, EventArgs e)
         {
-            //StartActivity(typeof(NonprofitRegisterActivity));
+            var credentialsIntent = new Intent(this, typeof(NonprofitTypeRegisterActivity));
+            credentialsIntent.PutExtra("firstName", FirstName);
+            credentialsIntent.PutExtra("lastName", LastName);
+            credentialsIntent.PutExtra("emailAddress", EmailAddress);
+
+            StartActivity(credentialsIntent);
         }
     }
 
