@@ -44,6 +44,22 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:id="@+id/stateField" />
+
+	<EditText
+		android:layout_width="162.0dp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:hint="Phone Number"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/phoneNumberField" />
+
+
+	<Button
+		android:text="Button"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/finalizeNPRegistrationButton" />
 	
 	
 </LinearLayout>

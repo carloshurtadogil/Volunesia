@@ -28,7 +28,7 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.MainRegister);
-
+            
             firstName = FindViewById<EditText>(Resource.Id.firstnameField);
             lastName = FindViewById<EditText>(Resource.Id.lastnameField);
       

@@ -22,6 +22,13 @@ namespace Volunesia.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.NonprofitTypeRegister);
+
+
+            FirstName = Intent.GetStringExtra("firstName");
+            LastName = Intent.GetStringExtra("lastName");
+            EmailAddress = Intent.GetStringExtra("emailAddress");
+
 
             var establishedNPButton = FindViewById<Button>(Resource.Id.establishedNPButton);
             var schoolNPButton = FindViewById<Button>(Resource.Id.schoolNPButton);
