@@ -9,9 +9,7 @@ namespace Volunesia.Services
     public class ContactInformationVerification
     {
 
-
         public StringBuilder errorMessages;
-
 
         public ContactInformationVerification()
         {
@@ -19,9 +17,36 @@ namespace Volunesia.Services
         }
 
 
-        //Verifies all of the nonprofit's entered information at registration
+        //Verifies all of the school nonprofit's entered information at registration
         //returns the error messages in a string if there is any
-        public string VerifyAllInformation(string ein, string organizationName, string city, string state, string zipCode, string phoneNumber)
+        public string VerifyAllInformationForSchoolNonprofit(string ein, string schoolName, string city, string state, string zipCode, string phoneNumber)
+        {
+            if (!ValidateSchoolName(schoolName))
+            {
+                errorMessages.Append("Incorrect organization name");
+            }
+            if (!ValidatePhoneNumber(phoneNumber))
+            {
+                errorMessages.Append("Incorrect phone number format");
+            }
+            if (!ValidateState(state))
+            {
+                errorMessages.Append("Incorrect state abbreviation entered");
+            }
+            if (!ValidateZipCode(zipCode))
+            {
+                errorMessages.Append("Incorrect zip code entered");
+            }
+
+            return errorMessages.ToString();
+        }
+
+
+
+
+        //Verifies all of the established nonprofit's entered information at registration
+        //returns the error messages in a string if there is any
+        public string VerifyAllInformationForEstablishedNonprofit(string ein, string organizationName, string city, string state, string zipCode, string phoneNumber)
         {
             if (!ValidateOrganizationName(organizationName))
             {
@@ -94,14 +119,21 @@ namespace Volunesia.Services
             return false;
         }
 
+        //Validates a school nonprofit's name
+        public bool ValidateSchoolName(string schoolName)
+        {
+            if(schoolName.Length > 1)
+            {
+                return true;
+            }
+            return false;
+        }
 
         //Enumeration for all 50 states
         public enum States
         {
             AL,
-
             AK,
-
             AR,
             AZ,
             CA,
