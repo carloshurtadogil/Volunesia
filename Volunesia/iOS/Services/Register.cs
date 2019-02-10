@@ -52,6 +52,11 @@ namespace Volunesia.iOS.Services
                                                  System.Diagnostics.Debug.WriteLine("School Reached");
                                                  CreateSchoolOrganization(NewUser.UID); 
                                              }
+                                             else if (NewUser.UserType == "NP" && NPType == "local")
+                                             {
+                                                 System.Diagnostics.Debug.WriteLine("Local reached");
+                                                 CreateLocalOrganization(NewUser.UID);
+                                             }
                                          });
 
         }
@@ -86,6 +91,17 @@ namespace Volunesia.iOS.Services
 
             object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement" };
             object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State , MissionStatement};
+            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+            AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
+        }
+
+        public void CreateLocalOrganization(string UID)
+        {
+            IDGenerator generator = new IDGenerator();
+            EIN = generator.GenerateID();
+
+            object[] keys = { "name", "type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement" };
+            object[] vals = { NPName, NPType, UID, Phone, Zip, City, State, MissionStatement };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
         }

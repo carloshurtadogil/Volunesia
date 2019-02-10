@@ -17,7 +17,43 @@ namespace Volunesia.iOS
 
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            throw new NotImplementedException();
+            if(ValidInfo())
+            {
+                this.PerformSegue("LocalToMSSegue_id", sender);
+            }
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+
+            if (segue.Identifier == "LocalToMSSegue_id")
+            {
+                var msvc = (MissionStatementViewController)segue.DestinationViewController;
+                if (msvc != null)
+                {
+                    string orgname = OrganizationNameTextfield.Text.Trim();
+                    string phone = Regex.Replace(PhoneTextfield.Text, @"\s", "");
+                    string zip = ZipTextfield.Text.Trim();
+                    string city = CityTextfield.Text.Trim();
+                    string state = StateTextfield.Text.Trim();
+
+                    msvc.CurrentUser = User;
+                    msvc.Password = Password;
+                    msvc.NPName = orgname;
+                    msvc.Phone = phone;
+                    msvc.Zip = zip;
+                    msvc.City = city;
+                    msvc.State = state;
+                    msvc.NPType = "local";
+
+                    msvc.LoadView();
+                }
+            }
+            else
+            {
+                AlertShow.Show(this, "Segue Failure", "EstablishedNonprofitViewController.cs");
+            }
         }
 
         public bool ValidOrgName()

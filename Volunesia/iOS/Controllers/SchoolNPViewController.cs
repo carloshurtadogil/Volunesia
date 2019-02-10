@@ -21,23 +21,7 @@ namespace Volunesia.iOS
         { 
             if (ValidInfo())
             {
-                Register r = new Register();
-                string orgname = OrganizationNameTextfield.Text.Trim();
-                string school = SchoolNameTextfield.Text.Trim();
-                string phone = PhoneTextfield.Text.Trim();
-                string zip = ZipTextfield.Text.Trim();
-                string city = CityTextfield.Text.Trim();
-                string state = StateTextfield.Text.Trim();
-
-                r.NPName = orgname;
-                r.School = school;
-                r.Phone = phone;
-                r.Zip = zip;
-                r.City = city;
-                r.State = state;
-                r.NPType = "school";
-
-                r.CreateUser(User, Password, this);
+                this.PerformSegue("SchoolToMSSegue_id", sender);
             }
         }
 
@@ -46,7 +30,38 @@ namespace Volunesia.iOS
             this.DismissViewController(true, null);
         }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
 
+            if (segue.Identifier == "SchoolToMSSegue_id")
+            {
+                var msvc = (MissionStatementViewController)segue.DestinationViewController;
+                if (msvc != null)
+                {
+                    string orgname = OrganizationNameTextfield.Text.Trim();
+                    string phone = Regex.Replace(PhoneTextfield.Text, @"\s", "");
+                    string zip = ZipTextfield.Text.Trim();
+                    string city = CityTextfield.Text.Trim();
+                    string state = StateTextfield.Text.Trim();
+
+                    msvc.CurrentUser = User;
+                    msvc.Password = Password;
+                    msvc.NPName = orgname;
+                    msvc.Phone = phone;
+                    msvc.Zip = zip;
+                    msvc.City = city;
+                    msvc.State = state;
+                    msvc.NPType = "school";
+
+                    msvc.LoadView();
+                }
+            }
+            else
+            {
+                AlertShow.Show(this, "Segue Failure", "EstablishedNonprofitViewController.cs");
+            }
+        }
 
 
         public bool ValidOrgName()

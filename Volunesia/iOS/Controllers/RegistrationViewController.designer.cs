@@ -50,10 +50,6 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel StatementLabel { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView StoryTextView { get; set; }
-
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
@@ -107,11 +103,6 @@ namespace Volunesia.iOS
             if (StatementLabel != null) {
                 StatementLabel.Dispose ();
                 StatementLabel = null;
-            }
-
-            if (StoryTextView != null) {
-                StoryTextView.Dispose ();
-                StoryTextView = null;
             }
         }
     }
