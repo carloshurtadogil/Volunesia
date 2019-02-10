@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using System.Text.RegularExpressions;
 using UIKit;
+using Volunesia.iOS.Services;
 using Volunesia.Services;
 
 namespace Volunesia.iOS

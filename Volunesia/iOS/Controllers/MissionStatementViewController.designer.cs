@@ -28,10 +28,6 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel QuestionLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel StatementLabel { get; set; }
 
         [Outlet]
@@ -61,11 +57,6 @@ namespace Volunesia.iOS
             if (ContinueButton != null) {
                 ContinueButton.Dispose ();
                 ContinueButton = null;
-            }
-
-            if (QuestionLabel != null) {
-                QuestionLabel.Dispose ();
-                QuestionLabel = null;
             }
 
             if (StatementLabel != null) {

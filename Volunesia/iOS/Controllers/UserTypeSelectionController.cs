@@ -24,8 +24,7 @@ namespace Volunesia.iOS
 
         partial void VolunteerButton_TouchUpInside(UIButton sender)
         {
-            //FirebaseTest();
-            AlertShow.Show(this, "Volunteer", "To be implemented");
+            this.PerformSegue("UserTypeToPersonalSegue_id", sender);
         }
 
         partial void NonprofitButton_TouchUpInside(UIButton sender)
@@ -53,6 +52,22 @@ namespace Volunesia.iOS
                     nptsc.User = user;
                     nptsc.Password = NewPassword;
                     nptsc.LoadView();
+                }
+            }
+            else if (segue.Identifier == "UserTypeToPersonalSegue_id")
+            {
+                var psvc = (PersonalStatementViewController)segue.DestinationViewController;
+                if(psvc != null)
+                {
+                    User user = new User
+                    {
+                        FirstName = NewFirstName,
+                        LastName = NewLastName,
+                        EmailAddress = NewEmail,
+                        UserType = "V"
+                    };
+                    psvc.CurrentUser = user;
+                    psvc.Password = NewPassword;
                 }
             }
             else

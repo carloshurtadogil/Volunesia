@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="13" y="891"/>
         </scene>
         <scene sceneID="3216">
             <objects>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3219" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="10"/>
+            <point key="canvasLocation" x="530" y="901"/>
         </scene>
         <scene sceneID="5716">
             <objects>
@@ -194,6 +194,7 @@
                                 <connections>
                                     <action selector="VolunteerBtn_TouchUpInside:" destination="5725" id="5724" eventType="touchUpInside"/>
                                     <action selector="VolunteerButton_TouchUpInside:" destination="5717" id="14322" eventType="touchUpInside"/>
+                                    <segue id="22915" destination="22817" kind="show" identifier="UserTypeToPersonalSegue_id"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5726" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -337,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10111" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="7"/>
+            <point key="canvasLocation" x="1060" y="898"/>
         </scene>
         <scene sceneID="14592">
             <objects>
@@ -418,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14615" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="1850"/>
+            <point key="canvasLocation" x="514" y="3828"/>
         </scene>
         <scene sceneID="15600">
             <objects>
@@ -447,29 +448,22 @@
                                     <action selector="BackButton_TouchUpInside:" destination="15601" id="15621" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is your story to share!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15607" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="48" y="59" width="280" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Tell us about yourself!">
-                                <rect key="frame" x="72" y="36" width="230" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Tell us about your organization!" numberOfLines="2">
+                                <rect key="frame" x="72" y="36" width="230" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="15920" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="68" y="111" width="240" height="128"/>
+                                <rect key="frame" x="68" y="111" width="240" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="21723" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="114" y="264" width="147" height="57"/>
+                                <rect key="frame" x="114" y="378" width="147" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
@@ -486,7 +480,6 @@
                     <connections>
                         <outlet property="BackgroundImage" destination="15603" id="15602"/>
                         <outlet property="BackButton" destination="15605" id="15604"/>
-                        <outlet property="QuestionLabel" destination="15607" id="15606"/>
                         <outlet property="StatementLabel" destination="15609" id="15608"/>
                         <outlet property="StoryTextView" destination="15920" id="name-outlet-15920"/>
                         <outlet property="ContinueButton" destination="21723" id="name-outlet-21723"/>
@@ -494,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15629" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="1849"/>
+            <point key="canvasLocation" x="1876" y="3827"/>
         </scene>
         <scene sceneID="15923">
             <objects>
@@ -650,7 +643,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15926" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="972"/>
+            <point key="canvasLocation" x="1091" y="2950"/>
         </scene>
         <scene sceneID="17773">
             <objects>
@@ -689,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17776" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2474" y="1838"/>
+            <point key="canvasLocation" x="2398" y="2464"/>
         </scene>
         <scene sceneID="18438">
             <objects>
@@ -846,7 +839,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18449" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="1841"/>
+            <point key="canvasLocation" x="1094" y="3819"/>
         </scene>
         <scene sceneID="20557">
             <objects>
@@ -987,7 +980,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20606" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="2762"/>
+            <point key="canvasLocation" x="1096" y="4740"/>
+        </scene>
+        <scene sceneID="22816">
+            <objects>
+                <viewController id="22817" sceneMemberID="viewController" customClass="PersonalStatementViewController" modalTransitionStyle="crossDissolve" storyboardIdentifier="PersonalStatementView" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="22841"/>
+                        <viewControllerLayoutGuide type="bottom" id="22842"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22828">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="22819" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
+                                <rect key="frame" x="0.0" y="-8" width="375" height="820"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22821" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="20" width="46" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40" weight="light"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="22817" id="22829" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="22823" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Tell us about yourself!   This is your time to shine!" numberOfLines="2">
+                                <rect key="frame" x="54" y="36" width="275" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="22825" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="68" y="111" width="240" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22827" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="114" y="378" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
+                                <connections>
+                                    <action selector="NonprofitBtn_TouchUpInside:" destination="22831" id="22830" eventType="touchUpInside"/>
+                                    <action selector="SchoolButton_TouchUpInside:" destination="22833" id="22832" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="22835" id="22834" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="22837" id="22836" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="22817" id="22840" eventType="touchUpInside"/>
+                                    <segue id="22985" destination="17774" kind="show" identifier="PSToWelcomeSegue_id"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="22819" id="22818"/>
+                        <outlet property="BackButton" destination="22821" id="22820"/>
+                        <outlet property="StatementLabel" destination="22823" id="22822"/>
+                        <outlet property="StoryTextView" destination="22825" id="22824"/>
+                        <outlet property="ContinueButton" destination="22827" id="22826"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22843" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="1834"/>
         </scene>
     </scenes>
     <resources>

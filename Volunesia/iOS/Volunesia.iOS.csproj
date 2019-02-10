@@ -190,6 +190,10 @@
     <Compile Include="Controllers\MissionStatementViewController.designer.cs">
       <DependentUpon>MissionStatementViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\PersonalStatementViewController.cs" />
+    <Compile Include="Controllers\PersonalStatementViewController.designer.cs">
+      <DependentUpon>PersonalStatementViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

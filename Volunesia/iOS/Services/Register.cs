@@ -25,7 +25,6 @@ namespace Volunesia.iOS.Services
             AppData_iOS.GetInstance();
         }
 
-
         //Create a new User account in Firebase 
         public void CreateUser( User NewUser, string Password, UIViewController view )
         {
@@ -64,12 +63,24 @@ namespace Volunesia.iOS.Services
         //Add user information to Firebase.Database
         public void AddUserToFirebase(User user)
         {
-            object[] keys = { "first", "last", "email", "type" };
-            object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType};
+            if(user.UserType == "V")
+            {
+                object[] keys = { "first", "last", "email", "type", "personalstatement"};
+                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, MissionStatement };
 
-            NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
-            AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
-            AppData.CurUser = user;
+                NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+                AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
+                AppData.CurUser = user;
+            }
+            else
+            {
+                object[] keys = { "first", "last", "email", "type" };
+                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType };
+
+                NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
+                AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
+                AppData.CurUser = user;
+            }
         }
 
 

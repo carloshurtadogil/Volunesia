@@ -1,18 +1,16 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/EstablishedNonprofitViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/ViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Controllers/EmailRegistrationViewController.cs" Line="46" Column="18" />
-      <File FileName="iOS/Controllers/EstablishedNonprofitViewController.cs" Line="56" Column="59" />
-      <File FileName="iOS/Info.plist" />
-      <File FileName="Volunesia/Services/AppData.cs" Line="1" Column="1" />
-      <File FileName="Volunesia/Models/User.cs" Line="1" Column="1" />
-      <File FileName="iOS/Controllers/UserTypeSelectionController.cs" Line="53" Column="39" />
-      <File FileName="iOS/Controllers/NPTypeSelectionController.cs" Line="18" Column="1" />
-      <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="16" Column="30" />
-      <File FileName="iOS/Services/AppData_iOS.cs" Line="23" Column="56" />
+      <File FileName="iOS/Controllers/UserTypeSelectionController.cs" Line="24" Column="1" />
+      <File FileName="iOS/Controllers/PersonalStatementViewController.cs" Line="34" Column="68" />
+      <File FileName="iOS/Services/Register.cs" Line="1" Column="14" />
+      <File FileName="iOS/Controllers/EmailRegistrationViewController.cs" Line="70" Column="14" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/MissionStatementViewController.cs" Line="25" Column="1" />
+      <File FileName="iOS/Controllers/ViewController.cs" Line="31" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
