@@ -32,14 +32,14 @@ namespace Volunesia.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.EstablishedNonprofitRegister);
+            SetContentView(Resource.Layout.LocalNonprofitRegister);
 
             //Get first name, last name, and email address from the previous activity
             FirstName = Intent.GetStringExtra("firstName");
             LastName = Intent.GetStringExtra("lastName");
             EmailAddress = Intent.GetStringExtra("emailAddress");
 
-            //Retrieve the contents from the EditTexts on the EstablishedNonprofitRegisterActivity page
+            //Retrieve the contents from the EditTexts on the LocalNonprofitRegisterActivity page
             EID = FindViewById<EditText>(Resource.Id.eidField);
             OrganizationName = FindViewById<EditText>(Resource.Id.organizationNameField);
             City = FindViewById<EditText>(Resource.Id.cityField);
