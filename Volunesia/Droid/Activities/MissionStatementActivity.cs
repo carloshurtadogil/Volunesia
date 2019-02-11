@@ -48,11 +48,13 @@ namespace Volunesia.Droid
         public void FinalizeNonprofitRegistration(object sender, EventArgs e)
         {
 
+            string missionStatement = MissionStatement.Text;
             string uid = AppData_Droid.Auth.CurrentUser.Uid;
 
             Dictionary<string, string> newNonprofit = new Dictionary<string, string>();
             newNonprofit.Add("city", City);
             newNonprofit.Add("ein", EIN);
+            newNonprofit.Add("missionstatement", missionStatement);
             newNonprofit.Add("name", OrganizationName);
             newNonprofit.Add("primaryphone", PhoneNumber);
             newNonprofit.Add("primarycontact", uid);

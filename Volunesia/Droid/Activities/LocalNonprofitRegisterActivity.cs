@@ -15,8 +15,8 @@ using Volunesia.Services;
 
 namespace Volunesia.Droid
 {
-    [Activity(Label = "EstablishedNonprofitRegisterActivity")]
-    public class EstablishedNonprofitRegisterActivity : Activity
+    [Activity(Label = "LocalNonprofitRegisterActivity")]
+    public class LocalNonprofitRegisterActivity : Activity
     {
 
         public string FirstName { get; set; }
@@ -60,7 +60,6 @@ namespace Volunesia.Droid
 
             //Checks if there error messages generated from information verification,
             //if there isn't then proceed to the Mission statement activity page
-
             string errorMessageResult = contactInfoVerif.VerifyAllInformationForEstablishedNonprofit(EID.Text, OrganizationName.Text, City.Text, State.Text, ZipCode.Text, PhoneNumber.Text);
             if (string.IsNullOrEmpty(errorMessageResult))
             {
@@ -71,7 +70,7 @@ namespace Volunesia.Droid
                 intent.PutExtra("name", OrganizationName.Text);
                 intent.PutExtra("primaryphone", PhoneNumber.Text);
                 intent.PutExtra("state", State.Text);
-                intent.PutExtra("type", "established");
+                intent.PutExtra("type", "local");
                 intent.PutExtra("zip", ZipCode.Text);
 
                 StartActivity(intent);

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+
 namespace Volunesia.Droid
 {
     [Activity(Label = "NonprofitRegisterActivity")]
@@ -57,20 +58,23 @@ namespace Volunesia.Droid
         public void JumpToSchoolNPActivity(object sender, EventArgs e)
         {
 
-            //    var credentialsIntent = new Intent(this, typeof(SchoolNonprofitRegisterActivity));
-            //    credentialsIntent.PutExtra("firstName", FirstName);
-            //    credentialsIntent.PutExtra("lastName", LastName);
-            //    credentialsIntent.PutExtra("emailAddress", EmailAddress);
-            //
+            var credentialsIntent = new Intent(this, typeof(SchoolNonprofitRegisterActivity));
+            credentialsIntent.PutExtra("firstName", FirstName);
+            credentialsIntent.PutExtra("lastName", LastName);
+            credentialsIntent.PutExtra("emailAddress", EmailAddress);
+
+            StartActivity(credentialsIntent);
         }
 
         //Jumps to the local nonprofit registration activity page
         public void JumpToLocalNPActivity(object sender, EventArgs e)
         {
-            //var credentialsIntent = new Intent(this, typeof(LocalNonprofitRegisterActivity));
-            //credentialsIntent.PutExtra("firstName", FirstName);
-            //credentialsIntent.PutExtra("lastName", LastName);
-            //credentialsIntent.PutExtra("emailAddress", EmailAddress);
+            var credentialsIntent = new Intent(this, typeof(LocalNonprofitRegisterActivity));
+            credentialsIntent.PutExtra("firstName", FirstName);
+            credentialsIntent.PutExtra("lastName", LastName);
+            credentialsIntent.PutExtra("emailAddress", EmailAddress);
+
+            StartActivity(credentialsIntent);
         }
     }
 }
