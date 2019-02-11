@@ -1,0 +1,113 @@
+Function=xamarin_timezone_get_data
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/mscorlib.dll
+Function=xamarin_log
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/mscorlib.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=xamarin_release_block_on_main_thread
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Xamarin.iOS.dll
+Field=FirebaseAuthVersionNum
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRAuthErrorDomain
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRAuthErrorNameKey
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRAuthErrorUserInfoEmailKey
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRAuthStateDidChangeNotification
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRAuthUpdatedCredentialKey
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FirebaseAuthVersionStr
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAuth
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRActionCodeInfo
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRActionCodeSettings
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAdditionalUserInfo
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAuthCredential
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAuthDataResult
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAuthSettings
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAuthTokenResult
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIREmailPasswordAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIREmailAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIREmailPasswordAuthSignInMethod
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIREmailAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRFacebookAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRFacebookAuthSignInMethod
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRFacebookAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRGitHubAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRGitHubAuthSignInMethod
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRGitHubAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRGoogleAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRGoogleAuthSignInMethod
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRGoogleAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIROAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRPhoneAuthCredential
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRPhoneAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRPhoneAuthSignInMethod
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRPhoneAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRTwitterAuthProviderID
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+Field=FIRTwitterAuthSignInMethod
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRTwitterAuthProvider
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRUser
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRUserMetadata
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRUserProfileChangeRequest
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Auth.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRApp
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRAnalyticsConfiguration
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRConfiguration
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIROptions
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRDatabaseReference
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRDataSnapshot
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRMutableData
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRDatabase
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRDatabaseQuery
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRServerValue
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRTransactionResult
+	/Users/carloshurtado/Desktop/Master Folder/CSULB/Spring 2019/CECS 491B/Git Repo/Volunesia/Volunesia/iOS/obj/iPhone/Debug/device-builds/iphone8.1-12.1.2/mtouch-cache/1-Link/Firebase.Database.dll
+Function=mono_pmip

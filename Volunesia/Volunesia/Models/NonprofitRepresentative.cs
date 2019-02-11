@@ -3,6 +3,9 @@ namespace Volunesia.Models
 {
     public class NonprofitRepresentative
     {
+        //The user who belongs in this organization
+        public User   User        { get; set; }
+
         // Nonprofit Representative's position title
         public string Position    { get; set; }
 

@@ -24,8 +24,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Volunteer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Enumerations\" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AppData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
   </ItemGroup>
 </Project>

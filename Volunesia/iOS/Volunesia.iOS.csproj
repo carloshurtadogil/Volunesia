@@ -28,6 +28,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -87,10 +88,10 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Core">
-      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.5.1.3\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.5.1.8\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.InstanceID">
-      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.3.2.1\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.3.3.0\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Analytics">
       <HintPath>..\packages\Xamarin.Firebase.iOS.Analytics.5.1.4.1\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
@@ -101,6 +102,12 @@
     <Reference Include="Firebase.Database">
       <HintPath>..\packages\Xamarin.Firebase.iOS.Database.5.0.3\lib\Xamarin.iOS10\Firebase.Database.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\packages\Xamarin.Essentials.1.0.1\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="smartystreets-dotnet-sdk">
+      <HintPath>..\packages\smartystreets-dotnet-sdk.8.0.15\lib\netstandard2.0\smartystreets-dotnet-sdk.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -109,10 +116,23 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024x1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60x60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120 2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120 2 copy.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120 2 copy 2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180x180 copy.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Resources\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -126,14 +146,69 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
+    <Compile Include="Services\AppData_iOS.cs" />
+    <Compile Include="AlertShow.cs" />
+    <Compile Include="Services\NonprofitRegistration.cs" />
+    <Compile Include="Services\Register.cs" />
+    <Compile Include="Controllers\EmailRegistrationViewController.cs" />
+    <Compile Include="Controllers\EmailRegistrationViewController.designer.cs">
+      <DependentUpon>EmailRegistrationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\NPTypeSelectionController.cs" />
+    <Compile Include="Controllers\NPTypeSelectionController.designer.cs">
+      <DependentUpon>NPTypeSelectionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RegistrationViewController.cs" />
+    <Compile Include="Controllers\RegistrationViewController.designer.cs">
+      <DependentUpon>RegistrationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserTypeSelectionController.cs" />
+    <Compile Include="Controllers\UserTypeSelectionController.designer.cs">
+      <DependentUpon>UserTypeSelectionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ViewController.cs" />
+    <Compile Include="Controllers\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\EstablishedNonprofitViewController.cs" />
+    <Compile Include="Controllers\EstablishedNonprofitViewController.designer.cs">
+      <DependentUpon>EstablishedNonprofitViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\WelcomeViewController.cs" />
+    <Compile Include="Controllers\WelcomeViewController.designer.cs">
+      <DependentUpon>WelcomeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SchoolNPViewController.cs" />
+    <Compile Include="Controllers\SchoolNPViewController.designer.cs">
+      <DependentUpon>SchoolNPViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LocalNPViewController.cs" />
+    <Compile Include="Controllers\LocalNPViewController.designer.cs">
+      <DependentUpon>LocalNPViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MissionStatementViewController.cs" />
+    <Compile Include="Controllers\MissionStatementViewController.designer.cs">
+      <DependentUpon>MissionStatementViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PersonalStatementViewController.cs" />
+    <Compile Include="Controllers\PersonalStatementViewController.designer.cs">
+      <DependentUpon>PersonalStatementViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\Images\logo.png" />
+    <BundleResource Include="Resources\Images\Ombre BG.png" />
+    <BundleResource Include="Resources\Images\NonprofitBtn.png" />
+    <BundleResource Include="Resources\Images\VolunteerBtn.png" />
+    <BundleResource Include="Resources\Images\ContinueBtn.png" />
+    <BundleResource Include="Resources\Images\EstablishedBtn.png" />
+    <BundleResource Include="Resources\Images\SchoolBtn.png" />
+    <BundleResource Include="Resources\Images\LocalBtn.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
-  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.3.2.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.3.2.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.5.1.4.1\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.5.1.4.1\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.3.3.0\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.3.3.0\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
 </Project>
