@@ -33,7 +33,7 @@ namespace Volunesia.Droid
         //Navigates to the the login page
         public void NavigateToLoginPage(object sender, EventArgs e)
         {
-            //StartActivity(typeof(MainLoginActivity));
+            StartActivity(typeof(LoginActivity));
         }
 
         //Navigates to the sign up page

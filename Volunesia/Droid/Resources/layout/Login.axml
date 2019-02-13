@@ -4,26 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:hint="Enter email address"
+		android:id="@+id/emailAddressField" />
+	<EditText
+		android:inputType="textPassword"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:hint="Enter password"
+		android:id="@+id/passwordField" />
 
-	<EditText
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:hint="First Name"
-		android:id="@+id/firstnameField"
-		/>
-	<EditText
-		
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:gravity="center"
-		android:hint="Last Name"
-		android:id="@+id/lastnameField"
-		/>
-    <Button
-        android:text="Continue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/continueWithRegistrationButton" />
+
 
 </LinearLayout>

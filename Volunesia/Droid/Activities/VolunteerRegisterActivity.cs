@@ -59,7 +59,7 @@ namespace Volunesia.Droid
             string uid = AppData_Droid.Auth.CurrentUser.Uid;
 
             AppData_Droid.UserNode.Child(uid).PutAsync(userDictionary);
-            //AppData_Droid.UserNode.PutAsync(userDictionary);
+            StartActivity(typeof(WelcomeActivity));
         }
     }
 }

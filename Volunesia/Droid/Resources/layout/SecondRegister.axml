@@ -7,16 +7,22 @@
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:hint="Email Address"
 		android:id="@+id/emailAddressField" />
 	<EditText
 		android:inputType="textPassword"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:hint="Password"
 		android:id="@+id/passwordField" />
 	<EditText
 		android:inputType="textPassword"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:hint="Confirm Password"
 		android:id="@+id/confirmPasswordField" />
 	<Button
 		android:text="REGISTER NOW"

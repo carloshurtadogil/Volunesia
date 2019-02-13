@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Firebase.Database.Query;
+using Volunesia.Services;
 
 namespace Volunesia.Droid
 {
@@ -30,6 +31,7 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MissionStatement);
 
+            //Retrieve the information from the previous activity
             City = Intent.GetStringExtra("city");
             EIN = Intent.GetStringExtra("ein");
             OrganizationName = Intent.GetStringExtra("name");
@@ -62,8 +64,14 @@ namespace Volunesia.Droid
             newNonprofit.Add("type", NonprofitType);
             newNonprofit.Add("zip", ZipCode);
 
+            //Generate a general ID for a nonprofit
+            IDGenerator generator = new IDGenerator();
+            string generatedID = generator.GenerateEstablishedID(EIN);
 
-            AppData_Droid.NonprofitNode.Child(EIN).PutAsync(newNonprofit);
+            AppData_Droid.NonprofitNode.Child(generatedID).PutAsync(newNonprofit);
+
+            //Navigate to the WelcomeActivity
+            StartActivity(typeof(WelcomeActivity));
         }
     }
 }
