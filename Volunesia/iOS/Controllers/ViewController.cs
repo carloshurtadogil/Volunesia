@@ -27,9 +27,7 @@ namespace Volunesia.iOS
 
         partial void LoginButton_TouchUpInside(UIButton sender)
         {
-
-            AlertShow.Show(this, "Login", "To be added");
-           
+            this.PerformSegue("ToLoginVCSegue_id", sender);
         }
 
         partial void SignupButton_TouchUpInside(UIButton sender)
@@ -49,6 +47,14 @@ namespace Volunesia.iOS
                 {
 
                     rvc.LoadView(); 
+                }
+            }
+            else if (segue.Identifier == "ToLoginVCSegue_id") 
+            {
+                var lvc = (LoginViewController)segue.DestinationViewController;
+                if(lvc != null)
+                {
+                    lvc.LoadView(); 
                 }
             }
             else

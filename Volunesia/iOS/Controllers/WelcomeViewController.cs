@@ -16,5 +16,9 @@ namespace Volunesia.iOS
             //WelcomeLabel.Text = "Welcome, " + FirstName + "!";
         }
 
+        partial void BackButton_TouchUpInside(UIButton sender)
+        {
+            this.DismissViewController(true, null);
+        }
     }
 }
