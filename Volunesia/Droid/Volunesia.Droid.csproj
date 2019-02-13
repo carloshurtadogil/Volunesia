@@ -170,15 +170,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CredentialsVerification.cs" />
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="MainRegisterActivity.cs" />
-    <Compile Include="RegisterActivity.cs" />
+    <Compile Include="Activities\EstablishedNonprofitRegisterActivity.cs" />
+    <Compile Include="Activities\LocalNonprofitRegisterActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\MainRegisterActivity.cs" />
+    <Compile Include="Activities\MissionStatementActivity.cs" />
+    <Compile Include="Activities\NonprofitTypeRegisterActivity.cs" />
+    <Compile Include="Activities\RegisterActivity.cs" />
+    <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
+    <Compile Include="Activities\SecondRegisterActivity.cs" />
+    <Compile Include="Activities\VolunteerRegisterActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecondRegisterActivity.cs" />
     <Compile Include="Service\AndroidAuthenticationService.cs" />
-    <Compile Include="VolunteerRegisterActivity.cs" />
     <Compile Include="AppData_Droid.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +220,21 @@
     <AndroidResource Include="Resources\layout\SecondRegister.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\LocalNonprofitRegister.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MissionStatement.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\NonprofitTypeRegister.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SchoolNonprofitRegister.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EstablishedNonprofitRegister.axml" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
