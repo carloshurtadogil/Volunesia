@@ -19,7 +19,7 @@ namespace Volunesia.Services
         public bool CheckIfPasswordIsValid(string password)
         {
             string pw = Regex.Replace(password, @"\s", "");//Remove whitespaces
-            if (pw.Length >= 8) 
+            if (pw.Length >= 8)
             {
                 return true;
             }
