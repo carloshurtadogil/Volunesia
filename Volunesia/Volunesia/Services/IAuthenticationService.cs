@@ -15,4 +15,3 @@ namespace Volunesia.Services
         Task<bool> RegisterAsync();
     }
 }
-

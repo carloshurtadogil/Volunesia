@@ -74,7 +74,7 @@ namespace Volunesia.Services
         {
             if (state.Length == 2)
             {
-                var stateCollection = (Enum.GetValues(typeof(States)).Cast<States>()).Where(x=>x.Equals(state));
+                var stateCollection = (Enum.GetValues(typeof(States)).Cast<States>()).Where(x => x.Equals(state));
                 if (stateCollection != null)
                 {
                     return true;
@@ -88,7 +88,7 @@ namespace Volunesia.Services
         public bool ValidateZipCode(string zipCode)
         {
             string usZipCodePattern = "^[0-9]{5}(?:-[0-9]{4})?$";
-            if(Regex.IsMatch(zipCode, usZipCodePattern))
+            if (Regex.IsMatch(zipCode, usZipCodePattern))
             {
                 return true;
             }
@@ -108,7 +108,7 @@ namespace Volunesia.Services
             return false;
 
         }
-        
+
         //Validates a nonprofit organization name
         public bool ValidateOrganizationName(string organizationName)
         {
@@ -122,7 +122,7 @@ namespace Volunesia.Services
         //Validates a school nonprofit's name
         public bool ValidateSchoolName(string schoolName)
         {
-            if(schoolName.Length > 1)
+            if (schoolName.Length > 1)
             {
                 return true;
             }
