@@ -23,11 +23,13 @@ namespace Volunesia.iOS
         {
         }
 
+        //Prepare for welcome page
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("MSToWelcomeSegue_id", sender);
         }
 
+        //Register nonproift to Firebase
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
@@ -51,6 +53,7 @@ namespace Volunesia.iOS
             }
         }
 
+        //Return to previous page
         partial void BackButton_TouchUpInside(UIButton sender)
         {
             this.DismissViewController(true, null);

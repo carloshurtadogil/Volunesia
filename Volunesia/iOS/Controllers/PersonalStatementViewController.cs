@@ -8,7 +8,8 @@ namespace Volunesia.iOS
 {
     public partial class PersonalStatementViewController : UIViewController
     {
-        public User CurrentUser { get; set; }//"PSToWelcomeSegue_id"
+        //User to be added to Firebase
+        public User CurrentUser { get; set; }
         public string Password { get; set; }
 
 
@@ -16,11 +17,13 @@ namespace Volunesia.iOS
         {
         }
 
+        //Continue to welcome page
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("PSToWelcomeSegue_id", null);
         }
 
+        //Prepare users and register
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
@@ -32,11 +35,12 @@ namespace Volunesia.iOS
                     Register r = new Register();
                     r.NPType = "volunteer";
                     r.MissionStatement = StoryTextView.Text.Trim();
-                    r.CreateUser(CurrentUser, Password, this);
+                    r.CreateUser(CurrentUser, Password, this);//create user before moving to next class
                 }
             }
         }
 
+        //Return to previous view
         partial void BackButton_TouchUpInside(UIButton sender)
         {
             this.DismissViewController(true, null);

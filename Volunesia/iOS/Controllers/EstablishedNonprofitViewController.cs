@@ -59,7 +59,7 @@ namespace Volunesia.iOS
         }
 
 
-
+        //Continue to mission statement page
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
             if(ValidInfo())

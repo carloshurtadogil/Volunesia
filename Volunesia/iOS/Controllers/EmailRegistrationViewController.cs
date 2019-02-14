@@ -2,30 +2,30 @@ using Foundation;
 using System;
 using System.Text.RegularExpressions;
 using UIKit;
-using Volunesia.iOS.Services;
+using Volunesia.Models;
 using Volunesia.Services;
 
 namespace Volunesia.iOS
 {
     public partial class EmailRegistrationViewController : UIViewController
     {
-        public string FirstName { get; set; }
-        public string LastName  { get; set; }
+        //User being create
+        public User NewUser   { get; set; }
 
         public EmailRegistrationViewController (IntPtr handle) : base (handle)
         {
 
         }
 
+        //Return to Name view
         partial void BackButton_TouchUpInside(UIButton sender)
         {
             DismissViewController(true, null);
         }
 
+        //Continue to user type selection view
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            //ToUserTypeSelectionSegue_id
-
             if (ValidCredentials())
             {
                 this.PerformSegue("ToUserTypeSelectionSegue_id", sender);
@@ -37,17 +37,14 @@ namespace Volunesia.iOS
         {
             base.PrepareForSegue(segue, sender);
 
-
-
             if (segue.Identifier == "ToUserTypeSelectionSegue_id")
             {
 
                 var rvc = (UserTypeSelectionController)segue.DestinationViewController;
                 if (rvc != null)
                 {
-                    rvc.NewFirstName = FirstName;
-                    rvc.NewLastName = LastName;
-                    rvc.NewEmail = EmailTextfield.Text.Trim();
+                    NewUser.EmailAddress = EmailTextfield.Text.Trim();
+                    rvc.NewUser = NewUser;
                     rvc.NewPassword = PasswordTextfield.Text.Trim();
                     rvc.LoadView();
                 }

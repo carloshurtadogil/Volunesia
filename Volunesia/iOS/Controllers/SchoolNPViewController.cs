@@ -17,6 +17,7 @@ namespace Volunesia.iOS
         {
         }
 
+        //Continue to mission statement page
         partial void ContinueButton_TouchUpInside(UIButton sender)
         { 
             if (ValidInfo())
@@ -25,11 +26,13 @@ namespace Volunesia.iOS
             }
         }
 
+        //Return to nonprofit type view
         partial void BackButton_TouchUpInside(UIButton sender)
         {
             this.DismissViewController(true, null);
         }
 
+        //Prepare attributes for next page
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);

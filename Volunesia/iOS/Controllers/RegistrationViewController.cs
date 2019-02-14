@@ -1,6 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
+using Volunesia.Models;
 
 namespace Volunesia.iOS
 {
@@ -10,11 +11,13 @@ namespace Volunesia.iOS
         {
         }
 
+        //Return back to the base page
         partial void BackButton_TouchUpInside(UIButton sender)
         {
             DismissViewController(true, null);
         }
 
+        //Move to the next page in the registration process
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
             if(ValidName())
@@ -34,17 +37,24 @@ namespace Volunesia.iOS
             if (segue.Identifier == "ToERVCSegue_id")
             {
 
-                var rvc = (EmailRegistrationViewController)segue.DestinationViewController;
+                var rvc = (EmailRegistrationViewController)segue.DestinationViewController;//Prepare the next page
                 if (rvc != null)
                 {
+                    //Trim the first and last names to eliminate trailing white spaces
                     string fn = FirstNameTextfield.Text;
                     string ln = LastNameTextfield.Text;
 
                     fn.Trim();
                     ln.Trim();
 
-                    rvc.FirstName = fn;
-                    rvc.LastName = ln;
+                    //Prepare new user
+                    User newuser = new User
+                    {
+                        FirstName = fn,
+                        LastName = ln
+                    };
+
+                    rvc.NewUser = newuser;
                     rvc.LoadView();
                 }
             }

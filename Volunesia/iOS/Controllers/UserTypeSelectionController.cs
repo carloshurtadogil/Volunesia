@@ -8,25 +8,26 @@ namespace Volunesia.iOS
 {
     public partial class UserTypeSelectionController : UIViewController
     {
-        public string NewFirstName { get; set; }
-        public string NewLastName  { get; set; }
-        public string NewEmail     { get; set; }
+        public User NewUser { get; set; }
         public string NewPassword  { get; set; }
 
         public UserTypeSelectionController (IntPtr handle) : base (handle)
         {
         }
 
+        //Return the user to previous screen
         partial void BackButton_TouchUpInside(UIButton sender)
         {
             DismissViewController(true, null);
         }
 
+        //Continue to Volunteer personal statement view
         partial void VolunteerButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("UserTypeToPersonalSegue_id", sender);
         }
 
+        //Prepare to collect data on new nonprofits in the following view
         partial void NonprofitButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("ToOrgTypeSegue_id", sender);
@@ -42,14 +43,8 @@ namespace Volunesia.iOS
                 var nptsc = (NPTypeSelectionController)segue.DestinationViewController;
                 if (nptsc != null)
                 {
-                    User user = new User
-                    {
-                        FirstName = NewFirstName,
-                        LastName = NewLastName,
-                        EmailAddress = NewEmail,
-                        UserType = "NP"
-                    };
-                    nptsc.User = user;
+                    NewUser.UserType = "NP";
+                    nptsc.User = NewUser;
                     nptsc.Password = NewPassword;
                     nptsc.LoadView();
                 }
@@ -59,14 +54,8 @@ namespace Volunesia.iOS
                 var psvc = (PersonalStatementViewController)segue.DestinationViewController;
                 if(psvc != null)
                 {
-                    User user = new User
-                    {
-                        FirstName = NewFirstName,
-                        LastName = NewLastName,
-                        EmailAddress = NewEmail,
-                        UserType = "V"
-                    };
-                    psvc.CurrentUser = user;
+                    NewUser.UserType = "V";
+                    psvc.CurrentUser = NewUser;
                     psvc.Password = NewPassword;
                 }
             }

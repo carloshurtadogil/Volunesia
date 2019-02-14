@@ -38,9 +38,11 @@ namespace Volunesia.iOS.Services
                                                  return;
                                              }
                                              NewUser.UID = user.User.Uid;
-                                             AppData.CurUser = NewUser;
+                                             AppData.CurUser = NewUser;//Make the new user the current user on the device
 
-                                             AddUserToFirebase(NewUser);
+                                             AddUserToFirebase(NewUser);//Add to User node
+
+                                             //Add nonprofit to nonprofits node
                                              if(NewUser.UserType == "NP" && NPType == "established")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("established reached");
@@ -95,6 +97,7 @@ namespace Volunesia.iOS.Services
             AppData_iOS.NonprofitNode.GetChild(id).SetValue(FirebaseUser);
         }
 
+        //Add school nonprofit organization to firebase
         public void CreateSchoolOrganization(string UID)
         {
             IDGenerator generator = new IDGenerator();
@@ -106,6 +109,7 @@ namespace Volunesia.iOS.Services
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
         }
 
+        //Add local nonprofit organization to firebase
         public void CreateLocalOrganization(string UID)
         {
             IDGenerator generator = new IDGenerator();

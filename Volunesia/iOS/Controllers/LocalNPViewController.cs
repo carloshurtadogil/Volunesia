@@ -15,6 +15,7 @@ namespace Volunesia.iOS
         {
         }
 
+        //Prepare for mission statement page
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
             if(ValidInfo())
@@ -23,6 +24,7 @@ namespace Volunesia.iOS
             }
         }
 
+        //Prepare attributes for next page
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
