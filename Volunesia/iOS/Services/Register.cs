@@ -73,15 +73,17 @@ namespace Volunesia.iOS.Services
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
                 AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
                 AppData.CurUser = user;
+                ReadWrite.WriteUser();
             }
             else
             {
-                object[] keys = { "first", "last", "email", "type" };
-                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType };
+                object[] keys = { "first", "last", "email", "type", "personalstatement" };
+                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, "" };
 
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
                 AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
                 AppData.CurUser = user;
+                ReadWrite.WriteUser();
             }
         }
 

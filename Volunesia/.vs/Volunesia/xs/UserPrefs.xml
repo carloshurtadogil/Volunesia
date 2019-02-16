@@ -1,14 +1,12 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/WelcomeViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/PersonalStatementViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Controllers/ViewController.cs" Line="83" Column="36" />
-      <File FileName="iOS/Controllers/LoginViewController.cs" Line="65" Column="9" />
-      <File FileName="iOS/Main.cs" Line="1" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="36" Column="10" />
+      <File FileName="iOS/Controllers/MissionStatementViewController.cs" Line="26" Column="1" />
+      <File FileName="iOS/Services/Register.cs" Line="81" Column="102" />
+      <File FileName="iOS/Controllers/PersonalStatementViewController.cs" Line="36" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

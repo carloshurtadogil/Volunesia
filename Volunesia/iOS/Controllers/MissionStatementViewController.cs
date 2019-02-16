@@ -46,7 +46,12 @@ namespace Volunesia.iOS
                     r.City = City;
                     r.State = State;
                     r.NPType = NPType;
-                    r.MissionStatement = StoryTextView.Text.Trim();
+                    string personal = StoryTextView.Text.Trim();
+                    if(personal.Length == 0)
+                    {
+                        personal = " "; 
+                    }
+                    r.MissionStatement = personal;
 
                     r.CreateUser(CurrentUser, Password, this);
                 }
