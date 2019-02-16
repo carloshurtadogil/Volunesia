@@ -27,5 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\AppData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ReadWrite.cs" />
   </ItemGroup>
 </Project>

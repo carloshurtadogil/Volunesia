@@ -1,0 +1,47 @@
+﻿using System;
+using Firebase.Auth;
+using Firebase.Database;
+using Foundation;
+using Volunesia.Services;
+
+namespace Volunesia.iOS.Services
+{
+    public class FirebaseReader
+    {
+        public static void ReadUser(AuthDataResult results)
+        {
+            System.Diagnostics.Debug.WriteLine("Read USer Called");
+            AppData_iOS.GetInstance();
+            AppData_iOS.UsersNode.GetChild(results.User.Uid).ObserveSingleEvent(DataEventType.Value, (snapshot) =>
+            {
+                var data = snapshot.GetValue<NSDictionary>();
+                if (data != null)
+                {
+                    var first = data["first"].ToString();
+                    var last = data["last"].ToString();
+                    var email = results.User.Email;
+                    var uid = results.User.Uid;
+                    var type = data["type"].ToString();
+                    var personal = data["personalstatement"].ToString();
+                    Models.User newuser = new Models.User
+                    {
+                        FirstName = first,
+                        LastName = last,
+                        EmailAddress = email,
+                        UID = uid,
+                        UserType = type,
+                        PersonalStatement = personal
+                    };
+                    AppData.CurUser = newuser;
+                    ReadWrite.WriteUser();
+                    System.Diagnostics.Debug.WriteLine("Success");
+                    newuser.UserDesc();
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Empty Data");
+                }
+            });
+        }
+    }
+}

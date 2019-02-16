@@ -1137,7 +1137,6 @@
                                     <action selector="VolunteerBtn_TouchUpInside:" destination="24029" id="24028" eventType="touchUpInside"/>
                                     <action selector="ContinueButton_TouchUpInside:" destination="24031" id="24030" eventType="touchUpInside"/>
                                     <action selector="ContinueButton_TouchUpInside:" destination="24033" id="24032" eventType="touchUpInside"/>
-                                    <segue id="24072" destination="17774" kind="show" identifier="LoginToWelcomeSegue_id"/>
                                     <action selector="ContinueButton_TouchUpInside:" destination="23408" id="24074" eventType="touchUpInside"/>
                                 </connections>
                             </button>
@@ -1152,6 +1151,7 @@
                         <outlet property="BackButton" destination="23483" id="name-outlet-23483"/>
                         <outlet property="WelcomeBackLabel" destination="23911" id="name-outlet-23911"/>
                         <outlet property="ContinueButton" destination="24027" id="name-outlet-24027"/>
+                        <segue id="25001" destination="17774" kind="show" identifier="LoginToWelcomeSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23410" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,6 +1,7 @@
 ﻿using System;
 using Foundation;
 using UIKit;
+using Volunesia.Services;
 using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
@@ -15,6 +16,8 @@ namespace Volunesia.iOS
         {
             base.ViewDidLoad();
             AppData_iOS.GetInstance();
+            AppData.CurUser = null;
+            ReadWrite.WriteUser();
         }
 
 
