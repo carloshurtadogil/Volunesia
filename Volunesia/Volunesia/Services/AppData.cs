@@ -14,7 +14,7 @@ namespace Volunesia.Services
         {
             if (Instance == null)
                 Instance = new AppData();
-
+            ReadWrite.ReadUser();
             return Instance;
         }
 

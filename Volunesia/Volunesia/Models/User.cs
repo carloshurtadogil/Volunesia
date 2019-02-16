@@ -16,6 +16,8 @@ namespace Volunesia.Models
         public string UID          { get; set; }
         //Flag to determine if user is nonprofit representative or volunteer
         public string UserType     { get; set; }
+        //Anything that the user wishes to say to the crowd
+        public string PersonalStatement { get; set; }
 
     }
 }
