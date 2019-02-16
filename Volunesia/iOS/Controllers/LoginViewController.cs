@@ -37,6 +37,7 @@ namespace Volunesia.iOS
                                                                 AlertShow.Show(this, "Invalid Credentials", "");
                                                                 PasswordTextfield.Text = ""; 
                                                             }
+                                                            System.Diagnostics.Debug.WriteLine("Passed");
                                                             FirebaseReader.ReadUser(authResult);
                                                             if (AppData.CurUser != null)
                                                             {
