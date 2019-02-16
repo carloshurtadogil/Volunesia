@@ -62,11 +62,12 @@
                         <outlet property="LoginButton" destination="1793" id="name-outlet-1793"/>
                         <outlet property="SignupButton" destination="1794" id="name-outlet-1794"/>
                         <outlet property="LogoImage" destination="2994" id="name-outlet-2994"/>
+                        <segue id="27043" destination="17774" kind="show" identifier="ToWelcomeSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13" y="891"/>
+            <point key="canvasLocation" x="-2" y="-56"/>
         </scene>
         <scene sceneID="3216">
             <objects>
@@ -1156,7 +1157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23410" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="887"/>
+            <point key="canvasLocation" x="1049" y="908"/>
         </scene>
     </scenes>
     <resources>

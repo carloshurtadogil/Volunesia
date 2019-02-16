@@ -15,12 +15,27 @@ namespace Volunesia.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            System.Diagnostics.Debug.WriteLine("ViewController Called");
             AppData_iOS.GetInstance();
-            AppData.CurUser = null;
-            ReadWrite.WriteUser();
+            ReadWrite.ReadUser();
+            if(AppData.CurUser == null)
+            {
+                LoginButton.Hidden = false;
+                SignupButton.Hidden = false;
+            }
         }
 
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+            AppData_iOS.GetInstance();
+            ReadWrite.ReadUser();
+            if(AppData.CurUser != null)
+            {
+                this.PerformSegue("ToWelcomeSegue_id", this); 
+            }
 
+        }
 
         public override void DidReceiveMemoryWarning()
         {
@@ -58,6 +73,14 @@ namespace Volunesia.iOS
                 if(lvc != null)
                 {
                     lvc.LoadView(); 
+                }
+            }
+            else if (segue.Identifier == "ToWelcomeSegue_id") 
+            {
+                var wvc = (WelcomeViewController)segue.DestinationViewController;
+                if(wvc != null)
+                {
+                    wvc.LoadView(); 
                 }
             }
             else
