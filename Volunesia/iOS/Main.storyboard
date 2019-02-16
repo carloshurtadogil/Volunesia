@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController" storyboardIdentifier="BaseView" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController" storyboardIdentifier="BaseView" useStoryboardIdentifierAsRestorationIdentifier="YES" modalTransitionStyle="crossDissolve">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -663,10 +663,6 @@
                                 <rect key="frame" x="-4" y="-10" width="384" height="832"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18103" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/logo.png">
-                                <rect key="frame" x="34" y="65" width="307" height="334"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18104" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="16" y="430" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -687,13 +683,32 @@
                                     <action selector="BackButton_TouchUpInside:" destination="17774" id="24508" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28236" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="114" y="494" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/LogoutBtn.png"/>
+                                <connections>
+                                    <action selector="NonprofitBtn_TouchUpInside:" destination="28238" id="28237" eventType="touchUpInside"/>
+                                    <action selector="SchoolButton_TouchUpInside:" destination="28240" id="28239" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="28242" id="28241" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="28244" id="28243" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="28246" id="28245" eventType="touchUpInside"/>
+                                    <action selector="LogoutBtn_TouchUpInside:" destination="17774" id="28251" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="29556" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/logo.png">
+                                <rect key="frame" x="34" y="87" width="307" height="334"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="BackgroundImage" destination="18102" id="name-outlet-18102"/>
-                        <outlet property="LogoImageView" destination="18103" id="name-outlet-18103"/>
                         <outlet property="WelcomeLabel" destination="18104" id="name-outlet-18104"/>
                         <outlet property="BackButton" destination="24503" id="name-outlet-24503"/>
+                        <outlet property="LogoutBtn" destination="28236" id="name-outlet-28236"/>
+                        <segue id="28676" destination="BYZ-38-t0r" kind="show" identifier="ToBaseSegue_id"/>
+                        <outlet property="LogoView" destination="29556" id="name-outlet-29556"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17776" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1157,7 +1172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23410" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="908"/>
+            <point key="canvasLocation" x="1179" y="639"/>
         </scene>
     </scenes>
     <resources>
@@ -1169,5 +1184,6 @@
         <image name="Images/EstablishedBtn.png" width="1182" height="444"/>
         <image name="Images/SchoolBtn.png" width="1172" height="440"/>
         <image name="Images/LocalBtn.png" width="1183" height="443"/>
+        <image name="Images/LogoutBtn.png" width="1181" height="446"/>
     </resources>
 </document>

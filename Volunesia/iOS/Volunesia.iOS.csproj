@@ -210,6 +210,7 @@
     <BundleResource Include="Resources\Images\EstablishedBtn.png" />
     <BundleResource Include="Resources\Images\SchoolBtn.png" />
     <BundleResource Include="Resources\Images\LocalBtn.png" />
+    <BundleResource Include="Resources\Images\LogoutBtn.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
