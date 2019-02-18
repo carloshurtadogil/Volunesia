@@ -22,6 +22,15 @@ namespace Volunesia.iOS
             }
         }
 
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+            System.Threading.Thread.Sleep(5000);
+            this.PerformSegue("ToHomeSegue_id", this);
+
+        }
+
+
         public void SetName(string name) 
         {
             //WelcomeLabel.Text = "Welcome, " + FirstName + "!";
@@ -64,6 +73,14 @@ namespace Volunesia.iOS
                         System.Diagnostics.Debug.WriteLine("Null user");
                     }
                     vc.LoadView();
+                }
+            }
+            else if (segue.Identifier == "ToHomeSegue_id")
+            {
+                var hvc = (HomeViewController)segue.DestinationViewController;
+                if (hvc != null)
+                {
+                    hvc.LoadView();
                 }
             }
             else

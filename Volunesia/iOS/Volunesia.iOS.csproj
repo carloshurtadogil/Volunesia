@@ -108,6 +108,9 @@
     <Reference Include="smartystreets-dotnet-sdk">
       <HintPath>..\packages\smartystreets-dotnet-sdk.8.0.15\lib\netstandard2.0\smartystreets-dotnet-sdk.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.SideMenu">
+      <HintPath>..\packages\Xamarin.SideMenu.1.0\lib\Xamarin.iOS10\Xamarin.SideMenu.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -199,6 +202,10 @@
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\FirebaseReader.cs" />
+    <Compile Include="Controllers\HomeViewController.cs" />
+    <Compile Include="Controllers\HomeViewController.designer.cs">
+      <DependentUpon>HomeViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -211,6 +218,12 @@
     <BundleResource Include="Resources\Images\SchoolBtn.png" />
     <BundleResource Include="Resources\Images\LocalBtn.png" />
     <BundleResource Include="Resources\Images\LogoutBtn.png" />
+    <BundleResource Include="Resources\Images\CreateEventBtn.png" />
+    <BundleResource Include="Resources\Images\EventBtn.png" />
+    <BundleResource Include="Resources\Images\ConnectBtn.png" />
+    <BundleResource Include="Resources\Images\profileimg.png" />
+    <BundleResource Include="Resources\Images\SettingsBtn.png" />
+    <BundleResource Include="Resources\Images\AddButton.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
