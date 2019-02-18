@@ -1192,7 +1192,7 @@
                                 <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="32974" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="32974" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="92" width="375" height="720"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1246,7 +1246,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="39989" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="114" y="494" width="147" height="57"/>
+                                <rect key="frame" x="114" y="698" width="147" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Images/LogoutBtn.png"/>
                                 <connections>
@@ -1259,6 +1259,38 @@
                                     <action selector="LogoutButton_TouchUpInside:" destination="35419" id="40003" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="40737" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="95" width="375" height="520"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="40738" style="IBUITableViewCellStyleValue1" textLabel="40871" detailTextLabel="40872" reuseIdentifier="SettingItem">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="40738" id="40739">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="40871">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="40872">
+                                                    <rect key="frame" x="301" y="12" width="59" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                            </tableView>
                         </subviews>
                         <connections>
                             <outletCollection id="36269" property="gestureRecognizers" destination="36268" appends="YES"/>
@@ -1269,6 +1301,7 @@
                         <outlet property="SwipeDownHandler" destination="36268" id="name-outlet-36268"/>
                         <outlet property="LogoutButton" destination="39989" id="name-outlet-39989"/>
                         <segue id="40266" destination="BYZ-38-t0r" kind="show" identifier="SettingsToHomeSegue_id"/>
+                        <outlet property="SettingsTableView" destination="40737" id="name-outlet-40737"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35421" userLabel="First Responder" sceneMemberID="firstResponder"/>

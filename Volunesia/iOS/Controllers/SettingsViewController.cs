@@ -12,19 +12,37 @@ namespace Volunesia.iOS
         {
         }
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            System.Diagnostics.Debug.WriteLine("VDL   Opened");
+            LoadInfo();
+        }
+
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
             System.Diagnostics.Debug.WriteLine("SVC Opened");
             UISwipeGestureRecognizer recognizer = new UISwipeGestureRecognizer(OnSwipe);
             recognizer.Direction = UISwipeGestureRecognizerDirection.Down;
-            View.AddGestureRecognizer(recognizer);
+            View.AddGestureRecognizer(recognizer); 
+            LoadInfo();
+
+
         }
 
         private void OnSwipe()
         {
             System.Diagnostics.Debug.WriteLine("OnSwip() Called");
             this.DismissViewController(true, null);
+        }
+
+        private void LoadInfo()
+        {
+            SettingsDataSource sdc = new SettingsDataSource(this);
+            SettingsTableView.Source = sdc;
+            SettingsTableView.ScrollEnabled = false;
+            SettingsTableView.ReloadData();
         }
 
         partial void LogoutButton_TouchUpInside(UIButton sender)

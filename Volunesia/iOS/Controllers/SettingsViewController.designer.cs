@@ -24,6 +24,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView SettingsTableView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwipeGestureRecognizer SwipeDownHandler { get; set; }
 
         [Action ("LogoutButton_TouchUpInside:")]
@@ -40,6 +44,11 @@ namespace Volunesia.iOS
             if (LogoutButton != null) {
                 LogoutButton.Dispose ();
                 LogoutButton = null;
+            }
+
+            if (SettingsTableView != null) {
+                SettingsTableView.Dispose ();
+                SettingsTableView = null;
             }
 
             if (SwipeDownHandler != null) {
