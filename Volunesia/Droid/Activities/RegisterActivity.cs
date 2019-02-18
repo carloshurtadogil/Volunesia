@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
+using Volunesia.Models;
 
 namespace Volunesia.Droid
 {
@@ -19,6 +21,8 @@ namespace Volunesia.Droid
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string Password { get; set; }
+
+        public User theUser { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +35,14 @@ namespace Volunesia.Droid
             EmailAddress = Intent.GetStringExtra("emailAddress");
             Password = Intent.GetStringExtra("password");
 
+            theUser = new User()
+            {
+
+                FirstName = FirstName,
+                LastName = LastName,
+                EmailAddress = EmailAddress
+            };
+
            
 
             Button volunteerSignUpButton = FindViewById<Button>(Resource.Id.volunteerButton);
@@ -42,22 +54,17 @@ namespace Volunesia.Droid
 
         public void JumpToVolunteerRegisterActivity(object sender, EventArgs e)
         {
+            theUser.UserType = "V";
             var credentialsIntent = new Intent(this, typeof(VolunteerRegisterActivity));
-            credentialsIntent.PutExtra("firstName", FirstName);
-            credentialsIntent.PutExtra("lastName", LastName);
-            credentialsIntent.PutExtra("emailAddress", EmailAddress);
-            credentialsIntent.PutExtra("password", Password);
-
+            credentialsIntent.PutExtra("user", JsonConvert.SerializeObject(theUser));
             StartActivity(credentialsIntent);
         }
 
         public void JumpToNonprofitTypeRegisterActivity(object sender, EventArgs e)
         {
+            theUser.UserType = "NP";
             var credentialsIntent = new Intent(this, typeof(NonprofitTypeRegisterActivity));
-            credentialsIntent.PutExtra("firstName", FirstName);
-            credentialsIntent.PutExtra("lastName", LastName);
-            credentialsIntent.PutExtra("emailAddress", EmailAddress);
-
+            credentialsIntent.PutExtra("user", JsonConvert.SerializeObject(theUser));
             StartActivity(credentialsIntent);
         }
     }

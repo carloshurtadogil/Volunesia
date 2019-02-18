@@ -10,6 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
+using Volunesia.Droid.Service;
+using Volunesia.Models;
 using Volunesia.Services;
 
 namespace Volunesia.Droid
@@ -17,7 +20,7 @@ namespace Volunesia.Droid
     [Activity(Label = "MissionStatementActivity")]
     public class MissionStatementActivity : Activity
     {
-
+        public User theUser { get; set; }
         public string EIN { get; set; }
         public string OrganizationName { get; set; }
         public string City { get; set; }
@@ -31,6 +34,7 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MissionStatement);
 
+            theUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
             //Retrieve the information from the previous activity
             City = Intent.GetStringExtra("city");
             EIN = Intent.GetStringExtra("ein");
@@ -51,7 +55,7 @@ namespace Volunesia.Droid
         {
 
             string missionStatement = MissionStatement.Text;
-            string uid = AppData_Droid.Auth.CurrentUser.Uid;
+            theUser.UID = AppData_Droid.Auth.CurrentUser.Uid;
 
             Dictionary<string, string> newNonprofit = new Dictionary<string, string>();
             newNonprofit.Add("city", City);
@@ -59,16 +63,16 @@ namespace Volunesia.Droid
             newNonprofit.Add("missionstatement", missionStatement);
             newNonprofit.Add("name", OrganizationName);
             newNonprofit.Add("primaryphone", PhoneNumber);
-            newNonprofit.Add("primarycontact", uid);
+            newNonprofit.Add("primarycontact", theUser.UID);
             newNonprofit.Add("state", State);
             newNonprofit.Add("type", NonprofitType);
             newNonprofit.Add("zip", ZipCode);
 
-            //Generate a general ID for a nonprofit
-            IDGenerator generator = new IDGenerator();
-            string generatedID = generator.GenerateEstablishedID(EIN);
+            Register r = new Register();
+            r.AddUserToFirebase(theUser);
+            r.AddNonprofitOrganizationToFirebase(newNonprofit);
 
-            AppData_Droid.NonprofitNode.Child(generatedID).PutAsync(newNonprofit);
+            AppData.CurUser = theUser;
 
             //Navigate to the WelcomeActivity
             StartActivity(typeof(WelcomeActivity));

@@ -10,6 +10,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
+using Volunesia.Droid.Service;
+using Volunesia.Models;
+using Volunesia.Services;
 
 namespace Volunesia.Droid
 {
@@ -17,10 +21,7 @@ namespace Volunesia.Droid
     public class VolunteerRegisterActivity : Activity
     {
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public string Password { get; set; }
+        public User theUser { get; set; }
 
         public EditText personalDescription { get; set; }
 
@@ -30,10 +31,7 @@ namespace Volunesia.Droid
             //Set VolunteerRegister view
             SetContentView(Resource.Layout.VolunteerRegister);
 
-            FirstName = Intent.GetStringExtra("firstName");
-            LastName = Intent.GetStringExtra("lastName");
-            EmailAddress = Intent.GetStringExtra("emailAddress");
-            Password = Intent.GetStringExtra("password");
+            theUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
 
 
@@ -48,17 +46,15 @@ namespace Volunesia.Droid
 
         public void PerformVolunteerRegistration(object sender, EventArgs e)
         {
-
-            Dictionary<string, string> userDictionary = new Dictionary<string, string>();
-            userDictionary.Add("email", EmailAddress);
-            userDictionary.Add("first", FirstName);
-            userDictionary.Add("last", LastName);
-            userDictionary.Add("type", "Volunteer");
-
+    
             //Get the uid of the currently logged in user
-            string uid = AppData_Droid.Auth.CurrentUser.Uid;
+            theUser.UID = AppData_Droid.Auth.CurrentUser.Uid;
 
-            AppData_Droid.UserNode.Child(uid).PutAsync(userDictionary);
+            //Add the current user (nonprofit rep) to Firebase
+            Register r = new Register();
+            r.AddUserToFirebase(theUser);
+
+            AppData.CurUser = theUser;
             StartActivity(typeof(WelcomeActivity));
         }
     }

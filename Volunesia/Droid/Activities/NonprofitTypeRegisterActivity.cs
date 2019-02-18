@@ -9,26 +9,22 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
+using Newtonsoft.Json;
+using Volunesia.Models;
 
 namespace Volunesia.Droid
 {
     [Activity(Label = "NonprofitRegisterActivity")]
     public class NonprofitTypeRegisterActivity : Activity
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
+        public User theUser { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.NonprofitTypeRegister);
 
-
-            FirstName = Intent.GetStringExtra("firstName");
-            LastName = Intent.GetStringExtra("lastName");
-            EmailAddress = Intent.GetStringExtra("emailAddress");
+            theUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
 
             var establishedNPButton = FindViewById<Button>(Resource.Id.establishedNPButton);
@@ -39,18 +35,13 @@ namespace Volunesia.Droid
             schoolNPButton.Click += JumpToSchoolNPActivity;
             localNPButton.Click += JumpToLocalNPActivity;
 
-
-
         }
 
         //Jumps to the established nonprofit activity page
         public void JumpToEstablishedNPActivity(object sender, EventArgs e)
         {
             var credentialsIntent = new Intent(this, typeof(EstablishedNonprofitRegisterActivity));
-            credentialsIntent.PutExtra("firstName", FirstName);
-            credentialsIntent.PutExtra("lastName", LastName);
-            credentialsIntent.PutExtra("emailAddress", EmailAddress);
-
+            credentialsIntent.PutExtra("user", JsonConvert.SerializeObject(theUser));
             StartActivity(credentialsIntent);
         }
 
@@ -59,10 +50,7 @@ namespace Volunesia.Droid
         {
 
             var credentialsIntent = new Intent(this, typeof(SchoolNonprofitRegisterActivity));
-            credentialsIntent.PutExtra("firstName", FirstName);
-            credentialsIntent.PutExtra("lastName", LastName);
-            credentialsIntent.PutExtra("emailAddress", EmailAddress);
-
+            credentialsIntent.PutExtra("user", JsonConvert.SerializeObject(theUser));
             StartActivity(credentialsIntent);
         }
 
@@ -70,10 +58,7 @@ namespace Volunesia.Droid
         public void JumpToLocalNPActivity(object sender, EventArgs e)
         {
             var credentialsIntent = new Intent(this, typeof(LocalNonprofitRegisterActivity));
-            credentialsIntent.PutExtra("firstName", FirstName);
-            credentialsIntent.PutExtra("lastName", LastName);
-            credentialsIntent.PutExtra("emailAddress", EmailAddress);
-
+            credentialsIntent.PutExtra("user", JsonConvert.SerializeObject(theUser));
             StartActivity(credentialsIntent);
         }
     }

@@ -10,7 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
 using Volunesia.Droid.Service;
+using Volunesia.Models;
 using Volunesia.Services;
 
 namespace Volunesia.Droid
@@ -18,7 +20,7 @@ namespace Volunesia.Droid
     [Activity(Label = "EstablishedNonprofitRegisterActivity")]
     public class EstablishedNonprofitRegisterActivity : Activity
     {
-
+        public User theUser { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
@@ -34,10 +36,8 @@ namespace Volunesia.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EstablishedNonprofitRegister);
 
-            //Get first name, last name, and email address from the previous activity
-            FirstName = Intent.GetStringExtra("firstName");
-            LastName = Intent.GetStringExtra("lastName");
-            EmailAddress = Intent.GetStringExtra("emailAddress");
+            //Get user from the previous activity
+            theUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
             //Retrieve the contents from the EditTexts on the EstablishedNonprofitRegisterActivity page
             EID = FindViewById<EditText>(Resource.Id.eidField);
@@ -73,6 +73,8 @@ namespace Volunesia.Droid
                 intent.PutExtra("state", State.Text);
                 intent.PutExtra("type", "established");
                 intent.PutExtra("zip", ZipCode.Text);
+
+                intent.PutExtra("user", JsonConvert.SerializeObject(theUser));
 
                 StartActivity(intent);
 
