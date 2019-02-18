@@ -24,10 +24,6 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LogoutBtn { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView LogoView { get; set; }
 
         [Outlet]
@@ -37,10 +33,6 @@ namespace Volunesia.iOS
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("LogoutBtn_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void LogoutBtn_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -52,11 +44,6 @@ namespace Volunesia.iOS
             if (BackgroundImage != null) {
                 BackgroundImage.Dispose ();
                 BackgroundImage = null;
-            }
-
-            if (LogoutBtn != null) {
-                LogoutBtn.Dispose ();
-                LogoutBtn = null;
             }
 
             if (LogoView != null) {

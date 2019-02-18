@@ -27,9 +27,22 @@ namespace Volunesia.iOS
             }
         }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+            if(segue.Identifier == "ToSettingsSegue_id")
+            {
+                var svc = (SettingsViewController)segue.DestinationViewController;
+                if(svc != null)
+                {
+                    svc.LoadView(); 
+                }
+            }
+        }
+
         partial void SettingsButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "To Be Implemented", "");
+            this.PerformSegue("ToSettingsSegue_id", sender);
         }
     }
 }

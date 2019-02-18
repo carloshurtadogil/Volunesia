@@ -683,19 +683,6 @@
                                     <action selector="BackButton_TouchUpInside:" destination="17774" id="24508" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28236" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="114" y="494" width="147" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Images/LogoutBtn.png"/>
-                                <connections>
-                                    <action selector="NonprofitBtn_TouchUpInside:" destination="28238" id="28237" eventType="touchUpInside"/>
-                                    <action selector="SchoolButton_TouchUpInside:" destination="28240" id="28239" eventType="touchUpInside"/>
-                                    <action selector="ContinueButton_TouchUpInside:" destination="28242" id="28241" eventType="touchUpInside"/>
-                                    <action selector="ContinueButton_TouchUpInside:" destination="28244" id="28243" eventType="touchUpInside"/>
-                                    <action selector="ContinueButton_TouchUpInside:" destination="28246" id="28245" eventType="touchUpInside"/>
-                                    <action selector="LogoutBtn_TouchUpInside:" destination="17774" id="28251" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="29556" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/logo.png">
                                 <rect key="frame" x="34" y="87" width="307" height="334"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -706,8 +693,6 @@
                         <outlet property="BackgroundImage" destination="18102" id="name-outlet-18102"/>
                         <outlet property="WelcomeLabel" destination="18104" id="name-outlet-18104"/>
                         <outlet property="BackButton" destination="24503" id="name-outlet-24503"/>
-                        <outlet property="LogoutBtn" destination="28236" id="name-outlet-28236"/>
-                        <segue id="28676" destination="BYZ-38-t0r" kind="show" identifier="ToBaseSegue_id"/>
                         <outlet property="LogoView" destination="29556" id="name-outlet-29556"/>
                         <segue id="30555" destination="30008" kind="show" identifier="ToHomeSegue_id"/>
                     </connections>
@@ -1197,6 +1182,7 @@
                                 <state key="normal" backgroundImage="Images/SettingsBtn.png"/>
                                 <connections>
                                     <action selector="SettingsButton_TouchUpInside:" destination="30008" id="32965" eventType="touchUpInside"/>
+                                    <segue id="35475" destination="35419" kind="show" identifier="ToSettingsSegue_id"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32964" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1242,6 +1228,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30010" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2599" y="2434"/>
+        </scene>
+        <scene sceneID="35418">
+            <objects>
+                <viewController id="35419" sceneMemberID="viewController" customClass="SettingsViewController" storyboardIdentifier="SettingsView" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="35416"/>
+                        <viewControllerLayoutGuide type="bottom" id="35417"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="35420">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="35477" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
+                                <rect key="frame" x="-4" y="-10" width="384" height="832"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="39989" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="114" y="494" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/LogoutBtn.png"/>
+                                <connections>
+                                    <action selector="NonprofitBtn_TouchUpInside:" destination="39991" id="39990" eventType="touchUpInside"/>
+                                    <action selector="SchoolButton_TouchUpInside:" destination="39993" id="39992" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="39995" id="39994" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="39997" id="39996" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="39999" id="39998" eventType="touchUpInside"/>
+                                    <action selector="LogoutBtn_TouchUpInside:" destination="40001" id="40000" eventType="touchUpInside"/>
+                                    <action selector="LogoutButton_TouchUpInside:" destination="35419" id="40003" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <connections>
+                            <outletCollection id="36269" property="gestureRecognizers" destination="36268" appends="YES"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImageView" destination="35477" id="name-outlet-35477"/>
+                        <outlet property="SwipeDownHandler" destination="36268" id="name-outlet-36268"/>
+                        <outlet property="LogoutButton" destination="39989" id="name-outlet-39989"/>
+                        <segue id="40266" destination="BYZ-38-t0r" kind="show" identifier="SettingsToHomeSegue_id"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35421" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="36268"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="3422"/>
         </scene>
     </scenes>
     <resources>

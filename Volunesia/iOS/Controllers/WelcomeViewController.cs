@@ -41,24 +41,6 @@ namespace Volunesia.iOS
             this.DismissViewController(true, null);
         }
 
-        //Temporary Logout
-        partial void LogoutBtn_TouchUpInside(UIButton sender)
-        {
-            NSError error;
-            AppData_iOS.GetInstance();
-            if(AppData_iOS.Auth.SignOut(out error))
-            {
-                AppData.CurUser = null;
-                ReadWrite.WriteUser();
-                this.PerformSegue("ToBaseSegue_id", sender);
-            }
-            else
-            {
-                AlertShow.Show(this, "Fail to Signout", ""); 
-            }
-
-        }
-
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
