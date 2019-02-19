@@ -12,7 +12,8 @@ namespace Volunesia.Models
             Novice,
             Intermediate,
             Advanced,
-            Expert
+            Expert,
+            Grandmaster
         }
     }
 }

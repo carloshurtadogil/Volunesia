@@ -180,12 +180,14 @@
     <Compile Include="Activities\RegisterActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\SecondRegisterActivity.cs" />
+    <Compile Include="Activities\VolunteerHomeActivity.cs" />
     <Compile Include="Activities\VolunteerRegisterActivity.cs" />
     <Compile Include="Activities\WelcomeActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AndroidAuthenticationService.cs" />
     <Compile Include="AppData_Droid.cs" />
+    <Compile Include="Service\Register.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

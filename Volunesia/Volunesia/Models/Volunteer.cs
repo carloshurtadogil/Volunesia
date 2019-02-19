@@ -14,5 +14,8 @@ namespace Volunesia.Models
         public int    Level               { get; set; }
         //The amount of time the user has spent volunteering
         public long   Minutes             { get; set; }
+        //The list of badges that the volunteer has gained
+        public List<BadgeCategory.Badge> BadgeList             { get; set; }
+
     }
 }
