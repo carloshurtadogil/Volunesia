@@ -22,7 +22,7 @@
 		android:hint="Enter password"
 		android:id="@+id/passwordField" />
 	<Button
-		android:text="Login"
+		android:text="Sign In"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/loginButton" />
