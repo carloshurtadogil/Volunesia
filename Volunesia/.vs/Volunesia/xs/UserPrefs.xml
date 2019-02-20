@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.Droid AndroidDesignerPreferredTheme="Theme.DeviceDefault" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_4" />
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/SettingsDataSource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SettingsChangeViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Controllers/SettingsViewController.cs" Line="44" Column="53" />
+      <File FileName="iOS/Controllers/SettingsViewController.cs" Line="76" Column="10" />
       <File FileName="iOS/Controllers/HomeViewController.cs" Line="40" Column="14" />
-      <File FileName="iOS/Services/SettingsDataSource.cs" Line="30" Column="1" />
+      <File FileName="iOS/Services/SettingsDataSource.cs" Line="14" Column="10" />
+      <File FileName="iOS/SettingsChangeViewController.cs" Line="15" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

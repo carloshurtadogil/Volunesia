@@ -670,19 +670,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="24503" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="46" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40" weight="light"/>
-                                <state key="normal" title="&lt;">
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackButton_TouchUpInside:" destination="24505" id="24504" eventType="touchUpInside"/>
-                                    <action selector="BackButton_TouchUpInside:" destination="24507" id="24506" eventType="touchUpInside"/>
-                                    <action selector="BackButton_TouchUpInside:" destination="17774" id="24508" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="29556" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/logo.png">
                                 <rect key="frame" x="34" y="87" width="307" height="334"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -692,7 +679,6 @@
                     <connections>
                         <outlet property="BackgroundImage" destination="18102" id="name-outlet-18102"/>
                         <outlet property="WelcomeLabel" destination="18104" id="name-outlet-18104"/>
-                        <outlet property="BackButton" destination="24503" id="name-outlet-24503"/>
                         <outlet property="LogoView" destination="29556" id="name-outlet-29556"/>
                         <segue id="30555" destination="30008" kind="show" identifier="ToHomeSegue_id"/>
                     </connections>
@@ -1246,7 +1232,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="39989" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="114" y="698" width="147" height="57"/>
+                                <rect key="frame" x="114" y="333" width="147" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Images/LogoutBtn.png"/>
                                 <connections>
@@ -1260,7 +1246,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="40737" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="95" width="375" height="520"/>
+                                <rect key="frame" x="0.0" y="95" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="40738" style="IBUITableViewCellStyleValue1" textLabel="40871" detailTextLabel="40872" reuseIdentifier="SettingItem">
@@ -1291,6 +1277,19 @@
                                 </prototypes>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44263" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="43" width="46" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40" weight="light"/>
+                                <state key="normal" title="^">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="44265" id="44264" eventType="touchUpInside"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="44267" id="44266" eventType="touchUpInside"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="35419" id="44268" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <connections>
                             <outletCollection id="36269" property="gestureRecognizers" destination="36268" appends="YES"/>
@@ -1302,12 +1301,124 @@
                         <outlet property="LogoutButton" destination="39989" id="name-outlet-39989"/>
                         <segue id="40266" destination="BYZ-38-t0r" kind="show" identifier="SettingsToHomeSegue_id"/>
                         <outlet property="SettingsTableView" destination="40737" id="name-outlet-40737"/>
+                        <segue id="41982" destination="41352" kind="presentation" identifier="ToSettingsChangeSegue_id"/>
+                        <outlet property="BackButton" destination="44263" id="name-outlet-44263"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35421" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="36268"/>
             </objects>
             <point key="canvasLocation" x="2575" y="3422"/>
+        </scene>
+        <scene sceneID="41351">
+            <objects>
+                <viewController id="41352" sceneMemberID="viewController" customClass="SettingsChangeViewController" storyboardIdentifier="SettingsChangeView" useStoryboardIdentifierAsRestorationIdentifier="YES" modalTransitionStyle="flipHorizontal">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="41382"/>
+                        <viewControllerLayoutGuide type="bottom" id="41383"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="41363">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="41354" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
+                                <rect key="frame" x="-4" y="-10" width="384" height="832"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41387" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
+                                <rect key="frame" x="54" y="102" width="192" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="41388" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="54" y="132" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" textContentType="password" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="41873" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="54" y="194" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" textContentType="password" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41874" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
+                                <rect key="frame" x="54" y="164" width="192" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="41875" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="55" y="253" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" textContentType="password" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41876" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
+                                <rect key="frame" x="55" y="223" width="241" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="41877" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="114" y="333" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/SaveBtn.png"/>
+                                <connections>
+                                    <action selector="NonprofitBtn_TouchUpInside:" destination="41879" id="41878" eventType="touchUpInside"/>
+                                    <action selector="SchoolButton_TouchUpInside:" destination="41881" id="41880" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="41883" id="41882" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="41885" id="41884" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="41887" id="41886" eventType="touchUpInside"/>
+                                    <action selector="LogoutBtn_TouchUpInside:" destination="41889" id="41888" eventType="touchUpInside"/>
+                                    <action selector="LogoutButton_TouchUpInside:" destination="41891" id="41890" eventType="touchUpInside"/>
+                                    <action selector="SaveButton_TouchUpInside:" destination="41352" id="42959" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="42813" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="20" width="46" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40" weight="light"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="42815" id="42814" eventType="touchUpInside"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="41352" id="42816" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <connections>
+                            <outletCollection id="41364" property="gestureRecognizers" destination="41356" appends="YES"/>
+                            <outletCollection id="43441" property="gestureRecognizers" destination="43440" appends="YES"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImageView" destination="41354" id="41353"/>
+                        <outlet property="SwipeDownHandler" destination="41356" id="41355"/>
+                        <outlet property="CurrentLabel" destination="41387" id="name-outlet-41387"/>
+                        <outlet property="CurrentTextfield" destination="41388" id="name-outlet-41388"/>
+                        <outlet property="NewTextfield" destination="41873" id="name-outlet-41873"/>
+                        <outlet property="NewLabel" destination="41874" id="name-outlet-41874"/>
+                        <outlet property="ConfirmLabel" destination="41876" id="name-outlet-41876"/>
+                        <outlet property="ConfirmTextfield" destination="41875" id="name-outlet-41875"/>
+                        <outlet property="BackButton" destination="42813" id="name-outlet-42813"/>
+                        <outlet property="SaveButton" destination="41877" id="name-outlet-41877"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41384" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="41356"/>
+                <swipeGestureRecognizer direction="right" id="43440"/>
+            </objects>
+            <point key="canvasLocation" x="3093" y="3425"/>
         </scene>
     </scenes>
     <resources>
@@ -1322,5 +1433,6 @@
         <image name="Images/LogoutBtn.png" width="1181" height="446"/>
         <image name="Images/SettingsBtn.png" width="671" height="713"/>
         <image name="Images/AddButton.png" width="661" height="657"/>
+        <image name="Images/SaveBtn.png" width="1184" height="436"/>
     </resources>
 </document>

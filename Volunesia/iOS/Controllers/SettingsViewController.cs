@@ -73,6 +73,20 @@ namespace Volunesia.iOS
                     vc.LoadView(); 
                 }
             }
+            else if(segue.Identifier == "ToSettingsChangeSegue_id")
+            {
+                var scvc = (SettingsChangeViewController)segue.DestinationViewController;
+                if(scvc != null) 
+                {
+                    scvc.LoadView(); 
+                }
+            }
+        }
+
+        //For those not intuitive enough to swipe down to dismiss this controller
+        partial void BackButton_TouchUpInside(UIButton sender)
+        {
+            this.DismissViewController(true, null);
         }
 
         public void Logout(UIButton sender)
