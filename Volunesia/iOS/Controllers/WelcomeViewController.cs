@@ -36,11 +36,6 @@ namespace Volunesia.iOS
             //WelcomeLabel.Text = "Welcome, " + FirstName + "!";
         }
 
-        partial void BackButton_TouchUpInside(UIButton sender)
-        {
-            this.DismissViewController(true, null);
-        }
-
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
