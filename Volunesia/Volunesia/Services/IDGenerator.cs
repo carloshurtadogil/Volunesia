@@ -16,10 +16,12 @@ namespace Volunesia.Services
 
         }
 
-        public string GenerateEstablishedID(string ein)
+        public string GenerateEventID()
         {
-            string id = ein + GenerateID();
-            return id;
+            DateTime t = DateTime.Now;
+            TimeSpan ts = DateTime.Now.TimeOfDay;
+            return t.Day.ToString() + t.Month.ToString() + t.Year.ToString() +
+                   ts.Hours.ToString() + ts.Minutes.ToString() + ts.Seconds.ToString() + ts.Milliseconds.ToString();
         }
     }
 }
