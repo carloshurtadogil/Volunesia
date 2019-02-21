@@ -1,4 +1,4 @@
-using Foundation;
+ using Foundation;
 using System;
 using UIKit;
 using Volunesia.Services;
@@ -78,6 +78,15 @@ namespace Volunesia.iOS
                 var scvc = (SettingsChangeViewController)segue.DestinationViewController;
                 if(scvc != null) 
                 {
+                    NSIndexPath p = (NSIndexPath)sender;
+                    if(p.Row == 0) 
+                    {
+                        scvc.SettingsType = "email"; 
+                    }
+                    else
+                    {
+                        scvc.SettingsType = "password"; 
+                    }
                     scvc.LoadView(); 
                 }
             }

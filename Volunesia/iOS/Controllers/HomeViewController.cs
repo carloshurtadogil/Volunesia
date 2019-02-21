@@ -21,7 +21,7 @@ namespace Volunesia.iOS
                 NameLabel.Text = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
                 if(AppData.CurUser.UserType != "V")
                 {
-                    AddButton.Hidden = false; 
+                    //AddButton.Hidden = false; 
                 }
                 System.Diagnostics.Debug.WriteLine("User Type: " + AppData.CurUser.UserType);
             }
@@ -45,5 +45,9 @@ namespace Volunesia.iOS
             this.PerformSegue("ToSettingsSegue_id", sender);
         }
 
+        partial void AddButton_TouchUpInside(UIButton sender)
+        {
+            AlertShow.Show(this, "To be implemented", "");
+        }
     }
 }

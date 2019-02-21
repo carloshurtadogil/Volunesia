@@ -211,8 +211,8 @@
       <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\SettingsDataSource.cs" />
-    <Compile Include="SettingsChangeViewController.cs" />
-    <Compile Include="SettingsChangeViewController.designer.cs">
+    <Compile Include="Controllers\SettingsChangeViewController.cs" />
+    <Compile Include="Controllers\SettingsChangeViewController.designer.cs">
       <DependentUpon>SettingsChangeViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>

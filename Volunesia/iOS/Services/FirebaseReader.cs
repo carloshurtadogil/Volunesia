@@ -8,6 +8,7 @@ namespace Volunesia.iOS.Services
 {
     public class FirebaseReader
     {
+        //Read user information from 'users' branch in Firebase
         public static void ReadUser(AuthDataResult results)
         {
             System.Diagnostics.Debug.WriteLine("Read USer Called");
@@ -49,6 +50,15 @@ namespace Volunesia.iOS.Services
             {
                 System.Diagnostics.Debug.WriteLine("Results Fail");
             }
+        }
+
+        public static void WriteUser(string val) 
+        {
+            AppData_iOS.GetInstance();
+            AppData_iOS.UsersNode.GetChild(AppData.CurUser.UID).ObserveSingleEvent(DataEventType.Value, (snapshot) => 
+            {
+                 
+            });
         }
     }
 }

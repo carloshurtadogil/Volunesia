@@ -34,6 +34,10 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SettingsButton { get; set; }
 
+        [Action ("AddButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void AddButton_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("SettingsButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void SettingsButton_TouchUpInside (UIKit.UIButton sender);
