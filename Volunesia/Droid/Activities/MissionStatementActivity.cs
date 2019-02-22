@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Firebase.Database.Query;
 using Newtonsoft.Json;
+using Volunesia.Droid.Activities;
 using Volunesia.Droid.Service;
 using Volunesia.Models;
 using Volunesia.Services;
@@ -59,7 +60,11 @@ namespace Volunesia.Droid
 
             Dictionary<string, string> newNonprofit = new Dictionary<string, string>();
             newNonprofit.Add("city", City);
-            newNonprofit.Add("ein", EIN);
+            if (NonprofitType.Equals("established"))
+            {
+                newNonprofit.Add("ein", EIN);
+            }
+            
             newNonprofit.Add("missionstatement", missionStatement);
             newNonprofit.Add("name", OrganizationName);
             newNonprofit.Add("primaryphone", PhoneNumber);
@@ -72,10 +77,10 @@ namespace Volunesia.Droid
             r.AddUserToFirebase(theUser);
             r.AddNonprofitOrganizationToFirebase(newNonprofit);
 
-            AppData.CurUser = theUser;
+          
 
             //Navigate to the WelcomeActivity
-            StartActivity(typeof(WelcomeActivity));
+            StartActivity(typeof(NonprofitHomeActivity));
         }
     }
 }

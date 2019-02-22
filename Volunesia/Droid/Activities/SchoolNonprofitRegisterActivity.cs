@@ -19,7 +19,6 @@ namespace Volunesia.Droid
     public class SchoolNonprofitRegisterActivity : Activity
     {
         public User theUser { get; set; }
-        public EditText EID { get; set; }
         public EditText SchoolName { get; set; }
         public EditText City { get; set; }
         public EditText State { get; set; }
@@ -35,7 +34,6 @@ namespace Volunesia.Droid
             theUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
             //Retrieve the contents from the EditTexts on the EstablishedNonprofitRegisterActivity page
-            EID = FindViewById<EditText>(Resource.Id.eidField);
             SchoolName = FindViewById<EditText>(Resource.Id.schoolNameField);
             City = FindViewById<EditText>(Resource.Id.cityField);
             State = FindViewById<EditText>(Resource.Id.stateField);
@@ -53,12 +51,12 @@ namespace Volunesia.Droid
 
             //Checks if there error messages generated from information verification,
             //if there isn't then proceed to the Mission statement activity page
-            string errorMessageResult = contactInfoVerif.VerifyAllInformationForSchoolNonprofit(EID.Text, SchoolName.Text, City.Text, State.Text, ZipCode.Text, PhoneNumber.Text);
+            string errorMessageResult = contactInfoVerif.VerifyAllInformationForSchoolNonprofit(string.Empty, SchoolName.Text, City.Text, State.Text, ZipCode.Text, PhoneNumber.Text);
             if (string.IsNullOrEmpty(errorMessageResult))
             {
                 var intent = new Intent(this, typeof(MissionStatementActivity));
                 intent.PutExtra("city", City.Text);
-                intent.PutExtra("ein", EID.Text);
+                intent.PutExtra("ein", "");
                 intent.PutExtra("name", SchoolName.Text);
                 intent.PutExtra("primaryphone", PhoneNumber.Text);
                 intent.PutExtra("state", State.Text);

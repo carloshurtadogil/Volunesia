@@ -54,7 +54,6 @@ namespace Volunesia.Droid
             Register r = new Register();
             r.AddUserToFirebase(theUser);
 
-            AppData.CurUser = theUser;
             StartActivity(typeof(WelcomeActivity));
         }
     }

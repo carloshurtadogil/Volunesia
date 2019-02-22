@@ -4,6 +4,8 @@ using Android.OS;
 using System.Collections.Generic;
 using Firebase.Database.Query;
 using System;
+using Volunesia.Services;
+using Volunesia.Droid.Activities;
 
 namespace Volunesia.Droid
 {
@@ -15,19 +17,37 @@ namespace Volunesia.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            AppData_Droid.GetInstance(this);
+            ReadWrite.ReadUser();
+            if (AppData.CurUser != null)
+            {
+                if(AppData.CurUser.UserType.Equals("V"))
+                {
+                    StartActivity(typeof(VolunteerHomeActivity));
+                }
+                else if(AppData.CurUser.UserType.Equals("NP"))
+                {
+                    StartActivity(typeof(NonprofitHomeActivity));
+                }
+            }
+            else
+            {
+                // Set our view from the "main" layout resource
+                SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button loginButton = FindViewById<Button>(Resource.Id.loginButton);
-            Button signUpButton = FindViewById<Button>(Resource.Id.signupButton);
+                // Get our button from the layout resource,
+                // and attach an event to it
+                Button loginButton = FindViewById<Button>(Resource.Id.loginButton);
+                Button signUpButton = FindViewById<Button>(Resource.Id.signupButton);
 
-            loginButton.Click += NavigateToLoginPage;
-            signUpButton.Click += NavigateToSignupPage;
+                loginButton.Click += NavigateToLoginPage;
+                signUpButton.Click += NavigateToSignupPage;
 
-            //AppData_Droid.GetInstance(this);
-            //FirebaseTest();
+                //AppData_Droid.GetInstance(this);
+                //FirebaseTest();
+            }
+
+
         }
 
         //Navigates to the the login page
