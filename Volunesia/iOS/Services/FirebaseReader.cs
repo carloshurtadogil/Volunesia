@@ -52,13 +52,17 @@ namespace Volunesia.iOS.Services
             }
         }
 
-        public static void WriteUser(string val) 
+        public static void WriteUserEmail() 
         {
             AppData_iOS.GetInstance();
-            AppData_iOS.UsersNode.GetChild(AppData.CurUser.UID).ObserveSingleEvent(DataEventType.Value, (snapshot) => 
-            {
-                 
-            });
+            Models.User user = AppData.CurUser;
+
+            object[] key = { $"email" };
+            object[] val = { user.EmailAddress };
+            var emailupdate = NSDictionary.FromObjectsAndKeys(val, key);
+
+            AppData_iOS.UsersNode.GetChild(user.UID).UpdateChildValues(emailupdate);
+
         }
     }
 }

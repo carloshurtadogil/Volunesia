@@ -63,6 +63,7 @@ namespace Volunesia.iOS
             this.DismissViewController(true, null);
         }
 
+        //Update the user's email on device and Firebase
         private void ChangeEmail(string email) 
         {
             AppData_iOS.Auth.CurrentUser.UpdateEmail(email, 
@@ -74,7 +75,8 @@ namespace Volunesia.iOS
                                                         }
                                                          AppData.CurUser.EmailAddress = email;
                                                          ReadWrite.WriteUser();
-                                                         AlertShow.Show(this, "Update Success", "Email updated successfully.");
+                                                         FirebaseReader.WriteUserEmail();
+                                                         AlertShow.Show(this, true, "Update Success", "Email updated successfully.");
 
                                                      });
         }
