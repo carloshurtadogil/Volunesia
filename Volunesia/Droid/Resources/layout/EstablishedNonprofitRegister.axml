@@ -12,7 +12,7 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:gravity="center"
-		android:hint="EID"
+		android:hint="EIN"
 		android:id="@+id/eidField" />
 	<EditText
 		android:layout_width="match_parent"

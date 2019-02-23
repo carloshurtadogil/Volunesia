@@ -22,7 +22,6 @@ namespace Volunesia.Droid
     {
 
         public User theUser;
-        public EditText EID { get; set; }
         public EditText OrganizationName { get; set; }
         public EditText City { get; set; }
         public EditText State { get; set; }
@@ -38,7 +37,7 @@ namespace Volunesia.Droid
             theUser = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("user"));
 
             //Retrieve the contents from the EditTexts on the LocalNonprofitRegisterActivity page
-            EID = FindViewById<EditText>(Resource.Id.eidField);
+           
             OrganizationName = FindViewById<EditText>(Resource.Id.organizationNameField);
             City = FindViewById<EditText>(Resource.Id.cityField);
             State = FindViewById<EditText>(Resource.Id.stateField);
@@ -58,20 +57,19 @@ namespace Volunesia.Droid
 
             //Checks if there error messages generated from information verification,
             //if there isn't then proceed to the Mission statement activity page
-            string errorMessageResult = contactInfoVerif.VerifyAllInformationForEstablishedNonprofit(EID.Text, OrganizationName.Text, City.Text, State.Text, ZipCode.Text, PhoneNumber.Text);
+            string errorMessageResult = contactInfoVerif.VerifyAllInformationForEstablishedNonprofit(string.Empty, OrganizationName.Text, City.Text, State.Text, ZipCode.Text, PhoneNumber.Text);
             if (string.IsNullOrEmpty(errorMessageResult))
             {
 
                 var intent = new Intent(this, typeof(MissionStatementActivity));
                 intent.PutExtra("city", City.Text);
-                intent.PutExtra("ein", EID.Text);
+                intent.PutExtra("ein", "");
                 intent.PutExtra("name", OrganizationName.Text);
                 intent.PutExtra("primaryphone", PhoneNumber.Text);
                 intent.PutExtra("state", State.Text);
                 intent.PutExtra("type", "local");
                 intent.PutExtra("zip", ZipCode.Text);
-
-                intent.PutExtra("user", JsonConvert.SerializeObject("user"));
+                intent.PutExtra("user", JsonConvert.SerializeObject(theUser));
 
                 StartActivity(intent);
 

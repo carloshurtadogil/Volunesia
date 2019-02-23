@@ -20,14 +20,33 @@ namespace Volunesia.Droid.Service
         //Adds the user to Firebase 
         public void AddUserToFirebase(User theUser)
         {
+            if(theUser.UserType == "V")
+            {
+                Dictionary<string, string> userDictionary = new Dictionary<string, string>();
+                userDictionary.Add("email", theUser.EmailAddress);
+                userDictionary.Add("first", theUser.FirstName);
+                userDictionary.Add("last", theUser.LastName);
+                userDictionary.Add("type", theUser.UserType);
+                userDictionary.Add("personalDescription", theUser.PersonalStatement);
 
-            Dictionary<string, string> userDictionary = new Dictionary<string, string>();
-            userDictionary.Add("email", theUser.EmailAddress);
-            userDictionary.Add("first", theUser.FirstName);
-            userDictionary.Add("last", theUser.LastName);
-            userDictionary.Add("type", theUser.UserType);
+                AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
+                AppData.CurUser = theUser;
+                //ReadWrite.WriteUser();
+            }
+            else if(theUser.UserType == "NP")
+            {
+                Dictionary<string, string> userDictionary = new Dictionary<string, string>();
+                userDictionary.Add("email", theUser.EmailAddress);
+                userDictionary.Add("first", theUser.FirstName);
+                userDictionary.Add("last", theUser.LastName);
+                userDictionary.Add("type", theUser.UserType);
+                userDictionary.Add("personalDescription", "");
 
-            AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
+                AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
+                AppData.CurUser = theUser;
+                //ReadWrite.WriteUser();
+            }
+            
         }
 
         //Adds the nonprofit organization to Firebase
@@ -35,7 +54,7 @@ namespace Volunesia.Droid.Service
         {
             //Generate a general ID for a nonprofit
             IDGenerator generator = new IDGenerator();
-            string generatedID = generator.GenerateEstablishedID(newNonprofit["ein"]);
+            string generatedID = generator.GenerateID();
 
             AppData_Droid.NonprofitNode.Child(generatedID).PutAsync(newNonprofit);
 

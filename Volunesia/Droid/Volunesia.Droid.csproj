@@ -176,6 +176,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\MainRegisterActivity.cs" />
     <Compile Include="Activities\MissionStatementActivity.cs" />
+    <Compile Include="Activities\NonprofitHomeActivity.cs" />
     <Compile Include="Activities\NonprofitTypeRegisterActivity.cs" />
     <Compile Include="Activities\RegisterActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
@@ -251,7 +252,10 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\VolunteerHome.axml">
+    <AndroidResource Include="Resources\layout\VolunteerHome.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\NonprofitHome.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
