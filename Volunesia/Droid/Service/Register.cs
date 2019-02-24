@@ -27,7 +27,7 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
                 userDictionary.Add("type", theUser.UserType);
-                userDictionary.Add("personalDescription", theUser.PersonalStatement);
+                userDictionary.Add("personalStatement", theUser.PersonalStatement);
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;
@@ -40,7 +40,7 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
                 userDictionary.Add("type", theUser.UserType);
-                userDictionary.Add("personalDescription", "");
+                userDictionary.Add("personalStatement", "");
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;
@@ -55,6 +55,7 @@ namespace Volunesia.Droid.Service
             //Generate a general ID for a nonprofit
             IDGenerator generator = new IDGenerator();
             string generatedID = generator.GenerateID();
+            
 
             AppData_Droid.NonprofitNode.Child(generatedID).PutAsync(newNonprofit);
 
