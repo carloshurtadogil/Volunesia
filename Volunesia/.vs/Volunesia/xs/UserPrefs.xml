@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AlertShow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/EmailRegistrationViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Controllers/SettingsChangeViewController.cs" Line="62" Column="67" />
-      <File FileName="iOS/AlertShow.cs" Line="21" Column="28" />
+      <File FileName="iOS/Controllers/SettingsViewController.cs" Line="47" Column="1" />
+      <File FileName="iOS/Controllers/SettingsChangeViewController.cs" Line="67" Column="71" />
+      <File FileName="iOS/AlertShow.cs" Line="35" Column="64" />
+      <File FileName="iOS/Controllers/EmailRegistrationViewController.cs" Line="26" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,9 +16,10 @@
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="EmailRegistrationViewController.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True" />
-              <Node name="AlertShow.cs" selected="True" />
             </Node>
           </Node>
         </State>

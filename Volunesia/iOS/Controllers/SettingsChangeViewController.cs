@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using Volunesia.Services;
 using Volunesia.iOS.Services;
+using System.Text.RegularExpressions;
 
 namespace Volunesia.iOS
 {
@@ -26,20 +27,23 @@ namespace Volunesia.iOS
                 NewTextfield.KeyboardType = UIKeyboardType.EmailAddress;
                 NewTextfield.SecureTextEntry = false;
                 NewTextfield.SetTextContentType( UITextContentType.EmailAddress);
+                CurrentLabel.Hidden = false;
+                CurrentTextfield.Hidden = false;
+                NewLabel.Hidden = false;
+                NewTextfield.Hidden = false;
             }
             else
             {
-                CurrentLabel.Text = "Current Password";
-                CurrentTextfield.SecureTextEntry = true;
-                CurrentTextfield.Enabled = true;
-                CurrentTextfield.SetTextContentType(UITextContentType.Password);
-                NewLabel.Text = "New Password";
-                NewTextfield.SecureTextEntry = true;
-                NewTextfield.SetTextContentType(UITextContentType.NewPassword);
-                ConfirmLabel.Hidden = false;
-                ConfirmTextfield.Hidden = false;
+                CurrentLabel.Hidden = true;
+                CurrentTextfield.Hidden = true;
+                NewLabel.Hidden = true;
+                NewTextfield.Hidden = true;
+                UIImage image = UIImage.FromBundle("Images/ChangeBtn.png");
+                SaveButton.SetBackgroundImage(image ,UIControlState.Normal);
 
             }
+
+            SaveButton.Hidden = false;
             UISwipeGestureRecognizer recognizer = new UISwipeGestureRecognizer(OnSwipe);
             recognizer.Direction = UISwipeGestureRecognizerDirection.Right;
             View.AddGestureRecognizer(recognizer);
@@ -54,9 +58,17 @@ namespace Volunesia.iOS
         //Save the user's changes
         partial void SaveButton_TouchUpInside(UIButton sender)
         {
-            ChangeEmail(NewTextfield.Text.Trim());
+            if(SettingsType == "email")
+            {
+                ChangeEmail(NewTextfield.Text.Trim());
+            }
+            else if(SettingsType == "password")
+            {
+                SendPasswordResetEmail();
+            }
         }
 
+        //Dismiss the ViewController when swiping from left to right
         private void OnSwipe()
         {
             System.Diagnostics.Debug.WriteLine("OnSwip() Called");
@@ -79,6 +91,22 @@ namespace Volunesia.iOS
                                                          AlertShow.Show(this, true, "Update Success", "Email updated successfully.");
 
                                                      });
+        }
+
+        //Send password reset email to user
+        private void SendPasswordResetEmail()
+        {
+            AppData_iOS.Auth.SendPasswordReset(AppData.CurUser.EmailAddress, (error) =>
+             {
+                 if (error != null)
+                 {
+                     AlertShow.Show(this, "Update Error", "Unable to send password reset email");
+                 }
+                 else
+                 {
+                     AlertShow.Show(this, true, "Password reset email sent", "");
+                 }
+             });
         }
     }
 }

@@ -234,6 +234,7 @@
     <BundleResource Include="Resources\Images\SettingsBtn.png" />
     <BundleResource Include="Resources\Images\AddButton.png" />
     <BundleResource Include="Resources\Images\SaveBtn.png" />
+    <BundleResource Include="Resources\Images\ChangeBtn.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
