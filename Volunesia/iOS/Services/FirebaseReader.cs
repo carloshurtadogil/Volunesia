@@ -8,10 +8,11 @@ namespace Volunesia.iOS.Services
 {
     public class FirebaseReader
     {
+
         //Read user information from 'users' branch in Firebase
         public static void ReadUser(AuthDataResult results)
         {
-            System.Diagnostics.Debug.WriteLine("Read USer Called");
+            System.Diagnostics.Debug.WriteLine("Read User Called");
             if (results != null)
             {
                 AppData_iOS.GetInstance();
@@ -26,6 +27,7 @@ namespace Volunesia.iOS.Services
                         var uid = results.User.Uid;
                         var type = data["type"].ToString();
                         var personal = data["personalstatement"].ToString();
+                        var associatednp = data["associatednp"].ToString();
                         Models.User newuser = new Models.User
                         {
                             FirstName = first,
@@ -35,10 +37,14 @@ namespace Volunesia.iOS.Services
                             UserType = type,
                             PersonalStatement = personal
                         };
+                        if(type == "NP") 
+                        {
+                            System.Diagnostics.Debug.WriteLine("Reading NPReps");
+                            ReadNPReps(associatednp, uid);
+                        }
                         AppData.CurUser = newuser;
                         ReadWrite.WriteUser();
                         System.Diagnostics.Debug.WriteLine("Success");
-                        newuser.UserDesc();
                     }
                     else
                     {
@@ -50,6 +56,37 @@ namespace Volunesia.iOS.Services
             {
                 System.Diagnostics.Debug.WriteLine("Results Fail");
             }
+        }
+
+        public static void ReadNPReps(string npid, string uid) 
+        {
+            System.Diagnostics.Debug.WriteLine("ReadNPReps called");
+            AppData_iOS.GetInstance();
+            AppData_iOS.NonprofitRepNode.GetChild(npid).GetChild(uid).ObserveSingleEvent(DataEventType.Value, (snapshot) =>
+            {
+                var data = snapshot.GetValue<NSDictionary>();
+                if (data != null)
+                {
+                    var position = data["position"].ToString();
+                    var poster = data["poster"].ToString();
+                    var reviewer = data["reviewer"].ToString();
+                    var repsmanager = data["repsmanager"].ToString();
+                    var associatednp = data["associatednp"].ToString();
+
+                    Models.NonprofitRepresentative nprep = new Models.NonprofitRepresentative
+                    {
+                        UID = uid,
+                        Position = position,
+                        Poster = poster,
+                        Reviewer = reviewer,
+                        RepsManager = repsmanager,
+                        AssociatedNonprofit = associatednp
+                    };
+
+                    AppData.NonprofitRepresentative = nprep;
+                    ReadWrite.WriteNonprofitRepresentative();
+                }
+            });
         }
 
         public static void WriteUserEmail() 

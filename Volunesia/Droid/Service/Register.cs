@@ -27,7 +27,7 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
                 userDictionary.Add("type", theUser.UserType);
-                userDictionary.Add("personalStatement", theUser.PersonalStatement);
+                userDictionary.Add("personalstatement", theUser.PersonalStatement);
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;
@@ -40,7 +40,7 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
                 userDictionary.Add("type", theUser.UserType);
-                userDictionary.Add("personalStatement", "");
+                userDictionary.Add("personalstatement", "");
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;

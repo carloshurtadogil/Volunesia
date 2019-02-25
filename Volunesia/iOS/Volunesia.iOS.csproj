@@ -215,6 +215,10 @@
     <Compile Include="Controllers\SettingsChangeViewController.designer.cs">
       <DependentUpon>SettingsChangeViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\NPProfileViewController.cs" />
+    <Compile Include="Controllers\NPProfileViewController.designer.cs">
+      <DependentUpon>NPProfileViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

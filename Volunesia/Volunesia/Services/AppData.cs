@@ -5,6 +5,7 @@ namespace Volunesia.Services
     public class AppData
     {
         public static User CurUser;
+        public static NonprofitRepresentative NonprofitRepresentative;
 
 
         private static AppData Instance;
@@ -15,6 +16,8 @@ namespace Volunesia.Services
             if (Instance == null)
                 Instance = new AppData();
             ReadWrite.ReadUser();
+            ReadWrite.ReadNPRepresentative();
+            System.Diagnostics.Debug.WriteLine("Created AppData Instance");
             return Instance;
         }
 

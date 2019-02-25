@@ -39,6 +39,7 @@ namespace Volunesia.iOS
                                                             }
                                                             System.Diagnostics.Debug.WriteLine("Passed");
                                                             FirebaseReader.ReadUser(authResult);
+                                                           
                                                             if (AppData.CurUser != null)
                                                             {
                                                                 FirstName = AppData.CurUser.FirstName;

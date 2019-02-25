@@ -34,13 +34,14 @@ namespace Volunesia.iOS
                 {
                     Register r = new Register();
                     string personal = StoryTextView.Text.Trim();
-                    r.NPType = "volunteer";
+                    r.NPType = "V";
                     if(personal.Length == 0)
                     {
                         personal = " "; 
                     }
                     r.MissionStatement = personal;
                     r.CreateUser(CurrentUser, Password, this);//create user before moving to next class
+                    wvc.CurrUser = CurrentUser;
                 }
             }
         }

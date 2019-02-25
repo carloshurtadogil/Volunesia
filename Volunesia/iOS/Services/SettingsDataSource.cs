@@ -24,7 +24,14 @@ namespace Volunesia.iOS.Services
             if (indexPath.Row == 0)
             {
                 cell.TextLabel.Text = "Email";
-                cell.DetailTextLabel.Text = AppData.CurUser.EmailAddress;
+                if(AppData.CurUser != null)
+                {
+                    cell.DetailTextLabel.Text = AppData.CurUser.EmailAddress;
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("AppData is null"); 
+                }
             }
             else if (indexPath.Row == 1)
             {

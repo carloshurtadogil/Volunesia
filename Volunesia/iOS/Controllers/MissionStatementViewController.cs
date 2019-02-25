@@ -54,6 +54,7 @@ namespace Volunesia.iOS
                     r.MissionStatement = personal;
 
                     r.CreateUser(CurrentUser, Password, this);
+                    wvc.CurrUser = CurrentUser;
                 }
             }
         }

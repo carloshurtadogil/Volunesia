@@ -18,6 +18,7 @@ namespace Volunesia.iOS
             System.Diagnostics.Debug.WriteLine("ViewController Called");
             AppData_iOS.GetInstance();
             ReadWrite.ReadUser();
+            ReadWrite.ReadNPRepresentative();
             if(AppData.CurUser == null)
             {
                 LoginButton.Hidden = false;
@@ -30,7 +31,8 @@ namespace Volunesia.iOS
             base.ViewDidAppear(animated);
             AppData_iOS.GetInstance();
             ReadWrite.ReadUser();
-            if(AppData.CurUser != null)
+            ReadWrite.ReadNPRepresentative();
+            if (AppData.CurUser != null)
             {
                 this.PerformSegue("ToWelcomeSegue_id", this); 
             }

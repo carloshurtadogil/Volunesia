@@ -105,7 +105,9 @@ namespace Volunesia.iOS
             if (AppData_iOS.Auth.SignOut(out error))
             {
                 AppData.CurUser = null;
+                AppData.NonprofitRepresentative = null;
                 ReadWrite.WriteUser();
+                ReadWrite.WriteNonprofitRepresentative();
                 this.PerformSegue("SettingsToHomeSegue_id", sender);
             }
             else

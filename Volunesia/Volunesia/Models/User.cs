@@ -18,15 +18,6 @@ namespace Volunesia.Models
         public string UserType     { get; set; }
         //Anything that the user wishes to say to the crowd
         public string PersonalStatement { get; set; }
-        //Write full user information to console
-        public void UserDesc()
-        {
-            System.Diagnostics.Debug.WriteLine("First: " + FirstName);
-            System.Diagnostics.Debug.WriteLine("Last:  " + LastName);
-            System.Diagnostics.Debug.WriteLine("Email: " + EmailAddress);
-            System.Diagnostics.Debug.WriteLine("UID:   " + UID);
-            System.Diagnostics.Debug.WriteLine("Type:  " + UserType);
-        }
 
     }
 }
