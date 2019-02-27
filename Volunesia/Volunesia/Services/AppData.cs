@@ -6,6 +6,7 @@ namespace Volunesia.Services
     {
         public static User CurUser;
         public static NonprofitRepresentative NonprofitRepresentative;
+        public static VolunteerHistory VolunteerHistory;
 
 
         private static AppData Instance;

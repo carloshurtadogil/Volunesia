@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Firebase.Auth;
 using Firebase.Database;
 using Foundation;
+using Volunesia.Models;
 using Volunesia.Services;
 
 namespace Volunesia.iOS.Services
@@ -92,6 +93,7 @@ namespace Volunesia.iOS.Services
 
         public static void ReadVolunteerHistory(string uid) 
         {
+            VolunteerHistory history = new VolunteerHistory();
             AppData_iOS.GetInstance();
             var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
             {
@@ -109,10 +111,23 @@ namespace Volunesia.iOS.Services
                             if(data != null)
                             {
                                 string attended = data["attended"].ToString();
-                                string hours = data["hours"].ToString();
-                                System.Diagnostics.Debug.WriteLine("Event ID: " + eventid);
-                                System.Diagnostics.Debug.WriteLine("\tAttended: " + attended);
-                                System.Diagnostics.Debug.WriteLine("\tHours: " + hours);
+                                string ed = data["eventdate"].ToString();
+                                string eventname = data["eventname"].ToString();
+                                string nonprofitid = data["nonprofitid"].ToString();
+                                string nonprofitname = data["nonprofitname"].ToString();
+
+                                DateTime date = DateTime.Parse(ed);
+                                VolunteerEvent e = new VolunteerEvent
+                                {
+                                    Attended = attended,
+                                    EventDate = date,
+                                    EventID = eventid,
+                                    EventName = eventname ,
+                                    NonprofitID = nonprofitid,
+                                    NonprofitName = nonprofitname
+                                };
+
+                                history.AddEvent(e);
                             }
                         });
                     }

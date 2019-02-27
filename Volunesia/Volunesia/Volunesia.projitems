@@ -22,11 +22,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Review.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Volunteer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AppData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ReadWrite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\VolunteerHistory.cs" />
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@ namespace Volunesia.Services
         static readonly string NonProfitPath = Path.Combine(MainPath, "nonprofit.json");
         static readonly string UserPath = Path.Combine(MainPath, "user.json");
         static readonly string NonProfitRepPath = Path.Combine(MainPath, "nonprofitrep.json");
+        static readonly string VolunteerHistoryPath = Path.Combine(MainPath, "volunteerhistory.json");
 
         //Write user information to current device
         public static void WriteUser()
@@ -29,6 +30,17 @@ namespace Volunesia.Services
             {
                 string npRepJson = JsonConvert.SerializeObject(AppData.NonprofitRepresentative, Formatting.Indented);
                 File.WriteAllText(NonProfitRepPath, npRepJson);
+            }
+        }
+
+        //Write information regarding volunteer history
+        public static void WriteVolunteerHistory()
+        {
+            //if(AppData.CurUser != null && AppData.CurUser.UserType == "V")
+            if(AppData.CurUser != null && AppData.VolunteerHistory != null)
+            {
+                string vhJson = JsonConvert.SerializeObject(AppData.VolunteerHistory.VolunteerEvents, Formatting.Indented);
+                File.WriteAllText(VolunteerHistoryPath, vhJson);
             }
         }
 
@@ -59,6 +71,7 @@ namespace Volunesia.Services
                     {
                         JsonSerializer serializer = new JsonSerializer();
                         AppData.NonprofitRepresentative = (NonprofitRepresentative)serializer.Deserialize(file, typeof(NonprofitRepresentative));
+                        /**
                         if(AppData.NonprofitRepresentative != null )
                         {
                             System.Diagnostics.Debug.WriteLine("UID:          " + AppData.NonprofitRepresentative.UID);
@@ -72,6 +85,7 @@ namespace Volunesia.Services
                         {
                             System.Diagnostics.Debug.WriteLine("Is null");
                         }   
+                        */
                     }
                 }
                 else

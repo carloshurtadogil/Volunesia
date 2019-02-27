@@ -18,8 +18,7 @@ namespace Volunesia.iOS
             base.ViewDidAppear(animated);
 
             FirebaseReader.ReadVolunteerHistory("SOWdh4LP2qUxMBRRMiQBtnuPLz83");
-
-            if(AppData.CurUser != null)
+            if (AppData.CurUser != null)
             {
                 User u = AppData.CurUser;
                 UserNameLabel.Text = u.FirstName + " " + u.LastName; 
