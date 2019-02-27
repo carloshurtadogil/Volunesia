@@ -13,6 +13,6 @@ namespace Volunesia.Models
         //The event duration in minutes (to be converted to hours in other components)
         public int    HoursCompleted    { get; set; }
         //The attendee's UID
-        public int    UID               { get; set; }
+        public string    UID            { get; set; }
     }
 }

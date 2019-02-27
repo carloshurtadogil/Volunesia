@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using Volunesia.Models;
 using Volunesia.Services;
+using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
 {
@@ -15,6 +16,9 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            FirebaseReader.ReadVolunteerHistory("SOWdh4LP2qUxMBRRMiQBtnuPLz83");
+
             if(AppData.CurUser != null)
             {
                 User u = AppData.CurUser;

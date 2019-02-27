@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Firebase.Auth;
 using Firebase.Database;
 using Foundation;
@@ -87,6 +88,37 @@ namespace Volunesia.iOS.Services
                     ReadWrite.WriteNonprofitRepresentative();
                 }
             });
+        }
+
+        public static void ReadVolunteerHistory(string uid) 
+        {
+            AppData_iOS.GetInstance();
+            var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                var events = snapshot.GetValue<NSDictionary>();
+                if(events != null) 
+                {
+                    System.Diagnostics.Debug.WriteLine("Count: " + events.Count);
+                    var keys = events.Keys;
+                    for(nuint i = 0; i < events.Count; i++) 
+                    {
+                        string eventid = (NSString)keys[i];
+                        AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eventid).ObserveSingleEvent(DataEventType.Value, (snapshot1) => 
+                        {
+                            var data = snapshot1.GetValue<NSDictionary>();
+                            if(data != null)
+                            {
+                                string attended = data["attended"].ToString();
+                                string hours = data["hours"].ToString();
+                                System.Diagnostics.Debug.WriteLine("Event ID: " + eventid);
+                                System.Diagnostics.Debug.WriteLine("\tAttended: " + attended);
+                                System.Diagnostics.Debug.WriteLine("\tHours: " + hours);
+                            }
+                        });
+                    }
+                }
+            });
+
         }
 
         public static void WriteUserEmail() 

@@ -13,6 +13,7 @@ namespace Volunesia.iOS.Services
         public static DatabaseReference UsersNode                 { get; set; } //Reference to 'users' node in Firebase
         public static DatabaseReference NonprofitNode             { get; set; } //Reference to 'nonprofitorgs' node in Firebase
         public static DatabaseReference NonprofitRepNode          { get; set; } //Reference to 'nonprofitreps' node in Firebase
+        public static DatabaseReference VolunteerHistoryNode      { get; set; } //Reference to 'volunteerhistory node in Firebase'
         public static Auth Auth; //Firebase authentication services (For creations and sign-ins)
 
         //Configure the nodes
@@ -27,6 +28,8 @@ namespace Volunesia.iOS.Services
                                .GetChild("users");
             NonprofitRepNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("nonprofitreps");
+            VolunteerHistoryNode = Database.DefaultInstance.GetRootReference()
+                               .GetChild("volunteerhistory");
             Auth = Auth.DefaultInstance;
         }
 
