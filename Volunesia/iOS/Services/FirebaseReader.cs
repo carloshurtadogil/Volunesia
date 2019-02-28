@@ -128,6 +128,8 @@ namespace Volunesia.iOS.Services
                                 };
 
                                 history.AddEvent(e);
+                                AppData.VolunteerHistory = history;
+                                //ReadWrite.WriteVolunteerHistory();
                             }
                         });
                     }

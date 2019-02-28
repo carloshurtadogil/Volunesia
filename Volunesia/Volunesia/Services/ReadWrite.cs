@@ -37,10 +37,39 @@ namespace Volunesia.Services
         public static void WriteVolunteerHistory()
         {
             //if(AppData.CurUser != null && AppData.CurUser.UserType == "V")
-            if(AppData.CurUser != null && AppData.VolunteerHistory != null)
+            if (AppData.CurUser != null && AppData.VolunteerHistory != null)
             {
                 string vhJson = JsonConvert.SerializeObject(AppData.VolunteerHistory.VolunteerEvents, Formatting.Indented);
                 File.WriteAllText(VolunteerHistoryPath, vhJson);
+            }
+        }
+
+        public static void ReadVolunteerHistory()
+        {
+            System.Diagnostics.Debug.WriteLine("Read 1");
+            if (AppData.CurUser != null)
+            {
+                System.Diagnostics.Debug.WriteLine("Read 2");
+                if (File.Exists(VolunteerHistoryPath))
+                {
+                    System.Diagnostics.Debug.WriteLine("Read 3");
+                    using (StreamReader file = File.OpenText(VolunteerHistoryPath)) 
+                    {
+                        System.Diagnostics.Debug.WriteLine("Read 4");
+                        JsonSerializer serializer = new JsonSerializer();
+                        VolunteerHistory vh = new VolunteerHistory();
+                        vh.VolunteerEvents = (List<VolunteerEvent>)serializer.Deserialize(file, typeof(List<VolunteerEvent>));
+                        AppData.VolunteerHistory = vh;
+                        if(vh != null)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Event ID: " + vh.VolunteerEvents[0].EventID); 
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Failed History"); 
+                        }
+                    }
+                }
             }
         }
 

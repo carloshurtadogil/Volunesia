@@ -219,6 +219,9 @@
     <Compile Include="Controllers\NPProfileViewController.designer.cs">
       <DependentUpon>NPProfileViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\PastEventsDataSource.cs" />
+    <Compile Include="Services\AllEventsDataSource.cs" />
+    <Compile Include="Services\FutureEventDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -239,6 +242,9 @@
     <BundleResource Include="Resources\Images\AddButton.png" />
     <BundleResource Include="Resources\Images\SaveBtn.png" />
     <BundleResource Include="Resources\Images\ChangeBtn.png" />
+    <BundleResource Include="Resources\Images\FutureButton.png" />
+    <BundleResource Include="Resources\Images\PastButton.png" />
+    <BundleResource Include="Resources\Images\PresentButton.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

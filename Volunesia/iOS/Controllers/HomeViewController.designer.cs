@@ -24,6 +24,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton FutureButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel NameLabel { get; set; }
 
         [Outlet]
@@ -32,11 +36,31 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton PastButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton PresentButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SettingsButton { get; set; }
 
         [Action ("AddButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void AddButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("FutureButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void FutureButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("PastButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void PastButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("PresentButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void PresentButton_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("SettingsButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -54,6 +78,11 @@ namespace Volunesia.iOS
                 EventsTableView = null;
             }
 
+            if (FutureButton != null) {
+                FutureButton.Dispose ();
+                FutureButton = null;
+            }
+
             if (NameLabel != null) {
                 NameLabel.Dispose ();
                 NameLabel = null;
@@ -62,6 +91,16 @@ namespace Volunesia.iOS
             if (NavBarImageView != null) {
                 NavBarImageView.Dispose ();
                 NavBarImageView = null;
+            }
+
+            if (PastButton != null) {
+                PastButton.Dispose ();
+                PastButton = null;
+            }
+
+            if (PresentButton != null) {
+                PresentButton.Dispose ();
+                PresentButton = null;
             }
 
             if (SettingsButton != null) {
