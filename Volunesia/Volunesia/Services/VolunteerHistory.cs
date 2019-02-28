@@ -7,7 +7,7 @@ namespace Volunesia.Services
     public class VolunteerHistory
     {
         // List of events that the user has attended and hours they have inputted
-        public List<VolunteerEvent> VolunteerEvents { get; set; };
+        public List<VolunteerEvent> VolunteerEvents { get; set; }
 
         // Instance of this class
         public VolunteerHistory()
