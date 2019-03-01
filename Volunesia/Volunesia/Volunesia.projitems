@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Volunteer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Waitlist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AppData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ContactInformationVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ReadWrite.cs" />

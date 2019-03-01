@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 using Android.App;
 using Android.Content;
 using Android.Gms.Tasks;
@@ -16,6 +17,12 @@ using Firebase.Database.Query;
 using Volunesia.Droid.Activities;
 using Volunesia.Models;
 using Volunesia.Services;
+using FireSharp;
+using FireSharp.Response;
+using FireSharp.Interfaces;
+using FireSharp.Config;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Volunesia.Droid
 {
@@ -114,13 +121,99 @@ namespace Volunesia.Droid
             
         public void OnComplete(Task task)
         {
+            //Checks if login task has been successfully completed
             if (task.IsSuccessful)
             {
-                Console.WriteLine(AppData_Droid.Auth.CurrentUser.Uid);
+                
+                try
+                {
+                    var someTask = System.Threading.Tasks.Task.Run(async () => {
 
-                StartActivity(typeof(WelcomeActivity));
+                        return await RetrieveLoggedUser();
+
+                    });
+                    var Result = someTask.Result; // use returned result from async method here
+                    
+                    //Parse the JObject and retrieve the components of the response
+                    var jsonObject = JObject.Parse(Result);
+                    var firstName = jsonObject["first"];
+                    var lastName = jsonObject["last"];
+                    var email = jsonObject["email"];
+
+                    //Set the following components to their respective fields of the User
+                    User loggedUser = new User()
+                    {
+                        EmailAddress = email.ToString(),
+                        FirstName = firstName.ToString(),
+                        LastName = lastName.ToString(),
+                        UserType = jsonObject["type"].ToString(),
+                        UID = AppData_Droid.Auth.CurrentUser.Uid
+                        
+
+                    };
+
+                    //Go to the Volunteer home activity if the user is a volunteer
+                    if (loggedUser.UserType.Equals("V"))
+                    {
+                        AppData.CurUser = loggedUser;
+                        StartActivity(typeof(VolunteerHomeActivity));
+                    }
+                    //Go to the Nonprofit Home activity if the user is a nonprofit rep
+                    else if (loggedUser.UserType.Equals("NP"))
+                    {
+                        AppData.CurUser = loggedUser;
+                        StartActivity(typeof(NonprofitHomeActivity));
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.InnerException);
+                }
             }
+            //Else, alert the user of the login failure through an AlertDialog
+            else
+            {
+                AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
+                dialogAlertConstruction.SetTitle("Login Error");
+                dialogAlertConstruction.SetMessage("Incorrect login credentials entered");
+
+                dialogAlertConstruction.SetPositiveButton("GO BACK", delegate
+                {
+
+                    dialogAlertConstruction.Dispose();
+
+                });
+                dialogAlertConstruction.Show();
+            }
+
+
+               
+            }
+
+
+        public async System.Threading.Tasks.Task<String> RetrieveLoggedUser()
+        {
+            IFirebaseConfig config = new FirebaseConfig
+            {
+                AuthSecret = "bjv4kn9YGRYWkib6d1TmWSLHCwUZvasjiFK7ovQX",
+                BasePath = "https://volunesia-f5475.firebaseio.com"
+            };
+
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            //Retrieve the user 
+            FirebaseResponse response = await firebaseClient.GetAsync("users/" + AppData_Droid.Auth.CurrentUser.Uid);
+
+            string resultant = response.Body;
+
+            
+            return resultant;
         }
     }
- }
+
+        
+
+
+    }
+ 
 
