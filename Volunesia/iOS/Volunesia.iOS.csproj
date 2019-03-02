@@ -111,6 +111,9 @@
     <Reference Include="Xamarin.SideMenu">
       <HintPath>..\packages\Xamarin.SideMenu.1.0\lib\Xamarin.iOS10\Xamarin.SideMenu.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Storage">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Storage.3.0.2\lib\Xamarin.iOS10\Firebase.Storage.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -222,6 +225,16 @@
     <Compile Include="Services\PastEventsDataSource.cs" />
     <Compile Include="Services\AllEventsDataSource.cs" />
     <Compile Include="Services\FutureEventDataSource.cs" />
+    <Compile Include="Controllers\EventInformationViewController.cs" />
+    <Compile Include="Controllers\EventInformationViewController.designer.cs">
+      <DependentUpon>EventInformationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Images\EventImageViewController.cs" />
+    <Compile Include="Resources\Images\EventImageViewController.designer.cs">
+      <DependentUpon>EventImageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ImageServices.cs" />
+    <Compile Include="Services\FirebaseStorageServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -245,6 +258,8 @@
     <BundleResource Include="Resources\Images\FutureButton.png" />
     <BundleResource Include="Resources\Images\PastButton.png" />
     <BundleResource Include="Resources\Images\PresentButton.png" />
+    <BundleResource Include="Resources\Images\UploadImageBtn.png" />
+    <BundleResource Include="Resources\Images\img_placeholder.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

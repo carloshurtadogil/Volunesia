@@ -17,25 +17,37 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
 
-            FirebaseReader.ReadVolunteerHistory("SOWdh4LP2qUxMBRRMiQBtnuPLz83");
             if (AppData.CurUser != null)
             {
                 User u = AppData.CurUser;
-                UserNameLabel.Text = u.FirstName + " " + u.LastName; 
+                UserNameLabel.Text = u.FirstName + " " + u.LastName;
+                NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofit;
+                if (AppData.NonprofitRepresentative.Poster == "Y")
+                {
+                    AddButton.Enabled = true;
+                }
+                else
+                {
+                    AddButton.Enabled = false; 
+                }
             }
 
         }
 
+        //Start the event creation process
         partial void AddButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "To be implemented", "");
+            this.PerformSegue("ToEventCreationSegue_id", sender);
         }
 
+        //Continue to the settings view controller
         partial void SettingsButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("ToNPRSettingsSegue_id", sender);
         }
 
+
+        //Prepare to move to the next view controller
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if( segue.Identifier == "ToNPRSettingsSegue_id" )
@@ -44,6 +56,14 @@ namespace Volunesia.iOS
                 if(svc != null)
                 {
                     svc.LoadView(); 
+                }
+            }
+            else if( segue.Identifier == "ToEventCreationSegue_id")
+            {
+                var eivc = (EventInformationViewController)segue.DestinationViewController;
+                if(eivc != null)
+                {
+                    eivc.LoadView(); 
                 }
             }
         }

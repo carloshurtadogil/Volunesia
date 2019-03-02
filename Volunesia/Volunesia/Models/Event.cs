@@ -21,6 +21,9 @@ namespace Volunesia.Models
         // Name of the event
         public string   EventName           { get; set; }
 
+        // Event description 
+        public string   EventDescription    { get; set; }
+
         // The list of attendees
         public Roster   EventRoster         { get; set; }
 

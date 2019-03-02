@@ -37,5 +37,10 @@ namespace Volunesia.iOS
             }));
             inpView.PresentViewController(alert, true, null);
         }
+
+        public static void Print(string msg)
+        {
+            System.Diagnostics.Debug.WriteLine(msg); 
+        }
     }
 }

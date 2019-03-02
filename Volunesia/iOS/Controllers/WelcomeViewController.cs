@@ -25,8 +25,8 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
 
-            FirebaseReader.ReadVolunteerHistory("SOWdh4LP2qUxMBRRMiQBtnuPLz83");
-            System.Threading.Thread.Sleep(1000);
+            //FirebaseReader.ReadVolunteerHistory("SOWdh4LP2qUxMBRRMiQBtnuPLz83");
+            //System.Threading.Thread.Sleep(1000);
 
             AppData_iOS.GetInstance();
             if (AppData.CurUser != null)

@@ -71,7 +71,7 @@ namespace Volunesia.iOS.Services
             if(user.UserType == "V")
             {
                 object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp" };
-                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, MissionStatement, associatednp };
+                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, MissionStatement, "NA" };
 
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
                 AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
@@ -142,10 +142,10 @@ namespace Volunesia.iOS.Services
                 Poster = "Y",
                 Reviewer = "Y",
                 RepsManager = "Y",
-                AssociatedNonprofit = eid 
+                AssociatedNonprofit = NPName 
             };
             object[] keys = { "position", "poster", "reviewer", "repsmanager", "associatednp" };
-            object[] vals = { rep.Position, rep.Poster, rep.Reviewer, rep.RepsManager, eid};
+            object[] vals = { rep.Position, rep.Poster, rep.Reviewer, rep.RepsManager, NPName};
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitRepNode.GetChild(eid).GetChild(UID).SetValue(FirebaseUser);
             AppData.NonprofitRepresentative = rep;
