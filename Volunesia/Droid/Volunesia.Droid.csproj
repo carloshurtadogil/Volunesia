@@ -199,6 +199,7 @@
     <Compile Include="Activities\RegisterActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\SecondRegisterActivity.cs" />
+    <Compile Include="Activities\VolunteerEventsActivity.cs" />
     <Compile Include="Activities\VolunteerHomeActivity.cs" />
     <Compile Include="Activities\VolunteerRegisterActivity.cs" />
     <Compile Include="Activities\WelcomeActivity.cs" />
@@ -287,6 +288,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\ChangePassword.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\VolunteerEvents.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

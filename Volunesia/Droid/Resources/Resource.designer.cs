@@ -422,6 +422,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a001f
 			public const int all = 2131361823;
 			
+			// aapt resource value: 0x7f0a005a
+			public const int allEventsButton = 2131361882;
+			
 			// aapt resource value: 0x7f0a0020
 			public const int async = 2131361824;
 			
@@ -563,6 +566,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0039
 			public const int missionStatementField = 2131361849;
 			
+			// aapt resource value: 0x7f0a0058
+			public const int myListView = 2131361880;
+			
 			// aapt resource value: 0x7f0a0054
 			public const int nonProfitButton = 2131361876;
 			
@@ -587,8 +593,11 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0033
 			public const int passwordField = 2131361843;
 			
-			// aapt resource value: 0x7f0a0058
-			public const int personalDescriptionField = 2131361880;
+			// aapt resource value: 0x7f0a0059
+			public const int pastEventsButton = 2131361881;
+			
+			// aapt resource value: 0x7f0a005c
+			public const int personalDescriptionField = 2131361884;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int phoneNumberField = 2131361840;
@@ -596,8 +605,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0057
 			public const int registerButton = 2131361879;
 			
-			// aapt resource value: 0x7f0a0059
-			public const int registerVolunteerButton = 2131361881;
+			// aapt resource value: 0x7f0a005d
+			public const int registerVolunteerButton = 2131361885;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int right = 2131361820;
@@ -655,6 +664,9 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0a001e
 			public const int top = 2131361822;
+			
+			// aapt resource value: 0x7f0a005b
+			public const int upcomingEventsButton = 2131361883;
 			
 			// aapt resource value: 0x7f0a0053
 			public const int volunteerButton = 2131361875;
@@ -785,13 +797,16 @@ namespace Volunesia.Droid
 			public const int SecondRegister = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int VolunteerHome = 2130968604;
+			public const int VolunteerEvents = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int VolunteerRegister = 2130968605;
+			public const int VolunteerHome = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int Welcome = 2130968606;
+			public const int VolunteerRegister = 2130968606;
+			
+			// aapt resource value: 0x7f04001f
+			public const int Welcome = 2130968607;
 			
 			static Layout()
 			{

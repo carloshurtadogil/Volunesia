@@ -206,7 +206,6 @@ namespace Volunesia.Droid
 
             string resultant = response.Body;
 
-            
             return resultant;
         }
     }
