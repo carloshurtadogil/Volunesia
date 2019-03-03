@@ -1679,7 +1679,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" keyboardAppearance="alert"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="64613" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="49" y="161" width="192" height="34"/>
@@ -1702,8 +1702,8 @@
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="67874" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Time">
-                                        <rect key="frame" x="49" y="280" width="121" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="67874" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Date and Time">
+                                        <rect key="frame" x="49" y="280" width="192" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
                                         <nil key="textColor"/>
@@ -1752,11 +1752,11 @@
                         <outlet property="EventNameLabel" destination="64610" id="name-outlet-64610"/>
                         <outlet property="EventTitle" destination="64616" id="name-outlet-64616"/>
                         <outlet property="BackButton" destination="64566" id="name-outlet-64566"/>
-                        <segue id="67871" destination="64629" kind="presentation" identifier="ToDatePickerSegue_id"/>
                         <outlet property="EventTimeLabel" destination="67874" id="name-outlet-67874"/>
                         <outlet property="EventTimeTextfield" destination="67873" id="name-outlet-67873"/>
                         <outlet property="LocationLabel" destination="71161" id="name-outlet-71161"/>
                         <outlet property="LocationTextfield" destination="71162" id="name-outlet-71162"/>
+                        <segue id="72487" destination="72341" kind="show" identifier="ToDatePickerSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64607" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1765,95 +1765,80 @@
             </objects>
             <point key="canvasLocation" x="2942" y="4875"/>
         </scene>
-        <scene sceneID="64628">
+        <scene sceneID="72340">
             <objects>
-                <viewController id="64629" sceneMemberID="viewController" customClass="DatePickerViewController" storyboardIdentifier="DateTimeView" useStoryboardIdentifierAsRestorationIdentifier="YES" modalTransitionStyle="flipHorizontal">
+                <viewController id="72341" sceneMemberID="viewController" customClass="DateSelectionViewController" modalTransitionStyle="crossDissolve" storyboardIdentifier="DateSelectionView" useStoryboardIdentifierAsRestorationIdentifier="YES">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="64657"/>
-                        <viewControllerLayoutGuide type="bottom" id="64658"/>
+                        <viewControllerLayoutGuide type="top" id="72365"/>
+                        <viewControllerLayoutGuide type="bottom" id="72366"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="64648">
+                    <view key="view" contentMode="scaleToFill" id="72352">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="64631" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
-                                <rect key="frame" x="-4" y="-10" width="384" height="832"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="72343" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
+                                <rect key="frame" x="0.0" y="-8" width="375" height="820"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="65274" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="295" y="56" width="64" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackButton_TouchUpInside:" destination="65276" id="65275" eventType="touchUpInside"/>
-                                    <action selector="BackButton_TouchUpInside:" destination="65278" id="65277" eventType="touchUpInside"/>
-                                    <action selector="OKButton_TouchUpInside:" destination="64629" id="68447" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="64645" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2">
-                                <rect key="frame" x="72" y="52" width="230" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="64653" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="132" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
-                                    <!--2011-07-18 18:00:01 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="64647" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="46" width="46" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="72345" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="40" width="46" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40" weight="light"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <action selector="BackButton_TouchUpInside:" destination="64655" id="64654" eventType="touchUpInside"/>
-                                    <action selector="BackButton_TouchUpInside:" destination="64629" id="64656" eventType="touchUpInside"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="72341" id="72353" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="65279" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="342" width="375" height="216"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72347" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Date and Time" numberOfLines="2">
+                                <rect key="frame" x="72" y="58" width="230" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="72489" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="294" y="58" width="53" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="72491" id="72490" eventType="touchUpInside"/>
+                                    <action selector="OKButton_TouchUpInside:" destination="72341" id="72492" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="72493" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="104" width="375" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
                                     <!--2011-07-18 18:00:01 +0000-->
                                 </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                    <!--Thu, 31 Dec 2037 11:00:00 GMT-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                    <!--Thu, 01 Jan 1970 11:00:00 GMT-->
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="72494" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="300" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
+                                    <!--2011-07-18 18:00:01 +0000-->
                                 </date>
                             </datePicker>
                         </subviews>
-                        <connections>
-                            <outletCollection id="64649" property="gestureRecognizers" destination="64633" appends="YES"/>
-                            <outletCollection id="64650" property="gestureRecognizers" destination="64651" appends="YES"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="BackgroundImageView" destination="64631" id="64630"/>
-                        <outlet property="SwipeDownHandler" destination="64633" id="64632"/>
-                        <outlet property="BackButton" destination="64647" id="64646"/>
-                        <outlet property="DateTitle" destination="64645" id="name-outlet-64645"/>
-                        <outlet property="OKButton" destination="65274" id="name-outlet-65274"/>
-                        <outlet property="DatePicker" destination="64653" id="name-outlet-64653"/>
-                        <outlet property="TimePicker" destination="65279" id="name-outlet-65279"/>
+                        <outlet property="BackgroundImage" destination="72343" id="72342"/>
+                        <outlet property="BackButton" destination="72345" id="72344"/>
+                        <outlet property="DateLabel" destination="72347" id="name-outlet-72347"/>
+                        <outlet property="OKButton" destination="72489" id="name-outlet-72489"/>
+                        <outlet property="DatePicker" destination="72493" id="name-outlet-72493"/>
+                        <outlet property="TimePicker" destination="72494" id="name-outlet-72494"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="64659" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="64633"/>
-                <swipeGestureRecognizer direction="right" id="64651"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="72367" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="3980"/>
+            <point key="canvasLocation" x="3460" y="4010"/>
         </scene>
     </scenes>
     <resources>

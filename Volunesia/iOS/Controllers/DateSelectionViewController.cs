@@ -4,11 +4,10 @@ using UIKit;
 
 namespace Volunesia.iOS
 {
-    public partial class DatePickerViewController : UIViewController
+    public partial class DateSelectionViewController : UIViewController
     {
         public EventInformationViewController EventInfoVC { get; set; }
-
-        public DatePickerViewController (IntPtr handle) : base (handle)
+        public DateSelectionViewController (IntPtr handle) : base (handle)
         {
         }
 
@@ -21,6 +20,7 @@ namespace Volunesia.iOS
         //Return to the previous view controller after saving information
         partial void OKButton_TouchUpInside(UIButton sender)
         {
+            AlertShow.Print("OK");
             var d = DateTime.SpecifyKind((System.DateTime)DatePicker.Date, DateTimeKind.Utc).ToLocalTime();
             var t = DateTime.SpecifyKind((System.DateTime)TimePicker.Date, DateTimeKind.Utc).ToLocalTime();
 

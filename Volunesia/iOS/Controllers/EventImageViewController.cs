@@ -4,7 +4,6 @@ using System;
 using UIKit;
 using Volunesia.iOS.Services;
 using Volunesia.Services;
-using Volunesia.Models;
 
 namespace Volunesia.iOS
 {
@@ -12,9 +11,6 @@ namespace Volunesia.iOS
     {
         //For accessing user's image gallery
         UIImagePickerController picker;
-
-        public Event NPEvent { get; set; }
-        public NSData ImageData { get; set; }
 
         public EventImageViewController (IntPtr handle) : base (handle)
         {
@@ -96,7 +92,6 @@ namespace Volunesia.iOS
                 }
 
 
-                ImageData = originalImage.AsPNG();
                 //TO BE DELETED
                 NSData d = originalImage.AsPNG();
 

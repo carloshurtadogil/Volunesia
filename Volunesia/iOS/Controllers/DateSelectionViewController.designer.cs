@@ -11,8 +11,8 @@ using UIKit;
 
 namespace Volunesia.iOS
 {
-    [Register ("DatePickerViewController")]
-    partial class DatePickerViewController
+    [Register ("DateSelectionViewController")]
+    partial class DateSelectionViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -20,7 +20,11 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView BackgroundImageView { get; set; }
+        UIKit.UIImageView BackgroundImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel DateLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -28,15 +32,7 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel DateTitle { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton OKButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISwipeGestureRecognizer SwipeDownHandler { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -57,9 +53,14 @@ namespace Volunesia.iOS
                 BackButton = null;
             }
 
-            if (BackgroundImageView != null) {
-                BackgroundImageView.Dispose ();
-                BackgroundImageView = null;
+            if (BackgroundImage != null) {
+                BackgroundImage.Dispose ();
+                BackgroundImage = null;
+            }
+
+            if (DateLabel != null) {
+                DateLabel.Dispose ();
+                DateLabel = null;
             }
 
             if (DatePicker != null) {
@@ -67,19 +68,9 @@ namespace Volunesia.iOS
                 DatePicker = null;
             }
 
-            if (DateTitle != null) {
-                DateTitle.Dispose ();
-                DateTitle = null;
-            }
-
             if (OKButton != null) {
                 OKButton.Dispose ();
                 OKButton = null;
-            }
-
-            if (SwipeDownHandler != null) {
-                SwipeDownHandler.Dispose ();
-                SwipeDownHandler = null;
             }
 
             if (TimePicker != null) {

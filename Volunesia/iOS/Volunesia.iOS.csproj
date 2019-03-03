@@ -229,12 +229,16 @@
     <Compile Include="Controllers\EventInformationViewController.designer.cs">
       <DependentUpon>EventInformationViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Images\EventImageViewController.cs" />
-    <Compile Include="Resources\Images\EventImageViewController.designer.cs">
-      <DependentUpon>EventImageViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services\ImageServices.cs" />
     <Compile Include="Services\FirebaseStorageServices.cs" />
+    <Compile Include="Controllers\EventImageViewController.cs" />
+    <Compile Include="Controllers\EventImageViewController.designer.cs">
+      <DependentUpon>EventImageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DateSelectionViewController.cs" />
+    <Compile Include="Controllers\DateSelectionViewController.designer.cs">
+      <DependentUpon>DateSelectionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

@@ -1,5 +1,6 @@
 using Foundation;
 using System;
+using System.Globalization;
 using UIKit;
 using Volunesia.Models;
 
@@ -36,17 +37,21 @@ namespace Volunesia.iOS
 
             EventTimeTextfield.EditingDidBegin += (sender, e) => 
             {
-                EventTimeTextfield.ResignFirstResponder();
+                View.ResignFirstResponder();
                 this.PerformSegue("ToDatePickerSegue_id", this);
             };
 
             LocationTextfield.EditingDidBegin += (sender, e) => 
             {
                 LocationTextfield.ResignFirstResponder();
-                this.PerformSegue("ToLocationSegue_id", this);
+                //this.PerformSegue("ToLocationSegue_id", this);
             };
 
             DismissKeyboardHandler();
+
+            FormatEventTimeTextfield();
+
+
         }
 
         //Prepare to transfer to the next view
@@ -72,20 +77,59 @@ namespace Volunesia.iOS
             }
             else if(segue.Identifier == "ToDatePickerSegue_id")
             {
-                var dpvc = (DatePickerViewController)segue.DestinationViewController;
+                var dpvc = (DateSelectionViewController)segue.DestinationViewController;
                 if(dpvc != null)
                 {
                     dpvc.EventInfoVC = this;
                     dpvc.LoadView();
                 }
             }
-            else if(segue.Identifier == "ToLocationSegue_id")
+        }
+
+        public void FormatEventTimeTextfield()
+        {
+            if (EventDateTime.ToString() != "1/1/0001 12:00:00 AM")
             {
-                var lvc = (LocationViewController)segue.DestinationViewController;
-                if(lvc != null)
+                DateTime now = DateTime.Now;
+                string msg = "";
+                if (EventDateTime.Day == now.Day && EventDateTime.Month == now.Month && EventDateTime.Year == now.Year)
                 {
-                    lvc.LoadView(); 
+                    msg += "Today at ";
                 }
+                else
+                {
+                    string mon = DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(EventDateTime.Month);
+                    msg += (mon + " " + EventDateTime.Day + " ");
+                }
+
+
+                int h = EventDateTime.Hour;
+                if (h > 12)
+                {
+                    h -= 12;
+                }
+
+                msg += h.ToString();
+
+                if (EventDateTime.Minute == 0)
+                {
+                    msg += " ";
+                }
+                else
+                {
+                    if (EventDateTime.Minute < 10)
+                    {
+                        msg += (":0" + EventDateTime.Minute.ToString() + " ");
+                    }
+                    else
+                    {
+                        msg += (":" + EventDateTime.Minute.ToString() + " ");
+                    }
+                }
+
+                msg += EventDateTime.ToString("tt", CultureInfo.InvariantCulture);
+
+                EventTimeTextfield.Text = msg;
             }
         }
 
