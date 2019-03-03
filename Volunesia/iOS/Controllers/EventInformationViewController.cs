@@ -1,33 +1,17 @@
 using Foundation;
 using System;
 using UIKit;
+using Volunesia.Models;
 
 namespace Volunesia.iOS
 {
     public partial class EventInformationViewController : UIViewController
     {
+
+        public DateTime EventDateTime { get; set; }
+
         public EventInformationViewController (IntPtr handle) : base (handle)
         {
-        }
-
-        //Continue to the next view controller
-        partial void ContinueButton_TouchUpInside(UIButton sender)
-        {
-            if(EventNameTextfield.Text.Trim().Length > 0)
-            {
-                if(EventDescriptionTextView.Text.Trim().Length > 0)
-                {
-                    this.PerformSegue("ToEventImageSegue_id", sender);
-                }
-                else
-                {
-                    AlertShow.Show(this, "Event Description Required", ""); 
-                }
-            }
-            else
-            {
-                AlertShow.Show(this, "Event Name Required", ""); 
-            }
         }
 
         //Return to the previous view controller
@@ -49,6 +33,19 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            EventTimeTextfield.EditingDidBegin += (sender, e) => 
+            {
+                EventTimeTextfield.ResignFirstResponder();
+                this.PerformSegue("ToDatePickerSegue_id", this);
+            };
+
+            LocationTextfield.EditingDidBegin += (sender, e) => 
+            {
+                LocationTextfield.ResignFirstResponder();
+                this.PerformSegue("ToLocationSegue_id", this);
+            };
+
             DismissKeyboardHandler();
         }
 
@@ -62,7 +59,32 @@ namespace Volunesia.iOS
                 var eivc = (EventImageViewController)segue.DestinationViewController;
                 if(eivc != null)
                 {
-                    //eivc.LoadView(); 
+                    string name = EventNameTextfield.Text.Trim();
+                    string desc = EventDescriptionTextView.Text.Trim();
+                    Event npevent = new Event
+                    {
+                        EventName = name,
+                        EventDescription = desc
+
+                    };
+                    eivc.LoadView(); 
+                }
+            }
+            else if(segue.Identifier == "ToDatePickerSegue_id")
+            {
+                var dpvc = (DatePickerViewController)segue.DestinationViewController;
+                if(dpvc != null)
+                {
+                    dpvc.EventInfoVC = this;
+                    dpvc.LoadView();
+                }
+            }
+            else if(segue.Identifier == "ToLocationSegue_id")
+            {
+                var lvc = (LocationViewController)segue.DestinationViewController;
+                if(lvc != null)
+                {
+                    lvc.LoadView(); 
                 }
             }
         }

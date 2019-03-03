@@ -6,7 +6,7 @@ namespace Volunesia.Models
 {
     public class Waitlist
     {
-        public List<string> WaitlistRoster { get; set; }
-        public int WaitlistCapacity { get; set; }
+        //IDs of all users in the waitlist
+        public List<Attendee> WaitlistRoster { get; set; }
     }
 }

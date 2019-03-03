@@ -24,10 +24,6 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton ContinueButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel EventDescriptionLabel { get; set; }
 
         [Outlet]
@@ -44,19 +40,31 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISwipeGestureRecognizer SwipeDownHandler { get; set; }
+        UIKit.UILabel EventTimeLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel TitleLabel { get; set; }
+        UIKit.UITextField EventTimeTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel EventTitle { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LocationLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LocationTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwipeGestureRecognizer SwipeDownHandler { get; set; }
 
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("ContinueButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ContinueButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -68,11 +76,6 @@ namespace Volunesia.iOS
             if (BackgroundImageView != null) {
                 BackgroundImageView.Dispose ();
                 BackgroundImageView = null;
-            }
-
-            if (ContinueButton != null) {
-                ContinueButton.Dispose ();
-                ContinueButton = null;
             }
 
             if (EventDescriptionLabel != null) {
@@ -95,14 +98,34 @@ namespace Volunesia.iOS
                 EventNameTextfield = null;
             }
 
+            if (EventTimeLabel != null) {
+                EventTimeLabel.Dispose ();
+                EventTimeLabel = null;
+            }
+
+            if (EventTimeTextfield != null) {
+                EventTimeTextfield.Dispose ();
+                EventTimeTextfield = null;
+            }
+
+            if (EventTitle != null) {
+                EventTitle.Dispose ();
+                EventTitle = null;
+            }
+
+            if (LocationLabel != null) {
+                LocationLabel.Dispose ();
+                LocationLabel = null;
+            }
+
+            if (LocationTextfield != null) {
+                LocationTextfield.Dispose ();
+                LocationTextfield = null;
+            }
+
             if (SwipeDownHandler != null) {
                 SwipeDownHandler.Dispose ();
                 SwipeDownHandler = null;
-            }
-
-            if (TitleLabel != null) {
-                TitleLabel.Dispose ();
-                TitleLabel = null;
             }
         }
     }
