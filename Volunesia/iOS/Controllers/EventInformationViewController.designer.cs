@@ -84,6 +84,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SubmitButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwipeGestureRecognizer SwipeDownHandler { get; set; }
 
         [Outlet]
@@ -97,6 +101,10 @@ namespace Volunesia.iOS
         [Action ("DeadlineToggled:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void DeadlineToggled (UIKit.UISwitch sender);
+
+        [Action ("SubmitButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SubmitButton_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("UploadImageButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -187,6 +195,11 @@ namespace Volunesia.iOS
             if (ScrollView != null) {
                 ScrollView.Dispose ();
                 ScrollView = null;
+            }
+
+            if (SubmitButton != null) {
+                SubmitButton.Dispose ();
+                SubmitButton = null;
             }
 
             if (SwipeDownHandler != null) {

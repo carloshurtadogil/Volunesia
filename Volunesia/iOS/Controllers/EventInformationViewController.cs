@@ -3,6 +3,7 @@ using System;
 using System.Globalization;
 using UIKit;
 using Volunesia.Models;
+using Volunesia.Services;
 
 namespace Volunesia.iOS
 {
@@ -13,12 +14,82 @@ namespace Volunesia.iOS
         UIImagePickerController picker;
 
         public string Picker { get; set; }
-
+        public UIImage CoverPhoto;
         public DateTime EventDateTime { get; set; }
         public DateTime DeadlineDateTime { get; set; }
 
         public EventInformationViewController (IntPtr handle) : base (handle)
         {
+        }
+
+        //Check and add new event to database
+        partial void SubmitButton_TouchUpInside(UIButton sender)
+        {
+            string eventname = EventNameTextfield.Text.Trim();
+            string eventdesc = EventDescriptionTextView.Text.Trim();
+            string dt = EventTimeTextfield.Text.Trim();
+            string location = LocationTextfield.Text.Trim();
+            string applicationdeadline = DeadlineTextfield.Text.Trim();
+            string hasdeadline = "N";
+            if(AppDeadlineSwitch.On)
+            {
+                hasdeadline = "Y"; 
+            }
+
+            if (eventname.Length > 1)
+            {
+                if(eventdesc.Length > 1)
+                { 
+                    if(dt.Length > 1)
+                    {
+                        if (location.Length > 1)
+                        {
+                            AlertShow.Show(this, "Good to go", "");
+                            IDGenerator generator = new IDGenerator();
+                            string id = generator.GenerateID();
+                            Event e = new Event
+                            {
+                                EventID = id,
+                                HasDeadline = hasdeadline,
+                                EventDate = EventDateTime,
+                                HostID = AppData.NonprofitRepresentative.AssociatedNonprofit,
+                                EventName = eventname,
+                                EventImagePath = "standard",
+                                EventDescription = eventdesc,
+                                EventRoster = null,
+                                EventCategories = null,
+                                Waitlist = null
+
+                            };
+                            if (AppDeadlineSwitch.On)
+                            {
+                                e.ApplicationDeadline = DeadlineDateTime;
+                            }
+                            if (CoverPhoto != null)
+                            {
+                                e.EventImagePath = "/Images/nonprofiteventimages/" + id;
+                                e.CoverPhoto = CoverPhoto;
+                            }
+                        }
+                        else
+                        {
+                            AlertShow.Show(this, "Empty Location", "Please inform potential volunteers of where your event is to take place"); 
+                        }
+                    }
+                    else
+                    {
+                        AlertShow.Show(this, "Empty Event Date", "Please inform potential volunteers of when your event is to take place"); 
+                    }
+                }
+                else
+                {
+                    AlertShow.Show(this, "Empty Event Description", "Please inform potential volunteers about your event"); 
+                }
+            }
+            else
+            {
+                AlertShow.Show(this, "Empty Event Name", "Please enter the name of your event"); 
+            }
         }
 
         //Add Image from device
@@ -52,6 +123,14 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
 
+            CoreGraphics.CGSize cg = new CoreGraphics.CGSize 
+            {
+                Width = 375,
+                Height = 1100
+            };
+
+            ScrollView.ContentSize = cg;
+
             EventTimeTextfield.EditingDidBegin += (sender, e) => 
             {
                 View.ResignFirstResponder();
@@ -62,6 +141,7 @@ namespace Volunesia.iOS
             LocationTextfield.EditingDidBegin += (sender, e) => 
             {
                 LocationTextfield.ResignFirstResponder();
+                LocationTextfield.Text = "23121 Schultze Drive, Cerritos, CA 9080";
                 //this.PerformSegue("ToLocationSegue_id", this);
             };
 

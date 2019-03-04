@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UIKit;
 
 namespace Volunesia.Models
 {
@@ -39,6 +40,7 @@ namespace Volunesia.Models
         // Those that are in the waitlist for the event
         public Waitlist Waitlist            { get; set; }
 
-        // 
+        // Image related to event cover photo
+        public UIImage CoverPhoto { get; set; }
     }
 }

@@ -1655,8 +1655,8 @@
                                 <rect key="frame" x="-4" y="-10" width="384" height="832"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black" showsHorizontalScrollIndicator="NO">
-                                <rect key="frame" x="0.0" y="-288" width="375" height="1590"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black" showsHorizontalScrollIndicator="NO" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" bounces="NO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <subviews>
@@ -1672,7 +1672,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" autocapitalizationType="words"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="64612" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="48" y="196" width="281" height="84"/>
@@ -1772,6 +1772,23 @@
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="75491" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="116" y="861" width="147" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="Images/SubmitBtn.png"/>
+                                        <connections>
+                                            <action selector="NonprofitBtn_TouchUpInside:" destination="75493" id="75492" eventType="touchUpInside"/>
+                                            <action selector="SchoolButton_TouchUpInside:" destination="75495" id="75494" eventType="touchUpInside"/>
+                                            <action selector="ContinueButton_TouchUpInside:" destination="75497" id="75496" eventType="touchUpInside"/>
+                                            <action selector="ContinueButton_TouchUpInside:" destination="75499" id="75498" eventType="touchUpInside"/>
+                                            <action selector="ContinueButton_TouchUpInside:" destination="75501" id="75500" eventType="touchUpInside"/>
+                                            <action selector="LogoutBtn_TouchUpInside:" destination="75503" id="75502" eventType="touchUpInside"/>
+                                            <action selector="LogoutButton_TouchUpInside:" destination="75505" id="75504" eventType="touchUpInside"/>
+                                            <action selector="UploadImageButton_TouchUpInside:" destination="75507" id="75506" eventType="touchUpInside"/>
+                                            <action selector="UploadImageButton_TouchUpInside:" destination="75509" id="75508" eventType="touchUpInside"/>
+                                            <action selector="SubmitButton_TouchUpInside:" destination="64560" id="75510" eventType="touchUpInside"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="64566" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1813,6 +1830,7 @@
                         <outlet property="EventDeadlineLine" destination="73701" id="name-outlet-73701"/>
                         <outlet property="AppDeadlineSwitch" destination="74301" id="name-outlet-74301"/>
                         <outlet property="DeadlineTextfield" destination="74302" id="name-outlet-74302"/>
+                        <outlet property="SubmitButton" destination="75491" id="name-outlet-75491"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64607" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1915,5 +1933,6 @@
         <image name="Images/PresentButton.png" width="125" height="85"/>
         <image name="Images/UploadImageBtn.png" width="1181" height="442"/>
         <image name="Images/img_placeholder.png" width="940" height="600"/>
+        <image name="Images/SubmitBtn.png" width="1183" height="441"/>
     </resources>
 </document>
