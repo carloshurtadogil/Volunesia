@@ -4,13 +4,15 @@
     <Files>
       <File FileName="iOS/Main.storyboard" />
       <File FileName="Volunesia/Services/AppData.cs" Line="20" Column="46" />
-      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="42" Column="15" />
+      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="18" Column="32" />
       <File FileName="iOS/Services/AppData_iOS.cs" Line="43" Column="79" />
       <File FileName="Volunesia/Services/ReadWrite.cs" Line="15" Column="103" />
       <File FileName="iOS/Services/ImageServices.cs" Line="10" Column="46" />
       <File FileName="Volunesia/Services/IDGenerator.cs" Line="1" Column="1" />
       <File FileName="iOS/Services/FirebaseStorageServices.cs" Line="26" Column="14" />
       <File FileName="iOS/Controllers/DateSelectionViewController.cs" Line="23" Column="32" />
+      <File FileName="Volunesia/Models/Event.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/EventImageViewController.cs" Line="12" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,6 +25,9 @@
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True">
                 <Node name="EventInformationViewController.cs" selected="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Images" expanded="True" />
               </Node>
               <Node name="Services" expanded="True" />
             </Node>

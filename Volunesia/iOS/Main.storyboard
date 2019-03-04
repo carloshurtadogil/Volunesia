@@ -1655,7 +1655,7 @@
                                 <rect key="frame" x="-4" y="-10" width="384" height="832"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black" showsHorizontalScrollIndicator="NO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1590"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
@@ -1723,6 +1723,33 @@
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="73084" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Cover Photo">
+                                        <rect key="frame" x="49" y="412" width="228" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="73085" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/img_placeholder.png">
+                                        <rect key="frame" x="0.0" y="448" width="375" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="73086" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="114" y="688" width="147" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="Images/UploadImageBtn.png"/>
+                                        <connections>
+                                            <action selector="NonprofitBtn_TouchUpInside:" destination="73088" id="73087" eventType="touchUpInside"/>
+                                            <action selector="SchoolButton_TouchUpInside:" destination="73090" id="73089" eventType="touchUpInside"/>
+                                            <action selector="ContinueButton_TouchUpInside:" destination="73092" id="73091" eventType="touchUpInside"/>
+                                            <action selector="ContinueButton_TouchUpInside:" destination="73094" id="73093" eventType="touchUpInside"/>
+                                            <action selector="ContinueButton_TouchUpInside:" destination="73096" id="73095" eventType="touchUpInside"/>
+                                            <action selector="LogoutBtn_TouchUpInside:" destination="73098" id="73097" eventType="touchUpInside"/>
+                                            <action selector="LogoutButton_TouchUpInside:" destination="73100" id="73099" eventType="touchUpInside"/>
+                                            <action selector="UploadImageButton_TouchUpInside:" destination="73102" id="73101" eventType="touchUpInside"/>
+                                            <action selector="UploadImageButton_TouchUpInside:" destination="64560" id="73103" eventType="touchUpInside"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="64566" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1757,6 +1784,10 @@
                         <outlet property="LocationLabel" destination="71161" id="name-outlet-71161"/>
                         <outlet property="LocationTextfield" destination="71162" id="name-outlet-71162"/>
                         <segue id="72487" destination="72341" kind="show" identifier="ToDatePickerSegue_id"/>
+                        <outlet property="EventPhotoLabel" destination="73084" id="name-outlet-73084"/>
+                        <outlet property="CoverPhotoImageView" destination="73085" id="name-outlet-73085"/>
+                        <outlet property="ScrollView" destination="64609" id="name-outlet-64609"/>
+                        <outlet property="UploadImageButton" destination="73086" id="name-outlet-73086"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64607" userLabel="First Responder" sceneMemberID="firstResponder"/>

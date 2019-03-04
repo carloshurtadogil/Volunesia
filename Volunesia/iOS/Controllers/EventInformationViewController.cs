@@ -9,10 +9,24 @@ namespace Volunesia.iOS
     public partial class EventInformationViewController : UIViewController
     {
 
+        //For accessing user's image gallery
+        UIImagePickerController picker;
+
         public DateTime EventDateTime { get; set; }
 
         public EventInformationViewController (IntPtr handle) : base (handle)
         {
+        }
+
+        //Add Image from device
+        partial void UploadImageButton_TouchUpInside(UIButton sender)
+        {
+            picker = new UIImagePickerController();
+            picker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            picker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+            picker.FinishedPickingMedia += Finished;
+            picker.Canceled += Canceled;
+            PresentViewController(picker, animated: true, completionHandler: null);
         }
 
         //Return to the previous view controller
@@ -99,7 +113,7 @@ namespace Volunesia.iOS
                 else
                 {
                     string mon = DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(EventDateTime.Month);
-                    msg += (mon + " " + EventDateTime.Day + " ");
+                    msg += (mon + " " + EventDateTime.Day + " at ");
                 }
 
 
@@ -131,6 +145,60 @@ namespace Volunesia.iOS
 
                 EventTimeTextfield.Text = msg;
             }
+        }
+
+        //Dismiss picker view 
+        void Canceled(object sender, EventArgs e)
+        {
+            picker.DismissModalViewController(true);
+        }
+
+        //Update the UI with selected photo and dismiss the modal view controller
+        public void Finished(object sender, UIImagePickerMediaPickedEventArgs e)
+        {
+            bool isImage = false;
+            switch (e.Info[UIImagePickerController.MediaType].ToString())
+            {
+                case "public.image":
+                    isImage = true;
+                    break;
+                case "public.video":
+                    break;
+            }
+            NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceUrl")] as NSUrl;
+            if (referenceURL != null) AlertShow.Print("Url:" + referenceURL.ToString());
+            if (isImage)
+            {
+                UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+                if (originalImage != null)
+                {
+                    CoverPhotoImageView.Image = originalImage;
+                }
+
+
+                //TO BE DELETED
+                /**
+                NSData d = originalImage.AsPNG();
+
+                IDGenerator g = new IDGenerator();
+                string id = g.GenerateID();
+                string reference = "/Images/nonprofiteventimages/" + id;
+                FirebaseStorageServices.AddImageToFirebase(d, reference);
+                */
+                //TO BE DELETED
+
+
+
+            }
+            else
+            {
+                NSUrl mediaURL = e.Info[UIImagePickerController.MediaURL] as NSUrl;
+                if (mediaURL != null)
+                {
+                    AlertShow.Print(mediaURL.ToString());
+                }
+            }
+            picker.DismissModalViewController(true);
         }
 
     }

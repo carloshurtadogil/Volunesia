@@ -24,6 +24,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView CoverPhotoImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel EventDescriptionLabel { get; set; }
 
         [Outlet]
@@ -37,6 +41,10 @@ namespace Volunesia.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField EventNameTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel EventPhotoLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,11 +68,23 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIScrollView ScrollView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwipeGestureRecognizer SwipeDownHandler { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton UploadImageButton { get; set; }
 
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("UploadImageButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void UploadImageButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -76,6 +96,11 @@ namespace Volunesia.iOS
             if (BackgroundImageView != null) {
                 BackgroundImageView.Dispose ();
                 BackgroundImageView = null;
+            }
+
+            if (CoverPhotoImageView != null) {
+                CoverPhotoImageView.Dispose ();
+                CoverPhotoImageView = null;
             }
 
             if (EventDescriptionLabel != null) {
@@ -96,6 +121,11 @@ namespace Volunesia.iOS
             if (EventNameTextfield != null) {
                 EventNameTextfield.Dispose ();
                 EventNameTextfield = null;
+            }
+
+            if (EventPhotoLabel != null) {
+                EventPhotoLabel.Dispose ();
+                EventPhotoLabel = null;
             }
 
             if (EventTimeLabel != null) {
@@ -123,9 +153,19 @@ namespace Volunesia.iOS
                 LocationTextfield = null;
             }
 
+            if (ScrollView != null) {
+                ScrollView.Dispose ();
+                ScrollView = null;
+            }
+
             if (SwipeDownHandler != null) {
                 SwipeDownHandler.Dispose ();
                 SwipeDownHandler = null;
+            }
+
+            if (UploadImageButton != null) {
+                UploadImageButton.Dispose ();
+                UploadImageButton = null;
             }
         }
     }
