@@ -16,6 +16,10 @@ namespace Volunesia.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch AppDeadlineSwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BackButton { get; set; }
 
         [Outlet]
@@ -25,6 +29,14 @@ namespace Volunesia.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView CoverPhotoImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField DeadlineTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel EventDeadlineLine { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -82,12 +94,21 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("DeadlineToggled:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void DeadlineToggled (UIKit.UISwitch sender);
+
         [Action ("UploadImageButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void UploadImageButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (AppDeadlineSwitch != null) {
+                AppDeadlineSwitch.Dispose ();
+                AppDeadlineSwitch = null;
+            }
+
             if (BackButton != null) {
                 BackButton.Dispose ();
                 BackButton = null;
@@ -101,6 +122,16 @@ namespace Volunesia.iOS
             if (CoverPhotoImageView != null) {
                 CoverPhotoImageView.Dispose ();
                 CoverPhotoImageView = null;
+            }
+
+            if (DeadlineTextfield != null) {
+                DeadlineTextfield.Dispose ();
+                DeadlineTextfield = null;
+            }
+
+            if (EventDeadlineLine != null) {
+                EventDeadlineLine.Dispose ();
+                EventDeadlineLine = null;
             }
 
             if (EventDescriptionLabel != null) {

@@ -1656,7 +1656,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black" showsHorizontalScrollIndicator="NO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1590"/>
+                                <rect key="frame" x="0.0" y="-288" width="375" height="1590"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <subviews>
@@ -1750,6 +1750,28 @@
                                             <action selector="UploadImageButton_TouchUpInside:" destination="64560" id="73103" eventType="touchUpInside"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="73701" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Application Deadline">
+                                        <rect key="frame" x="49" y="765" width="228" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="74301" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="292" y="768" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" colorSpace="calibratedRGB" red="1" green="0.83137254901960789" blue="0.47058823529411764" alpha="1"/>
+                                        <connections>
+                                            <action selector="DeadlineToggled:" destination="64560" id="74887" eventType="valueChanged"/>
+                                        </connections>
+                                    </switch>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="74302" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" hidden="YES">
+                                        <rect key="frame" x="49" y="807" width="281" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                    </textField>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="64566" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1788,6 +1810,9 @@
                         <outlet property="CoverPhotoImageView" destination="73085" id="name-outlet-73085"/>
                         <outlet property="ScrollView" destination="64609" id="name-outlet-64609"/>
                         <outlet property="UploadImageButton" destination="73086" id="name-outlet-73086"/>
+                        <outlet property="EventDeadlineLine" destination="73701" id="name-outlet-73701"/>
+                        <outlet property="AppDeadlineSwitch" destination="74301" id="name-outlet-74301"/>
+                        <outlet property="DeadlineTextfield" destination="74302" id="name-outlet-74302"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64607" userLabel="First Responder" sceneMemberID="firstResponder"/>

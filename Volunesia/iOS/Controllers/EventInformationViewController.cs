@@ -12,7 +12,10 @@ namespace Volunesia.iOS
         //For accessing user's image gallery
         UIImagePickerController picker;
 
+        public string Picker { get; set; }
+
         public DateTime EventDateTime { get; set; }
+        public DateTime DeadlineDateTime { get; set; }
 
         public EventInformationViewController (IntPtr handle) : base (handle)
         {
@@ -52,6 +55,7 @@ namespace Volunesia.iOS
             EventTimeTextfield.EditingDidBegin += (sender, e) => 
             {
                 View.ResignFirstResponder();
+                Picker = "time";
                 this.PerformSegue("ToDatePickerSegue_id", this);
             };
 
@@ -61,9 +65,17 @@ namespace Volunesia.iOS
                 //this.PerformSegue("ToLocationSegue_id", this);
             };
 
+            DeadlineTextfield.EditingDidBegin += (sender, e) => 
+            {
+                LocationTextfield.ResignFirstResponder();
+                Picker = "deadline";
+                this.PerformSegue("ToDatePickerSegue_id", this);
+            };
+
             DismissKeyboardHandler();
 
-            FormatEventTimeTextfield();
+            FormatEventTimeTextfield(EventDateTime, 1);
+            FormatEventTimeTextfield(DeadlineDateTime, 2);
 
 
         }
@@ -72,7 +84,6 @@ namespace Volunesia.iOS
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
-            AlertShow.Print("Called");
             if(segue.Identifier == "ToEventImageSegue_id") 
             {
                 var eivc = (EventImageViewController)segue.DestinationViewController;
@@ -100,24 +111,24 @@ namespace Volunesia.iOS
             }
         }
 
-        public void FormatEventTimeTextfield()
+        public void FormatEventTimeTextfield(DateTime e, int i)
         {
-            if (EventDateTime.ToString() != "1/1/0001 12:00:00 AM")
+            if (e.ToString() != "1/1/0001 12:00:00 AM")
             {
                 DateTime now = DateTime.Now;
                 string msg = "";
-                if (EventDateTime.Day == now.Day && EventDateTime.Month == now.Month && EventDateTime.Year == now.Year)
+                if (e.Day == now.Day && e.Month == now.Month && e.Year == now.Year)
                 {
                     msg += "Today at ";
                 }
                 else
                 {
-                    string mon = DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(EventDateTime.Month);
-                    msg += (mon + " " + EventDateTime.Day + " at ");
+                    string mon = DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(e.Month);
+                    msg += (mon + " " + e.Day + " at ");
                 }
 
 
-                int h = EventDateTime.Hour;
+                int h = e.Hour;
                 if (h > 12)
                 {
                     h -= 12;
@@ -125,25 +136,32 @@ namespace Volunesia.iOS
 
                 msg += h.ToString();
 
-                if (EventDateTime.Minute == 0)
+                if (e.Minute == 0)
                 {
                     msg += " ";
                 }
                 else
                 {
-                    if (EventDateTime.Minute < 10)
+                    if (e.Minute < 10)
                     {
-                        msg += (":0" + EventDateTime.Minute.ToString() + " ");
+                        msg += (":0" + e.Minute.ToString() + " ");
                     }
                     else
                     {
-                        msg += (":" + EventDateTime.Minute.ToString() + " ");
+                        msg += (":" + e.Minute.ToString() + " ");
                     }
                 }
 
-                msg += EventDateTime.ToString("tt", CultureInfo.InvariantCulture);
+                msg += e.ToString("tt", CultureInfo.InvariantCulture);
 
-                EventTimeTextfield.Text = msg;
+                if(i == 1)
+                {
+                    EventTimeTextfield.Text = msg;
+                }
+                else
+                {
+                    DeadlineTextfield.Text = msg; 
+                }
             }
         }
 
@@ -201,5 +219,16 @@ namespace Volunesia.iOS
             picker.DismissModalViewController(true);
         }
 
+        partial void DeadlineToggled(UISwitch sender)
+        {
+            if(sender.On)
+            {
+                DeadlineTextfield.Hidden = false; 
+            }
+            else
+            {
+                DeadlineTextfield.Hidden = true; 
+            }
+        }
     }
 }

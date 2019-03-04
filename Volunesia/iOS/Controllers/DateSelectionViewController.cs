@@ -26,7 +26,14 @@ namespace Volunesia.iOS
 
             string dt = d.Month.ToString() + "/" + d.Day.ToString() + "/" + d.Year.ToString() + " " + t.ToLongTimeString();
             DateTime dateTime = DateTime.Parse(dt);
-            EventInfoVC.EventDateTime = dateTime;
+            if(EventInfoVC.Picker == "time")
+            {
+                EventInfoVC.EventDateTime = dateTime;
+            }
+            else
+            {
+                EventInfoVC.DeadlineDateTime = dateTime; 
+            }
             this.DismissViewController(true, null);
         }
     }
