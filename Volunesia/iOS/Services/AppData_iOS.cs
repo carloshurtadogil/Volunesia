@@ -12,14 +12,15 @@ namespace Volunesia.iOS.Services
         private static AppData_iOS Instance; //Instance of this class to be referred to
 
         //Database references
-        public static DatabaseReference DataNode                  { get; set; } //Reference to 'data' node in Firebase
-        public static DatabaseReference UsersNode                 { get; set; } //Reference to 'users' node in Firebase
-        public static DatabaseReference NonprofitNode             { get; set; } //Reference to 'nonprofitorgs' node in Firebase
-        public static DatabaseReference NonprofitRepNode          { get; set; } //Reference to 'nonprofitreps' node in Firebase
-        public static DatabaseReference VolunteerHistoryNode      { get; set; } //Reference to 'volunteerhistory node in Firebase'
+        public static DatabaseReference DataNode { get; set; } //Reference to 'data' node in Firebase
+        public static DatabaseReference UsersNode { get; set; } //Reference to 'users' node in Firebase
+        public static DatabaseReference NonprofitNode { get; set; } //Reference to 'nonprofitorgs' node in Firebase
+        public static DatabaseReference NonprofitRepNode { get; set; } //Reference to 'nonprofitreps' node in Firebase
+        public static DatabaseReference VolunteerHistoryNode { get; set; } //Reference to 'volunteerhistory node in Firebase
+        public static DatabaseReference EventNode { get; set; } //Reference to 'events' node in Firebase
 
         //Storage references
-        public static StorageReference StorageRootReference   { get; set; } //Base reference to Storage
+        public static StorageReference StorageRootReference { get; set; } //Base reference to Storage
 
         public static Auth Auth; //Firebase authentication services (For creations and sign-ins)
 
@@ -30,6 +31,8 @@ namespace Volunesia.iOS.Services
             //Configure Database References
             DataNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("data");
+            EventNode = Database.DefaultInstance.GetRootReference()
+                               .GetChild("events");
             NonprofitNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("nonprofitorgs");
             UsersNode = Database.DefaultInstance.GetRootReference()

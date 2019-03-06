@@ -1,7 +1,9 @@
 using Foundation;
 using System;
+using System.Drawing;
 using System.Globalization;
 using UIKit;
+using Volunesia.iOS.Services;
 using Volunesia.Models;
 using Volunesia.Services;
 
@@ -17,8 +19,10 @@ namespace Volunesia.iOS
         public UIImage CoverPhoto;
         public DateTime EventDateTime { get; set; }
         public DateTime DeadlineDateTime { get; set; }
+        public CoreGraphics.CGSize cg;
+        public nfloat CurrentY;
 
-        public EventInformationViewController (IntPtr handle) : base (handle)
+        public EventInformationViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -31,20 +35,19 @@ namespace Volunesia.iOS
             string location = LocationTextfield.Text.Trim();
             string applicationdeadline = DeadlineTextfield.Text.Trim();
             string hasdeadline = "N";
-            if(AppDeadlineSwitch.On)
+            if (AppDeadlineSwitch.On)
             {
-                hasdeadline = "Y"; 
+                hasdeadline = "Y";
             }
 
             if (eventname.Length > 1)
             {
-                if(eventdesc.Length > 1)
-                { 
-                    if(dt.Length > 1)
+                if (eventdesc.Length > 1)
+                {
+                    if (dt.Length > 1)
                     {
                         if (location.Length > 1)
                         {
-                            AlertShow.Show(this, "Good to go", "");
                             IDGenerator generator = new IDGenerator();
                             string id = generator.GenerateID();
                             Event e = new Event
@@ -68,27 +71,33 @@ namespace Volunesia.iOS
                             if (CoverPhoto != null)
                             {
                                 e.EventImagePath = "/Images/nonprofiteventimages/" + id;
-                                e.CoverPhoto = CoverPhoto;
                             }
+                            if (CapacitySwitch.On)
+                            {
+                                e.Capacity = Convert.ToInt32(CapacityTextfield.Text);
+                            }
+                            NSData d = CoverPhotoImageView.Image.AsPNG();
+                            SetItemsEnabled(false); //So that the user cannot do anything else besides dismiss controller
+                            FirebaseReader.WriteEventDetails(e, this, d);
                         }
                         else
                         {
-                            AlertShow.Show(this, "Empty Location", "Please inform potential volunteers of where your event is to take place"); 
+                            AlertShow.Show(this, "Empty Location", "Please inform potential volunteers of where your event is to take place");
                         }
                     }
                     else
                     {
-                        AlertShow.Show(this, "Empty Event Date", "Please inform potential volunteers of when your event is to take place"); 
+                        AlertShow.Show(this, "Empty Event Date", "Please inform potential volunteers of when your event is to take place");
                     }
                 }
                 else
                 {
-                    AlertShow.Show(this, "Empty Event Description", "Please inform potential volunteers about your event"); 
+                    AlertShow.Show(this, "Empty Event Description", "Please inform potential volunteers about your event");
                 }
             }
             else
             {
-                AlertShow.Show(this, "Empty Event Name", "Please enter the name of your event"); 
+                AlertShow.Show(this, "Empty Event Name", "Please enter the name of your event");
             }
         }
 
@@ -123,33 +132,52 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
 
-            CoreGraphics.CGSize cg = new CoreGraphics.CGSize 
+            cg = new CoreGraphics.CGSize
             {
                 Width = 375,
-                Height = 1100
+                Height = 1250
             };
 
             ScrollView.ContentSize = cg;
 
-            EventTimeTextfield.EditingDidBegin += (sender, e) => 
+            EventTimeTextfield.EditingDidBegin += (sender, e) =>
             {
                 View.ResignFirstResponder();
                 Picker = "time";
                 this.PerformSegue("ToDatePickerSegue_id", this);
             };
 
-            LocationTextfield.EditingDidBegin += (sender, e) => 
+            LocationTextfield.EditingDidBegin += (sender, e) =>
             {
                 LocationTextfield.ResignFirstResponder();
-                LocationTextfield.Text = "23121 Schultze Drive, Cerritos, CA 9080";
+                LocationTextfield.Text = "23121 Jask Drive, Cerritos, CA 9080";
                 //this.PerformSegue("ToLocationSegue_id", this);
             };
 
-            DeadlineTextfield.EditingDidBegin += (sender, e) => 
+            DeadlineTextfield.EditingDidBegin += (sender, e) =>
             {
                 LocationTextfield.ResignFirstResponder();
                 Picker = "deadline";
                 this.PerformSegue("ToDatePickerSegue_id", this);
+            };
+
+            CapacityTextfield.EditingDidBegin += (sender, e) =>
+            {
+
+                cg.Height += 800;
+                ScrollView.ContentSize = cg;
+                ScrollView.SetContentOffset(new PointF(0, 800), false);
+                ScrollView.ScrollEnabled = false;
+                SubmitButton.Hidden = true;
+            };
+
+            CapacityTextfield.EditingDidEnd += (sender, e) =>
+            {
+                cg.Height -= 800;
+                ScrollView.ContentSize = cg;
+                ScrollView.SetContentOffset(new PointF(0, 400), false);
+                ScrollView.ScrollEnabled = true;
+                SubmitButton.Hidden = false;
             };
 
             DismissKeyboardHandler();
@@ -160,14 +188,19 @@ namespace Volunesia.iOS
 
         }
 
+        private IUICoordinateSpace GetCoordinateSpace()
+        {
+            return ScrollView.CoordinateSpace;
+        }
+
         //Prepare to transfer to the next view
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
-            if(segue.Identifier == "ToEventImageSegue_id") 
+            if (segue.Identifier == "ToEventImageSegue_id")
             {
                 var eivc = (EventImageViewController)segue.DestinationViewController;
-                if(eivc != null)
+                if (eivc != null)
                 {
                     string name = EventNameTextfield.Text.Trim();
                     string desc = EventDescriptionTextView.Text.Trim();
@@ -177,13 +210,13 @@ namespace Volunesia.iOS
                         EventDescription = desc
 
                     };
-                    eivc.LoadView(); 
+                    eivc.LoadView();
                 }
             }
-            else if(segue.Identifier == "ToDatePickerSegue_id")
+            else if (segue.Identifier == "ToDatePickerSegue_id")
             {
                 var dpvc = (DateSelectionViewController)segue.DestinationViewController;
-                if(dpvc != null)
+                if (dpvc != null)
                 {
                     dpvc.EventInfoVC = this;
                     dpvc.LoadView();
@@ -191,6 +224,7 @@ namespace Volunesia.iOS
             }
         }
 
+        //Format how the textfield should be formatted
         public void FormatEventTimeTextfield(DateTime e, int i)
         {
             if (e.ToString() != "1/1/0001 12:00:00 AM")
@@ -234,13 +268,13 @@ namespace Volunesia.iOS
 
                 msg += e.ToString("tt", CultureInfo.InvariantCulture);
 
-                if(i == 1)
+                if (i == 1)
                 {
                     EventTimeTextfield.Text = msg;
                 }
                 else
                 {
-                    DeadlineTextfield.Text = msg; 
+                    DeadlineTextfield.Text = msg;
                 }
             }
         }
@@ -299,16 +333,47 @@ namespace Volunesia.iOS
             picker.DismissModalViewController(true);
         }
 
+        //Toggle that will hide or reveal the DeadlineTextfield
         partial void DeadlineToggled(UISwitch sender)
         {
-            if(sender.On)
+            if (sender.On)
             {
-                DeadlineTextfield.Hidden = false; 
+                DeadlineTextfield.Hidden = false;
             }
             else
             {
-                DeadlineTextfield.Hidden = true; 
+                DeadlineTextfield.Hidden = true;
             }
+        }
+
+        //Toggle that will hide or reveal the CapacityTextfield
+        partial void CapToggled(UISwitch sender)
+        {
+            if (sender.On)
+            {
+                CapacityTextfield.Hidden = false;
+            }
+            else
+            {
+                CapacityTextfield.Hidden = true;
+            }
+        }
+
+        //Set the fields in view controller as either enabled or disabled
+        public void SetItemsEnabled(bool b)
+        {
+            EventNameTextfield.Enabled = b;
+            EventDescriptionTextView.Editable = b;
+            EventTimeTextfield.Enabled = b;
+            LocationTextfield.Enabled = b;
+            UploadImageButton.Enabled = b;
+            AppDeadlineSwitch.Enabled = b;
+            DeadlineTextfield.Enabled = b;
+            CapacitySwitch.Enabled = b;
+            CapacityTextfield.Enabled = b;
+            SubmitButton.Enabled = b;
+
+
         }
     }
 }

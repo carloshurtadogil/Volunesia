@@ -5,6 +5,7 @@ using Firebase.Database;
 using Foundation;
 using Volunesia.Models;
 using Volunesia.Services;
+using UIKit;
 
 namespace Volunesia.iOS.Services
 {
@@ -39,7 +40,7 @@ namespace Volunesia.iOS.Services
                             UserType = type,
                             PersonalStatement = personal
                         };
-                        if(type == "NP") 
+                        if (type == "NP")
                         {
                             System.Diagnostics.Debug.WriteLine("Reading NPReps");
                             ReadNPReps(associatednp, uid);
@@ -60,7 +61,8 @@ namespace Volunesia.iOS.Services
             }
         }
 
-        public static void ReadNPReps(string npid, string uid) 
+        //Read the nonprofit representatives
+        public static void ReadNPReps(string npid, string uid)
         {
             System.Diagnostics.Debug.WriteLine("ReadNPReps called");
             AppData_iOS.GetInstance();
@@ -91,24 +93,26 @@ namespace Volunesia.iOS.Services
             });
         }
 
-        public static void ReadVolunteerHistory(string uid) 
+
+        //Read the volunteer history of a particular volunteer
+        public static void ReadVolunteerHistory(string uid)
         {
             VolunteerHistory history = new VolunteerHistory();
             AppData_iOS.GetInstance();
-            var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var events = snapshot.GetValue<NSDictionary>();
-                if(events != null) 
+                if (events != null)
                 {
                     System.Diagnostics.Debug.WriteLine("Count: " + events.Count);
                     var keys = events.Keys;
-                    for(nuint i = 0; i < events.Count; i++) 
+                    for (nuint i = 0; i < events.Count; i++)
                     {
                         string eventid = (NSString)keys[i];
-                        AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eventid).ObserveSingleEvent(DataEventType.Value, (snapshot1) => 
+                        AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eventid).ObserveSingleEvent(DataEventType.Value, (snapshot1) =>
                         {
                             var data = snapshot1.GetValue<NSDictionary>();
-                            if(data != null)
+                            if (data != null)
                             {
                                 string attended = data["attended"].ToString();
                                 string ed = data["eventdate"].ToString();
@@ -122,7 +126,7 @@ namespace Volunesia.iOS.Services
                                     Attended = attended,
                                     EventDate = date,
                                     EventID = eventid,
-                                    EventName = eventname ,
+                                    EventName = eventname,
                                     NonprofitID = nonprofitid,
                                     NonprofitName = nonprofitname
                                 };
@@ -138,7 +142,29 @@ namespace Volunesia.iOS.Services
 
         }
 
-        public static void WriteUserEmail() 
+        //Write event details to Firebase
+        public static void WriteEventDetails(Event e, EventInformationViewController inpView, NSData d)
+        {
+            object[] keys = { "applicationdeadline", "eventdate", "eventname", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
+            object[] vals = { 0, e.EventDate.ToString(), e.EventName, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
+            if (e.HasDeadline == "Y")
+            {
+                vals[0] = e.ApplicationDeadline;
+            }
+            var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
+            AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
+            if (e.EventImagePath != "standard")
+            {
+                FirebaseStorageServices.AddImageToFirebase(d, e.EventImagePath, inpView);
+            }
+            else
+            {
+                AlertShow.Show(inpView, true, "Event Created", "You are all set!");
+            }
+        }
+
+        //Update the email of the current user
+        public static void WriteUserEmail()
         {
             AppData_iOS.GetInstance();
             Models.User user = AppData.CurUser;
@@ -150,5 +176,6 @@ namespace Volunesia.iOS.Services
             AppData_iOS.UsersNode.GetChild(user.UID).UpdateChildValues(emailupdate);
 
         }
+
     }
 }

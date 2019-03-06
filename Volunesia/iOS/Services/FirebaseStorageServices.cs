@@ -1,14 +1,15 @@
 ﻿using System;
 using Firebase.Storage;
 using Foundation;
+using UIKit;
 
 namespace Volunesia.iOS.Services
 {
     public class FirebaseStorageServices
     {
-        public static void AddImageToFirebase(NSData data, string path)
+        public static void AddImageToFirebase(NSData data, string path, UIViewController inpView)
         {
-            if(data != null)
+            if (data != null)
             {
                 AlertShow.Print("Uploading");
                 StorageReference reference = AppData_iOS.StorageRootReference.GetChild(path);
@@ -18,15 +19,15 @@ namespace Volunesia.iOS.Services
                     if (error != null)
                     {
                         // Uh-oh, an error occurred!
-                        AlertShow.Print("Error occurred during upload");
+                        AlertShow.Show(inpView, true, "Error in uploading image", "Please contact your developer");
                         return;
                     }
-                    AlertShow.Print("Uploaded");
+                    AlertShow.Show(inpView, true, "Event Created", "You are all set!");
                 });
             }
             else
             {
-                AlertShow.Print("FirebaseStorageServers/AddImageToFirebase/Null Data"); 
+                AlertShow.Print("FirebaseStorageServers/AddImageToFirebase/Null Data");
             }
 
         }

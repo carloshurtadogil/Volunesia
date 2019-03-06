@@ -1655,8 +1655,8 @@
                                 <rect key="frame" x="-4" y="-10" width="384" height="832"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black" showsHorizontalScrollIndicator="NO" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" bounces="NO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="64609" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" indicatorStyle="black" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" bounces="NO" alwaysBounceVertical="YES">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <subviews>
@@ -1773,7 +1773,7 @@
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="75491" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="116" y="861" width="147" height="57"/>
+                                        <rect key="frame" x="116" y="947" width="147" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="Images/SubmitBtn.png"/>
                                         <connections>
@@ -1789,6 +1789,29 @@
                                             <action selector="SubmitButton_TouchUpInside:" destination="64560" id="75510" eventType="touchUpInside"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="76116" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Capacity">
+                                        <rect key="frame" x="49" y="857" width="228" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="76117" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="292" y="857" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" colorSpace="calibratedRGB" red="1" green="0.83137254901960789" blue="0.47058823529411764" alpha="1"/>
+                                        <connections>
+                                            <action selector="DeadlineToggled:" destination="76119" id="76118" eventType="valueChanged"/>
+                                            <action selector="CapToggled:" destination="64560" id="76122" eventType="valueChanged"/>
+                                        </connections>
+                                    </switch>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="76120" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" hidden="YES">
+                                        <rect key="frame" x="138" y="895" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" keyboardType="numberPad"/>
+                                    </textField>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="64566" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1831,6 +1854,9 @@
                         <outlet property="AppDeadlineSwitch" destination="74301" id="name-outlet-74301"/>
                         <outlet property="DeadlineTextfield" destination="74302" id="name-outlet-74302"/>
                         <outlet property="SubmitButton" destination="75491" id="name-outlet-75491"/>
+                        <outlet property="CapacityLabel" destination="76116" id="name-outlet-76116"/>
+                        <outlet property="CapacitySwitch" destination="76117" id="name-outlet-76117"/>
+                        <outlet property="CapacityTextfield" destination="76120" id="name-outlet-76120"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64607" userLabel="First Responder" sceneMemberID="firstResponder"/>

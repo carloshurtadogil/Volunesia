@@ -28,6 +28,18 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel CapacityLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch CapacitySwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField CapacityTextfield { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView CoverPhotoImageView { get; set; }
 
         [Outlet]
@@ -98,6 +110,10 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("CapToggled:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void CapToggled (UIKit.UISwitch sender);
+
         [Action ("DeadlineToggled:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void DeadlineToggled (UIKit.UISwitch sender);
@@ -125,6 +141,21 @@ namespace Volunesia.iOS
             if (BackgroundImageView != null) {
                 BackgroundImageView.Dispose ();
                 BackgroundImageView = null;
+            }
+
+            if (CapacityLabel != null) {
+                CapacityLabel.Dispose ();
+                CapacityLabel = null;
+            }
+
+            if (CapacitySwitch != null) {
+                CapacitySwitch.Dispose ();
+                CapacitySwitch = null;
+            }
+
+            if (CapacityTextfield != null) {
+                CapacityTextfield.Dispose ();
+                CapacityTextfield = null;
             }
 
             if (CoverPhotoImageView != null) {
