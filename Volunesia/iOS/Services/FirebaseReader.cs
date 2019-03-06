@@ -147,15 +147,15 @@ namespace Volunesia.iOS.Services
         //Write event details to Firebase
         public static void WriteEventDetails(Event e, EventInformationViewController inpView, NSData d)
         {
-            object[] keys = { "applicationdeadline", "eventdate", "eventname", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
-            object[] vals = { 0, e.EventDate.ToString(), e.EventName, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
+            object[] keys = { "applicationdeadline", "eventdate", "eventname", "eventdesc","poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
+            object[] vals = { 0, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
             if (e.HasDeadline == "Y")
             {
                 vals[0] = e.ApplicationDeadline;
             }
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
-            if (e.EventImagePath != "standard")
+            if (!e.EventImagePath.Equals( "standard"))
             {
                 FirebaseStorageServices.AddImageToFirebase(d, e.EventImagePath, inpView);
             }

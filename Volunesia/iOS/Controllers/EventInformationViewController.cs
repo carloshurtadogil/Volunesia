@@ -51,6 +51,7 @@ namespace Volunesia.iOS
                         {
                             IDGenerator generator = new IDGenerator();
                             string id = generator.GenerateID();
+                            AlertShow.Print("Printing: " + CurrentImage);
                             Event e = new Event
                             {
                                 EventID = id,
@@ -69,9 +70,14 @@ namespace Volunesia.iOS
                             {
                                 e.ApplicationDeadline = DeadlineDateTime;
                             }
-                            if (CurrentImage != "standard")
+                            if (!CurrentImage.Equals("standard"))
                             {
+                                AlertShow.Print("Not Standard");
                                 e.EventImagePath = "/Images/nonprofiteventimages/" + id;
+                            }
+                            else
+                            {
+                                AlertShow.Print("Standard"); 
                             }
                             if (CapacitySwitch.On)
                             {
@@ -132,8 +138,6 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-
-            CurrentImage = "standard";
 
             cg = new CoreGraphics.CGSize
             {
@@ -291,6 +295,7 @@ namespace Volunesia.iOS
         //Update the UI with selected photo and dismiss the modal view controller
         public void Finished(object sender, UIImagePickerMediaPickedEventArgs e)
         {
+            CurrentImage = "standard";
             bool isImage = false;
             switch (e.Info[UIImagePickerController.MediaType].ToString())
             {
@@ -307,8 +312,11 @@ namespace Volunesia.iOS
                 UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
                 if (originalImage != null)
                 {
+                    AlertShow.Print("Good");
                     CoverPhotoImageView.Image = originalImage;
+
                     CurrentImage = "/Images/nonprofiteventimages/";
+                    AlertShow.Print(CurrentImage);
                 }
 
 

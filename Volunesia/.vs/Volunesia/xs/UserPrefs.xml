@@ -3,10 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/EventInformationViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="Volunesia/Services/ReadWrite.cs" Line="15" Column="103" />
       <File FileName="Volunesia/Models/NonprofitRepresentative.cs" Line="24" Column="22" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="89" Column="57" />
-      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="71" Column="44" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="151" Column="98" />
+      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="274" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,11 +13,13 @@
           <Node name="Volunesia" expanded="True">
             <Node name="Volunesia" expanded="True">
               <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True">
                 <Node name="EventInformationViewController.cs" selected="True" />
               </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
