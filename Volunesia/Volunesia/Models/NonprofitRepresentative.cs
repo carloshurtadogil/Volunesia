@@ -18,7 +18,10 @@ namespace Volunesia.Models
         // Flag to determine if representative can add, remove, or edit another representative and their permissions
         public string RepsManager { get; set; }
 
-        //Nonprofit that the user is associated with
+        //Nonprofit ID that the user is associated with
         public string AssociatedNonprofit { get; set; }
+
+        //Associated np name
+        public string AssociatedNonprofitName { get; set; }
     }
 }

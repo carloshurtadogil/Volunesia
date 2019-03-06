@@ -21,7 +21,7 @@ namespace Volunesia.iOS
             {
                 User u = AppData.CurUser;
                 UserNameLabel.Text = u.FirstName + " " + u.LastName;
-                NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofit;
+                NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
                 if (AppData.NonprofitRepresentative.Poster == "Y")
                 {
                     AddButton.Enabled = true;

@@ -21,6 +21,7 @@ namespace Volunesia.iOS
         public DateTime DeadlineDateTime { get; set; }
         public CoreGraphics.CGSize cg;
         public nfloat CurrentY;
+        public string CurrentImage;
 
         public EventInformationViewController(IntPtr handle) : base(handle)
         {
@@ -68,7 +69,7 @@ namespace Volunesia.iOS
                             {
                                 e.ApplicationDeadline = DeadlineDateTime;
                             }
-                            if (CoverPhoto != null)
+                            if (CurrentImage != "standard")
                             {
                                 e.EventImagePath = "/Images/nonprofiteventimages/" + id;
                             }
@@ -131,6 +132,8 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            CurrentImage = "standard";
 
             cg = new CoreGraphics.CGSize
             {
@@ -305,6 +308,7 @@ namespace Volunesia.iOS
                 if (originalImage != null)
                 {
                     CoverPhotoImageView.Image = originalImage;
+                    CurrentImage = "/Images/nonprofiteventimages/";
                 }
 
 

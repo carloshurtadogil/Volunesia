@@ -76,6 +76,7 @@ namespace Volunesia.iOS.Services
                     var reviewer = data["reviewer"].ToString();
                     var repsmanager = data["repsmanager"].ToString();
                     var associatednp = data["associatednp"].ToString();
+                    var npname = data["associatednpname"].ToString();
 
                     Models.NonprofitRepresentative nprep = new Models.NonprofitRepresentative
                     {
@@ -84,7 +85,8 @@ namespace Volunesia.iOS.Services
                         Poster = poster,
                         Reviewer = reviewer,
                         RepsManager = repsmanager,
-                        AssociatedNonprofit = associatednp
+                        AssociatedNonprofit = associatednp,
+                        AssociatedNonprofitName = npname
                     };
 
                     AppData.NonprofitRepresentative = nprep;

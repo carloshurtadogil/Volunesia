@@ -98,7 +98,7 @@ namespace Volunesia.iOS
                 IDGenerator g = new IDGenerator();
                 string id = g.GenerateID();
                 string reference = "/Images/nonprofiteventimages/" + id;
-                FirebaseStorageServices.AddImageToFirebase(d, reference);
+                //FirebaseStorageServices.AddImageToFirebase(d, reference);
 
                 //TO BE DELETED
 
