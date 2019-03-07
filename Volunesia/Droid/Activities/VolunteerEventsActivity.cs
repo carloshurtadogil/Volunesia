@@ -13,6 +13,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Newtonsoft.Json.Linq;
+using Volunesia.Droid.Service;
 using Volunesia.Models;
 using Volunesia.Services;
 
@@ -22,9 +23,9 @@ namespace Volunesia.Droid.Activities
     public class VolunteerEventsActivity : Activity
     {
         public VolunteerHistory theVolunteerHistory { get; set; }
-        public List<VolunteerEvent> UpcomingEvents { get; set; }
+        public List<Event> UpcomingEvents { get; set; }
         public List<VolunteerEvent> PastEvents { get; set; }
-        public List<VolunteerEvent> AllEvents { get; set; }
+        public List<Event> AllEvents { get; set; }
 
         private List<string> mItems;
         private ListView mListView;
@@ -39,6 +40,15 @@ namespace Volunesia.Droid.Activities
 
             });
             var volhistoryasjson = queryvolhistorytask.Result;
+
+            //Retrieve all present events
+            var allEvents = System.Threading.Tasks.Task.Run(async () =>
+            {
+                return await QueryAllEvents();
+
+
+            });
+
 
             //parse the jobject and retrieve the components of the response
             var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
@@ -124,39 +134,25 @@ namespace Volunesia.Droid.Activities
         //Displays all upcoming events for a volunteer after clicking the Show Upcoming Events button
         public void ShowUpcomingEvents(object sender, EventArgs e)
         {
-
-            List<VolunteerEvent> AllEvents = theVolunteerHistory.VolunteerEvents;
-            mItems = new List<string>();
-            //traverses the volunteer's events, and determines if they occurred before current time or not
-            foreach (var volEvent in AllEvents)
-            {
-
-                if (volEvent.EventDate.CompareTo(DateTime.Now) < 0)
-                {
-                    mItems.Add(volEvent.EventName);
-                    UpcomingEvents.Add(volEvent);
-                }
-            }
-            //Adapt the ListView accordingly to showcase upcoming events
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
-            mListView.Adapter = adapter;
+            
         }
 
         //Displays all events of a volunteer after clicking on the Show All Events button
         public void ShowAllEvents(object sender, EventArgs e)
         {
-            //Adds all volunteer events to the ListView
-            List<VolunteerEvent> AllEvents = theVolunteerHistory.VolunteerEvents;
+           
             mItems = new List<string>();
-            foreach(var volunteerEvent in AllEvents)
+            foreach(var presentEvent in AllEvents)
             {
-                mItems.Add(volunteerEvent.EventName);
+                mItems.Add(presentEvent.EventName);
             }
             //Adapt the ListView accordingly to showcase all events
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             mListView.Adapter = adapter;
         }
 
+
+        //Proceeds to query all events that a volunteer has taken part of
         public async System.Threading.Tasks.Task<string> QueryVolunteerHistory()
         {
             IFirebaseConfig config = new FirebaseConfig
@@ -171,6 +167,46 @@ namespace Volunesia.Droid.Activities
             FirebaseResponse response = await firebaseClient.GetAsync("volunteerhistory/" + AppData_Droid.Auth.CurrentUser.Uid);
 
             string resultant = response.Body;
+
+            return resultant;
+        }
+
+
+        //Proceeds to query all the present events that have yet to still occur
+        public async System.Threading.Tasks.Task<string> QueryAllEvents()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            //Retrieve the user 
+            FirebaseResponse response = await firebaseClient.GetAsync("events");
+
+            string resultant = response.Body;
+
+            JObject allEvents = JObject.Parse(resultant);
+
+            //Traverses all the nonprofits who have signed up for events
+            foreach (var eventKeyValuePair in allEvents)
+            {
+                Console.WriteLine(eventKeyValuePair.Key);
+                JObject eventIDAndInformation = (JObject)eventKeyValuePair.Value;
+
+                //Traverses all of the events per nonprofit
+                foreach (var idAndInfoNode in eventIDAndInformation) 
+                {
+                    Volunesia.Models.Event theEvent = new Volunesia.Models.Event();
+                    theEvent.EventID = idAndInfoNode.Key;
+                    theEvent.EventDate = Convert.ToDateTime(idAndInfoNode.Value["eventdate"].ToString());
+                    theEvent.EventName = idAndInfoNode.Value["eventname"].ToString();
+                    Console.WriteLine(idAndInfoNode.Value["applicationDeadline"].ToString());
+                    AllEvents.Add(theEvent);
+                }
+            }
+
+
+
+
 
             return resultant;
         }
