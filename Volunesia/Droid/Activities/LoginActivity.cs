@@ -23,6 +23,7 @@ using FireSharp.Interfaces;
 using FireSharp.Config;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Volunesia.Droid.Service;
 
 namespace Volunesia.Droid
 {
@@ -162,6 +163,26 @@ namespace Volunesia.Droid
                     else if (loggedUser.UserType.Equals("NP"))
                     {
                         AppData.CurUser = loggedUser;
+                        if(jsonObject["associatednp"].ToString() != "NA" || jsonObject["associatednp"].ToString() != null)
+                        {
+                            AppData.NonprofitRepresentative = new NonprofitRepresentative();
+                            AppData.NonprofitRepresentative.UID = loggedUser.UID;
+                            AppData.NonprofitRepresentative.AssociatedNonprofit = jsonObject["associatednp"].ToString();
+
+                            var newTask = System.Threading.Tasks.Task.Run(async () => {
+
+                                return await RetrieveAssociatedNPInfo();
+
+                            });
+                            var associatedNPDetails = newTask.Result;
+
+                            var associatedNPJsonObject = JObject.Parse(associatedNPDetails);
+                            AppData.NonprofitRepresentative.AssociatedNonprofitName = associatedNPJsonObject["associatednpname"].ToString();
+                            AppData.NonprofitRepresentative.Position = associatedNPJsonObject["postion"].ToString();
+                            AppData.NonprofitRepresentative.Poster = associatedNPJsonObject["poster"].ToString();
+                            AppData.NonprofitRepresentative.RepsManager = associatedNPJsonObject["repsmanager"].ToString();
+                            AppData.NonprofitRepresentative.Reviewer = associatedNPJsonObject["reviewer"].ToString();
+                        }
                         StartActivity(typeof(NonprofitHomeActivity));
                     }
                 }
@@ -203,6 +224,21 @@ namespace Volunesia.Droid
 
             //Retrieve the user 
             FirebaseResponse response = await firebaseClient.GetAsync("users/" + AppData_Droid.Auth.CurrentUser.Uid);
+
+            string resultant = response.Body;
+
+            return resultant;
+        }
+
+        public async System.Threading.Tasks.Task<String> RetrieveAssociatedNPInfo()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            //Retrieve the user 
+            FirebaseResponse response = await firebaseClient.GetAsync("nonprofitreps/" + AppData.NonprofitRepresentative.AssociatedNonprofit
+                                                                                       + "/" 
+                                                                                       + AppData.NonprofitRepresentative.UID);
 
             string resultant = response.Body;
 

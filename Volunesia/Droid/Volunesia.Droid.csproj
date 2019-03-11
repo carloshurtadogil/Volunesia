@@ -188,6 +188,7 @@
   <ItemGroup>
     <Compile Include="Activities\ChangeEmailActivity.cs" />
     <Compile Include="Activities\ChangePasswordActivity.cs" />
+    <Compile Include="Activities\CreateEventActivity.cs" />
     <Compile Include="Activities\EstablishedNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\LocalNonprofitRegisterActivity.cs" />
@@ -295,6 +296,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\VolunteerEvents.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CreateEvent.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
