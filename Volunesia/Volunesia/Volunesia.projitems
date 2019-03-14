@@ -30,5 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ReadWrite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\VolunteerHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Quicksorter.cs" />
   </ItemGroup>
 </Project>

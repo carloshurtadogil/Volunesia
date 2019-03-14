@@ -24,7 +24,8 @@ namespace Volunesia.iOS
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
                 if(AppData_iOS.NonprofitEvents != null)
                 {
-                    AlertShow.Print(AppData_iOS.NonprofitEvents.Count.ToString());
+                    AllEventsDataSource sdc = new AllEventsDataSource(this, true);
+                    EventsTableView.Source = sdc;
                 }
                 else
                 {

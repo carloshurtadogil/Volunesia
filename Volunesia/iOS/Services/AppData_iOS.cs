@@ -70,5 +70,23 @@ namespace Volunesia.iOS.Services
                 Instance = new AppData_iOS();
             return Instance;
         }
+
+
+        public static void SortNonprofitEventsByDate()
+        {
+            if(NonprofitEvents != null) 
+            {
+                Quicksorter.SortByDate(NonprofitEvents, 0, NonprofitEvents.Count-1);
+                List<Event> events = new List<Event>();
+                for(int i = NonprofitEvents.Count-1; i >= 0; i--)//Reverse list
+                {
+                    events.Add(NonprofitEvents[i]);
+                }
+                NonprofitEvents = events;
+            }
+        }
+
+
+
     }
 }

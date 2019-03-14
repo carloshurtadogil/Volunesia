@@ -29,7 +29,7 @@ namespace Volunesia.iOS
             //System.Threading.Thread.Sleep(1000);
 
             AppData_iOS.GetInstance();
-            FirebaseReader.ReadNonprofitEvents("fac19049-f4af-4bd4-868a-248f333cfe23");
+            //FirebaseReader.ReadNonprofitEvents("fac19049-f4af-4bd4-868a-248f333cfe23");
             if (AppData.CurUser != null)
             {
                 WelcomeLabel.Text = "Welcome, " + AppData.CurUser.FirstName + "!";
@@ -99,6 +99,7 @@ namespace Volunesia.iOS
             } 
             else if (segue.Identifier == "ToNPProfileSegue_id")
             {
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
                 var nppvc = (NPProfileViewController)segue.DestinationViewController;
                 if(nppvc != null)
                 {
