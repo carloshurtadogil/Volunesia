@@ -22,6 +22,14 @@ namespace Volunesia.iOS
                 User u = AppData.CurUser;
                 UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
+                if(AppData_iOS.NonprofitEvents != null)
+                {
+                    AlertShow.Print(AppData_iOS.NonprofitEvents.Count.ToString());
+                }
+                else
+                {
+                    AlertShow.Print("Empty list"); 
+                }
                 if (AppData.NonprofitRepresentative.Poster == "Y")
                 {
                     AddButton.Enabled = true;

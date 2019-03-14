@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Firebase.Auth;
 using Firebase.Core;
 using Firebase.Database;
 using Firebase.Storage;
+using Volunesia.Models;
 using Volunesia.Services;
 
 namespace Volunesia.iOS.Services
@@ -23,6 +25,15 @@ namespace Volunesia.iOS.Services
         public static StorageReference StorageRootReference { get; set; } //Base reference to Storage
 
         public static Auth Auth; //Firebase authentication services (For creations and sign-ins)
+
+
+
+        //Current list of events that the user can sign up for
+        public static List<Event> CurrentEvents { get; set; }
+        //List of all events hosted by a specfic nonprofit
+        public static List<Event> NonprofitEvents { get; set; }
+
+
 
         //Configure the nodes
         private AppData_iOS()
@@ -48,7 +59,10 @@ namespace Volunesia.iOS.Services
             Auth = Auth.DefaultInstance;
         }
 
-        //Initialize the class
+        /// <summary>
+        /// Initialize the class
+        /// </summary>
+        /// <returns>The instance.</returns>
         public static AppData_iOS GetInstance()
         {
             AppData.GetInstance();

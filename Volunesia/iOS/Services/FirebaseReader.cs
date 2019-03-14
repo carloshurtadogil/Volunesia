@@ -6,7 +6,6 @@ using Foundation;
 using Volunesia.Models;
 using Volunesia.Services;
 using UIKit;
-using Volunesia.iOS.Models;
 
 namespace Volunesia.iOS.Services
 {
@@ -179,6 +178,8 @@ namespace Volunesia.iOS.Services
                                 EventRoster = roster,
                                 Capacity = eventcaps
                             };
+                            events.Add(@event);
+                            AppData_iOS.CurrentEvents = events;
 
                         }
                         else
@@ -192,8 +193,83 @@ namespace Volunesia.iOS.Services
             });
         }
 
+        /// <summary>
+        /// Read the Firebase data on all events hosted by a specific nonprofit
+        /// </summary>
+        /// <param name="npid">The nonprofit id to be used in the search process.</param>
+        public static void ReadNonprofitEvents(string npid)
+        {
+            List<Event> events = new List<Event>();
+            AppData_iOS.EventNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                var npevents = snapshot.GetValue<NSDictionary>();
+                foreach(var eid in npevents.Keys) 
+                {
+                    var eventinfo = (NSDictionary)npevents[eid.ToString()];
+                    var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
+                    var applicationdeadline = Convert.ToDateTime(eventinfo["applicationdeadline"].ToString());
+                    var eventid = eid.ToString();
+                    var eventimagepath = eventinfo["imagepath"].ToString();
+                    var eventname = eventinfo["eventname"].ToString();
+                    var eventdesc = eventinfo["eventdesc"].ToString();
+                    var eventcaps = Convert.ToInt32(eventinfo["capacity"].ToString());
+                    var poster = eventinfo["poster"].ToString();
+                    var rostercheck = eventinfo["roster"].ToString();
+                    var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
+                    Roster roster = new Roster();
+                    if (rostercheck != "0")
+                    {
 
-        //Read the volunteer history of a particular volunteer
+                        var volunteers = (NSDictionary)eventinfo["roster"];
+                        foreach (var vid in volunteers.Keys)
+                        {
+                            var volunteerinfo = (NSDictionary)volunteers[vid.ToString()];
+                            var attendedString = volunteerinfo["attended"].ToString();
+                            bool attended = false;
+                            var hourscompleted = Convert.ToInt32(volunteerinfo["hourscompleted"].ToString());
+                            var status = volunteerinfo["status"].ToString();
+
+                            if (attendedString == "Y")
+                            {
+                                attended = true;
+                            }
+
+                            Attendee attendee = new Attendee
+                            {
+                                UID = vid.ToString(),
+                                Attended = attended,
+                                HoursCompleted = hourscompleted,
+                                ReservationStatus = status
+                            };
+                            roster.Add(attendee);
+                        }
+                    }
+
+
+                    Event @event = new Event
+                    {
+                        Poster = poster,
+                        ApplicationDeadline = applicationdeadline,
+                        EventDate = eventdate,
+                        HostID = npid,
+                        EventID = eventid,
+                        EventImagePath = eventimagepath,
+                        EventName = eventname,
+                        EventDescription = eventdesc,
+                        EventRoster = roster,
+                        Capacity = eventcaps
+                    };
+                    events.Add(@event);
+                    AppData_iOS.NonprofitEvents = events;
+                }
+            });
+        }
+
+
+        /// <summary>
+        /// Read the volunteer history of a particular volunteer
+        /// </summary>
+        /// <param name="uid">The volunteer's user id.</param>
         public static void ReadVolunteerHistory(string uid)
         {
             VolunteerHistory history = new VolunteerHistory();
@@ -241,7 +317,12 @@ namespace Volunesia.iOS.Services
 
         }
 
-        //Write event details to Firebase
+        /// <summary>
+        /// Write event details to Firebase
+        /// </summary>
+        /// <param name="e">The new event to be recorded.</param>
+        /// <param name="inpView">The InputViewController to add any message.</param>
+        /// <param name="d">The image to be added if not standard.</param>
         public static void WriteEventDetails(Event e, EventInformationViewController inpView, NSData d)
         {
             object[] keys = { "applicationdeadline", "eventdate", "eventname", "eventdesc","poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
@@ -258,7 +339,9 @@ namespace Volunesia.iOS.Services
             }
         }
 
-        //Update the email of the current user
+        /// <summary>
+        /// Update the email of the current user
+        /// </summary>
         public static void WriteUserEmail()
         {
             AppData_iOS.GetInstance();

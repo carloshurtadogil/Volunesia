@@ -29,7 +29,7 @@ namespace Volunesia.iOS
             //System.Threading.Thread.Sleep(1000);
 
             AppData_iOS.GetInstance();
-            FirebaseReader.ReadAllAvailableEvents();
+            FirebaseReader.ReadNonprofitEvents("fac19049-f4af-4bd4-868a-248f333cfe23");
             if (AppData.CurUser != null)
             {
                 WelcomeLabel.Text = "Welcome, " + AppData.CurUser.FirstName + "!";

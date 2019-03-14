@@ -35,6 +35,7 @@ namespace Volunesia.iOS
                                                             if(error != null)
                                                             {
                                                                 AlertShow.Show(this, "Invalid Credentials", "");
+                                                                AlertShow.Print(error.DebugDescription);
                                                                 PasswordTextfield.Text = ""; 
                                                             }
                                                             System.Diagnostics.Debug.WriteLine("Passed");
