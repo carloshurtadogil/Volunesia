@@ -29,6 +29,7 @@ namespace Volunesia.iOS
             //System.Threading.Thread.Sleep(1000);
 
             AppData_iOS.GetInstance();
+            FirebaseReader.ReadAllEvents();
             if (AppData.CurUser != null)
             {
                 WelcomeLabel.Text = "Welcome, " + AppData.CurUser.FirstName + "!";

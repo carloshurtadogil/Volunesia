@@ -55,7 +55,7 @@ namespace Volunesia.iOS
                             Event e = new Event
                             {
                                 EventID = id,
-                                HasDeadline = hasdeadline,
+                                Poster = AppData.NonprofitRepresentative.UID,
                                 EventDate = EventDateTime,
                                 HostID = AppData.NonprofitRepresentative.AssociatedNonprofit,
                                 EventName = eventname,

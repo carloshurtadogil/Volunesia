@@ -7,7 +7,7 @@ namespace Volunesia.Models
     public class Attendee
     {
         //The Attendee's status for a particular event
-        public Status ReservationStatus { get; set; }
+        public string ReservationStatus { get; set; }
         //Flag to represent whether or not a Volunteer attended the event
         public bool   Attended          { get; set; }
         //The event duration in minutes (to be converted to hours in other components)

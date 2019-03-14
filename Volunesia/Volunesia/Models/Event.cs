@@ -6,8 +6,8 @@ namespace Volunesia.Models
     public class Event
     {
 
-        // Flag to determine if event has a deadline 
-        public string HasDeadline { get; set; }
+        // The UID of the nonprofit representative that posted the event
+        public string Poster { get; set; }
 
         // Last date for volunteers to apply to the event
         public DateTime ApplicationDeadline { get; set; }
@@ -39,7 +39,7 @@ namespace Volunesia.Models
         // Those that are in the waitlist for the event
         public Waitlist Waitlist { get; set; }
 
-        //Capacity for event
+        // Capacity for event
         public int Capacity { get; set; }
     }
 }

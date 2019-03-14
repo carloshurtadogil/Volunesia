@@ -6,13 +6,17 @@ using Foundation;
 using Volunesia.Models;
 using Volunesia.Services;
 using UIKit;
+using Volunesia.iOS.Models;
 
 namespace Volunesia.iOS.Services
 {
     public class FirebaseReader
     {
 
-        //Read user information from 'users' branch in Firebase
+        /// <summary>
+        /// Read user information from 'users' branch in Firebase
+        /// </summary>
+        /// <param name="results">Result handler from which to grab the user's uid.</param>
         public static void ReadUser(AuthDataResult results)
         {
             System.Diagnostics.Debug.WriteLine("Read User Called");
@@ -31,7 +35,7 @@ namespace Volunesia.iOS.Services
                         var type = data["type"].ToString();
                         var personal = data["personalstatement"].ToString();
                         var associatednp = data["associatednp"].ToString();
-                        Models.User newuser = new Models.User
+                        Volunesia.Models.User newuser = new Volunesia.Models.User
                         {
                             FirstName = first,
                             LastName = last,
@@ -61,7 +65,11 @@ namespace Volunesia.iOS.Services
             }
         }
 
-        //Read the nonprofit representatives
+        /// <summary>
+        /// Read the nonprofit representatives
+        /// </summary>
+        /// <param name="npid">The nonprofit id needed to search for the nonprofit representative.</param>
+        /// <param name="uid">The nonprofit representative's user id.</param>
         public static void ReadNPReps(string npid, string uid)
         {
             System.Diagnostics.Debug.WriteLine("ReadNPReps called");
@@ -78,7 +86,7 @@ namespace Volunesia.iOS.Services
                     var associatednp = data["associatednp"].ToString();
                     var npname = data["associatednpname"].ToString();
 
-                    Models.NonprofitRepresentative nprep = new Models.NonprofitRepresentative
+                    Volunesia.Models.NonprofitRepresentative nprep = new Volunesia.Models.NonprofitRepresentative
                     {
                         UID = uid,
                         Position = position,
@@ -91,6 +99,98 @@ namespace Volunesia.iOS.Services
 
                     AppData.NonprofitRepresentative = nprep;
                     ReadWrite.WriteNonprofitRepresentative();
+                }
+            });
+        }
+
+        /// <summary>
+        /// Reads all events from Firebase that are currently happening or will happen.
+        /// </summary>
+        public static void ReadAllEvents()
+        {
+            List<Event> events = new List<Event>();
+            AppData_iOS.GetInstance();
+            var today = DateTime.Now;
+            var children = AppData_iOS.EventNode.ObserveEvent(DataEventType.Value, (npsnapshot) => 
+            {
+                var nonprofits = npsnapshot.GetValue<NSDictionary>();
+                foreach (var npid in nonprofits.Keys) 
+                {
+                    var npevents = (NSDictionary)nonprofits[npid.ToString()];
+                    foreach (var eid in npevents.Keys)
+                    {
+                        var eventinfo = (NSDictionary)npevents[eid.ToString()];
+
+                        var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
+                        
+                        if(eventdate.Date >= today.Date) //Event is currently happening or will happen
+                        {
+                            AlertShow.Print(eid.ToString());
+                            var applicationdeadline = Convert.ToDateTime(eventinfo["applicationdeadline"].ToString());
+                            var hostid = npid.ToString();
+                            var eventid = eid.ToString();
+                            var eventimagepath = eventinfo["imagepath"].ToString();
+                            var eventname = eventinfo["eventname"].ToString();
+                            var eventdesc = eventinfo["eventdesc"].ToString();
+                            var eventcaps = Convert.ToInt32(eventinfo["capacity"].ToString());
+                            var poster = eventinfo["poster"].ToString();
+                            var rostercheck = eventinfo["roster"].ToString();
+                            var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
+                            Roster roster = new Roster();
+                            if (rostercheck != "0")
+                            {
+
+                                var volunteers = (NSDictionary)eventinfo["roster"];
+                                foreach (var vid in volunteers.Keys)
+                                {
+                                    var volunteerinfo = (NSDictionary)volunteers[vid.ToString()];
+                                    var attendedString = volunteerinfo["attended"].ToString();
+                                    bool attended = false;
+                                    var hourscompleted = Convert.ToInt32(volunteerinfo["hourscompleted"].ToString());
+                                    var status = volunteerinfo["status"].ToString();
+
+                                    if(attendedString == "Y") 
+                                    {
+                                        attended = true; 
+                                    }
+
+                                    Attendee attendee = new Attendee
+                                    {
+                                        UID = vid.ToString(),
+                                        Attended = attended,
+                                        HoursCompleted = hourscompleted,
+                                        ReservationStatus = status
+                                    };
+                                    roster.Add(attendee);
+                                }
+                            }
+                            Event @event = new Event
+                            {
+                                Poster = poster,
+                                ApplicationDeadline = applicationdeadline,
+                                EventDate = eventdate,
+                                HostID = hostid,
+                                EventID = eventid,
+                                EventImagePath = eventimagepath,
+                                EventName = eventname,
+                                EventDescription = eventdesc,
+                                EventRoster = roster
+                            };
+
+                            Event_iOS ievent = new Event_iOS
+                            {
+                                Event = @event,
+                                
+                            };
+
+                        }
+                        else
+                        {
+                            AlertShow.Print(eid.ToString() + " has past"); 
+                        }
+
+
+                    }
                 }
             });
         }
@@ -148,11 +248,7 @@ namespace Volunesia.iOS.Services
         public static void WriteEventDetails(Event e, EventInformationViewController inpView, NSData d)
         {
             object[] keys = { "applicationdeadline", "eventdate", "eventname", "eventdesc","poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
-            object[] vals = { 0, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
-            if (e.HasDeadline == "Y")
-            {
-                vals[0] = e.ApplicationDeadline;
-            }
+            object[] vals = { e.ApplicationDeadline, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
             if (!e.EventImagePath.Equals( "standard"))
@@ -169,7 +265,7 @@ namespace Volunesia.iOS.Services
         public static void WriteUserEmail()
         {
             AppData_iOS.GetInstance();
-            Models.User user = AppData.CurUser;
+            Volunesia.Models.User user = AppData.CurUser;
 
             object[] key = { $"email" };
             object[] val = { user.EmailAddress };
