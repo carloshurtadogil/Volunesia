@@ -238,7 +238,6 @@
     <Compile Include="Controllers\DateSelectionViewController.designer.cs">
       <DependentUpon>DateSelectionViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Event_iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

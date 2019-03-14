@@ -35,11 +35,6 @@ namespace Volunesia.iOS
             string dt = EventTimeTextfield.Text.Trim();
             string location = LocationTextfield.Text.Trim();
             string applicationdeadline = DeadlineTextfield.Text.Trim();
-            string hasdeadline = "N";
-            if (AppDeadlineSwitch.On)
-            {
-                hasdeadline = "Y";
-            }
 
             if (eventname.Length > 1)
             {
@@ -69,6 +64,10 @@ namespace Volunesia.iOS
                             if (AppDeadlineSwitch.On)
                             {
                                 e.ApplicationDeadline = DeadlineDateTime;
+                            }
+                            else
+                            {
+                                e.ApplicationDeadline = EventDateTime; 
                             }
                             if (!CurrentImage.Equals("standard"))
                             {

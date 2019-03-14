@@ -106,7 +106,7 @@ namespace Volunesia.iOS.Services
         /// <summary>
         /// Reads all events from Firebase that are currently happening or will happen.
         /// </summary>
-        public static void ReadAllEvents()
+        public static void ReadAllAvailableEvents()
         {
             List<Event> events = new List<Event>();
             AppData_iOS.GetInstance();
@@ -164,6 +164,8 @@ namespace Volunesia.iOS.Services
                                     roster.Add(attendee);
                                 }
                             }
+
+
                             Event @event = new Event
                             {
                                 Poster = poster,
@@ -174,13 +176,8 @@ namespace Volunesia.iOS.Services
                                 EventImagePath = eventimagepath,
                                 EventName = eventname,
                                 EventDescription = eventdesc,
-                                EventRoster = roster
-                            };
-
-                            Event_iOS ievent = new Event_iOS
-                            {
-                                Event = @event,
-                                
+                                EventRoster = roster,
+                                Capacity = eventcaps
                             };
 
                         }
