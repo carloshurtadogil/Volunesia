@@ -12,6 +12,7 @@ using Android.Widget;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Volunesia.Droid.Service;
 using Volunesia.Models;
@@ -51,33 +52,33 @@ namespace Volunesia.Droid.Activities
 
 
             //parse the jobject and retrieve the components of the response
-            var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
+            //var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
 
             //create a volunteerhistory object that contains all of the volunteering events
             theVolunteerHistory = new VolunteerHistory();
 
             //iterate through the event mappings in the node
-            foreach (var eventpair in mainVolHistoryNode)
-            {
-                //retrieve the information from each event node, and then form a volunteerevent object
-                var attended = eventpair.Value["attended"].ToString();
-                var eventdate = eventpair.Value["eventdate"].ToString();
-                var eventname = eventpair.Value["eventname"].ToString();
-                var nonprofitid = eventpair.Value["nonprofitid"].ToString();
-                var nonprofitname = eventpair.Value["nonprofitname"].ToString();
+            //foreach (var eventpair in mainVolHistoryNode)
+            //{
+            //    //retrieve the information from each event node, and then form a volunteerevent object
+            //    var attended = eventpair.Value["attended"].ToString();
+            //    var eventdate = eventpair.Value["eventdate"].ToString();
+            //    var eventname = eventpair.Value["eventname"].ToString();
+            //    var nonprofitid = eventpair.Value["nonprofitid"].ToString();
+            //    var nonprofitname = eventpair.Value["nonprofitname"].ToString();
 
-                VolunteerEvent volunteerevent = new VolunteerEvent()
-                {
-                    Attended = attended,
-                    EventDate = Convert.ToDateTime(eventdate),
-                    EventName = eventname,
-                    NonprofitID = nonprofitid,
-                    NonprofitName = nonprofitname
+            //    VolunteerEvent volunteerevent = new VolunteerEvent()
+            //    {
+            //        Attended = attended,
+            //        EventDate = Convert.ToDateTime(eventdate),
+            //        EventName = eventname,
+            //        NonprofitID = nonprofitid,
+            //        NonprofitName = nonprofitname
 
-                };
+            //    };
 
-                theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
-            }
+            //    theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
+            //}
 
 
 
@@ -111,7 +112,25 @@ namespace Volunesia.Droid.Activities
 
         }
 
-        //Shows all volunteer's past events after clicking Show Past Events button
+        /// <summary>
+        /// Executes once an event from a ListView is clicked on 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>        
+        public void EventClicked(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine(AllEvents[e.Position].EventName);
+            var intent = new Intent(this, typeof(EventActivity));
+            intent.PutExtra("event", JsonConvert.SerializeObject(AllEvents[e.Position]));
+            StartActivity(intent);
+            
+        }
+
+        /// <summary>
+        /// Shows all volunteer's past events after clicking Show Past Events button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ShowPastEvents(object sender, EventArgs e)
         {
             
@@ -149,6 +168,8 @@ namespace Volunesia.Droid.Activities
             //Adapt the ListView accordingly to showcase all events
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             mListView.Adapter = adapter;
+
+            mListView.ItemClick += EventClicked;
         }
 
 
@@ -186,10 +207,12 @@ namespace Volunesia.Droid.Activities
 
             JObject allEvents = JObject.Parse(resultant);
 
+            AllEvents = new List<Event>();
+
             //Traverses all the nonprofits who have signed up for events
             foreach (var eventKeyValuePair in allEvents)
             {
-                Console.WriteLine(eventKeyValuePair.Key);
+                string nonprofitID = eventKeyValuePair.Key;
                 JObject eventIDAndInformation = (JObject)eventKeyValuePair.Value;
 
                 //Traverses all of the events per nonprofit
@@ -197,18 +220,15 @@ namespace Volunesia.Droid.Activities
                 {
                     Volunesia.Models.Event theEvent = new Volunesia.Models.Event();
                     theEvent.EventID = idAndInfoNode.Key;
+                    theEvent.HostID = nonprofitID;
                     theEvent.EventDate = Convert.ToDateTime(idAndInfoNode.Value["eventdate"].ToString());
                     theEvent.EventName = idAndInfoNode.Value["eventname"].ToString();
-                    Console.WriteLine(idAndInfoNode.Value["applicationDeadline"].ToString());
+                    Console.WriteLine(idAndInfoNode.Value["applicationdeadline"].ToString());
                     AllEvents.Add(theEvent);
                 }
             }
-
-
-
-
-
             return resultant;
         }
+
     }
 }
