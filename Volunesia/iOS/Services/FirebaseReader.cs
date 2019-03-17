@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Firebase.Auth;
 using Firebase.Database;
@@ -325,8 +325,17 @@ namespace Volunesia.iOS.Services
         /// <param name="d">The image to be added if not standard.</param>
         public static void WriteEventDetails(Event e, EventInformationViewController inpView, NSData d)
         {
-            object[] keys = { "applicationdeadline", "eventdate", "eventname", "eventdesc","poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
-            object[] vals = { e.ApplicationDeadline, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
+            //Add to locaL device
+            if (AppData_iOS.NonprofitEvents == null)
+            {
+                AppData_iOS.NonprofitEvents = new List<Event>();
+
+            }
+            AppData_iOS.NonprofitEvents.Add(e);
+
+            //Add to firebase
+            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc","poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
+            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity,  e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
             if (!e.EventImagePath.Equals( "standard"))
@@ -337,6 +346,7 @@ namespace Volunesia.iOS.Services
             {
                 AlertShow.Show(inpView, true, "Event Created", "You are all set!");
             }
+
         }
 
         /// <summary>

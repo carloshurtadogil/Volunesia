@@ -4,11 +4,20 @@ using UIKit;
 using Volunesia.Models;
 using Volunesia.Services;
 using Volunesia.iOS.Services;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Volunesia.iOS
 {
     public partial class NPProfileViewController : UIViewController
     {
+
+        //Global variables
+        private bool useRefreshControl = false;
+        private UIRefreshControl RefreshControl;
+
+
+
         public NPProfileViewController (IntPtr handle) : base (handle)
         {
         }
@@ -19,13 +28,21 @@ namespace Volunesia.iOS
 
             if (AppData.CurUser != null)
             {
+                AlertShow.Print("View Did Appear");
+
                 User u = AppData.CurUser;
                 UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
-                if(AppData_iOS.NonprofitEvents != null)
+
+
+
+                if (AppData_iOS.NonprofitEvents != null)
                 {
                     AllEventsDataSource sdc = new AllEventsDataSource(this, true);
                     EventsTableView.Source = sdc;
+                    EventsTableView.ReloadData();
+                    AddRefreshControl();
+                    EventsTableView.Add(RefreshControl);
                 }
                 else
                 {
@@ -39,6 +56,8 @@ namespace Volunesia.iOS
                 {
                     AddButton.Enabled = false; 
                 }
+
+
             }
 
         }
@@ -74,6 +93,35 @@ namespace Volunesia.iOS
                 {
                     eivc.LoadView(); 
                 }
+            }
+        }
+
+        async Task RefreshAsync()
+        {
+            //only active the refresh control if the feature is available
+            if (useRefreshControl)
+                RefreshControl.BeginRefreshing();
+            if (useRefreshControl) 
+            {
+                RefreshControl.EndRefreshing();
+                EventsTableView.ReloadData(); 
+            }
+        }
+
+        void AddRefreshControl()
+        {
+            if (UIDevice.CurrentDevice.CheckSystemVersion(6, 0))
+            {
+                // the refresh control is available. let's add it
+                RefreshControl = new UIRefreshControl();
+                RefreshControl.ValueChanged += async (sender, e) => 
+                {
+                    AlertShow.Print("Pulled");
+
+                    await RefreshAsync();
+
+                };
+                useRefreshControl = true;
             }
         }
     }

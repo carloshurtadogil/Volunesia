@@ -14,32 +14,35 @@ namespace Volunesia.Services
         /// <param name="high">High.</param>
         public static void SortByDate(List<Event> list, int low, int high)
         {
-            int i = low, j = high;
-            DateTime pivot = list[0].EventDate;//Select median
-            while (i <= j)
+            if(list.Count > 0) 
             {
-                while (list[i].EventDate < pivot)
-                { //how many integers are less than pivot
-                    i++;//increase left marker
-                }
-                while (list[j].EventDate > pivot)
-                {//how many integers are greater than pivot
-                    j--;//decrease right marker
-                }
-                if (i <= j)
+                int i = low, j = high;
+                DateTime pivot = list[0].EventDate;//Select median
+                while (i <= j)
                 {
-                    Swap(list, i, j);
-                    i++;
-                    j--;
+                    while (list[i].EventDate < pivot)
+                    { //how many integers are less than pivot
+                        i++;//increase left marker
+                    }
+                    while (list[j].EventDate > pivot)
+                    {//how many integers are greater than pivot
+                        j--;//decrease right marker
+                    }
+                    if (i <= j)
+                    {
+                        Swap(list, i, j);
+                        i++;
+                        j--;
+                    }
                 }
-            }
-            if (low < j)
-            {
-                SortByDate(list, low, j);
-            }
-            if (i < high)
-            {
-                SortByDate(list, i, high);
+                if (low < j)
+                {
+                    SortByDate(list, low, j);
+                }
+                if (i < high)
+                {
+                    SortByDate(list, i, high);
+                }
             }
         }
 

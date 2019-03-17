@@ -69,7 +69,7 @@ namespace Volunesia.iOS
                             {
                                 e.ApplicationDeadline = EventDateTime; 
                             }
-                            if (!CurrentImage.Equals("standard"))
+                            if (CurrentImage != null && !CurrentImage.Equals("standard"))
                             {
                                 AlertShow.Print("Not Standard");
                                 e.EventImagePath = "/Images/nonprofiteventimages/" + id;
@@ -81,6 +81,10 @@ namespace Volunesia.iOS
                             if (CapacitySwitch.On)
                             {
                                 e.Capacity = Convert.ToInt32(CapacityTextfield.Text);
+                            }
+                            else
+                            {
+                                e.Capacity = -1; 
                             }
                             NSData d = CoverPhotoImageView.Image.AsPNG();
                             SetItemsEnabled(false); //So that the user cannot do anything else besides dismiss controller
