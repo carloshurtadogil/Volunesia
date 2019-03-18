@@ -245,7 +245,6 @@ namespace Volunesia.iOS.Services
                         }
                     }
 
-
                     Event @event = new Event
                     {
                         Poster = poster,
@@ -259,8 +258,7 @@ namespace Volunesia.iOS.Services
                         EventRoster = roster,
                         Capacity = eventcaps
                     };
-                    events.Add(@event);
-                    AppData_iOS.NonprofitEvents = events;
+                    AppData_iOS.AddToNonprofitEvents(@event);
                 }
             });
         }

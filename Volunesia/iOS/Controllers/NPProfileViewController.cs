@@ -38,9 +38,9 @@ namespace Volunesia.iOS
 
                 if (AppData_iOS.NonprofitEvents != null)
                 {
-                    AllEventsDataSource sdc = new AllEventsDataSource(this, true);
-                    EventsTableView.Source = sdc;
-                    EventsTableView.ReloadData();
+                    //AllEventsDataSource sdc = new AllEventsDataSource(this, true);
+                    //EventsTableView.Source = sdc;
+                    //EventsTableView.ReloadData();
                     AddRefreshControl();
                     EventsTableView.Add(RefreshControl);
                 }
@@ -100,9 +100,15 @@ namespace Volunesia.iOS
         {
             //only active the refresh control if the feature is available
             if (useRefreshControl)
+            {
                 RefreshControl.BeginRefreshing();
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
+            }
             if (useRefreshControl) 
             {
+
+                AllEventsDataSource sdc = new AllEventsDataSource(this, true);
+                EventsTableView.Source = sdc;
                 RefreshControl.EndRefreshing();
                 EventsTableView.ReloadData(); 
             }

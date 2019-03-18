@@ -72,6 +72,31 @@ namespace Volunesia.iOS.Services
         }
 
 
+        /// <summary>
+        /// Add a new event to the NonprofitEvents list. If list is empty, initalize it.
+        /// </summary>
+        /// <param name="e">The new event to be added.</param>
+        public static void AddToNonprofitEvents(Event e)
+        {
+            if (NonprofitEvents == null)
+                NonprofitEvents = new List<Event>();
+            if(!ExistsInNonprofitEvents(e.EventID))
+                NonprofitEvents.Add(e);
+        }
+
+        public static bool ExistsInNonprofitEvents(string eid) 
+        {
+            foreach (Event e in NonprofitEvents)
+            {
+                if(e.EventID == eid)
+                {
+                    return true; 
+                }
+            }
+            return false;
+        }
+
+
         public static void SortNonprofitEventsByDate()
         {
             if(NonprofitEvents != null) 

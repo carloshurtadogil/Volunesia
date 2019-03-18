@@ -42,7 +42,7 @@ namespace Volunesia.iOS
                 if (AppData.CurUser.UserType == "NP")
                 {
 
-                    if (AppData.CurUser.UID == "bN3e1pidRFgieI7LpmExF5bPmpo1")
+                    if (AppData.CurUser.UID == "1234")//"bN3e1pidRFgieI7LpmExF5bPmpo1")
                     {
                         DateTime d1 = Convert.ToDateTime("3/24/2019 11:59:00 AM");
                         DateTime d2 = Convert.ToDateTime("3/25/2019 08:00:00 AM");
@@ -80,7 +80,7 @@ namespace Volunesia.iOS
                         List<Event> list = new List<Event>();
                         list.Add(e1);
                         list.Add(e2);
-                        AppData_iOS.NonprofitEvents = list;
+                        //AppData_iOS.NonprofitEvents = list;
                     }
 
 
@@ -143,7 +143,7 @@ namespace Volunesia.iOS
             } 
             else if (segue.Identifier == "ToNPProfileSegue_id")
             {
-                //FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
                 var nppvc = (NPProfileViewController)segue.DestinationViewController;
                 if(nppvc != null)
                 {

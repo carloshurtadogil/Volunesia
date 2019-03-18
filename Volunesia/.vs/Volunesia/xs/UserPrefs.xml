@@ -1,21 +1,17 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Volunesia/Services/ReadWrite.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/WelcomeViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="80" Column="25" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Volunesia/Models/Event.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="146" Column="17" />
       <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="29" Column="17" />
       <File FileName="iOS/Controllers/HomeViewController.cs" Line="84" Column="26" />
       <File FileName="iOS/Services/AllEventsDataSource.cs" Line="23" Column="53" />
-      <File FileName="iOS/Services/PastEventsDataSource.cs" Line="26" Column="39" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="336" Column="30" />
       <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="114" Column="1" />
       <File FileName="Volunesia/Services/Quicksorter.cs" Line="46" Column="13" />
-      <File FileName="iOS/Services/AppData_iOS.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="83" Column="34" />
       <File FileName="iOS/AlertShow.cs" Line="1" Column="1" />
-      <File FileName="Volunesia/Services/ReadWrite.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="246" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,12 +19,12 @@
           <Node name="Volunesia" expanded="True">
             <Node name="Volunesia" expanded="True">
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="ReadWrite.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="WelcomeViewController.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True" />
             </Node>
           </Node>

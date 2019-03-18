@@ -20,22 +20,30 @@ namespace Volunesia.iOS.Services
 
         public AllEventsDataSource(UIViewController inpView, bool type) 
         {
-            AppData_iOS.SortNonprofitEventsByDate();
+            //AppData_iOS.SortNonprofitEventsByDate();
+            AlertShow.Print("AllEventsDataSource Reached");
             HomeController = inpView;
             SpecificNonprofit = type;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            AppData_iOS.GetInstance();
             UITableViewCell cell = tableView.DequeueReusableCell("EventItem");
-            List<Event> e = AppData_iOS.NonprofitEvents;
-            if (indexPath.Row < e.Count)
+            if(AppData_iOS.NonprofitEvents != null)
             {
-                Event ve = e[indexPath.Row];
-                System.Diagnostics.Debug.WriteLine("Row: " + indexPath.Row);
-                cell.TextLabel.Text = ve.EventName;
-                cell.DetailTextLabel.Text = e[indexPath.Row].EventDate.ToString();
+                AlertShow.Print("Get Cell Good to Go");
+                List<Event> e = AppData_iOS.NonprofitEvents;
+                int index = indexPath.Row;
+                if(index < e.Count)
+                {
+                    Event eve = e[index];
+                    cell.TextLabel.Text = eve.EventName;
+                    cell.DetailTextLabel.Text = eve.EventDate.ToShortDateString();
+                }
+            }
+            else
+            {
+                AlertShow.Print("Get Cell Null and Bad"); 
             }
             return cell;
         }
