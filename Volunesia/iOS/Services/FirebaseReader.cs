@@ -193,6 +193,11 @@ namespace Volunesia.iOS.Services
             });
         }
 
+        public static void ReadEventCoverImage(string path, UIImageView imageView)
+        {
+             
+        }
+
         /// <summary>
         /// Read the Firebase data on all events hosted by a specific nonprofit
         /// </summary>
@@ -340,10 +345,7 @@ namespace Volunesia.iOS.Services
             {
                 FirebaseStorageServices.AddImageToFirebase(d, e.EventImagePath, inpView);
             }
-            else
-            {
-                AlertShow.Show(inpView, true, "Event Created", "You are all set!");
-            }
+            inpView.PerformSegue("ToCreatedEventSegue_id", inpView);
 
         }
 

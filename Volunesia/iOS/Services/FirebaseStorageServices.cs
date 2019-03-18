@@ -45,7 +45,7 @@ namespace Volunesia.iOS.Services
         /// </summary>
         /// <returns>The specified image.</returns>
         /// <param name="path">The path to the specified image.</param>
-        public static UIImage RetrieveImage(string path)
+        public static UIImage RetrieveImage(string path, UIImageView imageView)
         {
             //Create a reference to file to be downloaded
             StorageReference reference = AppData_iOS.StorageRootReference.GetChild(path);
@@ -63,7 +63,8 @@ namespace Volunesia.iOS.Services
                 }
                 AlertShow.Print("Reached");
                 //Image data is returned
-                image = UIImage.LoadFromData(data);
+                imageView.Image = UIImage.LoadFromData(data);
+
             });
             AlertShow.Print("Returned");
             return image; 

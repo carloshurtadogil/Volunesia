@@ -5,12 +5,12 @@ namespace Volunesia.iOS
 {
     public static class AlertShow
     {
-        /*
-         * Display simple message to user
-         * @inpView the ViewController that the user is currently on
-         * @title the bolded message title
-         * @message The simple message for user
-         */
+        /// <summary>
+        /// Display simple message to user
+        /// </summary>
+        /// <param name="inpView">the ViewController that the user is currently on</param>
+        /// <param name="title">the bolded message title</param>
+        /// <param name="message">The simple message for user</param>
         public static void Show(UIViewController inpView, string title, string message)
         {
             UIAlertController alert = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
@@ -18,13 +18,13 @@ namespace Volunesia.iOS
             inpView.PresentViewController(alert, true, null);
         }
 
-        /**
-         * Display simple message to user and dismiss view controller
-         * @inpView Viewcontroller that the user is currently seeing
-         * @dismiss Flag to dismiss the current view controller        
-         * @title the bolded message title
-         * @message the simple message for user
-         */
+        /// <summary>
+        /// Display simple message to user and dismiss view controller
+        /// </summary>
+        /// <param name="inpView">Viewcontroller that the user is currently seeing</param>
+        /// <param name="dismiss">If set to <c>true</c>, dismiss the current view controller dismiss.</param>
+        /// <param name="title">the bolded message title</param>
+        /// <param name="message">the simple message for user</param>
         public static void Show(UIViewController inpView, bool dismiss, string title, string message)
         {
             UIAlertController alert = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
@@ -38,6 +38,28 @@ namespace Volunesia.iOS
             inpView.PresentViewController(alert, true, null);
         }
 
+        /// <summary>
+        /// Present this prompt to the volunteer
+        /// </summary>
+        /// <param name="inpView">The view controller that will include the prompt.</param>
+        public static void DisplaySignUpPrompt(UIViewController inpView) 
+        {
+            UIAlertController alert = UIAlertController.Create("You are about to make a difference", "Are you ready?", UIAlertControllerStyle.Alert);
+
+            alert.AddAction(UIAlertAction.Create("No", UIAlertActionStyle.Default, null));
+            alert.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Default, (handler) => 
+            {
+                Show(inpView, "To be implemented", "");
+            }));
+
+
+            inpView.PresentViewController(alert, true, null);
+        }
+        
+        /// <summary>
+        /// Print a message to the console
+        /// </summary>
+        /// <param name="msg">The message to be displayed.</param>
         public static void Print(string msg)
         {
             System.Diagnostics.Debug.WriteLine(msg); 

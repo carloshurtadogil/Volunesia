@@ -239,6 +239,11 @@
     <Compile Include="Controllers\DateSelectionViewController.designer.cs">
       <DependentUpon>DateSelectionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\EventViewController.cs" />
+    <Compile Include="Controllers\EventViewController.designer.cs">
+      <DependentUpon>EventViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DateFormatter.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -265,6 +270,8 @@
     <BundleResource Include="Resources\Images\UploadImageBtn.png" />
     <BundleResource Include="Resources\Images\img_placeholder.png" />
     <BundleResource Include="Resources\Images\SubmitBtn.png" />
+    <BundleResource Include="Resources\Images\EditButton.png" />
+    <BundleResource Include="Resources\Images\SignupButton.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

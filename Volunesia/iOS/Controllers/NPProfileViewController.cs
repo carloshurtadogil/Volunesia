@@ -15,7 +15,7 @@ namespace Volunesia.iOS
         //Global variables
         private bool useRefreshControl = false;
         private UIRefreshControl RefreshControl;
-
+        public Event Event { get; set; }
 
 
         public NPProfileViewController (IntPtr handle) : base (handle)
@@ -92,6 +92,16 @@ namespace Volunesia.iOS
                 if(eivc != null)
                 {
                     eivc.LoadView(); 
+                }
+            }
+            else if(segue.Identifier == "ToEventSegue_id")
+            {
+                var evc = (EventViewController)segue.DestinationViewController;
+                if(evc != null)
+                {
+                    evc.EventDetails = Event;
+                    evc.JustCreated = false;
+                    evc.LoadView(); 
                 }
             }
         }

@@ -22,6 +22,7 @@ namespace Volunesia.iOS
         public CoreGraphics.CGSize cg;
         public nfloat CurrentY;
         public string CurrentImage;
+        private Event NewEvent { get; set; }
 
         public EventInformationViewController(IntPtr handle) : base(handle)
         {
@@ -86,6 +87,7 @@ namespace Volunesia.iOS
                             {
                                 e.Capacity = -1; 
                             }
+                            NewEvent = e;
                             NSData d = CoverPhotoImageView.Image.AsPNG();
                             SetItemsEnabled(false); //So that the user cannot do anything else besides dismiss controller
                             FirebaseReader.WriteEventDetails(e, this, d);
@@ -230,6 +232,16 @@ namespace Volunesia.iOS
                 {
                     dpvc.EventInfoVC = this;
                     dpvc.LoadView();
+                }
+            }
+            else if (segue.Identifier == "ToCreatedEventSegue_id")
+            {
+                var evc = (EventViewController)segue.DestinationViewController;
+                if(evc != null)
+                {
+                    evc.JustCreated = true;
+                    evc.EventDetails = NewEvent;
+                    evc.LoadView(); 
                 }
             }
         }

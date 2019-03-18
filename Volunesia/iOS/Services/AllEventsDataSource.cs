@@ -51,7 +51,18 @@ namespace Volunesia.iOS.Services
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             //base.RowSelected(tableView, indexPath);
-            AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
+            int i = indexPath.Row;
+
+            if(AppData_iOS.NonprofitEvents != null)
+            {
+                if(i < AppData_iOS.NonprofitEvents.Count)
+                {
+                    Event e = AppData_iOS.NonprofitEvents[i];
+                    NPProfileViewController npvc = (NPProfileViewController)HomeController;
+                    npvc.Event = e;
+                    npvc.PerformSegue("ToEventSegue_id", HomeController);
+                }
+            }
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)
