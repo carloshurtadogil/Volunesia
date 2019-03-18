@@ -272,6 +272,8 @@
     <BundleResource Include="Resources\Images\SubmitBtn.png" />
     <BundleResource Include="Resources\Images\EditButton.png" />
     <BundleResource Include="Resources\Images\SignupButton.png" />
+    <BundleResource Include="Resources\red-cross.png" />
+    <BundleResource Include="Resources\RedCross.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

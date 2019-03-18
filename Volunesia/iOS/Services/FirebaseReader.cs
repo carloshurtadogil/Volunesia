@@ -320,6 +320,12 @@ namespace Volunesia.iOS.Services
 
         }
 
+        public static void RemoveEvent(string npid, string eid) 
+        {
+            DatabaseReference reference = AppData_iOS.EventNode.GetChild(npid).GetChild(eid);
+            reference.RemoveValue();
+        }
+
         /// <summary>
         /// Write event details to Firebase
         /// </summary>

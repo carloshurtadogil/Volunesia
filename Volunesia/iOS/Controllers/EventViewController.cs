@@ -11,6 +11,7 @@ namespace Volunesia.iOS
     {
         public Event EventDetails { get; set; }
         public bool JustCreated { get; set; }
+        public UIImage CoverPhoto { get; set; }
 
         public EventViewController (IntPtr handle) : base (handle)
         {
@@ -23,7 +24,15 @@ namespace Volunesia.iOS
             {
                 if(EventDetails.EventImagePath != "standard")
                 {
-                    FirebaseStorageServices.RetrieveImage(EventDetails.EventImagePath, CoverPhotoImageView);
+                    if(JustCreated)
+                    {
+                        CoverPhotoImageView.Image = CoverPhoto;
+                    }
+                    else
+                    {
+                        AlertShow.Print("Searching");
+                        FirebaseStorageServices.RetrieveImage(EventDetails.EventImagePath, CoverPhotoImageView);
+                    }
                 }
 
                 NonprofitNameLabel.Text = "";

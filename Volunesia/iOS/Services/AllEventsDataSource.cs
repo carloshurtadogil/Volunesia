@@ -94,5 +94,25 @@ namespace Volunesia.iOS.Services
             }
             return cell;
         }
+
+        public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
+        {
+            switch(editingStyle)
+            {
+                case UITableViewCellEditingStyle.Delete:
+                    int i = indexPath.Row;
+                    if(i < AppData_iOS.NonprofitEvents.Count)
+                    {
+                        Event e = AppData_iOS.NonprofitEvents[i];
+                        FirebaseReader.RemoveEvent(e.HostID, e.EventID);
+                        AppData_iOS.NonprofitEvents.RemoveAt(i);
+                        tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
+                    }
+                    break;
+                case UITableViewCellEditingStyle.None:
+                    AlertShow.Print("Almost deleted");
+                    break;
+            }
+        }
     }
 }

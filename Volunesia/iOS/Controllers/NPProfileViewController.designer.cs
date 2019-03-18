@@ -32,6 +32,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView ProfileImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SettingsButton { get; set; }
 
         [Outlet]
@@ -66,6 +70,11 @@ namespace Volunesia.iOS
             if (NavBarImageView != null) {
                 NavBarImageView.Dispose ();
                 NavBarImageView = null;
+            }
+
+            if (ProfileImageView != null) {
+                ProfileImageView.Dispose ();
+                ProfileImageView = null;
             }
 
             if (SettingsButton != null) {

@@ -1546,6 +1546,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="94480" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="RedCross.png">
+                                <rect key="frame" x="66" y="108" width="255" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -1558,6 +1562,7 @@
                         <segue id="65511" destination="64560" kind="show" identifier="ToEventCreationSegue_id"/>
                         <outlet property="EventsTableView" destination="83644" id="name-outlet-83644"/>
                         <segue id="92196" destination="89985" kind="presentation" identifier="ToEventSegue_id"/>
+                        <outlet property="ProfileImageView" destination="94480" id="name-outlet-94480"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46461" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2131,5 +2136,6 @@
         <image name="Images/SubmitBtn.png" width="1183" height="441"/>
         <image name="Images/EditButton.png" width="1178" height="439"/>
         <image name="Images/SignupButton.png" width="1190" height="441"/>
+        <image name="RedCross.png" width="1280" height="434"/>
     </resources>
 </document>

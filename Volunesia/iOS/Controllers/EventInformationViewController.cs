@@ -241,6 +241,7 @@ namespace Volunesia.iOS
                 {
                     evc.JustCreated = true;
                     evc.EventDetails = NewEvent;
+                    evc.CoverPhoto = CoverPhotoImageView.Image;
                     evc.LoadView(); 
                 }
             }
