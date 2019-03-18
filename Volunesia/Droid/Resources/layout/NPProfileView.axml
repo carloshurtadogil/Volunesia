@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	<RelativeLayout
+		android:id="@+id/relativeLayout1"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:background="#FFFFFF"
+		android:layout_width="388.5dp"
+		android:layout_height="310.5dp"
+		<ListView
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/listView1" />
+	</RelativeLayout>
+	<Button
+		android:id="@id/notificationsButton"
+		android:text="Notifications"
+		android:layout_width="138.0dp"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		/>
+	<Button
+		android:id="@id/allNPEventsButton"
+		android:text="All Events"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_alignParentBottom="true"
+		/>
+
+	<Button
+		android:id="@id/npProfileButton"
+		android:text="Profile"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/allNPEventsButton"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		/>
+	
+
+
+</RelativeLayout>

@@ -197,7 +197,11 @@
     <Compile Include="Activities\MainRegisterActivity.cs" />
     <Compile Include="Activities\MissionStatementActivity.cs" />
     <Compile Include="Activities\NonprofitHomeActivity.cs" />
+    <Compile Include="Activities\NonprofitProfileViewActivity.cs" />
     <Compile Include="Activities\NonprofitTypeRegisterActivity.cs" />
+    <Compile Include="Activities\NPAllEventsFragment.cs" />
+    <Compile Include="Activities\NPNotificationsFragment.cs" />
+    <Compile Include="Activities\NPProfileFragment.cs" />
     <Compile Include="Activities\RegisterActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\SecondRegisterActivity.cs" />
@@ -306,6 +310,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Event.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\NPProfileView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
