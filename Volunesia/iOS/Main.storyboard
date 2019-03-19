@@ -1481,7 +1481,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="46441" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/Ombre BG.png">
-                                <rect key="frame" x="0.0" y="-3" width="375" height="429"/>
+                                <rect key="frame" x="0.0" y="-3" width="375" height="730"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="46443" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1492,31 +1492,31 @@
                                     <action selector="SettingsButton_TouchUpInside:" destination="46439" id="46451" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46445" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="46445" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Red Cross">
                                 <rect key="frame" x="104" y="53" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="46449" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" enabled="NO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="46449" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="329" y="49" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Images/AddButton.png"/>
+                                <state key="normal" backgroundImage="Images/BellIcon.png"/>
                                 <connections>
                                     <action selector="SettingsButton_TouchUpInside:" destination="46457" id="46456" eventType="touchUpInside"/>
-                                    <action selector="AddButton_TouchUpInside:" destination="46439" id="46458" eventType="touchUpInside"/>
+                                    <action selector="NotificationButton_TouchUpInside:" destination="46439" id="95148" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="47127" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2" textAlignment="center">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="47127" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="2" textAlignment="center" hidden="YES">
                                 <rect key="frame" x="16" y="269" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="83644" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="337" width="375" height="475"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="641"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1546,23 +1546,72 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="94480" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="RedCross.png">
-                                <rect key="frame" x="66" y="108" width="255" height="139"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="95133" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="727" width="125" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/SelectedEventButton.png"/>
+                                <connections>
+                                    <action selector="SettingsButton_TouchUpInside:" destination="95135" id="95134" eventType="touchUpInside"/>
+                                    <action selector="PastButton_TouchUpInside:" destination="95137" id="95136" eventType="touchUpInside"/>
+                                    <action selector="EventsButton_TouchUpInside:" destination="46439" id="95149" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="95138" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="125" y="727" width="125" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/NewEventButton.png"/>
+                                <connections>
+                                    <action selector="SettingsButton_TouchUpInside:" destination="95140" id="95139" eventType="touchUpInside"/>
+                                    <action selector="PresentButton_TouchUpInside:" destination="95137" id="95141" eventType="touchUpInside"/>
+                                    <action selector="NewEventButton_TouchUpInside:" destination="46439" id="95146" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="95142" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="250" y="727" width="125" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/ProfileButton.png"/>
+                                <connections>
+                                    <action selector="SettingsButton_TouchUpInside:" destination="95144" id="95143" eventType="touchUpInside"/>
+                                    <action selector="FutureButton_TouchUpInside:" destination="95137" id="95145" eventType="touchUpInside"/>
+                                    <action selector="ProfileButton_TouchUpInside:" destination="46439" id="95150" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="96643" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Images/img_placeholder.png" hidden="YES">
+                                <rect key="frame" x="66" y="87" width="255" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="96644" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" hidden="YES">
+                                <rect key="frame" x="24" y="356" width="338" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Statement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="96645" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" hidden="YES">
+                                <rect key="frame" x="28" y="322" width="258" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="NavBarImageView" destination="46441" id="46440"/>
                         <outlet property="SettingsButton" destination="46443" id="46442"/>
                         <outlet property="NameLabel" destination="46445" id="46444"/>
-                        <outlet property="AddButton" destination="46449" id="46448"/>
+                        <outlet property="NotificationButton" destination="46449" id="name-outlet-46449"/>
                         <segue id="47158" destination="35419" kind="show" identifier="ToNPRSettingsSegue_id"/>
                         <outlet property="UserNameLabel" destination="47127" id="name-outlet-47127"/>
                         <segue id="65511" destination="64560" kind="show" identifier="ToEventCreationSegue_id"/>
                         <outlet property="EventsTableView" destination="83644" id="name-outlet-83644"/>
                         <segue id="92196" destination="89985" kind="presentation" identifier="ToEventSegue_id"/>
-                        <outlet property="ProfileImageView" destination="94480" id="name-outlet-94480"/>
+                        <outlet property="EventsButton" destination="95133" id="name-outlet-95133"/>
+                        <outlet property="NewEventButton" destination="95138" id="name-outlet-95138"/>
+                        <outlet property="ProfileButton" destination="95142" id="name-outlet-95142"/>
+                        <outlet property="ProfileImageView" destination="96643" id="name-outlet-96643"/>
+                        <outlet property="MissionStatementTextview" destination="96644" id="name-outlet-96644"/>
+                        <outlet property="MissionStatementLabel" destination="96645" id="name-outlet-96645"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46461" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2136,6 +2185,9 @@
         <image name="Images/SubmitBtn.png" width="1183" height="441"/>
         <image name="Images/EditButton.png" width="1178" height="439"/>
         <image name="Images/SignupButton.png" width="1190" height="441"/>
-        <image name="RedCross.png" width="1280" height="434"/>
+        <image name="Images/NewEventButton.png" width="1000" height="680"/>
+        <image name="Images/ProfileButton.png" width="1000" height="680"/>
+        <image name="Images/SelectedEventButton.png" width="1000" height="680"/>
+        <image name="Images/BellIcon.png" width="1350" height="1350"/>
     </resources>
 </document>

@@ -274,6 +274,14 @@
     <BundleResource Include="Resources\Images\SignupButton.png" />
     <BundleResource Include="Resources\red-cross.png" />
     <BundleResource Include="Resources\RedCross.png" />
+    <BundleResource Include="Resources\Images\AddButton.jpg" />
+    <BundleResource Include="Resources\Images\NewEventButton.png" />
+    <BundleResource Include="Resources\Images\SelectedProfileButton.png" />
+    <BundleResource Include="Resources\Images\ProfileButton.png" />
+    <BundleResource Include="Resources\Images\EventButton.png" />
+    <BundleResource Include="Resources\Images\SelectedEventButton.png" />
+    <BundleResource Include="Resources\Images\NotificationIcon.png" />
+    <BundleResource Include="Resources\Images\BellIcon.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

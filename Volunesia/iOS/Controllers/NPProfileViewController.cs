@@ -31,7 +31,7 @@ namespace Volunesia.iOS
                 AlertShow.Print("View Did Appear");
 
                 User u = AppData.CurUser;
-                UserNameLabel.Text = u.FirstName + " " + u.LastName;
+                //UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
 
 
@@ -50,11 +50,11 @@ namespace Volunesia.iOS
                 }
                 if (AppData.NonprofitRepresentative.Poster == "Y")
                 {
-                    AddButton.Enabled = true;
+                    NewEventButton.Enabled = true;
                 }
                 else
                 {
-                    AddButton.Enabled = false; 
+                    NewEventButton.Enabled = false; 
                 }
 
 
@@ -62,11 +62,15 @@ namespace Volunesia.iOS
 
         }
 
-        //Start the event creation process
-        partial void AddButton_TouchUpInside(UIButton sender)
+        /// <summary>
+        /// Start the event creation process
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void NewEventButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("ToEventCreationSegue_id", sender);
         }
+
 
         //Continue to the settings view controller
         partial void SettingsButton_TouchUpInside(UIButton sender)
@@ -106,6 +110,62 @@ namespace Volunesia.iOS
             }
         }
 
+        /// <summary>
+        /// Show the profile details for the current user
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void ProfileButton_TouchUpInside(UIButton sender)
+        {
+            //Hide the previous items
+            EventsTableView.Hidden = true;
+
+            //Enable the new items and change the button images
+            User u = AppData.CurUser;
+            UserNameLabel.Text = u.FirstName + " " + u.LastName;
+            MissionStatementTextview.Text = "Mission Statement is either queried or stored, but it will be shown here.";
+            UserNameLabel.Hidden = false;
+            MissionStatementLabel.Hidden = false;
+            MissionStatementTextview.Hidden = false;
+            ProfileImageView.Hidden = false;
+            
+            UIImage events = UIImage.FromFile("Images/EventButton.png");
+            UIImage selectedProfile = UIImage.FromFile("Images/SelectedProfileButton.png");
+            EventsButton.ImageView.Image = events;
+            ProfileButton.ImageView.Image = selectedProfile;
+        }
+
+
+        /// <summary>
+        /// Show all events that the user can work with
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void EventsButton_TouchUpInside(UIButton sender)
+        {
+            //Hide the previous items
+            ProfileImageView.Hidden = true;
+            UserNameLabel.Hidden = true;
+            MissionStatementLabel.Hidden = true;
+            MissionStatementTextview.Hidden = true;
+
+            //Enable the new items and change the button images
+            EventsTableView.Hidden = false;
+            UIImage profile = UIImage.FromFile("Images/ProfileButton.png");
+            UIImage selectedEvents = UIImage.FromFile("Images/SelectedEventButton.png");
+            ProfileButton.ImageView.Image = profile;
+            EventsButton.ImageView.Image = selectedEvents;
+            AlertShow.Print("Name: "+ EventsButton.CurrentBackgroundImage.Images[0].ToString());
+
+        }
+
+        /// <summary>
+        /// Allow the user to view their notifcations
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void NotificationButton_TouchUpInside(UIButton sender)
+        {
+            AlertShow.Show(this, "To be implemented", "");
+        }
+
         async Task RefreshAsync()
         {
             //only active the refresh control if the feature is available
@@ -123,6 +183,7 @@ namespace Volunesia.iOS
                 EventsTableView.ReloadData(); 
             }
         }
+
 
         void AddRefreshControl()
         {

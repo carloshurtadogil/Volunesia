@@ -6,18 +6,47 @@ namespace Volunesia.Models
 {
     public class User
     {
-        //The user's first name
+        /// <summary>
+        /// The user's first name
+        /// </summary>
+        /// <value>The first name.</value>
         public string FirstName    { get; set; }
-        //The user's last name
+
+        /// <summary>
+        /// The user's last name
+        /// </summary>
+        /// <value>The last name.</value>
         public string LastName     { get; set; }
-        //The user's email (will serve as their login identifier)
+
+        /// <summary>
+        /// The user's email (will serve as their login identifier)
+        /// </summary>
+        /// <value>The email address.</value>
         public string EmailAddress { get; set; }
-        //The user's User ID (will connect to user's data)
-        public string UID          { get; set; }
-        //Flag to determine if user is nonprofit representative or volunteer
+
+        /// <summary>
+        /// The user's User ID (will connect to user's data)
+        /// </summary>
+        /// <value>The uid.</value>
+        public string UID { get; set; }
+
+        /// <summary>
+        /// Flag to determine if user is nonprofit representative or volunteer
+        /// </summary>
+        /// <value>The type of the user.</value>
         public string UserType     { get; set; }
-        //Anything that the user wishes to say to the crowd
+
+        /// <summary>
+        /// Anything that the user wishes to say to the crowd
+        /// </summary>
+        /// <value>The personal statement.</value>
         public string PersonalStatement { get; set; }
+
+        /// <summary>
+        /// Flag to determine if the user has a profile picture
+        /// </summary>
+        /// <value>Y for yes, N for no.</value>
+        public string HasProfilePicture { get; set; }
 
     }
 }
