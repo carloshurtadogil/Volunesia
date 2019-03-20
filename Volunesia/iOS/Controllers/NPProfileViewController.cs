@@ -33,9 +33,9 @@ namespace Volunesia.iOS
                 User u = AppData.CurUser;
                 //UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
-
-
-
+                IDGenerator ge = new IDGenerator();
+                //FirebaseReader.WriteToRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", ge.GenerateID());
+                FirebaseReader.RemoveFromRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", "45b2834d-3217-4847-8a6b-225307f5c0cf");
                 if (AppData_iOS.NonprofitEvents != null)
                 {
                     //AllEventsDataSource sdc = new AllEventsDataSource(this, true);
@@ -122,16 +122,11 @@ namespace Volunesia.iOS
             //Enable the new items and change the button images
             User u = AppData.CurUser;
             UserNameLabel.Text = u.FirstName + " " + u.LastName;
-            MissionStatementTextview.Text = "Mission Statement is either queried or stored, but it will be shown here.";
+            FirebaseReader.ReadMissionStatement(AppData.NonprofitRepresentative.AssociatedNonprofit, MissionStatementTextview);
             UserNameLabel.Hidden = false;
             MissionStatementLabel.Hidden = false;
             MissionStatementTextview.Hidden = false;
             ProfileImageView.Hidden = false;
-            
-            UIImage events = UIImage.FromFile("Images/EventButton.png");
-            UIImage selectedProfile = UIImage.FromFile("Images/SelectedProfileButton.png");
-            EventsButton.ImageView.Image = events;
-            ProfileButton.ImageView.Image = selectedProfile;
         }
 
 
@@ -149,11 +144,6 @@ namespace Volunesia.iOS
 
             //Enable the new items and change the button images
             EventsTableView.Hidden = false;
-            UIImage profile = UIImage.FromFile("Images/ProfileButton.png");
-            UIImage selectedEvents = UIImage.FromFile("Images/SelectedEventButton.png");
-            ProfileButton.ImageView.Image = profile;
-            EventsButton.ImageView.Image = selectedEvents;
-            AlertShow.Print("Name: "+ EventsButton.CurrentBackgroundImage.Images[0].ToString());
 
         }
 
