@@ -288,6 +288,25 @@ namespace Volunesia.iOS.Services
             });
         }
 
+        /// <summary>
+        /// Read the email of the primary contact for a nonprofit organization
+        /// </summary>
+        /// <param name="npid">The id of the nonprofit organization.</param>
+        /// <param name="label">The UILabel to be updated.</param>
+        public static void ReadContactEmail(string npid, UILabel label) 
+        {
+            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                var data = snapshot.GetValue<NSDictionary>();
+                var primarycontact = data["primarycontact"].ToString();
+                AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value,(snapshot2) => 
+                {
+                    var data2 = snapshot2.GetValue<NSDictionary>();
+                    var email = data2["email"].ToString();
+                    label.Text = email;
+                }); 
+            });
+        }
 
         /// <summary>
         /// Read the volunteer history of a particular volunteer
@@ -402,7 +421,7 @@ namespace Volunesia.iOS.Services
         /// <param name="npid">The nonprofit id for an event.</param>
         /// <param name="eid">The event id.</param>
         /// <param name="uid">The id of the user to be added.</param>
-        public static void WriteToRoster(string npid, string eid, string uid) 
+        public static void WriteToRoster(UIViewController inpView, string npid, string eid, string uid) 
         {
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value,(snapshot) => 
             {
@@ -424,7 +443,7 @@ namespace Volunesia.iOS.Services
                 {
                     AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).SetValue(urosteritem);
                 }
-
+                AlertShow.Show(inpView, "Congratulations", "You are one step closer to making the world a better place. Please keep in mind the date of the event and lookout for any new changes.");
             }); 
         }
 

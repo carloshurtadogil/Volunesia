@@ -1,5 +1,8 @@
 ﻿using System;
 using UIKit;
+using Volunesia.iOS.Services;
+using Volunesia.Models;
+using Volunesia.Services;
 
 namespace Volunesia.iOS
 {
@@ -42,14 +45,14 @@ namespace Volunesia.iOS
         /// Present this prompt to the volunteer
         /// </summary>
         /// <param name="inpView">The view controller that will include the prompt.</param>
-        public static void DisplaySignUpPrompt(UIViewController inpView) 
+        public static void DisplaySignUpPrompt(UIViewController inpView, Event e) 
         {
             UIAlertController alert = UIAlertController.Create("You are about to make a difference", "Are you ready?", UIAlertControllerStyle.Alert);
 
             alert.AddAction(UIAlertAction.Create("No", UIAlertActionStyle.Default, null));
             alert.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Default, (handler) => 
             {
-                Show(inpView, "To be implemented", "");
+                FirebaseReader.WriteToRoster(inpView, e.HostID, e.EventID, AppData.CurUser.UID);
             }));
 
 

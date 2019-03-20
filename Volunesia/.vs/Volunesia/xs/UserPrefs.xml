@@ -3,11 +3,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/NPProfileViewController.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="37" Column="17" />
-      <File FileName="iOS/Controllers/HomeViewController.cs" Line="64" Column="14" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="436" Column="70" />
+      <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="59" Column="105" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="295" Column="58" />
       <File FileName="iOS/Services/Register.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="45" Column="79" />
+      <File FileName="iOS/AlertShow.cs" Line="50" Column="68" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

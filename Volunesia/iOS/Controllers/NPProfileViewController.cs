@@ -35,7 +35,7 @@ namespace Volunesia.iOS
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
                 IDGenerator ge = new IDGenerator();
                 //FirebaseReader.WriteToRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", ge.GenerateID());
-                FirebaseReader.RemoveFromRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", "45b2834d-3217-4847-8a6b-225307f5c0cf");
+                //FirebaseReader.RemoveFromRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", "45b2834d-3217-4847-8a6b-225307f5c0cf");
                 if (AppData_iOS.NonprofitEvents != null)
                 {
                     //AllEventsDataSource sdc = new AllEventsDataSource(this, true);
@@ -56,6 +56,10 @@ namespace Volunesia.iOS
                 {
                     NewEventButton.Enabled = false; 
                 }
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
+                AllEventsDataSource sdc = new AllEventsDataSource(this, true);
+                EventsTableView.Source = sdc;
+                EventsTableView.ReloadData();
 
 
             }
@@ -144,6 +148,10 @@ namespace Volunesia.iOS
 
             //Enable the new items and change the button images
             EventsTableView.Hidden = false;
+            AllEventsDataSource sdc = new AllEventsDataSource(this, true);
+            EventsTableView.Source = sdc;
+            RefreshControl.EndRefreshing();
+            EventsTableView.ReloadData();
 
         }
 

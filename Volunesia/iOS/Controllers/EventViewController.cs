@@ -43,7 +43,7 @@ namespace Volunesia.iOS
                     EventDate.Text = formattedEventDate;
                 }
                 EventDescriptionTextView.Text = EventDetails.EventDescription;
-                ContactEmailLabel.Text = "To be queried";
+                FirebaseReader.ReadContactEmail(EventDetails.HostID, ContactEmailLabel);
             }
 
 
@@ -89,7 +89,7 @@ namespace Volunesia.iOS
         /// <param name="sender">Sender.</param>
         partial void SignupButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.DisplaySignUpPrompt(this);
+            AlertShow.DisplaySignUpPrompt(this, EventDetails);
         }
 
         /// <summary>
