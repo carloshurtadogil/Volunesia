@@ -198,6 +198,26 @@ namespace Volunesia.iOS.Services
              
         }
 
+
+        /// <summary>
+        /// Reads the mission statement for a specific nonprofit.
+        /// </summary>
+        /// <param name="npid">The nonprofit id to be used for the search.</param>
+        /// <param name="textview">the textview to be populated.</param>
+        public static void ReadMissionStatement(string npid, UITextView textview) 
+        {
+            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                var values = snapshot.GetValue<NSDictionary>();
+                string missionstatement = values["missionstatement"].ToString().Trim();
+                if(missionstatement.Length > 0) 
+                {
+                    textview.Text = missionstatement; 
+                }
+
+            }); 
+        }
+
         /// <summary>
         /// Read the Firebase data on all events hosted by a specific nonprofit
         /// </summary>
@@ -320,6 +340,11 @@ namespace Volunesia.iOS.Services
 
         }
 
+        /// <summary>
+        /// Remove a specific event from Firebase
+        /// </summary>
+        /// <param name="npid">The nonprofit id.</param>
+        /// <param name="eid">The event id.</param>
         public static void RemoveEvent(string npid, string eid) 
         {
             DatabaseReference reference = AppData_iOS.EventNode.GetChild(npid).GetChild(eid);
@@ -369,6 +394,62 @@ namespace Volunesia.iOS.Services
 
             AppData_iOS.UsersNode.GetChild(user.UID).UpdateChildValues(emailupdate);
 
+        }
+
+        /// <summary>
+        /// Write a new user to the roster of an event
+        /// </summary>
+        /// <param name="npid">The nonprofit id for an event.</param>
+        /// <param name="eid">The event id.</param>
+        /// <param name="uid">The id of the user to be added.</param>
+        public static void WriteToRoster(string npid, string eid, string uid) 
+        {
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                var data = snapshot.GetValue<NSDictionary>();
+                object[] keys = { "attended", "hourscompleted", "status" };
+                object[] vals = { "N", 0, "Will Attend" };
+                var urosteritem = NSDictionary.FromObjectsAndKeys(vals, keys);
+
+                var roster = data["roster"].ToString();
+                int val;
+                if(int.TryParse(roster, out val)) 
+                {
+                    object[] key = { uid };
+                    object[] value = { urosteritem };
+                    var rosteritem = NSDictionary.FromObjectsAndKeys(value, key);
+                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(rosteritem);
+                }
+                else
+                {
+                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).SetValue(urosteritem);
+                }
+
+            }); 
+        }
+
+        /// <summary>
+        /// Remove a volunteer from a Roster
+        /// </summary>
+        /// <param name="npid">The nonprofit id for an event.</param>
+        /// <param name="eid">The event id.</param>
+        /// <param name="uid">The id of the user to be added.</param>
+        public static void RemoveFromRoster(string npid, string eid, string uid) 
+        {
+
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                if(snapshot.ChildrenCount > 1) //Simple removal
+                {
+                    DatabaseReference reference = AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid);
+                    reference.RemoveValue();
+                }
+                else //Set the value of "roster" to 0 to indicate that no volunteer is going to attend the event
+                {
+                    NSNumber n = 0;
+                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(n); 
+                }
+            });
         }
 
     }

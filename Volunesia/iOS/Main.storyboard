@@ -1549,7 +1549,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="95133" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="727" width="125" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Images/SelectedEventButton.png"/>
+                                <state key="normal" backgroundImage="Images/EventButton.png"/>
                                 <connections>
                                     <action selector="SettingsButton_TouchUpInside:" destination="95135" id="95134" eventType="touchUpInside"/>
                                     <action selector="PastButton_TouchUpInside:" destination="95137" id="95136" eventType="touchUpInside"/>
@@ -2187,7 +2187,7 @@
         <image name="Images/SignupButton.png" width="1190" height="441"/>
         <image name="Images/NewEventButton.png" width="1000" height="680"/>
         <image name="Images/ProfileButton.png" width="1000" height="680"/>
-        <image name="Images/SelectedEventButton.png" width="1000" height="680"/>
         <image name="Images/BellIcon.png" width="1350" height="1350"/>
+        <image name="Images/EventButton.png" width="1000" height="680"/>
     </resources>
 </document>
