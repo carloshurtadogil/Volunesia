@@ -52,10 +52,14 @@ namespace Volunesia.Droid.Activities
             var waitlistID = eventInfoAsJson["wlid"];
 
             SetContentView(Resource.Layout.Event);
+            //retrieve the event name field
             var eventNameField = FindViewById<TextView>(Resource.Id.eventNameTextView);
             eventNameField.Text = SelectedEvent.EventName;
-
-            var eventDescriptionField = FindViewById<TextView>(Resource.Id.eventDescriptionTextView);
+            //retrieve the event date field
+            var eventDateField = FindViewById<TextView>(Resource.Id.eventDateTextView);
+            eventDateField.Text = SelectedEvent.EventDate.ToString();
+            //retrieve the event description field
+            var eventDescriptionField = FindViewById<TextView>(Resource.Id.eventDescriptionContent);
             eventDescriptionField.Text = SelectedEvent.EventDescription;
 
             ApplyOrDeleteButton = FindViewById<Button>(Resource.Id.applyOrDeleteButton);
@@ -86,7 +90,7 @@ namespace Volunesia.Droid.Activities
 
                 if (volunteerInRoster == true)
                 {
-                    ApplyOrDeleteButton.Text = "Drop from Event";
+                    ApplyOrDeleteButton.Text = "Withdraw from Event";
                     ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                 }
                 else

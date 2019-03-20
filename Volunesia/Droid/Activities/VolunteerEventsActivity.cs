@@ -223,7 +223,6 @@ namespace Volunesia.Droid.Activities
                     theEvent.HostID = nonprofitID;
                     theEvent.EventDate = Convert.ToDateTime(idAndInfoNode.Value["eventdate"].ToString());
                     theEvent.EventName = idAndInfoNode.Value["eventname"].ToString();
-                    Console.WriteLine(idAndInfoNode.Value["applicationdeadline"].ToString());
                     AllEvents.Add(theEvent);
                 }
             }
