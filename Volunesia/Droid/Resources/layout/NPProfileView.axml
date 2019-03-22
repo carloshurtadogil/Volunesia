@@ -5,13 +5,15 @@
 	android:layout_height="match_parent"
 	>
 	
-	<RelativeLayout
+	<FrameLayout
+		android:id="@+id/dynamicFragmentFrame"
 		android:background="#FFFFFF"
 		android:layout_width="388.5dp"
 		android:layout_height="310.5dp"
 
 	>
-		</RelativeLayout>
+		
+		</FrameLayout>
 	<Button
 		android:id="@+id/allNPEventsButton"
 		android:text="All Events"

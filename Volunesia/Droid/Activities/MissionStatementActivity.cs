@@ -74,10 +74,13 @@ namespace Volunesia.Droid
             newNonprofit.Add("zip", ZipCode);
 
             Register r = new Register();
-            r.AddUserToFirebase(theUser);
-            r.AddNonprofitOrganizationToFirebase(newNonprofit);
+            //Add the nonprofit org to Firebase
+            string generatedID = r.AddNonprofitOrganizationToFirebase(newNonprofit);
+            //Add the user to Firebase
+            r.AddUserToFirebase(theUser, generatedID);
+            //Add the nonprofit rep to Firebase
+            r.AddNonprofitRepToFirebase(generatedID, OrganizationName);
 
-          
 
             //Navigate to the WelcomeActivity
             StartActivity(typeof(NonprofitHomeActivity));

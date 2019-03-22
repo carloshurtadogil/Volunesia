@@ -49,7 +49,7 @@ namespace Volunesia.Droid.Activities
 
             
             View allEventsView = inflater.Inflate(Resource.Layout.NPAllEvents, container, false );
-            AllNPEventsInListView = allEventsView.FindViewById<ListView>(Resource.Id.myListView);
+            AllNPEventsInListView = allEventsView.FindViewById<ListView>(Resource.Id.allEventsForNP);
 
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(Context, Android.Resource.Layout.SimpleListItem1, mAllNPItems);
             AllNPEventsInListView.Adapter = adapter;

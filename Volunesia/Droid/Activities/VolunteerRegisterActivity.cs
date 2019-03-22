@@ -52,7 +52,7 @@ namespace Volunesia.Droid
 
             //Add the current user (nonprofit rep) to Firebase
             Register r = new Register();
-            r.AddUserToFirebase(theUser);
+            r.AddUserToFirebase(theUser, "");
 
             StartActivity(typeof(WelcomeActivity));
         }

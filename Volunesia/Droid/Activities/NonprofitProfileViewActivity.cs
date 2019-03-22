@@ -38,7 +38,7 @@ namespace Volunesia.Droid.Activities
         {
             FragmentTransaction fragmentTransaction = FragmentManager.BeginTransaction();
             NPAllEventsFragment npAllEventsFragment = new NPAllEventsFragment();
-            fragmentTransaction.Replace(Resource.Layout.NPAllEvents, npAllEventsFragment);
+            fragmentTransaction.Replace(Resource.Id.dynamicFragmentFrame, npAllEventsFragment);
             fragmentTransaction.Commit();
         }
 
@@ -52,7 +52,7 @@ namespace Volunesia.Droid.Activities
 
             FragmentTransaction fragmentTransaction = FragmentManager.BeginTransaction();
             NPProfileFragment npProfileFragment = new NPProfileFragment();
-            //fragmentTransaction.Replace(Resource.Layout.NPProfile, npProfileFragment);
+            fragmentTransaction.Replace(Resource.Id.dynamicFragmentFrame, npProfileFragment);
             fragmentTransaction.Commit();
         }
 
