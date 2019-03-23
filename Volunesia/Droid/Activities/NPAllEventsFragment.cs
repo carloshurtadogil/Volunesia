@@ -26,21 +26,37 @@ namespace Volunesia.Droid.Activities
         public List<string> mAllNPItems { get; set; }
         public ListView AllNPEventsInListView;
 
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-            
-        }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            AllEventsForNP = new List<Event>();
+            mAllNPItems = new List<string>();
             //Execues the method to retrieve all events for a nonprofit organization
             var retrieveAllEventsForNonprofits = System.Threading.Tasks.Task.Run(async () =>
             {
-               await QueryAllEventsForNP();
+               return await QueryAllEventsForNP();
 
 
             });
+
+
+            JObject allEventsForNonprofit = JObject.Parse(retrieveAllEventsForNonprofits.Result);
+
+            //Traverse the events that the nonprofit has
+            foreach (var eventKeyAndInfo in allEventsForNonprofit)
+            {
+                string nonprofitID = eventKeyAndInfo.Key;
+                JObject eventIDAndInformation = (JObject)eventKeyAndInfo.Value;
+
+                Event nonprofitEvent = new Event();
+                nonprofitEvent.ApplicationDeadline = Convert.ToDateTime(eventIDAndInformation["applicationdeadline"].ToString());
+                nonprofitEvent.Capacity = Convert.ToInt32(eventIDAndInformation["capacity"]);
+                nonprofitEvent.EventDate = Convert.ToDateTime(eventIDAndInformation["eventdate"]);
+                nonprofitEvent.EventName = eventIDAndInformation["eventname"].ToString();
+
+                AllEventsForNP.Add(nonprofitEvent);
+            }
+
 
             foreach (var nonprofitEvent in AllEventsForNP)
             {
@@ -75,8 +91,9 @@ namespace Volunesia.Droid.Activities
         /// Queries all events that a nonprofit organization has created 
         /// </summary>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task QueryAllEventsForNP()
+        public async System.Threading.Tasks.Task<string> QueryAllEventsForNP()
         {
+            
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
@@ -84,22 +101,8 @@ namespace Volunesia.Droid.Activities
             FirebaseResponse allNPEventsResponse = await firebaseClient.GetAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit);
 
             string allNPEventsResponseResult = allNPEventsResponse.Body;
-            JObject allEventsForNonprofit = JObject.Parse(allNPEventsResponseResult);
-
-            //Traverse the events that the nonprofit has
-            foreach(var eventKeyAndInfo in allEventsForNonprofit)
-            {
-                string nonprofitID = eventKeyAndInfo.Key;
-                JObject eventIDAndInformation = (JObject)eventKeyAndInfo.Value;
-
-                Event nonprofitEvent = new Event();
-                nonprofitEvent.ApplicationDeadline = Convert.ToDateTime(eventIDAndInformation["applicationdeadline"].ToString());
-                nonprofitEvent.Capacity= Convert.ToInt32(eventIDAndInformation["capacity"]);
-                nonprofitEvent.EventDate = Convert.ToDateTime(eventIDAndInformation["eventdate"]);
-                nonprofitEvent.EventName = eventIDAndInformation["eventname"].ToString();
-
-                AllEventsForNP.Add(nonprofitEvent);
-            }
+            
+            return allNPEventsResponseResult;
 
 
         }

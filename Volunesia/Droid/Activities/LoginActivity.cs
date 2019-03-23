@@ -112,7 +112,7 @@ namespace Volunesia.Droid
 
                             var associatedNPJsonObject = JObject.Parse(associatedNPDetails);
                             AppData.NonprofitRepresentative.AssociatedNonprofitName = associatedNPJsonObject["associatednpname"].ToString();
-                            AppData.NonprofitRepresentative.Position = associatedNPJsonObject["postion"].ToString();
+                            AppData.NonprofitRepresentative.Position = associatedNPJsonObject["position"].ToString();
                             AppData.NonprofitRepresentative.Poster = associatedNPJsonObject["poster"].ToString();
                             AppData.NonprofitRepresentative.RepsManager = associatedNPJsonObject["repsmanager"].ToString();
                             AppData.NonprofitRepresentative.Reviewer = associatedNPJsonObject["reviewer"].ToString();

@@ -8,7 +8,7 @@
 	<FrameLayout
 		android:id="@+id/dynamicFragmentFrame"
 		android:background="#FFFFFF"
-		android:layout_width="388.5dp"
+		android:layout_width="match_parent"
 		android:layout_height="310.5dp"
 
 	>
