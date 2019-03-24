@@ -31,6 +31,10 @@ namespace Volunesia.Droid.Activities
         private List<string> mItems;
         private ListView mListView;
 
+        //boolean values that check for event subscriptions
+        public bool PresentEventsCheckSubscription { get; set; }
+        public bool UpcomingEventsCheckSubscription { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //Retrieve the VolunteerHistory of a volunteer from Firebase
@@ -52,42 +56,61 @@ namespace Volunesia.Droid.Activities
 
 
             //parse the jobject and retrieve the components of the response
-            //var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
+            var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
 
             //create a volunteerhistory object that contains all of the volunteering events
             theVolunteerHistory = new VolunteerHistory();
 
+            //create a list that contains all upcoming events for a volunteer
+            UpcomingEvents = new List<Event>();
+
             //iterate through the event mappings in the node
-            //foreach (var eventpair in mainVolHistoryNode)
-            //{
-            //    //retrieve the information from each event node, and then form a volunteerevent object
-            //    var attended = eventpair.Value["attended"].ToString();
-            //    var eventdate = eventpair.Value["eventdate"].ToString();
-            //    var eventname = eventpair.Value["eventname"].ToString();
-            //    var nonprofitid = eventpair.Value["nonprofitid"].ToString();
-            //    var nonprofitname = eventpair.Value["nonprofitname"].ToString();
+            foreach (var eventpair in mainVolHistoryNode)
+            {
+                //retrieve the information from each event node, and then form a volunteerevent object
+                var attended = eventpair.Value["attended"].ToString();
+                var eventdate = eventpair.Value["eventdate"].ToString();
+                var eventname = eventpair.Value["eventname"].ToString();
+                var nonprofitid = eventpair.Value["nonprofitid"].ToString();
+                var nonprofitname = eventpair.Value["nonprofitname"].ToString();
 
-            //    VolunteerEvent volunteerevent = new VolunteerEvent()
-            //    {
-            //        Attended = attended,
-            //        EventDate = Convert.ToDateTime(eventdate),
-            //        EventName = eventname,
-            //        NonprofitID = nonprofitid,
-            //        NonprofitName = nonprofitname
+                //if event occurred before the current date, then it is regarded as a past evnet
+                if (eventdate.CompareTo(DateTime.Now.ToString()) <= 0)
+                {
+                    VolunteerEvent volunteerevent = new VolunteerEvent()
+                    {
+                        Attended = attended,
+                        EventDate = Convert.ToDateTime(eventdate),
+                        EventName = eventname,
+                        NonprofitID = nonprofitid,
+                        NonprofitName = nonprofitname
 
-            //    };
+                    };
+                    theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
+                }
+                //otherwise it is regarded as an upcoming event
+                else
+                {
+                    Event upcomingEvent = new Event()
+                    {
+                        EventDate = Convert.ToDateTime(eventdate),
+                        EventID = eventpair.Key,
+                        EventName = eventname,
+                        HostID = nonprofitid
+                    };
+                    UpcomingEvents.Add(upcomingEvent);
+                }
+                
+            }
 
-            //    theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
-            //}
-
-
+            PresentEventsCheckSubscription = false;
+            UpcomingEventsCheckSubscription = false;
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.VolunteerEvents);
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
-            
 
             //Load all volunteer events onto the List
             mItems = new List<string>();
@@ -113,11 +136,11 @@ namespace Volunesia.Droid.Activities
         }
 
         /// <summary>
-        /// Executes once an event from a ListView is clicked on 
+        /// Executes once a present event from a ListView is clicked on 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>        
-        public void EventClicked(object sender, AdapterView.ItemClickEventArgs e)
+        public void PresentEventClicked(object sender, AdapterView.ItemClickEventArgs e)
         {
             Console.WriteLine(AllEvents[e.Position].EventName);
             var intent = new Intent(this, typeof(EventActivity));
@@ -125,6 +148,22 @@ namespace Volunesia.Droid.Activities
             StartActivity(intent);
             
         }
+
+
+        /// <summary>
+        /// Executes once an upcoming event from a ListView is clicked on 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>        
+        public void UpcomingEventClicked(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine(UpcomingEvents[e.Position].EventName);
+            var intent = new Intent(this, typeof(EventActivity));
+            intent.PutExtra("event", JsonConvert.SerializeObject(AllEvents[e.Position]));
+            StartActivity(intent);
+
+        }
+
 
         /// <summary>
         /// Shows all volunteer's past events after clicking Show Past Events button
@@ -148,12 +187,43 @@ namespace Volunesia.Droid.Activities
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             mListView.Adapter = adapter;
 
+            if (PresentEventsCheckSubscription)
+            {
+                mListView.ItemClick -= PresentEventClicked;
+                PresentEventsCheckSubscription = false;
+            }
+            if (UpcomingEventsCheckSubscription)
+            {
+                mListView.ItemClick -= ShowUpcomingEvents;
+                UpcomingEventsCheckSubscription = false;
+            }
+
+
         }
 
-        //Displays all upcoming events for a volunteer after clicking the Show Upcoming Events button
+        /// <summary>
+        /// Displays all upcoming events that a volunteer is signed up for
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ShowUpcomingEvents(object sender, EventArgs e)
         {
-            
+            mItems = new List<string>();
+            foreach (var upcomingEvent in UpcomingEvents)
+            {
+                mItems.Add(upcomingEvent.EventName);
+            }
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
+            mListView.Adapter = adapter;
+
+            //checks if there is an event subscription to PresentEventClicked
+            if (PresentEventsCheckSubscription)
+            {
+                mListView.ItemClick -= PresentEventClicked;
+                PresentEventsCheckSubscription = false;
+            }
+            mListView.ItemClick += UpcomingEventClicked;
+            UpcomingEventsCheckSubscription = true;
         }
 
         //Displays all events of a volunteer after clicking on the Show All Events button
@@ -169,11 +239,19 @@ namespace Volunesia.Droid.Activities
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             mListView.Adapter = adapter;
 
-            mListView.ItemClick += EventClicked;
+            //checks if there is an event subscription to UpcomingEventClicked
+            if (UpcomingEventsCheckSubscription)
+            {
+                mListView.ItemClick -= UpcomingEventClicked;
+                UpcomingEventsCheckSubscription = false;
+            }
+            
+            mListView.ItemClick += PresentEventClicked;
+            PresentEventsCheckSubscription = true;
         }
 
 
-        //Proceeds to query all events that a volunteer has taken part of
+        //Proceeds to query all events that a volunteer has taken part of or will take part of
         public async System.Threading.Tasks.Task<string> QueryVolunteerHistory()
         {
             IFirebaseConfig config = new FirebaseConfig

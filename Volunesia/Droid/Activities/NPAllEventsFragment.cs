@@ -45,10 +45,12 @@ namespace Volunesia.Droid.Activities
             //Traverse the events that the nonprofit has
             foreach (var eventKeyAndInfo in allEventsForNonprofit)
             {
-                string nonprofitID = eventKeyAndInfo.Key;
+                string eventID = eventKeyAndInfo.Key;
                 JObject eventIDAndInformation = (JObject)eventKeyAndInfo.Value;
 
                 Event nonprofitEvent = new Event();
+                nonprofitEvent.HostID = AppData.NonprofitRepresentative.AssociatedNonprofit;
+                nonprofitEvent.EventID = eventID;
                 nonprofitEvent.ApplicationDeadline = Convert.ToDateTime(eventIDAndInformation["applicationdeadline"].ToString());
                 nonprofitEvent.Capacity = Convert.ToInt32(eventIDAndInformation["capacity"]);
                 nonprofitEvent.EventDate = Convert.ToDateTime(eventIDAndInformation["eventdate"]);
