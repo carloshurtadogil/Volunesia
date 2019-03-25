@@ -7,7 +7,7 @@ namespace Volunesia.Models
     public class Waitlist
     {
         //IDs of all users in the waitlist
-        private List<Attendee> WaitlistRoster { get; set; }
+        public List<Attendee> WaitlistRoster { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Volunesia.Models.Waitlist"/> class.

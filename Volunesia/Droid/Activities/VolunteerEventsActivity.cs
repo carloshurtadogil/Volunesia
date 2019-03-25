@@ -70,12 +70,13 @@ namespace Volunesia.Droid.Activities
                 //retrieve the information from each event node, and then form a volunteerevent object
                 var attended = eventpair.Value["attended"].ToString();
                 var eventdate = eventpair.Value["eventdate"].ToString();
+                DateTime eventDateInFormat = Convert.ToDateTime(eventdate);
                 var eventname = eventpair.Value["eventname"].ToString();
                 var nonprofitid = eventpair.Value["nonprofitid"].ToString();
                 var nonprofitname = eventpair.Value["nonprofitname"].ToString();
 
                 //if event occurred before the current date, then it is regarded as a past evnet
-                if (eventdate.CompareTo(DateTime.Now.ToString()) <= 0)
+                if (eventDateInFormat.CompareTo(DateTime.Now) <= 0)
                 {
                     VolunteerEvent volunteerevent = new VolunteerEvent()
                     {

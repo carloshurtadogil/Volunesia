@@ -14,5 +14,7 @@ namespace Volunesia.Models
         public int    HoursCompleted    { get; set; }
         //The attendee's UID
         public string    UID            { get; set; }
+        //The attendee's email address
+        public string EmailAddress      { get; set; }
     }
 }

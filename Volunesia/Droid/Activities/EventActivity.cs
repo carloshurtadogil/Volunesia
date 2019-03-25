@@ -23,7 +23,7 @@ namespace Volunesia.Droid.Activities
     [Activity(Label = "EventApplicationActivity")]
     public class EventActivity : Activity
     {
-        public Event SelectedEvent { get; set; } 
+        public Event SelectedEvent { get; set; }
         public Button ApplyOrDeleteButton { get; set; }
         public int FoundPosition { get; set; } //gets the volunteer's position in waitlist if placed in waitlist
         public String WLID { get; set; }
@@ -34,7 +34,7 @@ namespace Volunesia.Droid.Activities
 
             //Made this as a temporary event to test adding volunteers
             SelectedEvent = JsonConvert.DeserializeObject<Event>(Intent.GetStringExtra("event"));
-            WLID = "0" ;
+            WLID = "0";
             //Retrieve roster and waitlist from Firebase
             var eventTask = System.Threading.Tasks.Task.Run(async () => {
 
@@ -48,7 +48,7 @@ namespace Volunesia.Droid.Activities
 
             var rosterChecker = eventInfoAsJson["roster"].ToString();
             var waitlistChecker = eventInfoAsJson["waitlist"].ToString();
-            
+
             var waitlistID = eventInfoAsJson["wlid"];
 
             SetContentView(Resource.Layout.Event);
@@ -65,7 +65,7 @@ namespace Volunesia.Droid.Activities
             ApplyOrDeleteButton = FindViewById<Button>(Resource.Id.applyOrDeleteButton);
 
             JObject roster = null;
-            JToken waitlist;
+            JObject waitlist = null;
 
             //Checks if the user type is a nonprofit to allow deletion of an event
             if (AppData.CurUser.UserType.Equals("NP") && AppData.NonprofitRepresentative.AssociatedNonprofit.Equals(SelectedEvent.HostID))
@@ -76,16 +76,17 @@ namespace Volunesia.Droid.Activities
             //checks if the user type is a volunteer
             else if (AppData.CurUser.UserType.Equals("V"))
             {
-                
+
 
                 //Check if there is a presence of a roster, and then proceeds to check
-                //if the volunteer is in the roster
+                //if the volunteer is in the roster and add all attendees to a roster
                 bool volunteerInRoster = false;
                 bool volunteerInWaitlist = false;
                 if (!rosterChecker.Equals("0"))
                 {
                     roster = (JObject)eventInfoAsJson["roster"];
-                     volunteerInRoster = CheckIfVolunteerIsInRoster(roster);
+                    volunteerInRoster = CheckIfVolunteerIsInRoster(roster);
+                    //AddAttendeesToRoster(roster);
                 }
 
                 if (volunteerInRoster == true)
@@ -99,7 +100,16 @@ namespace Volunesia.Droid.Activities
                     //volunteer is in the waitlist
                     if (!waitlistChecker.Equals("0"))
                     {
-                        //waitlist = eventInfoAsJson["waitlist"];
+                        SelectedEvent.Waitlist = new Waitlist();
+
+                        waitlist = (JObject)eventInfoAsJson["waitlist"];
+
+                        foreach(var attendee in waitlist)
+                        {
+                            var attendeeUID = attendee.Value.ToString();
+                            Attendee waitlistAttendee = new Attendee();
+                            SelectedEvent.Waitlist.Add(waitlistAttendee);
+                        }
                         //volunteerInWaitlist = CheckIfVolunteerIsInWaitlist(waitlist);
                     }
 
@@ -136,7 +146,7 @@ namespace Volunesia.Droid.Activities
                             ApplyOrDeleteButton.Text = "Apply to Event";
                             ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                         }
-                    }     
+                    }
                 }
             }
             else
@@ -148,7 +158,7 @@ namespace Volunesia.Droid.Activities
         }
 
         //Decides which action should be taken based on the button name
-        public void ApplyOrDeleteButtonClicked(object sender,EventArgs e)
+        public void ApplyOrDeleteButtonClicked(object sender, EventArgs e)
         {
             if (ApplyOrDeleteButton.Text.Equals("Delete Event"))
             {
@@ -158,19 +168,19 @@ namespace Volunesia.Droid.Activities
             {
                 this.ApplyToEvent();
             }
-            else if(ApplyOrDeleteButton.Text.Equals("Drop from Event"))
+            else if (ApplyOrDeleteButton.Text.Equals("Drop from Event"))
             {
                 this.RemoveFromRoster();
             }
-            else if(ApplyOrDeleteButton.Text.Equals("Waitlist for Event"))
+            else if (ApplyOrDeleteButton.Text.Equals("Waitlist for Event"))
             {
                 this.WaitlistForEvent();
             }
-            else if(ApplyOrDeleteButton.Text.Equals("Drop from Waitlist"))
+            else if (ApplyOrDeleteButton.Text.Equals("Drop from Waitlist"))
             {
                 this.DropFromWaitlist();
             }
-            
+
         }
 
         //Proceeds to execute the remove volunteer from waitlist
@@ -207,7 +217,9 @@ namespace Volunesia.Droid.Activities
             });
         }
 
-        //Proceeds to execute upon user clicks on the Apply button
+        /// <summary>
+        /// Proceeds to execute once user clicks on Apply button
+        /// </summary>
         public void ApplyToEvent()
         {
             AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
@@ -237,12 +249,77 @@ namespace Volunesia.Droid.Activities
         //To be implemented later
         public void DeleteEvent()
         {
+            var eventTask = System.Threading.Tasks.Task.Run(async () => {
+
+               return await DeleteEventAsync();
+
+            });
+        }
+
+
+        /// <summary>
+        /// Deletes an existing event from Firebase asynchronously
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> DeleteEventAsync()
+        {
+            //traverse the roster, and obtain all email addresses of attendees
+            string[] attendeeEmails = new string[SelectedEvent.EventRoster.AttendeeList.Count];
+            int index = 0;
+            if (SelectedEvent.EventRoster!=null)
+            {
+                foreach (var attendee in SelectedEvent.EventRoster.AttendeeList)
+                {
+                    attendeeEmails[index] = attendee.EmailAddress;
+                    index++;
+                }
+                //Create an email message that will be sent to all attendees for an event that will be deleted
+                Intent emailIntent = new Intent(Intent.ActionSendto);
+                emailIntent.PutExtra(Intent.ExtraEmail, attendeeEmails);
+                emailIntent.PutExtra(Intent.ExtraSubject, "Volunesia " + SelectedEvent.EventName + " has been removed");
+                emailIntent.PutExtra(Intent.ExtraText, "Hello Volunteer, Unfortunately, the " + SelectedEvent.EventName + " has been cancelled");
+
+                try
+                {
+                    StartActivity(Intent.CreateChooser(emailIntent, "Send mail to"));
+                }
+                catch (Exception emailNotSentException)
+                {
+                    //
+                }
+
+
+            }
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+            FirebaseResponse deleteEventResponse = await firebaseClient.DeleteAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit + "/" + SelectedEvent.EventID);
+
+            return deleteEventResponse.Body;
+        }
+
+        /// <summary>
+        /// Adds all attendees of an event roster from Firebase to an Event Roster object
+        /// </summary>
+        public void AddAttendeesToRoster(JObject eventRoster)
+        {
+            Roster theRoster = new Roster();
+            theRoster.AttendeeList = new List<Attendee>();
+            foreach (var attendee in eventRoster)
+            {
+                Attendee attendeeToBeAdded = new Attendee();
+                attendeeToBeAdded.UID = attendee.Key;
+                attendeeToBeAdded.EmailAddress = attendee.Value["contact"].ToString();
+                theRoster.AttendeeList.Add(attendeeToBeAdded);
+            }
+            SelectedEvent.EventRoster = theRoster;
 
         }
+
 
         //Checks if a volunteer exists in a roster
         public bool CheckIfVolunteerIsInRoster(JObject eventRoster)
         {
+
             foreach(var attendee in eventRoster)
             {
                 if (attendee.Key.Equals(AppData.CurUser.UID))
