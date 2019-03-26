@@ -21,6 +21,16 @@ namespace Volunesia.Droid.Activities
 
             SetContentView(Resource.Layout.VolunteerHome);
             // Create your application here
+
+            Button settingsButton = FindViewById<Button>(Resource.Id.settingsButton);
+
+            settingsButton.Click += openSettings;
+        }
+
+        public void openSettings(object sender, EventArgs e)
+        {
+            //redirect to settings activity page
+            StartActivity(typeof(SettingsActivity));
         }
     }
 }

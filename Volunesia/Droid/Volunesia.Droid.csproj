@@ -205,6 +205,7 @@
     <Compile Include="Activities\RegisterActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\SecondRegisterActivity.cs" />
+    <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Activities\VolunteerEventsActivity.cs" />
     <Compile Include="Activities\VolunteerHomeActivity.cs" />
     <Compile Include="Activities\VolunteerRegisterActivity.cs" />
@@ -320,6 +321,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\NPAllEvents.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SettingsPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
