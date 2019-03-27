@@ -355,6 +355,7 @@ namespace Volunesia.Droid.Activities
             attendeeInformation.Add("attended", "N" );
             attendeeInformation.Add("hourscompleted", 0);
             attendeeInformation.Add("status", "Will Attend");
+            attendeeInformation.Add("contact", AppData.CurUser.EmailAddress);
            
             //Retrieve the user 
             SetResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID, attendeeInformation);

@@ -173,14 +173,15 @@ namespace Volunesia.Droid.Activities
         /// <param name="e"></param>
         public void ShowPastEvents(object sender, EventArgs e)
         {
-            
+            PastEvents = new List<VolunteerEvent>();
             List<VolunteerEvent> AllEvents = theVolunteerHistory.VolunteerEvents;
             mItems = new List<string>();
             //traverses the volunteer's events, and determines if they occurred after current time or not
             foreach (var volEvent in AllEvents)
             {
-                if (volEvent.EventDate.CompareTo(DateTime.Now) >0) {
+                if (volEvent.EventDate.CompareTo(DateTime.Now) <0) {
                     PastEvents.Add(volEvent);
+                    mItems.Add(volEvent.EventName);
                 }
             }
 
