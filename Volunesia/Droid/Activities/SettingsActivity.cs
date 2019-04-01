@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Volunesia.Services;
 
 namespace Volunesia.Droid.Activities
 {
@@ -47,6 +48,7 @@ namespace Volunesia.Droid.Activities
 
         public void LogoutUser(object sender, EventArgs e)
         {
+            AppData.CurUser = null;
             AppData_Droid.Auth.SignOut();
         }
     }

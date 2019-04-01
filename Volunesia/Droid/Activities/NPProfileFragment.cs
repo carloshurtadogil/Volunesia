@@ -70,7 +70,7 @@ namespace Volunesia.Droid.Activities
             PrimaryPhoneTextView = nonprofitProfileView.FindViewById<TextView>(Resource.Id.primaryphone);
             CityTextView = nonprofitProfileView.FindViewById<TextView>(Resource.Id.city);
             ZipTextView = nonprofitProfileView.FindViewById<TextView>(Resource.Id.zip);
-
+            
             //Set the text in the TextViews to display the queried information.
             NameTextView.Text = nonprofitName;
             MissionTextView.Text = missionStatement;

@@ -10,6 +10,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Volunesia.Droid.Service;
 using Volunesia.Services;
 
 namespace Volunesia.Droid.Activities
@@ -27,11 +30,17 @@ namespace Volunesia.Droid.Activities
 
             Button changeEmailButton = FindViewById<Button>(Resource.Id.changeEmailAddressButton);
 
-            changeEmailButton.Click += ChangeEmailAddress;
+            changeEmailButton.Click += CheckForEmailValidation;
 
         }
 
-        public void ChangeEmailAddress(object sender, EventArgs e)
+        /// <summary>
+        /// Responsible for validating a newly entered email address, before proceeding to
+        /// changing it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void CheckForEmailValidation(object sender, EventArgs e)
         {
             CredentialsVerification credVer = new CredentialsVerification();
             StringBuilder errorMessages = new StringBuilder();
@@ -74,13 +83,24 @@ namespace Volunesia.Droid.Activities
                 
         }
 
+        /// <summary>
+        /// Executes once email update in the authentication portion is finished
+        /// </summary>
+        /// <param name="task"></param>
         public void OnComplete(Task task)
         {
             if (task.IsSuccessful)
             {
-                Console.WriteLine("Email address has been changed");
-                //StartActivity(typeof(SettingsActivity));
+                AppData.CurUser.EmailAddress = EmailAddressField.Text;
+                var changeEmailInFBTask = System.Threading.Tasks.Task.Run(async () => {
+
+                    return await ChangeEmailAsync();
+
+                });
+                var Result = changeEmailInFBTask.Result;
+                StartActivity(typeof(SettingsActivity));
             }
+            //showcase an error dialog
             else
             {
                 AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
@@ -95,6 +115,21 @@ namespace Volunesia.Droid.Activities
                 });
                 dialogAlertConstruction.Show();
             }
+        }
+
+        /// <summary>
+        /// Change a user's email address in Firebase
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> ChangeEmailAsync()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            //Retrieve the user 
+            FirebaseResponse response = await firebaseClient.UpdateAsync("users/" + AppData.CurUser.UID + "/email", EmailAddressField.Text );
+
+            return response.Body;
         }
     }
 }

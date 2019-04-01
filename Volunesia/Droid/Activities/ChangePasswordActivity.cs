@@ -83,7 +83,7 @@ namespace Volunesia.Droid.Activities
         {
             if (task.IsSuccessful)
             {
-                //StartActivity(typeof(SettingsActivity));
+                StartActivity(typeof(SettingsActivity));
             }
             else
             {

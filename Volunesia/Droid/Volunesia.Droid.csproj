@@ -208,6 +208,7 @@
     <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Activities\VolunteerEventsActivity.cs" />
     <Compile Include="Activities\VolunteerHomeActivity.cs" />
+    <Compile Include="Activities\VolunteerProfileActivity.cs" />
     <Compile Include="Activities\VolunteerRegisterActivity.cs" />
     <Compile Include="Activities\WelcomeActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -328,6 +329,15 @@
     <AndroidResource Include="Resources\layout\SettingsPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\NPProfile.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\niceBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ombreBack.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
