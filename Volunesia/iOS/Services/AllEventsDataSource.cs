@@ -29,21 +29,21 @@ namespace Volunesia.iOS.Services
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell("EventItem");
-            if(AppData_iOS.NonprofitEvents != null)
+            if (AppData_iOS.NonprofitEvents != null && SpecificNonprofit)
             {
                 AlertShow.Print("Get Cell Good to Go");
                 List<Event> e = AppData_iOS.NonprofitEvents;
                 int index = indexPath.Row;
-                if(index < e.Count)
+                if (index < e.Count)
                 {
                     Event eve = e[index];
                     cell.TextLabel.Text = eve.EventName;
                     cell.DetailTextLabel.Text = eve.EventDate.ToShortDateString();
                 }
-            }
+            } 
             else
             {
-                AlertShow.Print("Get Cell Null and Bad"); 
+                AlertShow.Print("Get Cell Null and Bad");
             }
             return cell;
         }

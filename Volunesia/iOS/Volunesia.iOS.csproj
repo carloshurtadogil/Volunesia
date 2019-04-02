@@ -244,6 +244,7 @@
       <DependentUpon>EventViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\DateFormatter.cs" />
+    <Compile Include="Services\AllCurrentEventsDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

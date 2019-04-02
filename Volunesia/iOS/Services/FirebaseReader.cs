@@ -184,7 +184,7 @@ namespace Volunesia.iOS.Services
                         }
                         else
                         {
-                            AlertShow.Print(eid.ToString() + " has past"); 
+                            AlertShow.Print(eid.ToString() + " has past: " + eventdate); 
                         }
 
 

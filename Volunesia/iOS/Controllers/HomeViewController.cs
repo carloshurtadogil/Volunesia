@@ -3,15 +3,22 @@ using System;
 using UIKit;
 using Volunesia.Services;
 using Volunesia.iOS.Services;
+using Volunesia.Models;
 
 namespace Volunesia.iOS
 {
     public partial class HomeViewController : UIViewController
     {
+        public Event SelectedEvent { get; set; }
+
         public HomeViewController (IntPtr handle) : base (handle)
         {
         }
 
+        /// <summary>
+        /// Override and reload Data
+        /// </summary>
+        /// <param name="animated">If set to <c>true</c> animated.</param>
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -26,8 +33,14 @@ namespace Volunesia.iOS
                 System.Diagnostics.Debug.WriteLine("User Type: " + AppData.CurUser.UserType);
             }
             LoadEventData(1);//Initial list that the user should see
+            EventsTableView.ReloadData();
         }
 
+        /// <summary>
+        /// Prepares for segue depending on certain button clicks
+        /// </summary>
+        /// <param name="segue">Segue.</param>
+        /// <param name="sender">Sender.</param>
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
@@ -39,8 +52,22 @@ namespace Volunesia.iOS
                     svc.LoadView(); 
                 }
             }
+            else if (segue.Identifier == "ToEventsFromHome_id")
+            {
+                var evc = (EventViewController)segue.DestinationViewController;
+                if(evc != null) 
+                {
+                    evc.EventDetails = SelectedEvent;
+                    evc.JustCreated = false;
+                    evc.LoadView(); 
+                }
+            }
         }
 
+        /// <summary>
+        /// Settingses the button touch up inside.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void SettingsButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("ToSettingsSegue_id", sender);
@@ -86,7 +113,7 @@ namespace Volunesia.iOS
             }
             else if(type == 1) //Present Data
             {
-                AllEventsDataSource sdc = new AllEventsDataSource(this);
+                AllCurrentEventsDataSource sdc = new AllCurrentEventsDataSource(this);
                 EventsTableView.Source = sdc;
             }
             else if(type == 2) //Future Data

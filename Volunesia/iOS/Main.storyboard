@@ -1257,6 +1257,7 @@
                         <outlet property="PastButton" destination="47676" id="name-outlet-47676"/>
                         <outlet property="PresentButton" destination="49037" id="name-outlet-49037"/>
                         <outlet property="FutureButton" destination="49043" id="name-outlet-49043"/>
+                        <segue id="101879" destination="89985" kind="show" identifier="ToEventsFromHome_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30010" userLabel="First Responder" sceneMemberID="firstResponder"/>
