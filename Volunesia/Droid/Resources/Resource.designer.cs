@@ -419,6 +419,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0009
 			public const int adjust_width = 2131361801;
 			
+			// aapt resource value: 0x7f0a007b
+			public const int advancedBadgeImage = 2131361915;
+			
 			// aapt resource value: 0x7f0a001f
 			public const int all = 2131361823;
 			
@@ -442,6 +445,9 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0a000e
 			public const int auto = 2131361806;
+			
+			// aapt resource value: 0x7f0a0078
+			public const int badgesLayout = 2131361912;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int blocking = 2131361825;
@@ -551,6 +557,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a002d
 			public const int eventTimeField = 2131361837;
 			
+			// aapt resource value: 0x7f0a007c
+			public const int expertBadgeImage = 2131361916;
+			
 			// aapt resource value: 0x7f0a0018
 			public const int fill = 2131361816;
 			
@@ -572,6 +581,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0022
 			public const int forever = 2131361826;
 			
+			// aapt resource value: 0x7f0a007d
+			public const int grandmasterBadgeImage = 2131361917;
+			
 			// aapt resource value: 0x7f0a0058
 			public const int icon = 2131361880;
 			
@@ -583,6 +595,9 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0a0057
 			public const int info = 2131361879;
+			
+			// aapt resource value: 0x7f0a007a
+			public const int intermediateBadgeImage = 2131361914;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int italic = 2131361827;
@@ -644,6 +659,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0052
 			public const int notification_main_column_container = 2131361874;
 			
+			// aapt resource value: 0x7f0a0079
+			public const int noviceBadgeImage = 2131361913;
+			
 			// aapt resource value: 0x7f0a0067
 			public const int npProfileButton = 2131361895;
 			
@@ -656,8 +674,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0071
 			public const int pastEventsButton = 2131361905;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int personalDescriptionField = 2131361909;
+			// aapt resource value: 0x7f0a007e
+			public const int personalDescriptionField = 2131361918;
 			
 			// aapt resource value: 0x7f0a0036
 			public const int phoneNumberField = 2131361846;
@@ -668,8 +686,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a006c
 			public const int registerButton = 2131361900;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int registerVolunteerButton = 2131361910;
+			// aapt resource value: 0x7f0a007f
+			public const int registerVolunteerButton = 2131361919;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int right = 2131361820;
@@ -742,6 +760,15 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0a0068
 			public const int volunteerButton = 2131361896;
+			
+			// aapt resource value: 0x7f0a0076
+			public const int volunteerLevel = 2131361910;
+			
+			// aapt resource value: 0x7f0a0075
+			public const int volunteerName = 2131361909;
+			
+			// aapt resource value: 0x7f0a0077
+			public const int volunteerPersonalDescription = 2131361911;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int wide = 2131361805;
@@ -896,10 +923,13 @@ namespace Volunesia.Droid
 			public const int VolunteerHome = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int VolunteerRegister = 2130968612;
+			public const int VolunteerProfile = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int Welcome = 2130968613;
+			public const int VolunteerRegister = 2130968613;
+			
+			// aapt resource value: 0x7f040026
+			public const int Welcome = 2130968614;
 			
 			static Layout()
 			{
@@ -915,13 +945,28 @@ namespace Volunesia.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Icon = 2130903040;
+			public const int advancedBadge = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int niceBackground = 2130903041;
+			public const int expertBadge = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ombreBack = 2130903042;
+			public const int grandmasterBadge = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Icon = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int intermediateBadge = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int niceBackground = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int noviceBadge = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int ombreBack = 2130903047;
 			
 			static Mipmap()
 			{

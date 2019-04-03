@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:background="@mipmap/ombreback"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:gravity="center"
+		android:text="Medium Text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/volunteerName" />
+	<TextView
+		android:gravity="center"
+		android:text="Medium Text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/volunteerLevel" />
+	<TextView
+		android:gravity="center"
+		android:text="Medium Text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/volunteerPersonalDescription" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="227.5dp"
+		android:id="@+id/badgesLayout" >
+		<ImageView
+			android:src="@mipmap/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/noviceBadgeImage" />
+		<ImageView
+			android:src="@mipmap/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/intermediateBadgeImage" />
+		<ImageView
+			android:src="@mipmap/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/advancedBadgeImage" />
+		<ImageView
+			android:src="@mipmap/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/expertBadgeImage" />
+		<ImageView
+			android:src="@mipmap/icon"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/grandmasterBadgeImage"/>
+	</LinearLayout>
+	
+</LinearLayout>

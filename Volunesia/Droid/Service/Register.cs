@@ -24,12 +24,13 @@ namespace Volunesia.Droid.Service
         {
             if (theUser.UserType == "V")
             {
-                Dictionary<string, string> userDictionary = new Dictionary<string, string>();
+                Dictionary<string, object> userDictionary = new Dictionary<string, object>();
                 userDictionary.Add("email", theUser.EmailAddress);
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
                 userDictionary.Add("type", theUser.UserType);
                 userDictionary.Add("personalstatement", theUser.PersonalStatement);
+                userDictionary.Add("level", 1);
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;
@@ -37,7 +38,7 @@ namespace Volunesia.Droid.Service
             }
             else if (theUser.UserType == "NP")
             {
-                Dictionary<string, string> userDictionary = new Dictionary<string, string>();
+                Dictionary<string, object> userDictionary = new Dictionary<string, object>();
                 userDictionary.Add("email", theUser.EmailAddress);
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
