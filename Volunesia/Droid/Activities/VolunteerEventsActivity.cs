@@ -37,6 +37,13 @@ namespace Volunesia.Droid.Activities
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //Load all volunteer events onto the List
+            mItems = new List<string>();
+
+            AllEvents = new List<Event>();
+
+            //create a list that contains all upcoming events for a volunteer
+            UpcomingEvents = new List<Event>();
             //Retrieve the VolunteerHistory of a volunteer from Firebase
             var queryvolhistorytask = System.Threading.Tasks.Task.Run(async () =>
             {
@@ -44,7 +51,6 @@ namespace Volunesia.Droid.Activities
                 return await QueryVolunteerHistory();
 
             });
-            var volhistoryasjson = queryvolhistorytask.Result;
 
             //Retrieve all present events
             var allEvents = System.Threading.Tasks.Task.Run(async () =>
@@ -54,56 +60,66 @@ namespace Volunesia.Droid.Activities
 
             });
 
-
-            //parse the jobject and retrieve the components of the response
-            var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
-
-            //create a volunteerhistory object that contains all of the volunteering events
-            theVolunteerHistory = new VolunteerHistory();
-
-            //create a list that contains all upcoming events for a volunteer
-            UpcomingEvents = new List<Event>();
-
-            //iterate through the event mappings in the node
-            foreach (var eventpair in mainVolHistoryNode)
+            if(!queryvolhistorytask.Result.Equals("null"))
             {
-                //retrieve the information from each event node, and then form a volunteerevent object
-                var attended = eventpair.Value["attended"].ToString();
-                var eventdate = eventpair.Value["eventdate"].ToString();
-                DateTime eventDateInFormat = Convert.ToDateTime(eventdate);
-                var eventname = eventpair.Value["eventname"].ToString();
-                var nonprofitid = eventpair.Value["nonprofitid"].ToString();
-                var nonprofitname = eventpair.Value["nonprofitname"].ToString();
 
-                //if event occurred before the current date, then it is regarded as a past evnet
-                if (eventDateInFormat.CompareTo(DateTime.Now) <= 0)
-                {
-                    VolunteerEvent volunteerevent = new VolunteerEvent()
-                    {
-                        Attended = attended,
-                        EventDate = Convert.ToDateTime(eventdate),
-                        EventName = eventname,
-                        NonprofitID = nonprofitid,
-                        NonprofitName = nonprofitname
+                var volhistoryasjson = queryvolhistorytask.Result;
+                //parse the jobject and retrieve the components of the response
+                var mainVolHistoryNode = JObject.Parse(volhistoryasjson);
 
-                    };
-                    theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
-                }
-                //otherwise it is regarded as an upcoming event
-                else
+                //create a volunteerhistory object that contains all of the volunteering events
+                theVolunteerHistory = new VolunteerHistory();
+                theVolunteerHistory.VolunteerEvents = new List<VolunteerEvent>();
+
+                //iterate through the event mappings in the node
+                foreach (var eventpair in mainVolHistoryNode)
                 {
-                    Event upcomingEvent = new Event()
+                    //retrieve the information from each event node, and then form a volunteerevent object
+                    var attended = eventpair.Value["attended"].ToString();
+                    var eventdate = eventpair.Value["eventdate"].ToString();
+                    DateTime eventDateInFormat = Convert.ToDateTime(eventdate);
+                    var eventname = eventpair.Value["eventname"].ToString();
+                    var nonprofitid = eventpair.Value["nonprofitid"].ToString();
+                    var nonprofitname = eventpair.Value["nonprofitname"].ToString();
+
+                    //if event occurred before the current date, then it is regarded as a past evnet
+                    if (eventDateInFormat.CompareTo(DateTime.Now) <= 0)
                     {
-                        EventDate = Convert.ToDateTime(eventdate),
-                        EventID = eventpair.Key,
-                        EventName = eventname,
-                        HostID = nonprofitid
-                    };
-                    UpcomingEvents.Add(upcomingEvent);
+                        VolunteerEvent volunteerevent = new VolunteerEvent()
+                        {
+                            Attended = attended,
+                            EventDate = Convert.ToDateTime(eventdate),
+                            EventName = eventname,
+                            NonprofitID = nonprofitid,
+                            NonprofitName = nonprofitname
+
+                        };
+                        theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
+                    }
+                    //otherwise it is regarded as an upcoming event
+                    else
+                    {
+                        Event upcomingEvent = new Event()
+                        {
+                            EventDate = Convert.ToDateTime(eventdate),
+                            EventID = eventpair.Key,
+                            EventName = eventname,
+                            HostID = nonprofitid
+                        };
+                        UpcomingEvents.Add(upcomingEvent);
+                    }
+
                 }
                 
             }
 
+            mItems = new List<string>();
+
+            foreach(var presentEvent in AllEvents)
+            {
+                mItems.Add(presentEvent.EventName);
+            }
+            
             PresentEventsCheckSubscription = false;
             UpcomingEventsCheckSubscription = false;
 
@@ -112,13 +128,6 @@ namespace Volunesia.Droid.Activities
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
-
-            //Load all volunteer events onto the List
-            mItems = new List<string>();
-            foreach(var volunteerEvent in theVolunteerHistory.VolunteerEvents)
-            {
-                mItems.Add(volunteerEvent.EventName);
-            }
 
             //Adapt the list into a ListView
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
@@ -160,7 +169,7 @@ namespace Volunesia.Droid.Activities
         {
             Console.WriteLine(UpcomingEvents[e.Position].EventName);
             var intent = new Intent(this, typeof(EventActivity));
-            intent.PutExtra("event", JsonConvert.SerializeObject(AllEvents[e.Position]));
+            intent.PutExtra("event", JsonConvert.SerializeObject(UpcomingEvents[e.Position]));
             StartActivity(intent);
 
         }
@@ -256,16 +265,12 @@ namespace Volunesia.Droid.Activities
         //Proceeds to query all events that a volunteer has taken part of or will take part of
         public async System.Threading.Tasks.Task<string> QueryVolunteerHistory()
         {
-            IFirebaseConfig config = new FirebaseConfig
-            {
-                AuthSecret = "bjv4kn9YGRYWkib6d1TmWSLHCwUZvasjiFK7ovQX",
-                BasePath = "https://volunesia-f5475.firebaseio.com"
-            };
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
 
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
             //Retrieve the user 
-            FirebaseResponse response = await firebaseClient.GetAsync("volunteerhistory/" + AppData_Droid.Auth.CurrentUser.Uid);
+            FirebaseResponse response = await firebaseClient.GetAsync("volunteerhistory/" + AppData.CurUser.UID);
 
             string resultant = response.Body;
 
@@ -287,7 +292,7 @@ namespace Volunesia.Droid.Activities
 
             JObject allEvents = JObject.Parse(resultant);
 
-            AllEvents = new List<Event>();
+
 
             //Traverses all the nonprofits who have signed up for events
             foreach (var eventKeyValuePair in allEvents)

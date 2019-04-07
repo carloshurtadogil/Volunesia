@@ -168,7 +168,7 @@ namespace Volunesia.Droid.Activities
             {
                 this.ApplyToEvent();
             }
-            else if (ApplyOrDeleteButton.Text.Equals("Drop from Event"))
+            else if (ApplyOrDeleteButton.Text.Equals("Withdraw from Event"))
             {
                 this.RemoveFromRoster();
             }
@@ -212,9 +212,10 @@ namespace Volunesia.Droid.Activities
             var queryvolhistorytask = System.Threading.Tasks.Task.Run(async () =>
             {
 
-                await RemoveVolunteerFromRoster();
+                return await RemoveVolunteerFromRoster();
 
             });
+            StartActivity(typeof(VolunteerEventsActivity));
         }
 
         /// <summary>
@@ -352,13 +353,24 @@ namespace Volunesia.Droid.Activities
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
             Dictionary<string, object> attendeeInformation = new Dictionary<string, object>();
 
+
             attendeeInformation.Add("attended", "N" );
             attendeeInformation.Add("hourscompleted", 0);
             attendeeInformation.Add("status", "Will Attend");
             attendeeInformation.Add("contact", AppData.CurUser.EmailAddress);
-           
+
+            Dictionary<string, object> volunteerHistoryInfo = new Dictionary<string, object>();
+            volunteerHistoryInfo.Add("attended", "N");
+            volunteerHistoryInfo.Add("eventdate", Convert.ToString(SelectedEvent.EventDate));
+            volunteerHistoryInfo.Add("hoursVolunteered", 0);
+            volunteerHistoryInfo.Add("nonprofitid", SelectedEvent.HostID);
+            volunteerHistoryInfo.Add("nonprofitname", SelectedEvent.EventName);
+            volunteerHistoryInfo.Add("eventname", SelectedEvent.EventName);
+
+            FirebaseResponse setVolunteerHistoryResponse = await firebaseClient.SetAsync("volunteerhistory/" +  AppData.CurUser.UID + "/" + SelectedEvent.EventID, volunteerHistoryInfo );
             //Retrieve the user 
             SetResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID, attendeeInformation);
+            
             string resultant = response.Body;
 
             return resultant;
@@ -366,13 +378,13 @@ namespace Volunesia.Droid.Activities
 
         //Removes a volunteer from the event roster and proceeds to add the first volunteer 
         //on the waitlist to the event roster
-        public async System.Threading.Tasks.Task RemoveVolunteerFromRoster()
+        public async System.Threading.Tasks.Task<string> RemoveVolunteerFromRoster()
         {
             //Deletes the volunteer from the event roster
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
             FirebaseResponse deleteResponse = await firebaseClient.DeleteAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID);
-
+            FirebaseResponse deleteVolHistResponse = await firebaseClient.DeleteAsync("volunteerhistory/" + AppData.CurUser.UID + "/" + SelectedEvent.EventID);
             //Retrieve the roster again to make sure the roster content has been deleted
             //the roster attribute is deleted when there aren't any more volunteers in roster
             FirebaseResponse checkForRoster = await firebaseClient.GetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID+ "/roster");
@@ -422,7 +434,7 @@ namespace Volunesia.Droid.Activities
                 }
             }
 
-
+            return null;
         }
 
 

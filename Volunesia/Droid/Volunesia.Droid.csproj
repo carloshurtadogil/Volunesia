@@ -191,6 +191,7 @@
     <Compile Include="Activities\CreateEventActivity.cs" />
     <Compile Include="Activities\EstablishedNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
+    <Compile Include="Activities\EventXPAssignmentActivity.cs" />
     <Compile Include="Activities\LocalNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -358,6 +359,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\intermediateBadge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EventXPAssignment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

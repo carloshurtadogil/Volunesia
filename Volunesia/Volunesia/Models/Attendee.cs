@@ -16,5 +16,7 @@ namespace Volunesia.Models
         public string    UID            { get; set; }
         //The attendee's email address
         public string EmailAddress      { get; set; }
+        //The attendee's check in time
+        public DateTime CheckInTime       { get; set; }
     }
 }

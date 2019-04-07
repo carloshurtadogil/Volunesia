@@ -116,9 +116,13 @@ namespace Volunesia.Services
 
             };
         }
-        
-        //Checks if the user can proceed to the next level while assigning badges if necessary
-        public void CheckIfUserCanLevelUp(Volunteer theVolunteer)
+
+        /// <summary>
+        /// Checks if the user can proceed to the next level while assigning badges if necessary
+        /// </summary>
+        /// <param name="theVolunteer"></param>
+        /// <returns></returns>
+        public bool CheckIfUserCanLevelUp(Volunteer theVolunteer)
         {
             //If the volunteer is already capped at 99, then there is no need to level up
             if(theVolunteer.Level == 99)
@@ -172,7 +176,17 @@ namespace Volunesia.Services
                 {
                     theVolunteer.BadgeList.Add(BadgeCategory.Badge.Grandmaster);
                 }
+
+
+                if (theVolunteer.Level != levelPlacement)
+                {
+                    return true;
+                }
+                
             }
+
+            return false;
+            
 
 
         }
