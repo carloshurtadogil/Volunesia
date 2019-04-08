@@ -56,7 +56,7 @@ namespace Volunesia.iOS
                 {
                     NewEventButton.Enabled = false; 
                 }
-                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);          
                 AllEventsDataSource sdc = new AllEventsDataSource(this, true);
                 EventsTableView.Source = sdc;
                 EventsTableView.ReloadData();

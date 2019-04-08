@@ -33,6 +33,11 @@ namespace Volunesia.iOS.Services
         //List of all events hosted by a specfic nonprofit
         public static List<Event> NonprofitEvents { get; set; }
 
+        //List of all events the volunteer is to attend
+        public static List<Event> VolunteerEventsToBeAttended { get; set; }
+        //List of all events the volunteer has attended
+        public static List<Event> VolunteerAttendedEvents { get; set; }
+
 
 
         //Configure the nodes
@@ -71,6 +76,17 @@ namespace Volunesia.iOS.Services
             return Instance;
         }
 
+        /// <summary>
+        /// Adds to volunteer future events. Initializes VolunteerEventsToBeAttended if need be
+        /// </summary>
+        /// <param name="e">Event to be added.</param>
+        public static void AddToVolunteerFutureEvents(Event e) 
+        {
+            if (VolunteerEventsToBeAttended == null)
+                VolunteerEventsToBeAttended = new List<Event>();
+            if (!CheckIfExists(VolunteerEventsToBeAttended, e))
+                VolunteerEventsToBeAttended.Add(e);
+        }
 
         /// <summary>
         /// Add a new event to the NonprofitEvents list. If list is empty, initalize it.
@@ -109,6 +125,25 @@ namespace Volunesia.iOS.Services
                 }
                 NonprofitEvents = events;
             }
+        }
+
+
+        /// <summary>
+        /// Check if an event exists in a list of events that a volunteer has attended or will attend
+        /// </summary>
+        /// <returns><c>true</c>, if event is a duplicate, <c>false</c> otherwise.</returns>
+        /// <param name="evelist">List to be checked.</param>
+        /// <param name="e">Event to be added.</param>
+        public static bool CheckIfExists(List<Event> evelist, Event e) 
+        {
+            foreach(Event eve in evelist) 
+            {
+                if(eve.EventID == e.EventID) 
+                {
+                    return true; 
+                }
+            }
+            return false;
         }
 
 

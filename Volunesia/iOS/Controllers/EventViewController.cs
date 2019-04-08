@@ -60,8 +60,17 @@ namespace Volunesia.iOS
             }
             else //The user is a normal volunteer
             {
-                SignupButton.Enabled = true;
-                SignupButton.Hidden = false;
+                var futureevents = AppData_iOS.VolunteerEventsToBeAttended;
+                if(futureevents != null && AppData_iOS.CheckIfExists(futureevents, EventDetails)) // Check if event details exist
+                {
+                    SignupButton.Enabled = false;
+                    SignupButton.Hidden = true;
+                }
+                else
+                {
+                    SignupButton.Enabled = true;
+                    SignupButton.Hidden = false;
+                }
             }
         }
 

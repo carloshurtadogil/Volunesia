@@ -443,6 +443,29 @@ namespace Volunesia.iOS.Services
                 {
                     AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).SetValue(urosteritem);
                 }
+                if(AppData.CurUser.UserType == "V") 
+                {
+                    var applicationdeadline = Convert.ToDateTime(data["applicationdeadline"].ToString());
+                    var capacity = Convert.ToInt32(data["capacity"].ToString());
+                    var eventdate = Convert.ToDateTime(data["eventdate"].ToString());
+                    var eventdesc = data["eventdesc"].ToString();
+                    var eventname = data["eventname"].ToString();
+                    var imagepath = data["imagepath"].ToString();
+
+                    Event e = new Event
+                    {
+                        ApplicationDeadline = applicationdeadline,
+                        Capacity = capacity,
+                        EventID = eid,
+                        EventDate = eventdate,
+                        EventName = eventname,
+                        EventDescription = eventdesc,
+                        HostID = npid,
+                        EventImagePath = imagepath
+
+                    };
+                    AppData_iOS.AddToVolunteerFutureEvents(e);
+                }
                 AlertShow.Show(inpView, "Congratulations", "You are one step closer to making the world a better place. Please keep in mind the date of the event and lookout for any new changes.");
             }); 
         }
