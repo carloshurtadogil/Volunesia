@@ -12,13 +12,13 @@ namespace Volunesia.iOS
     public partial class NPProfileViewController : UIViewController
     {
 
-        //Global variables
+        //Global variables 
         private bool useRefreshControl = false;
         private UIRefreshControl RefreshControl;
         public Event Event { get; set; }
 
 
-        public NPProfileViewController (IntPtr handle) : base (handle)
+        public NPProfileViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -34,19 +34,19 @@ namespace Volunesia.iOS
                 //UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
                 IDGenerator ge = new IDGenerator();
-                //FirebaseReader.WriteToRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", ge.GenerateID());
-                //FirebaseReader.RemoveFromRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", "45b2834d-3217-4847-8a6b-225307f5c0cf");
+                //FirebaseReader.WriteToRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", ge.GenerateID()); 
+                //FirebaseReader.RemoveFromRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", "45b2834d-3217-4847-8a6b-225307f5c0cf"); 
                 if (AppData_iOS.NonprofitEvents != null)
                 {
                     //AllEventsDataSource sdc = new AllEventsDataSource(this, true);
-                    //EventsTableView.Source = sdc;
-                    //EventsTableView.ReloadData();
+                    //EventsTableView.Source = sdc; 
+                    //EventsTableView.ReloadData(); 
                     AddRefreshControl();
                     EventsTableView.Add(RefreshControl);
                 }
                 else
                 {
-                    AlertShow.Print("Empty list"); 
+                    AlertShow.Print("Empty list");
                 }
                 if (AppData.NonprofitRepresentative.Poster == "Y")
                 {
@@ -54,9 +54,9 @@ namespace Volunesia.iOS
                 }
                 else
                 {
-                    NewEventButton.Enabled = false; 
+                    NewEventButton.Enabled = false;
                 }
-                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);          
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
                 AllEventsDataSource sdc = new AllEventsDataSource(this, true);
                 EventsTableView.Source = sdc;
                 EventsTableView.ReloadData();
@@ -66,9 +66,9 @@ namespace Volunesia.iOS
 
         }
 
-        /// <summary>
-        /// Start the event creation process
-        /// </summary>
+        /// <summary> 
+        /// Start the event creation process 
+        /// </summary> 
         /// <param name="sender">Sender.</param>
         partial void NewEventButton_TouchUpInside(UIButton sender)
         {
@@ -83,47 +83,47 @@ namespace Volunesia.iOS
         }
 
 
-        //Prepare to move to the next view controller
+        //Prepare to move to the next view controller 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if( segue.Identifier == "ToNPRSettingsSegue_id" )
+            if (segue.Identifier == "ToNPRSettingsSegue_id")
             {
                 var svc = (SettingsViewController)segue.DestinationViewController;
-                if(svc != null)
+                if (svc != null)
                 {
-                    svc.LoadView(); 
+                    svc.LoadView();
                 }
             }
-            else if( segue.Identifier == "ToEventCreationSegue_id")
+            else if (segue.Identifier == "ToEventCreationSegue_id")
             {
                 var eivc = (EventInformationViewController)segue.DestinationViewController;
-                if(eivc != null)
+                if (eivc != null)
                 {
-                    eivc.LoadView(); 
+                    eivc.LoadView();
                 }
             }
-            else if(segue.Identifier == "ToEventSegue_id")
+            else if (segue.Identifier == "ToEventSegue_id")
             {
                 var evc = (EventViewController)segue.DestinationViewController;
-                if(evc != null)
+                if (evc != null)
                 {
                     evc.EventDetails = Event;
                     evc.JustCreated = false;
-                    evc.LoadView(); 
+                    evc.LoadView();
                 }
             }
         }
 
-        /// <summary>
-        /// Show the profile details for the current user
-        /// </summary>
-        /// <param name="sender">Sender.</param>
+        /// <summary> 
+        /// Show the profile details for the current user 
+        /// </summary> 
+        /// <param name="sender">Sender.</param> 
         partial void ProfileButton_TouchUpInside(UIButton sender)
         {
-            //Hide the previous items
+            //Hide the previous items 
             EventsTableView.Hidden = true;
 
-            //Enable the new items and change the button images
+            //Enable the new items and change the button images 
             User u = AppData.CurUser;
             UserNameLabel.Text = u.FirstName + " " + u.LastName;
             FirebaseReader.ReadMissionStatement(AppData.NonprofitRepresentative.AssociatedNonprofit, MissionStatementTextview);
@@ -134,19 +134,19 @@ namespace Volunesia.iOS
         }
 
 
-        /// <summary>
-        /// Show all events that the user can work with
-        /// </summary>
+        /// <summary> 
+        /// Show all events that the user can work with 
+        /// </summary> 
         /// <param name="sender">Sender.</param>
         partial void EventsButton_TouchUpInside(UIButton sender)
         {
-            //Hide the previous items
+            //Hide the previous items 
             ProfileImageView.Hidden = true;
             UserNameLabel.Hidden = true;
             MissionStatementLabel.Hidden = true;
             MissionStatementTextview.Hidden = true;
 
-            //Enable the new items and change the button images
+            //Enable the new items and change the button images 
             EventsTableView.Hidden = false;
             AllEventsDataSource sdc = new AllEventsDataSource(this, true);
             EventsTableView.Source = sdc;
@@ -155,9 +155,9 @@ namespace Volunesia.iOS
 
         }
 
-        /// <summary>
-        /// Allow the user to view their notifcations
-        /// </summary>
+        /// <summary> 
+        /// Allow the user to view their notifcations 
+        /// </summary> 
         /// <param name="sender">Sender.</param>
         partial void NotificationButton_TouchUpInside(UIButton sender)
         {
@@ -166,19 +166,19 @@ namespace Volunesia.iOS
 
         async Task RefreshAsync()
         {
-            //only active the refresh control if the feature is available
+            //only active the refresh control if the feature is available 
             if (useRefreshControl)
             {
                 RefreshControl.BeginRefreshing();
                 FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
             }
-            if (useRefreshControl) 
+            if (useRefreshControl)
             {
 
                 AllEventsDataSource sdc = new AllEventsDataSource(this, true);
                 EventsTableView.Source = sdc;
                 RefreshControl.EndRefreshing();
-                EventsTableView.ReloadData(); 
+                EventsTableView.ReloadData();
             }
         }
 
@@ -189,7 +189,7 @@ namespace Volunesia.iOS
             {
                 // the refresh control is available. let's add it
                 RefreshControl = new UIRefreshControl();
-                RefreshControl.ValueChanged += async (sender, e) => 
+                RefreshControl.ValueChanged += async (sender, e) =>
                 {
                     AlertShow.Print("Pulled");
 

@@ -45,14 +45,21 @@ namespace Volunesia.iOS
         /// Present this prompt to the volunteer
         /// </summary>
         /// <param name="inpView">The view controller that will include the prompt.</param>
-        public static void DisplaySignUpPrompt(UIViewController inpView, Event e) 
+        public static void DisplaySignUpPrompt(UIViewController inpView, Event e, UIButton su, UIButton leave) 
         {
             UIAlertController alert = UIAlertController.Create("You are about to make a difference", "Are you ready?", UIAlertControllerStyle.Alert);
 
             alert.AddAction(UIAlertAction.Create("No", UIAlertActionStyle.Default, null));
             alert.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Default, (handler) => 
             {
-                FirebaseReader.WriteToRoster(inpView, e.HostID, e.EventID, AppData.CurUser.UID);
+                FirebaseReader.WriteToRoster(inpView, e.HostID, e.EventID, AppData.CurUser);
+
+                //Disable and hide signup button
+                su.Enabled = false;
+                su.Hidden = true;
+                //Enable and show 
+                leave.Enabled = true;
+                leave.Hidden = false;
             }));
 
 

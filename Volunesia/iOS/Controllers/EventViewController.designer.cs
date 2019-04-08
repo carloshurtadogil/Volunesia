@@ -60,6 +60,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LeaveButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel NonprofitNameLabel { get; set; }
 
         [Outlet]
@@ -77,6 +81,10 @@ namespace Volunesia.iOS
         [Action ("EditButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void EditButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("LeaveButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void LeaveButton_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("SignupButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -137,6 +145,11 @@ namespace Volunesia.iOS
             if (EventNameLabel != null) {
                 EventNameLabel.Dispose ();
                 EventNameLabel = null;
+            }
+
+            if (LeaveButton != null) {
+                LeaveButton.Dispose ();
+                LeaveButton = null;
             }
 
             if (NonprofitNameLabel != null) {

@@ -110,10 +110,10 @@ namespace Volunesia.iOS.Services
             List<Event> events = new List<Event>();
             AppData_iOS.GetInstance();
             var today = DateTime.Now;
-            var children = AppData_iOS.EventNode.ObserveEvent(DataEventType.Value, (npsnapshot) => 
+            var children = AppData_iOS.EventNode.ObserveEvent(DataEventType.Value, (npsnapshot) =>
             {
                 var nonprofits = npsnapshot.GetValue<NSDictionary>();
-                foreach (var npid in nonprofits.Keys) 
+                foreach (var npid in nonprofits.Keys)
                 {
                     var npevents = (NSDictionary)nonprofits[npid.ToString()];
                     foreach (var eid in npevents.Keys)
@@ -121,8 +121,8 @@ namespace Volunesia.iOS.Services
                         var eventinfo = (NSDictionary)npevents[eid.ToString()];
 
                         var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
-                        
-                        if(eventdate.Date >= today.Date) //Event is currently happening or will happen
+
+                        if (eventdate.Date >= today.Date) //Event is currently happening or will happen
                         {
                             AlertShow.Print(eid.ToString());
                             var applicationdeadline = Convert.ToDateTime(eventinfo["applicationdeadline"].ToString());
@@ -148,9 +148,9 @@ namespace Volunesia.iOS.Services
                                     var hourscompleted = Convert.ToInt32(volunteerinfo["hourscompleted"].ToString());
                                     var status = volunteerinfo["status"].ToString();
 
-                                    if(attendedString == "Y") 
+                                    if (attendedString == "Y")
                                     {
-                                        attended = true; 
+                                        attended = true;
                                     }
 
                                     Attendee attendee = new Attendee
@@ -184,7 +184,7 @@ namespace Volunesia.iOS.Services
                         }
                         else
                         {
-                            AlertShow.Print(eid.ToString() + " has past: " + eventdate); 
+                            AlertShow.Print(eid.ToString() + " has past: " + eventdate);
                         }
 
 
@@ -195,7 +195,7 @@ namespace Volunesia.iOS.Services
 
         public static void ReadEventCoverImage(string path, UIImageView imageView)
         {
-             
+
         }
 
 
@@ -204,18 +204,18 @@ namespace Volunesia.iOS.Services
         /// </summary>
         /// <param name="npid">The nonprofit id to be used for the search.</param>
         /// <param name="textview">the textview to be populated.</param>
-        public static void ReadMissionStatement(string npid, UITextView textview) 
+        public static void ReadMissionStatement(string npid, UITextView textview)
         {
-            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var values = snapshot.GetValue<NSDictionary>();
                 string missionstatement = values["missionstatement"].ToString().Trim();
-                if(missionstatement.Length > 0) 
+                if (missionstatement.Length > 0)
                 {
-                    textview.Text = missionstatement; 
+                    textview.Text = missionstatement;
                 }
 
-            }); 
+            });
         }
 
         /// <summary>
@@ -225,10 +225,10 @@ namespace Volunesia.iOS.Services
         public static void ReadNonprofitEvents(string npid)
         {
             List<Event> events = new List<Event>();
-            AppData_iOS.EventNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            AppData_iOS.EventNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var npevents = snapshot.GetValue<NSDictionary>();
-                foreach(var eid in npevents.Keys) 
+                foreach (var eid in npevents.Keys)
                 {
                     var eventinfo = (NSDictionary)npevents[eid.ToString()];
                     var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
@@ -293,18 +293,18 @@ namespace Volunesia.iOS.Services
         /// </summary>
         /// <param name="npid">The id of the nonprofit organization.</param>
         /// <param name="label">The UILabel to be updated.</param>
-        public static void ReadContactEmail(string npid, UILabel label) 
+        public static void ReadContactEmail(string npid, UILabel label)
         {
-            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var data = snapshot.GetValue<NSDictionary>();
                 var primarycontact = data["primarycontact"].ToString();
-                AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value,(snapshot2) => 
+                AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value, (snapshot2) =>
                 {
                     var data2 = snapshot2.GetValue<NSDictionary>();
                     var email = data2["email"].ToString();
                     label.Text = email;
-                }); 
+                });
             });
         }
 
@@ -364,7 +364,7 @@ namespace Volunesia.iOS.Services
         /// </summary>
         /// <param name="npid">The nonprofit id.</param>
         /// <param name="eid">The event id.</param>
-        public static void RemoveEvent(string npid, string eid) 
+        public static void RemoveEvent(string npid, string eid)
         {
             DatabaseReference reference = AppData_iOS.EventNode.GetChild(npid).GetChild(eid);
             reference.RemoveValue();
@@ -387,11 +387,11 @@ namespace Volunesia.iOS.Services
             AppData_iOS.NonprofitEvents.Add(e);
 
             //Add to firebase
-            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc","poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
-            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity,  e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
+            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
+            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
-            if (!e.EventImagePath.Equals( "standard"))
+            if (!e.EventImagePath.Equals("standard"))
             {
                 FirebaseStorageServices.AddImageToFirebase(d, e.EventImagePath, inpView);
             }
@@ -421,29 +421,30 @@ namespace Volunesia.iOS.Services
         /// <param name="npid">The nonprofit id for an event.</param>
         /// <param name="eid">The event id.</param>
         /// <param name="uid">The id of the user to be added.</param>
-        public static void WriteToRoster(UIViewController inpView, string npid, string eid, string uid) 
+        public static void WriteToRoster(UIViewController inpView, string npid, string eid, Models.User vol)
         {
-            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value,(snapshot) => 
+
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var data = snapshot.GetValue<NSDictionary>();
-                object[] keys = { "attended", "hourscompleted", "status" };
-                object[] vals = { "N", 0, "Will Attend" };
+                object[] keys = { "attended", "contact","hourscompleted", "status" };
+                object[] vals = { "N", vol.EmailAddress, 0, "Will Attend" };
                 var urosteritem = NSDictionary.FromObjectsAndKeys(vals, keys);
 
                 var roster = data["roster"].ToString();
                 int val;
-                if(int.TryParse(roster, out val)) 
+                if (int.TryParse(roster, out val))
                 {
-                    object[] key = { uid };
+                    object[] key = { vol.UID };
                     object[] value = { urosteritem };
                     var rosteritem = NSDictionary.FromObjectsAndKeys(value, key);
                     AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(rosteritem);
                 }
                 else
                 {
-                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).SetValue(urosteritem);
+                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(vol.UID).SetValue(urosteritem);
                 }
-                if(AppData.CurUser.UserType == "V") 
+                if (AppData.CurUser.UserType == "V")
                 {
                     var applicationdeadline = Convert.ToDateTime(data["applicationdeadline"].ToString());
                     var capacity = Convert.ToInt32(data["capacity"].ToString());
@@ -465,9 +466,16 @@ namespace Volunesia.iOS.Services
 
                     };
                     AppData_iOS.AddToVolunteerFutureEvents(e);
+                    object[] key = { "attended", "eventdate", "eventname", "hoursvolunteered", "nonprofitid" };
+                    object[] value = { "N", e.EventDate.ToString(), e.EventName, 0, e.HostID };
+                    var eventdetails = NSDictionary.FromObjectsAndKeys(value, key);
+                    //AlertShow.Print("Writing to Volunteerhistory Node");
+                    AppData_iOS.VolunteerHistoryNode.GetChild(vol.UID).GetChild(eid).SetValue(eventdetails);
+                    //AlertShow.Print("Written to Volunteerhistory Node");
                 }
+
                 AlertShow.Show(inpView, "Congratulations", "You are one step closer to making the world a better place. Please keep in mind the date of the event and lookout for any new changes.");
-            }); 
+            });
         }
 
         /// <summary>
@@ -476,12 +484,12 @@ namespace Volunesia.iOS.Services
         /// <param name="npid">The nonprofit id for an event.</param>
         /// <param name="eid">The event id.</param>
         /// <param name="uid">The id of the user to be added.</param>
-        public static void RemoveFromRoster(string npid, string eid, string uid) 
+        public static void RemoveFromRoster(string npid, string eid, string uid)
         {
 
-            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").ObserveEvent(DataEventType.Value,(snapshot) => 
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                if(snapshot.ChildrenCount > 1) //Simple removal
+                if (snapshot.ChildrenCount > 1) //Simple removal
                 {
                     DatabaseReference reference = AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid);
                     reference.RemoveValue();
@@ -489,7 +497,7 @@ namespace Volunesia.iOS.Services
                 else //Set the value of "roster" to 0 to indicate that no volunteer is going to attend the event
                 {
                     NSNumber n = 0;
-                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(n); 
+                    AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(n);
                 }
             });
         }

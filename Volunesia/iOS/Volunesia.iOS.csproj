@@ -283,6 +283,7 @@
     <BundleResource Include="Resources\Images\SelectedEventButton.png" />
     <BundleResource Include="Resources\Images\NotificationIcon.png" />
     <BundleResource Include="Resources\Images\BellIcon.png" />
+    <BundleResource Include="Resources\Images\LeaveButton.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

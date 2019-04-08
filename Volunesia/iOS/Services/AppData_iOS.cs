@@ -18,7 +18,7 @@ namespace Volunesia.iOS.Services
         public static DatabaseReference UsersNode { get; set; } //Reference to 'users' node in Firebase
         public static DatabaseReference NonprofitNode { get; set; } //Reference to 'nonprofitorgs' node in Firebase
         public static DatabaseReference NonprofitRepNode { get; set; } //Reference to 'nonprofitreps' node in Firebase
-        public static DatabaseReference VolunteerHistoryNode { get; set; } //Reference to 'volunteerhistory node in Firebase
+        public static DatabaseReference VolunteerHistoryNode { get; set; } //Reference to 'volunteerhistory' node in Firebase
         public static DatabaseReference EventNode { get; set; } //Reference to 'events' node in Firebase
 
         //Storage references
@@ -80,7 +80,7 @@ namespace Volunesia.iOS.Services
         /// Adds to volunteer future events. Initializes VolunteerEventsToBeAttended if need be
         /// </summary>
         /// <param name="e">Event to be added.</param>
-        public static void AddToVolunteerFutureEvents(Event e) 
+        public static void AddToVolunteerFutureEvents(Event e)
         {
             if (VolunteerEventsToBeAttended == null)
                 VolunteerEventsToBeAttended = new List<Event>();
@@ -96,17 +96,17 @@ namespace Volunesia.iOS.Services
         {
             if (NonprofitEvents == null)
                 NonprofitEvents = new List<Event>();
-            if(!ExistsInNonprofitEvents(e.EventID))
+            if (!ExistsInNonprofitEvents(e.EventID))
                 NonprofitEvents.Add(e);
         }
 
-        public static bool ExistsInNonprofitEvents(string eid) 
+        public static bool ExistsInNonprofitEvents(string eid)
         {
             foreach (Event e in NonprofitEvents)
             {
-                if(e.EventID == eid)
+                if (e.EventID == eid)
                 {
-                    return true; 
+                    return true;
                 }
             }
             return false;
@@ -115,11 +115,11 @@ namespace Volunesia.iOS.Services
 
         public static void SortNonprofitEventsByDate()
         {
-            if(NonprofitEvents != null) 
+            if (NonprofitEvents != null)
             {
-                Quicksorter.SortByDate(NonprofitEvents, 0, NonprofitEvents.Count-1);
+                Quicksorter.SortByDate(NonprofitEvents, 0, NonprofitEvents.Count - 1);
                 List<Event> events = new List<Event>();
-                for(int i = NonprofitEvents.Count-1; i >= 0; i--)//Reverse list
+                for (int i = NonprofitEvents.Count - 1; i >= 0; i--)//Reverse list
                 {
                     events.Add(NonprofitEvents[i]);
                 }
@@ -134,13 +134,13 @@ namespace Volunesia.iOS.Services
         /// <returns><c>true</c>, if event is a duplicate, <c>false</c> otherwise.</returns>
         /// <param name="evelist">List to be checked.</param>
         /// <param name="e">Event to be added.</param>
-        public static bool CheckIfExists(List<Event> evelist, Event e) 
+        public static bool CheckIfExists(List<Event> evelist, Event e)
         {
-            foreach(Event eve in evelist) 
+            foreach (Event eve in evelist)
             {
-                if(eve.EventID == e.EventID) 
+                if (eve.EventID == e.EventID)
                 {
-                    return true; 
+                    return true;
                 }
             }
             return false;

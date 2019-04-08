@@ -2134,6 +2134,24 @@
                                 </connections>
                                 <state key="normal" backgroundImage="Images/EditButton.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="102544" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" enabled="NO" hidden="YES">
+                                <rect key="frame" x="116" y="728" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="NonprofitBtn_TouchUpInside:" destination="102546" id="102545" eventType="touchUpInside"/>
+                                    <action selector="SchoolButton_TouchUpInside:" destination="102548" id="102547" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="102550" id="102549" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="102552" id="102551" eventType="touchUpInside"/>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="102554" id="102553" eventType="touchUpInside"/>
+                                    <action selector="LogoutBtn_TouchUpInside:" destination="102556" id="102555" eventType="touchUpInside"/>
+                                    <action selector="LogoutButton_TouchUpInside:" destination="102558" id="102557" eventType="touchUpInside"/>
+                                    <action selector="UploadImageButton_TouchUpInside:" destination="102560" id="102559" eventType="touchUpInside"/>
+                                    <action selector="DynamicButton_TouchUpInside:" destination="102562" id="102561" eventType="touchUpInside"/>
+                                    <action selector="EditButton_TouchUpInside:" destination="102564" id="102563" eventType="touchUpInside"/>
+                                    <action selector="LeaveButton_TouchUpInside:" destination="89985" id="102565" eventType="touchUpInside"/>
+                                </connections>
+                                <state key="normal" backgroundImage="Images/LeaveButton.png"/>
+                            </button>
                         </subviews>
                         <connections>
                             <outletCollection id="90003" property="gestureRecognizers" destination="89989" appends="YES"/>
@@ -2156,6 +2174,7 @@
                         <outlet property="EditButton" destination="90265" id="name-outlet-90265"/>
                         <segue id="90393" destination="46439" kind="show" identifier="ToNonprofitVCSegue_id"/>
                         <outlet property="EventNameLabel" destination="90045" id="name-outlet-90045"/>
+                        <outlet property="LeaveButton" destination="102544" id="name-outlet-102544"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90042" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2190,5 +2209,6 @@
         <image name="Images/ProfileButton.png" width="1000" height="680"/>
         <image name="Images/BellIcon.png" width="1350" height="1350"/>
         <image name="Images/EventButton.png" width="1000" height="680"/>
+        <image name="Images/LeaveButton.png" width="1179" height="442"/>
     </resources>
 </document>
