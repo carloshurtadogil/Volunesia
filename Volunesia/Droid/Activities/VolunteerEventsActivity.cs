@@ -52,13 +52,7 @@ namespace Volunesia.Droid.Activities
 
             });
 
-            //Retrieve all present events
-            var allEvents = System.Threading.Tasks.Task.Run(async () =>
-            {
-                return await QueryAllEvents();
 
-
-            });
 
             if(!queryvolhistorytask.Result.Equals("null"))
             {
@@ -80,7 +74,6 @@ namespace Volunesia.Droid.Activities
                     DateTime eventDateInFormat = Convert.ToDateTime(eventdate);
                     var eventname = eventpair.Value["eventname"].ToString();
                     var nonprofitid = eventpair.Value["nonprofitid"].ToString();
-                    var nonprofitname = eventpair.Value["nonprofitname"].ToString();
 
                     //if event occurred before the current date, then it is regarded as a past evnet
                     if (eventDateInFormat.CompareTo(DateTime.Now) <= 0)
@@ -90,8 +83,7 @@ namespace Volunesia.Droid.Activities
                             Attended = attended,
                             EventDate = Convert.ToDateTime(eventdate),
                             EventName = eventname,
-                            NonprofitID = nonprofitid,
-                            NonprofitName = nonprofitname
+                            NonprofitID = nonprofitid
 
                         };
                         theVolunteerHistory.VolunteerEvents.Add(volunteerevent);
@@ -113,6 +105,14 @@ namespace Volunesia.Droid.Activities
                 
             }
 
+            //Retrieve all present events
+            var allEvents = System.Threading.Tasks.Task.Run(async () =>
+            {
+                return await QueryAllEvents();
+
+
+            });
+
             mItems = new List<string>();
 
             foreach(var presentEvent in AllEvents)
@@ -127,7 +127,6 @@ namespace Volunesia.Droid.Activities
             SetContentView(Resource.Layout.VolunteerEvents);
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-
 
             //Adapt the list into a ListView
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);

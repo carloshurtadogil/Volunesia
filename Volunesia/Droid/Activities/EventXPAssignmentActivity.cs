@@ -52,7 +52,7 @@ namespace Volunesia.Droid.Activities
                 {
                     UID = attendee.Key,
                     EmailAddress = attendee.Value["contact"].ToString(),
-                    HoursCompleted = Convert.ToInt32(DateTime.Now - Convert.ToDateTime(attendee.Value["checkinTime"].ToString())),
+                    HoursCompleted = Convert.ToInt32(DateTime.Now - Convert.ToDateTime(attendee.Value["checkintime"].ToString())),
                     Attended = true
                 };
 

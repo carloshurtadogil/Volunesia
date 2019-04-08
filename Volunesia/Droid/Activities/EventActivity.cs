@@ -225,7 +225,7 @@ namespace Volunesia.Droid.Activities
         {
             AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
             dialogAlertConstruction.SetTitle("Ready to Volunteer?");
-            dialogAlertConstruction.SetMessage("Are you ready to make a difference");
+            dialogAlertConstruction.SetMessage("Are you ready to make a difference?");
 
             //If yes option is clicked, then add volunteer to event roster
             dialogAlertConstruction.SetPositiveButton("Yes", delegate
@@ -356,13 +356,14 @@ namespace Volunesia.Droid.Activities
 
             attendeeInformation.Add("attended", "N" );
             attendeeInformation.Add("hourscompleted", 0);
+            attendeeInformation.Add("checkintime", "");
             attendeeInformation.Add("status", "Will Attend");
             attendeeInformation.Add("contact", AppData.CurUser.EmailAddress);
 
             Dictionary<string, object> volunteerHistoryInfo = new Dictionary<string, object>();
             volunteerHistoryInfo.Add("attended", "N");
             volunteerHistoryInfo.Add("eventdate", Convert.ToString(SelectedEvent.EventDate));
-            volunteerHistoryInfo.Add("hoursVolunteered", 0);
+            volunteerHistoryInfo.Add("hoursvolunteered", 0);
             volunteerHistoryInfo.Add("nonprofitid", SelectedEvent.HostID);
             volunteerHistoryInfo.Add("nonprofitname", SelectedEvent.EventName);
             volunteerHistoryInfo.Add("eventname", SelectedEvent.EventName);
