@@ -103,7 +103,7 @@ namespace Volunesia.Droid.Activities
 
                 }
                 
-            }
+            }   
 
             //Retrieve all present events
             var allEvents = System.Threading.Tasks.Task.Run(async () =>
