@@ -91,6 +91,17 @@ namespace Volunesia.Droid.Activities
 
                 if (volunteerInRoster == true)
                 {
+                    /*
+                     * Check the date of the event. If it is approcating then set the button to withdraw 
+                     * from event. If the event is currently taking place then set the button to checkin.
+                     */
+                    if (SelectedEvent.EventDate.Date == DateTime.Today)
+                    {
+                        ApplyOrDeleteButton.Text = "Check-in";
+                        ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                    }
+
+
                     ApplyOrDeleteButton.Text = "Withdraw from Event";
                     ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                 }
@@ -108,6 +119,7 @@ namespace Volunesia.Droid.Activities
                         {
                             var attendeeUID = attendee.Value.ToString();
                             Attendee waitlistAttendee = new Attendee();
+                            waitlistAttendee.UID = attendeeUID;
                             SelectedEvent.Waitlist.Add(waitlistAttendee);
                         }
                         //volunteerInWaitlist = CheckIfVolunteerIsInWaitlist(waitlist);
@@ -180,6 +192,10 @@ namespace Volunesia.Droid.Activities
             {
                 this.DropFromWaitlist();
             }
+            else if (ApplyOrDeleteButton.Text.Equals("Check-in"))
+            {
+                this.Checkin();
+            }
 
         }
 
@@ -191,6 +207,12 @@ namespace Volunesia.Droid.Activities
             {
                 await RemoveVolunteerFromWaitlist();
             });
+        }
+
+        //Proceed to execute the checkin volunteer
+        public void Checkin()
+        {
+
         }
 
         //Proceeds to execute the add volunteer to waitlist
