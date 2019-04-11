@@ -212,7 +212,28 @@ namespace Volunesia.Droid.Activities
         //Proceed to execute the checkin volunteer
         public void Checkin()
         {
+            AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
+            dialogAlertConstruction.SetTitle("Check-in");
+            dialogAlertConstruction.SetMessage("Are you ready to check-in?");
 
+            //If yes option is clicked, then check-in volunteer
+            dialogAlertConstruction.SetPositiveButton("Yes", delegate
+            {
+                var queryvolhistorytask = System.Threading.Tasks.Task.Run(async () =>
+                {
+
+                    return await CheckinVolunteer();
+
+                });
+                StartActivity(typeof(VolunteerEventsActivity));
+            });
+            //if no option is selected, then exit the AlertDialog
+            dialogAlertConstruction.SetNegativeButton("No", delegate
+            {
+                dialogAlertConstruction.Dispose();
+
+            });
+            dialogAlertConstruction.Show();
         }
 
         //Proceeds to execute the add volunteer to waitlist
@@ -499,5 +520,17 @@ namespace Volunesia.Droid.Activities
 
             return eventResult;
         }
-    }
+
+        public async System.Threading.Tasks.Task<string> CheckinVolunteer()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            FirebaseResponse response = await firebaseClient.UpdateAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID + "/checkintime", DateTime.Today.ToString());
+
+            String result = response.Body;
+            return result;
+        }
+
+        }
 }

@@ -83,7 +83,7 @@ namespace Volunesia.Droid
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            PushResponse response = await firebaseClient.PushAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit
+            SetResponse response = await firebaseClient.SetAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit
                                                                              + "/"
                                                                              + eventID, mainDict);
 
