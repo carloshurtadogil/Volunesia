@@ -323,38 +323,36 @@ namespace Volunesia.iOS.Services
                 {
                     System.Diagnostics.Debug.WriteLine("Count: " + events.Count);
                     var keys = events.Keys;
-                    for (nuint i = 0; i < events.Count; i++)
+                    foreach(var key in events.Keys)
                     {
-                        string eventid = (NSString)keys[i];
-                        AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eventid).ObserveSingleEvent(DataEventType.Value, (snapshot1) =>
-                        {
-                            var data = snapshot1.GetValue<NSDictionary>();
-                            if (data != null)
+                        AlertShow.Print("Event Found Under Current User: " + key.ToString());
+                        var data = (NSDictionary)events[key];
+
+                        if (data != null)
+                        { 
+                            var attended = data["attended"].ToString();
+                            var ed = data["eventdate"].ToString();
+                            var eventname = data["eventname"].ToString();
+                            var eid = key.ToString();
+                            var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
+                            var nonprofitid = data["nonprofitid"].ToString();
+                            var nonprofitname = data["nonprofitname"].ToString();
+                           
+                            DateTime date = DateTime.Parse(ed);
+                            VolunteerEvent e = new VolunteerEvent
                             {
-                                var attended = data["attended"].ToString();
-                                var ed = data["eventdate"].ToString();
-                                var eventname = data["eventname"].ToString();
-                                var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
-                                var nonprofitid = data["nonprofitid"].ToString();
-                                var nonprofitname = data["nonprofitname"].ToString();
+                                Attended = attended,
+                                EventDate = date,
+                                EventID = eid,
+                                EventName = eventname,
+                                HoursCompleted = hourscompleted,
+                                NonprofitID = nonprofitid,
+                                NonprofitName = nonprofitname
+                            };
 
-                                DateTime date = DateTime.Parse(ed);
-                                VolunteerEvent e = new VolunteerEvent
-                                {
-                                    Attended = attended,
-                                    EventDate = date,
-                                    EventID = eventid,
-                                    EventName = eventname,
-                                    HoursCompleted = hourscompleted,
-                                    NonprofitID = nonprofitid,
-                                    NonprofitName = nonprofitname
-                                };
-
-                                history.AddEvent(e);
-                                //AppData.VolunteerHistory = history;
-                                //ReadWrite.WriteVolunteerHistory();
-                            }
-                        });
+                            history.AddEvent(e);
+                            AppData.VolunteerHistory = history;
+                        }
                     }
                 }
             });
@@ -468,12 +466,15 @@ namespace Volunesia.iOS.Services
 
                     };
                     AppData_iOS.AddToVolunteerFutureEvents(e);
-                    object[] key = { "attended", "eventdate", "eventname", "hoursvolunteered", "nonprofitid" };
-                    object[] value = { "N", e.EventDate.ToString(), e.EventName, 0, e.HostID };
-                    var eventdetails = NSDictionary.FromObjectsAndKeys(value, key);
-                    //AlertShow.Print("Writing to Volunteerhistory Node");
-                    AppData_iOS.VolunteerHistoryNode.GetChild(vol.UID).GetChild(eid).SetValue(eventdetails);
-                    //AlertShow.Print("Written to Volunteerhistory Node");
+                    AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot1) => 
+                    {
+                        var hostdata = snapshot1.GetValue<NSDictionary>();
+                        var nname = hostdata["name"].ToString();
+                        object[] key = { "attended", "eventdate", "eventname", "hoursvolunteered", "nonprofitid", "nonprofitname" };
+                        object[] value = { "N", e.EventDate.ToString(), e.EventName, 0, e.HostID, nname };
+                        var eventdetails = NSDictionary.FromObjectsAndKeys(value, key);
+                        AppData_iOS.VolunteerHistoryNode.GetChild(vol.UID).GetChild(eid).SetValue(eventdetails);
+                    });
                 }
 
                 AlertShow.Show(inpView, "Congratulations", "You are one step closer to making the world a better place. Please keep in mind the date of the event and lookout for any new changes.");

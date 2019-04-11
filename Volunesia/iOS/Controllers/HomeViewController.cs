@@ -23,7 +23,7 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
             AppData_iOS.GetInstance();
-            //FirebaseReader.ReadVolunteerHistory(AppData.CurUser.UID);
+            FirebaseReader.ReadVolunteerHistory(AppData.CurUser.UID);
             if(AppData.CurUser != null)
             {
                 NameLabel.Text = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
