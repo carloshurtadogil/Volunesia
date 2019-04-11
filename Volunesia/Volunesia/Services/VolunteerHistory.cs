@@ -71,6 +71,7 @@ namespace Volunesia.Services
             }
         }
 
+
         // Retrieve a particular event the user has attended
         public VolunteerEvent GetVolunteerEvent(string eventid) 
         {

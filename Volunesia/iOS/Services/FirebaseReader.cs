@@ -298,13 +298,20 @@ namespace Volunesia.iOS.Services
             AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var data = snapshot.GetValue<NSDictionary>();
-                var primarycontact = data["primarycontact"].ToString();
-                AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value, (snapshot2) =>
+                if(data != null) 
                 {
-                    var data2 = snapshot2.GetValue<NSDictionary>();
-                    var email = data2["email"].ToString();
-                    label.Text = email;
-                });
+                    var primarycontact = data["primarycontact"].ToString();
+                    AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value, (snapshot2) =>
+                    {
+                        var data2 = snapshot2.GetValue<NSDictionary>();
+                        var email = data2["email"].ToString();
+                        label.Text = email;
+                    });
+                }
+                else 
+                {
+                    AlertShow.Print("FirebaseReader.ReadContactEmail has null value"); 
+                }
             });
         }
 
@@ -315,6 +322,7 @@ namespace Volunesia.iOS.Services
         public static void ReadVolunteerHistory(string uid)
         {
             VolunteerHistory history = new VolunteerHistory();
+
             AppData_iOS.GetInstance();
             var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
@@ -357,6 +365,32 @@ namespace Volunesia.iOS.Services
                 }
             });
 
+        }
+
+        public static void ReadEvent(string npid, string eid, UIViewController HomeController) 
+        {
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) =>
+            {
+                var data = snapshot.GetValue<NSDictionary>();
+                if(data != null) 
+                {
+                    var imagepath = data["imagepath"].ToString();
+                    var eventname = data["eventname"].ToString();
+                    var eventdate = Convert.ToDateTime(data["eventdate"].ToString());
+                    var eventdescription = data["eventdesc"].ToString();
+                    Event e = new Event
+                    {
+                        EventName = eventname,
+                        EventDate = eventdate,
+                        EventDescription = eventdescription,
+                        EventImagePath = imagepath
+                    };
+                    HomeViewController homeView = (HomeViewController)HomeController;
+                    homeView.SelectedEvent = e;
+                    homeView.Attended = true;
+                    homeView.PerformSegue("ToEventsFromHome_id", HomeController);
+                }
+            }); 
         }
 
         /// <summary>

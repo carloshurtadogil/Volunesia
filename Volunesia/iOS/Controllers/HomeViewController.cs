@@ -10,6 +10,7 @@ namespace Volunesia.iOS
     public partial class HomeViewController : UIViewController
     {
         public Event SelectedEvent { get; set; }
+        public bool Attended { get; set; }
 
         public HomeViewController (IntPtr handle) : base (handle)
         {
@@ -60,6 +61,7 @@ namespace Volunesia.iOS
                 {
                     evc.EventDetails = SelectedEvent;
                     evc.JustCreated = false;
+                    evc.Attended = Attended;
                     evc.LoadView(); 
                 }
             }

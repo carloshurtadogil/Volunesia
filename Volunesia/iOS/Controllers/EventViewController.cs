@@ -11,7 +11,9 @@ namespace Volunesia.iOS
     {
         public Event EventDetails { get; set; }
         public bool JustCreated { get; set; }
+        public bool Attended { get; set; }
         public UIImage CoverPhoto { get; set; }
+
 
         public EventViewController(IntPtr handle) : base(handle)
         {
@@ -43,7 +45,7 @@ namespace Volunesia.iOS
                     EventDate.Text = formattedEventDate;
                 }
                 EventDescriptionTextView.Text = EventDetails.EventDescription;
-                FirebaseReader.ReadContactEmail(EventDetails.HostID, ContactEmailLabel);
+
             }
 
 
@@ -60,18 +62,31 @@ namespace Volunesia.iOS
             }
             else //The user is a normal volunteer
             {
-                var futureevents = AppData_iOS.VolunteerEventsToBeAttended;
-                if (futureevents != null && AppData_iOS.CheckIfExists(futureevents, EventDetails)) // Check if event details exist 
+                if(Attended) 
                 {
                     SignupButton.Enabled = false;
                     SignupButton.Hidden = true;
+                    LeaveButton.Enabled = false;
+                    LeaveButton.Enabled = true;
+                    AlertShow.Show(this, "You have already attended this event", "");
                 }
                 else
                 {
-                    SignupButton.Enabled = true;
-                    SignupButton.Hidden = false;
+
+                    var futureevents = AppData_iOS.VolunteerEventsToBeAttended;
+                    if (futureevents != null && AppData_iOS.CheckIfExists(futureevents, EventDetails)) // Check if event details exist 
+                    {
+                        SignupButton.Enabled = false;
+                        SignupButton.Hidden = true;
+                    }
+                    else
+                    {
+                        SignupButton.Enabled = true;
+                        SignupButton.Hidden = false;
+                    }
+                    FirebaseReader.ReadContactEmail(EventDetails.HostID, ContactEmailLabel);
+                    FirebaseReader.CheckVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID, SignupButton, LeaveButton);
                 }
-                FirebaseReader.CheckVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID, SignupButton, LeaveButton);
             }
         }
 

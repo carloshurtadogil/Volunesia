@@ -13,7 +13,7 @@ namespace Volunesia.iOS.Services
 
         public PastEventsDataSource(UIViewController inpViewController)
         {
-            HomeController = inpViewController; 
+            HomeController = inpViewController;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -33,8 +33,19 @@ namespace Volunesia.iOS.Services
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            //base.RowSelected(tableView, indexPath);
-            AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
+            int i = indexPath.Row;
+            if(AppData.VolunteerHistory != null  && AppData.VolunteerHistory.Size() > 0) 
+            {
+                if(i < AppData.VolunteerHistory.Size())
+                {
+                    string npid = AppData.VolunteerHistory.VolunteerEvents[i].NonprofitID;
+                    string eventid = AppData.VolunteerHistory.VolunteerEvents[i].EventID;
+                    FirebaseReader.ReadEvent(npid, eventid, HomeController);
+
+                } 
+            }
+
+            //AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)

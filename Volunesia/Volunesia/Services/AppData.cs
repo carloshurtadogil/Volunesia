@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Volunesia.Models;
 namespace Volunesia.Services
 {
@@ -7,6 +8,7 @@ namespace Volunesia.Services
         public static User CurUser;
         public static NonprofitRepresentative NonprofitRepresentative;
         public static VolunteerHistory VolunteerHistory;
+        public static List<Event> VolunteerEventDetails;
 
 
         private static AppData Instance;
