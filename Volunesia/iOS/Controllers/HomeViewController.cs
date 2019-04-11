@@ -23,6 +23,7 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
             AppData_iOS.GetInstance();
+            //FirebaseReader.ReadVolunteerHistory(AppData.CurUser.UID);
             if(AppData.CurUser != null)
             {
                 NameLabel.Text = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
@@ -64,6 +65,11 @@ namespace Volunesia.iOS
             }
         }
 
+        partial void ProfileButton_TouchUpInside(UIButton sender)
+        {
+            AlertShow.Show(this, "To be implemented", "");
+        }
+
         /// <summary>
         /// Settingses the button touch up inside.
         /// </summary>
@@ -71,11 +77,6 @@ namespace Volunesia.iOS
         partial void SettingsButton_TouchUpInside(UIButton sender)
         {
             this.PerformSegue("ToSettingsSegue_id", sender);
-        }
-
-        partial void AddButton_TouchUpInside(UIButton sender)
-        {
-            AlertShow.Show(this, "To be implemented", "");
         }
 
         //Display all events that the user has participated in the past

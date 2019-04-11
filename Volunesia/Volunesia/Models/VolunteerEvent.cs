@@ -11,6 +11,8 @@ namespace Volunesia.Models
         public DateTime EventDate   { get; set; }
         // Name of the event
         public string EventName     { get; set; }
+        // Number of hours completed, if attended
+        public double HoursCompleted { get; set; }
         // ID of the nonprofit
         public string NonprofitID   { get; set; }
         // Name of the nonprofit

@@ -16,10 +16,6 @@ namespace Volunesia.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton AddButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView EventsTableView { get; set; }
 
         [Outlet]
@@ -44,11 +40,11 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SettingsButton { get; set; }
+        UIKit.UIButton ProfileButton { get; set; }
 
-        [Action ("AddButton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void AddButton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UIButton SettingsButton { get; set; }
 
         [Action ("FutureButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -62,17 +58,16 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void PresentButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("ProfileButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ProfileButton_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("SettingsButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void SettingsButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (AddButton != null) {
-                AddButton.Dispose ();
-                AddButton = null;
-            }
-
             if (EventsTableView != null) {
                 EventsTableView.Dispose ();
                 EventsTableView = null;
@@ -101,6 +96,11 @@ namespace Volunesia.iOS
             if (PresentButton != null) {
                 PresentButton.Dispose ();
                 PresentButton = null;
+            }
+
+            if (ProfileButton != null) {
+                ProfileButton.Dispose ();
+                ProfileButton = null;
             }
 
             if (SettingsButton != null) {

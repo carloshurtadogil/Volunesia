@@ -331,11 +331,12 @@ namespace Volunesia.iOS.Services
                             var data = snapshot1.GetValue<NSDictionary>();
                             if (data != null)
                             {
-                                string attended = data["attended"].ToString();
-                                string ed = data["eventdate"].ToString();
-                                string eventname = data["eventname"].ToString();
-                                string nonprofitid = data["nonprofitid"].ToString();
-                                string nonprofitname = data["nonprofitname"].ToString();
+                                var attended = data["attended"].ToString();
+                                var ed = data["eventdate"].ToString();
+                                var eventname = data["eventname"].ToString();
+                                var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
+                                var nonprofitid = data["nonprofitid"].ToString();
+                                var nonprofitname = data["nonprofitname"].ToString();
 
                                 DateTime date = DateTime.Parse(ed);
                                 VolunteerEvent e = new VolunteerEvent
@@ -344,12 +345,13 @@ namespace Volunesia.iOS.Services
                                     EventDate = date,
                                     EventID = eventid,
                                     EventName = eventname,
+                                    HoursCompleted = hourscompleted,
                                     NonprofitID = nonprofitid,
                                     NonprofitName = nonprofitname
                                 };
 
                                 history.AddEvent(e);
-                                AppData.VolunteerHistory = history;
+                                //AppData.VolunteerHistory = history;
                                 //ReadWrite.WriteVolunteerHistory();
                             }
                         });
@@ -427,8 +429,8 @@ namespace Volunesia.iOS.Services
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var data = snapshot.GetValue<NSDictionary>();
-                object[] keys = { "attended", "contact","hourscompleted", "status" };
-                object[] vals = { "N", vol.EmailAddress, 0, "Will Attend" };
+                object[] keys = { "attended", "checkintime", "contact","hourscompleted", "status" };
+                object[] vals = { "N", "00", vol.EmailAddress, 0, "Will Attend" };
                 var urosteritem = NSDictionary.FromObjectsAndKeys(vals, keys);
 
                 var roster = data["roster"].ToString();
@@ -475,6 +477,41 @@ namespace Volunesia.iOS.Services
                 }
 
                 AlertShow.Show(inpView, "Congratulations", "You are one step closer to making the world a better place. Please keep in mind the date of the event and lookout for any new changes.");
+            });
+        }
+
+        public static void CheckVolunteerHistory(string uid, string eid, UIButton signup, UIButton leave) 
+        {
+            AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                var data = snapshot.GetValue<NSDictionary>();
+                if (data != null)
+                {
+                    bool found = false;
+                    foreach (var ekey in data.Keys) 
+                    {
+                        AlertShow.Print("Event: " + ekey.ToString());
+                        if(ekey.ToString().Equals(eid)) 
+                        {
+                            found = true;//Keep the signup button
+                            var eventinfo = (NSDictionary)data[eid];
+                            var attended = eventinfo["attended"].ToString();
+                            var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
+                            var today = DateTime.Now;
+                            if(attended.Equals("N") || (today < eventdate)) 
+                            {
+                                signup.Enabled = false;
+                                signup.Hidden  = true;
+                                leave.Enabled  = true;
+                                leave.Hidden   = false;
+                            }
+                        }
+                        if(!found) 
+                        {
+                             
+                        }
+                    }
+                }
             });
         }
 

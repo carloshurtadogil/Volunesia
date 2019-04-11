@@ -71,6 +71,7 @@ namespace Volunesia.iOS
                     SignupButton.Enabled = true;
                     SignupButton.Hidden = false;
                 }
+                FirebaseReader.CheckVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID, SignupButton, LeaveButton);
             }
         }
 
