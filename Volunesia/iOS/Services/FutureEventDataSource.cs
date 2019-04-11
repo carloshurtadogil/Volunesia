@@ -19,8 +19,15 @@ namespace Volunesia.iOS.Services
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell("EventItem");
-            cell.TextLabel.Text = "Future Events";
-            cell.DetailTextLabel.Text = "To be implemented";
+            AppData.GetInstance();
+            List<VolunteerEvent> e = AppData.FutureEvents.VolunteerEvents;
+            if (indexPath.Row < e.Count)
+            {
+                VolunteerEvent ve = e[indexPath.Row];
+                System.Diagnostics.Debug.WriteLine("Row: " + indexPath.Row);
+                cell.TextLabel.Text = ve.EventName + " with " + ve.NonprofitName;
+                cell.DetailTextLabel.Text = e[indexPath.Row].EventDate.ToString();
+            }
             return cell;
         }
 
@@ -32,7 +39,12 @@ namespace Volunesia.iOS.Services
 
         public override nint RowsInSection(UITableView tableview, nint section)
         {
-            return 1;
+            AppData_iOS.GetInstance();
+            if (AppData.FutureEvents != null)
+            {
+                return AppData.FutureEvents.Size();
+            }
+            return 0;
         }
     }
 }

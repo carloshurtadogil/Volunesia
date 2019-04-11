@@ -90,7 +90,7 @@ namespace Volunesia.iOS
             }
             else
             {
-                AlertShow.Show(this, "No Past Available", "Not enough data exists"); 
+                AlertShow.Show(this, "No Past Available", "We encourage you to sign up for events"); 
             }
         }
 
@@ -101,7 +101,14 @@ namespace Volunesia.iOS
 
         partial void FutureButton_TouchUpInside(UIButton sender)
         {
-            LoadEventData(2);
+            if(AppData.FutureEvents != null && AppData.FutureEvents.Size() > 0) 
+            {
+                LoadEventData(2);
+            }
+            else
+            {
+                AlertShow.Show(this, "No Upcoming Events In Your List", "We encourage you to sign up for events"); 
+            }
         }
         // Load specific event data depending on which button was clicked
         // 0 for Past Data
@@ -111,16 +118,19 @@ namespace Volunesia.iOS
         {
             if(type == 0) //Past data
             {
+                AlertShow.Print("Past Data");
                 PastEventsDataSource sdc = new PastEventsDataSource(this);
                 EventsTableView.Source = sdc;
             }
             else if(type == 1) //Present Data
             {
+                AlertShow.Print("Current Data");
                 AllCurrentEventsDataSource sdc = new AllCurrentEventsDataSource(this);
                 EventsTableView.Source = sdc;
             }
             else if(type == 2) //Future Data
             {
+                AlertShow.Print("Future Data");
                 FutureEventDataSource sdc = new FutureEventDataSource(this);
                 EventsTableView.Source = sdc; 
             }

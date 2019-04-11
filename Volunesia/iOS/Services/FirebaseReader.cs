@@ -322,6 +322,7 @@ namespace Volunesia.iOS.Services
         public static void ReadVolunteerHistory(string uid)
         {
             VolunteerHistory history = new VolunteerHistory();
+            VolunteerHistory future = new VolunteerHistory();
 
             AppData_iOS.GetInstance();
             var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) =>
@@ -337,7 +338,7 @@ namespace Volunesia.iOS.Services
                         var data = (NSDictionary)events[key];
 
                         if (data != null)
-                        { 
+                        {
                             var attended = data["attended"].ToString();
                             var ed = data["eventdate"].ToString();
                             var eventname = data["eventname"].ToString();
@@ -345,8 +346,10 @@ namespace Volunesia.iOS.Services
                             var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
                             var nonprofitid = data["nonprofitid"].ToString();
                             var nonprofitname = data["nonprofitname"].ToString();
-                           
+
                             DateTime date = DateTime.Parse(ed);
+                            DateTime now = DateTime.Now;
+
                             VolunteerEvent e = new VolunteerEvent
                             {
                                 Attended = attended,
@@ -358,8 +361,20 @@ namespace Volunesia.iOS.Services
                                 NonprofitName = nonprofitname
                             };
 
-                            history.AddEvent(e);
-                            AppData.VolunteerHistory = history;
+
+                            int result = DateTime.Compare(date, now);
+                            if (result <= 0)//past event
+                            {
+                                AlertShow.Print("Past: " + e.EventID);
+                                history.AddEvent(e);
+                                AppData.VolunteerHistory = history;
+                            }
+                            else //future event
+                            {
+                                AlertShow.Print("Future: " + e.EventID);
+                                future.AddEvent(e);
+                                AppData.FutureEvents = future;
+                            }
                         }
                     }
                 }
@@ -367,6 +382,13 @@ namespace Volunesia.iOS.Services
 
         }
 
+
+        /// <summary>
+        /// Read a specific event to be loaded for a volunteer's user experience
+        /// </summary>
+        /// <param name="npid">ID of nonprofit.</param>
+        /// <param name="eid">ID of event.</param>
+        /// <param name="HomeController">Home controller.</param>
         public static void ReadEvent(string npid, string eid, UIViewController HomeController) 
         {
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) =>

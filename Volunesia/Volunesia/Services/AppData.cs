@@ -8,6 +8,7 @@ namespace Volunesia.Services
         public static User CurUser;
         public static NonprofitRepresentative NonprofitRepresentative;
         public static VolunteerHistory VolunteerHistory;
+        public static VolunteerHistory FutureEvents;
         public static List<Event> VolunteerEventDetails;
 
 
