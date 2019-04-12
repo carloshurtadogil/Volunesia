@@ -46,6 +46,7 @@ namespace Volunesia.Droid.Activities
             //Parse the JSON response to get the roster and waitlist content
             var eventInfoAsJson = JObject.Parse(eventResult);
 
+            SelectedEvent.EventDate = Convert.ToDateTime(eventInfoAsJson["eventdate"].ToString());
             var rosterChecker = eventInfoAsJson["roster"].ToString();
             var waitlistChecker = eventInfoAsJson["waitlist"].ToString();
 

@@ -218,6 +218,7 @@
     <Compile Include="AppData_Droid.cs" />
     <Compile Include="Service\FiresharpConfig.cs" />
     <Compile Include="Service\Register.cs" />
+    <Compile Include="Service\TranslateFB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -91,6 +91,19 @@ namespace Volunesia.Droid
                     if (loggedUser.UserType.Equals("V"))
                     {
                         AppData.CurUser = loggedUser;
+
+                        var retrieveVolHistoryTask = System.Threading.Tasks.Task.Run(async () => {
+
+                            return await RetrieveVolunteerHistory();
+
+                        });
+
+                        if (!retrieveVolHistoryTask.Result.Equals("null"))
+                        {
+                            TranslateFB translateFB = new TranslateFB();
+                            translateFB.OccupyVolunteerHistory(loggedUser, retrieveVolHistoryTask.Result);
+                        }
+
                         StartActivity(typeof(VolunteerEventsActivity));
                     }
                     //Go to the Nonprofit Home activity if the user is a nonprofit rep
@@ -178,6 +191,27 @@ namespace Volunesia.Droid
 
             return resultant;
         }
+
+        /// <summary>
+        /// Retrieves the user's volunteer history
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> RetrieveVolunteerHistory()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            //Retrieve the user 
+            FirebaseResponse response = await firebaseClient.GetAsync("volunteerhistory/" + AppData.CurUser.UID);
+
+            string resultant = response.Body;
+
+            return resultant;
+        }
+
+        
+
     }
 
         
