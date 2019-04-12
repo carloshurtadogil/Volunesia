@@ -140,7 +140,7 @@ namespace Volunesia.Droid.Activities
 
 
             var intent = new Intent(this, typeof(EventActivity));
-            intent.PutExtra("event", JsonConvert.SerializeObject(UpcomingEvents[e.Position]));
+            intent.PutExtra("event", JsonConvert.SerializeObject(selectedEvent));
             StartActivity(intent);
 
         }
@@ -172,9 +172,12 @@ namespace Volunesia.Droid.Activities
             }
             if (UpcomingEventsCheckSubscription)
             {
-                mListView.ItemClick -= ShowUpcomingEvents;
+                mListView.ItemClick -= UpcomingEventClicked;
                 UpcomingEventsCheckSubscription = false;
             }
+
+            mListView.ItemClick += PastEventClicked;
+            PastEventsCheckSubscription = true;
 
 
         }

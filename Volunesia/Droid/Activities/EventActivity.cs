@@ -415,7 +415,20 @@ namespace Volunesia.Droid.Activities
             FirebaseResponse setVolunteerHistoryResponse = await firebaseClient.SetAsync("volunteerhistory/" +  AppData.CurUser.UID + "/" + SelectedEvent.EventID, volunteerHistoryInfo );
             //Retrieve the user 
             SetResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID, attendeeInformation);
-            
+
+            VolunteerEvent futureVolunteerEvent = new VolunteerEvent()
+            {
+                Attended = "N",
+                EventDate = SelectedEvent.EventDate,
+                HoursCompleted = 0,
+                EventID = SelectedEvent.EventID,
+                EventName = SelectedEvent.EventName,
+                NonprofitID = SelectedEvent.HostID,
+                NonprofitName = SelectedEvent.EventName
+
+            };
+            AppData.FutureEvents.AddEvent(futureVolunteerEvent);
+
             string resultant = response.Body;
 
             return resultant;
@@ -433,6 +446,9 @@ namespace Volunesia.Droid.Activities
             //Retrieve the roster again to make sure the roster content has been deleted
             //the roster attribute is deleted when there aren't any more volunteers in roster
             FirebaseResponse checkForRoster = await firebaseClient.GetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID+ "/roster");
+
+            AppData.FutureEvents.RemoveVolunteerEvent(SelectedEvent.EventID);
+
             if (checkForRoster.Body.Equals("null") || checkForRoster.Body.Equals(null))
             {
                 FirebaseResponse createRoster = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster", 0);
