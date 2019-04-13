@@ -191,6 +191,7 @@
     <Compile Include="Activities\CreateEventActivity.cs" />
     <Compile Include="Activities\EstablishedNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
+    <Compile Include="Activities\EventRatingActivity.cs" />
     <Compile Include="Activities\EventXPAssignmentActivity.cs" />
     <Compile Include="Activities\LocalNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
@@ -365,6 +366,9 @@
     <AndroidResource Include="Resources\layout\EventXPAssignment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EventRating.axml" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

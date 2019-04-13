@@ -118,7 +118,11 @@ namespace Volunesia.Droid.Activities
         /// <param name="e"></param>
         public void PastEventClicked(object sender, AdapterView.ItemClickEventArgs e)
         {
-
+            //
+            Console.WriteLine(PastEvents[e.Position]);
+            var intent = new Intent(this, typeof(EventRatingActivity));
+            intent.PutExtra("pastEvent", JsonConvert.SerializeObject(PastEvents[e.Position]));
+            StartActivity(intent);
         }
 
 
