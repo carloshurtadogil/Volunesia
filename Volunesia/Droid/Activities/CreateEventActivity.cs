@@ -52,6 +52,7 @@ namespace Volunesia.Droid
             IDGenerator generator = new IDGenerator();
             eventID = generator.GenerateEventID();
             mainDict.Add("applicationdeadline", AppDeadline.Text);
+            mainDict.Add("imagepath", "standard");
             mainDict.Add("eventdate", EventDate.Text);
             mainDict.Add("eventdesc", EventDes.Text);
             mainDict.Add("eventname", EventName.Text);
@@ -83,9 +84,7 @@ namespace Volunesia.Droid
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            SetResponse response = await firebaseClient.SetAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit
-                                                                             + "/"
-                                                                             + eventID, mainDict);
+            SetResponse response = await firebaseClient.SetAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit + "/" + eventID, mainDict);
 
             return "done";
         }
