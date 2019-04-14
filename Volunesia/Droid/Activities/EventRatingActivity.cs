@@ -24,6 +24,9 @@ namespace Volunesia.Droid.Activities
         public Switch HelpfulSwitch { get; set; }
         public Switch PositiveSwitch { get; set; }
 
+        public bool IsHelpfulSwitchOn { get; set; }
+        public bool IsPositiveSwitchOn { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -44,18 +47,38 @@ namespace Volunesia.Droid.Activities
 
 
                 });
-                if (!checkIfVolunteerHasRated.Equals("null"))
+                if (checkIfVolunteerHasRated.Result.Equals("null"))
                 {
                     HelpfulSwitch = FindViewById<Switch>(Resource.Id.helpfulSwitch);
                     PositiveSwitch = FindViewById<Switch>(Resource.Id.positiveSwitch);
 
+                    IsHelpfulSwitchOn = false;
+                    IsPositiveSwitchOn = false;
 
-                    HelpfulSwitch.Checked = false;
-                    PositiveSwitch.Checked = false;
-
-                    HelpfulSwitch.CheckedChange += ChangeHelpfulSwitchStatus;
-                    PositiveSwitch.CheckedChange += ChangePositiveSwitchStatus;
-                    
+                    //listen for any change upon a click on the Helpful switch
+                    HelpfulSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
+                    {
+                        if (IsHelpfulSwitchOn)
+                        {
+                            IsHelpfulSwitchOn = false;
+                        }
+                        else
+                        {
+                            IsHelpfulSwitchOn = true;
+                        }
+                    };
+                    //listen for any change upon a click on the Positive switch
+                    PositiveSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
+                    {
+                        if (IsPositiveSwitchOn)
+                        {
+                            IsPositiveSwitchOn = false;
+                        }
+                        else
+                        {
+                            IsPositiveSwitchOn = true;
+                        }
+                    };
                     var castRatingButton = FindViewById<Button>(Resource.Id.castRatingButton);
                     castRatingButton.Click += CollectVolunteerRatingForEvent;
                 }
@@ -79,40 +102,7 @@ namespace Volunesia.Droid.Activities
             
         }
 
-        /// <summary>
-        /// Changes the switch status of the Helpful switch
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void ChangeHelpfulSwitchStatus(object sender, EventArgs e)
-        {
-            if(HelpfulSwitch.Checked == true)
-            {
-                HelpfulSwitch.Checked = false;
-            }
-            else
-            {
-                HelpfulSwitch.Checked = true;
-            }
-        }
-
-        /// <summary>
-        /// Changes the switch status of the Positive switch
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void ChangePositiveSwitchStatus(object sender, EventArgs e)
-        {
-            if(PositiveSwitch.Checked)
-            {
-                PositiveSwitch.Checked = false;
-            }
-            else
-            {
-                PositiveSwitch.Checked = true;
-            }
-        }
-
+        
         /// <summary>
         /// Proceeds to collects volunteer ratings if any of the switches were clicked 
         /// </summary>
@@ -122,24 +112,23 @@ namespace Volunesia.Droid.Activities
         {
             List<string> ratingCategories = new List<string>();
 
-            if(PositiveSwitch.Checked)
+            if(IsPositiveSwitchOn)
             {
                 ratingCategories.Add("helpful");
             }
-            if(HelpfulSwitch.Checked)
+            if(IsHelpfulSwitchOn)
             {
                 ratingCategories.Add("positive");
             }
             if(ratingCategories.Count != 0)
             {
                 Dictionary<string, string> ratingCategoriesSelected = new Dictionary<string, string>();
-                ratingCategoriesSelected.Add("helpful", "No");
-                ratingCategoriesSelected.Add("positive", "No");
+                ratingCategoriesSelected["helpful"] = "No";
+                ratingCategoriesSelected["positive"] = "No";
                 foreach(var ratingCategory in ratingCategories)
                 {
-                    ratingCategoriesSelected.Add(ratingCategory, "Yes");
-
-
+                    ratingCategoriesSelected[ratingCategory] = "Yes";
+                    
                 }
                 var castVolunteerRating = System.Threading.Tasks.Task.Run(async () =>
                 {
