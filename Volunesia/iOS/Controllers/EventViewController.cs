@@ -148,7 +148,10 @@ namespace Volunesia.iOS
         /// <param name="sender">Sender.</param>
         partial void LeaveButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "To be implemented", "");
+            AlertShow.Print("Removing from event with details: \n NPID: " + EventDetails.HostID + "\n EID:  " + EventDetails.EventID);
+            FirebaseReader.RemoveFromRoster(EventDetails.HostID, EventDetails.EventID, AppData.CurUser.UID);
+            FirebaseReader.RemoveFromVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID);
+            //FirebaseReader.Test(this, AppData.CurUser.UID, AppData.CurUser.EmailAddress);
         }
     }
 }

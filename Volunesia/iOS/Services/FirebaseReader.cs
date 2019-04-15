@@ -325,59 +325,68 @@ namespace Volunesia.iOS.Services
             VolunteerHistory future = new VolunteerHistory();
 
             AppData_iOS.GetInstance();
+
             var children = AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                var events = snapshot.GetValue<NSDictionary>();
-                if (events != null)
+                if(snapshot.Exists) 
                 {
-                    System.Diagnostics.Debug.WriteLine("Count: " + events.Count);
-                    var keys = events.Keys;
-                    foreach(var key in events.Keys)
+                    var events = snapshot.GetValue<NSDictionary>();
+                    if (events != null)
                     {
-                        AlertShow.Print("Event Found Under Current User: " + key.ToString());
-                        var data = (NSDictionary)events[key];
 
-                        if (data != null)
+                        System.Diagnostics.Debug.WriteLine("Count: " + events.Count);
+                        var keys = events.Keys;
+                        foreach (var key in events.Keys)
                         {
-                            var attended = data["attended"].ToString();
-                            var ed = data["eventdate"].ToString();
-                            var eventname = data["eventname"].ToString();
-                            var eid = key.ToString();
-                            var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
-                            var nonprofitid = data["nonprofitid"].ToString();
-                            var nonprofitname = data["nonprofitname"].ToString();
+                            AlertShow.Print("Event Found Under Current User: " + key.ToString());
+                            var data = (NSDictionary)events[key];
 
-                            DateTime date = DateTime.Parse(ed);
-                            DateTime now = DateTime.Now;
-
-                            VolunteerEvent e = new VolunteerEvent
+                            if (data != null)
                             {
-                                Attended = attended,
-                                EventDate = date,
-                                EventID = eid,
-                                EventName = eventname,
-                                HoursCompleted = hourscompleted,
-                                NonprofitID = nonprofitid,
-                                NonprofitName = nonprofitname
-                            };
+                                var attended = data["attended"].ToString();
+                                var ed = data["eventdate"].ToString();
+                                var eventname = data["eventname"].ToString();
+                                var eid = key.ToString();
+                                var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
+                                var nonprofitid = data["nonprofitid"].ToString();
+                                var nonprofitname = data["nonprofitname"].ToString();
+
+                                DateTime date = DateTime.Parse(ed);
+                                DateTime now = DateTime.Now;
+
+                                VolunteerEvent e = new VolunteerEvent
+                                {
+                                    Attended = attended,
+                                    EventDate = date,
+                                    EventID = eid,
+                                    EventName = eventname,
+                                    HoursCompleted = hourscompleted,
+                                    NonprofitID = nonprofitid,
+                                    NonprofitName = nonprofitname
+                                };
 
 
-                            int result = DateTime.Compare(date, now);
-                            if (result <= 0)//past event
-                            {
-                                AlertShow.Print("Past: " + e.EventID);
-                                history.AddEvent(e);
-                                AppData.VolunteerHistory = history;
-                            }
-                            else //future event
-                            {
-                                AlertShow.Print("Future: " + e.EventID);
-                                future.AddEvent(e);
-                                AppData.FutureEvents = future;
+                                int result = DateTime.Compare(date, now);
+                                if (result <= 0)//past event
+                                {
+                                    AlertShow.Print("Past: " + e.EventID);
+                                    history.AddEvent(e);
+                                    AppData.VolunteerHistory = history;
+                                }
+                                else //future event
+                                {
+                                    AlertShow.Print("Future: " + e.EventID);
+                                    future.AddEvent(e);
+                                    AppData.FutureEvents = future;
+                                }
                             }
                         }
                     }
                 }
+            },
+            (error) => 
+            {
+                AlertShow.Print("No Prior History to Report"); 
             });
 
         }
@@ -544,31 +553,34 @@ namespace Volunesia.iOS.Services
         {
             AppData_iOS.VolunteerHistoryNode.GetChild(uid).ObserveEvent(DataEventType.Value,(snapshot) => 
             {
-                var data = snapshot.GetValue<NSDictionary>();
-                if (data != null)
+                if (snapshot.Exists) 
                 {
-                    bool found = false;
-                    foreach (var ekey in data.Keys) 
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if (data != null)
                     {
-                        AlertShow.Print("Event: " + ekey.ToString());
-                        if(ekey.ToString().Equals(eid)) 
+                        bool found = false;
+                        foreach (var ekey in data.Keys)
                         {
-                            found = true;//Keep the signup button
-                            var eventinfo = (NSDictionary)data[eid];
-                            var attended = eventinfo["attended"].ToString();
-                            var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
-                            var today = DateTime.Now;
-                            if(attended.Equals("N") || (today < eventdate)) 
+                            AlertShow.Print("Event: " + ekey.ToString());
+                            if (ekey.ToString().Equals(eid))
                             {
-                                signup.Enabled = false;
-                                signup.Hidden  = true;
-                                leave.Enabled  = true;
-                                leave.Hidden   = false;
+                                found = true;//Keep the signup button
+                                var eventinfo = (NSDictionary)data[eid];
+                                var attended = eventinfo["attended"].ToString();
+                                var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
+                                var today = DateTime.Now;
+                                if (attended.Equals("N") || (today < eventdate))
+                                {
+                                    signup.Enabled = false;
+                                    signup.Hidden = true;
+                                    leave.Enabled = true;
+                                    leave.Hidden = false;
+                                }
                             }
-                        }
-                        if(!found) 
-                        {
-                             
+                            if (!found)
+                            {
+
+                            }
                         }
                     }
                 }
@@ -597,6 +609,27 @@ namespace Volunesia.iOS.Services
                     AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(n);
                 }
             });
+        }
+
+        /// <summary>
+        /// Removes from volunteer history.
+        /// </summary>
+        /// <param name="uid">User's id.</param>
+        /// <param name="eid">ID of the event to be removed.</param>
+        public static void RemoveFromVolunteerHistory(string uid, string eid) 
+        {
+            DatabaseReference reference = AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eid);
+            reference.RemoveValue();
+        }
+
+        public static void Test(UIViewController inpView, string uid, string email) 
+        {
+            Models.User v = new Models.User 
+            {
+                UID = uid,
+                EmailAddress = email
+            };
+            WriteToRoster(inpView, "fac19049-f4af-4bd4-868a-248f333cfe23", "cd807087-6887-4caf-b9f6-4993d8060fce", v);
         }
 
     }
