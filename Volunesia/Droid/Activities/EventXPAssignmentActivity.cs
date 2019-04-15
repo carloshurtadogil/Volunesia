@@ -29,6 +29,17 @@ namespace Volunesia.Droid.Activities
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            EventAttendees = new List<Attendee>();
+            //e.g. for a sample event
+            SelectedEvent = new Event()
+            {
+                EventDate = DateTime.Parse("3/25/2019 8:00:00 AM"),
+                EventID = "5bee046e-c219-4456-b043-7a1c92186f3d",
+                EventName = "Coding 4 Vols",
+                HostID = "43513eed-c8c2-4e91-a9b3-303b29a9067d",
+                
+
+            };
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EventXPAssignment);
             mItems = new List<string>();
@@ -52,16 +63,18 @@ namespace Volunesia.Droid.Activities
                 {
                     UID = attendee.Key,
                     EmailAddress = attendee.Value["contact"].ToString(),
-                    HoursCompleted = Convert.ToInt32(DateTime.Now - Convert.ToDateTime(attendee.Value["checkintime"].ToString())),
+                    HoursCompleted = Convert.ToInt32(attendee.Value["hourscompleted"]),
                     Attended = true
                 };
 
                 if (currentAttendee.Attended)
                 {
                     EventAttendees.Add(currentAttendee);
-                    mItems.Add(currentAttendee.EmailAddress + " " + currentAttendee.UID);
+                    mItems.Add(currentAttendee.EmailAddress + " " + currentAttendee.UID + " " + currentAttendee.HoursCompleted);
                 }
             }
+
+            mListView = FindViewById<ListView>(Resource.Id.attendeesWaitingForXPListView);
 
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             mListView.Adapter = adapter;
@@ -83,23 +96,40 @@ namespace Volunesia.Droid.Activities
                 //Query the volunteer's current level
                 var volunteerLevelTask = System.Threading.Tasks.Task.Run(async () =>
                 {
-                    return await GetVolunteerLevel();
+                    return await GetVolunteer(attendee.UID);
                 });
                 //Query the volunteer's current badges
                 var volunteerBadgesTask = System.Threading.Tasks.Task.Run(async () =>
                 {
-                    return await GetVolunteerBadgesAsync();
+                    return await GetVolunteerBadgesAsync(attendee.UID);
                 });
 
+                string resultant = volunteerLevelTask.Result;
+                JObject volunteerOrAttendee = JObject.Parse(resultant);
+
+                Dictionary<string, object> volInformation = new Dictionary<string, object>();
+                volInformation.Add("email", volunteerOrAttendee["email"].ToString());
+                volInformation.Add("first", volunteerOrAttendee["first"].ToString());
+                volInformation.Add("last", volunteerOrAttendee["last"].ToString());
+                volInformation.Add("level", Convert.ToInt32(volunteerOrAttendee["level"]));
+                volInformation.Add("personalstatement", volunteerOrAttendee["personalstatement"].ToString());
+                volInformation.Add("type", volunteerOrAttendee["type"].ToString());
+                int volLevel = Convert.ToInt32(volunteerOrAttendee["level"]);
+                
+
+
                 //Occupy the level and badges from the queried results
-                level = Convert.ToInt32((volunteerLevelTask.Result).Substring(1, volunteerLevelTask.Result.Length - 2));
+                level = volLevel;
+                    
+                    //Convert.ToInt32((volunteerLevelTask.Result).Substring(1, volunteerLevelTask.Result.Length - 2));
                 List<BadgeCategory.Badge> badges = OccupyVolunteerBadges(volunteerBadgesTask.Result);
 
                 Volunteer theVolunteer = new Volunteer()
                 {
                     Level = level,
                     BadgeList = new List<BadgeCategory.Badge>(),
-                    UID = attendee.UID
+                    UID = attendee.UID,
+                    Minutes = 180
                     
                 };
                 
@@ -110,15 +140,24 @@ namespace Volunesia.Droid.Activities
                 //if a volunteer has leveled up, then update their level in Firebase
                 if(didLevelUp == true)
                 {
+                    volInformation["level"] = theVolunteer.Level;
                     var volunteerLevelUpTask = System.Threading.Tasks.Task.Run(async () =>
                     {
-                        return await UpdateVolunteerLevelAsync(theVolunteer);
+                        return await UpdateVolunteerLevelAsync(theVolunteer, volInformation);
                     });
                 }
 
+                Dictionary<string, object> volHistoryInfo = new Dictionary<string, object>();
+                volHistoryInfo.Add("attended", "Y");
+                volHistoryInfo.Add("eventdate", SelectedEvent.EventDate.ToString());
+                volHistoryInfo.Add("eventname", SelectedEvent.EventName);
+                volHistoryInfo.Add("hoursvolunteered", attendee.HoursCompleted);
+                volHistoryInfo.Add("nonprofitid", SelectedEvent.HostID);
+                volHistoryInfo.Add("nonprofitname", SelectedEvent.EventName);
+
                 var volunteerHistoryTask = System.Threading.Tasks.Task.Run(async () =>
                 {
-                    return await UpdateVolunteerHistoryAsync(attendee.UID, attendee.HoursCompleted);
+                    return await UpdateVolunteerHistoryAsync(attendee.UID, volHistoryInfo);
                 });
             }
 
@@ -129,12 +168,12 @@ namespace Volunesia.Droid.Activities
         /// </summary>
         /// <param name="volunteer"></param>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> UpdateVolunteerLevelAsync(Volunteer volunteer)
+        public async System.Threading.Tasks.Task<string> UpdateVolunteerLevelAsync(Volunteer volunteer, Dictionary<string, object> volInfo)
         {
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse volunteerLevel = await firebaseClient.UpdateAsync("users/" + volunteer.UID + "/level", volunteer.Level );
-            return volunteerLevel.Body;
+            FirebaseResponse updateVolunteerAfterLevelUp = await firebaseClient.SetAsync("users/" + volunteer.UID, volInfo);
+            return updateVolunteerAfterLevelUp.Body;
         }
 
         /// <summary>
@@ -142,23 +181,23 @@ namespace Volunesia.Droid.Activities
         /// </summary>
         /// <param name="attendeeUID"></param>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> UpdateVolunteerHistoryAsync(string attendeeUID, int hours)
+        public async System.Threading.Tasks.Task<string> UpdateVolunteerHistoryAsync(string attendeeUID, Dictionary<string, object> volunteerHistoryInformation)
         {
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse volunteerHistoryResponse = await firebaseClient.UpdateAsync("volunteerhistory/" + attendeeUID + "/" + SelectedEvent.EventID + "/hours", hours  );
-            return volunteerHistoryResponse.Body;
+            FirebaseResponse updateVolHistoryResponse = await firebaseClient.SetAsync("volunteerhistory/" + attendeeUID + "/" + SelectedEvent.EventID, volunteerHistoryInformation);
+            return updateVolHistoryResponse.Body;
         }
 
         /// <summary>
         /// Retrieves the volunteer's level from Firebase
         /// </summary>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> GetVolunteerLevel()
+        public async System.Threading.Tasks.Task<string> GetVolunteer(string attendeeUID)
         {
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse volunteerLevel = await firebaseClient.GetAsync("users/" + AppData.CurUser.UID + "/level");
+            FirebaseResponse volunteerLevel = await firebaseClient.GetAsync("users/" + attendeeUID);
             return volunteerLevel.Body;
         }
 
@@ -166,12 +205,12 @@ namespace Volunesia.Droid.Activities
         /// Retrieves a volunteer's list of badges from Firebase
         /// </summary>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> GetVolunteerBadgesAsync()
+        public async System.Threading.Tasks.Task<string> GetVolunteerBadgesAsync(string attendeeUID)
         {
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            FirebaseResponse volunteerBadgeResponse = await firebaseClient.GetAsync("badges/" + AppData.CurUser.UID);
+            FirebaseResponse volunteerBadgeResponse = await firebaseClient.GetAsync("badges/" + attendeeUID);
 
             return volunteerBadgeResponse.Body;
 

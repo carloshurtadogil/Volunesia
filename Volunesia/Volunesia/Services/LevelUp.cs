@@ -7,11 +7,11 @@ namespace Volunesia.Services
 {
     public class LevelUp
     {
-        public LevelExperience LvlExpMapping;
+        public Dictionary<int, int> LvlExpMapping { get; set; }
 
         public LevelUp()
         {
-            LvlExpMapping.levelExperienceMapping = new Dictionary<int, int>()
+            LvlExpMapping = new Dictionary<int, int>()
             {
                 {1,0},
                 {2,83},
@@ -134,8 +134,9 @@ namespace Volunesia.Services
                 Conversion conv = new Conversion();
                 int volunteerXP = conv.ConvertVolunteerHoursToExperiencePoints(theVolunteer.Minutes);
 
+                int originalLevel = theVolunteer.Level;
                 int levelPlacement = 1;
-                foreach(KeyValuePair<int, int> entry in LvlExpMapping.levelExperienceMapping)
+                foreach(KeyValuePair<int, int> entry in LvlExpMapping)
                 {
                     //If the amount of points a volunteer has is greater than the current experience mapping
                     //then increment the volunteer's level
@@ -178,7 +179,7 @@ namespace Volunesia.Services
                 }
 
 
-                if (theVolunteer.Level != levelPlacement)
+                if (theVolunteer.Level != originalLevel)
                 {
                     return true;
                 }
