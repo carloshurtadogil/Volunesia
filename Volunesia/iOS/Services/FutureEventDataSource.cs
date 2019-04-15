@@ -33,8 +33,17 @@ namespace Volunesia.iOS.Services
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            //base.RowSelected(tableView, indexPath);
-            AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
+            int i = indexPath.Row;
+            if (AppData.FutureEvents != null && AppData.FutureEvents.Size() > 0)
+            {
+                if (i < AppData.FutureEvents.Size())
+                {
+                    string npid = AppData.FutureEvents.VolunteerEvents[i].NonprofitID;
+                    string eventid = AppData.FutureEvents.VolunteerEvents[i].EventID;
+                    FirebaseReader.ReadEvent(npid, eventid, HomeController, false);
+
+                }
+            }
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)

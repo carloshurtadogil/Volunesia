@@ -40,7 +40,7 @@ namespace Volunesia.iOS.Services
                 {
                     string npid = AppData.VolunteerHistory.VolunteerEvents[i].NonprofitID;
                     string eventid = AppData.VolunteerHistory.VolunteerEvents[i].EventID;
-                    FirebaseReader.ReadEvent(npid, eventid, HomeController);
+                    FirebaseReader.ReadEvent(npid, eventid, HomeController, true);
 
                 } 
             }

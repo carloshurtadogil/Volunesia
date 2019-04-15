@@ -389,7 +389,8 @@ namespace Volunesia.iOS.Services
         /// <param name="npid">ID of nonprofit.</param>
         /// <param name="eid">ID of event.</param>
         /// <param name="HomeController">Home controller.</param>
-        public static void ReadEvent(string npid, string eid, UIViewController HomeController) 
+        /// <param name="attended">Determine if event is upcoming or has past</param>
+        public static void ReadEvent(string npid, string eid, UIViewController HomeController, bool attended) 
         {
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
@@ -405,11 +406,13 @@ namespace Volunesia.iOS.Services
                         EventName = eventname,
                         EventDate = eventdate,
                         EventDescription = eventdescription,
-                        EventImagePath = imagepath
+                        EventImagePath = imagepath,
+                        EventID = eid,
+                        HostID = npid
                     };
                     HomeViewController homeView = (HomeViewController)HomeController;
                     homeView.SelectedEvent = e;
-                    homeView.Attended = true;
+                    homeView.Attended = attended;
                     homeView.PerformSegue("ToEventsFromHome_id", HomeController);
                 }
             }); 
