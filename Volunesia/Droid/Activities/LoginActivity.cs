@@ -74,6 +74,8 @@ namespace Volunesia.Droid
                     var firstName = jsonObject["first"];
                     var lastName = jsonObject["last"];
                     var email = jsonObject["email"];
+                    var level = Convert.ToInt32(jsonObject["level"]);
+                    var xp = Convert.ToInt32(jsonObject["xp"]);
 
                     //Set the following components to their respective fields of the User
                     User loggedUser = new User()
@@ -86,6 +88,12 @@ namespace Volunesia.Droid
                         
 
                     };
+                    //make an instance of AppData Volunteer
+                    AppData.CurVolunteer = new Volunteer()
+                    {
+                        Experience = xp,
+                        Level = level
+                    };
 
                     //Go to the Volunteer home activity if the user is a volunteer
                     if (loggedUser.UserType.Equals("V"))
@@ -97,6 +105,9 @@ namespace Volunesia.Droid
                             return await RetrieveVolunteerHistory();
 
                         });
+
+                        AppData.VolunteerHistory = new VolunteerHistory();
+                        AppData.FutureEvents = new VolunteerHistory();
 
                         if (!retrieveVolHistoryTask.Result.Equals("null"))
                         {

@@ -122,7 +122,7 @@ namespace Volunesia.Services
         /// </summary>
         /// <param name="theVolunteer"></param>
         /// <returns></returns>
-        public bool CheckIfUserCanLevelUp(Volunteer theVolunteer)
+        public bool CheckIfUserCanLevelUp(Volunteer theVolunteer, int hoursCompleted)
         {
             //If the volunteer is already capped at 99, then there is no need to level up
             if(theVolunteer.Level == 99)
@@ -131,8 +131,9 @@ namespace Volunesia.Services
             }
             else
             {
+                int volunteerXP = theVolunteer.Experience;
                 Conversion conv = new Conversion();
-                int volunteerXP = conv.ConvertVolunteerHoursToExperiencePoints(theVolunteer.Minutes);
+                volunteerXP += conv.ConvertVolunteerHoursToExperiencePoints(hoursCompleted);
 
                 int originalLevel = theVolunteer.Level;
                 int levelPlacement = 1;
@@ -149,6 +150,7 @@ namespace Volunesia.Services
                     else if(volunteerXP < entry.Value)
                     {
                         theVolunteer.Level = levelPlacement;
+                        theVolunteer.Experience = volunteerXP;
                         break;
                     }
                 }

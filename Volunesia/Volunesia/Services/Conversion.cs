@@ -13,11 +13,9 @@ namespace Volunesia.Services
         }
 
         //Takes a volunteer's minutes of volunteering and converts them to points
-        public int ConvertVolunteerHoursToExperiencePoints(long minutes)
+        public int ConvertVolunteerHoursToExperiencePoints(int hoursCompletedForVolunteer)
         {
-            TimeSpan volunteerMinutes = TimeSpan.FromMinutes(minutes);
-            int volunteerHours = (int)volunteerMinutes.TotalHours;
-            return volunteerHours * 200;
+            return hoursCompletedForVolunteer * 200;
         }
     }
 }

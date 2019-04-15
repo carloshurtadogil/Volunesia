@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Firebase.Database.Query;
 using Newtonsoft.Json;
+using Volunesia.Droid.Activities;
 using Volunesia.Droid.Service;
 using Volunesia.Models;
 using Volunesia.Services;
@@ -54,7 +55,7 @@ namespace Volunesia.Droid
             Register r = new Register();
             r.AddUserToFirebase(theUser, "");
 
-            StartActivity(typeof(WelcomeActivity));
+            StartActivity(typeof(ChangeEmailActivity));
         }
     }
 }

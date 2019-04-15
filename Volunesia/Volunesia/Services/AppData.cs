@@ -6,6 +6,7 @@ namespace Volunesia.Services
     public class AppData
     {
         public static User CurUser;
+        public static Volunteer CurVolunteer;
         public static NonprofitRepresentative NonprofitRepresentative;
         public static VolunteerHistory VolunteerHistory;
         public static VolunteerHistory FutureEvents;

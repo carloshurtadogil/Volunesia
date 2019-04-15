@@ -20,11 +20,15 @@ namespace Volunesia.Droid.Activities
     [Activity(Label = "ChangeEmailPasswordActivity")]
     public class ChangeEmailActivity : Activity, IOnCompleteListener
     {
+        public EditText DefaultEmailAddressField { get; set; }
         public EditText EmailAddressField { get; set; }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ChangeEmail);
+
+            DefaultEmailAddressField = FindViewById<EditText>(Resource.Id.editText1);
+            DefaultEmailAddressField.Text = AppData.CurUser.EmailAddress;
 
             EmailAddressField = FindViewById<EditText>(Resource.Id.changeEmailAddressField);
 
@@ -60,8 +64,8 @@ namespace Volunesia.Droid.Activities
                 errorMessages.Append("Entered email address has an invalid format");
             }
 
-            //Proceeds to make an AlertDialog to showcase email update failures
-            if (string.IsNullOrEmpty(errorMessages.ToString()))
+            //Proceeds to make an AlertDialog to showcase email update failures, if its not empty
+            if (!string.IsNullOrEmpty(errorMessages.ToString()))
             {
                 AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
                 dialogAlertConstruction.SetTitle("Email change failure");
@@ -92,9 +96,19 @@ namespace Volunesia.Droid.Activities
             if (task.IsSuccessful)
             {
                 AppData.CurUser.EmailAddress = EmailAddressField.Text;
+
+                Dictionary<string, object> volunteerUserInformation = new Dictionary<string, object>();
+                volunteerUserInformation.Add("email", AppData.CurUser.EmailAddress);
+                volunteerUserInformation.Add("first", AppData.CurUser.FirstName);
+                volunteerUserInformation.Add("last", AppData.CurUser.LastName);
+                volunteerUserInformation.Add("personalstatement", AppData.CurUser.PersonalStatement);
+                volunteerUserInformation.Add("type", AppData.CurUser.UserType);
+                volunteerUserInformation.Add("level", AppData.CurVolunteer.Level);
+                volunteerUserInformation.Add("xp", AppData.CurVolunteer.Experience);
+
                 var changeEmailInFBTask = System.Threading.Tasks.Task.Run(async () => {
 
-                    return await ChangeEmailAsync();
+                    return await ChangeEmailAsync(volunteerUserInformation);
 
                 });
                 var Result = changeEmailInFBTask.Result;
@@ -121,15 +135,13 @@ namespace Volunesia.Droid.Activities
         /// Change a user's email address in Firebase
         /// </summary>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> ChangeEmailAsync()
+        public async System.Threading.Tasks.Task<string> ChangeEmailAsync(Dictionary<string, object> volunteerUserInformation)
         {
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            //Retrieve the user 
-            FirebaseResponse response = await firebaseClient.UpdateAsync("users/" + AppData.CurUser.UID + "/email", EmailAddressField.Text );
-
-            return response.Body;
+            FirebaseResponse updateEmailResponse = await firebaseClient.SetAsync("users/" + AppData.CurUser.UID, volunteerUserInformation);            
+            return updateEmailResponse.Body;
         }
     }
 }

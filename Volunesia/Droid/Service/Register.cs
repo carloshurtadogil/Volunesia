@@ -31,9 +31,15 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("type", theUser.UserType);
                 userDictionary.Add("personalstatement", theUser.PersonalStatement);
                 userDictionary.Add("level", 1);
+                userDictionary.Add("xp", 0);
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;
+                AppData.CurVolunteer = new Volunteer()
+                {
+                    Level = 1,
+                    Experience = 0,
+                };
 
             }
             else if (theUser.UserType == "NP")
