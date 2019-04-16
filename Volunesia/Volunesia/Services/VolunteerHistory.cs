@@ -88,19 +88,25 @@ namespace Volunesia.Services
         public VolunteerEvent RemoveVolunteerEvent(string eventid)
         {
             VolunteerEvent e = null;
-            int index = -1;
-            for(int i = 0; i < VolunteerEvents.Count; i++) 
-            { 
-                if(VolunteerEvents[i].EventID == eventid)
-                {
-                    index = i;
-                    break; 
-                }
-            }
-            if(index >= 0)
+            if(VolunteerEvents != null) 
             {
-                e = VolunteerEvents[index];
-                VolunteerEvents.RemoveAt(index); 
+                if(VolunteerEvents.Count == 1)
+                {
+                    VolunteerEvents.RemoveAt(0); 
+                } 
+                else if (VolunteerEvents.Count > 1) 
+                {
+                    for (int i = 0; i < VolunteerEvents.Count; i++)
+                    {
+                        if (VolunteerEvents[i].EventID == eventid)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Index: " + i);
+                            e = VolunteerEvents[i];
+                            VolunteerEvents.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
             }
             return e;
         }

@@ -462,7 +462,6 @@
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="15601" eventType="touchUpInside" id="22202"/>
-                                    <segue destination="17774" kind="show" identifier="MSToWelcomeSegue_id" id="21795"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -474,11 +473,12 @@
                         <outlet property="ContinueButton" destination="21723" id="name-outlet-21723"/>
                         <outlet property="StatementLabel" destination="15609" id="15608"/>
                         <outlet property="StoryTextView" destination="15920" id="name-outlet-15920"/>
+                        <segue id="105090" destination="17774" kind="show" identifier="MSToWelcomeSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15629" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872" y="4800"/>
+            <point key="canvasLocation" x="1751" y="4579"/>
         </scene>
         <!--Established Nonprofit View Controller-->
         <scene sceneID="15923">

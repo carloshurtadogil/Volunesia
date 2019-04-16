@@ -138,6 +138,7 @@ namespace Volunesia.iOS
             }
             else
             {
+
                 this.DismissViewController(true, null);
             }
         }
@@ -151,6 +152,16 @@ namespace Volunesia.iOS
             AlertShow.Print("Removing from event with details: \n NPID: " + EventDetails.HostID + "\n EID:  " + EventDetails.EventID);
             FirebaseReader.RemoveFromRoster(EventDetails.HostID, EventDetails.EventID, AppData.CurUser.UID);
             FirebaseReader.RemoveFromVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID);
+            VolunteerHistory h = AppData.FutureEvents;
+            VolunteerEvent eve = h.GetVolunteerEvent(EventDetails.EventID);
+            if(eve != null) 
+            {
+                AlertShow.Print(eve.EventID + " event is found in volunteer future events"); 
+            }
+            else
+            {
+                AlertShow.Print("Null volunteer event"); 
+            }
             //FirebaseReader.Test(this, AppData.CurUser.UID, AppData.CurUser.EmailAddress);
         }
     }

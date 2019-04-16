@@ -208,11 +208,25 @@ namespace Volunesia.iOS.Services
         {
             AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                var values = snapshot.GetValue<NSDictionary>();
-                string missionstatement = values["missionstatement"].ToString().Trim();
-                if (missionstatement.Length > 0)
+                if(snapshot.Exists)
                 {
-                    textview.Text = missionstatement;
+                    var values = snapshot.GetValue<NSDictionary>();
+                    if(values != null)
+                    {
+                        string missionstatement = values["missionstatement"].ToString().Trim();
+                        if (missionstatement.Length > 0)
+                        {
+                            textview.Text = missionstatement;
+                        }
+                    }
+                    else
+                    {
+                        AlertShow.Print("Values are null"); 
+                    }
+                }
+                else
+                {
+                    AlertShow.Print("Snapshot does not exist"); 
                 }
 
             });
@@ -224,66 +238,79 @@ namespace Volunesia.iOS.Services
         /// <param name="npid">The nonprofit id to be used in the search process.</param>
         public static void ReadNonprofitEvents(string npid)
         {
+            AlertShow.Print("Reading the events of: " + npid);
             List<Event> events = new List<Event>();
             AppData_iOS.EventNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                var npevents = snapshot.GetValue<NSDictionary>();
-                foreach (var eid in npevents.Keys)
+                if(snapshot.Exists) 
                 {
-                    var eventinfo = (NSDictionary)npevents[eid.ToString()];
-                    var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
-                    var applicationdeadline = Convert.ToDateTime(eventinfo["applicationdeadline"].ToString());
-                    var eventid = eid.ToString();
-                    var eventimagepath = eventinfo["imagepath"].ToString();
-                    var eventname = eventinfo["eventname"].ToString();
-                    var eventdesc = eventinfo["eventdesc"].ToString();
-                    var eventcaps = Convert.ToInt32(eventinfo["capacity"].ToString());
-                    var poster = eventinfo["poster"].ToString();
-                    var rostercheck = eventinfo["roster"].ToString();
-                    var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
-                    Roster roster = new Roster();
-                    if (rostercheck != "0")
+                    var npevents = snapshot.GetValue<NSDictionary>();
+                    if(npevents != null)
                     {
-
-                        var volunteers = (NSDictionary)eventinfo["roster"];
-                        foreach (var vid in volunteers.Keys)
+                        AlertShow.Print("Successfully captured dictionary");
+                        foreach (var eid in npevents.Keys)
                         {
-                            var volunteerinfo = (NSDictionary)volunteers[vid.ToString()];
-                            var attendedString = volunteerinfo["attended"].ToString();
-                            bool attended = false;
-                            var hourscompleted = Convert.ToInt32(volunteerinfo["hourscompleted"].ToString());
-                            var status = volunteerinfo["status"].ToString();
-
-                            if (attendedString == "Y")
+                            var eventinfo = (NSDictionary)npevents[eid.ToString()];
+                            var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
+                            var applicationdeadline = Convert.ToDateTime(eventinfo["applicationdeadline"].ToString());
+                            var eventid = eid.ToString();
+                            var eventimagepath = eventinfo["imagepath"].ToString();
+                            var eventname = eventinfo["eventname"].ToString();
+                            var eventdesc = eventinfo["eventdesc"].ToString();
+                            var eventcaps = Convert.ToInt32(eventinfo["capacity"].ToString());
+                            var poster = eventinfo["poster"].ToString();
+                            var rostercheck = eventinfo["roster"].ToString();
+                            var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
+                            Roster roster = new Roster();
+                            if (rostercheck != "0")
                             {
-                                attended = true;
+
+                                var volunteers = (NSDictionary)eventinfo["roster"];
+                                foreach (var vid in volunteers.Keys)
+                                {
+                                    var volunteerinfo = (NSDictionary)volunteers[vid.ToString()];
+                                    var attendedString = volunteerinfo["attended"].ToString();
+                                    bool attended = false;
+                                    var hourscompleted = Convert.ToInt32(volunteerinfo["hourscompleted"].ToString());
+                                    var status = volunteerinfo["status"].ToString();
+
+                                    if (attendedString == "Y")
+                                    {
+                                        attended = true;
+                                    }
+
+                                    Attendee attendee = new Attendee
+                                    {
+                                        UID = vid.ToString(),
+                                        Attended = attended,
+                                        HoursCompleted = hourscompleted,
+                                        ReservationStatus = status
+                                    };
+                                    roster.Add(attendee);
+                                }
                             }
 
-                            Attendee attendee = new Attendee
+                            Event @event = new Event
                             {
-                                UID = vid.ToString(),
-                                Attended = attended,
-                                HoursCompleted = hourscompleted,
-                                ReservationStatus = status
+                                Poster = poster,
+                                ApplicationDeadline = applicationdeadline,
+                                EventDate = eventdate,
+                                HostID = npid,
+                                EventID = eventid,
+                                EventImagePath = eventimagepath,
+                                EventName = eventname,
+                                EventDescription = eventdesc,
+                                EventRoster = roster,
+                                Capacity = eventcaps
                             };
-                            roster.Add(attendee);
+                            AlertShow.Print("About to add event to nonprofit events");
+                            AppData_iOS.AddToNonprofitEvents(@event);
                         }
                     }
-
-                    Event @event = new Event
-                    {
-                        Poster = poster,
-                        ApplicationDeadline = applicationdeadline,
-                        EventDate = eventdate,
-                        HostID = npid,
-                        EventID = eventid,
-                        EventImagePath = eventimagepath,
-                        EventName = eventname,
-                        EventDescription = eventdesc,
-                        EventRoster = roster,
-                        Capacity = eventcaps
-                    };
-                    AppData_iOS.AddToNonprofitEvents(@event);
+                }
+                else
+                {
+                     
                 }
             });
         }
@@ -542,6 +569,17 @@ namespace Volunesia.iOS.Services
                         object[] value = { "N", e.EventDate.ToString(), e.EventName, 0, e.HostID, nname };
                         var eventdetails = NSDictionary.FromObjectsAndKeys(value, key);
                         AppData_iOS.VolunteerHistoryNode.GetChild(vol.UID).GetChild(eid).SetValue(eventdetails);
+
+                        VolunteerEvent ve = new VolunteerEvent
+                        {
+                            Attended = "N",
+                            EventDate = e.EventDate,
+                            EventName = e.EventName,
+                            EventID = eid,
+                            NonprofitID = e.HostID,
+                            NonprofitName = nname,
+                            HoursCompleted = 0 
+                        };
                     });
                 }
 
@@ -620,6 +658,7 @@ namespace Volunesia.iOS.Services
         {
             DatabaseReference reference = AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eid);
             reference.RemoveValue();
+            //AppData.FutureEvents.RemoveVolunteerEvent(eid);
         }
 
         public static void Test(UIViewController inpView, string uid, string email) 
@@ -630,6 +669,23 @@ namespace Volunesia.iOS.Services
                 EmailAddress = email
             };
             WriteToRoster(inpView, "fac19049-f4af-4bd4-868a-248f333cfe23", "cd807087-6887-4caf-b9f6-4993d8060fce", v);
+        }
+
+        public static void ReadAssociatedNonprofit(string uid) 
+        {
+            AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                if(snapshot != null) 
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    {
+                        var associatednp = data["associatednp"].ToString();
+                        AppData.NonprofitRepresentative.AssociatedNonprofit = associatednp;
+                        ReadNonprofitEvents(associatednp); 
+                    } 
+                }
+            });
         }
 
     }

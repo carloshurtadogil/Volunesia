@@ -150,7 +150,7 @@ namespace Volunesia.iOS
             EventsTableView.Hidden = false;
             AllEventsDataSource sdc = new AllEventsDataSource(this, true);
             EventsTableView.Source = sdc;
-            RefreshControl.EndRefreshing();
+            //RefreshControl.EndRefreshing();
             EventsTableView.ReloadData();
 
         }

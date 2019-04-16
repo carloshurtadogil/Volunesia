@@ -22,6 +22,7 @@ namespace Volunesia.iOS
         /// <param name="animated">If set to <c>true</c> animated.</param>
         public override void ViewDidAppear(bool animated)
         {
+            AlertShow.Print("VDA");
             base.ViewDidAppear(animated);
             AppData_iOS.GetInstance();
             FirebaseReader.ReadVolunteerHistory(AppData.CurUser.UID);

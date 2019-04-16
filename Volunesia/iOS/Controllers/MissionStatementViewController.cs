@@ -55,6 +55,7 @@ namespace Volunesia.iOS
 
                     r.CreateUser(CurrentUser, Password, this);
                     wvc.CurrUser = CurrentUser;
+                    wvc.LoadView();
                 }
             }
         }

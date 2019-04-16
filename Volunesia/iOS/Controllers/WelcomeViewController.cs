@@ -143,7 +143,8 @@ namespace Volunesia.iOS
             } 
             else if (segue.Identifier == "ToNPProfileSegue_id")
             {
-                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
+                FirebaseReader.ReadAssociatedNonprofit(AppData.CurUser.UID);
+                //System.Threading.Thread.Sleep(5000);
                 var nppvc = (NPProfileViewController)segue.DestinationViewController;
                 if(nppvc != null)
                 {

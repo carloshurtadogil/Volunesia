@@ -45,28 +45,28 @@ namespace Volunesia.iOS.Services
                                              if(NewUser.UserType == "NP" && NPType == "established")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("established reached");
-                                                 CreateNonprofitOrganization(NewUser, NewUser.UID);
+                                                 CreateNonprofitOrganization(NewUser, NewUser.UID, view);
                                              }
                                              else if (NewUser.UserType == "NP" && NPType == "school")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("School Reached");
-                                                 CreateSchoolOrganization(NewUser, NewUser.UID); 
+                                                 CreateSchoolOrganization(NewUser, NewUser.UID, view); 
                                              }
                                              else if (NewUser.UserType == "NP" && NPType == "local")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("Local reached");
-                                                 CreateLocalOrganization(NewUser, NewUser.UID);
+                                                 CreateLocalOrganization(NewUser, NewUser.UID, view);
                                              } 
                                              else if(NewUser.UserType == "V") 
                                              {
-                                                 AddUserToFirebase(NewUser, "null");
+                                                 AddUserToFirebase(NewUser, "null", view);
                                              }
                                          });
 
         }
 
         //Add user information to Firebase.Database
-        public void AddUserToFirebase(User user, string associatednp)
+        public void AddUserToFirebase(User user, string associatednp, UIViewController inpView)
         {
             if(user.UserType == "V")
             {
@@ -85,27 +85,39 @@ namespace Volunesia.iOS.Services
 
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
                 AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
+                AlertShow.Print("Added new user with id: " + user.UID);
                 AppData.CurUser = user;
                 ReadWrite.WriteUser();
             }
+            inpView.PerformSegue("MSToWelcomeSegue_id", inpView);
         }
 
 
-        //Add nonprofit information to Firebase.Database
-        public void CreateNonprofitOrganization(User user, string UID)
+        /// <summary>
+        /// Add nonprofit information to Firebase.Database
+        /// </summary>
+        /// <param name="user">User.</param>
+        /// <param name="UID">Uid.</param>
+        public void CreateNonprofitOrganization(User user, string UID, UIViewController inpView)
         {
             IDGenerator generator = new IDGenerator();
             string id = generator.GenerateID();
-            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state", "missionstatement" };
-            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State, MissionStatement };
+            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state", "missionstatement", "xp" };
+            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State, MissionStatement, 0 };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(id).SetValue(FirebaseUser);
-            AddUserToFirebase(user, id);//Add to User node
+            AlertShow.Print("Created new nonprofit with ID: " + id);
             CreateNonprofitRepresentative(UID, id);
+            AddUserToFirebase(user, id, inpView);//Add to User node
+
         }
 
-        //Add school nonprofit organization to firebase
-        public void CreateSchoolOrganization(User user, string UID)
+        /// <summary>
+        /// Add school nonprofit organization to firebase
+        /// </summary>
+        /// <param name="user">User.</param>
+        /// <param name="UID">Uid.</param>
+        public void CreateSchoolOrganization(User user, string UID, UIViewController inpView)
         {
             IDGenerator generator = new IDGenerator();
             EIN = generator.GenerateID();
@@ -114,12 +126,13 @@ namespace Volunesia.iOS.Services
             object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State , MissionStatement};
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
-            AddUserToFirebase(user, EIN);//Add to User node
             CreateNonprofitRepresentative(UID, EIN);
+            AddUserToFirebase(user, EIN, inpView);//Add to User node
+
         }
 
         //Add local nonprofit organization to firebase
-        public void CreateLocalOrganization(User user, string UID)
+        public void CreateLocalOrganization(User user, string UID, UIViewController inpView)
         {
             IDGenerator generator = new IDGenerator();
             EIN = generator.GenerateID();
@@ -128,11 +141,16 @@ namespace Volunesia.iOS.Services
             object[] vals = { NPName, NPType, UID, Phone, Zip, City, State, MissionStatement };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
-            AddUserToFirebase(user, EIN);//Add to User node
             CreateNonprofitRepresentative(UID, EIN);
+            AddUserToFirebase(user, EIN, inpView);//Add to User node
+
         }
 
-        //Add nonprofit rep to firebase
+        /// <summary>
+        /// Add nonprofit rep to firebase
+        /// </summary>
+        /// <param name="UID">Uid.</param>
+        /// <param name="eid">Eid.</param>
         public void CreateNonprofitRepresentative(string UID, string eid) 
         {
             System.Diagnostics.Debug.WriteLine("Create Nonprofit Rep");

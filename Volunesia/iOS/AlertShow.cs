@@ -53,7 +53,6 @@ namespace Volunesia.iOS
             alert.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Default, (handler) => 
             {
                 FirebaseReader.WriteToRoster(inpView, e.HostID, e.EventID, AppData.CurUser);
-                FirebaseReader.ReadVolunteerHistory(AppData.CurUser.UID);
                 //Disable and hide signup button
                 su.Enabled = false;
                 su.Hidden = true;
