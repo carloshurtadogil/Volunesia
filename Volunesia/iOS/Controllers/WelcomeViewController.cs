@@ -12,6 +12,7 @@ namespace Volunesia.iOS
     {
         public User CurrUser { get; set; }
         public NonprofitRepresentative CurrRep { get; set; }
+        public bool JustCreated { get; set; }
 
         public WelcomeViewController (IntPtr handle) : base (handle)
         {
@@ -144,7 +145,7 @@ namespace Volunesia.iOS
             else if (segue.Identifier == "ToNPProfileSegue_id")
             {
                 FirebaseReader.ReadAssociatedNonprofit(AppData.CurUser.UID);
-                //System.Threading.Thread.Sleep(5000);
+
                 var nppvc = (NPProfileViewController)segue.DestinationViewController;
                 if(nppvc != null)
                 {

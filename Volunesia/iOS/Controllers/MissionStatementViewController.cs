@@ -19,14 +19,30 @@ namespace Volunesia.iOS
         public User CurrentUser { get; set; }
         public string Password  { get; set; }
 
+
         public MissionStatementViewController (IntPtr handle) : base (handle)
         {
         }
 
         //Prepare for welcome page
         partial void ContinueButton_TouchUpInside(UIButton sender)
-        {
-            this.PerformSegue("MSToWelcomeSegue_id", sender);
+        { 
+            Register r = new Register();
+            r.NPName = NPName;
+            r.EIN = EIN;
+            r.Phone = Phone;
+            r.Zip = Zip;
+            r.City = City;
+            r.State = State;
+            r.NPType = NPType;
+            string personal = StoryTextView.Text.Trim();
+            if (personal.Length == 0)
+            {
+                personal = " ";
+            }
+            r.MissionStatement = personal;
+
+            r.CreateUser(CurrentUser, Password, this);
         }
 
         //Register nonproift to Firebase
@@ -38,22 +54,8 @@ namespace Volunesia.iOS
                 var wvc = (WelcomeViewController)segue.DestinationViewController;
                 if (wvc != null)
                 {
-                    Register r = new Register();
-                    r.NPName = NPName;
-                    r.EIN = EIN;
-                    r.Phone = Phone;
-                    r.Zip = Zip;
-                    r.City = City;
-                    r.State = State;
-                    r.NPType = NPType;
-                    string personal = StoryTextView.Text.Trim();
-                    if(personal.Length == 0)
-                    {
-                        personal = " "; 
-                    }
-                    r.MissionStatement = personal;
 
-                    r.CreateUser(CurrentUser, Password, this);
+                    wvc.JustCreated = true;
                     wvc.CurrUser = CurrentUser;
                     wvc.LoadView();
                 }

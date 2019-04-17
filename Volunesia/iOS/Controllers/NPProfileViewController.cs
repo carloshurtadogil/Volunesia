@@ -33,6 +33,7 @@ namespace Volunesia.iOS
                 User u = AppData.CurUser;
                 //UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;
+                AlertShow.Print("NPName: " + AppData.NonprofitRepresentative.AssociatedNonprofitName);
                 IDGenerator ge = new IDGenerator();
                 //FirebaseReader.WriteToRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", ge.GenerateID()); 
                 //FirebaseReader.RemoveFromRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, "cd807087-6887-4caf-b9f6-4993d8060fce", "45b2834d-3217-4847-8a6b-225307f5c0cf"); 
