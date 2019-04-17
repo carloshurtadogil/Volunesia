@@ -75,29 +75,35 @@ namespace Volunesia.iOS.Services
             AppData_iOS.GetInstance();
             AppData_iOS.NonprofitRepNode.GetChild(npid).GetChild(uid).ObserveSingleEvent(DataEventType.Value, (snapshot) =>
             {
-                var data = snapshot.GetValue<NSDictionary>();
-                if (data != null)
+                if(snapshot.Exists)
                 {
-                    var position = data["position"].ToString();
-                    var poster = data["poster"].ToString();
-                    var reviewer = data["reviewer"].ToString();
-                    var repsmanager = data["repsmanager"].ToString();
-                    var associatednp = data["associatednp"].ToString();
-                    var npname = data["associatednpname"].ToString();
-
-                    Volunesia.Models.NonprofitRepresentative nprep = new Volunesia.Models.NonprofitRepresentative
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if (data != null)
                     {
-                        UID = uid,
-                        Position = position,
-                        Poster = poster,
-                        Reviewer = reviewer,
-                        RepsManager = repsmanager,
-                        AssociatedNonprofit = associatednp,
-                        AssociatedNonprofitName = npname
-                    };
+                        var position = data["position"].ToString();
+                        var poster = data["poster"].ToString();
+                        var reviewer = data["reviewer"].ToString();
+                        var repsmanager = data["repsmanager"].ToString();
+                        var npname = data["associatednpname"].ToString();
 
-                    AppData.NonprofitRepresentative = nprep;
-                    ReadWrite.WriteNonprofitRepresentative();
+                        Volunesia.Models.NonprofitRepresentative nprep = new Volunesia.Models.NonprofitRepresentative
+                        {
+                            UID = uid,
+                            Position = position,
+                            Poster = poster,
+                            Reviewer = reviewer,
+                            RepsManager = repsmanager,
+                            AssociatedNonprofit = npid,
+                            AssociatedNonprofitName = npname
+                        };
+
+                        AppData.NonprofitRepresentative = nprep;
+                        ReadWrite.WriteNonprofitRepresentative();
+                    }
+                }
+                else
+                {
+                    AlertShow.Print("Null Snapshot: FirebaseReader.ReadNPReps()"); 
                 }
             });
         }

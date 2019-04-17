@@ -160,9 +160,10 @@ namespace Volunesia.iOS.Services
                 Poster = "Y",
                 Reviewer = "Y",
                 RepsManager = "Y",
-                AssociatedNonprofit = NPName 
+                AssociatedNonprofitName = NPName, 
+                AssociatedNonprofit = eid
             };
-            object[] keys = { "position", "poster", "reviewer", "repsmanager", "associatednp" };
+            object[] keys = { "position", "poster", "reviewer", "repsmanager", "associatednpname" };
             object[] vals = { rep.Position, rep.Poster, rep.Reviewer, rep.RepsManager, NPName};
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitRepNode.GetChild(eid).GetChild(UID).SetValue(FirebaseUser);
