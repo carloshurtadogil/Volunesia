@@ -61,6 +61,7 @@ namespace Volunesia.iOS.Services
                                              {
                                                  AddUserToFirebase(NewUser, "null", view);
                                              }
+
                                          });
 
         }
