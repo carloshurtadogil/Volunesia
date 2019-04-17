@@ -29,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\LevelUp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NonprofitEventsHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ReadWrite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\VolunteerEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\VolunteerHistory.cs" />

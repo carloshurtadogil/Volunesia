@@ -299,6 +299,7 @@ namespace Volunesia.Droid.Activities
                return await DeleteEventAsync();
 
             });
+            StartActivity(typeof(NonprofitProfileViewActivity));
         }
 
 
@@ -309,15 +310,32 @@ namespace Volunesia.Droid.Activities
         public async System.Threading.Tasks.Task<string> DeleteEventAsync()
         {
             //traverse the roster, and obtain all email addresses of attendees
-            string[] attendeeEmails = new string[SelectedEvent.EventRoster.AttendeeList.Count];
+            string[] attendeeEmails = new string[10];
+            //string[] attendeeEmails = new string[SelectedEvent.EventRoster.AttendeeList.Count];
             int index = 0;
             if (SelectedEvent.EventRoster!=null)
             {
                 foreach (var attendee in SelectedEvent.EventRoster.AttendeeList)
                 {
-                    attendeeEmails[index] = attendee.EmailAddress;
+                    //attendeeEmails[index] = attendee.EmailAddress;
                     index++;
+
+                    try
+                    {
+                        var deleteVolunteerHistoryForEvent = System.Threading.Tasks.Task.Run(async () => {
+
+                            return await DeleteVolunteerHistoryForEvent(attendee.UID);
+
+                        });
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
                 }
+
+
+
                 //Create an email message that will be sent to all attendees for an event that will be deleted
                 Intent emailIntent = new Intent(Intent.ActionSendto);
                 emailIntent.PutExtra(Intent.ExtraEmail, attendeeEmails);
@@ -335,6 +353,9 @@ namespace Volunesia.Droid.Activities
 
 
             }
+
+            AppData.NPEventsHistory.RemoveNonprofitEvent(SelectedEvent.EventID);
+
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
             FirebaseResponse deleteEventResponse = await firebaseClient.DeleteAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit + "/" + SelectedEvent.EventID);
@@ -543,11 +564,25 @@ namespace Volunesia.Droid.Activities
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            FirebaseResponse response = await firebaseClient.UpdateAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID + "/checkintime", DateTime.Today.ToString());
+            FirebaseResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID + "/checkintime", DateTime.Today.ToString());
 
-            String result = response.Body;
-            return result;
+            return response.Body;
         }
 
+        /// <summary>
+        /// Deletes a volunteer's volunteer history for an event that has been cancelled
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> DeleteVolunteerHistoryForEvent(string attendeeUID)
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            FirebaseResponse response = await firebaseClient.DeleteAsync("volunteerhistory/" + attendeeUID + "/" + SelectedEvent.EventID);
+
+            return response.Body;
+
         }
+
+    }
 }

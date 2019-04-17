@@ -12,6 +12,9 @@ namespace Volunesia.Services
         public static VolunteerHistory FutureEvents;
         public static List<Event> VolunteerEventDetails;
 
+        //NonprofitEventsHistory that contains all events of a nonprofit
+        public static NonprofitEventsHistory NPEventsHistory;
+
 
         private static AppData Instance;
 

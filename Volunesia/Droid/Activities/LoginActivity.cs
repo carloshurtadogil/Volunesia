@@ -141,6 +141,7 @@ namespace Volunesia.Droid
                             AppData.NonprofitRepresentative.RepsManager = associatedNPJsonObject["repsmanager"].ToString();
                             AppData.NonprofitRepresentative.Reviewer = associatedNPJsonObject["reviewer"].ToString();
                         }
+                        AppData.NPEventsHistory = new NonprofitEventsHistory();
                         StartActivity(typeof(NonprofitProfileViewActivity));
                     }
                 }
