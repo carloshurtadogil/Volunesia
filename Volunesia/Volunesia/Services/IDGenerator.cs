@@ -15,13 +15,6 @@ namespace Volunesia.Services
             return g.ToString();
 
         }
-
-        public string GenerateEventID()
-        {
-            DateTime t = DateTime.Now;
-            TimeSpan ts = DateTime.Now.TimeOfDay;
-            return t.Day.ToString() + t.Month.ToString() + t.Year.ToString() +
-                   ts.Hours.ToString() + ts.Minutes.ToString() + ts.Seconds.ToString() + ts.Milliseconds.ToString();
-        }
+        
     }
 }

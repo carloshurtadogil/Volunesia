@@ -15,6 +15,9 @@ namespace Volunesia.Models
         // Date of the event
         public DateTime EventDate { get; set; }
 
+        //End date of the event
+        public DateTime EventEndDate { get; set; }
+
         // The nonprofit in charge of the event
         public string HostID { get; set; }
 

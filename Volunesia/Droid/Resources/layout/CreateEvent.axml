@@ -21,6 +21,15 @@
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:hint="Event End Date"
+		android:gravity="center"
+		android:id="@+id/eventEndDateField"
+	
+	/>
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
 	    android:hint="Event Time"
 		android:gravity="center"
 	android:id="@+id/eventTimeField"/>

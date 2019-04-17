@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ContactInformationVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Conversion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CredentialsVerification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\EventCreationVerification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\LevelUp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\NonprofitEventsHistory.cs" />

@@ -309,17 +309,19 @@ namespace Volunesia.Droid.Activities
         /// <returns></returns>
         public async System.Threading.Tasks.Task<string> DeleteEventAsync()
         {
-            //traverse the roster, and obtain all email addresses of attendees
-            string[] attendeeEmails = new string[10];
+
             //string[] attendeeEmails = new string[SelectedEvent.EventRoster.AttendeeList.Count];
             int index = 0;
             if (SelectedEvent.EventRoster!=null)
             {
+
+                //traverse the roster, and obtain all email addresses of attendees
+                string[] attendeeEmails = new string[SelectedEvent.EventRoster.AttendeeList.Count];
+
                 foreach (var attendee in SelectedEvent.EventRoster.AttendeeList)
                 {
-                    //attendeeEmails[index] = attendee.EmailAddress;
+                    attendeeEmails[index] = attendee.EmailAddress;
                     index++;
-
                     try
                     {
                         var deleteVolunteerHistoryForEvent = System.Threading.Tasks.Task.Run(async () => {
@@ -353,14 +355,28 @@ namespace Volunesia.Droid.Activities
 
 
             }
+            // Set the events/nonprofitid to 0, before Firebase deletes that component...
+            if (AppData.NPEventsHistory.NPEvents.Count ==1)
+            {
+                AppData.NPEventsHistory.RemoveNonprofitEvent(SelectedEvent.EventID);
 
-            AppData.NPEventsHistory.RemoveNonprofitEvent(SelectedEvent.EventID);
+                IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+                IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+                FirebaseResponse deleteEventResponse = await firebaseClient.SetAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit, 0);
+                return deleteEventResponse.Body;
+            }
+            //otherwise, simply delete the event, since there are other events that the nonprofit org is hosting
+            else
+            {
+                AppData.NPEventsHistory.RemoveNonprofitEvent(SelectedEvent.EventID);
 
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse deleteEventResponse = await firebaseClient.DeleteAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit + "/" + SelectedEvent.EventID);
-
-            return deleteEventResponse.Body;
+                IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+                IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+                FirebaseResponse deleteEventResponse = await firebaseClient.DeleteAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit + "/" + SelectedEvent.EventID);
+                return deleteEventResponse.Body;
+            }
+            
+            
         }
 
         /// <summary>

@@ -32,6 +32,7 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("personalstatement", theUser.PersonalStatement);
                 userDictionary.Add("level", 1);
                 userDictionary.Add("xp", 0);
+                userDictionary.Add("associatednp", "");
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
                 AppData.CurUser = theUser;
@@ -51,6 +52,8 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("type", theUser.UserType);
                 userDictionary.Add("personalstatement", "");
                 userDictionary.Add("associatednp", generatedNonprofitID);
+                userDictionary.Add("level", 0);
+                userDictionary.Add("xp", 0);
 
 
                 AppData_Droid.UserNode.Child(theUser.UID).PutAsync(userDictionary);
@@ -94,6 +97,7 @@ namespace Volunesia.Droid.Service
 
             });
             AppData.NonprofitRepresentative = createdNPRep;
+            AppData.NPEventsHistory = new NonprofitEventsHistory();
         }
 
         /// <summary>
@@ -108,7 +112,6 @@ namespace Volunesia.Droid.Service
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
             Dictionary<string, string> nonprofitRepInformation = new Dictionary<string, string>();
-            nonprofitRepInformation.Add("associatednp", generatedIDForNonprofit);
             nonprofitRepInformation.Add("associatednpname", npOrgName);
             nonprofitRepInformation.Add("position", "mainuser");
             nonprofitRepInformation.Add("poster", "Y");
