@@ -30,56 +30,40 @@ namespace Volunesia.Droid.Activities
 
             SetContentView(Resource.Layout.VolunteerProfile);
 
-            //Proceeds to get the volunteer's current level
-            var volunteerLevelTask = System.Threading.Tasks.Task.Run(async () => {
-
-                return await GetVolunteerLevelAsync();
-
-            });
             //Proceeds to get volunteer badges
             var volunteerBadgesTask = System.Threading.Tasks.Task.Run(async () =>
             {
                 return await GetVolunteerBadgesAsync();
             });
 
-            string volunteerLevelResult = volunteerLevelTask.Result;
             CurrentVolunteer = new Volunteer();
 
             //check for a presence of volunteer badges, in order to retrieve the badges 
             if(volunteerBadgesTask.Result != "null")
             {
-                var vol = JObject.Parse(volunteerLevelResult);
-                string volLevel = vol["level"].ToString();
                 string actualVolunteerBadge = (volunteerBadgesTask.Result).Substring(1, volunteerBadgesTask.Result.Length-2);
-                CurrentVolunteer = new Volunteer()
-                {
-                    Level = Convert.ToInt32(volLevel),
-                    BadgeList = OccupyVolunteerBadges(actualVolunteerBadge),
-                    PersonalDescription = AppData.CurUser.PersonalStatement
 
-                };
+                AppData.CurVolunteer.BadgeList = OccupyVolunteerBadges(actualVolunteerBadge);
+                AppData.CurVolunteer.PersonalDescription = AppData.CurUser.PersonalStatement;
             }
             //otherwise, assign an empty list of badges for the volunteer
             else
             {
-                var vol = JObject.Parse(volunteerLevelResult);
-                var volLevel = vol["level"].ToString();
-                CurrentVolunteer = new Volunteer()
-                {
-                    Level = Convert.ToInt32(volLevel),
-                    BadgeList = new List<BadgeCategory.Badge>(),
-                    PersonalDescription = AppData.CurUser.PersonalStatement
-                };
+                AppData.CurVolunteer.BadgeList = new List<BadgeCategory.Badge>();
+                AppData.CurVolunteer.PersonalDescription = AppData.CurUser.PersonalStatement;
             }
             
             //retrieve the TextView components then populate them
             var volunteerName = FindViewById<TextView>(Resource.Id.volunteerName);
             var volunteerLevel = FindViewById<TextView>(Resource.Id.volunteerLevel);
+            var volunteerExperience = FindViewById<TextView>(Resource.Id.volunteerExperience);
             var volunteerPersonalDescription = FindViewById<TextView>(Resource.Id.volunteerPersonalDescription);
 
             
             volunteerName.Text = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
-            volunteerLevel.Text = CurrentVolunteer.Level.ToString();
+            volunteerLevel.Text = "Level: " + Convert.ToString(AppData.CurVolunteer.Level);
+            volunteerExperience.Text = "Experience:  " + Convert.ToString(AppData.CurVolunteer.Experience);
+
             volunteerPersonalDescription.Text = CurrentVolunteer.PersonalDescription;
 
             
@@ -158,17 +142,7 @@ namespace Volunesia.Droid.Activities
             return badges;
         }
 
-        /// <summary>
-        /// Retrieves the volunteer's level from Firebase
-        /// </summary>
-        /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> GetVolunteerLevelAsync()
-        {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse volunteerLevel = await firebaseClient.GetAsync("users/" + AppData.CurUser.UID);
-            return volunteerLevel.Body;
-        }
+        
 
         /// <summary>
         /// Retrieves a volunteer's list of badges from Firebase

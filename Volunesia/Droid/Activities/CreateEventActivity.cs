@@ -68,6 +68,7 @@ namespace Volunesia.Droid
                 IDGenerator generator = new IDGenerator();
                 eventID = generator.GenerateID();
                 mainDict.Add("applicationdeadline", AppDeadline.Text);
+                mainDict.Add("capacity", -1);
                 mainDict.Add("imagepath", "standard");
                 mainDict.Add("eventdate", EventDate.Text);
                 mainDict.Add("eventenddate", EventEndDate.Text);
