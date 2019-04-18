@@ -52,10 +52,12 @@ namespace Volunesia.iOS.Services
                         {
                             var level = Convert.ToInt32(data["level"].ToString());
                             var xp = Convert.ToInt32(data["xp"].ToString());
+                            List<BadgeCategory.Badge> badges = new List<BadgeCategory.Badge>();
                             Volunesia.Models.Volunteer vol = new Volunesia.Models.Volunteer
                             {
                                 Level = level,
-                                Experience = xp
+                                Experience = xp,
+                                BadgeList = badges
                             };
                             AppData.CurVolunteer = vol;
                         }
@@ -88,12 +90,18 @@ namespace Volunesia.iOS.Services
                     var data = snapshot.GetValue<NSDictionary>();
                     if(data != null)
                     {
+                        var personalstatement = data["personalstatement"].ToString();
+
+                        AppData.CurUser.PersonalStatement = personalstatement;
+                        AlertShow.Print("Current Personal Statement of user: " + uid + "\n     " + AppData.CurUser.PersonalStatement);
                         var level = Convert.ToInt32(data["level"].ToString());
                         var xp = Convert.ToInt32(data["xp"].ToString());
-                        Volunesia.Models.Volunteer vol = new Volunesia.Models.Volunteer
+                        List<BadgeCategory.Badge> badges = new List<BadgeCategory.Badge>();
+                        Volunteer vol = new Volunteer
                         {
                             Level = level,
-                            Experience = xp
+                            Experience = xp,
+                            BadgeList = badges
                         };
                         AppData.CurVolunteer = vol;
                     } 
@@ -405,6 +413,7 @@ namespace Volunesia.iOS.Services
 
                         System.Diagnostics.Debug.WriteLine("Count: " + events.Count);
                         var keys = events.Keys;
+                        double hours = 0.0;
                         foreach (var key in events.Keys)
                         {
                             AlertShow.Print("Event Found Under Current User: " + key.ToString());
@@ -434,6 +443,7 @@ namespace Volunesia.iOS.Services
                                     NonprofitName = nonprofitname
                                 };
 
+                                hours += hourscompleted;
 
                                 int result = DateTime.Compare(date, now);
                                 if (result <= 0)//past event
@@ -450,6 +460,10 @@ namespace Volunesia.iOS.Services
                                 }
                             }
                         }
+
+                        LevelUp lu = new LevelUp();
+                        AlertShow.Print("Current Hours: " + hours);
+                        lu.CheckIfUserCanLevelUp(AppData.CurVolunteer, hours);
                     }
                 }
             },

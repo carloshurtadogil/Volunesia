@@ -161,6 +161,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Resources\Badges\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -311,6 +312,11 @@
     <BundleResource Include="Resources\Images\BellIcon.png" />
     <BundleResource Include="Resources\Images\LeaveButton.png" />
     <BundleResource Include="Resources\Images\ProfileIcon.png" />
+    <BundleResource Include="Resources\Badges\advancedBadge.png" />
+    <BundleResource Include="Resources\Badges\expertBadge.png" />
+    <BundleResource Include="Resources\Badges\grandmasterBadge.png" />
+    <BundleResource Include="Resources\Badges\intermediateBadge.png" />
+    <BundleResource Include="Resources\Badges\noviceBadge.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

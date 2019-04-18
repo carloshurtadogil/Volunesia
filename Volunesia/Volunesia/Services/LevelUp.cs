@@ -122,8 +122,14 @@ namespace Volunesia.Services
         /// </summary>
         /// <param name="theVolunteer"></param>
         /// <returns></returns>
-        public bool CheckIfUserCanLevelUp(Volunteer theVolunteer, int hoursCompleted)
+        public bool CheckIfUserCanLevelUp(Volunteer theVolunteer, double hoursCompleted)
         {
+            //Just in case that the BadgeList has not been initialized.
+            if(theVolunteer.BadgeList == null)
+            {
+                theVolunteer.BadgeList = new List<BadgeCategory.Badge>(); 
+            }
+
             //If the volunteer is already capped at 99, then there is no need to level up
             if(theVolunteer.Level == 99)
             {
@@ -131,7 +137,7 @@ namespace Volunesia.Services
             }
             else
             {
-                int volunteerXP = theVolunteer.Experience;
+                double volunteerXP = theVolunteer.Experience;
                 Conversion conv = new Conversion();
                 volunteerXP += conv.ConvertVolunteerHoursToExperiencePoints(hoursCompleted);
 

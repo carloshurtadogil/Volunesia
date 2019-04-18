@@ -24,6 +24,26 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Badge1 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Badge2 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Badge3 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Badge4 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Badge5 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ExperienceLabel { get; set; }
 
         [Outlet]
@@ -64,6 +84,31 @@ namespace Volunesia.iOS
             if (BackgroundImageView != null) {
                 BackgroundImageView.Dispose ();
                 BackgroundImageView = null;
+            }
+
+            if (Badge1 != null) {
+                Badge1.Dispose ();
+                Badge1 = null;
+            }
+
+            if (Badge2 != null) {
+                Badge2.Dispose ();
+                Badge2 = null;
+            }
+
+            if (Badge3 != null) {
+                Badge3.Dispose ();
+                Badge3 = null;
+            }
+
+            if (Badge4 != null) {
+                Badge4.Dispose ();
+                Badge4 = null;
+            }
+
+            if (Badge5 != null) {
+                Badge5.Dispose ();
+                Badge5 = null;
             }
 
             if (ExperienceLabel != null) {

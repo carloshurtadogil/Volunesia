@@ -14,7 +14,7 @@ namespace Volunesia.Models
         //The list of badges that the volunteer has gained
         public List<BadgeCategory.Badge> BadgeList             { get; set; }
         //The amount of experience points a volunteer has
-        public int Experience { get; set; }
+        public double Experience { get; set; }
 
     }
 }

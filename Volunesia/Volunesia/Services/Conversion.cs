@@ -13,7 +13,7 @@ namespace Volunesia.Services
         }
 
         //Takes a volunteer's minutes of volunteering and converts them to points
-        public int ConvertVolunteerHoursToExperiencePoints(int hoursCompletedForVolunteer)
+        public double ConvertVolunteerHoursToExperiencePoints(double hoursCompletedForVolunteer)
         {
             return hoursCompletedForVolunteer * 200;
         }

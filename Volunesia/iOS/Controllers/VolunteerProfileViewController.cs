@@ -1,8 +1,10 @@
 using Foundation;
 using System;
+using System.Collections.Generic;
 using UIKit;
 using Volunesia.Models;
 using Volunesia.Services;
+using Volunesia.iOS.Services;
 
 namespace Volunesia.iOS
 {
@@ -19,8 +21,10 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            FirebaseReader.ReadVolunteer(AppData.CurUser.UID);
             LoadInformation();
             DismissKeyboardHandler();
+            LoadBadges();
         }
 
         /// <summary>
@@ -30,14 +34,14 @@ namespace Volunesia.iOS
         {
             User currUser = AppData.CurUser;
             NameLabel.Text = currUser.FirstName + " " + currUser.LastName;
-            AlertShow.Print("Personal Statement: " + currUser.PersonalStatement);
+            AlertShow.Print("Personal Statement: " + AppData.CurUser.PersonalStatement);
             if(string.IsNullOrEmpty(currUser.PersonalStatement))
             {
                 PersonalStatementTextview.Text = "Click the edit button to add a personal statement, if you'd like";
             }
             else
             {
-                PersonalStatementTextview.Text = currUser.PersonalStatement;
+                PersonalStatementTextview.Text = AppData.CurUser.PersonalStatement;
             }
 
             if(AppData.CurVolunteer != null)
@@ -55,6 +59,61 @@ namespace Volunesia.iOS
             UISwipeGestureRecognizer recognizer = new UISwipeGestureRecognizer(OnSwipe);
             recognizer.Direction = UISwipeGestureRecognizerDirection.Down;
             View.AddGestureRecognizer(recognizer);
+        }
+
+        /// <summary>
+        /// Load badges according to volunteer's level
+        /// </summary>
+        public void LoadBadges()
+        {
+            if(AppData.CurVolunteer != null)
+            {
+                if (AppData.CurVolunteer.BadgeList.Contains(BadgeCategory.Badge.Grandmaster))
+                {
+                    Badge1.Image = UIImage.FromFile("Badges/noviceBadge.png");
+                    Badge2.Image = UIImage.FromFile("Badges/intermediateBadge.png");
+                    Badge3.Image = UIImage.FromFile("Badges/advancedBadge.png");
+                    Badge4.Image = UIImage.FromFile("Badges/expertBadge.png");
+                    Badge5.Image = UIImage.FromFile("Badges/grandmasterBadge.png");
+                    Badge1.Hidden = false;
+                    Badge2.Hidden = false;
+                    Badge3.Hidden = false;
+                    Badge4.Hidden = false;
+                    Badge5.Hidden = false;
+                }
+                else if (AppData.CurVolunteer.BadgeList.Contains(BadgeCategory.Badge.Expert))
+                {
+                    Badge1.Image = UIImage.FromFile("Badges/noviceBadge.png");
+                    Badge2.Image = UIImage.FromFile("Badges/intermediateBadge.png");
+                    Badge3.Image = UIImage.FromFile("Badges/advancedBadge.png");
+                    Badge4.Image = UIImage.FromFile("Badges/expertBadge.png");
+                    Badge1.Hidden = false;
+                    Badge2.Hidden = false;
+                    Badge3.Hidden = false;
+                    Badge4.Hidden = false;
+                }
+                else if (AppData.CurVolunteer.BadgeList.Contains(BadgeCategory.Badge.Advanced))
+                {
+                    Badge2.Image = UIImage.FromFile("Badges/noviceBadge.png");
+                    Badge3.Image = UIImage.FromFile("Badges/intermediateBadge.png");
+                    Badge4.Image = UIImage.FromFile("Badges/advancedBadge.png");
+                    Badge2.Hidden = false;
+                    Badge3.Hidden = false;
+                    Badge4.Hidden = false;
+                }
+                else if (AppData.CurVolunteer.BadgeList.Contains(BadgeCategory.Badge.Intermediate))
+                {
+                    Badge2.Image = UIImage.FromFile("Badges/noviceBadge.png");
+                    Badge3.Image = UIImage.FromFile("Badges/intermediateBadge.png");
+                    Badge2.Hidden = false;
+                    Badge3.Hidden = false;
+                }
+                else if (AppData.CurVolunteer.BadgeList.Contains(BadgeCategory.Badge.Novice))
+                {
+                    Badge3.Image = UIImage.FromFile("Badges/noviceBadge.png");
+                    Badge3.Hidden = false;
+                }
+            }
         }
 
         /// <summary>

@@ -2143,6 +2143,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="116455" hidden="YES">
+                                <rect key="frame" x="30" y="664" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="116456">
+                                <rect key="frame" x="16" y="2729" width="255" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="116457" hidden="YES">
+                                <rect key="frame" x="100" y="664" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="116458" hidden="YES">
+                                <rect key="frame" x="170" y="664" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="116459" hidden="YES">
+                                <rect key="frame" x="240" y="664" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="116460" hidden="YES">
+                                <rect key="frame" x="310" y="664" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -2159,6 +2183,11 @@
                         <outlet property="PSLabel" destination="115291" id="name-outlet-115291"/>
                         <outlet property="ExperienceLabel" destination="115292" id="name-outlet-115292"/>
                         <outlet property="LevelLabel" destination="115293" id="name-outlet-115293"/>
+                        <outlet property="Badge1" destination="116455" id="name-outlet-116455"/>
+                        <outlet property="Badge2" destination="116457" id="name-outlet-116457"/>
+                        <outlet property="Badge3" destination="116458" id="name-outlet-116458"/>
+                        <outlet property="Badge4" destination="116459" id="name-outlet-116459"/>
+                        <outlet property="Badge5" destination="116460" id="name-outlet-116460"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="105791" userLabel="First Responder" sceneMemberID="firstResponder"/>
