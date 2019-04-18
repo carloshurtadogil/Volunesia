@@ -267,6 +267,10 @@
     </Compile>
     <Compile Include="Services\DateFormatter.cs" />
     <Compile Include="Services\AllCurrentEventsDataSource.cs" />
+    <Compile Include="Controllers\VolunteerProfileViewController.cs" />
+    <Compile Include="Controllers\VolunteerProfileViewController.designer.cs">
+      <DependentUpon>VolunteerProfileViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

@@ -101,6 +101,7 @@ namespace Volunesia.iOS
                 }
                 else if(CurrUser.UserType == "V")
                 {
+
                     this.PerformSegue("ToHomeSegue_id", this);
                 }
             }
@@ -139,6 +140,10 @@ namespace Volunesia.iOS
                 var hvc = (HomeViewController)segue.DestinationViewController;
                 if (hvc != null)
                 {
+                    if (AppData.CurVolunteer == null)
+                    {
+                        FirebaseReader.ReadVolunteer(AppData.CurUser.UID);
+                    }
                     hvc.LoadView();
                 }
             } 

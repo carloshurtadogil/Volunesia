@@ -66,11 +66,23 @@ namespace Volunesia.iOS
                     evc.LoadView(); 
                 }
             }
+            else if (segue.Identifier == "ToVolunteerProfileSegue_id")
+            {
+                var vpvc = (VolunteerProfileViewController)segue.DestinationViewController;
+                if(vpvc != null)
+                {
+                    vpvc.LoadView(); 
+                } 
+            }
         }
 
+        /// <summary>
+        /// Go to the volunteer;s profile page
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void ProfileButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "To be implemented", "");
+            this.PerformSegue("ToVolunteerProfileSegue_id", sender);
         }
 
         /// <summary>
@@ -82,7 +94,10 @@ namespace Volunesia.iOS
             this.PerformSegue("ToSettingsSegue_id", sender);
         }
 
-        //Display all events that the user has participated in the past
+        /// <summary>
+        /// Display all events that the user has participated in the past
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void PastButton_TouchUpInside(UIButton sender)
         {
             if (AppData.VolunteerHistory != null && AppData.VolunteerHistory.Size() > 0) 
@@ -95,6 +110,10 @@ namespace Volunesia.iOS
             }
         }
 
+        /// <summary>
+        /// Display all events that the user can sign up for
+        /// </summary>
+        /// <param name="sender">Sender.</param>
         partial void PresentButton_TouchUpInside(UIButton sender)
         {
             LoadEventData(1);

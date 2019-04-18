@@ -41,12 +41,23 @@ namespace Volunesia.iOS.Services
                             EmailAddress = email,
                             UID = uid,
                             UserType = type,
-                            PersonalStatement = personal
+                            PersonalStatement = personal,
                         };
                         if (type == "NP")
                         {
                             System.Diagnostics.Debug.WriteLine("Reading NPReps");
                             ReadNPReps(associatednp, uid);
+                        }
+                        else
+                        {
+                            var level = Convert.ToInt32(data["level"].ToString());
+                            var xp = Convert.ToInt32(data["xp"].ToString());
+                            Volunesia.Models.Volunteer vol = new Volunesia.Models.Volunteer
+                            {
+                                Level = level,
+                                Experience = xp
+                            };
+                            AppData.CurVolunteer = vol;
                         }
                         AppData.CurUser = newuser;
                         ReadWrite.WriteUser();
@@ -62,6 +73,32 @@ namespace Volunesia.iOS.Services
             {
                 System.Diagnostics.Debug.WriteLine("Results Fail");
             }
+        }
+
+        /// <summary>
+        /// Read any volunteer information not saved to the core user information
+        /// </summary>
+        /// <param name="uid">Uid.</param>
+        public static void ReadVolunteer(string uid)
+        {
+            AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                if (snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    {
+                        var level = Convert.ToInt32(data["level"].ToString());
+                        var xp = Convert.ToInt32(data["xp"].ToString());
+                        Volunesia.Models.Volunteer vol = new Volunesia.Models.Volunteer
+                        {
+                            Level = level,
+                            Experience = xp
+                        };
+                        AppData.CurVolunteer = vol;
+                    } 
+                } 
+            }); 
         }
 
         /// <summary>
@@ -140,7 +177,6 @@ namespace Volunesia.iOS.Services
                             var eventcaps = Convert.ToInt32(eventinfo["capacity"].ToString());
                             var poster = eventinfo["poster"].ToString();
                             var rostercheck = eventinfo["roster"].ToString();
-                            var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
                             Roster roster = new Roster();
                             if (rostercheck != "0")
                             {
