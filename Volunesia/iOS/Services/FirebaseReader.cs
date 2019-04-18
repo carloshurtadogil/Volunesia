@@ -109,6 +109,22 @@ namespace Volunesia.iOS.Services
             }); 
         }
 
+        public static void ReadPersonalStatement(string uid, UITextView textview)
+        {
+            AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) =>
+            {
+                if (snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if (data != null)
+                    {
+                        var personalstatement = data["personalstatement"].ToString();
+                        textview.Text = personalstatement;
+                    }
+                }
+            });
+        }
+
         /// <summary>
         /// Read the nonprofit representatives
         /// </summary>

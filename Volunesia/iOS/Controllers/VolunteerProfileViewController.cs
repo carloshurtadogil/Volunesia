@@ -44,6 +44,8 @@ namespace Volunesia.iOS
                 PersonalStatementTextview.Text = AppData.CurUser.PersonalStatement;
             }
 
+            FirebaseReader.ReadPersonalStatement(AppData.CurUser.UID, PersonalStatementTextview);
+
             if(AppData.CurVolunteer != null)
             {
                 ExperienceLabel.Text = "Experience: " + AppData.CurVolunteer.Experience;
