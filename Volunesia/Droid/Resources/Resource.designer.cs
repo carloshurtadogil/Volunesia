@@ -419,14 +419,14 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0009
 			public const int adjust_width = 2131361801;
 			
-			// aapt resource value: 0x7f0a0081
-			public const int advancedBadgeImage = 2131361921;
+			// aapt resource value: 0x7f0a0089
+			public const int advancedBadgeImage = 2131361929;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int all = 2131361823;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int allEventsButton = 2131361912;
+			// aapt resource value: 0x7f0a0080
+			public const int allEventsButton = 2131361920;
 			
 			// aapt resource value: 0x7f0a0064
 			public const int allEventsForNP = 2131361892;
@@ -443,14 +443,20 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0020
 			public const int async = 2131361824;
 			
+			// aapt resource value: 0x7f0a0071
+			public const int attendedView = 2131361905;
+			
 			// aapt resource value: 0x7f0a0041
 			public const int attendeesWaitingForXPListView = 2131361857;
 			
 			// aapt resource value: 0x7f0a000e
 			public const int auto = 2131361806;
 			
-			// aapt resource value: 0x7f0a007e
-			public const int badgesLayout = 2131361918;
+			// aapt resource value: 0x7f0a0075
+			public const int backToLast = 2131361909;
+			
+			// aapt resource value: 0x7f0a0086
+			public const int badgesLayout = 2131361926;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int blocking = 2131361825;
@@ -503,8 +509,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int clip_vertical = 2131361814;
 			
-			// aapt resource value: 0x7f0a0071
-			public const int confirmPasswordField = 2131361905;
+			// aapt resource value: 0x7f0a0079
+			public const int confirmPasswordField = 2131361913;
 			
 			// aapt resource value: 0x7f0a0049
 			public const int continueWithRegistrationButton = 2131361865;
@@ -545,6 +551,9 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int eventDateTextView = 2131361850;
 			
+			// aapt resource value: 0x7f0a0070
+			public const int eventDateView = 2131361904;
+			
 			// aapt resource value: 0x7f0a003c
 			public const int eventDescriptionContent = 2131361852;
 			
@@ -563,11 +572,14 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0039
 			public const int eventNameTextView = 2131361849;
 			
+			// aapt resource value: 0x7f0a006f
+			public const int eventNameView = 2131361903;
+			
 			// aapt resource value: 0x7f0a002e
 			public const int eventTimeField = 2131361838;
 			
-			// aapt resource value: 0x7f0a0082
-			public const int expertBadgeImage = 2131361922;
+			// aapt resource value: 0x7f0a008a
+			public const int expertBadgeImage = 2131361930;
 			
 			// aapt resource value: 0x7f0a0018
 			public const int fill = 2131361816;
@@ -590,14 +602,20 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0022
 			public const int forever = 2131361826;
 			
+			// aapt resource value: 0x7f0a0074
+			public const int generate = 2131361908;
+			
 			// aapt resource value: 0x7f0a0042
 			public const int generateXPForAttendeesButton = 2131361858;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int grandmasterBadgeImage = 2131361923;
+			// aapt resource value: 0x7f0a008b
+			public const int grandmasterBadgeImage = 2131361931;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int helpfulSwitch = 2131361854;
+			
+			// aapt resource value: 0x7f0a0072
+			public const int hoursView = 2131361906;
 			
 			// aapt resource value: 0x7f0a005e
 			public const int icon = 2131361886;
@@ -611,8 +629,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a005d
 			public const int info = 2131361885;
 			
-			// aapt resource value: 0x7f0a0080
-			public const int intermediateBadgeImage = 2131361920;
+			// aapt resource value: 0x7f0a0088
+			public const int intermediateBadgeImage = 2131361928;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int italic = 2131361827;
@@ -638,8 +656,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0045
 			public const int loginButton = 2131361861;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int logoutButton = 2131361909;
+			// aapt resource value: 0x7f0a007d
+			public const int logoutButton = 2131361917;
 			
 			// aapt resource value: 0x7f0a0056
 			public const int media_actions = 2131361878;
@@ -650,17 +668,20 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0066
 			public const int missionstatement = 2131361894;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int myListView = 2131361910;
+			// aapt resource value: 0x7f0a007e
+			public const int myListView = 2131361918;
 			
 			// aapt resource value: 0x7f0a0065
 			public const int name = 2131361893;
 			
-			// aapt resource value: 0x7f0a006f
-			public const int nonProfitButton = 2131361903;
+			// aapt resource value: 0x7f0a0077
+			public const int nonProfitButton = 2131361911;
 			
 			// aapt resource value: 0x7f0a000a
 			public const int none = 2131361802;
+			
+			// aapt resource value: 0x7f0a006e
+			public const int nonprofitNameView = 2131361902;
 			
 			// aapt resource value: 0x7f0a0024
 			public const int normal = 2131361828;
@@ -674,8 +695,8 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0058
 			public const int notification_main_column_container = 2131361880;
 			
-			// aapt resource value: 0x7f0a007f
-			public const int noviceBadgeImage = 2131361919;
+			// aapt resource value: 0x7f0a0087
+			public const int noviceBadgeImage = 2131361927;
 			
 			// aapt resource value: 0x7f0a006d
 			public const int npProfileButton = 2131361901;
@@ -686,11 +707,11 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0044
 			public const int passwordField = 2131361860;
 			
-			// aapt resource value: 0x7f0a0077
-			public const int pastEventsButton = 2131361911;
+			// aapt resource value: 0x7f0a007f
+			public const int pastEventsButton = 2131361919;
 			
-			// aapt resource value: 0x7f0a0084
-			public const int personalDescriptionField = 2131361924;
+			// aapt resource value: 0x7f0a008c
+			public const int personalDescriptionField = 2131361932;
 			
 			// aapt resource value: 0x7f0a0037
 			public const int phoneNumberField = 2131361847;
@@ -701,11 +722,14 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a0068
 			public const int primaryphone = 2131361896;
 			
-			// aapt resource value: 0x7f0a0072
-			public const int registerButton = 2131361906;
+			// aapt resource value: 0x7f0a0073
+			public const int rate = 2131361907;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int registerVolunteerButton = 2131361925;
+			// aapt resource value: 0x7f0a007a
+			public const int registerButton = 2131361914;
+			
+			// aapt resource value: 0x7f0a008d
+			public const int registerVolunteerButton = 2131361933;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int right = 2131361820;
@@ -719,14 +743,14 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a004e
 			public const int schoolNPButton = 2131361870;
 			
-			// aapt resource value: 0x7f0a0070
-			public const int schoolNameField = 2131361904;
+			// aapt resource value: 0x7f0a0078
+			public const int schoolNameField = 2131361912;
 			
 			// aapt resource value: 0x7f0a004c
 			public const int settingButton = 2131361868;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int settingsButton = 2131361914;
+			// aapt resource value: 0x7f0a0082
+			public const int settingsButton = 2131361922;
 			
 			// aapt resource value: 0x7f0a0046
 			public const int signupButton = 2131361862;
@@ -767,26 +791,26 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a001e
 			public const int top = 2131361822;
 			
-			// aapt resource value: 0x7f0a0079
-			public const int upcomingEventsButton = 2131361913;
-			
-			// aapt resource value: 0x7f0a0073
-			public const int updateemailButton = 2131361907;
-			
-			// aapt resource value: 0x7f0a0074
-			public const int updatepwdButton = 2131361908;
-			
-			// aapt resource value: 0x7f0a006e
-			public const int volunteerButton = 2131361902;
-			
-			// aapt resource value: 0x7f0a007c
-			public const int volunteerLevel = 2131361916;
+			// aapt resource value: 0x7f0a0081
+			public const int upcomingEventsButton = 2131361921;
 			
 			// aapt resource value: 0x7f0a007b
-			public const int volunteerName = 2131361915;
+			public const int updateemailButton = 2131361915;
 			
-			// aapt resource value: 0x7f0a007d
-			public const int volunteerPersonalDescription = 2131361917;
+			// aapt resource value: 0x7f0a007c
+			public const int updatepwdButton = 2131361916;
+			
+			// aapt resource value: 0x7f0a0076
+			public const int volunteerButton = 2131361910;
+			
+			// aapt resource value: 0x7f0a0084
+			public const int volunteerLevel = 2131361924;
+			
+			// aapt resource value: 0x7f0a0083
+			public const int volunteerName = 2131361923;
+			
+			// aapt resource value: 0x7f0a0085
+			public const int volunteerPersonalDescription = 2131361925;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int wide = 2131361805;
@@ -929,31 +953,34 @@ namespace Volunesia.Droid
 			public const int NPProfileView = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int Register = 2130968608;
+			public const int PastEvent = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int SchoolNonprofitRegister = 2130968609;
+			public const int Register = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int SecondRegister = 2130968610;
+			public const int SchoolNonprofitRegister = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int SettingsPage = 2130968611;
+			public const int SecondRegister = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int VolunteerEvents = 2130968612;
+			public const int SettingsPage = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int VolunteerHome = 2130968613;
+			public const int VolunteerEvents = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int VolunteerProfile = 2130968614;
+			public const int VolunteerHome = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int VolunteerRegister = 2130968615;
+			public const int VolunteerProfile = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int Welcome = 2130968616;
+			public const int VolunteerRegister = 2130968616;
+			
+			// aapt resource value: 0x7f040029
+			public const int Welcome = 2130968617;
 			
 			static Layout()
 			{

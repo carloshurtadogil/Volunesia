@@ -31,7 +31,7 @@ namespace Volunesia.Droid.Activities
         {
             base.OnCreate(savedInstanceState);
 
-            SelectedEvent = JsonConvert.DeserializeObject<VolunteerEvent>(Intent.GetStringExtra("pastEvent"));
+            SelectedEvent = JsonConvert.DeserializeObject<VolunteerEvent>(Intent.GetStringExtra("eventToBeRated"));
 
             SetContentView(Resource.Layout.EventRating);
 
