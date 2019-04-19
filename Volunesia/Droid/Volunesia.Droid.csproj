@@ -204,6 +204,7 @@
     <Compile Include="Activities\NPAllEventsFragment.cs" />
     <Compile Include="Activities\NPNotificationsFragment.cs" />
     <Compile Include="Activities\NPProfileFragment.cs" />
+    <Compile Include="Activities\PastEventActivity.cs" />
     <Compile Include="Activities\RegisterActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\SecondRegisterActivity.cs" />
@@ -369,6 +370,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\EventRating.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\PastEvent.axml" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

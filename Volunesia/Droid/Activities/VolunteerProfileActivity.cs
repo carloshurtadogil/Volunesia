@@ -64,7 +64,7 @@ namespace Volunesia.Droid.Activities
             volunteerLevel.Text = "Level: " + Convert.ToString(AppData.CurVolunteer.Level);
             volunteerExperience.Text = "Experience:  " + Convert.ToString(AppData.CurVolunteer.Experience);
 
-            volunteerPersonalDescription.Text = CurrentVolunteer.PersonalDescription;
+            volunteerPersonalDescription.Text = AppData.CurVolunteer.PersonalDescription;
 
             
         }

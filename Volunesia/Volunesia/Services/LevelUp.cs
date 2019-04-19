@@ -125,13 +125,13 @@ namespace Volunesia.Services
         public bool CheckIfUserCanLevelUp(Volunteer theVolunteer, double hoursCompleted)
         {
             //Just in case that the BadgeList has not been initialized.
-            if(theVolunteer.BadgeList == null)
+            if (theVolunteer.BadgeList == null)
             {
-                theVolunteer.BadgeList = new List<BadgeCategory.Badge>(); 
+                theVolunteer.BadgeList = new List<BadgeCategory.Badge>();
             }
 
             //If the volunteer is already capped at 99, then there is no need to level up
-            if(theVolunteer.Level == 99)
+            if (theVolunteer.Level == 99)
             {
 
             }
@@ -140,64 +140,65 @@ namespace Volunesia.Services
                 double volunteerXP = theVolunteer.Experience;
                 Conversion conv = new Conversion();
                 volunteerXP += conv.ConvertVolunteerHoursToExperiencePoints(hoursCompleted);
-
                 int originalLevel = theVolunteer.Level;
-                int levelPlacement = 1;
-                foreach(KeyValuePair<int, int> entry in LvlExpMapping)
+
+                //if the experience gained matches the exp for Level 99, then set the volunteer's level to 99
+                if (volunteerXP > LvlExpMapping[99])
                 {
-                    //If the amount of points a volunteer has is greater than the current experience mapping
-                    //then increment the volunteer's level
-                    if (volunteerXP > entry.Value)
-                    {
-                        levelPlacement++;
-                    }
-                    //however, if the amount of points a volunteer has is less than the current experience mapping
-                    //then assign that 
-                    else if(volunteerXP < entry.Value)
-                    {
-                        theVolunteer.Level = levelPlacement;
-                        theVolunteer.Experience = volunteerXP;
-                        break;
-                    }
+                    theVolunteer.Level = 99;
+                    theVolunteer.Experience = volunteerXP;
                 }
+                else
+                {
+                    //iterate through every lvl-exp mapping
+                    foreach (KeyValuePair<int, int> entry in LvlExpMapping)
+                    {
+                        if (volunteerXP < entry.Value)
+                        {
+                            theVolunteer.Level = entry.Key - 1;
+                            theVolunteer.Experience = volunteerXP;
+                            break;
+                        }
+                    }
+
+                }
+
                 //if volunteer levvel is higher than 1, and Novice hasn't been earned then...
                 if (theVolunteer.Level >= 1 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Novice))
                 {
                     theVolunteer.BadgeList.Add(BadgeCategory.Badge.Novice);
                 }
                 //checks if volunteer level is higher than 25 and if Intermediate badge hasn't been earned yet
-                else if (theVolunteer.Level >= 25 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Intermediate))
+                if (theVolunteer.Level >= 25 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Intermediate))
                 {
                     theVolunteer.BadgeList.Add(BadgeCategory.Badge.Intermediate);
                 }
                 //checks if volunteer level is higher than 50 and if Advanced badage hasn't been earned yet
-                else if (theVolunteer.Level >= 50 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Advanced))
+                if (theVolunteer.Level >= 50 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Advanced))
                 {
                     theVolunteer.BadgeList.Add(BadgeCategory.Badge.Advanced);
                 }
                 //checks if volunteer level is higher than 75 and if Expert badge hasn't been earned yet
-                else if (theVolunteer.Level >= 75 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Expert))
+                if (theVolunteer.Level >= 75 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Expert))
                 {
                     theVolunteer.BadgeList.Add(BadgeCategory.Badge.Expert);
                 }
                 //checks if volunteer level is at 99 and if GrandMaster badge hasn't been earned yet
-                else if (theVolunteer.Level == 99 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Grandmaster))
+                if (theVolunteer.Level == 99 && !theVolunteer.BadgeList.Contains(BadgeCategory.Badge.Grandmaster))
                 {
                     theVolunteer.BadgeList.Add(BadgeCategory.Badge.Grandmaster);
                 }
 
-
+                //if the volunteer level has changed, then indicate it was a success for leveling up
                 if (theVolunteer.Level != originalLevel)
                 {
                     return true;
                 }
-                
             }
-
             return false;
-            
-
 
         }
+
+
     }
 }

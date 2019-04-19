@@ -75,7 +75,7 @@ namespace Volunesia.Droid
                     var lastName = jsonObject["last"];
                     var email = jsonObject["email"];
                     var level = Convert.ToInt32(jsonObject["level"]);
-                    var xp = Convert.ToInt32(jsonObject["xp"]);
+                    var xp = Convert.ToDouble(jsonObject["xp"]);
 
                     //Set the following components to their respective fields of the User
                     User loggedUser = new User()

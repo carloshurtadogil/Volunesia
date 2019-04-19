@@ -114,9 +114,9 @@ namespace Volunesia.Droid.Activities
                 volInformation.Add("level", Convert.ToInt32(volunteerOrAttendee["level"]));
                 volInformation.Add("personalstatement", volunteerOrAttendee["personalstatement"].ToString());
                 volInformation.Add("type", volunteerOrAttendee["type"].ToString());
-                volInformation.Add("xp", Convert.ToInt32(volunteerOrAttendee["xp"]));
+                volInformation.Add("xp", Convert.ToDouble(volunteerOrAttendee["xp"]));
                 int volLevel = Convert.ToInt32(volunteerOrAttendee["level"]);
-                int volXP = Convert.ToInt32(volunteerOrAttendee["xp"]);
+                double volXP = Convert.ToDouble(volunteerOrAttendee["xp"]);
                 
                 
                 //Occupy the level and badges from the queried results
@@ -138,12 +138,13 @@ namespace Volunesia.Droid.Activities
                 LevelUp levelUpFunc = new LevelUp();
                 bool didLevelUp = levelUpFunc.CheckIfUserCanLevelUp(theVolunteer, attendee.HoursCompleted);
 
+                volInformation["xp"] = theVolunteer.Experience;
+
                 //if a volunteer has leveled up, then update their level in Firebase
                 if(didLevelUp == true)
                 {
                     volInformation["level"] = theVolunteer.Level;
-                    AppData.CurVolunteer.Level = theVolunteer.Level;
-                    AppData.CurVolunteer.Experience = theVolunteer.Experience;
+
                     var volunteerLevelUpTask = System.Threading.Tasks.Task.Run(async () =>
                     {
                         return await UpdateVolunteerLevelAsync(theVolunteer, volInformation);
