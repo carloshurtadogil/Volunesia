@@ -358,9 +358,6 @@
     <AndroidResource Include="Resources\mipmap-mdpi\expertBadge.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\noviceBadge.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\intermediateBadge.png" />
   </ItemGroup>
   <ItemGroup>
@@ -373,6 +370,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\PastEvent.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\volunesiaLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\noviceBadge.PNG" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -39,6 +39,8 @@ namespace Volunesia.Droid.Activities
             Attended = FindViewById<TextView>(Resource.Id.attendedView);
             Hours = FindViewById<TextView>(Resource.Id.hoursView);
 
+            
+
             Button rateButton = FindViewById<Button>(Resource.Id.rate);
             Button generateButton = FindViewById<Button>(Resource.Id.generate);
             Button backButton = FindViewById<Button>(Resource.Id.backToLast);
@@ -67,7 +69,7 @@ namespace Volunesia.Droid.Activities
         {
             var intent = new Intent(this, typeof(EventRatingActivity));
             intent.PutExtra("eventToBeRated", JsonConvert.SerializeObject(SelectedEvent));
-            StartActivity(typeof(EventRatingActivity));
+            StartActivity(intent);
         }
 
         public void GenerateCertificate(object sender, EventArgs e)

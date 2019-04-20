@@ -120,7 +120,7 @@ namespace Volunesia.Droid.Activities
         {
             //
             Console.WriteLine(PastEvents[e.Position]);
-            var intent = new Intent(this, typeof(EventRatingActivity));
+            var intent = new Intent(this, typeof(PastEventActivity));
             intent.PutExtra("pastEvent", JsonConvert.SerializeObject(PastEvents[e.Position]));
             StartActivity(intent);
         }

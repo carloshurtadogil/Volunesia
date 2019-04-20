@@ -37,6 +37,7 @@ namespace Volunesia.Droid.Service
                 //retrieve the information from each event node, and then form a volunteerevent object
                 var attended = eventpair.Value["attended"].ToString();
                 var eventdate = eventpair.Value["eventdate"].ToString();
+                var hoursVolunteered = eventpair.Value["hoursvolunteered"].ToString();
                 DateTime eventDateInFormat = Convert.ToDateTime(eventdate);
                 var eventname = eventpair.Value["eventname"].ToString();
                 var nonprofitid = eventpair.Value["nonprofitid"].ToString();
@@ -51,7 +52,7 @@ namespace Volunesia.Droid.Service
                         EventID = eventpair.Key,
                         EventName = eventname,
                         NonprofitID = nonprofitid,
-                        HoursCompleted = 0
+                        HoursCompleted = Convert.ToDouble(hoursVolunteered)
                        
                     };
                     pastEvents.Add(volunteerevent);
