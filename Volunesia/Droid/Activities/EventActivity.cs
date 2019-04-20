@@ -77,12 +77,10 @@ namespace Volunesia.Droid.Activities
             //checks if the user type is a volunteer
             else if (AppData.CurUser.UserType.Equals("V"))
             {
-
-
+                
                 //Check if there is a presence of a roster, and then proceeds to check
                 //if the volunteer is in the roster and add all attendees to a roster
                 bool volunteerInRoster = false;
-                bool volunteerInWaitlist = false;
                 if (!rosterChecker.Equals("0"))
                 {
                     roster = (JObject)eventInfoAsJson["roster"];
@@ -111,57 +109,23 @@ namespace Volunesia.Droid.Activities
                 }
                 else
                 {
-                    //Check for the presence of a waitlist, and then proceed to check if the 
-                    //volunteer is in the waitlist
-                    if (!waitlistChecker.Equals("0"))
+                    //check if the roster is not null, meaning there are other
+                    //volunteers in the roster itself
+                    if (roster != null)
                     {
-                        SelectedEvent.Waitlist = new Waitlist();
-
-                        waitlist = (JObject)eventInfoAsJson["waitlist"];
-
-                        foreach(var attendee in waitlist)
-                        {
-                            var attendeeUID = attendee.Value.ToString();
-                            Attendee waitlistAttendee = new Attendee();
-                            waitlistAttendee.UID = attendeeUID;
-                            SelectedEvent.Waitlist.Add(waitlistAttendee);
-                        }
-                        //volunteerInWaitlist = CheckIfVolunteerIsInWaitlist(waitlist);
-                    }
-
-                    if (volunteerInWaitlist == true)
-                    {
-                        ApplyOrDeleteButton.Text = "Drop from Waitlist";
-                        ApplyOrDeleteButton.Visibility = ViewStates.Visible;
-
-                    }
-                    else
-                    {
-                        //check if the roster is not null, meaning there are other
-                        //volunteers in the roster itself
-                        if (roster != null)
-                        {
-                            //check if the roster is not full, then show "APPLY TO EVENT" 
-                            if (SelectedEvent.Capacity != roster.Count)
-                            {
-                                ApplyOrDeleteButton.Text = "Apply to Event";
-                                ApplyOrDeleteButton.Visibility = ViewStates.Visible;
-                            }
-                            //else if the event is full, then show WAITLIST FOR EVENT
-                            else if (SelectedEvent.Capacity == roster.Count)
-                            {
-                                ApplyOrDeleteButton.Text = "Waitlist for Event";
-                                ApplyOrDeleteButton.Visibility = ViewStates.Visible;
-                            }
-
-                        }
-                        //else, the roster and waitlist are empty, then allow a volunteer
-                        //to apply to an event
-                        else
+                        //check if the roster is not full, then show "APPLY TO EVENT" 
+                        if (SelectedEvent.Capacity != roster.Count)
                         {
                             ApplyOrDeleteButton.Text = "Apply to Event";
                             ApplyOrDeleteButton.Visibility = ViewStates.Visible;
-                        }
+                        }                       
+                    }
+                    //else, the roster and waitlist are empty, then allow a volunteer
+                    //to apply to an event
+                    else
+                    {
+                        ApplyOrDeleteButton.Text = "Apply to Event";
+                        ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                     }
                 }
             }
@@ -498,47 +462,6 @@ namespace Volunesia.Droid.Activities
             if (checkForRoster.Body.Equals("null") || checkForRoster.Body.Equals(null))
             {
                 FirebaseResponse createRoster = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster", 0);
-            }
-            else
-            {
-
-                //Retrieve the waitlist itself
-                FirebaseResponse eventResponse = await firebaseClient.GetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID);
-                string eventContent = eventResponse.Body;
-                JObject eventContentInJson = JObject.Parse(eventContent);
-
-                //Retrieve the waitlist counter to ensure there is at least one person on the waitlist
-                var waitlistCounterContent = eventContentInJson["wlcounter"];
-                int waitlistCounter = waitlistCounterContent.ToObject<int>();
-                if (waitlistCounter != 0)
-                {
-                    var waitlistRoster = (JObject)eventContentInJson["waitlist"];
-                    string foundUID = "";
-                    int foundPosition = 0;
-                    //Traverse the waitlist roster till the first person in waitlist is reached
-                    foreach (var waitlistPerson in waitlistRoster)
-                    {
-                        Console.WriteLine(waitlistPerson.Key + "" + waitlistPerson.Value.ToString());
-                        foundPosition = Convert.ToInt32(waitlistPerson.Key);
-                        foundUID = waitlistPerson.Value.ToString();
-                        break;
-                    }
-
-                    Dictionary<string, object> attendeeInformation = new Dictionary<string, object>();
-                    attendeeInformation.Add("attended", "N");
-                    attendeeInformation.Add("hoursCompleted", 0);
-                    attendeeInformation.Add("status", "Will Attended");
-
-                    //Add the first volunteer on the waitlist to the event roster
-                    SetResponse pushResponse = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + foundUID, attendeeInformation);
-
-                    //Delete the first volunteer from the waitlist
-                    FirebaseResponse deleteVolunteerFromWaitlistResponse = await firebaseClient.DeleteAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/waitlist/" + foundPosition);
-                    //Update the waitlist counter for the event
-                    waitlistCounter--;
-                    FirebaseResponse updateWaitlistCounter = await firebaseClient.UpdateAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/wlcounter", waitlistCounter);
-
-                }
             }
 
             return null;

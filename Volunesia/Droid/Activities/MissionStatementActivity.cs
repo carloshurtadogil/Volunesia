@@ -83,7 +83,7 @@ namespace Volunesia.Droid
 
 
             //Navigate to the WelcomeActivity
-            StartActivity(typeof(NonprofitHomeActivity));
+            StartActivity(typeof(NonprofitProfileViewActivity));
         }
     }
 }

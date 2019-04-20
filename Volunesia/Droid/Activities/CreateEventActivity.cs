@@ -84,6 +84,7 @@ namespace Volunesia.Droid
                 {
                     ApplicationDeadline = Convert.ToDateTime(AppDeadline.Text),
                     EventID = eventID,
+                    HostID = AppData.NonprofitRepresentative.AssociatedNonprofit,
                     EventDate = Convert.ToDateTime(EventDate.Text),
                     EventEndDate = Convert.ToDateTime(EventEndDate.Text),
                     EventDescription = EventDes.Text,

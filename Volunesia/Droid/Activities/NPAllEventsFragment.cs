@@ -34,36 +34,41 @@ namespace Volunesia.Droid.Activities
 
             if(AppData.NPEventsHistory.NPEvents.Count == 0)
             {
-
+                
                 //Execues the method to retrieve all events for a nonprofit organization
-                var retrieveAllEventsForNonprofits = System.Threading.Tasks.Task.Run(async () =>
+                var retrieveAllEventsForNonprofit = System.Threading.Tasks.Task.Run(async () =>
                 {
                     return await QueryAllEventsForNP();
 
 
                 });
 
-                JObject allEventsForNonprofit = JObject.Parse(retrieveAllEventsForNonprofits.Result);
-
-                //Traverse the events that the nonprofit has
-                foreach (var eventKeyAndInfo in allEventsForNonprofit)
+                if (!retrieveAllEventsForNonprofit.Result.Equals("null"))
                 {
-                    string eventID = eventKeyAndInfo.Key;
-                    JObject eventIDAndInformation = (JObject)eventKeyAndInfo.Value;
+                    if (!retrieveAllEventsForNonprofit.Result.Equals("0"))
+                    {
 
-                    Event nonprofitEvent = new Event();
-                    nonprofitEvent.HostID = AppData.NonprofitRepresentative.AssociatedNonprofit;
-                    nonprofitEvent.EventID = eventID;
-                    nonprofitEvent.ApplicationDeadline = Convert.ToDateTime(eventIDAndInformation["applicationdeadline"].ToString());
-                    nonprofitEvent.Capacity = Convert.ToInt32(eventIDAndInformation["capacity"]);
-                    nonprofitEvent.EventDate = Convert.ToDateTime(eventIDAndInformation["eventdate"]);
-                    nonprofitEvent.EventName = eventIDAndInformation["eventname"].ToString();
+                        JObject allEventsForNonprofit = JObject.Parse(retrieveAllEventsForNonprofit.Result);
 
-                    AllEventsForNP.Add(nonprofitEvent);
+                        //Traverse the events that the nonprofit has
+                        foreach (var eventKeyAndInfo in allEventsForNonprofit)
+                        {
+                            string eventID = eventKeyAndInfo.Key;
+                            JObject eventIDAndInformation = (JObject)eventKeyAndInfo.Value;
+
+                            Event nonprofitEvent = new Event();
+                            nonprofitEvent.HostID = AppData.NonprofitRepresentative.AssociatedNonprofit;
+                            nonprofitEvent.EventID = eventID;
+                            nonprofitEvent.ApplicationDeadline = Convert.ToDateTime(eventIDAndInformation["applicationdeadline"].ToString());
+                            nonprofitEvent.Capacity = Convert.ToInt32(eventIDAndInformation["capacity"]);
+                            nonprofitEvent.EventDate = Convert.ToDateTime(eventIDAndInformation["eventdate"]);
+                            nonprofitEvent.EventName = eventIDAndInformation["eventname"].ToString();
+
+                            AllEventsForNP.Add(nonprofitEvent);
+                        }
+                    }
                 }
-
                 AppData.NPEventsHistory.NPEvents = AllEventsForNP;
-
                 
             }
             else

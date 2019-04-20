@@ -287,17 +287,22 @@ namespace Volunesia.Droid.Activities
             foreach (var eventKeyValuePair in allEvents)
             {
                 string nonprofitID = eventKeyValuePair.Key;
-                JObject eventIDAndInformation = (JObject)eventKeyValuePair.Value;
-
-                //Traverses all of the events per nonprofit
-                foreach (var idAndInfoNode in eventIDAndInformation) 
+                string eventValue = eventKeyValuePair.Value.ToString();
+                if (!eventValue.Equals("0"))
                 {
-                    Volunesia.Models.Event theEvent = new Volunesia.Models.Event();
-                    theEvent.EventID = idAndInfoNode.Key;
-                    theEvent.HostID = nonprofitID;
-                    theEvent.EventDate = Convert.ToDateTime(idAndInfoNode.Value["eventdate"].ToString());
-                    theEvent.EventName = idAndInfoNode.Value["eventname"].ToString();
-                    AllEvents.Add(theEvent);
+
+                    JObject eventIDAndInformation = (JObject)eventKeyValuePair.Value;
+
+                    //Traverses all of the events per nonprofit
+                    foreach (var idAndInfoNode in eventIDAndInformation)
+                    {
+                        Volunesia.Models.Event theEvent = new Volunesia.Models.Event();
+                        theEvent.EventID = idAndInfoNode.Key;
+                        theEvent.HostID = nonprofitID;
+                        theEvent.EventDate = Convert.ToDateTime(idAndInfoNode.Value["eventdate"].ToString());
+                        theEvent.EventName = idAndInfoNode.Value["eventname"].ToString();
+                        AllEvents.Add(theEvent);
+                    }
                 }
             }
             return resultant;

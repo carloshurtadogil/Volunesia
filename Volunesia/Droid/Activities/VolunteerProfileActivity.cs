@@ -39,7 +39,7 @@ namespace Volunesia.Droid.Activities
             CurrentVolunteer = new Volunteer();
 
             //check for a presence of volunteer badges, in order to retrieve the badges 
-            if(volunteerBadgesTask.Result != "null")
+            if(!volunteerBadgesTask.Result.Equals("null"))
             {
                 string actualVolunteerBadge = (volunteerBadgesTask.Result).Substring(1, volunteerBadgesTask.Result.Length-2);
 
