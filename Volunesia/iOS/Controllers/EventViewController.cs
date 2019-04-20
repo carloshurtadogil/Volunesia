@@ -53,11 +53,11 @@ namespace Volunesia.iOS
             {
                 if (AppData.NonprofitRepresentative.AssociatedNonprofit == EventDetails.HostID && AppData.NonprofitRepresentative.Poster == "Y")// Evaluate if the user has the proper permissions to edit
                 {
-                    //EditButton.Enabled = true; 
-                    //EditButton.Hidden = false; 
+                    EditButton.Enabled = true; 
+                    EditButton.Hidden = false; 
 
-                    SignupButton.Enabled = true;
-                    SignupButton.Hidden = false;
+                    //Enabled = true;
+                    //SignupButton.Hidden = false;
                 }
             }
             else //The user is a normal volunteer

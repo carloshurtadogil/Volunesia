@@ -993,26 +993,47 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tell us about yourself!   This is your time to shine!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22823">
-                                <rect key="frame" x="54" y="36" width="275" height="77"/>
+                                <rect key="frame" x="54" y="382" width="275" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="22825">
-                                <rect key="frame" x="68" y="111" width="240" height="225"/>
+                                <rect key="frame" x="68" y="457" width="240" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22827">
-                                <rect key="frame" x="114" y="378" width="147" height="57"/>
+                                <rect key="frame" x="114" y="724" width="147" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="22817" eventType="touchUpInside" id="22840"/>
                                     <segue destination="17774" kind="show" identifier="PSToWelcomeSegue_id" id="22985"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show the world what you look like!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="117163">
+                                <rect key="frame" x="50" y="44" width="275" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_5287.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="117164">
+                                <rect key="frame" x="92" y="111" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="117844">
+                                <rect key="frame" x="114" y="331" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/UploadImageBtn.png"/>
+                                <connections>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="117846" eventType="touchUpInside" id="117845"/>
+                                    <segue destination="117848" kind="show" identifier="PSToWelcomeSegue_id" id="117847"/>
+                                    <action selector="UploadImageButton_TouchUpInside:" destination="22817" id="117852" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1024,6 +1045,8 @@
                         <outlet property="ContinueButton" destination="22827" id="22826"/>
                         <outlet property="StatementLabel" destination="22823" id="22822"/>
                         <outlet property="StoryTextView" destination="22825" id="22824"/>
+                        <outlet property="UploadImageButton" destination="117844" id="name-outlet-117844"/>
+                        <outlet property="ProfileImageView" destination="117164" id="name-outlet-117164"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22843" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2104,8 +2127,8 @@
                                     <action selector="BackButton_TouchUpInside:" destination="105766" eventType="touchUpInside" id="105788"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="107029">
-                                <rect key="frame" x="66" y="87" width="255" height="174"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_5287.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="107029">
+                                <rect key="frame" x="90" y="58" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="107030">
@@ -2222,5 +2245,6 @@
         <image name="Images/img_placeholder.png" width="940" height="600"/>
         <image name="Images/logo.png" width="1030" height="1139"/>
         <image name="Images/ProfileIcon.png" width="2560" height="2560"/>
+        <image name="IMG_5287.jpg" width="2150" height="2150"/>
     </resources>
 </document>

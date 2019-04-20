@@ -317,6 +317,7 @@
     <BundleResource Include="Resources\Badges\grandmasterBadge.png" />
     <BundleResource Include="Resources\Badges\intermediateBadge.png" />
     <BundleResource Include="Resources\Badges\noviceBadge.png" />
+    <BundleResource Include="Resources\IMG_5287.jpg" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -48,8 +48,8 @@ namespace Volunesia.iOS
 
             if(AppData.CurVolunteer != null)
             {
-                ExperienceLabel.Text = "Experience: " + AppData.CurVolunteer.Experience;
-                LevelLabel.Text = "Level: " + AppData.CurVolunteer.Experience;
+                ExperienceLabel.Text = "Experience: " + 99789; //+ AppData.CurVolunteer.Experience;
+                LevelLabel.Text = "Level: " + 99; //+ AppData.CurVolunteer.Experience;
             }
         }
 
@@ -70,6 +70,7 @@ namespace Volunesia.iOS
         {
             if(AppData.CurVolunteer != null)
             {
+                AppData.CurVolunteer.BadgeList.Add(BadgeCategory.Badge.Grandmaster);
                 if (AppData.CurVolunteer.BadgeList.Contains(BadgeCategory.Badge.Grandmaster))
                 {
                     Badge1.Image = UIImage.FromFile("Badges/noviceBadge.png");
