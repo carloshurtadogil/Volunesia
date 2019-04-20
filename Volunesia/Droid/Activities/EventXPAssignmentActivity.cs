@@ -63,10 +63,27 @@ namespace Volunesia.Droid.Activities
                 {
                     UID = attendee.Key,
                     EmailAddress = attendee.Value["contact"].ToString(),
-                    HoursCompleted = Convert.ToInt32(attendee.Value["hourscompleted"]),
-                    Attended = true
+                    CheckInTime = Convert.ToDateTime(attendee.Value["checkintime"]),
                 };
 
+                //if the volunteer/attendee checked in before the event date,
+                //then subtract the difference from the event end date and start date
+                if (DateTime.Compare(currentAttendee.CheckInTime, SelectedEvent.EventDate) < 0)
+                {
+                    TimeSpan difference = SelectedEvent.EventEndDate.Subtract(SelectedEvent.EventDate);
+                    currentAttendee.HoursCompleted = difference.TotalHours;
+                    currentAttendee.Attended = true;
+                }
+                //check if the volunteer/attendee arrived between the event start and end dates, then simply
+                //subtract the attendee's check in time from the event end date 
+                else if (DateTime.Compare(currentAttendee.CheckInTime, SelectedEvent.EventDate) > 0 &&
+                        DateTime.Compare(currentAttendee.CheckInTime, SelectedEvent.EventEndDate) < 0)
+                {
+                    TimeSpan difference = SelectedEvent.EventEndDate.Subtract(currentAttendee.CheckInTime);
+                    currentAttendee.HoursCompleted = difference.TotalHours;
+                    currentAttendee.Attended = true;
+                }
+                
                 if (currentAttendee.Attended)
                 {
                     EventAttendees.Add(currentAttendee);

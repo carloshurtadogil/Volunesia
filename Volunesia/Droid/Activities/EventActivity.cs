@@ -96,15 +96,18 @@ namespace Volunesia.Droid.Activities
                      * Check the date of the event. If it is approcating then set the button to withdraw 
                      * from event. If the event is currently taking place then set the button to checkin.
                      */
-                    if (SelectedEvent.EventDate.Date == DateTime.Today)
-                    {
+                    if (SelectedEvent.EventDate.Date == DateTime.Today.Date && DateTime.Now < SelectedEvent.EventEndDate)
+                    {  
                         ApplyOrDeleteButton.Text = "Check-in";
                         ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                     }
+                    else
+                    {
+                        ApplyOrDeleteButton.Text = "Withdraw from Event";
+                        ApplyOrDeleteButton.Visibility = ViewStates.Visible;
 
+                    }
 
-                    ApplyOrDeleteButton.Text = "Withdraw from Event";
-                    ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                 }
                 else
                 {
@@ -220,10 +223,16 @@ namespace Volunesia.Droid.Activities
             //If yes option is clicked, then check-in volunteer
             dialogAlertConstruction.SetPositiveButton("Yes", delegate
             {
+                Dictionary<string, object> checkedAttendeeInfo = new Dictionary<string, object>();
+                checkedAttendeeInfo.Add("attended", "Y");
+                checkedAttendeeInfo.Add("checkedintime", DateTime.Now.ToString());
+                checkedAttendeeInfo.Add("contact", AppData.CurUser.EmailAddress);
+                checkedAttendeeInfo.Add("hourscompleted", 0);
+                checkedAttendeeInfo.Add("status", "Will Attend");
                 var queryvolhistorytask = System.Threading.Tasks.Task.Run(async () =>
                 {
 
-                    return await CheckinVolunteer();
+                    return await CheckinVolunteer(checkedAttendeeInfo);
 
                 });
                 StartActivity(typeof(VolunteerEventsActivity));
@@ -575,12 +584,17 @@ namespace Volunesia.Droid.Activities
             return eventResult;
         }
 
-        public async System.Threading.Tasks.Task<string> CheckinVolunteer()
+        /// <summary>
+        /// Checks in the volunteer by writing attendee and event information to Firebase
+        /// </summary>
+        /// <param name="checkedAttendeeInfo"></param>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> CheckinVolunteer(Dictionary<string, object> checkedAttendeeInfo)
         {
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            FirebaseResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID + "/checkintime", DateTime.Today.ToString());
+            FirebaseResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID, checkedAttendeeInfo);
 
             return response.Body;
         }

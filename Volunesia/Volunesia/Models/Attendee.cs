@@ -10,8 +10,8 @@ namespace Volunesia.Models
         public string ReservationStatus { get; set; }
         //Flag to represent whether or not a Volunteer attended the event
         public bool   Attended          { get; set; }
-        //The event duration in minutes (to be converted to hours in other components)
-        public int    HoursCompleted    { get; set; }
+        //The amount of hours a volunteered for a particular event
+        public double    HoursCompleted    { get; set; }
         //The attendee's UID
         public string    UID            { get; set; }
         //The attendee's email address
