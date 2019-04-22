@@ -88,24 +88,49 @@ namespace Volunesia.Droid.Activities
                     //AddAttendeesToRoster(roster);
                 }
 
+                //if the volunteer is in the roster, proceed to check if the volunteer has checked in
                 if (volunteerInRoster == true)
                 {
-                    /*
-                     * Check the date of the event. If it is approcating then set the button to withdraw 
-                     * from event. If the event is currently taking place then set the button to checkin.
-                     */
-                    if (SelectedEvent.EventDate.Date == DateTime.Today.Date && DateTime.Now < SelectedEvent.EventEndDate)
-                    {  
-                        ApplyOrDeleteButton.Text = "Check-in";
-                        ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+
+                    bool volunteerCheckedIn = CheckIfVolunteerCheckedIn(roster);
+                    //if the volunteer has not checked in, the volunteer has two options
+                    //1) Checkin before the event starts or during its duration
+                    //2) Withdraw from the event before it occurs
+                    if (!volunteerCheckedIn)
+                    {
+                       
+                        //Check the date of the event. If it is approcating then set the button to withdraw 
+                        //from event. If the event is currently taking place then set the button to checkin.
+                        if (SelectedEvent.EventDate.Date == DateTime.Today.Date && DateTime.Now < SelectedEvent.EventEndDate)
+                        {
+                            ApplyOrDeleteButton.Text = "Check-in";
+                            ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                        }
+
+                        else
+                        {
+                            ApplyOrDeleteButton.Text = "Withdraw from Event";
+                            ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+
+                        }
                     }
+                    //otherwise, prevent the volunteer from checking in or withdrawing from the event
                     else
                     {
-                        ApplyOrDeleteButton.Text = "Withdraw from Event";
-                        ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                        AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
+                        dialogAlertConstruction.SetTitle("Checkin Error");
+                        dialogAlertConstruction.SetMessage("Unable to check in, as you already have checked in!");
+
+                        dialogAlertConstruction.SetPositiveButton("GO BACK", delegate
+                        {
+
+                            dialogAlertConstruction.Dispose();
+                            StartActivity(typeof(VolunteerEventsActivity));
+
+                        });
+                        dialogAlertConstruction.Show();
 
                     }
-
                 }
                 else
                 {
@@ -189,7 +214,7 @@ namespace Volunesia.Droid.Activities
             {
                 Dictionary<string, object> checkedAttendeeInfo = new Dictionary<string, object>();
                 checkedAttendeeInfo.Add("attended", "Y");
-                checkedAttendeeInfo.Add("checkedintime", DateTime.Now.ToString());
+                checkedAttendeeInfo.Add("checkintime", DateTime.Now.ToString());
                 checkedAttendeeInfo.Add("contact", AppData.CurUser.EmailAddress);
                 checkedAttendeeInfo.Add("hourscompleted", 0);
                 checkedAttendeeInfo.Add("status", "Will Attend");
@@ -371,7 +396,34 @@ namespace Volunesia.Droid.Activities
         }
 
 
-        //Checks if a volunteer exists in a roster
+        /// <summary>
+        /// Checks if a volunteer has checked in for an event
+        /// </summary>
+        /// <param name="eventRoster"></param>
+        /// <returns></returns>
+        public bool CheckIfVolunteerCheckedIn(JObject eventRoster)
+        {
+            foreach(var attendee in eventRoster)
+            {
+                if (attendee.Key.Equals(AppData.CurUser.UID))
+                {
+                    var checkinStatus = attendee.Value["checkintime"].ToString();
+                    if (checkinStatus.Equals("0") || checkinStatus.Equals("00") || string.IsNullOrEmpty(checkinStatus))
+                    {
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        /// <summary>
+        /// Checks if a volunteer exists in a roster
+        /// </summary>
+        /// <param name="eventRoster"></param>
+        /// <returns></returns>
         public bool CheckIfVolunteerIsInRoster(JObject eventRoster)
         {
 

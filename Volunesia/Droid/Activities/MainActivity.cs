@@ -6,6 +6,7 @@ using Firebase.Database.Query;
 using System;
 using Volunesia.Services;
 using Volunesia.Droid.Activities;
+using Android.Graphics;
 
 namespace Volunesia.Droid
 {
@@ -23,7 +24,7 @@ namespace Volunesia.Droid
             {
                 if(AppData.CurUser.UserType.Equals("V"))
                 {
-                    StartActivity(typeof(VolunteerHomeActivity));
+                    StartActivity(typeof(VolunteerEventsActivity));
                 }
                 else if(AppData.CurUser.UserType.Equals("NP"))
                 {
@@ -39,6 +40,19 @@ namespace Volunesia.Droid
                 // and attach an event to it
                 Button loginButton = FindViewById<Button>(Resource.Id.loginButton);
                 Button signUpButton = FindViewById<Button>(Resource.Id.signupButton);
+
+                //ImageView volunesiaImage = FindViewById<ImageView>(Resource.Id.volunesiaLogoImage);
+                //Bitmap bitmap = BitmapFactory.DecodeResource(this.Resources, Resource.Mipmap.Icon);
+                //Bitmap drawableBitmap = bitmap.Copy(Bitmap.Config.Argb8888, true);
+                //Canvas canvas = new Canvas(drawableBitmap);
+                //Paint paint = new Paint();
+                //paint.Color = Color.Black;
+                //paint.TextSize = 12;
+                //paint.TextAlign = Paint.Align.Center;
+                
+                //canvas.DrawText("Main man right here", canvas.Width/2, canvas.Height/2, paint);
+
+                //volunesiaImage.SetImageBitmap(drawableBitmap);
 
                 loginButton.Click += NavigateToLoginPage;
                 signUpButton.Click += NavigateToSignupPage;
