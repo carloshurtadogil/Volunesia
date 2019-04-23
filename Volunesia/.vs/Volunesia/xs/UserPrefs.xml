@@ -10,7 +10,7 @@
       <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="29" Column="26" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
       <File FileName="Volunesia/Services/LevelUp.cs" Line="128" Column="1" />
-      <File FileName="iOS/Services/EmailHandler.cs" Line="11" Column="1" />
+      <File FileName="iOS/Services/EmailHandler.cs" Line="32" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,10 +21,10 @@
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="EmailHandler.cs" selected="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="VolunesiaIcon.png" selected="True" />
               </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
