@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AAFA532E-689B-4C3D-9840-E0E6C20CA769" />
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/EmailHandler.cs">
     <Files>
       <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="168" Column="20" />
@@ -10,7 +10,7 @@
       <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="29" Column="26" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
       <File FileName="Volunesia/Services/LevelUp.cs" Line="128" Column="1" />
-      <File FileName="iOS/Services/EmailHandler.cs" Line="32" Column="32" />
+      <File FileName="iOS/Services/EmailHandler.cs" Line="32" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,10 +21,10 @@
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="VolunesiaIcon.png" selected="True" />
+              <Node name="Resources" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="EmailHandler.cs" selected="True" />
               </Node>
-              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -32,7 +32,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
