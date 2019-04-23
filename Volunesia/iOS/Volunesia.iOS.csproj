@@ -272,6 +272,7 @@
     <Compile Include="Controllers\VolunteerProfileViewController.designer.cs">
       <DependentUpon>VolunteerProfileViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\EmailHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -318,6 +319,7 @@
     <BundleResource Include="Resources\Badges\intermediateBadge.png" />
     <BundleResource Include="Resources\Badges\noviceBadge.png" />
     <BundleResource Include="Resources\IMG_5287.jpg" />
+    <BundleResource Include="Resources\VIcon.jpg" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

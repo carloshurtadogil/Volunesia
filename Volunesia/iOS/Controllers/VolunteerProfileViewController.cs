@@ -10,6 +10,7 @@ namespace Volunesia.iOS
 {
     public partial class VolunteerProfileViewController : UIViewController
     {
+        public int count = 0;
         public VolunteerProfileViewController (IntPtr handle) : base (handle)
         {
         }
@@ -22,6 +23,13 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
             FirebaseReader.ReadVolunteer(AppData.CurUser.UID);
+
+            if(count == 0)
+            {
+                EmailHandler.SendEmailAsync();
+                count++;
+            }
+
             LoadInformation();
             DismissKeyboardHandler();
             LoadBadges();
