@@ -165,7 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Resources\Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -322,6 +322,7 @@
     <BundleResource Include="Resources\VIcon.jpg" />
     <BundleResource Include="Resources\VolunesiaIcon.png" />
     <BundleResource Include="Resources\VolunesiaIcon.jpg" />
+    <BundleResource Include="Resources\Images\OptionsButton.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

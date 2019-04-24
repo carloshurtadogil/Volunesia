@@ -1,6 +1,4 @@
-using Foundation;
 using System;
-using System.Collections.Generic;
 using UIKit;
 using Volunesia.Models;
 using Volunesia.Services;
@@ -26,7 +24,7 @@ namespace Volunesia.iOS
 
             if(count == 0)
             {
-                EmailHandler.SendEmailAsync();
+                //EmailHandler.WriteCertificate("");
                 count++;
             }
 

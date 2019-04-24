@@ -123,7 +123,8 @@ namespace Volunesia.iOS
         /// <param name="sender">Sender.</param>
         partial void EditButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Show(this, "To be implemented", "");
+            EventDetails.EventDate = DateTime.Today;
+            AlertShow.DisplayEventOptions(this, EventDetails);
         }
 
         /// <summary> 

@@ -165,7 +165,9 @@ namespace Volunesia.iOS
             AlertShow.Show(this, "To be implemented", "");
         }
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         async Task RefreshAsync()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             //only active the refresh control if the feature is available 
             if (useRefreshControl)

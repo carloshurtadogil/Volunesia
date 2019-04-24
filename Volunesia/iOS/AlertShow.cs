@@ -64,7 +64,39 @@ namespace Volunesia.iOS
 
             inpView.PresentViewController(alert, true, null);
         }
-        
+
+        /// <summary>
+        /// For nonprofits to make changes to an event or take attendance
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="e">Event being worked on.</param>
+        public static void DisplayEventOptions(UIViewController inpView, Event e)
+        {
+            UIAlertController alert = UIAlertController.Create("Options for this Event", "", UIAlertControllerStyle.ActionSheet);
+
+            DateTime eventdate = e.EventDate;
+            DateTime today = DateTime.Today;
+            var comparison = DateTime.Compare(eventdate, today);
+
+            if(comparison >= 0) 
+            {
+                alert.AddAction(UIAlertAction.Create("Edit", UIAlertActionStyle.Default, (handler) =>
+                {
+                    Show(inpView, "To be implemented", "");
+                }));
+
+                if(comparison == 0)
+                {
+                    alert.AddAction(UIAlertAction.Create("Take Attendance", UIAlertActionStyle.Default, (handler) => 
+                    {
+                        Show(inpView, "To be implemented", "");
+                    })); 
+                }
+                alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+                inpView.PresentViewController(alert, true, null);
+            }
+        }
+
         /// <summary>
         /// Print a message to the console
         /// </summary>

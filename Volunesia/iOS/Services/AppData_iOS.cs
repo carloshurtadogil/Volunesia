@@ -14,6 +14,7 @@ namespace Volunesia.iOS.Services
         private static AppData_iOS Instance; //Instance of this class to be referred to
 
         //Database references
+        public static DatabaseReference CertificatesNode { get; set; }//Reference to 'certificate' node in Firebase
         public static DatabaseReference DataNode { get; set; } //Reference to 'data' node in Firebase
         public static DatabaseReference UsersNode { get; set; } //Reference to 'users' node in Firebase
         public static DatabaseReference NonprofitNode { get; set; } //Reference to 'nonprofitorgs' node in Firebase
@@ -45,6 +46,8 @@ namespace Volunesia.iOS.Services
         {
             Firebase.Core.App.Configure();
             //Configure Database References
+            CertificatesNode = Database.DefaultInstance.GetRootReference()
+                               .GetChild("certificate");
             DataNode = Database.DefaultInstance.GetRootReference()
                                .GetChild("data");
             EventNode = Database.DefaultInstance.GetRootReference()

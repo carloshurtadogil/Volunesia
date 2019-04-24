@@ -2054,9 +2054,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                             </textView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90265">
-                                <rect key="frame" x="114" y="728" width="147" height="57"/>
+                                <rect key="frame" x="116" y="728" width="147" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Images/EditButton.png"/>
+                                <state key="normal" backgroundImage="Images/OptionsButton.png"/>
                                 <connections>
                                     <action selector="EditButton_TouchUpInside:" destination="89985" eventType="touchUpInside" id="90286"/>
                                 </connections>
@@ -2222,7 +2222,6 @@
     <resources>
         <image name="Images/BellIcon.png" width="1350" height="1350"/>
         <image name="Images/ContinueBtn.png" width="1178" height="437"/>
-        <image name="Images/EditButton.png" width="1178" height="439"/>
         <image name="Images/EstablishedBtn.png" width="1182" height="444"/>
         <image name="Images/EventButton.png" width="1000" height="680"/>
         <image name="Images/FutureButton.png" width="125" height="85"/>
@@ -2246,5 +2245,6 @@
         <image name="Images/logo.png" width="1030" height="1139"/>
         <image name="Images/ProfileIcon.png" width="2560" height="2560"/>
         <image name="IMG_5287.jpg" width="2150" height="2150"/>
+        <image name="Images/OptionsButton.png" width="1175" height="435"/>
     </resources>
 </document>
