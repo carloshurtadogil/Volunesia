@@ -86,6 +86,12 @@ namespace Volunesia.Droid.Activities
             mListView.Adapter = adapter;
 
             //Retrieve the buttons and listen to any clicking events
+            var volunteerSettingsButton = FindViewById<Button>(Resource.Id.volunteerSettingsButton);
+            volunteerSettingsButton.Click += GoToSettingsPage;
+
+            var volunteerProfileButton = FindViewById<Button>(Resource.Id.volunteerProfileButton);
+            volunteerProfileButton.Click += GoToVolunteerProfile;
+
             var pastEventsButton = FindViewById<Button>(Resource.Id.pastEventsButton);
             pastEventsButton.Click += ShowPastEvents;
 
@@ -248,6 +254,26 @@ namespace Volunesia.Droid.Activities
             
             mListView.ItemClick += PresentEventClicked;
             PresentEventsCheckSubscription = true;
+        }
+
+        /// <summary>
+        /// Proceeds to go to the Settings page 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GoToSettingsPage(object sender, EventArgs e)
+        {
+            StartActivity(typeof(SettingsActivity));
+        }
+
+        /// <summary>
+        /// Proceeds to go to the Volunteer profile page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GoToVolunteerProfile(object sender, EventArgs e)
+        {
+            StartActivity(typeof(VolunteerProfileActivity));
         }
 
 

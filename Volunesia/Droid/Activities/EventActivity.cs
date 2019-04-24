@@ -71,8 +71,16 @@ namespace Volunesia.Droid.Activities
             //Checks if the user type is a nonprofit to allow deletion of an event
             if (AppData.CurUser.UserType.Equals("NP") && AppData.NonprofitRepresentative.AssociatedNonprofit.Equals(SelectedEvent.HostID))
             {
-                ApplyOrDeleteButton.Text = "Delete Event";
-                ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                if(DateTime.Compare(SelectedEvent.EventEndDate, DateTime.Now) < 0)
+                {
+                    ApplyOrDeleteButton.Text = "Generate XP";
+                    ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    ApplyOrDeleteButton.Text = "Delete Event";
+                    ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                }
             }
             //checks if the user type is a volunteer
             else if (AppData.CurUser.UserType.Equals("V"))
@@ -169,6 +177,10 @@ namespace Volunesia.Droid.Activities
             {
                 this.DeleteEvent();
             }
+            else if(ApplyOrDeleteButton.Text.Equals("Generate XP"))
+            {
+                this.GenerateXP();
+            }
             else if (ApplyOrDeleteButton.Text.Equals("Apply to Event"))
             {
                 this.ApplyToEvent();
@@ -201,6 +213,18 @@ namespace Volunesia.Droid.Activities
                 await RemoveVolunteerFromWaitlist();
             });
         }
+
+        /// <summary>
+        /// Proceeds to visit the EventXPAssignment activity for the nonprofit to assign 
+        /// xp to volunteers
+        /// </summary>
+        public void GenerateXP()
+        {
+            var intent = new Intent(this, typeof(EventXPAssignmentActivity));
+            intent.PutExtra("finishedEvent", JsonConvert.SerializeObject(SelectedEvent));
+            StartActivity(intent);
+        }
+
 
         //Proceed to execute the checkin volunteer
         public void Checkin()

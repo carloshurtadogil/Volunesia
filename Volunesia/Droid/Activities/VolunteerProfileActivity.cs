@@ -30,6 +30,17 @@ namespace Volunesia.Droid.Activities
 
             SetContentView(Resource.Layout.VolunteerProfile);
 
+            var volunteerInfo = System.Threading.Tasks.Task.Run(async () =>
+            {
+                return await GetVolunteerInfo();
+            });
+            string result = volunteerInfo.Result;
+            
+            var jsonObject = JObject.Parse(result);
+            var level = Convert.ToInt32(jsonObject["level"]);
+
+            AppData.CurVolunteer.Level = level;
+
             //Proceeds to get volunteer badges
             var volunteerBadgesTask = System.Threading.Tasks.Task.Run(async () =>
             {
@@ -142,7 +153,18 @@ namespace Volunesia.Droid.Activities
             return badges;
         }
 
-        
+        /// <summary>
+        /// Retrieves the volunteer's level from Firebase
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> GetVolunteerInfo()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+            FirebaseResponse volunteerLevel = await firebaseClient.GetAsync("users/" + AppData.CurUser.UID);
+            return volunteerLevel.Body;
+        }
+
 
         /// <summary>
         /// Retrieves a volunteer's list of badges from Firebase

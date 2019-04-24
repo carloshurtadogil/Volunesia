@@ -7,6 +7,7 @@ using System;
 using Volunesia.Services;
 using Volunesia.Droid.Activities;
 using Android.Graphics;
+using Android.Content;
 
 namespace Volunesia.Droid
 {
@@ -41,16 +42,19 @@ namespace Volunesia.Droid
                 Button loginButton = FindViewById<Button>(Resource.Id.loginButton);
                 Button signUpButton = FindViewById<Button>(Resource.Id.signupButton);
 
+
                 //ImageView volunesiaImage = FindViewById<ImageView>(Resource.Id.volunesiaLogoImage);
-                //Bitmap bitmap = BitmapFactory.DecodeResource(this.Resources, Resource.Mipmap.Icon);
+                //Bitmap bitmap = BitmapFactory.DecodeResource(this.Resources, Resource.Mipmap.volunteeringcert);
                 //Bitmap drawableBitmap = bitmap.Copy(Bitmap.Config.Argb8888, true);
                 //Canvas canvas = new Canvas(drawableBitmap);
                 //Paint paint = new Paint();
                 //paint.Color = Color.Black;
-                //paint.TextSize = 12;
+                //paint.TextSize = 40;
                 //paint.TextAlign = Paint.Align.Center;
                 
-                //canvas.DrawText("Main man right here", canvas.Width/2, canvas.Height/2, paint);
+                //canvas.DrawText("Muneer Tomeh", canvas.Width/2, (canvas.Height/3)+45, paint);
+                //canvas.DrawText("Volunteering 101", canvas.Width/3, (canvas.Height/2)+45, paint);
+                //canvas.DrawText("4 hours", (canvas.Width *2)/3, (canvas.Height/2)+45, paint);
 
                 //volunesiaImage.SetImageBitmap(drawableBitmap);
 

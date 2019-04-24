@@ -3,7 +3,8 @@
     android:orientation="vertical"
 	android:background="@mipmap/ombreback"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:gravity="center">
 	<Button
 		android:text="Update Email"
 		android:layout_width="match_parent"

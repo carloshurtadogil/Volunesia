@@ -5,16 +5,19 @@
 	android:background="@mipmap/ombreback"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:gravity="center"
 	android:minWidth="25px"
 	android:minHeight="25px">
 	<Switch
 		android:text="Helpful"
+		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/helpfulSwitch" />
 
 	<Switch
 		android:text="Positive"
+		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/positiveSwitch" />

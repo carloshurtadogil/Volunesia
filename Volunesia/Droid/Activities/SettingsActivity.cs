@@ -19,6 +19,7 @@ namespace Volunesia.Droid.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.SettingsPage);
 
             // Create your application here
             Button updateemailButton = FindViewById<Button>(Resource.Id.updateemailButton);

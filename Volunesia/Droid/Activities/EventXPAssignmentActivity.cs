@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Volunesia.Droid.Service;
 using Volunesia.Models;
@@ -30,16 +31,18 @@ namespace Volunesia.Droid.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             EventAttendees = new List<Attendee>();
+
+            SelectedEvent = JsonConvert.DeserializeObject<Event>(Intent.GetStringExtra("finishedEvent"));
             //e.g. for a sample event
-            SelectedEvent = new Event()
-            {
-                EventDate = DateTime.Parse("3/25/2019 8:00:00 AM"),
-                EventID = "5bee046e-c219-4456-b043-7a1c92186f3d",
-                EventName = "Coding 4 Vols",
-                HostID = "43513eed-c8c2-4e91-a9b3-303b29a9067d",
+            //SelectedEvent = new Event()
+            //{
+            //    EventDate = DateTime.Parse("3/25/2019 8:00:00 AM"),
+            //    EventID = "5bee046e-c219-4456-b043-7a1c92186f3d",
+            //    EventName = "Coding 4 Vols",
+            //    HostID = "43513eed-c8c2-4e91-a9b3-303b29a9067d",
                 
 
-            };
+            //};
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EventXPAssignment);
             mItems = new List<string>();
