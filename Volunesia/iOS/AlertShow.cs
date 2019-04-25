@@ -97,6 +97,41 @@ namespace Volunesia.iOS
             }
         }
 
+        public static void DisplayEmailPrompt(UIViewController inpView) 
+        {
+            UIAlertController alert = UIAlertController.Create("Please enter email to send a password reset", "", UIAlertControllerStyle.Alert);
+
+            alert.AddTextField((obj) => {});
+            alert.AddAction(UIAlertAction.Create("Send", UIAlertActionStyle.Default, (handler) => 
+            {
+                if(alert.TextFields != null)
+                {
+                    Print(alert.TextFields[0].Text);
+                    string email = alert.TextFields[0].Text;
+                    if ((email.Length > 3 ) && (email.Contains(".com") || email.Contains(".co") || email.Contains(".gov") || email.Contains(".edu")))
+                    {
+                        AppData_iOS.Auth.SendPasswordReset(alert.TextFields[0].Text, (error) =>
+                        {
+                            if (error != null)
+                            {
+                                Show(inpView, "Update Error", "Unable to send password reset email");
+                            }
+                            else
+                            {
+                                Show(inpView, true, "Password reset email sent", "");
+                            }
+                        });
+                    }
+                    else 
+                    {
+                        Show(inpView, "Invalid Email", ""); 
+                    }
+                }
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+            inpView.PresentViewController(alert, true, null);
+        }
+
         /// <summary>
         /// Print a message to the console
         /// </summary>

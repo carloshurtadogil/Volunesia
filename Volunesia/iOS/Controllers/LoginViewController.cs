@@ -100,5 +100,14 @@ namespace Volunesia.iOS
             }
             return false;
         }
+
+        /// <summary>
+        /// Send email to user if they forgot they password
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void ForgotPasswordButton_TouchUpInside(UIButton sender)
+        {
+            AlertShow.DisplayEmailPrompt(this);
+        }
     }
 }

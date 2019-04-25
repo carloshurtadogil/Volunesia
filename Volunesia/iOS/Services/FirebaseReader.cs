@@ -479,7 +479,7 @@ namespace Volunesia.iOS.Services
 
                         LevelUp lu = new LevelUp();
                         AlertShow.Print("Current Hours: " + hours);
-                        lu.CheckIfUserCanLevelUp(AppData.CurVolunteer, hours);
+                        //lu.CheckIfUserCanLevelUp(AppData.CurVolunteer, hours);
                     }
                 }
             },

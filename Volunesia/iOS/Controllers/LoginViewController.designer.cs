@@ -36,6 +36,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ForgotPasswordButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel PasswordLabel { get; set; }
 
         [Outlet]
@@ -53,6 +57,10 @@ namespace Volunesia.iOS
         [Action ("ContinueButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void ContinueButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("ForgotPasswordButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ForgotPasswordButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -79,6 +87,11 @@ namespace Volunesia.iOS
             if (EmailTextfield != null) {
                 EmailTextfield.Dispose ();
                 EmailTextfield = null;
+            }
+
+            if (ForgotPasswordButton != null) {
+                ForgotPasswordButton.Dispose ();
+                ForgotPasswordButton = null;
             }
 
             if (PasswordLabel != null) {

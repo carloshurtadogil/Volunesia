@@ -1123,6 +1123,15 @@
                                     <action selector="ContinueButton_TouchUpInside:" destination="23408" eventType="touchUpInside" id="24074"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="123490">
+                                <rect key="frame" x="54" y="246" width="138" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ContinueButton_TouchUpInside:" destination="123492" eventType="touchUpInside" id="123491"/>
+                                    <action selector="ForgotPasswordButton_TouchUpInside:" destination="23408" id="123493" eventType="touchUpInside"/>
+                                </connections>
+                                <state key="normal" title="Forgot Password"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1136,6 +1145,7 @@
                         <outlet property="PasswordTextfield" destination="23480" id="name-outlet-23480"/>
                         <outlet property="WelcomeBackLabel" destination="23911" id="name-outlet-23911"/>
                         <segue destination="17774" kind="show" identifier="LoginToWelcomeSegue_id" id="25001"/>
+                        <outlet property="ForgotPasswordButton" destination="123490" id="name-outlet-123490"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23410" userLabel="First Responder" sceneMemberID="firstResponder"/>
