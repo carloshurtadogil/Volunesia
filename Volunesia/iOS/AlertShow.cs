@@ -92,11 +92,23 @@ namespace Volunesia.iOS
                         Show(inpView, "To be implemented", "");
                     })); 
                 }
+                if (e.EventRoster != null && e.EventRoster.AttendeeList.Count > 0)
+                {
+
+                    alert.AddAction(UIAlertAction.Create("View Roster", UIAlertActionStyle.Default, (handler) => 
+                    {
+                        inpView.PerformSegue("ToRVCSegue_id", alert);
+                    })); 
+                }
                 alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                 inpView.PresentViewController(alert, true, null);
             }
         }
 
+        /// <summary>
+        /// Allow user to input an email to send a password reset email
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
         public static void DisplayEmailPrompt(UIViewController inpView) 
         {
             UIAlertController alert = UIAlertController.Create("Please enter email to send a password reset", "", UIAlertControllerStyle.Alert);

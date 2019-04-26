@@ -273,6 +273,11 @@
       <DependentUpon>VolunteerProfileViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\EmailHandler.cs" />
+    <Compile Include="Controllers\RosterViewController.cs" />
+    <Compile Include="Controllers\RosterViewController.designer.cs">
+      <DependentUpon>RosterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RosterDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

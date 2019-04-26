@@ -1032,7 +1032,6 @@
                                 <state key="normal" backgroundImage="Images/UploadImageBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="117846" eventType="touchUpInside" id="117845"/>
-                                    <segue destination="117848" kind="show" identifier="PSToWelcomeSegue_id" id="117847"/>
                                     <action selector="UploadImageButton_TouchUpInside:" destination="22817" id="117852" eventType="touchUpInside"/>
                                 </connections>
                             </button>
@@ -1130,7 +1129,9 @@
                                     <action selector="ContinueButton_TouchUpInside:" destination="123492" eventType="touchUpInside" id="123491"/>
                                     <action selector="ForgotPasswordButton_TouchUpInside:" destination="23408" id="123493" eventType="touchUpInside"/>
                                 </connections>
-                                <state key="normal" title="Forgot Password"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2103,6 +2104,7 @@
                         <outlet property="SignupButton" destination="89999" id="name-outlet-89999"/>
                         <outlet property="SwipeDownHandler" destination="89989" id="89988"/>
                         <segue destination="46439" kind="show" identifier="ToNonprofitVCSegue_id" id="90393"/>
+                        <segue id="127417" destination="127286" kind="show" identifier="ToRVCSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90042" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2227,6 +2229,107 @@
                 <swipeGestureRecognizer direction="down" id="105776"/>
             </objects>
             <point key="canvasLocation" x="3781" y="1473"/>
+        </scene>
+        <scene sceneID="127285">
+            <objects>
+                <viewController storyboardIdentifier="RosterView" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="127286" customClass="RosterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="127327"/>
+                        <viewControllerLayoutGuide type="bottom" id="127328"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="127319">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/Ombre BG.png" translatesAutoresizingMaskIntoConstraints="NO" id="127290">
+                                <rect key="frame" x="-4" y="-10" width="384" height="832"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="127288">
+                                <rect key="frame" x="0.0" y="20" width="46" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="127286" eventType="touchUpInside" id="127323"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="127312">
+                                <rect key="frame" x="104" y="53" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="127292">
+                                <rect key="frame" x="16" y="686" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="127300">
+                                <rect key="frame" x="16" y="335" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="129293">
+                                <rect key="frame" x="0.0" y="92" width="375" height="720"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttendeeItem" textLabel="129295" detailTextLabel="129296" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="129294">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="129294" id="129297">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="129295">
+                                                    <rect key="frame" x="15" y="20" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="129296">
+                                                    <rect key="frame" x="15" y="43.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="127316" appends="YES" id="127320"/>
+                            <outletCollection property="gestureRecognizers" destination="127322" appends="YES" id="127321"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="BackButton" destination="127288" id="127287"/>
+                        <outlet property="BackgroundImageView" destination="127290" id="127289"/>
+                        <outlet property="ContactEmailLabel" destination="127292" id="127291"/>
+                        <outlet property="EventDate" destination="127300" id="127299"/>
+                        <outlet property="EventLabel" destination="127312" id="name-outlet-127312"/>
+                        <outlet property="SwipeDownHandler" destination="127316" id="127315"/>
+                        <outlet property="AttendeesTableView" destination="129293" id="name-outlet-129293"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="127329" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="127316"/>
+                <swipeGestureRecognizer direction="right" id="127322"/>
+            </objects>
+            <point key="canvasLocation" x="4170" y="4904"/>
         </scene>
     </scenes>
     <resources>

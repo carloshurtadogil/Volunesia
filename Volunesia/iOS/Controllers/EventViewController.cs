@@ -106,6 +106,16 @@ namespace Volunesia.iOS
                     npvc.LoadView();
                 }
             }
+            else if(segue.Identifier == "ToRVCSegue_id")
+            {
+                var rvc = (RosterViewController)segue.DestinationViewController;
+                if(rvc != null)
+                {
+                    rvc.EventDetails = EventDetails;
+                    rvc.LoadView(); 
+                } 
+            }
+
         }
 
         /// <summary> 

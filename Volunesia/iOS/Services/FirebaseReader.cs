@@ -264,6 +264,71 @@ namespace Volunesia.iOS.Services
 
         }
 
+        /// <summary>
+        /// Reads the roster of a particular event
+        /// </summary>
+        /// <param name="RosterView">Roster view.</param>
+        public static void ReadRoster(string npid, string eid, UITableView RosterView)
+        {
+            Roster rosterlist = new Roster();
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                if(snapshot.Exists)
+                {
+                    var values = snapshot.GetValue<NSDictionary>();
+                    if(values != null)
+                    {
+                        var rostercheck = values["roster"].ToString();
+                        if (rostercheck != "0") 
+                        {
+                            AlertShow.Print("Reading Roster for event: " + eid );
+                            var roster = (NSDictionary)values["roster"];
+                            foreach(var key in roster.Keys)
+                            {
+                                var data = (NSDictionary)roster[key];
+                                var userid = key.ToString();
+                                var attended = data["attended"].ToString();
+                                var dt = data["checkintime"].ToString();
+                                var contact = data["contact"].ToString();
+                                var hourscompleted = Convert.ToInt32(data["hourscompleted"].ToString());
+                                var status = data["status"].ToString();
+
+                                bool attendedbool = false;
+                                AlertShow.Print(data.ToString());
+                                if(attended == "Y")
+                                {
+                                    attendedbool = true; 
+                                }
+
+                                Attendee attendee = new Attendee
+                                {
+                                    Attended = attendedbool,
+                                    UID = userid,
+                                    EmailAddress = contact,
+                                    HoursCompleted = hourscompleted,
+                                    ReservationStatus = status 
+                                };
+
+
+                                DateTime checkintime;
+                                if(DateTime.TryParse(dt, out checkintime))
+                                {
+                                    attendee.CheckInTime = checkintime;
+                                }
+                                //1/1/0001 12:00:00 AM is the default datetime since it is not nullable
+
+                                rosterlist.Add(attendee);
+
+                            }
+                            RosterDataSource source = new RosterDataSource(rosterlist);
+                            RosterView.Source = source;
+                            RosterView.ReloadData();
+                        } 
+                    } 
+                } 
+            });
+        }
+
 
         /// <summary>
         /// Reads the mission statement for a specific nonprofit.
