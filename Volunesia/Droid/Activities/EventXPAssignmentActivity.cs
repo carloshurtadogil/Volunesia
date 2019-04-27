@@ -66,7 +66,7 @@ namespace Volunesia.Droid.Activities
                 {
                     UID = attendee.Key,
                     EmailAddress = attendee.Value["contact"].ToString(),
-                    CheckInTime = Convert.ToDateTime(attendee.Value["checkintime"]),
+                    CheckInTime = Convert.ToDateTime(attendee.Value["checkintime"].ToString()),
                 };
 
                 //if the volunteer/attendee checked in before the event date,

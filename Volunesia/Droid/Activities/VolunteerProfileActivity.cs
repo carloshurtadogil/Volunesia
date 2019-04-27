@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Volunesia.Droid.Service;
 using Volunesia.Models;
@@ -21,7 +22,7 @@ namespace Volunesia.Droid.Activities
     [Activity(Label = "VolunteerProfileActivity")]
     public class VolunteerProfileActivity : Activity
     {
-
+        public Attendee SelectedAttendee { get; set; }
         public Volunteer CurrentVolunteer { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -30,6 +31,11 @@ namespace Volunesia.Droid.Activities
 
             SetContentView(Resource.Layout.VolunteerProfile);
 
+            if (AppData.CurUser.UserType.Equals("NP")) { 
+                SelectedAttendee = JsonConvert.DeserializeObject<Attendee>(Intent.GetStringExtra("chosenAttendeeVolunteer"));
+                AppData.CurVolunteer = new Volunteer();
+            }
+
             var volunteerInfo = System.Threading.Tasks.Task.Run(async () =>
             {
                 return await GetVolunteerInfo();
@@ -37,9 +43,14 @@ namespace Volunesia.Droid.Activities
             string result = volunteerInfo.Result;
             
             var jsonObject = JObject.Parse(result);
+            var firstName = jsonObject["first"].ToString();
+            var lastName = jsonObject["last"].ToString();
             var level = Convert.ToInt32(jsonObject["level"]);
+            var xp = Convert.ToDouble(jsonObject["xp"]);
+
 
             AppData.CurVolunteer.Level = level;
+            AppData.CurVolunteer.Experience = xp;
 
             //Proceeds to get volunteer badges
             var volunteerBadgesTask = System.Threading.Tasks.Task.Run(async () =>
@@ -66,16 +77,27 @@ namespace Volunesia.Droid.Activities
             
             //retrieve the TextView components then populate them
             var volunteerName = FindViewById<TextView>(Resource.Id.volunteerName);
+            var volunteerEmail = FindViewById<TextView>(Resource.Id.volunteerEmail);
             var volunteerLevel = FindViewById<TextView>(Resource.Id.volunteerLevel);
             var volunteerExperience = FindViewById<TextView>(Resource.Id.volunteerExperience);
             var volunteerPersonalDescription = FindViewById<TextView>(Resource.Id.volunteerPersonalDescription);
 
-            
-            volunteerName.Text = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
+            //if the cur user is a nonprofit, set the selected volunteer name as the one retrieved
+            if (AppData.CurUser.UserType.Equals("NP"))
+            {
+                volunteerName.Text = firstName + " " + lastName;
+                volunteerEmail.Text = SelectedAttendee.EmailAddress;
+            }
+            //else use AppData.CurUser's first name, last name, and email address
+            else
+            {
+                volunteerName.Text = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
+                volunteerEmail.Text = AppData.CurUser.EmailAddress;
+            }
             volunteerLevel.Text = "Level: " + Convert.ToString(AppData.CurVolunteer.Level);
             volunteerExperience.Text = "Experience:  " + Convert.ToString(AppData.CurVolunteer.Experience);
 
-            volunteerPersonalDescription.Text = AppData.CurVolunteer.PersonalDescription;
+            volunteerPersonalDescription.Text = "";
 
             
         }
@@ -159,10 +181,19 @@ namespace Volunesia.Droid.Activities
         /// <returns></returns>
         public async System.Threading.Tasks.Task<string> GetVolunteerInfo()
         {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse volunteerLevel = await firebaseClient.GetAsync("users/" + AppData.CurUser.UID);
-            return volunteerLevel.Body;
+            if (AppData.CurUser.UserType.Equals("V"))
+            {
+                IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+                IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+                FirebaseResponse volunteerInfo = await firebaseClient.GetAsync("users/" + AppData.CurUser.UID);
+                return volunteerInfo.Body;
+
+            }
+            IFirebaseConfig otherConfig = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient otherFirebaseClient = new FireSharp.FirebaseClient(otherConfig);
+            FirebaseResponse otherVolunteerInfo = await otherFirebaseClient.GetAsync("users/" + SelectedAttendee.UID);
+            return otherVolunteerInfo.Body;
+
         }
 
 
@@ -172,13 +203,23 @@ namespace Volunesia.Droid.Activities
         /// <returns></returns>
         public async System.Threading.Tasks.Task<string> GetVolunteerBadgesAsync()
         {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
-            FirebaseResponse volunteerBadgeResponse = await firebaseClient.GetAsync("badges/" + AppData.CurUser.UID);
+            if (AppData.CurUser.UserType.Equals("V"))
+            {
 
-            return volunteerBadgeResponse.Body;
+                IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+                IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 
+                FirebaseResponse volunteerBadgeResponse = await firebaseClient.GetAsync("badges/" + AppData.CurUser.UID);
+
+                return volunteerBadgeResponse.Body;
+
+            }
+            IFirebaseConfig otherConfig = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient otherFirebaseClient = new FireSharp.FirebaseClient(otherConfig);
+
+            FirebaseResponse otherVolunteerBadgeResponse = await otherFirebaseClient.GetAsync("badges/" + SelectedAttendee.UID);
+            return otherVolunteerBadgeResponse.Body;
 
         }
 

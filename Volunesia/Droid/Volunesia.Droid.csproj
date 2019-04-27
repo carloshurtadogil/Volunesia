@@ -206,6 +206,7 @@
     <Compile Include="Activities\NPProfileFragment.cs" />
     <Compile Include="Activities\PastEventActivity.cs" />
     <Compile Include="Activities\RegisterActivity.cs" />
+    <Compile Include="Activities\RosterViewActivity.cs" />
     <Compile Include="Activities\SchoolNonprofitRegisterActivity.cs" />
     <Compile Include="Activities\SecondRegisterActivity.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
@@ -382,6 +383,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\signupButtonImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\RosterView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -25,6 +25,7 @@ namespace Volunesia.Droid.Activities
     {
         public Event SelectedEvent { get; set; }
         public Button ApplyOrDeleteButton { get; set; }
+        public Button CheckAttendeesForEventButton { get; set; }
         public int FoundPosition { get; set; } //gets the volunteer's position in waitlist if placed in waitlist
         public String WLID { get; set; }
 
@@ -48,9 +49,7 @@ namespace Volunesia.Droid.Activities
 
             SelectedEvent.EventDate = Convert.ToDateTime(eventInfoAsJson["eventdate"].ToString());
             var rosterChecker = eventInfoAsJson["roster"].ToString();
-            var waitlistChecker = eventInfoAsJson["waitlist"].ToString();
 
-            var waitlistID = eventInfoAsJson["wlid"];
 
             SetContentView(Resource.Layout.Event);
             //retrieve the event name field
@@ -64,18 +63,32 @@ namespace Volunesia.Droid.Activities
             eventDescriptionField.Text = SelectedEvent.EventDescription;
 
             ApplyOrDeleteButton = FindViewById<Button>(Resource.Id.applyOrDeleteButton);
+            CheckAttendeesForEventButton = FindViewById<Button>(Resource.Id.checkAttendeesInRosterButton);
 
             JObject roster = null;
             JObject waitlist = null;
 
-            //Checks if the user type is a nonprofit to allow deletion of an event
+            //Checks if the user type is a nonprofit to allow for further options
             if (AppData.CurUser.UserType.Equals("NP") && AppData.NonprofitRepresentative.AssociatedNonprofit.Equals(SelectedEvent.HostID))
             {
-                if(DateTime.Compare(SelectedEvent.EventEndDate, DateTime.Now) < 0)
+                //if the roster is not empty, allow nonprofit to click See Attendees Button
+                if (!rosterChecker.Equals("0"))
+                {
+                    roster = (JObject)eventInfoAsJson["roster"];
+                    AddAttendeesToRoster(roster);
+
+                    CheckAttendeesForEventButton.Text = "See Attendees";
+                    CheckAttendeesForEventButton.Visibility = ViewStates.Visible;
+                    CheckAttendeesForEventButton.Click += CheckAttendeesForEvent;
+                }
+                //if the end date is greater than the current date time, allow nonprofit org to 
+                //click Generate XP
+                if (DateTime.Compare(SelectedEvent.EventEndDate, DateTime.Now) < 0)
                 {
                     ApplyOrDeleteButton.Text = "Generate XP";
                     ApplyOrDeleteButton.Visibility = ViewStates.Visible;
                 }
+                //else, allow nonprofit org to click Delete Event
                 else
                 {
                     ApplyOrDeleteButton.Text = "Delete Event";
@@ -93,7 +106,7 @@ namespace Volunesia.Droid.Activities
                 {
                     roster = (JObject)eventInfoAsJson["roster"];
                     volunteerInRoster = CheckIfVolunteerIsInRoster(roster);
-                    //AddAttendeesToRoster(roster);
+                    AddAttendeesToRoster(roster);
                 }
 
                 //if the volunteer is in the roster, proceed to check if the volunteer has checked in
@@ -189,14 +202,6 @@ namespace Volunesia.Droid.Activities
             {
                 this.RemoveFromRoster();
             }
-            else if (ApplyOrDeleteButton.Text.Equals("Waitlist for Event"))
-            {
-                this.WaitlistForEvent();
-            }
-            else if (ApplyOrDeleteButton.Text.Equals("Drop from Waitlist"))
-            {
-                this.DropFromWaitlist();
-            }
             else if (ApplyOrDeleteButton.Text.Equals("Check-in"))
             {
                 this.Checkin();
@@ -204,16 +209,18 @@ namespace Volunesia.Droid.Activities
 
         }
 
-        //Proceeds to execute the remove volunteer from waitlist
-        //upon clicking the "Drop from Waitlist" button
-        public void DropFromWaitlist()
+        /// <summary>
+        /// Proceeds to showcase the page that contains the attendees for a particular event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void CheckAttendeesForEvent(object sender, EventArgs e)
         {
-            var dropFromWaitlistTask = System.Threading.Tasks.Task.Run(async () =>
-            {
-                await RemoveVolunteerFromWaitlist();
-            });
+            var intent = new Intent(this, typeof(RosterViewActivity));
+            intent.PutExtra("chosenEvent", JsonConvert.SerializeObject(SelectedEvent));
+            StartActivity(intent);
         }
-
+        
         /// <summary>
         /// Proceeds to visit the EventXPAssignment activity for the nonprofit to assign 
         /// xp to volunteers
@@ -257,18 +264,6 @@ namespace Volunesia.Droid.Activities
 
             });
             dialogAlertConstruction.Show();
-        }
-
-        //Proceeds to execute the add volunteer to waitlist
-        //upon clicking the "Waitlist for Event button"
-        public void WaitlistForEvent()
-        {
-            var waitlistForEventTask = System.Threading.Tasks.Task.Run(async () =>
-            {
-
-                await AddVolunteerToWaitlist(Convert.ToInt32(WLID));
-
-            });
         }
 
         //Proceeds to execute the remove volunteer from roster upon
@@ -462,19 +457,6 @@ namespace Volunesia.Droid.Activities
             return false;
         }
 
-        //Checks if a volunteer exists in a wailists
-        public bool CheckIfVolunteerIsInWaitlist(JObject waitlist)
-        {
-            foreach(var waitlistedAttendee in waitlist)
-            {
-                if (waitlistedAttendee.Value.ToString().Equals(AppData.CurUser.UID))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         //Proceeds to add a volunteer to the event's roster
         public async System.Threading.Tasks.Task<string> AddVolunteerToEventRoster()
         {
@@ -543,35 +525,7 @@ namespace Volunesia.Droid.Activities
             return null;
         }
 
-
-        //Proceeds to add a volunteer to the waitlist of an event
-        public async System.Threading.Tasks.Task AddVolunteerToWaitlist(int wlid)
-        {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-
-            //increment the waitlist id which serves as the next id that will be generated 
-            wlid++;
-            //Create a dictionary which stores the auto increment id and the UID of the volunteer that will be added
-            Dictionary<string, string> waitlistedAttendee = new Dictionary<string, string>();
-            waitlistedAttendee.Add(Convert.ToString(wlid), AppData.CurUser.UID);
-
-            PushResponse addVolToWaitlist = await firebaseClient.PushAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/waitlist/", waitlistedAttendee);
-
-        }
-
-        //Proceeds to remove a volunteer from the wailist of an event
-        public async System.Threading.Tasks.Task<string> RemoveVolunteerFromWaitlist()
-        {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            FirebaseResponse deleteVolFromWaitlist = await firebaseClient.DeleteAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/waitlist/" + FoundPosition);
-
-            return deleteVolFromWaitlist.Body;
-
-        }
-
-
+        
         //Proceeds to retrieve the roster and waitlist
         public async System.Threading.Tasks.Task<string> GetRosterAndWaitlist()
         {
