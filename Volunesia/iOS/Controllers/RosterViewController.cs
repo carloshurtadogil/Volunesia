@@ -22,7 +22,7 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
             EventLabel.Text = EventDetails.EventName;
-            FirebaseReader.ReadRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, EventDetails.EventID, AttendeesTableView);
+            FirebaseReader.ReadRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, EventDetails.EventID, AttendeesTableView, this);
         }
 
         /// <summary>

@@ -1,35 +1,34 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.08C5A7AC-15E9-44EC-A6AF-6EF64CC032AD" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/RosterDataSource.cs">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Volunesia/Models/Attendee.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
-      <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="75" Column="10" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="271" Column="75" />
-      <File FileName="iOS/Controllers/EventViewController.cs" Line="115" Column="36" />
-      <File FileName="iOS/AlertShow.cs" Line="101" Column="26" />
-      <File FileName="iOS/Controllers/LoginViewController.cs" Line="110" Column="48" />
-      <File FileName="iOS/Controllers/SettingsChangeViewController.cs" Line="109" Column="17" />
-      <File FileName="iOS/Controllers/RosterViewController.cs" Line="26" Column="48" />
-      <File FileName="iOS/Services/RosterDataSource.cs" Line="23" Column="57" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="678" Column="41" />
+      <File FileName="iOS/Controllers/RosterViewController.cs" Line="25" Column="138" />
+      <File FileName="iOS/Services/RosterDataSource.cs" Line="83" Column="14" />
       <File FileName="iOS/Controllers/HomeViewController.cs" Line="149" Column="46" />
-      <File FileName="Volunesia/Models/Roster.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="iOS/Services/PastEventsDataSource.cs" Line="10" Column="39" />
+      <File FileName="iOS/Services/PastEventsDataSource.cs" Line="34" Column="9" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="66" Column="14" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="42" Column="54" />
+      <File FileName="iOS/Services/AllEventsDataSource.cs" Line="63" Column="57" />
+      <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="141" Column="1" />
+      <File FileName="Volunesia/Models/Attendee.cs" Line="21" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Volunesia" expanded="True">
             <Node name="Volunesia" expanded="True">
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Attendee.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="RosterDataSource.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -37,7 +36,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

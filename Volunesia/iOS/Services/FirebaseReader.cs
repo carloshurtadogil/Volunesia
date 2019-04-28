@@ -213,6 +213,7 @@ namespace Volunesia.iOS.Services
                                     bool attended = false;
                                     var hourscompleted = Convert.ToInt32(volunteerinfo["hourscompleted"].ToString());
                                     var status = volunteerinfo["status"].ToString();
+                                    var name = volunteerinfo["name"].ToString();
 
                                     if (attendedString == "Y")
                                     {
@@ -224,7 +225,8 @@ namespace Volunesia.iOS.Services
                                         UID = vid.ToString(),
                                         Attended = attended,
                                         HoursCompleted = hourscompleted,
-                                        ReservationStatus = status
+                                        ReservationStatus = status,
+                                        Name = name
                                     };
                                     roster.Add(attendee);
                                 }
@@ -268,7 +270,7 @@ namespace Volunesia.iOS.Services
         /// Reads the roster of a particular event
         /// </summary>
         /// <param name="RosterView">Roster view.</param>
-        public static void ReadRoster(string npid, string eid, UITableView RosterView)
+        public static void ReadRoster(string npid, string eid, UITableView RosterView, UIViewController RosterVC)
         {
             Roster rosterlist = new Roster();
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) => 
@@ -292,6 +294,7 @@ namespace Volunesia.iOS.Services
                                 var contact = data["contact"].ToString();
                                 var hourscompleted = Convert.ToInt32(data["hourscompleted"].ToString());
                                 var status = data["status"].ToString();
+                                var name = data["name"].ToString();
 
                                 bool attendedbool = false;
                                 AlertShow.Print(data.ToString());
@@ -306,7 +309,8 @@ namespace Volunesia.iOS.Services
                                     UID = userid,
                                     EmailAddress = contact,
                                     HoursCompleted = hourscompleted,
-                                    ReservationStatus = status 
+                                    ReservationStatus = status,
+                                    Name = name 
                                 };
 
 
@@ -320,7 +324,7 @@ namespace Volunesia.iOS.Services
                                 rosterlist.Add(attendee);
 
                             }
-                            RosterDataSource source = new RosterDataSource(rosterlist);
+                            RosterDataSource source = new RosterDataSource(rosterlist, RosterVC);
                             RosterView.Source = source;
                             RosterView.ReloadData();
                         } 
@@ -453,22 +457,44 @@ namespace Volunesia.iOS.Services
         /// <param name="label">The UILabel to be updated.</param>
         public static void ReadContactEmail(string npid, UILabel label)
         {
+            AlertShow.Print("ReadingContactEmail for nonprofit: " + npid);
             AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                var data = snapshot.GetValue<NSDictionary>();
-                if(data != null) 
+                if(snapshot.Exists)
                 {
-                    var primarycontact = data["primarycontact"].ToString();
-                    AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value, (snapshot2) =>
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if (data != null)
                     {
-                        var data2 = snapshot2.GetValue<NSDictionary>();
-                        var email = data2["email"].ToString();
-                        label.Text = email;
-                    });
+                        var primarycontact = data["primarycontact"].ToString();
+                        AppData_iOS.UsersNode.GetChild(primarycontact).ObserveEvent(DataEventType.Value, (snapshot2) =>
+                        {
+                            if(snapshot2.Exists)
+                            {
+                                var data2 = snapshot2.GetValue<NSDictionary>();
+                                if(data2 != null)
+                                {
+                                    var email = data2["email"].ToString();
+                                    label.Text = email;
+                                }
+                                else
+                                {
+                                    AlertShow.Print("FirebaseReader.ReadContactEmail: Empty Data2");
+                                }
+                            }
+                            else
+                            {
+                                AlertShow.Print("FirebaseReader.ReadContactEmail: Null snapshot2");
+                            }
+                        });
+                    }
+                    else
+                    {
+                        AlertShow.Print("FirebaseReader.ReadContactEmail has null value");
+                    }
                 }
-                else 
+                else
                 {
-                    AlertShow.Print("FirebaseReader.ReadContactEmail has null value"); 
+                    AlertShow.Print("FirebaseReader.ReadContactEmail: Null snapshot"); 
                 }
             });
         }
@@ -659,8 +685,9 @@ namespace Volunesia.iOS.Services
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) =>
             {
                 var data = snapshot.GetValue<NSDictionary>();
-                object[] keys = { "attended", "checkintime", "contact","hourscompleted", "status" };
-                object[] vals = { "N", "00", vol.EmailAddress, 0, "Will Attend" };
+                var uname = vol.FirstName + " " + vol.LastName;
+                object[] keys = { "attended", "checkintime", "contact","hourscompleted", "status", "name" };
+                object[] vals = { "N", "00", vol.EmailAddress, 0, "Will Attend", uname };
                 var urosteritem = NSDictionary.FromObjectsAndKeys(vals, keys);
 
                 var roster = data["roster"].ToString();

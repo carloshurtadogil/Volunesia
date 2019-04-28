@@ -60,6 +60,7 @@ namespace Volunesia.iOS.Services
                     Event e = AppData_iOS.NonprofitEvents[i];
                     NPProfileViewController npvc = (NPProfileViewController)HomeController;
                     npvc.Event = e;
+                    AppData_iOS.EventDate = e.EventDate;
                     npvc.PerformSegue("ToEventSegue_id", HomeController);
                 }
             }

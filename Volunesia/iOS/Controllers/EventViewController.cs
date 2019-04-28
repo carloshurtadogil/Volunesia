@@ -54,8 +54,13 @@ namespace Volunesia.iOS
                 if (AppData.NonprofitRepresentative.AssociatedNonprofit == EventDetails.HostID && AppData.NonprofitRepresentative.Poster == "Y")// Evaluate if the user has the proper permissions to edit
                 {
                     EditButton.Enabled = true; 
-                    EditButton.Hidden = false; 
-
+                    EditButton.Hidden = false;
+                    ContactEmailLabel.Text = AppData.CurUser.EmailAddress;
+                    string formattedEventDate = DateFormatter.FormatEventTimeTextfield(AppData_iOS.EventDate);
+                    if (formattedEventDate.Length > 0)
+                    {
+                        EventDate.Text = formattedEventDate;
+                    }
                     //Enabled = true;
                     //SignupButton.Hidden = false;
                 }

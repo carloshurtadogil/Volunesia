@@ -9,14 +9,16 @@ namespace Volunesia.iOS.Services
     public class RosterDataSource : UITableViewSource
     {
         private Roster Roster;
+        private UIViewController RosterVC;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Volunesia.iOS.Services.RosterDataSource"/> class.
         /// </summary>
         /// <param name="roster">Roster.</param>
-        public RosterDataSource(Roster roster)
+        public RosterDataSource(Roster roster, UIViewController inpView)
         {
-            this.Roster = roster;
+            Roster = roster;
+            RosterVC = inpView;
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace Volunesia.iOS.Services
                 if(index < list.Count)
                 {
                     Attendee a = list[index];
-                    cell.TextLabel.Text = a.UID;
+                    cell.TextLabel.Text = a.Name;
                     cell.DetailTextLabel.Text = a.EmailAddress; 
                 }
             }
@@ -58,6 +60,28 @@ namespace Volunesia.iOS.Services
             {
                 return 0;//Default case 
             }
+        }
+
+        /// <summary>
+        /// What to do when a row has been selected
+        /// </summary>
+        /// <param name="tableView">Table view.</param>
+        /// <param name="indexPath">Index path.</param>
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            int i = indexPath.Row;
+
+            if (Roster.AttendeeList != null)
+            {
+                List<Attendee> list = Roster.AttendeeList;
+                int index = indexPath.Row;
+                if (index < list.Count)
+                {
+                    Attendee a = list[index];
+                    AlertShow.Show(RosterVC, a.UID, "");
+                }
+            }
+            //AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
         }
     }
 }

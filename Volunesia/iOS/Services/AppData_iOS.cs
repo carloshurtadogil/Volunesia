@@ -39,7 +39,7 @@ namespace Volunesia.iOS.Services
         //List of all events the volunteer has attended
         public static List<Event> VolunteerAttendedEvents { get; set; }
 
-
+        public static DateTime EventDate { get; set; }
 
         //Configure the nodes
         private AppData_iOS()
