@@ -2139,7 +2139,7 @@
                                     <action selector="BackButton_TouchUpInside:" destination="105766" eventType="touchUpInside" id="105788"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_5287.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="107029">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="107029">
                                 <rect key="frame" x="90" y="58" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

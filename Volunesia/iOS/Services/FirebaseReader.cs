@@ -124,6 +124,7 @@ namespace Volunesia.iOS.Services
                     if(data != null)
                     {
                         var personalstatement = data["personalstatement"].ToString();
+                        var image = data["profileimg"].ToString();
                         var firstname = data["first"].ToString();
                         var lastname = data["last"].ToString();
                         AlertShow.Print("Current Personal Statement of user: " + uid + "\n     " + AppData.CurUser.PersonalStatement);
@@ -140,8 +141,17 @@ namespace Volunesia.iOS.Services
                             FirstName = firstname,
                             LastName = lastname
                         };
-                        inpView.Volunteer = vol;
-                        inpView.PerformSegue("ToVolunteerFromNPSegue_id", inpView);
+
+                        if(image == "standard")
+                        {
+                            inpView.Volunteer = vol;
+                            inpView.PerformSegue("ToVolunteerFromNPSegue_id", inpView);
+                        }
+                        else
+                        {
+                            FirebaseStorageServices.RetrieveImage(image, inpView, vol); 
+                        }
+
                     }
                     else
                     {

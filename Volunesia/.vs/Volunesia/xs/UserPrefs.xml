@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AlertShow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/VolunteerProfileViewController.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
       <File FileName="iOS/Controllers/RosterViewController.cs" Line="32" Column="62" />
@@ -8,15 +8,15 @@
       <File FileName="iOS/Main.cs" Line="17" Column="1" />
       <File FileName="iOS/Services/PastEventsDataSource.cs" Line="34" Column="9" />
       <File FileName="iOS/Controllers/EventViewController.cs" Line="66" Column="14" />
-      <File FileName="iOS/Services/AppData_iOS.cs" Line="67" Column="57" />
+      <File FileName="iOS/Services/AppData_iOS.cs" Line="1" Column="1" />
       <File FileName="iOS/Services/AllEventsDataSource.cs" Line="63" Column="57" />
       <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="31" Column="52" />
       <File FileName="Volunesia/Models/Attendee.cs" Line="22" Column="41" />
-      <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="31" Column="60" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="310" Column="48" />
-      <File FileName="iOS/Services/FirebaseStorageServices.cs" Line="24" Column="85" />
-      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="237" Column="65" />
+      <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="1" Column="12" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="700" Column="26" />
+      <File FileName="iOS/Services/FirebaseStorageServices.cs" Line="55" Column="39" />
       <File FileName="iOS/AlertShow.cs" Line="101" Column="26" />
+      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="1" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,10 +27,11 @@
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="VolunteerProfileViewController.cs" selected="True" />
+              </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="AlertShow.cs" selected="True" />
             </Node>
           </Node>
         </State>

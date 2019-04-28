@@ -1,3 +1,4 @@
+using Foundation;
 using System;
 using UIKit;
 using Volunesia.Models;
@@ -10,6 +11,7 @@ namespace Volunesia.iOS
     {
 
         public Volunteer Volunteer { get; set; }
+        public UIImage Image { get; set; }
 
         public int count = 0;
         public VolunteerProfileViewController (IntPtr handle) : base (handle)
@@ -28,7 +30,8 @@ namespace Volunesia.iOS
                 if(AppData.CurUser.UserType == "NP")
                 {
                     LoadInformationNp();
-                    FirebaseStorageServices.RetrieveImage("/Images/nonprofiteventimages/93ed1f21-428b-4cab-bb03-49a72aa70646", ProfileImageView);
+                    //FirebaseStorageServices.RetrieveImage("/Images/nonprofiteventimages/93ed1f21-428b-4cab-bb03-49a72aa70646", ProfileImageView);
+                    AlertShow.Print("Current ID: "+ AppData.CurUser.UID);
                 } 
                 else
                 {
@@ -43,6 +46,7 @@ namespace Volunesia.iOS
                     LoadInformation();
                     LoadBadges();
                 }
+
             }
 
             DismissKeyboardHandler();
@@ -73,12 +77,29 @@ namespace Volunesia.iOS
                 ExperienceLabel.Text = "Experience: " + 99789; //+ AppData.CurVolunteer.Experience;
                 LevelLabel.Text = "Level: " + 99; //+ AppData.CurVolunteer.Experience;
             }
+
+            if(Image != null)
+            {
+                ProfileImageView.Image = Image; 
+            }
+            else
+            {
+                AlertShow.Print("Image is null (VolunteerProfileViewController)"); 
+            }
         }
 
         public void LoadInformationNp()
         {
             NameLabel.Text = Volunteer.FirstName + " " + Volunteer.LastName;
             FirebaseReader.ReadPersonalStatement(Volunteer.UID, PersonalStatementTextview);
+            if (Image != null)
+            {
+                ProfileImageView.Image = Image;
+            }
+            else
+            {
+                AlertShow.Print("Image is null (VolunteerProfileViewController)");
+            }
         }
 
         /// <summary>

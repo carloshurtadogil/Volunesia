@@ -3,6 +3,7 @@ using Firebase.Storage;
 using Foundation;
 using System.Threading.Tasks;
 using UIKit;
+using Volunesia.Models;
 
 namespace Volunesia.iOS.Services
 {
@@ -68,6 +69,38 @@ namespace Volunesia.iOS.Services
             });
             AlertShow.Print("Returned");
             return image; 
+        }
+
+        /// <summary>
+        /// Retrieve an image from a particular directory in Firebase Storage
+        /// </summary>
+        /// <returns>The image.</returns>
+        /// <param name="path">Path.</param>
+        public static UIImage RetrieveImage(string path, RosterViewController rvc, Volunteer vol)
+        {
+            //Create a reference to file to be downloaded
+            StorageReference reference = AppData_iOS.StorageRootReference.GetChild(path);
+
+            UIImage image = null;
+            //Dowload in memory with maximum allowed size of 1MB (1 * 11024 * 1024 bytes)
+            reference.GetData(50000000, (data, error) =>
+            {
+                if (error != null)
+                {
+                    AlertShow.Print(error.ToString());
+                    //error has occurred
+                    AlertShow.Print("Error retrieving image at \'" + path + "\'");
+                    return;
+                }
+                AlertShow.Print("Reached");
+                //Image data is returned
+                rvc.Volunteer = vol;
+                rvc.Image = UIImage.LoadFromData(data);
+                rvc.PerformSegue("ToVolunteerFromNPSegue_id", rvc);
+
+            });
+            AlertShow.Print("Returned");
+            return image;
         }
     }
 }

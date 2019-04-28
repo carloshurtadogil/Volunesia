@@ -11,6 +11,7 @@ namespace Volunesia.iOS
     {
         public Event EventDetails { get; set; }
         public Volunteer Volunteer { get; set; }
+        public UIImage Image { get; set; }
         public RosterViewController (IntPtr handle) : base (handle)
         {
         }
@@ -35,6 +36,7 @@ namespace Volunesia.iOS
                 if (vpvc != null)
                 {
                     vpvc.Volunteer = Volunteer;
+                    vpvc.Image = Image;
                     vpvc.LoadView(); 
                 }
             }
