@@ -8,6 +8,9 @@ namespace Volunesia.iOS
 {
     public partial class VolunteerProfileViewController : UIViewController
     {
+
+        public Volunteer Volunteer { get; set; }
+
         public int count = 0;
         public VolunteerProfileViewController (IntPtr handle) : base (handle)
         {
@@ -20,17 +23,29 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            FirebaseReader.ReadVolunteer(AppData.CurUser.UID);
-
-            if(count == 0)
+            if(AppData.CurUser != null)
             {
-                //EmailHandler.WriteCertificate("");
-                count++;
+                if(AppData.CurUser.UserType == "NP")
+                {
+                    LoadInformationNp(); 
+                } 
+                else
+                {
+                    FirebaseReader.ReadVolunteer(AppData.CurUser.UID);
+
+                    if (count == 0)
+                    {
+                        //EmailHandler.WriteCertificate("");
+                        count++;
+                    }
+
+                    LoadInformation();
+                    LoadBadges();
+                }
             }
 
-            LoadInformation();
             DismissKeyboardHandler();
-            LoadBadges();
+
         }
 
         /// <summary>
@@ -57,6 +72,12 @@ namespace Volunesia.iOS
                 ExperienceLabel.Text = "Experience: " + 99789; //+ AppData.CurVolunteer.Experience;
                 LevelLabel.Text = "Level: " + 99; //+ AppData.CurVolunteer.Experience;
             }
+        }
+
+        public void LoadInformationNp()
+        {
+            NameLabel.Text = Volunteer.FirstName + " " + Volunteer.LastName;
+            FirebaseReader.ReadPersonalStatement(Volunteer.UID, PersonalStatementTextview);
         }
 
         /// <summary>

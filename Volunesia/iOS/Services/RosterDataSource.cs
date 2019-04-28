@@ -9,13 +9,13 @@ namespace Volunesia.iOS.Services
     public class RosterDataSource : UITableViewSource
     {
         private Roster Roster;
-        private UIViewController RosterVC;
+        private RosterViewController RosterVC;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Volunesia.iOS.Services.RosterDataSource"/> class.
         /// </summary>
         /// <param name="roster">Roster.</param>
-        public RosterDataSource(Roster roster, UIViewController inpView)
+        public RosterDataSource(Roster roster, RosterViewController inpView)
         {
             Roster = roster;
             RosterVC = inpView;
@@ -78,7 +78,7 @@ namespace Volunesia.iOS.Services
                 if (index < list.Count)
                 {
                     Attendee a = list[index];
-                    AlertShow.Show(RosterVC, a.UID, "");
+                    FirebaseReader.ReadVolunteerInformation(a.UID, RosterVC);
                 }
             }
             //AlertShow.Show(HomeController, "View Event Controller", "To be implemented");

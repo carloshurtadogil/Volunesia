@@ -10,6 +10,7 @@ namespace Volunesia.iOS
     public partial class RosterViewController : UIViewController
     {
         public Event EventDetails { get; set; }
+        public Volunteer Volunteer { get; set; }
         public RosterViewController (IntPtr handle) : base (handle)
         {
         }
@@ -23,6 +24,20 @@ namespace Volunesia.iOS
             base.ViewDidAppear(animated);
             EventLabel.Text = EventDetails.EventName;
             FirebaseReader.ReadRoster(AppData.NonprofitRepresentative.AssociatedNonprofit, EventDetails.EventID, AttendeesTableView, this);
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+            if(segue.Identifier == "ToVolunteerFromNPSegue_id")
+            {
+                var vpvc = (VolunteerProfileViewController)segue.DestinationViewController;
+                if (vpvc != null)
+                {
+                    vpvc.Volunteer = Volunteer;
+                    vpvc.LoadView(); 
+                }
+            }
         }
 
         /// <summary>

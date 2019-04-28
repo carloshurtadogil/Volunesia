@@ -2323,13 +2323,14 @@
                         <outlet property="EventLabel" destination="127312" id="name-outlet-127312"/>
                         <outlet property="SwipeDownHandler" destination="127316" id="127315"/>
                         <outlet property="AttendeesTableView" destination="129293" id="name-outlet-129293"/>
+                        <segue id="136300" destination="105766" kind="show" identifier="ToVolunteerFromNPSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="127329" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="127316"/>
                 <swipeGestureRecognizer direction="right" id="127322"/>
             </objects>
-            <point key="canvasLocation" x="4170" y="4904"/>
+            <point key="canvasLocation" x="4298" y="4846"/>
         </scene>
     </scenes>
     <resources>

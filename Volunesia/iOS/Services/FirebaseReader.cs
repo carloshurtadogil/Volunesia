@@ -109,6 +109,52 @@ namespace Volunesia.iOS.Services
             }); 
         }
 
+        /// <summary>
+        /// Reads a volunteer's information if the user is a nonprofit.
+        /// </summary>
+        /// <param name="uid">Uid.</param>
+        /// <param name="inpView">Inp view.</param>
+        public static void ReadVolunteerInformation(string uid, RosterViewController inpView)
+        {
+            AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                if(snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    {
+                        var personalstatement = data["personalstatement"].ToString();
+                        var firstname = data["first"].ToString();
+                        var lastname = data["last"].ToString();
+                        AlertShow.Print("Current Personal Statement of user: " + uid + "\n     " + AppData.CurUser.PersonalStatement);
+                        var level = Convert.ToInt32(data["level"].ToString());
+                        var xp = Convert.ToInt32(data["xp"].ToString());
+                        List<BadgeCategory.Badge> badges = new List<BadgeCategory.Badge>();
+                        Volunteer vol = new Volunteer
+                        {
+                            UID = uid,
+                            Level = level,
+                            Experience = xp,
+                            BadgeList = badges,
+                            PersonalStatement = personalstatement,
+                            FirstName = firstname,
+                            LastName = lastname
+                        };
+                        inpView.Volunteer = vol;
+                        inpView.PerformSegue("ToVolunteerFromNPSegue_id", inpView);
+                    }
+                    else
+                    {
+                        AlertShow.Print("FirebaseReader.ReadVolunteerInformation: data is null");
+                    }
+                }
+                else
+                {
+                    AlertShow.Print("FirebaseReader.ReadVolunteerInformation: snapshot does not exist"); 
+                } 
+            }); 
+        }
+
         public static void ReadPersonalStatement(string uid, UITextView textview)
         {
             AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) =>
@@ -270,7 +316,7 @@ namespace Volunesia.iOS.Services
         /// Reads the roster of a particular event
         /// </summary>
         /// <param name="RosterView">Roster view.</param>
-        public static void ReadRoster(string npid, string eid, UITableView RosterView, UIViewController RosterVC)
+        public static void ReadRoster(string npid, string eid, UITableView RosterView, RosterViewController RosterVC)
         {
             Roster rosterlist = new Roster();
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).ObserveEvent(DataEventType.Value, (snapshot) => 
