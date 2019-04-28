@@ -48,6 +48,7 @@ namespace Volunesia.Droid.Activities
             var eventInfoAsJson = JObject.Parse(eventResult);
 
             SelectedEvent.EventDate = Convert.ToDateTime(eventInfoAsJson["eventdate"].ToString());
+            SelectedEvent.EventEndDate = Convert.ToDateTime(eventInfoAsJson["eventenddate"].ToString());
             var rosterChecker = eventInfoAsJson["roster"].ToString();
 
 
@@ -83,7 +84,7 @@ namespace Volunesia.Droid.Activities
                 }
                 //if the end date is greater than the current date time, allow nonprofit org to 
                 //click Generate XP
-                if (DateTime.Compare(SelectedEvent.EventEndDate, DateTime.Now) < 0)
+                if (DateTime.Compare(SelectedEvent.EventEndDate, DateTime.Now) > 0)
                 {
                     ApplyOrDeleteButton.Text = "Generate XP";
                     ApplyOrDeleteButton.Visibility = ViewStates.Visible;
