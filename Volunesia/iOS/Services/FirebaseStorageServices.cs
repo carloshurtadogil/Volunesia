@@ -51,12 +51,12 @@ namespace Volunesia.iOS.Services
             StorageReference reference = AppData_iOS.StorageRootReference.GetChild(path);
 
             UIImage image = null;
-
             //Dowload in memory with maximum allowed size of 1MB (1 * 11024 * 1024 bytes)
-            reference.GetData(1*1024*1024,(data, error) => 
+            reference.GetData(50000000, (data, error) => 
             {
                 if(error != null)
                 {
+                    AlertShow.Print(error.ToString());
                     //error has occurred
                     AlertShow.Print("Error retrieving image at \'" + path + "\'");
                     return;

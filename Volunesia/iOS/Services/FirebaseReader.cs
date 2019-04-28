@@ -898,5 +898,29 @@ namespace Volunesia.iOS.Services
             });
         }
 
+        public static void WriteNewAttribute() 
+        {
+            AppData_iOS.UsersNode.ObserveEvent(DataEventType.Value, (snapshot) => 
+            {
+                if(snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    { 
+                        foreach(var key in data.Keys)
+                        {
+                            if(key.ToString() != "bjPlo4VfotYIXpuCR9g3OCeCk2A2")
+                            {
+                                NSString std = (Foundation.NSString)"standard";
+                                AppData_iOS.UsersNode.GetChild(key.ToString()).GetChild("profileimg").SetValue(std);
+                            }
+                        }
+
+                    }
+
+                } 
+            }); 
+        }
+
     }
 }

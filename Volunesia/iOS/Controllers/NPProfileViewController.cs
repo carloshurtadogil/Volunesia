@@ -29,7 +29,6 @@ namespace Volunesia.iOS
             if (AppData.CurUser != null)
             {
                 AlertShow.Print("View Did Appear");
-
                 User u = AppData.CurUser;
                 //UserNameLabel.Text = u.FirstName + " " + u.LastName;
                 NameLabel.Text = AppData.NonprofitRepresentative.AssociatedNonprofitName;

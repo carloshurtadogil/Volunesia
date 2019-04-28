@@ -27,7 +27,8 @@ namespace Volunesia.iOS
             {
                 if(AppData.CurUser.UserType == "NP")
                 {
-                    LoadInformationNp(); 
+                    LoadInformationNp();
+                    FirebaseStorageServices.RetrieveImage("/Images/nonprofiteventimages/93ed1f21-428b-4cab-bb03-49a72aa70646", ProfileImageView);
                 } 
                 else
                 {
