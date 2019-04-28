@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Foundation;
 using UIKit;
 using Volunesia.Models;
+using Volunesia.Services;
 
 namespace Volunesia.iOS.Services
 {
@@ -10,15 +11,17 @@ namespace Volunesia.iOS.Services
     {
         private Roster Roster;
         private RosterViewController RosterVC;
+        private string EventID;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Volunesia.iOS.Services.RosterDataSource"/> class.
         /// </summary>
         /// <param name="roster">Roster.</param>
-        public RosterDataSource(Roster roster, RosterViewController inpView)
+        public RosterDataSource(Roster roster, RosterViewController inpView, string eid)
         {
             Roster = roster;
             RosterVC = inpView;
+            EventID = eid;
         }
 
         /// <summary>
@@ -82,6 +85,42 @@ namespace Volunesia.iOS.Services
                 }
             }
             //AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
+        }
+
+        public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            int index = indexPath.Row;
+            if(index < Roster.AttendeeList.Count)
+            {
+                Attendee attendee = Roster.AttendeeList[index];
+
+                if(attendee.Attended == false)
+                {
+                    var action = UITableViewRowAction.Create(
+                    UITableViewRowActionStyle.Normal, "Present", (arg1, arg2) => {
+                            var cell = tableView.CellAt(arg2);
+                            Roster.AttendeeList[index].Attended = true;
+                            string npid = AppData.NonprofitRepresentative.AssociatedNonprofit;
+                            string uid = Roster.AttendeeList[index].UID;
+                            FirebaseReader.ChangeReservationStatus(npid, EventID, uid, true, RosterVC);
+                            AlertShow.Show(RosterVC, "Good to go", attendee.Name + " has been marked present");
+                        }
+                    );
+                    return new UITableViewRowAction[] { action };
+                }
+                else
+                {
+                    var action = UITableViewRowAction.Create(
+                    UITableViewRowActionStyle.Default, "Absent", (arg1, arg2) => {
+                            var cell = tableView.CellAt(arg2);
+                            Roster.AttendeeList[index].Attended = false;
+                            AlertShow.Show(RosterVC, "Good to go", "");
+                        }
+                    );
+                    return new UITableViewRowAction[] { action };
+                }
+            }
+            return null;
         }
     }
 }

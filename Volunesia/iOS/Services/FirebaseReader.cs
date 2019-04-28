@@ -226,6 +226,28 @@ namespace Volunesia.iOS.Services
         }
 
         /// <summary>
+        /// Change the reservation status of a user
+        /// </summary>
+        /// <param name="npid">ID of the nonprofit organization</param>
+        /// <param name="eid">ID of the event</param>
+        /// <param name="uid">ID of user whose reservation status is being changed</param>
+        /// <param name="attendance">Attendance.</param>
+        /// <param name="inpView">Inp view.</param>
+        public static void ChangeReservationStatus(string npid, string eid, string uid, bool attendance, UIViewController inpView)
+        {
+            string result = "N";
+            if(attendance)
+            {
+                result = "Y";
+            }
+
+            object[] key = { $"attended" };
+            object[] val = { result };
+            var update = NSDictionary.FromObjectsAndKeys(val, key);
+            AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).UpdateChildValues(update);
+        }
+
+        /// <summary>
         /// Reads all events from Firebase that are currently happening or will happen.
         /// </summary>
         public static void ReadAllAvailableEvents()
@@ -380,7 +402,7 @@ namespace Volunesia.iOS.Services
                                 rosterlist.Add(attendee);
 
                             }
-                            RosterDataSource source = new RosterDataSource(rosterlist, RosterVC);
+                            RosterDataSource source = new RosterDataSource(rosterlist, RosterVC, eid);
                             RosterView.Source = source;
                             RosterView.ReloadData();
                         } 
