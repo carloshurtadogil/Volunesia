@@ -12,6 +12,10 @@ using Android.Widget;
 
 using Volunesia.Models;
 using Newtonsoft.Json;
+using Volunesia.Droid.Service;
+using Android.Graphics;
+using System.IO;
+using Volunesia.Services;
 
 namespace Volunesia.Droid.Activities
 {
@@ -65,6 +69,11 @@ namespace Volunesia.Droid.Activities
             
         }
 
+        /// <summary>
+        /// Proceeds to go to the event rating page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void RateClicked(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(EventRatingActivity));
@@ -72,11 +81,66 @@ namespace Volunesia.Droid.Activities
             StartActivity(intent);
         }
 
+        /// <summary>
+        /// Proceeds to generate a certificate of achievement for a volunteer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void GenerateCertificate(object sender, EventArgs e)
         {
-            
+            //Retrieve the volunteer cert image and configure settings
+            ImageView volunesiaImage = FindViewById<ImageView>(Resource.Id.volunesiaLogoImage);
+            Bitmap bitmap = BitmapFactory.DecodeResource(this.Resources, Resource.Mipmap.volunteercert);
+            Bitmap drawableBitmap = bitmap.Copy(Bitmap.Config.Argb8888, true);
+            Canvas canvas = new Canvas(drawableBitmap);
+            Paint paint = new Paint();
+            paint.Color = Color.Black;
+            paint.TextSize = 40;
+            paint.TextAlign = Paint.Align.Center;
+
+            //Write necessary text such as volunteer first/last names, event name, and amount of hours volunteered
+            canvas.DrawText(AppData.CurUser.FirstName + " " + AppData.CurUser.LastName, canvas.Width / 2, (canvas.Height / 3) + 45, paint);
+            canvas.DrawText(SelectedEvent.EventName, canvas.Width / 3, (canvas.Height / 2) + 45, paint);
+            canvas.DrawText( Hours.Text + " hours", (canvas.Width * 2) / 3, (canvas.Height / 2) + 45, paint);
+
+            //Translate the bitmap into a stream
+            MemoryStream stream = new MemoryStream();
+            drawableBitmap.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
+            stream.Position = 0;
+
+            //Call the send cert method while passing the stream and the volunteer's email address
+            AndroidEmailHandler emailHandler = new AndroidEmailHandler();
+            bool certificateSent = emailHandler.SendCertificateOfAchievementViaEmail(stream, AppData.CurUser.EmailAddress);
+
+            //Notify the volunteer if the certificate of achievement has been sent to their particular email address
+            string messageText = "";
+            if (!certificateSent)
+            {
+                messageText = "ERROR, could not send certificate of achievement to email address";
+            }
+            else
+            {
+                messageText = "SUCCESS, certificate of achievement has been sent to " + AppData.CurUser.EmailAddress;
+            }
+
+            AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
+            dialogAlertConstruction.SetTitle("Certificate of Achievement Status");
+            dialogAlertConstruction.SetMessage(messageText);
+
+            dialogAlertConstruction.SetPositiveButton("GO BACK", delegate
+            {
+
+                dialogAlertConstruction.Dispose();
+
+            });
+            dialogAlertConstruction.Show();
         }
 
+        /// <summary>
+        /// Proceeds to go back to the volunteer events activity page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void GoBack(object sender, EventArgs e)
         {
             StartActivity(typeof(VolunteerEventsActivity));

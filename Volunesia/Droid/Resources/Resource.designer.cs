@@ -1056,7 +1056,10 @@ namespace Volunesia.Droid
 			public const int volunesiaLogo = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int volunteeringcert = 2130903050;
+			public const int volunteercert = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int volunteeringcert = 2130903051;
 			
 			static Mipmap()
 			{

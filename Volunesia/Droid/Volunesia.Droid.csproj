@@ -219,6 +219,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AndroidAuthenticationService.cs" />
     <Compile Include="AppData_Droid.cs" />
+    <Compile Include="Service\AndroidEmailHandler.cs" />
     <Compile Include="Service\FiresharpConfig.cs" />
     <Compile Include="Service\Register.cs" />
     <Compile Include="Service\TranslateFB.cs" />
@@ -388,6 +389,9 @@
     <AndroidResource Include="Resources\layout\RosterView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\volunteercert.jpg" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
