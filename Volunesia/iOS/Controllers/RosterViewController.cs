@@ -1,5 +1,6 @@
 using Foundation;
 using System;
+using System.Threading.Tasks;
 using UIKit;
 using Volunesia.iOS.Services;
 using Volunesia.Models;
@@ -9,6 +10,9 @@ namespace Volunesia.iOS
 {
     public partial class RosterViewController : UIViewController
     {
+        private bool useRefreshControl = false;
+        private UIRefreshControl RefreshControl;
+
         public Event EventDetails { get; set; }
         public Volunteer Volunteer { get; set; }
         public UIImage Image { get; set; }
@@ -59,5 +63,26 @@ namespace Volunesia.iOS
         {
             return AttendeesTableView; 
         }
+
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+        async Task RefreshAsync()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+        {
+            //only active the refresh control if the feature is available 
+            if (useRefreshControl)
+            {
+                RefreshControl.BeginRefreshing();
+                FirebaseReader.ReadNonprofitEvents(AppData.NonprofitRepresentative.AssociatedNonprofit);
+            }
+            if (useRefreshControl)
+            {
+                /*
+                RosterDataSource rdc = new RosterDataSource();
+                EventsTableView.Source = sdc;
+                RefreshControl.EndRefreshing();
+                EventsTableView.ReloadData();*/
+            }
+        }
+
     }
 }

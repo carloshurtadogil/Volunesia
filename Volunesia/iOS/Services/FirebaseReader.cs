@@ -233,7 +233,7 @@ namespace Volunesia.iOS.Services
         /// <param name="uid">ID of user whose reservation status is being changed</param>
         /// <param name="attendance">Attendance.</param>
         /// <param name="inpView">Inp view.</param>
-        public static void ChangeReservationStatus(string npid, string eid, string uid, bool attendance, UIViewController inpView)
+        public static void ChangeReservationStatus(string npid, string eid, string uid, bool attendance, Roster roster, UIViewController inpView)
         {
             string result = "N";
             if(attendance)
@@ -245,6 +245,7 @@ namespace Volunesia.iOS.Services
             object[] val = { result };
             var update = NSDictionary.FromObjectsAndKeys(val, key);
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).UpdateChildValues(update);
+            roster.RemoveDuplicates();
             if(!attendance)
             {
                 AlertShow.Show(inpView, "Done", ""); 
