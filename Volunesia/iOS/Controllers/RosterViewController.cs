@@ -50,5 +50,14 @@ namespace Volunesia.iOS
         {
             this.DismissViewController(true, null);
         }
+
+        /// <summary>
+        /// Return the table view to be reloaded
+        /// </summary>
+        /// <returns>The table view.</returns>
+        public UITableView GetTableView()
+        {
+            return AttendeesTableView; 
+        }
     }
 }

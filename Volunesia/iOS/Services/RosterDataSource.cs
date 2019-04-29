@@ -93,15 +93,15 @@ namespace Volunesia.iOS.Services
             if(index < Roster.AttendeeList.Count)
             {
                 Attendee attendee = Roster.AttendeeList[index];
-
-                if(attendee.Attended == false)
+                string npid = AppData.NonprofitRepresentative.AssociatedNonprofit;
+                string uid = Roster.AttendeeList[index].UID;
+                if (attendee.Attended == false)
                 {
                     var action = UITableViewRowAction.Create(
                     UITableViewRowActionStyle.Normal, "Present", (arg1, arg2) => {
                             var cell = tableView.CellAt(arg2);
                             Roster.AttendeeList[index].Attended = true;
-                            string npid = AppData.NonprofitRepresentative.AssociatedNonprofit;
-                            string uid = Roster.AttendeeList[index].UID;
+                            
                             FirebaseReader.ChangeReservationStatus(npid, EventID, uid, true, RosterVC);
                             AlertShow.Show(RosterVC, "Good to go", attendee.Name + " has been marked present");
                         }
@@ -113,8 +113,7 @@ namespace Volunesia.iOS.Services
                     var action = UITableViewRowAction.Create(
                     UITableViewRowActionStyle.Default, "Absent", (arg1, arg2) => {
                             var cell = tableView.CellAt(arg2);
-                            Roster.AttendeeList[index].Attended = false;
-                            AlertShow.Show(RosterVC, "Good to go", "");
+                            AlertShow.ConfirmAbsence(RosterVC, Roster, index, npid, EventID);
                         }
                     );
                     return new UITableViewRowAction[] { action };

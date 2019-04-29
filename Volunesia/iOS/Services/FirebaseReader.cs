@@ -245,6 +245,10 @@ namespace Volunesia.iOS.Services
             object[] val = { result };
             var update = NSDictionary.FromObjectsAndKeys(val, key);
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).UpdateChildValues(update);
+            if(!attendance)
+            {
+                AlertShow.Show(inpView, "Done", ""); 
+            }
         }
 
         /// <summary>

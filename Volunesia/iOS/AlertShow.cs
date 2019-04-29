@@ -85,13 +85,6 @@ namespace Volunesia.iOS
                     Show(inpView, "To be implemented", "");
                 }));
 
-                if(comparison == 0)
-                {
-                    alert.AddAction(UIAlertAction.Create("Take Attendance", UIAlertActionStyle.Default, (handler) => 
-                    {
-                        Show(inpView, "To be implemented", "");
-                    })); 
-                }
                 if (e.EventRoster != null && e.EventRoster.AttendeeList.Count > 0)
                 {
 
@@ -139,6 +132,28 @@ namespace Volunesia.iOS
                         Show(inpView, "Invalid Email", ""); 
                     }
                 }
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+            inpView.PresentViewController(alert, true, null);
+        }
+
+        /// <summary>
+        /// Allow user to confirm that a volunteer is absent in the event that the volunteer was marked present accidentally.
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="roster">Roster with volunteer's information</param>
+        /// <param name="i">Index location of volunteer in roster</param>
+        /// <param name="npid">Npid.</param>
+        /// <param name="eid">Eid.</param>
+        public static void ConfirmAbsence(RosterViewController inpView, Roster roster, int i, string npid, string eid)
+        {
+            Attendee attendee = roster.AttendeeList[i];
+            UIAlertController alert = UIAlertController.Create("You are about to mark " + attendee.Name + " as \'absent\'", "Would you like to proceed?", UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("Proceed", UIAlertActionStyle.Destructive,(obj) => 
+            {
+                roster.AttendeeList[i].Attended = false;
+                FirebaseReader.ChangeReservationStatus(npid, eid, attendee.UID, false, inpView);
+                inpView.GetTableView().ReloadData();
             }));
             alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
             inpView.PresentViewController(alert, true, null);
