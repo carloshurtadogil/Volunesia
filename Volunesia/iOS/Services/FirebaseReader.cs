@@ -235,17 +235,28 @@ namespace Volunesia.iOS.Services
         /// <param name="inpView">Inp view.</param>
         public static void ChangeReservationStatus(string npid, string eid, string uid, bool attendance, Roster roster, UIViewController inpView)
         {
+            DateTime today = DateTime.Now;
+            string date = "";
             string result = "N";
             if(attendance)
             {
                 result = "Y";
+                date = today.ToString();
             }
 
-            object[] key = { $"attended" };
-            object[] val = { result };
+            //Update Roster
+            object[] key = { $"attended", $"checkintime" };
+            object[] val = { result, date };
             var update = NSDictionary.FromObjectsAndKeys(val, key);
             AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").GetChild(uid).UpdateChildValues(update);
             roster.RemoveDuplicates();
+
+            //Update Volunteer History
+            object[] akey = { $"attended" };
+            object[] aval = { result };
+            var vupdate = NSDictionary.FromObjectsAndKeys(aval, akey);
+            AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eid).UpdateChildValues(vupdate);
+
             if(!attendance)
             {
                 AlertShow.Show(inpView, "Done", ""); 
