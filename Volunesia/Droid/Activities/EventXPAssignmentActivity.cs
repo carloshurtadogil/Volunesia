@@ -135,6 +135,8 @@ namespace Volunesia.Droid.Activities
                 JObject volunteerOrAttendee = JObject.Parse(resultant);
 
                 Dictionary<string, object> volInformation = new Dictionary<string, object>();
+                volInformation.Add("associatednp", "");
+                volInformation.Add("profileimg", "standard");
                 volInformation.Add("email", volunteerOrAttendee["email"].ToString());
                 volInformation.Add("first", volunteerOrAttendee["first"].ToString());
                 volInformation.Add("last", volunteerOrAttendee["last"].ToString());
