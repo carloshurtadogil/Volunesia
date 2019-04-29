@@ -13,6 +13,7 @@ using System.Net.Mail;
 using static System.Net.Mime.MediaTypeNames;
 using System.Net.Mime;
 using System.Net;
+using Volunesia.Droid.Service;
 
 namespace Volunesia.Droid
 {

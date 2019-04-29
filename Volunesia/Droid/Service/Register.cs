@@ -25,6 +25,7 @@ namespace Volunesia.Droid.Service
             if (theUser.UserType == "V")
             {
                 Dictionary<string, object> userDictionary = new Dictionary<string, object>();
+                userDictionary.Add("profileimg", "standard");
                 userDictionary.Add("email", theUser.EmailAddress);
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
@@ -46,6 +47,7 @@ namespace Volunesia.Droid.Service
             else if (theUser.UserType == "NP")
             {
                 Dictionary<string, object> userDictionary = new Dictionary<string, object>();
+                userDictionary.Add("profileimg", "standard");
                 userDictionary.Add("email", theUser.EmailAddress);
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);

@@ -9,6 +9,13 @@ namespace Volunesia.Models
         //List of Attendees for a particular event
         private List<Attendee> AttendeeList;
 
+
+        public List<Attendee> GetAttendeeList()
+        {
+            return AttendeeList;
+        }
+
+
         /// <summary>
         /// Default Constructor for the Roster class
         /// </summary>
