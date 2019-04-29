@@ -278,6 +278,10 @@
       <DependentUpon>RosterViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\RosterDataSource.cs" />
+    <Compile Include="Controllers\NPTempProfileViewController.cs" />
+    <Compile Include="Controllers\NPTempProfileViewController.designer.cs">
+      <DependentUpon>NPTempProfileViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -328,6 +332,7 @@
     <BundleResource Include="Resources\VolunesiaIcon.png" />
     <BundleResource Include="Resources\VolunesiaIcon.jpg" />
     <BundleResource Include="Resources\Images\OptionsButton.png" />
+    <BundleResource Include="Resources\Images\Nonprofit.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

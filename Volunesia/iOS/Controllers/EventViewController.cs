@@ -13,6 +13,7 @@ namespace Volunesia.iOS
         public bool JustCreated { get; set; }
         public bool Attended { get; set; }
         public UIImage CoverPhoto { get; set; }
+        public Nonprofit Nonprofit { get; set; }
 
 
         public EventViewController(IntPtr handle) : base(handle)
@@ -45,6 +46,7 @@ namespace Volunesia.iOS
                     EventDate.Text = formattedEventDate;
                 }
                 EventDescriptionTextView.Text = EventDetails.EventDescription;
+                FirebaseReader.ReadNPName(EventDetails.HostID, NonprofitNameLabel);
 
             }
 
@@ -67,6 +69,8 @@ namespace Volunesia.iOS
             }
             else //The user is a normal volunteer
             {
+                NonprofitProfileButton.Enabled = true;
+                NonprofitProfileButton.Hidden = false;
                 if(Attended) 
                 {
                     SignupButton.Enabled = false;
@@ -95,6 +99,16 @@ namespace Volunesia.iOS
             }
         }
 
+
+        /// <summary>
+        /// Lead a volunteer to the nonprofit profile page
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void NonprofitProfileButton_TouchUpInside(UIButton sender)
+        {
+            this.PerformSegue("ToNPProfileSegue_id", sender);
+        }
+
         /// <summary> 
         /// Prepares for segue. 
         /// </summary> 
@@ -111,14 +125,22 @@ namespace Volunesia.iOS
                     npvc.LoadView();
                 }
             }
-            else if(segue.Identifier == "ToRVCSegue_id")
+            else if (segue.Identifier == "ToRVCSegue_id")
             {
                 var rvc = (RosterViewController)segue.DestinationViewController;
-                if(rvc != null)
+                if (rvc != null)
                 {
                     rvc.EventDetails = EventDetails;
-                    rvc.LoadView(); 
-                } 
+                    rvc.LoadView();
+                }
+            }
+            else if (segue.Identifier == "ToNPProfileSegue_id")
+            {
+                var nptpvc = (NPTempProfileViewController)segue.DestinationViewController; 
+                if(nptpvc != null)
+                {
+                    nptpvc.LoadView();
+                }
             }
 
         }

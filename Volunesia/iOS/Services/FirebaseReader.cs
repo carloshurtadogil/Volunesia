@@ -355,9 +355,25 @@ namespace Volunesia.iOS.Services
             });
         }
 
-        public static void ReadEventCoverImage(string path, UIImageView imageView)
+        /// <summary>
+        /// Read the name of a nonprofit
+        /// </summary>
+        /// <param name="npid">Npid.</param>
+        /// <param name="label">Label.</param>
+        public static void ReadNPName(string npid, UILabel label)
         {
-
+            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                if(snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    {
+                        var name = data["name"].ToString();
+                        label.Text = name;
+                    } 
+                } 
+            });
         }
 
         /// <summary>

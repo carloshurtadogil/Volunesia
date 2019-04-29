@@ -80,10 +80,11 @@ namespace Volunesia.iOS
 
             if(comparison >= 0) 
             {
+                /*
                 alert.AddAction(UIAlertAction.Create("Edit", UIAlertActionStyle.Default, (handler) =>
                 {
                     Show(inpView, "To be implemented", "");
-                }));
+                }));*/
 
                 if (e.EventRoster != null && e.EventRoster.Size() > 0)
                 {

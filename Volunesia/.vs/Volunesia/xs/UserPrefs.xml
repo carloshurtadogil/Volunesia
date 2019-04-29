@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AAFA532E-689B-4C3D-9840-E0E6C20CA769" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/RosterDataSource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/EventViewController.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
       <File FileName="iOS/Controllers/RosterViewController.cs" Line="83" Column="48" />
       <File FileName="iOS/Controllers/NPProfileViewController.cs" Line="186" Column="1" />
       <File FileName="Volunesia/Models/Attendee.cs" Line="22" Column="41" />
       <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="102" Column="14" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="298" Column="1" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="258" Column="99" />
       <File FileName="iOS/Services/FirebaseStorageServices.cs" Line="98" Column="56" />
-      <File FileName="iOS/AlertShow.cs" Line="148" Column="76" />
+      <File FileName="iOS/AlertShow.cs" Line="1" Column="1" />
       <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="1" Column="3" />
       <File FileName="iOS/Services/AllCurrentEventsDataSource.cs" Line="1" Column="1" />
       <File FileName="iOS/Controllers/HomeViewController.cs" Line="116" Column="1" />
-      <File FileName="Volunesia/Models/Roster.cs" Line="25" Column="54" />
+      <File FileName="Volunesia/Models/Roster.cs" Line="1" Column="1" />
       <File FileName="iOS/Services/RosterDataSource.cs" Line="41" Column="15" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="141" Column="21" />
+      <File FileName="Volunesia/Models/Nonprofit.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,11 +27,11 @@
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="RosterDataSource.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="EventViewController.cs" selected="True" />
               </Node>
+              <Node name="Resources" expanded="True" />
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
