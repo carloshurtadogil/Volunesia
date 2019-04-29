@@ -85,7 +85,7 @@ namespace Volunesia.iOS
                     Show(inpView, "To be implemented", "");
                 }));
 
-                if (e.EventRoster != null && e.EventRoster.AttendeeList.Count > 0)
+                if (e.EventRoster != null && e.EventRoster.Size() > 0)
                 {
 
                     alert.AddAction(UIAlertAction.Create("View Roster", UIAlertActionStyle.Default, (handler) => 
@@ -93,6 +93,10 @@ namespace Volunesia.iOS
                         inpView.PerformSegue("ToRVCSegue_id", alert);
                     })); 
                 }
+                alert.AddAction(UIAlertAction.Create("End Event", UIAlertActionStyle.Destructive, (handler)=> 
+                {
+                    EndEvent(inpView, e.EventID);
+                }));
                 alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                 inpView.PresentViewController(alert, true, null);
             }
@@ -147,12 +151,12 @@ namespace Volunesia.iOS
         /// <param name="eid">Eid.</param>
         public static void ConfirmAbsence(RosterViewController inpView, Roster roster, int i, string npid, string eid)
         {
-            Attendee attendee = roster.AttendeeList[i];
+            Attendee attendee = roster.GetAttendee(i);
             UIAlertController alert = UIAlertController.Create("You are about to mark " + attendee.Name + " as \'absent\'", "Would you like to proceed?", UIAlertControllerStyle.Alert);
             alert.AddAction(UIAlertAction.Create("Proceed", UIAlertActionStyle.Destructive,(obj) => 
             {
-                roster.AttendeeList[i].Attended = false;
-                FirebaseReader.ChangeReservationStatus(npid, eid, attendee.UID, false, inpView);
+                roster.GetAttendee(i).Attended = false;
+                FirebaseReader.ChangeReservationStatus(npid, eid, attendee.UID, false, roster, inpView);
                 inpView.GetTableView().ReloadData();
             }));
             alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
@@ -166,6 +170,24 @@ namespace Volunesia.iOS
         public static void Print(string msg)
         {
             System.Diagnostics.Debug.WriteLine(msg); 
+        }
+
+        /// <summary>
+        /// Private method that asks nonprofit representative to confirm that the event has been closed.
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="eid">Eid.</param>
+        private static void EndEvent(UIViewController inpView, string eid)
+        {
+            UIAlertController alert = UIAlertController.Create("You are about to end this event", 
+                                                               "Be aware that this action is unreversible. If the event is upcoming, this action will cancel and inform all volunteers who have signed up", 
+                                                               UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("Proceed", UIAlertActionStyle.Destructive, (obj) =>
+            {
+                Show(inpView, "to be implemented", "");
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+            inpView.PresentViewController(alert, true, null);
         }
     }
 }

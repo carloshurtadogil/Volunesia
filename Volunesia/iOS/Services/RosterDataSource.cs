@@ -33,16 +33,13 @@ namespace Volunesia.iOS.Services
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell("AttendeeItem");
-            if(Roster.AttendeeList != null) 
+            int index = indexPath.Row;
+
+            if (index < Roster.Size())
             {
-                List<Attendee> list = Roster.AttendeeList;
-                int index = indexPath.Row;
-                if(index < list.Count)
-                {
-                    Attendee a = list[index];
-                    cell.TextLabel.Text = a.Name;
-                    cell.DetailTextLabel.Text = a.EmailAddress; 
-                }
+                Attendee a = Roster.GetAttendee(index);
+                cell.TextLabel.Text = a.Name;
+                cell.DetailTextLabel.Text = a.EmailAddress;
             }
             return cell;
         }
@@ -55,14 +52,7 @@ namespace Volunesia.iOS.Services
         /// <param name="section">Section.</param>
         public override nint RowsInSection(UITableView tableview, nint section)
         {
-            if (Roster.AttendeeList != null)
-            {
-                return Roster.AttendeeList.Count;
-            }
-            else
-            {
-                return 0;//Default case 
-            }
+            return Roster.Size();
         }
 
         /// <summary>
@@ -72,37 +62,30 @@ namespace Volunesia.iOS.Services
         /// <param name="indexPath">Index path.</param>
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            int i = indexPath.Row;
-
-            if (Roster.AttendeeList != null)
+            int index = indexPath.Row;
+            if (index < Roster.Size())
             {
-                List<Attendee> list = Roster.AttendeeList;
-                int index = indexPath.Row;
-                if (index < list.Count)
-                {
-                    Attendee a = list[index];
-                    FirebaseReader.ReadVolunteerInformation(a.UID, RosterVC);
-                }
+                Attendee a = Roster.GetAttendee(index);
+                FirebaseReader.ReadVolunteerInformation(a.UID, RosterVC);
             }
-            //AlertShow.Show(HomeController, "View Event Controller", "To be implemented");
         }
 
         public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)
         {
             int index = indexPath.Row;
-            if(index < Roster.AttendeeList.Count)
+            if(index < Roster.Size())
             {
-                Attendee attendee = Roster.AttendeeList[index];
+                Attendee attendee = Roster.GetAttendee(index);
                 string npid = AppData.NonprofitRepresentative.AssociatedNonprofit;
-                string uid = Roster.AttendeeList[index].UID;
+                string uid = Roster.GetAttendee(index).UID;
                 if (attendee.Attended == false)
                 {
                     var action = UITableViewRowAction.Create(
                     UITableViewRowActionStyle.Normal, "Present", (arg1, arg2) => {
                             var cell = tableView.CellAt(arg2);
-                            Roster.AttendeeList[index].Attended = true;
+                            Roster.GetAttendee(index).Attended = true;
                             
-                            FirebaseReader.ChangeReservationStatus(npid, EventID, uid, true, RosterVC);
+                            FirebaseReader.ChangeReservationStatus(npid, EventID, uid, true, Roster, RosterVC);
                             AlertShow.Show(RosterVC, "Good to go", attendee.Name + " has been marked present");
                         }
                     );
