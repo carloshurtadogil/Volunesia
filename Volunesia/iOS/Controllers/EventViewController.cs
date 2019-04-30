@@ -140,6 +140,7 @@ namespace Volunesia.iOS
                 if(nptpvc != null)
                 {
                     nptpvc.PrimaryEmail = ContactEmailLabel.Text;
+                    Nonprofit.NonprofitName = NonprofitNameLabel.Text;
                     nptpvc.NonprofitOrg = Nonprofit;
                     nptpvc.LoadView();
                 }

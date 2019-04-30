@@ -24,6 +24,14 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LocationLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LocationTextLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel MissionStatementLabel { get; set; }
 
         [Outlet]
@@ -80,6 +88,16 @@ namespace Volunesia.iOS
             if (EmailButton != null) {
                 EmailButton.Dispose ();
                 EmailButton = null;
+            }
+
+            if (LocationLabel != null) {
+                LocationLabel.Dispose ();
+                LocationLabel = null;
+            }
+
+            if (LocationTextLabel != null) {
+                LocationTextLabel.Dispose ();
+                LocationTextLabel = null;
             }
 
             if (MissionStatementLabel != null) {

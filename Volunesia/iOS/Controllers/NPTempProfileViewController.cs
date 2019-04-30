@@ -35,6 +35,7 @@ namespace Volunesia.iOS
             UserNameLabel.Text = NonprofitOrg.NonprofitName;
             MissionStatementTextview.Text = NonprofitOrg.MissionStatement;
             EmailButton.SetTitle(PrimaryEmail, UIControlState.Normal);
+            LocationTextLabel.Text = NonprofitOrg.City + ", " + NonprofitOrg.State + " " + NonprofitOrg.ZipCode;
             var phone = Convert.ToInt64(NonprofitOrg.DefaultPhone);
             if (phone.ToString().Length == 10)
             {

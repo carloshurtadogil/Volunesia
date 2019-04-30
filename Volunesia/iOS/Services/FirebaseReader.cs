@@ -966,6 +966,7 @@ namespace Volunesia.iOS.Services
                         var state = data["state"].ToString();
                         var zip = data["zip"].ToString();
                         var imagepath = data["profileimg"].ToString();
+
                         Nonprofit nonprofit = new Nonprofit
                         {
                             City = city,
