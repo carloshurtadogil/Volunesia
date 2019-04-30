@@ -1,22 +1,25 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/NPTempProfileViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Volunesia/Models/Nonprofit.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
-      <File FileName="iOS/Controllers/NPTempProfileViewController.cs" Line="31" Column="75" />
+      <File FileName="iOS/Controllers/NPTempProfileViewController.cs" Line="88" Column="48" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="965" Column="29" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="109" Column="1" />
+      <File FileName="Volunesia/Models/Nonprofit.cs" Line="21" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Volunesia" expanded="True">
             <Node name="Volunesia" expanded="True">
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Nonprofit.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="NPTempProfileViewController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>

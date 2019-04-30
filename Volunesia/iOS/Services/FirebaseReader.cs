@@ -945,6 +945,51 @@ namespace Volunesia.iOS.Services
             WriteToRoster(inpView, "fac19049-f4af-4bd4-868a-248f333cfe23", "cd807087-6887-4caf-b9f6-4993d8060fce", v);
         }
 
+        /// <summary>
+        /// Reads the nonprofit information.
+        /// </summary>
+        /// <param name="evc">Evc.</param>
+        /// <param name="npid">Npid.</param>
+        public static void ReadNonprofitInformation(EventViewController evc, string npid)
+        {
+            AppData_iOS.NonprofitNode.GetChild(npid).ObserveEvent(DataEventType.Value,(snapshot) => 
+            { 
+                if(snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    {
+                        var city = data["city"].ToString();
+                        var name = data["name"].ToString();
+                        var missionstmt = data["missionstatement"].ToString();
+                        var phone = data["primaryphone"].ToString().Replace("-", "").Trim();
+                        var state = data["state"].ToString();
+                        var zip = data["zip"].ToString();
+                        var imagepath = data["profileimg"].ToString();
+                        Nonprofit nonprofit = new Nonprofit
+                        {
+                            City = city,
+                            NonprofitName = name,
+                            MissionStatement = missionstmt,
+                            DefaultPhone = phone,
+                            State = state,
+                            ZipCode = zip,
+                            ImagePath = imagepath
+                        };
+                        evc.Nonprofit = nonprofit;
+                        if(imagepath == "standard")
+                        {
+                            evc.PerformSegue("ToNPProfileSegue_id", evc);
+                        }
+                        else
+                        {
+                            //TODO Load image before loading np profile 
+                        }
+                    } 
+                }
+            }); 
+        }
+
         public static void ReadAssociatedNonprofit(string uid) 
         {
             AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
@@ -964,7 +1009,7 @@ namespace Volunesia.iOS.Services
 
         public static void WriteNewAttribute() 
         {
-            AppData_iOS.UsersNode.ObserveEvent(DataEventType.Value, (snapshot) => 
+            AppData_iOS.NonprofitNode.ObserveEvent(DataEventType.Value, (snapshot) => 
             {
                 if(snapshot.Exists)
                 {
@@ -973,11 +1018,8 @@ namespace Volunesia.iOS.Services
                     { 
                         foreach(var key in data.Keys)
                         {
-                            if(key.ToString() != "bjPlo4VfotYIXpuCR9g3OCeCk2A2")
-                            {
-                                NSString std = (Foundation.NSString)"standard";
-                                AppData_iOS.UsersNode.GetChild(key.ToString()).GetChild("profileimg").SetValue(std);
-                            }
+                            NSString std = (Foundation.NSString)"standard";
+                            AppData_iOS.NonprofitNode.GetChild(key.ToString()).GetChild("profileimg").SetValue(std);
                         }
 
                     }

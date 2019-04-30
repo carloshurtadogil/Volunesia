@@ -11,6 +11,8 @@ namespace Volunesia.iOS
     public partial class NPTempProfileViewController : UIViewController
     {
         public Nonprofit NonprofitOrg { get; set; }
+        public string PrimaryEmail { get; set; }
+
         public NPTempProfileViewController (IntPtr handle) : base (handle)
         {
         }
@@ -30,13 +32,9 @@ namespace Volunesia.iOS
         /// </summary>
         public void LoadInformation() 
         {
-            NonprofitOrg = new Nonprofit();
-            NonprofitOrg.NonprofitName = "Carlos";
-            NonprofitOrg.MissionStatement = "Test";
-            NonprofitOrg.DefaultPhone = "17144142883".Replace("-", "").Trim();
             UserNameLabel.Text = NonprofitOrg.NonprofitName;
             MissionStatementTextview.Text = NonprofitOrg.MissionStatement;
-            EmailButton.SetTitle("carlos.hurtado19@yahoo.com", UIControlState.Normal);
+            EmailButton.SetTitle(PrimaryEmail, UIControlState.Normal);
             var phone = Convert.ToInt64(NonprofitOrg.DefaultPhone);
             if (phone.ToString().Length == 10)
             {
@@ -56,7 +54,9 @@ namespace Volunesia.iOS
         /// <param name="sender">Sender.</param>
         partial void EmailButton_TouchUpInside(UIButton sender)
         {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             AwaitEmail();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
 
@@ -83,10 +83,14 @@ namespace Volunesia.iOS
             UIApplication.SharedApplication.OpenUrl(url);
         }
 
+        /// <summary>
+        /// Wait for user to finish conducting email
+        /// </summary>
+        /// <returns>The email.</returns>
         public async Task AwaitEmail()
         {
             List<string> recipients = new List<string>();
-            recipients.Add("carlos.hurtado19@yahoo.com");
+            recipients.Add(PrimaryEmail);
             try
             {
                 var message = new EmailMessage
@@ -98,11 +102,17 @@ namespace Volunesia.iOS
                 };
                 await Email.ComposeAsync(message);
             }
+#pragma warning disable CS0168 // Variable is declared but never used
             catch (FeatureNotSupportedException fbsEx)
+#pragma warning restore CS0168 // Variable is declared but never used
             {
                 AlertShow.Show(this, "Email is not supported on this device", "");
             }
+#pragma warning disable CS0168 // Variable is declared but never used
+#pragma warning disable RECS0022 // A catch clause that catches System.Exception and has an empty body
             catch (Exception ex)
+#pragma warning restore RECS0022 // A catch clause that catches System.Exception and has an empty body
+#pragma warning restore CS0168 // Variable is declared but never used
             {
                 // Some other exception occurred
             }

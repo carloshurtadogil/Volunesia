@@ -106,7 +106,7 @@ namespace Volunesia.iOS
         /// <param name="sender">Sender.</param>
         partial void NonprofitProfileButton_TouchUpInside(UIButton sender)
         {
-            this.PerformSegue("ToNPProfileSegue_id", sender);
+            FirebaseReader.ReadNonprofitInformation(this, EventDetails.HostID);
         }
 
         /// <summary> 
@@ -139,6 +139,8 @@ namespace Volunesia.iOS
                 var nptpvc = (NPTempProfileViewController)segue.DestinationViewController; 
                 if(nptpvc != null)
                 {
+                    nptpvc.PrimaryEmail = ContactEmailLabel.Text;
+                    nptpvc.NonprofitOrg = Nonprofit;
                     nptpvc.LoadView();
                 }
             }

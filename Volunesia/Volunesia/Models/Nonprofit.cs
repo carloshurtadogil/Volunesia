@@ -18,6 +18,12 @@ namespace Volunesia.Models
         public string DefaultPhone  { get; set; }
         //The primary location of the nonprofit
         public string ZipCode       { get; set; }
+        //City where the nonprofit is located in
+        public string City { get; set; }
+        //State where the nonprofit is located in
+        public string State { get; set; }
+        //Image path for nonprofit (possible logo or team photo)
+        public string ImagePath { get; set; }
         //The nonprofit's mission statement
         public string MissionStatement { get; set; }
     }
