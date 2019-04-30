@@ -30,9 +30,9 @@
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-	    android:hint="Event Time"
+	    android:hint="Event Location"
 		android:gravity="center"
-	android:id="@+id/eventTimeField"/>
+	android:id="@+id/eventLocationField"/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

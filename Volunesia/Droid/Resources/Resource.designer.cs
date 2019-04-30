@@ -572,11 +572,14 @@ namespace Volunesia.Droid
 			// aapt resource value: 0x7f0a002f
 			public const int eventDescriptionField = 2131361839;
 			
-			// aapt resource value: 0x7f0a003b
-			public const int eventDescriptionTextView = 2131361851;
-			
 			// aapt resource value: 0x7f0a002d
 			public const int eventEndDateField = 2131361837;
+			
+			// aapt resource value: 0x7f0a002e
+			public const int eventLocationField = 2131361838;
+			
+			// aapt resource value: 0x7f0a003b
+			public const int eventLocationTextView = 2131361851;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int eventNameField = 2131361835;
@@ -586,9 +589,6 @@ namespace Volunesia.Droid
 			
 			// aapt resource value: 0x7f0a0071
 			public const int eventNameView = 2131361905;
-			
-			// aapt resource value: 0x7f0a002e
-			public const int eventTimeField = 2131361838;
 			
 			// aapt resource value: 0x7f0a0092
 			public const int expertBadgeImage = 2131361938;
@@ -1050,16 +1050,13 @@ namespace Volunesia.Droid
 			public const int ombreBack = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int signupButtonImage = 2130903048;
+			public const int volunesiaLogo = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int volunesiaLogo = 2130903049;
+			public const int volunteercert = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int volunteercert = 2130903050;
-			
-			// aapt resource value: 0x7f03000b
-			public const int volunteeringcert = 2130903051;
+			public const int volunteeringcert = 2130903050;
 			
 			static Mipmap()
 			{

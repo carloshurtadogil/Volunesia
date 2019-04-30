@@ -68,6 +68,7 @@ namespace Volunesia.Droid.Activities
             SelectedEvent.EventDate = Convert.ToDateTime(eventInfoAsJson["eventdate"].ToString());
             SelectedEvent.EventEndDate = Convert.ToDateTime(eventInfoAsJson["eventenddate"].ToString());
             SelectedEvent.ApplicationDeadline = Convert.ToDateTime(eventInfoAsJson["applicationdeadline"].ToString());
+            SelectedEvent.Location = eventInfoAsJson["location"].ToString();
             var rosterChecker = eventInfoAsJson["roster"].ToString();
 
 
@@ -78,6 +79,10 @@ namespace Volunesia.Droid.Activities
             //retrieve the event date field
             var eventDateField = FindViewById<TextView>(Resource.Id.eventDateTextView);
             eventDateField.Text = SelectedEvent.EventDate.ToString();
+            //retrieve the event location field
+            var eventLocationField = FindViewById<TextView>(Resource.Id.eventLocationTextView);
+            eventLocationField.Text = SelectedEvent.Location;
+
             //retrieve the event description field
             var eventDescriptionField = FindViewById<TextView>(Resource.Id.eventDescriptionContent);
             eventDescriptionField.Text = SelectedEvent.EventDescription;
@@ -139,7 +144,7 @@ namespace Volunesia.Droid.Activities
                     //2) Withdraw from the event before it occurs
                     if (!volunteerCheckedIn)
                     {
-                       
+
                         //Check the date of the event. If it is approcating then set the button to withdraw 
                         //from event. If the event is currently taking place then set the button to checkin.
                         if (SelectedEvent.EventDate.Date == DateTime.Today.Date && DateTime.Now < SelectedEvent.EventEndDate)
@@ -175,7 +180,7 @@ namespace Volunesia.Droid.Activities
                 }
                 //if the application deadline for the event hasn't been passed, 
                 //allow the volunteer to apply for the event
-                else if(DateTime.Now < SelectedEvent.ApplicationDeadline)
+                else if (DateTime.Now < SelectedEvent.ApplicationDeadline)
                 {
                     ApplyOrDeleteButton.Text = "Apply to Event";
                     ApplyOrDeleteButton.Visibility = ViewStates.Visible;
@@ -196,7 +201,7 @@ namespace Volunesia.Droid.Activities
             {
                 this.DeleteEvent();
             }
-            else if(ApplyOrDeleteButton.Text.Equals("Generate XP"))
+            else if (ApplyOrDeleteButton.Text.Equals("Generate XP"))
             {
                 this.GenerateXP();
             }
@@ -226,7 +231,7 @@ namespace Volunesia.Droid.Activities
             intent.PutExtra("chosenRoster", JsonConvert.SerializeObject(SelectedEvent.EventRoster));
             StartActivity(intent);
         }
-        
+
         /// <summary>
         /// Proceeds to visit the EventXPAssignment activity for the nonprofit to assign 
         /// xp to volunteers
@@ -319,7 +324,7 @@ namespace Volunesia.Droid.Activities
         {
             var eventTask = System.Threading.Tasks.Task.Run(async () => {
 
-               return await DeleteEventAsync();
+                return await DeleteEventAsync();
 
             });
             StartActivity(typeof(NonprofitProfileViewActivity));
@@ -333,7 +338,7 @@ namespace Volunesia.Droid.Activities
         public async System.Threading.Tasks.Task<string> DeleteEventAsync()
         {
             int index = 0;
-            if (SelectedEvent.EventRoster!=null)
+            if (SelectedEvent.EventRoster != null)
             {
                 //traverse the roster, and obtain all email addresses of attendees
                 string[] attendeeEmails = new string[SelectedEvent.EventRoster.Size()];
@@ -350,7 +355,7 @@ namespace Volunesia.Droid.Activities
 
                         });
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
 
                     }
@@ -360,7 +365,7 @@ namespace Volunesia.Droid.Activities
                 emailHandler.SendEventDeletionNotificationViaEmail(attendeeEmails, SelectedEvent.EventName);
             }
             // Set the events/nonprofitid to 0, before Firebase deletes that component...
-            if (AppData.NPEventsHistory.NPEvents.Count ==1)
+            if (AppData.NPEventsHistory.NPEvents.Count == 1)
             {
                 AppData.NPEventsHistory.RemoveNonprofitEvent(SelectedEvent.EventID);
 
@@ -379,8 +384,8 @@ namespace Volunesia.Droid.Activities
                 FirebaseResponse deleteEventResponse = await firebaseClient.DeleteAsync("events/" + AppData.NonprofitRepresentative.AssociatedNonprofit + "/" + SelectedEvent.EventID);
                 return deleteEventResponse.Body;
             }
-            
-            
+
+
         }
 
         /// <summary>
@@ -408,7 +413,7 @@ namespace Volunesia.Droid.Activities
         /// <returns></returns>
         public bool CheckIfVolunteerCheckedIn(JObject eventRoster)
         {
-            foreach(var attendee in eventRoster)
+            foreach (var attendee in eventRoster)
             {
                 if (attendee.Key.Equals(AppData.CurUser.UID))
                 {
@@ -432,7 +437,7 @@ namespace Volunesia.Droid.Activities
         public bool CheckIfVolunteerIsInRoster(JObject eventRoster)
         {
 
-            foreach(var attendee in eventRoster)
+            foreach (var attendee in eventRoster)
             {
                 if (attendee.Key.Equals(AppData.CurUser.UID))
                 {
@@ -452,7 +457,7 @@ namespace Volunesia.Droid.Activities
             Dictionary<string, object> attendeeInformation = new Dictionary<string, object>();
 
 
-            attendeeInformation.Add("attended", "N" );
+            attendeeInformation.Add("attended", "N");
             attendeeInformation.Add("hourscompleted", 0);
             attendeeInformation.Add("checkintime", "");
             attendeeInformation.Add("status", "Will Attend");
@@ -466,7 +471,7 @@ namespace Volunesia.Droid.Activities
             volunteerHistoryInfo.Add("nonprofitname", SelectedEvent.EventName);
             volunteerHistoryInfo.Add("eventname", SelectedEvent.EventName);
 
-            FirebaseResponse setVolunteerHistoryResponse = await firebaseClient.SetAsync("volunteerhistory/" +  AppData.CurUser.UID + "/" + SelectedEvent.EventID, volunteerHistoryInfo );
+            FirebaseResponse setVolunteerHistoryResponse = await firebaseClient.SetAsync("volunteerhistory/" + AppData.CurUser.UID + "/" + SelectedEvent.EventID, volunteerHistoryInfo);
             //Retrieve the user 
             SetResponse response = await firebaseClient.SetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster/" + AppData.CurUser.UID, attendeeInformation);
 
@@ -499,7 +504,7 @@ namespace Volunesia.Droid.Activities
             FirebaseResponse deleteVolHistResponse = await firebaseClient.DeleteAsync("volunteerhistory/" + AppData.CurUser.UID + "/" + SelectedEvent.EventID);
             //Retrieve the roster again to make sure the roster content has been deleted
             //the roster attribute is deleted when there aren't any more volunteers in roster
-            FirebaseResponse checkForRoster = await firebaseClient.GetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID+ "/roster");
+            FirebaseResponse checkForRoster = await firebaseClient.GetAsync("events/" + SelectedEvent.HostID + "/" + SelectedEvent.EventID + "/roster");
 
             AppData.FutureEvents.RemoveVolunteerEvent(SelectedEvent.EventID);
 
@@ -511,7 +516,7 @@ namespace Volunesia.Droid.Activities
             return null;
         }
 
-        
+
         //Proceeds to retrieve the roster and waitlist
         public async System.Threading.Tasks.Task<string> GetRosterAndWaitlist()
         {

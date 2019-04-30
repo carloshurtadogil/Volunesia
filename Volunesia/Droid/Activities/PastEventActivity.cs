@@ -43,7 +43,7 @@ namespace Volunesia.Droid.Activities
             Attended = FindViewById<TextView>(Resource.Id.attendedView);
             Hours = FindViewById<TextView>(Resource.Id.hoursView);
 
-            
+
 
             Button rateButton = FindViewById<Button>(Resource.Id.rate);
             Button generateButton = FindViewById<Button>(Resource.Id.generate);
@@ -56,17 +56,28 @@ namespace Volunesia.Droid.Activities
             if (SelectedEvent.Attended == "Y")
             {
                 Attended.Text = "You attended this event!";
-            } else
+            }
+            else
             {
                 Attended.Text = "You did not event this event.";
             }
 
             Hours.Text = "Hours Completed: " + SelectedEvent.HoursCompleted.ToString();
 
-            rateButton.Click += RateClicked;
-            generateButton.Click += GenerateCertificate;
+            //add restrictions to restrict a volunteer from rating or generating a certificate of achievement
+            if ((SelectedEvent.Attended.Equals("N") || SelectedEvent.Attended.Equals("n")) && !SelectedEvent.HoursCompleted.ToString().Equals("0"))
+            {
+                rateButton.Visibility = ViewStates.Invisible;
+                generateButton.Visibility = ViewStates.Invisible;
+            }
+            else
+            {
+                rateButton.Click += RateClicked;
+                generateButton.Click += GenerateCertificate;
+            }
             backButton.Click += GoBack;
-            
+
+
         }
 
         /// <summary>
@@ -101,7 +112,7 @@ namespace Volunesia.Droid.Activities
             //Write necessary text such as volunteer first/last names, event name, and amount of hours volunteered
             canvas.DrawText(AppData.CurUser.FirstName + " " + AppData.CurUser.LastName, canvas.Width / 2, (canvas.Height / 3) + 45, paint);
             canvas.DrawText(SelectedEvent.EventName, canvas.Width / 3, (canvas.Height / 2) + 45, paint);
-            canvas.DrawText( Hours.Text + " hours", (canvas.Width * 2) / 3, (canvas.Height / 2) + 45, paint);
+            canvas.DrawText(Hours.Text + " hours", (canvas.Width * 2) / 3, (canvas.Height / 2) + 45, paint);
 
             //Translate the bitmap into a stream
             MemoryStream stream = new MemoryStream();

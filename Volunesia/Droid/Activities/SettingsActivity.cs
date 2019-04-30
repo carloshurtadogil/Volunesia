@@ -51,6 +51,7 @@ namespace Volunesia.Droid.Activities
         {
             AppData.CurUser = null;
             AppData_Droid.Auth.SignOut();
+            StartActivity(typeof(MainActivity));
         }
     }
 }

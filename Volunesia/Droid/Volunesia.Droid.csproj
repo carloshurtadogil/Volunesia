@@ -383,9 +383,6 @@
     <AndroidResource Include="Resources\mipmap-mdpi\volunteeringcert.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\signupButtonImage.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\RosterView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>

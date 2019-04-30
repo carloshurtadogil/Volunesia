@@ -25,7 +25,7 @@ namespace Volunesia.Droid
         public EditText EventName { get; set; }
         public EditText EventDate { get; set; }
         public EditText EventEndDate { get; set; }
-        public EditText EventTime { get; set; }
+        public EditText EventLocation { get; set; }
         public EditText EventDes { get; set; }
         public EditText AppDeadline { get; set; }
         public string eventID { get; set; }
@@ -39,7 +39,7 @@ namespace Volunesia.Droid
             EventName = FindViewById<EditText>(Resource.Id.eventNameField);
             EventDate = FindViewById<EditText>(Resource.Id.eventDateField);
             EventEndDate = FindViewById<EditText>(Resource.Id.eventEndDateField);
-            EventTime = FindViewById<EditText>(Resource.Id.eventTimeField);
+            EventLocation = FindViewById<EditText>(Resource.Id.eventLocationField);
             EventDes = FindViewById<EditText>(Resource.Id.eventDescriptionField);
             AppDeadline = FindViewById<EditText>(Resource.Id.appDeadlineField);
 
@@ -59,7 +59,7 @@ namespace Volunesia.Droid
         {
 
             EventCreationVerification eventCreationVerif = new EventCreationVerification();
-            eventCreationVerif.VerifyEventCreationDetails(EventDate.Text, EventEndDate.Text, AppDeadline.Text, EventName.Text);
+            eventCreationVerif.VerifyEventCreationDetails(EventDate.Text, EventEndDate.Text, AppDeadline.Text, EventName.Text, EventLocation.Text);
 
             //if there are no error messages, then proceed to create the event
             if (string.IsNullOrEmpty(eventCreationVerif.ErrorMessages.ToString()))
@@ -72,6 +72,7 @@ namespace Volunesia.Droid
                 mainDict.Add("imagepath", "standard");
                 mainDict.Add("eventdate", EventDate.Text);
                 mainDict.Add("eventenddate", EventEndDate.Text);
+                mainDict.Add("location", EventLocation.Text);
                 mainDict.Add("eventdesc", EventDes.Text);
                 mainDict.Add("eventname", EventName.Text);
                 mainDict.Add("poster", AppData.CurUser.UID);
@@ -85,6 +86,7 @@ namespace Volunesia.Droid
                     ApplicationDeadline = Convert.ToDateTime(AppDeadline.Text),
                     EventID = eventID,
                     HostID = AppData.NonprofitRepresentative.AssociatedNonprofit,
+                    Location = EventLocation.Text,
                     EventDate = Convert.ToDateTime(EventDate.Text),
                     EventEndDate = Convert.ToDateTime(EventEndDate.Text),
                     EventDescription = EventDes.Text,
@@ -128,7 +130,7 @@ namespace Volunesia.Droid
         /// <returns></returns>
         public async System.Threading.Tasks.Task<string> PostEvent()
         {
-           
+
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
 

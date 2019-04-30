@@ -19,12 +19,16 @@ namespace Volunesia.Services
         /// Verifies the details of a-to-be created event
         /// </summary>
         /// <returns></returns> 
-        public void VerifyEventCreationDetails(string eventDate, string eventEndDate, string applicationDeadline, string eventName)
+        public void VerifyEventCreationDetails(string eventDate, string eventEndDate, string applicationDeadline, string eventName, string eventLocation)
         {
             //checks if the event name is empty
             if (string.IsNullOrEmpty(eventName))
             {
                 ErrorMessages.Append("Event name is empty");
+            }
+            if (string.IsNullOrEmpty(eventLocation))
+            {
+                ErrorMessages.Append("Event location is empty");
             }
             //checks if any of the event date fields are empty
             if (string.IsNullOrEmpty(eventDate) || string.IsNullOrEmpty(eventEndDate) || string.IsNullOrEmpty(applicationDeadline))

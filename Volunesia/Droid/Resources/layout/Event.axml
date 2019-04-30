@@ -20,10 +20,10 @@
         android:id="@+id/eventDateTextView" />
     <TextView
         android:gravity="center"
-        android:text="Event Description:"
+        android:text="Event Location:"
         android:layout_width="match_parent"
         android:layout_height="43.5dp"
-        android:id="@+id/eventDescriptionTextView" />
+        android:id="@+id/eventLocationTextView" />
 	<TextView
 		android:background="#FFFFFF"
 		android:gravity="center"
