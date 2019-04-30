@@ -53,7 +53,9 @@ namespace Volunesia.iOS
                 FirebaseReader.ReadNPName(EventDetails.HostID, NonprofitNameLabel);
 
                 UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     AwaitAddToClipboard();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 });
 
                 LocationTextLabel.UserInteractionEnabled = true;
@@ -224,6 +226,7 @@ namespace Volunesia.iOS
         private async Task AwaitAddToClipboard()
         {
             await Clipboard.SetTextAsync(EventDetails.Location);
+            AlertShow.Show(this, "Address has been copied to clipboard", "");
         }
     }
 }
