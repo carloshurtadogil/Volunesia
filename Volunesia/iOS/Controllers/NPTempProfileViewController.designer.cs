@@ -20,6 +20,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton EmailButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel MissionStatementLabel { get; set; }
 
         [Outlet]
@@ -36,6 +40,18 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton PhoneButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel PrimaryEmailLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel PrimaryPhoneLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView ProfileImageView { get; set; }
 
         [Outlet]
@@ -46,11 +62,24 @@ namespace Volunesia.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("EmailButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void EmailButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("PhoneButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void PhoneButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (BackButton != null) {
                 BackButton.Dispose ();
                 BackButton = null;
+            }
+
+            if (EmailButton != null) {
+                EmailButton.Dispose ();
+                EmailButton = null;
             }
 
             if (MissionStatementLabel != null) {
@@ -71,6 +100,21 @@ namespace Volunesia.iOS
             if (NavBarImageView != null) {
                 NavBarImageView.Dispose ();
                 NavBarImageView = null;
+            }
+
+            if (PhoneButton != null) {
+                PhoneButton.Dispose ();
+                PhoneButton = null;
+            }
+
+            if (PrimaryEmailLabel != null) {
+                PrimaryEmailLabel.Dispose ();
+                PrimaryEmailLabel = null;
+            }
+
+            if (PrimaryPhoneLabel != null) {
+                PrimaryPhoneLabel.Dispose ();
+                PrimaryPhoneLabel = null;
             }
 
             if (ProfileImageView != null) {

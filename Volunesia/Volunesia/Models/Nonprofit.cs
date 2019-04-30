@@ -18,5 +18,7 @@ namespace Volunesia.Models
         public string DefaultPhone  { get; set; }
         //The primary location of the nonprofit
         public string ZipCode       { get; set; }
+        //The nonprofit's mission statement
+        public string MissionStatement { get; set; }
     }
 }

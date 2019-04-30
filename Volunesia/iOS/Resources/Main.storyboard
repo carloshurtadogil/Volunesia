@@ -2406,6 +2406,43 @@
                                     <action selector="BackButton_TouchUpInside:" destination="140522" id="140572" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Primary Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="142400">
+                                <rect key="frame" x="24" y="598" width="258" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Primary Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="142402">
+                                <rect key="frame" x="24" y="652" width="258" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="143605">
+                                <rect key="frame" x="24" y="623" width="338" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22" weight="light"/>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="143607" eventType="touchUpInside" id="143606"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="143609" id="143608" eventType="touchUpInside"/>
+                                    <action selector="PrimaryEmailButton_TouchUpInside:" destination="143611" id="143610" eventType="touchUpInside"/>
+                                    <action selector="PhoneButton_TouchUpInside:" destination="140522" id="143612" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="147129">
+                                <rect key="frame" x="24" y="682" width="338" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22" weight="light"/>
+                                <connections>
+                                    <action selector="BackButton_TouchUpInside:" destination="147131" eventType="touchUpInside" id="147130"/>
+                                    <action selector="BackButton_TouchUpInside:" destination="147133" id="147132" eventType="touchUpInside"/>
+                                    <action selector="PrimaryEmailButton_TouchUpInside:" destination="147135" id="147134" eventType="touchUpInside"/>
+                                    <action selector="PhoneButton_TouchUpInside:" destination="147137" id="147136" eventType="touchUpInside"/>
+                                    <action selector="EmailButton_TouchUpInside:" destination="140522" id="147405" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2417,6 +2454,10 @@
                         <outlet property="ProfileImageView" destination="140542" id="140541"/>
                         <outlet property="UserNameLabel" destination="140546" id="140545"/>
                         <outlet property="BackButton" destination="140568" id="name-outlet-140568"/>
+                        <outlet property="PrimaryPhoneLabel" destination="142400" id="name-outlet-142400"/>
+                        <outlet property="PrimaryEmailLabel" destination="142402" id="name-outlet-142402"/>
+                        <outlet property="PhoneButton" destination="143605" id="name-outlet-143605"/>
+                        <outlet property="EmailButton" destination="147129" id="name-outlet-147129"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="140566" userLabel="First Responder" sceneMemberID="firstResponder"/>
