@@ -59,7 +59,8 @@ namespace Volunesia.iOS
                                 EventDescription = eventdesc,
                                 EventRoster = null,
                                 EventCategories = null,
-                                Waitlist = null
+                                Waitlist = null,
+                                Location = location
 
                             };
                             if (AppDeadlineSwitch.On)

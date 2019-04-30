@@ -2058,7 +2058,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="90051">
-                                <rect key="frame" x="21" y="407" width="338" height="225"/>
+                                <rect key="frame" x="21" y="407" width="338" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
@@ -2093,6 +2093,23 @@
                                     <action selector="NonprofitProfileButton_TouchUpInside:" destination="89985" id="139797" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="152466">
+                                <rect key="frame" x="16" y="578" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="152467" numberOfLines="2">
+                                <rect key="frame" x="14" y="604" width="343" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" button="YES"/>
+                                </accessibility>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -2120,6 +2137,8 @@
                         <segue id="127417" destination="127286" kind="show" identifier="ToRVCSegue_id"/>
                         <outlet property="NonprofitProfileButton" destination="139794" id="name-outlet-139794"/>
                         <segue id="140928" destination="140522" kind="show" identifier="ToNPProfileSegue_id"/>
+                        <outlet property="LocationLabel" destination="152466" id="name-outlet-152466"/>
+                        <outlet property="LocationTextLabel" destination="152467" id="name-outlet-152467"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90042" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2442,7 +2461,6 @@
                                     <action selector="PhoneButton_TouchUpInside:" destination="147137" id="147136" eventType="touchUpInside"/>
                                     <action selector="EmailButton_TouchUpInside:" destination="140522" id="147405" eventType="touchUpInside"/>
                                 </connections>
-                                <state key="normal" title="test"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Primary Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="151458">
                                 <rect key="frame" x="24" y="710" width="258" height="34"/>

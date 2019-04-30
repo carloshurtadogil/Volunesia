@@ -295,6 +295,7 @@ namespace Volunesia.iOS.Services
                             var eventcaps = Convert.ToInt32(eventinfo["capacity"].ToString());
                             var poster = eventinfo["poster"].ToString();
                             var rostercheck = eventinfo["roster"].ToString();
+                            var location = eventinfo["location"].ToString();
                             Roster roster = new Roster();
                             if (rostercheck != "0")
                             {
@@ -338,7 +339,8 @@ namespace Volunesia.iOS.Services
                                 EventName = eventname,
                                 EventDescription = eventdesc,
                                 EventRoster = roster,
-                                Capacity = eventcaps
+                                Capacity = eventcaps,
+                                Location = location
                             };
                             events.Add(@event);
                             AppData_iOS.CurrentEvents = events;
@@ -506,6 +508,8 @@ namespace Volunesia.iOS.Services
                             var poster = eventinfo["poster"].ToString();
                             var rostercheck = eventinfo["roster"].ToString();
                             var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
+                            var location = eventinfo["location"].ToString();
+                            
                             Roster roster = new Roster();
                             if (rostercheck != "0")
                             {
@@ -546,7 +550,8 @@ namespace Volunesia.iOS.Services
                                 EventName = eventname,
                                 EventDescription = eventdesc,
                                 EventRoster = roster,
-                                Capacity = eventcaps
+                                Capacity = eventcaps,
+                                Location = location
                             };
                             AlertShow.Print("About to add event to nonprofit events");
                             AppData_iOS.AddToNonprofitEvents(@event);
@@ -710,6 +715,7 @@ namespace Volunesia.iOS.Services
                     var eventname = data["eventname"].ToString();
                     var eventdate = Convert.ToDateTime(data["eventdate"].ToString());
                     var eventdescription = data["eventdesc"].ToString();
+                    var location = data["location"].ToString();
                     Event e = new Event
                     {
                         EventName = eventname,
@@ -717,7 +723,8 @@ namespace Volunesia.iOS.Services
                         EventDescription = eventdescription,
                         EventImagePath = imagepath,
                         EventID = eid,
-                        HostID = npid
+                        HostID = npid,
+                        Location = location
                     };
                     HomeViewController homeView = (HomeViewController)HomeController;
                     homeView.SelectedEvent = e;
@@ -755,8 +762,8 @@ namespace Volunesia.iOS.Services
             AppData_iOS.NonprofitEvents.Add(e);
 
             //Add to firebase
-            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid" };
-            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0 };
+            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid", "location" };
+            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0, e.Location };
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
             if (!e.EventImagePath.Equals("standard"))
@@ -1010,18 +1017,33 @@ namespace Volunesia.iOS.Services
 
         public static void WriteNewAttribute() 
         {
-            AppData_iOS.NonprofitNode.ObserveEvent(DataEventType.Value, (snapshot) => 
+            AppData_iOS.EventNode.ObserveEvent(DataEventType.Value, (snapshot) => 
             {
                 if(snapshot.Exists)
                 {
                     var data = snapshot.GetValue<NSDictionary>();
                     if(data != null)
-                    { 
+                    {
+                        foreach(var npid in data.Keys)
+                        {
+                            AlertShow.Print("NPID: " + npid);
+                            var events = (NSDictionary)data[npid.ToString()]; 
+                            if(events != null)
+                            {
+                                foreach(var eid in events.Keys)
+                                {
+                                    NSString std = (Foundation.NSString)"3150 East 29th Street, Long Beach, CA 90806";
+                                    AppData_iOS.EventNode.GetChild(npid.ToString()).GetChild(eid.ToString()).GetChild("location").SetValue(std);
+                                } 
+                            }
+                        }
+                        /*
                         foreach(var key in data.Keys)
                         {
                             NSString std = (Foundation.NSString)"standard";
                             AppData_iOS.NonprofitNode.GetChild(key.ToString()).GetChild("profileimg").SetValue(std);
-                        }
+                        }                       
+                        */
 
                     }
 

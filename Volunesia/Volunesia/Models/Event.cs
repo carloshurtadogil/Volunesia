@@ -44,5 +44,8 @@ namespace Volunesia.Models
 
         // Capacity for event
         public int Capacity { get; set; }
+
+        // Location of event
+        public string Location { get; set; }
     }
 }

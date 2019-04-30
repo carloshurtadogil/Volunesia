@@ -64,6 +64,14 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LocationLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LocationTextLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel NonprofitNameLabel { get; set; }
 
         [Outlet]
@@ -158,6 +166,16 @@ namespace Volunesia.iOS
             if (LeaveButton != null) {
                 LeaveButton.Dispose ();
                 LeaveButton = null;
+            }
+
+            if (LocationLabel != null) {
+                LocationLabel.Dispose ();
+                LocationLabel = null;
+            }
+
+            if (LocationTextLabel != null) {
+                LocationTextLabel.Dispose ();
+                LocationTextLabel = null;
             }
 
             if (NonprofitNameLabel != null) {

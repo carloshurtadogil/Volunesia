@@ -1,9 +1,11 @@
 using Foundation;
 using System;
+using System.Threading.Tasks;
 using UIKit;
 using Volunesia.iOS.Services;
 using Volunesia.Models;
 using Volunesia.Services;
+using Xamarin.Essentials;
 
 namespace Volunesia.iOS
 {
@@ -46,7 +48,16 @@ namespace Volunesia.iOS
                     EventDate.Text = formattedEventDate;
                 }
                 EventDescriptionTextView.Text = EventDetails.EventDescription;
+                AlertShow.Print("Location: " + EventDetails.Location);
+                LocationTextLabel.Text = EventDetails.Location;
                 FirebaseReader.ReadNPName(EventDetails.HostID, NonprofitNameLabel);
+
+                UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
+                    AwaitAddToClipboard();
+                });
+
+                LocationTextLabel.UserInteractionEnabled = true;
+                LocationTextLabel.AddGestureRecognizer(labelTap);
 
             }
 
@@ -204,6 +215,15 @@ namespace Volunesia.iOS
                 AlertShow.Print("Null volunteer event"); 
             }
             //FirebaseReader.Test(this, AppData.CurUser.UID, AppData.CurUser.EmailAddress);
+        }
+
+        /// <summary>
+        /// Allow the user to copy the address to the clipboard
+        /// </summary>
+        /// <returns>The add to clipboard.</returns>
+        private async Task AwaitAddToClipboard()
+        {
+            await Clipboard.SetTextAsync(EventDetails.Location);
         }
     }
 }
