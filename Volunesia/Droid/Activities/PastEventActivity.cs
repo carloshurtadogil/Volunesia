@@ -16,6 +16,8 @@ using Volunesia.Droid.Service;
 using Android.Graphics;
 using System.IO;
 using Volunesia.Services;
+using FireSharp.Interfaces;
+using FireSharp.Response;
 
 namespace Volunesia.Droid.Activities
 {
@@ -65,14 +67,28 @@ namespace Volunesia.Droid.Activities
             Hours.Text = "Hours Completed: " + SelectedEvent.HoursCompleted.ToString();
 
             //add restrictions to restrict a volunteer from rating or generating a certificate of achievement
-            if ((SelectedEvent.Attended.Equals("N") || SelectedEvent.Attended.Equals("n")) && !SelectedEvent.HoursCompleted.ToString().Equals("0"))
+            if ((SelectedEvent.Attended.Equals("N") || SelectedEvent.Attended.Equals("n")) && SelectedEvent.HoursCompleted.ToString().Equals("0"))
             {
                 rateButton.Visibility = ViewStates.Invisible;
                 generateButton.Visibility = ViewStates.Invisible;
             }
             else
             {
-                rateButton.Click += RateClicked;
+                //Query to determine if a volunteer has previously rated an event
+                var hasVolunteerRatedEvent = System.Threading.Tasks.Task.Run(async () =>
+                {
+                    return await QueryVolunteerRatingForEventStatus();
+
+                });
+                //if the volunteer has previously rated the event, hide the Rate buttong
+                if (!hasVolunteerRatedEvent.Result.Equals("null"))
+                {
+                    rateButton.Visibility = ViewStates.Invisible;
+                }
+                else
+                {
+                    rateButton.Click += RateClicked;
+                }
                 generateButton.Click += GenerateCertificate;
             }
             backButton.Click += GoBack;
@@ -156,5 +172,21 @@ namespace Volunesia.Droid.Activities
         {
             StartActivity(typeof(VolunteerEventsActivity));
         }
+
+
+        /// <summary> 
+        /// Checks if a volunteer has previously rated this event by querying Firebase
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> QueryVolunteerRatingForEventStatus()
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            FirebaseResponse volunteerRatingForEventResponse = await firebaseClient.GetAsync("ratings/" + SelectedEvent.EventID + "/" + AppData.CurUser.UID);
+            return volunteerRatingForEventResponse.Body;
+        }
+
+
     }
 }

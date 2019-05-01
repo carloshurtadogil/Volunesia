@@ -455,15 +455,16 @@ namespace Volunesia.Droid.Activities
 
             IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+            //create a dictionary for writing roster attendee information to Firebase
             Dictionary<string, object> attendeeInformation = new Dictionary<string, object>();
-
-
             attendeeInformation.Add("attended", "N");
             attendeeInformation.Add("hourscompleted", 0);
             attendeeInformation.Add("checkintime", "");
             attendeeInformation.Add("status", "Will Attend");
             attendeeInformation.Add("contact", AppData.CurUser.EmailAddress);
+            attendeeInformation.Add("name", AppData.CurUser.FirstName + " " + AppData.CurUser.LastName);
 
+            //create a dictionary for writing volunteer history to Firebase
             Dictionary<string, object> volunteerHistoryInfo = new Dictionary<string, object>();
             volunteerHistoryInfo.Add("attended", "N");
             volunteerHistoryInfo.Add("eventdate", Convert.ToString(SelectedEvent.EventDate));

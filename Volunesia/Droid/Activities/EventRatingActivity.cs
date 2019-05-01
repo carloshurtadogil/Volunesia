@@ -20,7 +20,7 @@ namespace Volunesia.Droid.Activities
     [Activity(Label = "EventRatingActivity")]
     public class EventRatingActivity : Activity
     {
-        public VolunteerEvent SelectedEvent{ get; set; }
+        public VolunteerEvent SelectedEvent { get; set; }
         public Switch HelpfulSwitch { get; set; }
         public Switch PositiveSwitch { get; set; }
 
@@ -40,69 +40,46 @@ namespace Volunesia.Droid.Activities
 
             if (timeDifference.Hours > SelectedEvent.HoursCompleted)
             {
-                //Query a volunteer rating to make sure if a volunteer hasn't rated this event previously
-                var checkIfVolunteerHasRated = System.Threading.Tasks.Task.Run(async () =>
+
+                HelpfulSwitch = FindViewById<Switch>(Resource.Id.helpfulSwitch);
+                PositiveSwitch = FindViewById<Switch>(Resource.Id.positiveSwitch);
+
+                IsHelpfulSwitchOn = false;
+                IsPositiveSwitchOn = false;
+
+                //listen for any change upon a click on the Helpful switch
+                HelpfulSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
                 {
-                    return await QueryVolunteerRatingForEventStatus();
-
-
-                });
-                if (checkIfVolunteerHasRated.Result.Equals("null"))
+                    if (IsHelpfulSwitchOn)
+                    {
+                        IsHelpfulSwitchOn = false;
+                    }
+                    else
+                    {
+                        IsHelpfulSwitchOn = true;
+                    }
+                };
+                //listen for any change upon a click on the Positive switch
+                PositiveSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
                 {
-                    HelpfulSwitch = FindViewById<Switch>(Resource.Id.helpfulSwitch);
-                    PositiveSwitch = FindViewById<Switch>(Resource.Id.positiveSwitch);
-
-                    IsHelpfulSwitchOn = false;
-                    IsPositiveSwitchOn = false;
-
-                    //listen for any change upon a click on the Helpful switch
-                    HelpfulSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
+                    if (IsPositiveSwitchOn)
                     {
-                        if (IsHelpfulSwitchOn)
-                        {
-                            IsHelpfulSwitchOn = false;
-                        }
-                        else
-                        {
-                            IsHelpfulSwitchOn = true;
-                        }
-                    };
-                    //listen for any change upon a click on the Positive switch
-                    PositiveSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e)
+                        IsPositiveSwitchOn = false;
+                    }
+                    else
                     {
-                        if (IsPositiveSwitchOn)
-                        {
-                            IsPositiveSwitchOn = false;
-                        }
-                        else
-                        {
-                            IsPositiveSwitchOn = true;
-                        }
-                    };
-                    var castRatingButton = FindViewById<Button>(Resource.Id.castRatingButton);
-                    castRatingButton.Click += CollectVolunteerRatingForEvent;
-                }
-                //otherwise, notify the volunteer that their rating already has been casted for the event
-                else
-                {
-                    AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
-                    dialogAlertConstruction.SetTitle("Rating Error");
-                    dialogAlertConstruction.SetMessage("Unable to rate event, as you already have cast your rating!");
+                        IsPositiveSwitchOn = true;
+                    }
+                };
+                var castRatingButton = FindViewById<Button>(Resource.Id.castRatingButton);
+                castRatingButton.Click += CollectVolunteerRatingForEvent;
 
-                    dialogAlertConstruction.SetPositiveButton("GO BACK", delegate
-                    {
 
-                        dialogAlertConstruction.Dispose();
-                        StartActivity(typeof(VolunteerEventsActivity));
-
-                    });
-                    dialogAlertConstruction.Show();
-                }
             }
-            
+
         }
 
-        
+
         /// <summary>
         /// Proceeds to collects volunteer ratings if any of the switches were clicked 
         /// </summary>
@@ -112,28 +89,28 @@ namespace Volunesia.Droid.Activities
         {
             List<string> ratingCategories = new List<string>();
 
-            if(IsPositiveSwitchOn)
+            if (IsPositiveSwitchOn)
             {
                 ratingCategories.Add("helpful");
             }
-            if(IsHelpfulSwitchOn)
+            if (IsHelpfulSwitchOn)
             {
                 ratingCategories.Add("positive");
             }
-            if(ratingCategories.Count != 0)
+            if (ratingCategories.Count != 0)
             {
                 Dictionary<string, string> ratingCategoriesSelected = new Dictionary<string, string>();
                 ratingCategoriesSelected["helpful"] = "No";
                 ratingCategoriesSelected["positive"] = "No";
-                foreach(var ratingCategory in ratingCategories)
+                foreach (var ratingCategory in ratingCategories)
                 {
                     ratingCategoriesSelected[ratingCategory] = "Yes";
-                    
+
                 }
                 var castVolunteerRating = System.Threading.Tasks.Task.Run(async () =>
                 {
                     return await CastVolunteerRatingForEvent(ratingCategoriesSelected);
-                    
+
                 });
 
                 StartActivity(typeof(VolunteerEventsActivity));
@@ -156,19 +133,6 @@ namespace Volunesia.Droid.Activities
 
         }
 
-
-        /// <summary> 
-        /// Checks if a volunteer has previously rated this event by querying Firebase
-        /// </summary>
-        /// <returns></returns>
-        public async System.Threading.Tasks.Task<string> QueryVolunteerRatingForEventStatus()
-        {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-            
-            FirebaseResponse volunteerRatingForEventResponse = await firebaseClient.GetAsync("ratings/" + SelectedEvent.EventID + "/" + AppData.CurUser.UID);
-            return volunteerRatingForEventResponse.Body;
-        }
 
         /// <summary>
         /// Casts the volunteer's rating of the event by posting it to Firebase

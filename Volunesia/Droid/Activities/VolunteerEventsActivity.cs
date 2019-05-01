@@ -69,7 +69,7 @@ namespace Volunesia.Droid.Activities
 
             foreach(var presentEvent in AllEvents)
             {
-                mItems.Add(presentEvent.EventName);
+                mItems.Add(presentEvent.EventName + " " + presentEvent.EventDate);
             }
 
             PastEventsCheckSubscription = false;
@@ -168,7 +168,7 @@ namespace Volunesia.Droid.Activities
             //traverses the volunteer's events, and determines if they occurred after current time or not
             foreach (var pastEvent in PastEvents)
             {
-                mItems.Add(pastEvent.EventName);
+                mItems.Add(pastEvent.EventName + " " + pastEvent.EventDate);
             }
 
             //Adapt the ListView accordingly to showcase past events
@@ -202,7 +202,7 @@ namespace Volunesia.Droid.Activities
             mItems = new List<string>();
             foreach (var upcomingEvent in UpcomingEvents)
             {
-                mItems.Add(upcomingEvent.EventName);
+                mItems.Add(upcomingEvent.EventName + " " + upcomingEvent.EventDate);
             }
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             mListView.Adapter = adapter;
@@ -231,7 +231,7 @@ namespace Volunesia.Droid.Activities
             mItems = new List<string>();
             foreach(var presentEvent in AllEvents)
             {
-                mItems.Add(presentEvent.EventName);
+                mItems.Add(presentEvent.EventName + " " + presentEvent.EventDate);
             }
             //Adapt the ListView accordingly to showcase all events
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);

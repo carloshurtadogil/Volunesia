@@ -153,11 +153,12 @@ namespace Volunesia.Droid.Activities
                     
                 //Convert.ToInt32((volunteerLevelTask.Result).Substring(1, volunteerLevelTask.Result.Length - 2));
                 List<BadgeCategory.Badge> badges = OccupyVolunteerBadges(volunteerBadgesTask.Result);
+                int badgeCounter = badges.Count;
 
                 Volunteer theVolunteer = new Volunteer()
                 {
                     Level = level,
-                    BadgeList = new List<BadgeCategory.Badge>(),
+                    BadgeList = badges,
                     UID = attendee.UID,
                     Experience = volXP
                     
@@ -178,6 +179,17 @@ namespace Volunesia.Droid.Activities
                     {
                         return await UpdateVolunteerLevelAsync(theVolunteer, volInformation);
                     });
+                    //if the initial amount of badges is not equivalent to the updated badge list, then 
+                    //assign the next highest badge a volunteer has in Firebase
+                    if (badgeCounter != theVolunteer.BadgeList.Count)
+                    {
+                        string updatedBadge = theVolunteer.BadgeList[theVolunteer.BadgeList.Count-1].ToString();
+                        var volunteerBadgeAssignmentTask = System.Threading.Tasks.Task.Run(async () =>
+                        {
+                            return await UpdateVolunteerBadgeAsync(attendee.UID, updatedBadge);
+
+                        });
+                    }
                 }
 
                 Dictionary<string, object> volHistoryInfo = new Dictionary<string, object>();
@@ -221,6 +233,20 @@ namespace Volunesia.Droid.Activities
             IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
             FirebaseResponse updateVolHistoryResponse = await firebaseClient.SetAsync("volunteerhistory/" + attendeeUID + "/" + SelectedEvent.EventID, volunteerHistoryInformation);
             return updateVolHistoryResponse.Body;
+        }
+
+        /// <summary>
+        /// Updates a volunteer's highest badge in Firebase
+        /// </summary>
+        /// <param name="attendeeUID"></param>
+        /// <param name="newBadgeTitle"></param>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> UpdateVolunteerBadgeAsync(string attendeeUID, string newBadgeTitle)
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+            FirebaseResponse updateVolBadgeResponse = await firebaseClient.SetAsync("badges/" + attendeeUID, newBadgeTitle);
+            return updateVolBadgeResponse.Body;
         }
 
         /// <summary>

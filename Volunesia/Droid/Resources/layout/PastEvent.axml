@@ -9,36 +9,36 @@
 	android:minWidth="25px"
 	android:minHeight="25px">
 	<TextView
-		android:text="Large Text"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center"
+		android:text="Medium Text"
 		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/nonprofitNameView" />
 	<TextView
-		android:text="Large Text"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center"
+		android:text="Medium Text"
 		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/eventNameView" />
 	<TextView
-		android:text="Large Text"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center"
+		android:text="Medium Text"
 		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/eventDateView" />
 	<TextView
-		android:text="Large Text"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center"
+		android:text="Medium Text"
 		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/attendedView" />
 	<TextView
-		android:text="Large Text"
-		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center"
+		android:text="Medium Text"
 		android:layout_gravity="center"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
