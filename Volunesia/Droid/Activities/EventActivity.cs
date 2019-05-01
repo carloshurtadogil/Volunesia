@@ -89,6 +89,7 @@ namespace Volunesia.Droid.Activities
 
             ApplyOrDeleteButton = FindViewById<Button>(Resource.Id.applyOrDeleteButton);
             CheckAttendeesForEventButton = FindViewById<Button>(Resource.Id.checkAttendeesInRosterButton);
+            CheckAttendeesForEventButton.Visibility = ViewStates.Invisible;
 
             JObject roster = null;
             JObject waitlist = null;
@@ -228,7 +229,7 @@ namespace Volunesia.Droid.Activities
         public void CheckAttendeesForEvent(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(RosterViewActivity));
-            intent.PutExtra("chosenRoster", JsonConvert.SerializeObject(SelectedEvent.EventRoster));
+            intent.PutExtra("checkAttendance", JsonConvert.SerializeObject(SelectedEvent.EventRoster.GetAttendeeList()));
             StartActivity(intent);
         }
 

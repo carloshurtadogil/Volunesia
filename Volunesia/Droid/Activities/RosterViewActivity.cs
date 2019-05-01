@@ -17,7 +17,6 @@ namespace Volunesia.Droid.Activities
     [Activity(Label = "RosterViewActivity")]
     public class RosterViewActivity : Activity
     {
-        public Roster SelectedRoster { get; set; }
         public List<Attendee> Attendees { get; set; }
         private List<string> mItems;
         private ListView mListView;
@@ -27,15 +26,13 @@ namespace Volunesia.Droid.Activities
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.RosterView);
-            SelectedRoster = JsonConvert.DeserializeObject<Roster>(Intent.GetStringExtra("chosenRoster"));
+            Attendees = JsonConvert.DeserializeObject<List<Attendee>>(Intent.GetStringExtra("checkAttendance"));
 
-            Attendees = new List<Attendee>();
             mItems = new List<string>();
             mListView = FindViewById<ListView>(Resource.Id.attendeesInEventRosterListView);
 
-            foreach(var attendee in SelectedRoster.GetAttendeeList())
+            foreach(var attendee in Attendees)
             {
-                Attendees.Add(attendee);
                 mItems.Add(attendee.EmailAddress);
             }
 

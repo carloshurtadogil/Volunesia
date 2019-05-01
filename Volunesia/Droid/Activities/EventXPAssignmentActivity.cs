@@ -193,6 +193,7 @@ namespace Volunesia.Droid.Activities
                     return await UpdateVolunteerHistoryAsync(attendee.UID, volHistoryInfo);
                 });
             }
+            StartActivity(typeof(NonprofitProfileViewActivity));
 
         }
 
