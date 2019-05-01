@@ -15,8 +15,9 @@ namespace Volunesia.iOS.Services
             if (e.ToString() != "1/1/0001 12:00:00 AM")
             {
                 DateTime now = DateTime.Now;
+                int result = DateTime.Compare(now, e);
                 string msg = "";
-                if (e.Day == now.Day && e.Month == now.Month && e.Year == now.Year)
+                if (result == 0)
                 {
                     msg += "Today at ";
                 }
@@ -31,6 +32,12 @@ namespace Volunesia.iOS.Services
                 if (h > 12)
                 {
                     h -= 12;
+
+                }
+
+                if (h == 0)
+                {
+                    h = 12;
                 }
 
                 msg += h.ToString();

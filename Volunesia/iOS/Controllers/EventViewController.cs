@@ -152,6 +152,7 @@ namespace Volunesia.iOS
                 var nptpvc = (NPTempProfileViewController)segue.DestinationViewController; 
                 if(nptpvc != null)
                 {
+                    //EmailHandler.SendCancelEmail(this,EventDetails, NonprofitNameLabel.Text, ContactEmailLabel.Text);
                     nptpvc.PrimaryEmail = ContactEmailLabel.Text;
                     Nonprofit.NonprofitName = NonprofitNameLabel.Text;
                     nptpvc.NonprofitOrg = Nonprofit;
