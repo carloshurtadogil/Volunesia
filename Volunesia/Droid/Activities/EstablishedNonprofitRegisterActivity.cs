@@ -64,19 +64,48 @@ namespace Volunesia.Droid
             string errorMessageResult = contactInfoVerif.VerifyAllInformationForEstablishedNonprofit(EID.Text, OrganizationName.Text, City.Text, State.Text, ZipCode.Text, PhoneNumber.Text);
             if (string.IsNullOrEmpty(errorMessageResult))
             {
+                AndroidAddressHandler addressHandler = new AndroidAddressHandler();
+                string address = City.Text + "," + State.Text + " " + ZipCode.Text;
 
-                var intent = new Intent(this, typeof(MissionStatementActivity));
-                intent.PutExtra("city", City.Text);
-                intent.PutExtra("ein", EID.Text);
-                intent.PutExtra("name", OrganizationName.Text);
-                intent.PutExtra("primaryphone", PhoneNumber.Text);
-                intent.PutExtra("state", State.Text);
-                intent.PutExtra("type", "established");
-                intent.PutExtra("zip", ZipCode.Text);
+                //validate the address
+                var validateLocationResponse = System.Threading.Tasks.Task.Run(async () =>
+                {
+                    return await addressHandler.ValidateLocationAsync(address);
 
-                intent.PutExtra("user", JsonConvert.SerializeObject(theUser));
+                });
 
-                StartActivity(intent);
+                //if the address is indeed valid, then move on to the Mission Statement Activity page
+                if (validateLocationResponse.Result)
+                {
+                    var intent = new Intent(this, typeof(MissionStatementActivity));
+                    intent.PutExtra("city", City.Text);
+                    intent.PutExtra("ein", EID.Text);
+                    intent.PutExtra("name", OrganizationName.Text);
+                    intent.PutExtra("primaryphone", PhoneNumber.Text);
+                    intent.PutExtra("state", State.Text);
+                    intent.PutExtra("type", "established");
+                    intent.PutExtra("zip", ZipCode.Text);
+
+                    intent.PutExtra("user", JsonConvert.SerializeObject(theUser));
+
+                    StartActivity(intent);
+                }
+                //otherwise, notify user that address entered is invalid
+                else
+                {
+                    AlertDialog.Builder locationAlertFailure = new AlertDialog.Builder(this);
+                    locationAlertFailure.SetTitle("Error has occurred");
+                    locationAlertFailure.SetMessage("Location entered is invaid, reenter appropriate City, State, ZIP");
+
+                    locationAlertFailure.SetPositiveButton("GO BACK", delegate
+                    {
+
+                        locationAlertFailure.Dispose();
+
+                    });
+                    locationAlertFailure.Show();
+                }
+
 
             }
             //else, send an AlertDialog showcasing all errors that have occurred

@@ -55,7 +55,7 @@ namespace Volunesia.Droid
             Register r = new Register();
             r.AddUserToFirebase(theUser, "");
 
-            StartActivity(typeof(ChangeEmailActivity));
+            StartActivity(typeof(VolunteerProfileActivity));
         }
     }
 }

@@ -44,20 +44,13 @@ namespace Volunesia.Droid.Activities
                 return await QueryNonprofitInfo();
             });
 
-            //Query the Nonprofit's representatives infromation.
-            var retrievePrimaryRepresentative = System.Threading.Tasks.Task.Run(async () =>
-            {
-                return await QueryPrimaryRepresentative();
-            });
-
             //Parse the queried results into a JSON Object
             JObject nonProfitInfo = JObject.Parse(retrieveNonprofit.Result);
-            JObject primaryRepresentativeInfo = JObject.Parse(retrievePrimaryRepresentative.Result);
 
             //Store needed infomation into local string variables.
             string nonprofitName = "Nonprofit Name: " + nonProfitInfo["name"].ToString();
             string missionStatement = "Mission Statement: " + nonProfitInfo["missionstatement"].ToString();
-            string nonprofitEmail = "Email: " + primaryRepresentativeInfo["email"].ToString();
+            string nonprofitEmail = "Email: " + AppData.CurUser.EmailAddress;
             string phone = "Phone: " + nonProfitInfo["primaryphone"].ToString();
             string cityName = "City: " + nonProfitInfo["city"].ToString();
             string zipCode = "Zip" + nonProfitInfo["zip"].ToString();
@@ -94,16 +87,6 @@ namespace Volunesia.Droid.Activities
 
             return response.Body;
         }
-
-        public async System.Threading.Tasks.Task<string> QueryPrimaryRepresentative()
-        {
-            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
-            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
-
-            //Query Firebase to get Representatives information
-            FirebaseResponse response = await firebaseClient.GetAsync("users/" + AppData.NonprofitRepresentative.UID);
-
-            return response.Body;
-        }
+        
     }
 }

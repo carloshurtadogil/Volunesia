@@ -57,7 +57,7 @@
 
 
 	<Button
-		android:text="Button"
+		android:text="Continue"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/finalizeNPRegistrationButton" />

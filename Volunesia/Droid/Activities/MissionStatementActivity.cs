@@ -69,6 +69,7 @@ namespace Volunesia.Droid
             newNonprofit.Add("name", OrganizationName);
             newNonprofit.Add("primaryphone", PhoneNumber);
             newNonprofit.Add("primarycontact", theUser.UID);
+            newNonprofit.Add("profileimg", "standard");
             newNonprofit.Add("state", State);
             newNonprofit.Add("type", NonprofitType);
             newNonprofit.Add("zip", ZipCode);

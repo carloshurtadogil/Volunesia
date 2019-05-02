@@ -83,6 +83,7 @@ namespace Volunesia.Droid.Service
         /// </summary>
         public void AddNonprofitRepToFirebase(string generatedIDForNonprofit, string npOrgName)
         {
+
             NonprofitRepresentative createdNPRep = new NonprofitRepresentative()
             {
                 AssociatedNonprofit = generatedIDForNonprofit,
@@ -92,14 +93,17 @@ namespace Volunesia.Droid.Service
                 RepsManager = "Y",
                 Reviewer = "Y"
             };
+
+            AppData.NonprofitRepresentative = createdNPRep;
+            AppData.NPEventsHistory = new NonprofitEventsHistory();
+
+
             var addNPRepToFB = System.Threading.Tasks.Task.Run(async () =>
             {
 
                 await AddNonprofitRepToFirebaseAsync(generatedIDForNonprofit, npOrgName);
 
             });
-            AppData.NonprofitRepresentative = createdNPRep;
-            AppData.NPEventsHistory = new NonprofitEventsHistory();
         }
 
         /// <summary>

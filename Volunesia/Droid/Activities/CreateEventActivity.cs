@@ -16,6 +16,7 @@ using Volunesia.Droid.Activities;
 using Volunesia.Droid.Service;
 using Volunesia.Services;
 using Volunesia.Models;
+using Xamarin.Essentials;
 
 namespace Volunesia.Droid
 {
@@ -61,8 +62,16 @@ namespace Volunesia.Droid
             EventCreationVerification eventCreationVerif = new EventCreationVerification();
             eventCreationVerif.VerifyEventCreationDetails(EventDate.Text, EventEndDate.Text, AppDeadline.Text, EventName.Text, EventLocation.Text);
 
+            AndroidAddressHandler addressHandler = new AndroidAddressHandler();
+            
+            var locationValidationComponent = System.Threading.Tasks.Task.Run(async () =>
+            {
+                return await addressHandler.ValidateLocationAsync(EventLocation.Text);
+
+            });
+
             //if there are no error messages, then proceed to create the event
-            if (string.IsNullOrEmpty(eventCreationVerif.ErrorMessages.ToString()))
+            if (string.IsNullOrEmpty(eventCreationVerif.ErrorMessages.ToString()) && locationValidationComponent.Result == true)
             {
 
                 IDGenerator generator = new IDGenerator();
@@ -113,9 +122,15 @@ namespace Volunesia.Droid
             //otherwise display an error message with the errors listed
             else
             {
+                StringBuilder msg = new StringBuilder(eventCreationVerif.ErrorMessages.ToString() + " ");
+                if (locationValidationComponent.Result)
+                {
+                    msg.Append("Location is invalid");
+                }
+                
                 AlertDialog.Builder dialogAlertConstruction = new AlertDialog.Builder(this);
                 dialogAlertConstruction.SetTitle("Error has occurred");
-                dialogAlertConstruction.SetMessage(eventCreationVerif.ErrorMessages.ToString());
+                dialogAlertConstruction.SetMessage(msg.ToString());
                 dialogAlertConstruction.SetPositiveButton("GO BACK", delegate
                 {
                     dialogAlertConstruction.Dispose();
