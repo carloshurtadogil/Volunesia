@@ -1,12 +1,15 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AAFA532E-689B-4C3D-9840-E0E6C20CA769" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AlertShow.cs">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/EmailHandler.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="311" Column="1" />
-      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="166" Column="78" />
-      <File FileName="iOS/Services/AddressHandler.cs" Line="17" Column="15" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="754" Column="38" />
+      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="171" Column="17" />
+      <File FileName="iOS/Services/AddressHandler.cs" Line="93" Column="45" />
       <File FileName="iOS/AlertShow.cs" Line="167" Column="22" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="66" Column="1" />
+      <File FileName="iOS/Controllers/NPTempProfileViewController.cs" Line="88" Column="1" />
+      <File FileName="iOS/Services/EmailHandler.cs" Line="171" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,8 +18,9 @@
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="AlertShow.cs" selected="True" />
+              <Node name="Services" expanded="True">
+                <Node name="EmailHandler.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -24,7 +28,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

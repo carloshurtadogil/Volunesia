@@ -134,5 +134,41 @@ namespace Volunesia.iOS.Services
 
 
         }
+
+        /// <summary>
+        /// Wait for user to finish conducting email
+        /// </summary>
+        /// <param name="PrimaryEmail">Email address</param>
+        /// <returns>The email.</returns>
+        public static async Task AwaitEmail(UIViewController inpView, string PrimaryEmail)
+        {
+            List<string> recipients = new List<string>();
+            recipients.Add(PrimaryEmail);
+            try
+            {
+                var message = new EmailMessage
+                {
+                    Subject = "",
+                    To = recipients,
+                    //Cc = ccRecipients,
+                    //Bcc = bccRecipients
+                };
+                await Email.ComposeAsync(message);
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (FeatureNotSupportedException fbsEx)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                AlertShow.Show(inpView, "Email is not supported on this device", "");
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+#pragma warning disable RECS0022 // A catch clause that catches System.Exception and has an empty body
+            catch (Exception ex)
+#pragma warning restore RECS0022 // A catch clause that catches System.Exception and has an empty body
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                // Some other exception occurred
+            }
+        }
     }
 }

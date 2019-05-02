@@ -184,6 +184,27 @@ namespace Volunesia.iOS
         }
 
         /// <summary>
+        /// Alert to ask user for permission to access email app.
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="email">Email.</param>
+        public static void PermissionToAccessEmailApp(UIViewController inpView, string email)
+        {
+            UIAlertController alert = UIAlertController.Create("Volunesia would like to open Mail", 
+                                                                "You can ask the organization specific questions regarding this event", 
+                                                                UIAlertControllerStyle.Alert);
+
+            alert.AddAction(UIAlertAction.Create("Proceed", UIAlertActionStyle.Default, (handler) =>
+            {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                EmailHandler.AwaitEmail(inpView, email);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+            inpView.PresentViewController(alert, true, null);
+        }
+
+        /// <summary>
         /// Print a message to the console
         /// </summary>
         /// <param name="msg">The message to be displayed.</param>

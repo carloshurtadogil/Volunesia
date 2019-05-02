@@ -54,17 +54,7 @@ namespace Volunesia.iOS
                 AlertShow.Print("Location: " + EventDetails.Location);
                 LocationTextLabel.Text = EventDetails.Location;
                 FirebaseReader.ReadNPName(EventDetails.HostID, NonprofitNameLabel);
-
-                UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    AlertShow.PermissionToAccessMaps(this, EventDetails.Location);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                });
-
-                LocationTextLabel.UserInteractionEnabled = true;
-                LocationTextLabel.AddGestureRecognizer(labelTap);
-
-            }
+               }
 
 
             if (AppData.CurUser.UserType == "NP" && AppData.NonprofitRepresentative != null)//Evaluate if the user is a nonprofit representative
@@ -113,6 +103,31 @@ namespace Volunesia.iOS
                     FirebaseReader.CheckVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID, SignupButton, LeaveButton);
                 }
             }
+            LoadGestureRecognizers();
+        }
+
+        /// <summary>
+        /// Loads the gesture recognizers.
+        /// </summary>
+        public void LoadGestureRecognizers()
+        {
+            UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                AlertShow.PermissionToAccessMaps(this, EventDetails.Location);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            });
+
+            UITapGestureRecognizer emailTap = new UITapGestureRecognizer(() =>
+            {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                AlertShow.PermissionToAccessEmailApp(this, ContactEmailLabel.Text);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            });
+
+            LocationTextLabel.UserInteractionEnabled = true;
+            LocationTextLabel.AddGestureRecognizer(labelTap);
+            ContactEmailLabel.UserInteractionEnabled = true;
+            ContactEmailLabel.AddGestureRecognizer(emailTap);
         }
 
 
