@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Mime;
+using System.Threading.Tasks;
 using CoreGraphics;
 using UIKit;
 using Volunesia.Models;
 using Volunesia.Services;
+using Xamarin.Essentials;
 
 namespace Volunesia.iOS.Services
 {
@@ -62,7 +65,7 @@ namespace Volunesia.iOS.Services
         public static void SendCancelEmail(UIViewController inpView, Event e, string hostname, string npemail)
         {
             DateTime today = DateTime.Now;
-            DateTime eventdate = e.EventDate;
+            DateTime eventdate = today;//.EventDate;
             int result = DateTime.Compare(today, eventdate);
             if(result < 0)
             {
@@ -90,27 +93,46 @@ namespace Volunesia.iOS.Services
             {
                 string subject = e.EventName + " by " + hostname + " is now over";
                 List<Attendee> list = e.EventRoster.GetAttendeeList();
+                list.Add(new Attendee { Name = "nane", Attended = false});
                 foreach (Attendee a in list)
                 {
                     string email = "hpfreak216@gmail.com";//a.EmailAddress;
                     string name = a.Name;
-                    string message = string.Format("<div style=\\\"\\\"font-family:Trebuchet MS;font-size: 12pt;\\\"\\\">" +
+                    bool attended = a.Attended;
+                    string message = "";
+                    if (attended)
+                    {
+                        message = string.Format("<div style=\\\"\\\"font-family:Trebuchet MS;font-size: 12pt;\\\"\\\">" +
                                                         "<p>Hello " + name + ",</p>" +
-                                                        "<p>Due to certain circumstances, <strong>" + hostname + "</strong> has cancelled <strong>" +
-                                                        e.EventName + "</strong>. We would like to thank you for your interest and would like to formally" +
-                                                            " apologize for the inconvenience. If you have further questions or concerns, please do not hesitate " +
+                                                        "<p>Thank you for participating in <strong>" + e.EventName + "</strong> by <strong>" +
+                                                        hostname+ "</strong>. Your points have been distributed and <i>Certificate of Completion</i> is " +
+                                                        	"available within the app under \'Past\'. If you have further questions or concerns, please do not hesitate " +
                                                             "in contacting the organization at <a href = \"mailto:" + npemail + "\">" + npemail + "</a></p>" +
                                                         "<p>Thank you for making the world a better place, <br>The Volunesia Team</p>" +
                                                     "</div>");
+                    }
+                    else
+                    {
+                        message = string.Format("<div style=\\\"\\\"font-family:Trebuchet MS;font-size: 12pt;\\\"\\\">" +
+                                                       "<p>Hello " + name + ",</p>" +
+                                                       "<p>Thank you for expressing interest in <strong>" + e.EventName + "</strong> by <strong>" +
+                                                       hostname + "</strong>. However, you were marked \'absent\' during the event and will not be " +
+                                                       	"eligible for a certificate of completion. If you believe that this was a mistake, or you " +
+                                                       	"have further questions or concerns, please do not hesitate in contacting the organization " +
+                                                       	"at <a href = \"mailto:" + npemail + "\">" + npemail + "</a></p>" +
+                                                       "<p>Thank you for making the world a better place, <br>The Volunesia Team</p>" +
+                                                   "</div>");
+                    }
                     SendEmail(email, subject, message);
 
                 }
-                AlertShow.Show(inpView, "Event Cancelled", "Emails have been sent");
+
+
+                //AlertShow.Show(inpView, "Event is now closed", "Emails have been sent");
             }
 
 
 
         }
-
     }
 }

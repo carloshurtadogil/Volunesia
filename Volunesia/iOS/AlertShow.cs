@@ -165,6 +165,25 @@ namespace Volunesia.iOS
         }
 
         /// <summary>
+        /// Alert to ask user for permission to access maps.
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="address">Address.</param>
+        public static void PermissionToAccessMaps(UIViewController inpView, string address)
+        {
+            UIAlertController alert = UIAlertController.Create("Volunesia would like to open Maps", "", UIAlertControllerStyle.Alert);
+
+            alert.AddAction(UIAlertAction.Create("Proceed", UIAlertActionStyle.Default, (handler) =>
+            {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                AddressHandler.OpenMapsWithAddressAsync(inpView, address);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+            inpView.PresentViewController(alert, true, null);
+        }
+
+        /// <summary>
         /// Print a message to the console
         /// </summary>
         /// <param name="msg">The message to be displayed.</param>

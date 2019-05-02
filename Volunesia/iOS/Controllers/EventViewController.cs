@@ -25,6 +25,9 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            NonprofitProfileButton.Enabled = true;
+            NonprofitProfileButton.Hidden = false;
             if (EventDetails != null)
             {
                 if (EventDetails.EventImagePath != "standard")
@@ -54,7 +57,7 @@ namespace Volunesia.iOS
 
                 UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    AwaitAddToClipboard();
+                    AlertShow.PermissionToAccessMaps(this, EventDetails.Location);
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                 });
 

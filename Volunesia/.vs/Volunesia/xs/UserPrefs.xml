@@ -1,28 +1,26 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
-  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AAFA532E-689B-4C3D-9840-E0E6C20CA769" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/DateFormatter.cs">
+  <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AlertShow.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
       <File FileName="iOS/Controllers/NPTempProfileViewController.cs" Line="38" Column="113" />
       <File FileName="iOS/Services/FirebaseReader.cs" Line="311" Column="1" />
-      <File FileName="iOS/Controllers/EventViewController.cs" Line="155" Column="23" />
-      <File FileName="iOS/Services/EmailHandler.cs" Line="92" Column="71" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="60" Column="36" />
+      <File FileName="iOS/Services/EmailHandler.cs" Line="136" Column="10" />
       <File FileName="iOS/Services/DateFormatter.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="166" Column="78" />
+      <File FileName="iOS/Services/AddressHandler.cs" Line="17" Column="15" />
+      <File FileName="iOS/AlertShow.cs" Line="167" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Volunesia" expanded="True">
-            <Node name="Volunesia" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="DateFormatter.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
+              <Node name="AlertShow.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -30,7 +28,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
