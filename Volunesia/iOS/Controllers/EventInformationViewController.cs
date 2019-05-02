@@ -91,7 +91,10 @@ namespace Volunesia.iOS
                             NewEvent = e;
                             NSData d = CoverPhotoImageView.Image.AsPNG();
                             SetItemsEnabled(false); //So that the user cannot do anything else besides dismiss controller
-                            FirebaseReader.WriteEventDetails(e, this, d);
+                            //FirebaseReader.WriteEventDetails(e, this, d);
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                            AddressHandler.ValidateAddress(this, location, e, d);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                         }
                         else
                         {
@@ -159,13 +162,13 @@ namespace Volunesia.iOS
                 Picker = "time";
                 this.PerformSegue("ToDatePickerSegue_id", this);
             };
-
+            /*
             LocationTextfield.EditingDidBegin += (sender, e) =>
             {
                 LocationTextfield.ResignFirstResponder();
                 LocationTextfield.Text = "23121 Jask Drive, Cerritos, CA 9080";
                 //this.PerformSegue("ToLocationSegue_id", this);
-            };
+            };*/
 
             DeadlineTextfield.EditingDidBegin += (sender, e) =>
             {

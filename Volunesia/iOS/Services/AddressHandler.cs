@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Foundation;
 using UIKit;
+using Volunesia.Models;
 using Xamarin.Essentials;
 
 namespace Volunesia.iOS.Services
@@ -55,8 +57,9 @@ namespace Volunesia.iOS.Services
         /// <returns>The address.</returns>
         /// <param name="inpView">Inp view.</param>
         /// <param name="address">Address.</param>
-        /// <param name="destination">Destination view controller segue_id.</param>
-        public static async Task ValidateAddress(UIViewController inpView, string address, string destination)
+        /// <param name="e">Event details to be written</param>
+        /// <param name="d">Image to be uploaded if need be</param>
+        public static async Task ValidateAddress(EventInformationViewController inpView, string address, Event e, NSData d)
         {
             try
             {
@@ -66,7 +69,7 @@ namespace Volunesia.iOS.Services
                 var location = locations?.FirstOrDefault();
                 if (location != null)
                 {
-                    inpView.PerformSegue(destination, inpView);
+                    FirebaseReader.WriteEventDetails(e, inpView, d);
                 }
                 else
                 {
@@ -87,6 +90,7 @@ namespace Volunesia.iOS.Services
 #pragma warning restore CS0168 // Variable is declared but never used
 #pragma warning restore IDE0059 // Value assigned to symbol is never used
             {
+                inpView.SetItemsEnabled(true);
                 AlertShow.Show(inpView, "Not a Valid Address", address + " could not be located");// Handle exception that may have occurred in geocoding
             }
         }
