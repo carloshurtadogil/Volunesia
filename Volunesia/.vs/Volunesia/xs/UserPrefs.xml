@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AAFA532E-689B-4C3D-9840-E0E6C20CA769" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/WelcomeViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/ImageServices.cs">
     <Files>
+      <File FileName="iOS/Main.storyboard" />
       <File FileName="iOS/Services/Register.cs" Line="96" Column="132" />
       <File FileName="Volunesia/Services/AppData.cs" Line="1" Column="1" />
       <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="35" Column="1" />
+      <File FileName="iOS/Services/ImageServices.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +17,11 @@
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="Volunesia.iOS" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="WelcomeViewController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="ImageServices.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
