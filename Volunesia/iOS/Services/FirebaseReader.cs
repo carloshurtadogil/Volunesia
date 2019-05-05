@@ -760,10 +760,10 @@ namespace Volunesia.iOS.Services
 
             }
             AppData_iOS.NonprofitEvents.Add(e);
-
+            DateTime enddate = e.EventDate.AddHours(2);
             //Add to firebase
-            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid", "location" };
-            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0, e.Location };
+            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid", "location", "eventenddate" };
+            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0, e.Location, enddate.ToString() };
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
             if (!e.EventImagePath.Equals("standard"))
