@@ -93,7 +93,7 @@ namespace Volunesia.iOS.Services
             else
             {
                 AlertShow.Print("User is Nonprofit Rep");
-                object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp", "profileimg"};
+                object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp", "profileimg", "level", "xp"};
                 object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, "", associatednp, id, 1, 0 };
 
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);

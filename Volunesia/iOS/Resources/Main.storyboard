@@ -562,7 +562,6 @@
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="15924" eventType="touchUpInside" id="16578"/>
-                                    <segue destination="15601" kind="show" identifier="EstablishedToMSSegue_id" id="21466"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17138">
@@ -627,6 +626,7 @@
                         <outlet property="StateTextfield" destination="17138" id="name-outlet-17138"/>
                         <outlet property="ZipCodeLabel" destination="15935" id="name-outlet-15935"/>
                         <outlet property="ZipCodeTextfield" destination="15934" id="name-outlet-15934"/>
+                        <segue id="157195" destination="15601" kind="show" identifier="EstablishedToMSSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15926" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -788,7 +788,6 @@
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="18439" eventType="touchUpInside" id="19145"/>
-                                    <segue destination="15601" kind="show" identifier="SchoolToMSSegue_id" id="21336"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19146">
@@ -822,6 +821,7 @@
                         <outlet property="StatementLabel" destination="18779" id="name-outlet-18779"/>
                         <outlet property="ZipLabel" destination="19130" id="name-outlet-19130"/>
                         <outlet property="ZipTextfield" destination="19129" id="name-outlet-19129"/>
+                        <segue id="158027" destination="15601" kind="show" identifier="SchoolToMSSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18449" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -927,7 +927,6 @@
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="20558" eventType="touchUpInside" id="20596"/>
-                                    <segue destination="15601" kind="show" identifier="LocalToMSSegue_id" id="21198"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20582">
@@ -959,6 +958,7 @@
                         <outlet property="StatementLabel" destination="20562" id="20561"/>
                         <outlet property="ZipLabel" destination="20574" id="20573"/>
                         <outlet property="ZipTextfield" destination="20576" id="20575"/>
+                        <segue id="158355" destination="15601" kind="show" identifier="LocalToMSSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20606" userLabel="First Responder" sceneMemberID="firstResponder"/>

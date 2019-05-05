@@ -30,6 +30,7 @@ namespace Volunesia.iOS
         {
             AppData.CurUser = null;
             AppData.NonprofitRepresentative = null;
+            AppData.CurVolunteer = null;
             Register r = new Register();
             r.NPName = NPName;
             r.EIN = EIN;
