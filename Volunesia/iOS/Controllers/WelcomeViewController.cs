@@ -37,6 +37,7 @@ namespace Volunesia.iOS
             if (AppData.CurUser != null)
             {
 
+
                 WelcomeLabel.Text = "Welcome, " + AppData.CurUser.FirstName + "!";
                 if (AppData.CurUser.UserType == "NP")
                 {
@@ -93,8 +94,10 @@ namespace Volunesia.iOS
             else if (CurrUser != null)
             {
                 AppData_iOS.GetInstance();
+
                 if (CurrUser.UserType == "NP")
                 {
+
                     this.PerformSegue("ToNPProfileSegue_id", this);
                 }
                 else if(CurrUser.UserType == "V")

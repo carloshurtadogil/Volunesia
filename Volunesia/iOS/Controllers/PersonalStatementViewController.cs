@@ -53,6 +53,8 @@ namespace Volunesia.iOS
                 if (wvc != null)
                 {
                     wvc.CurrUser = CurrentUser;
+                    AlertShow.Print("Current User Creation ID: " + CurrentUser.UID);
+                    wvc.LoadView();
                 }
             }
         }

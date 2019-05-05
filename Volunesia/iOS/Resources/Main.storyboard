@@ -1012,7 +1012,6 @@
                                 <state key="normal" backgroundImage="Images/ContinueBtn.png"/>
                                 <connections>
                                     <action selector="ContinueButton_TouchUpInside:" destination="22817" eventType="touchUpInside" id="22840"/>
-                                    <segue destination="17774" kind="show" identifier="PSToWelcomeSegue_id" id="22985"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show the world what you look like!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="117163">
@@ -1046,6 +1045,7 @@
                         <outlet property="StoryTextView" destination="22825" id="22824"/>
                         <outlet property="UploadImageButton" destination="117844" id="name-outlet-117844"/>
                         <outlet property="ProfileImageView" destination="117164" id="name-outlet-117164"/>
+                        <segue id="154977" destination="17774" kind="show" identifier="PSToWelcomeSegue_id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22843" userLabel="First Responder" sceneMemberID="firstResponder"/>

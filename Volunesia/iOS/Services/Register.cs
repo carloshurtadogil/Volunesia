@@ -44,7 +44,12 @@ namespace Volunesia.iOS.Services
                                              string id = "standard";
                                              if(image != null)
                                              {
-                                                  id = iDGenerator.GenerateID(); ;
+                                                 AlertShow.Print("Not Standard Image");
+                                                 id = iDGenerator.GenerateID(); ;
+                                             }
+                                             else
+                                             {
+                                                 AlertShow.Print("Standard iamge");
                                              }
                                              //Add nonprofit to nonprofits node
                                              if(NewUser.UserType == "NP" && NPType == "established")
@@ -99,11 +104,13 @@ namespace Volunesia.iOS.Services
             }
             if(image != null)
             {
+                AlertShow.Print("Image has been selected");
                 string path = "/Images/profileimg/" + id;//"MSToWelcomeSegue_id"
                 FirebaseStorageServices.AddImageToFirebase(image, path, inpView, segue_id);
             }
             else
             {
+                AlertShow.Print("AddUserToFirebase(): Performing Segue");
                 inpView.PerformSegue(segue_id, inpView);
             }
         }

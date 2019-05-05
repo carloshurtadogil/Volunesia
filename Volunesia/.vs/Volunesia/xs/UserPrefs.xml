@@ -1,29 +1,27 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/LoginViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/UserTypeSelectionController.cs">
     <Files>
       <File FileName="iOS/Resources/Main.storyboard" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="43" Column="45" />
-      <File FileName="iOS/Services/AddressHandler.cs" Line="1" Column="1" />
-      <File FileName="iOS/AlertShow.cs" Line="199" Column="139" />
-      <File FileName="iOS/Services/EmailHandler.cs" Line="162" Column="39" />
-      <File FileName="iOS/Controllers/PersonalStatementViewController.cs" Line="55" Column="21" />
-      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="128" Column="13" />
-      <File FileName="iOS/Services/Register.cs" Line="67" Column="110" />
-      <File FileName="iOS/Services/FirebaseStorageServices.cs" Line="30" Column="109" />
-      <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="39" Column="1" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="iOS/Controllers/LocalNPViewController.cs" Line="20" Column="67" />
-      <File FileName="iOS/Controllers/MissionStatementViewController.cs" Line="49" Column="59" />
-      <File FileName="iOS/Controllers/LoginViewController.cs" Line="23" Column="1" />
+      <File FileName="iOS/Services/Register.cs" Line="113" Column="74" />
+      <File FileName="Volunesia/Services/AppData.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/VolunteerProfileViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/WelcomeViewController.cs" Line="35" Column="1" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="86" Column="1" />
+      <File FileName="iOS/Controllers/PersonalStatementViewController.cs" Line="30" Column="1" />
+      <File FileName="iOS/Controllers/EmailRegistrationViewController.cs" Line="26" Column="1" />
+      <File FileName="iOS/Controllers/UserTypeSelectionController.cs" Line="24" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Volunesia" expanded="True">
+            <Node name="Volunesia" expanded="True">
+              <Node name="Services" expanded="True" />
+            </Node>
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="LoginViewController.cs" selected="True" />
+                <Node name="UserTypeSelectionController.cs" selected="True" />
               </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Services" expanded="True" />
