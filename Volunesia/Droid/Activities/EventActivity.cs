@@ -65,6 +65,7 @@ namespace Volunesia.Droid.Activities
             //Parse the JSON response to get the roster and waitlist content
             var eventInfoAsJson = JObject.Parse(eventResult);
 
+            SelectedEvent.EventDescription = eventInfoAsJson["eventdesc"].ToString();
             SelectedEvent.EventDate = Convert.ToDateTime(eventInfoAsJson["eventdate"].ToString());
             SelectedEvent.EventEndDate = Convert.ToDateTime(eventInfoAsJson["eventenddate"].ToString());
             SelectedEvent.ApplicationDeadline = Convert.ToDateTime(eventInfoAsJson["applicationdeadline"].ToString());
@@ -185,6 +186,10 @@ namespace Volunesia.Droid.Activities
                 {
                     ApplyOrDeleteButton.Text = "Apply to Event";
                     ApplyOrDeleteButton.Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    ApplyOrDeleteButton.Visibility = ViewStates.Invisible;
                 }
             }
             else

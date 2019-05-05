@@ -128,7 +128,7 @@ namespace Volunesia.Droid.Activities
             //Write necessary text such as volunteer first/last names, event name, and amount of hours volunteered
             canvas.DrawText(AppData.CurUser.FirstName + " " + AppData.CurUser.LastName, canvas.Width / 2, (canvas.Height / 3) + 45, paint);
             canvas.DrawText(SelectedEvent.EventName, canvas.Width / 3, (canvas.Height / 2) + 45, paint);
-            canvas.DrawText(Hours.Text + " hours", (canvas.Width * 2) / 3, (canvas.Height / 2) + 45, paint);
+            canvas.DrawText(SelectedEvent.HoursCompleted.ToString() + " hours", (canvas.Width * 2) / 3, (canvas.Height / 2) + 45, paint);
 
             //Translate the bitmap into a stream
             MemoryStream stream = new MemoryStream();

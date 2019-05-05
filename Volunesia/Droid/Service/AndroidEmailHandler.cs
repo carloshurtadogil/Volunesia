@@ -31,9 +31,16 @@ namespace Volunesia.Droid.Service
                 mail.To.Add(address);
             }
 
-            mail.Subject = "Volunesia Nonprofit Event Deletion Notification";
-            mail.Body = String.Format(
-           "<h3 style=\"\"font-family:Trebuchet MS;font-size: 12pt;\"\">Dear Fellow Volunteer: " + " The following event  "+ eventName + " has been cancelled, we encourage you to volunteer for other events</h3>");
+            mail.Subject = "Volunesia: " + eventName + " has been cancelled";
+            mail.Body = String.Format("<div style=\\\"\\\"font-family:Trebuchet MS;font-size: 12pt;\\\"\\\">" +
+                                                        "<p>Hello Volunteers"  + ",</p>" +
+                                                        "<p>Due to certain circumstances, <strong>" + eventName + "</strong> has cancelled." +
+                                                          "We would like to thank you for your interest and would like to formally" +
+                                                            " apologize for the inconvenience. </p>" +
+                                                        "<p>Thank you for making the world a better place, <br>The Volunesia Team</p>" +
+                                                    "</div>");
+                
+                
             mail.IsBodyHtml = true;
 
             AlternateView htmlView = AlternateView.CreateAlternateViewFromString(mail.Body, null, MediaTypeNames.Text.Html);

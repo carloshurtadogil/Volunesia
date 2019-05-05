@@ -93,7 +93,7 @@ namespace Volunesia.Droid.Activities
                     if (currentAttendee.Attended)
                     {
                         EventAttendees.Add(currentAttendee);
-                        mItems.Add(currentAttendee.EmailAddress + " " + currentAttendee.UID + " " + currentAttendee.HoursCompleted);
+                        mItems.Add(currentAttendee.EmailAddress +  " : " + currentAttendee.HoursCompleted + " hours");
                     }
                 }
 
