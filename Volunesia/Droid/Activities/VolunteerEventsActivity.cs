@@ -80,6 +80,9 @@ namespace Volunesia.Droid.Activities
             SetContentView(Resource.Layout.VolunteerEvents);
 
             mListView = FindViewById<ListView>(Resource.Id.myListView);
+            ViewGroup.LayoutParams parameters = mListView.LayoutParameters;
+            parameters.Height = 200;
+            mListView.LayoutParameters = parameters;
 
             //Adapt the list into a ListView
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
@@ -307,7 +310,7 @@ namespace Volunesia.Droid.Activities
 
             JObject allEvents = JObject.Parse(resultant);
 
-
+            List<Event> eventsBeforeSort = new List<Event>();
 
             //Traverses all the nonprofits who have signed up for events
             foreach (var eventKeyValuePair in allEvents)
@@ -327,10 +330,12 @@ namespace Volunesia.Droid.Activities
                         theEvent.HostID = nonprofitID;
                         theEvent.EventDate = Convert.ToDateTime(idAndInfoNode.Value["eventdate"].ToString());
                         theEvent.EventName = idAndInfoNode.Value["eventname"].ToString();
-                        AllEvents.Add(theEvent);
+                        eventsBeforeSort.Add(theEvent);
                     }
                 }
             }
+
+            AllEvents = (eventsBeforeSort.OrderByDescending(e => e.EventDate)).ToList() ;
             return resultant;
         }
 

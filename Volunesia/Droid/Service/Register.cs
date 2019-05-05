@@ -30,7 +30,7 @@ namespace Volunesia.Droid.Service
                 userDictionary.Add("first", theUser.FirstName);
                 userDictionary.Add("last", theUser.LastName);
                 userDictionary.Add("type", theUser.UserType);
-                userDictionary.Add("personalstatement", theUser.PersonalStatement);
+                userDictionary.Add("personalstatement", "");
                 userDictionary.Add("level", 1);
                 userDictionary.Add("xp", 0);
                 userDictionary.Add("associatednp", "");
@@ -42,6 +42,8 @@ namespace Volunesia.Droid.Service
                     Level = 1,
                     Experience = 0,
                 };
+                AppData.VolunteerHistory = new VolunteerHistory();
+                AppData.FutureEvents = new VolunteerHistory();
 
             }
             else if (theUser.UserType == "NP")
@@ -107,6 +109,20 @@ namespace Volunesia.Droid.Service
         }
 
         /// <summary>
+        /// Proceeds to call the method that will add a novice badge for a volunteer in Firebase
+        /// </summary>
+        public void AddNoviceBadgeToFirebase(User theUser)
+        {
+            var addNoviceBadgeToFB = System.Threading.Tasks.Task.Run(async () =>
+            {
+
+                return await AddNoviceBadgeToFirebaseAsync(theUser);
+
+            });
+        }
+
+
+        /// <summary>
         /// Adds a nonprofit representative to Firebase
         /// </summary>
         /// <param name="generatedIDForNonprofit"></param>
@@ -126,6 +142,20 @@ namespace Volunesia.Droid.Service
 
             FirebaseResponse addNPRepResponse = await firebaseClient.SetAsync("nonprofitreps/" + generatedIDForNonprofit + "/" + AppData.CurUser.UID, nonprofitRepInformation);
 
+        }
+
+        /// <summary>
+        /// Upon volunteer registration, they are automatically granted the Novice badge
+        /// which will be written to Firebase
+        /// </summary>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task<string> AddNoviceBadgeToFirebaseAsync(User theUser)
+        {
+            IFirebaseConfig config = FiresharpConfig.GetFirebaseConfig();
+            IFirebaseClient firebaseClient = new FireSharp.FirebaseClient(config);
+
+            FirebaseResponse writeNoviceBadgeResponse = await firebaseClient.SetAsync("badges/" + theUser.UID, "Novice");
+            return writeNoviceBadgeResponse.Body;
         }
     }
 }

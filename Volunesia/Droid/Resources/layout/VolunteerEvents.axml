@@ -40,14 +40,16 @@
 		android:layout_height="50dp"
 		android:orientation="horizontal">
 		<Button
-			android:layout_width="99.5dp"
+			android:layout_width="70.1dp"
+			android:textSize="10sp"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
 			android:layout_weight="1"
 			android:id="@+id/pastEventsButton"
 			android:text="Past Events"/>
 		<Button
-			android:layout_width="71.5dp"
+			android:layout_width="70.1dp"
+			android:textSize="10sp"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
 			android:layout_weight="1"
@@ -55,8 +57,9 @@
 			android:text="All Events"
 			android:layout_marginLeft="0.0dp" />
 		<Button
-			android:text="Upcoming events"
-			android:layout_width="84.5dp"
+			android:text="Upcoming Events"
+			android:textSize="10sp"
+			android:layout_width="70.1dp"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
 			android:layout_weight="1"
