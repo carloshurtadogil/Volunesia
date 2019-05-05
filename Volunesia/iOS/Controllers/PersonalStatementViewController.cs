@@ -11,10 +11,14 @@ namespace Volunesia.iOS
         //For accessing user's image gallery
         UIImagePickerController picker;
 
+
         //User to be added to Firebase
         public User CurrentUser { get; set; }
         public string Password { get; set; }
         public string CurrentImage { get; set; }
+
+        //Other
+        public CoreGraphics.CGSize cg;
 
 
         public PersonalStatementViewController (IntPtr handle) : base (handle)
@@ -25,6 +29,7 @@ namespace Volunesia.iOS
         {
             base.ViewDidLoad();
             DismissKeyboardHandler();
+
         }
 
         //Continue to welcome page

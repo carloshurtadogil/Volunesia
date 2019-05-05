@@ -283,6 +283,7 @@
       <DependentUpon>NPTempProfileViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\AddressHandler.cs" />
+    <Compile Include="Services\ImageStorageHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />

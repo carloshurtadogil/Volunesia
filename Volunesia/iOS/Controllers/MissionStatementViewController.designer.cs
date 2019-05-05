@@ -28,11 +28,19 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView NonprofitProfileImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel StatementLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView StoryTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton UploadImageButton { get; set; }
 
         [Action ("BackButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -41,6 +49,10 @@ namespace Volunesia.iOS
         [Action ("ContinueButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void ContinueButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("UploadImageButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void UploadImageButton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -59,6 +71,11 @@ namespace Volunesia.iOS
                 ContinueButton = null;
             }
 
+            if (NonprofitProfileImage != null) {
+                NonprofitProfileImage.Dispose ();
+                NonprofitProfileImage = null;
+            }
+
             if (StatementLabel != null) {
                 StatementLabel.Dispose ();
                 StatementLabel = null;
@@ -67,6 +84,11 @@ namespace Volunesia.iOS
             if (StoryTextView != null) {
                 StoryTextView.Dispose ();
                 StoryTextView = null;
+            }
+
+            if (UploadImageButton != null) {
+                UploadImageButton.Dispose ();
+                UploadImageButton = null;
             }
         }
     }
