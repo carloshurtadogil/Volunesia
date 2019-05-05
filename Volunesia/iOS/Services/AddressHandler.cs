@@ -90,7 +90,6 @@ namespace Volunesia.iOS.Services
 #pragma warning restore CS0168 // Variable is declared but never used
 #pragma warning restore IDE0059 // Value assigned to symbol is never used
             {
-                inpView.SetItemsEnabled(true);
                 AlertShow.Show(inpView, "Not a Valid Address", address + " could not be located");// Handle exception that may have occurred in geocoding
             }
         }

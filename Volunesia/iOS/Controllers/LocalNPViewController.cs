@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using System.Text.RegularExpressions;
 using UIKit;
+using Volunesia.iOS.Services;
 using Volunesia.Models;
 
 namespace Volunesia.iOS
@@ -21,6 +22,13 @@ namespace Volunesia.iOS
             if(ValidInfo())
             {
                 this.PerformSegue("LocalToMSSegue_id", sender);
+                string zip = ZipTextfield.Text.Trim();
+                string city = CityTextfield.Text.Trim();
+                string state = StateTextfield.Text.Trim();
+                string address = city + ", " + state + " " + zip;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                AddressHandler.ValidateAddress(this, address, "LocalToMSSegue_id");
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             }
         }
 

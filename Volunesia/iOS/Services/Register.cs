@@ -26,7 +26,7 @@ namespace Volunesia.iOS.Services
         }
 
         //Create a new User account in Firebase 
-        public void CreateUser( User NewUser, string Password, UIViewController view )
+        public void CreateUser( User NewUser, string Password, UIViewController view, NSData image, string segue_id)
         {
             CurrentView = view;
             AppData_iOS.Auth.CreateUser( NewUser.EmailAddress,
@@ -39,27 +39,32 @@ namespace Volunesia.iOS.Services
                                              }
                                              NewUser.UID = user.User.Uid;
                                              AppData.CurUser = NewUser;//Make the new user the current user on the device
-
-                                             
+                                             AppData_iOS.NonprofitEvents = null;
+                                             IDGenerator iDGenerator = new IDGenerator();
+                                             string id = "standard";
+                                             if(image != null)
+                                             {
+                                                  id = iDGenerator.GenerateID(); ;
+                                             }
                                              //Add nonprofit to nonprofits node
                                              if(NewUser.UserType == "NP" && NPType == "established")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("established reached");
-                                                 CreateNonprofitOrganization(NewUser, NewUser.UID, view);
+                                                 CreateNonprofitOrganization(NewUser, NewUser.UID, view, id,  image, segue_id);
                                              }
                                              else if (NewUser.UserType == "NP" && NPType == "school")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("School Reached");
-                                                 CreateSchoolOrganization(NewUser, NewUser.UID, view); 
+                                                 CreateSchoolOrganization(NewUser, NewUser.UID, view, id, image, segue_id);
                                              }
                                              else if (NewUser.UserType == "NP" && NPType == "local")
                                              {
                                                  System.Diagnostics.Debug.WriteLine("Local reached");
-                                                 CreateLocalOrganization(NewUser, NewUser.UID, view);
+                                                 CreateLocalOrganization(NewUser, NewUser.UID, view, id, image, segue_id);
                                              } 
                                              else if(NewUser.UserType == "V") 
                                              {
-                                                 AddUserToFirebase(NewUser, "null", view);
+                                                 AddUserToFirebase(NewUser, "null", view, image, id, segue_id);
                                              }
 
                                          });
@@ -67,12 +72,13 @@ namespace Volunesia.iOS.Services
         }
 
         //Add user information to Firebase.Database
-        public void AddUserToFirebase(User user, string associatednp, UIViewController inpView)
+        public void AddUserToFirebase(User user, string associatednp, UIViewController inpView, NSData image, string id, string segue_id)
         {
             if(user.UserType == "V")
             {
-                object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp" };
-                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, MissionStatement, "NA" };
+                AlertShow.Print("User is Volunteer");
+                object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp" , "profileimg", "level", "xp"};
+                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, MissionStatement, "NA", id, 1, 0 };
 
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
                 AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
@@ -81,8 +87,9 @@ namespace Volunesia.iOS.Services
             }
             else
             {
-                object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp" };
-                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, "", associatednp };
+                AlertShow.Print("User is Nonprofit Rep");
+                object[] keys = { "first", "last", "email", "type", "personalstatement", "associatednp", "profileimg"};
+                object[] vals = { user.FirstName, user.LastName, user.EmailAddress, user.UserType, "", associatednp, id, 1, 0 };
 
                 NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
                 AppData_iOS.UsersNode.GetChild(user.UID).SetValue(FirebaseUser);
@@ -90,7 +97,15 @@ namespace Volunesia.iOS.Services
                 AppData.CurUser = user;
                 ReadWrite.WriteUser();
             }
-            inpView.PerformSegue("MSToWelcomeSegue_id", inpView);
+            if(image != null)
+            {
+                string path = "/Images/profileimg/" + id;//"MSToWelcomeSegue_id"
+                FirebaseStorageServices.AddImageToFirebase(image, path, inpView, segue_id);
+            }
+            else
+            {
+                inpView.PerformSegue(segue_id, inpView);
+            }
         }
 
 
@@ -99,17 +114,17 @@ namespace Volunesia.iOS.Services
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="UID">Uid.</param>
-        public void CreateNonprofitOrganization(User user, string UID, UIViewController inpView)
+        public void CreateNonprofitOrganization(User user, string UID, UIViewController inpView, string profileimg, NSData image, string segue_id)
         {
             IDGenerator generator = new IDGenerator();
             string id = generator.GenerateID();
-            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state", "missionstatement", "xp" };
-            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State, MissionStatement, 0 };
+            object[] keys = { "name", "type", "ein", "primarycontact", "primaryphone","zip", "city", "state", "missionstatement", "xp", "profileimg" };
+            object[] vals = { NPName, NPType, EIN, UID, Phone, Zip, City, State, MissionStatement, 0, profileimg };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(id).SetValue(FirebaseUser);
             AlertShow.Print("Created new nonprofit with ID: " + id);
             CreateNonprofitRepresentative(UID, id);
-            AddUserToFirebase(user, id, inpView);//Add to User node
+            AddUserToFirebase(user, id, inpView, image, id, segue_id);//Add to User node
 
         }
 
@@ -118,32 +133,32 @@ namespace Volunesia.iOS.Services
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="UID">Uid.</param>
-        public void CreateSchoolOrganization(User user, string UID, UIViewController inpView)
+        public void CreateSchoolOrganization(User user, string UID, UIViewController inpView, string profileimg, NSData image, string segue_id)
         {
             IDGenerator generator = new IDGenerator();
             EIN = generator.GenerateID();
 
-            object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement" };
-            object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State , MissionStatement};
+            object[] keys = { "name", "school","type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement", "profileimg" };
+            object[] vals = { NPName, School, NPType, UID, Phone, Zip, City, State , MissionStatement, profileimg};
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
             CreateNonprofitRepresentative(UID, EIN);
-            AddUserToFirebase(user, EIN, inpView);//Add to User node
+            AddUserToFirebase(user, EIN, inpView, image, EIN, segue_id);//Add to User node
 
         }
 
         //Add local nonprofit organization to firebase
-        public void CreateLocalOrganization(User user, string UID, UIViewController inpView)
+        public void CreateLocalOrganization(User user, string UID, UIViewController inpView, string profileimg, NSData image, string segue_id)
         {
             IDGenerator generator = new IDGenerator();
             EIN = generator.GenerateID();
 
-            object[] keys = { "name", "type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement" };
-            object[] vals = { NPName, NPType, UID, Phone, Zip, City, State, MissionStatement };
+            object[] keys = { "name", "type", "primarycontact", "primaryphone", "zip", "city", "state", "missionstatement", "profileimg" };
+            object[] vals = { NPName, NPType, UID, Phone, Zip, City, State, MissionStatement, profileimg };
             NSDictionary FirebaseUser = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.NonprofitNode.GetChild(EIN).SetValue(FirebaseUser);
             CreateNonprofitRepresentative(UID, EIN);
-            AddUserToFirebase(user, EIN, inpView);//Add to User node
+            AddUserToFirebase(user, EIN, inpView, image, EIN, segue_id);//Add to User node
 
         }
 

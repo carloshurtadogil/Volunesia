@@ -32,14 +32,12 @@ namespace Volunesia.iOS
 
             AppData_iOS.GetInstance();
             //FirebaseReader.ReadNonprofitEvents("fac19049-f4af-4bd4-868a-248f333cfe23");
+
+
             if (AppData.CurUser != null)
             {
+
                 WelcomeLabel.Text = "Welcome, " + AppData.CurUser.FirstName + "!";
-            }
-
-
-            if (AppData.CurUser != null)
-            {
                 if (AppData.CurUser.UserType == "NP")
                 {
 

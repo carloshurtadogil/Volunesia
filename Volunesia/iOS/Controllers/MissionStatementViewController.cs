@@ -3,6 +3,7 @@ using System;
 using UIKit;
 using Volunesia.iOS.Services;
 using Volunesia.Models;
+using Volunesia.Services;
 
 namespace Volunesia.iOS
 {
@@ -26,7 +27,9 @@ namespace Volunesia.iOS
 
         //Prepare for welcome page
         partial void ContinueButton_TouchUpInside(UIButton sender)
-        { 
+        {
+            AppData.CurUser = null;
+            AppData.NonprofitRepresentative = null;
             Register r = new Register();
             r.NPName = NPName;
             r.EIN = EIN;
@@ -42,7 +45,8 @@ namespace Volunesia.iOS
             }
             r.MissionStatement = personal;
 
-            r.CreateUser(CurrentUser, Password, this);
+
+            r.CreateUser(CurrentUser, Password, this, null, "MSToWelcomeSegue_id");
         }
 
         //Register nonproift to Firebase

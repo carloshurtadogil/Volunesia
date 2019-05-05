@@ -42,6 +42,38 @@ namespace Volunesia.iOS.Services
 
 
         /// <summary>
+        /// Add an image to a specific directory in Firebase Storage.
+        /// </summary>
+        /// <param name="data">The Image being stored</param>
+        /// <param name="path">The path to the specific directory in Firebase Storage</param>
+        /// <param name="inpView">Input ViewController to display success/failure message </param>
+        /// <param name="segue_id">Segue ID to define where to go</param>
+        public static void AddImageToFirebase(NSData data, string path, UIViewController inpView, string segue_id)
+        {
+            if (data != null)
+            {
+                AlertShow.Print("Uploading");
+                StorageReference reference = AppData_iOS.StorageRootReference.GetChild(path);
+                var imageMetadata = new StorageMetadata { ContentType = "image/jpeg" };
+                StorageUploadTask uploadTask = reference.PutData(data, imageMetadata, (metadata, error) =>
+                {
+                    if (error != null)
+                    {
+                        // Uh-oh, an error occurred!
+                        AlertShow.Show(inpView, true, "Error in uploading image", "Please contact your developer");
+                        return;
+                    }
+                    inpView.PerformSegue(segue_id, inpView);
+                });
+            }
+            else
+            {
+                AlertShow.Print("FirebaseStorageServers/AddImageToFirebase/Null Data");
+            }
+
+        }
+
+        /// <summary>
         /// Retrieve an image from a particular directory in Firebase Storage
         /// </summary>
         /// <returns>The specified image.</returns>

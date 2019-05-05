@@ -30,8 +30,18 @@ namespace Volunesia.iOS
         //Continue to welcome page
         partial void ContinueButton_TouchUpInside(UIButton sender)
         {
-            this.PerformSegue("PSToWelcomeSegue_id", null);
-        }
+
+            NSData image = ProfileImageView.Image.AsPNG();
+            Register r = new Register();
+            string personal = StoryTextView.Text.Trim();
+            r.NPType = "V";
+            if (personal.Length == 0)
+            {
+                personal = " ";
+            }
+            r.MissionStatement = personal;
+            r.CreateUser(CurrentUser, Password, this, image, "PSToWelcomeSegue_id");//create user before moving to next class
+}
 
         //Prepare users and register
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -42,15 +52,6 @@ namespace Volunesia.iOS
                 var wvc = (WelcomeViewController)segue.DestinationViewController;
                 if (wvc != null)
                 {
-                    Register r = new Register();
-                    string personal = StoryTextView.Text.Trim();
-                    r.NPType = "V";
-                    if(personal.Length == 0)
-                    {
-                        personal = " "; 
-                    }
-                    r.MissionStatement = personal;
-                    r.CreateUser(CurrentUser, Password, this);//create user before moving to next class
                     wvc.CurrUser = CurrentUser;
                 }
             }
@@ -74,6 +75,7 @@ namespace Volunesia.iOS
             picker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
             picker.FinishedPickingMedia += Finished;
             picker.Canceled += Canceled;
+            PresentViewController(picker, animated: true, completionHandler: null);
         }
 
         /// <summary>

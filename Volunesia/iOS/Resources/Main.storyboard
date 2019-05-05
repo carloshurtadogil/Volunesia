@@ -1022,7 +1022,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_5287.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="117164">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="117164">
                                 <rect key="frame" x="92" y="111" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2531,7 +2531,6 @@
         <image name="Images/img_placeholder.png" width="940" height="600"/>
         <image name="Images/logo.png" width="1030" height="1139"/>
         <image name="Images/ProfileIcon.png" width="2560" height="2560"/>
-        <image name="IMG_5287.jpg" width="2150" height="2150"/>
         <image name="Images/OptionsButton.png" width="1175" height="435"/>
         <image name="Images/Nonprofit.png" width="1420" height="1420"/>
     </resources>
