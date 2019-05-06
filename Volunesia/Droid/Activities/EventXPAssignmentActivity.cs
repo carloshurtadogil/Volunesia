@@ -171,7 +171,7 @@ namespace Volunesia.Droid.Activities
                 volInformation["xp"] = theVolunteer.Experience;
 
                 //if a volunteer has leveled up, then update their level in Firebase
-                if(didLevelUp == true)
+                if(didLevelUp == true || didLevelUp == false)
                 {
                     volInformation["level"] = theVolunteer.Level;
 

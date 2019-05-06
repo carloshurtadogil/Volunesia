@@ -17,7 +17,8 @@
 	<Button
 		android:id="@+id/allNPEventsButton"
 		android:text="All Events"
-		android:layout_width="wrap_content"
+		android:textSize="10sp"
+		android:layout_width="70.1dp"
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_alignParentLeft="true"
@@ -25,7 +26,8 @@
 	<Button
 		android:id="@+id/createEventButton"
 		android:text="Create Event"
-		android:layout_width="wrap_content"
+		android:textSize="10sp"
+		android:layout_width="70.1dp"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
 		android:layout_alignParentBottom="true"
@@ -34,7 +36,8 @@
 	<Button
 		android:id="@+id/npProfileButton"
 		android:text="Profile"
-		android:layout_width="wrap_content"
+		android:textSize="10sp"
+		android:layout_width="70.1dp"
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_alignParentRight="true"

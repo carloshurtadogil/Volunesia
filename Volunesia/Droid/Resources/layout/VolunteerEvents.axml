@@ -14,6 +14,7 @@
 		<Button
 		android:text="Settings"
 		android:layout_width="169.0dp"
+		android:textSize="10sp"	
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
 		android:layout_weight="1"
@@ -22,6 +23,7 @@
 	<Button
 		android:text="MY PROFILE"
 		android:layout_width="163.0dp"
+		android:textSize="10sp"
 		android:layout_height="wrap_content"
 			android:layout_gravity="center"
 			android:layout_weight="1"
