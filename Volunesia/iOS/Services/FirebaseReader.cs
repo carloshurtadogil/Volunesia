@@ -927,6 +927,7 @@ namespace Volunesia.iOS.Services
                     NSNumber n = 0;
                     AppData_iOS.EventNode.GetChild(npid).GetChild(eid).GetChild("roster").SetValue(n);
                 }
+                AlertShow.Print("Removed from Event Roster");
             });
         }
 
@@ -939,7 +940,8 @@ namespace Volunesia.iOS.Services
         {
             DatabaseReference reference = AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eid);
             reference.RemoveValue();
-            //AppData.FutureEvents.RemoveVolunteerEvent(eid);
+            //ReadVolunteerHistory(uid);
+            AppData.FutureEvents.RemoveVolunteerEvent(eid);
         }
 
         public static void Test(UIViewController inpView, string uid, string email) 
@@ -949,7 +951,7 @@ namespace Volunesia.iOS.Services
                 UID = uid,
                 EmailAddress = email
             };
-            WriteToRoster(inpView, "fac19049-f4af-4bd4-868a-248f333cfe23", "cd807087-6887-4caf-b9f6-4993d8060fce", v);
+            //WriteToRoster(inpView, "fac19049-f4af-4bd4-868a-248f333cfe23", "cd807087-6887-4caf-b9f6-4993d8060fce", v);
         }
 
         /// <summary>

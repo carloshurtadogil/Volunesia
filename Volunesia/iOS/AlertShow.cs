@@ -204,6 +204,36 @@ namespace Volunesia.iOS
             inpView.PresentViewController(alert, true, null);
         }
 
+        public static void LeaveEvent(UIViewController inpView, UIButton SignupButton, UIButton LeaveButton, Event EventDetails)
+        {
+            UIAlertController alert = UIAlertController.Create("You are about to leave this event",
+                                                                "Are you sure that you are unable to make a difference at this time?",
+                                                                UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("Leave", UIAlertActionStyle.Destructive, (handler) =>
+            {
+                Print("Removing from event with details: \n NPID: " + EventDetails.HostID + "\n EID:  " + EventDetails.EventID);
+                FirebaseReader.RemoveFromRoster(EventDetails.HostID, EventDetails.EventID, AppData.CurUser.UID);
+                FirebaseReader.RemoveFromVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID);
+                /*VolunteerHistory h = AppData.FutureEvents;
+                VolunteerEvent eve = h.GetVolunteerEvent(EventDetails.EventID);
+                if(eve != null) 
+                {
+                    AlertShow.Print(eve.EventID + " event is found in volunteer future events"); 
+                }
+                else
+                {
+                    AlertShow.Print("Null volunteer event"); 
+                }*/
+                LeaveButton.Enabled = false;
+                SignupButton.Enabled = true;
+                LeaveButton.Hidden = true;
+                SignupButton.Hidden = false;
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+            inpView.PresentViewController(alert, true, null);
+        }
+
+
         /// <summary>
         /// Print a message to the console
         /// </summary>

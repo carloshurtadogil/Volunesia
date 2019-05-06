@@ -26,8 +26,6 @@ namespace Volunesia.iOS
         {
             base.ViewDidAppear(animated);
 
-            NonprofitProfileButton.Enabled = true;
-            NonprofitProfileButton.Hidden = false;
             if (EventDetails != null)
             {
                 if (EventDetails.EventImagePath != "standard")
@@ -83,7 +81,7 @@ namespace Volunesia.iOS
                     SignupButton.Hidden = true;
                     LeaveButton.Enabled = false;
                     LeaveButton.Enabled = true;
-                    AlertShow.Show(this, "You have already attended this event", "");
+
                 }
                 else
                 {
@@ -222,20 +220,7 @@ namespace Volunesia.iOS
         /// <param name="sender">Sender.</param>
         partial void LeaveButton_TouchUpInside(UIButton sender)
         {
-            AlertShow.Print("Removing from event with details: \n NPID: " + EventDetails.HostID + "\n EID:  " + EventDetails.EventID);
-            FirebaseReader.RemoveFromRoster(EventDetails.HostID, EventDetails.EventID, AppData.CurUser.UID);
-            FirebaseReader.RemoveFromVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID);
-            VolunteerHistory h = AppData.FutureEvents;
-            VolunteerEvent eve = h.GetVolunteerEvent(EventDetails.EventID);
-            if(eve != null) 
-            {
-                AlertShow.Print(eve.EventID + " event is found in volunteer future events"); 
-            }
-            else
-            {
-                AlertShow.Print("Null volunteer event"); 
-            }
-            //FirebaseReader.Test(this, AppData.CurUser.UID, AppData.CurUser.EmailAddress);
+            AlertShow.LeaveEvent(this, SignupButton, LeaveButton, EventDetails);
         }
 
         /// <summary>

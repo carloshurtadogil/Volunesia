@@ -48,5 +48,11 @@ namespace Volunesia.Models
         /// <value>Y for yes, N for no.</value>
         public string HasProfilePicture { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the profile image.
+        /// </summary>
+        /// <value>The name of the profile image.</value>
+        public string ProfileImageName { get; set; }
+
     }
 }

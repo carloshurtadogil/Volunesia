@@ -1586,7 +1586,7 @@
                                     <action selector="ProfileButton_TouchUpInside:" destination="46439" eventType="touchUpInside" id="95150"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images/img_placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="96643">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red-cross.png" translatesAutoresizingMaskIntoConstraints="NO" id="96643">
                                 <rect key="frame" x="66" y="87" width="255" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2559,5 +2559,6 @@
         <image name="Images/ProfileIcon.png" width="2560" height="2560"/>
         <image name="Images/OptionsButton.png" width="1175" height="435"/>
         <image name="Images/Nonprofit.png" width="1420" height="1420"/>
+        <image name="red-cross.png" width="1030" height="436"/>
     </resources>
 </document>

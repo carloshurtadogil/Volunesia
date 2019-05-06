@@ -131,6 +131,8 @@ namespace Volunesia.iOS
             MissionStatementLabel.Hidden = false;
             MissionStatementTextview.Hidden = false;
             ProfileImageView.Hidden = false;
+            //ImageStorageHandler.WriteImage(ProfileImageView.Image, "1231");
+            //ImageStorageHandler.LoadImage(this, ProfileImageView, "1231");
         }
 
 
