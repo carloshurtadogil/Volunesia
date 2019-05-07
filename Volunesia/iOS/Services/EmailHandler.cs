@@ -62,6 +62,41 @@ namespace Volunesia.iOS.Services
 
         }
 
+        /// <summary>
+        /// Sends the certificate.
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="e">E.</param>
+        /// <param name="hostname">Hostname.</param>
+        /// <param name="npemail">Npemail.</param>
+        public static void SendCertificate(UIViewController inpView, Event e, string hostname, string npemail)
+        {
+            string subject = "Certificate of Achievement: " + e.EventName; 
+            string recipient = AppData.CurUser.EmailAddress;
+            string email = "hpfreak216@gmail.com";//a.EmailAddress;
+            string name = AppData.CurUser.FirstName + " " + AppData.CurUser.LastName;
+            string message = string.Format("<div style=\\\"\\\"font-family:Trebuchet MS;font-size: 12pt;\\\"\\\">" +
+                                                "<h1>CERTIFICATE OF ACHIEVEMENT</h1>" +
+                                                "<p>is given in recognition to </p>" +
+                                                "<strong>"+ name+ "</strong>" +
+                                                "<p>by freely giving the generous gift of time and energy as a volunteer for</p>"+
+                                                "<i>"+ e.EventName + " " + "</i>"+
+                                                "<p>Thank you for making the world a better place, <br> " +
+                                                hostname + " &nbsp; " + 
+                                                "The Volunesia Team</p>" +
+                                            "</div>");
+            SendEmail(email, subject, message);
+            AlertShow.Show(inpView, "Certificate Sent", "Please check your email. If you have not received the certificate, please check your junk mail. " +
+                "If all else fail, you can contact us at contactvolunesia@gmail.com");
+        }
+
+        /// <summary>
+        /// Sends the cancel email.
+        /// </summary>
+        /// <param name="inpView">Inp view.</param>
+        /// <param name="e">E.</param>
+        /// <param name="hostname">Hostname.</param>
+        /// <param name="npemail">Npemail.</param>
         public static void SendCancelEmail(UIViewController inpView, Event e, string hostname, string npemail)
         {
             DateTime today = DateTime.Now;

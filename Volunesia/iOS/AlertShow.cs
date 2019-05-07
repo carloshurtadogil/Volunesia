@@ -96,7 +96,7 @@ namespace Volunesia.iOS
                 }
                 alert.AddAction(UIAlertAction.Create("End Event", UIAlertActionStyle.Destructive, (handler)=> 
                 {
-                    EndEvent(inpView, e.EventID);
+                    EndEvent(inpView, e);
                 }));
                 alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                 inpView.PresentViewController(alert, true, null);
@@ -248,14 +248,14 @@ namespace Volunesia.iOS
         /// </summary>
         /// <param name="inpView">Inp view.</param>
         /// <param name="eid">Eid.</param>
-        private static void EndEvent(UIViewController inpView, string eid)
+        private static void EndEvent(UIViewController inpView, Event eid)
         {
             UIAlertController alert = UIAlertController.Create("You are about to end this event", 
                                                                "Be aware that this action is unreversible. If the event is upcoming, this action will cancel and inform all volunteers who have signed up", 
                                                                UIAlertControllerStyle.Alert);
             alert.AddAction(UIAlertAction.Create("Proceed", UIAlertActionStyle.Destructive, (obj) =>
             {
-                Show(inpView, "to be implemented", "");
+                FirebaseReader.EndEvent(eid);
             }));
             alert.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
             inpView.PresentViewController(alert, true, null);

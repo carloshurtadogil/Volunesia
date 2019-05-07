@@ -29,7 +29,7 @@ namespace Volunesia.iOS
 
             //FirebaseReader.ReadVolunteerHistory("SOWdh4LP2qUxMBRRMiQBtnuPLz83");
             //System.Threading.Thread.Sleep(1000);
-
+            //FirebaseReader.WriteNewAttribute();
             AppData_iOS.GetInstance();
             //FirebaseReader.ReadNonprofitEvents("fac19049-f4af-4bd4-868a-248f333cfe23");
 

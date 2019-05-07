@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volunesia.Droid", "Droid\Vo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volunesia.iOS", "iOS\Volunesia.iOS.csproj", "{4C36DBA8-3397-4085-A808-4597F833AE9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE21F726-73FA-4BC3-B7BD-28A2748630B1}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Volunesia\Volunesia.projitems*{1e32ef1c-bd4b-4999-bf7c-a40e5c31006c}*SharedItemsImports = 4

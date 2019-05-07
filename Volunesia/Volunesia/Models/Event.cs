@@ -47,5 +47,8 @@ namespace Volunesia.Models
 
         // Location of event
         public string Location { get; set; }
+
+        //Detmerine if the event has ended
+        public bool Ended { get; set; }
     }
 }

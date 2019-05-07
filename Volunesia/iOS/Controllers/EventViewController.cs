@@ -25,7 +25,7 @@ namespace Volunesia.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-
+            //FirebaseReader.WriteNewAttribute();
             if (EventDetails != null)
             {
                 if (EventDetails.EventImagePath != "standard")
@@ -67,7 +67,7 @@ namespace Volunesia.iOS
                     {
                         EventDate.Text = formattedEventDate;
                     }
-                    //Enabled = true;
+                    //Enabled = true;   
                     //SignupButton.Hidden = false;
                 }
             }
@@ -75,33 +75,58 @@ namespace Volunesia.iOS
             {
                 NonprofitProfileButton.Enabled = true;
                 NonprofitProfileButton.Hidden = false;
-                if(Attended) 
+                var today = DateTime.Now;
+                var edate = EventDetails.EventDate;
+                AlertShow.Print("Ended flag  is: " + EventDetails.Ended + " " + EventDetails.EventID);
+                int result = DateTime.Compare(edate, today);
+                if(result < 0 || EventDetails.Ended)
                 {
-                    SignupButton.Enabled = false;
-                    SignupButton.Hidden = true;
-                    LeaveButton.Enabled = false;
-                    LeaveButton.Enabled = true;
-
+                    AlertShow.Print("Cur ID: " + AppData.CurUser.UID);
+                    FirebaseReader.CheckAttendedStatus(SendCertificateButton, EventDetails);
                 }
                 else
                 {
-
-                    var futureevents = AppData_iOS.VolunteerEventsToBeAttended;
-                    if (futureevents != null && AppData_iOS.CheckIfExists(futureevents, EventDetails)) // Check if event details exist 
-                    {
+                    AlertShow.Print("Event ("+EventDetails.EventName+") is still open");
+                    if (Attended)
+                    { 
                         SignupButton.Enabled = false;
                         SignupButton.Hidden = true;
+                        LeaveButton.Enabled = true;
+                        LeaveButton.Hidden = false;
+
                     }
                     else
                     {
-                        SignupButton.Enabled = true;
-                        SignupButton.Hidden = false;
+
+                        var futureevents = AppData_iOS.VolunteerEventsToBeAttended;
+                        if (futureevents != null && AppData_iOS.CheckIfExists(futureevents, EventDetails)) // Check if event details exist 
+                        {
+                            SignupButton.Enabled = false;
+                            SignupButton.Hidden = true;
+                        }
+                        else
+                        {
+                            SignupButton.Enabled = true;
+                            SignupButton.Hidden = false;
+                        }
+                        FirebaseReader.ReadContactEmail(EventDetails.HostID, ContactEmailLabel);
+                        FirebaseReader.CheckVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID, SignupButton, LeaveButton);
                     }
-                    FirebaseReader.ReadContactEmail(EventDetails.HostID, ContactEmailLabel);
-                    FirebaseReader.CheckVolunteerHistory(AppData.CurUser.UID, EventDetails.EventID, SignupButton, LeaveButton);
                 }
+                FirebaseReader.ReadContactEmail(EventDetails.HostID, ContactEmailLabel);
             }
             LoadGestureRecognizers();
+        }
+
+        /// <summary>
+        /// Sends the certificate button touch up inside.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        partial void SendCertificateButton_TouchUpInside(UIButton sender)
+        {
+            string npname = NonprofitNameLabel.Text;
+            string contact = ContactEmailLabel.Text;
+            EmailHandler.SendCertificate(this, EventDetails, npname, contact);
         }
 
         /// <summary>

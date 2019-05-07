@@ -80,6 +80,10 @@ namespace Volunesia.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SendCertificateButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SignupButton { get; set; }
 
         [Outlet]
@@ -101,6 +105,10 @@ namespace Volunesia.iOS
         [Action ("NonprofitProfileButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void NonprofitProfileButton_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("SendCertificateButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SendCertificateButton_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("SignupButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -186,6 +194,11 @@ namespace Volunesia.iOS
             if (NonprofitProfileButton != null) {
                 NonprofitProfileButton.Dispose ();
                 NonprofitProfileButton = null;
+            }
+
+            if (SendCertificateButton != null) {
+                SendCertificateButton.Dispose ();
+                SendCertificateButton = null;
             }
 
             if (SignupButton != null) {

@@ -1,13 +1,20 @@
 ﻿<Properties StartupConfiguration="{4C36DBA8-3397-4085-A808-4597F833AE9A}|Default">
   <MonoDevelop.Ide.ItemProperties.Volunesia.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008020-000E2DAC26C1002E" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AlertShow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Services/FirebaseReader.cs">
     <Files>
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="Volunesia/Services/ReadWrite.cs" Line="13" Column="79" />
-      <File FileName="Volunesia/Models/User.cs" Line="52" Column="13" />
-      <File FileName="iOS/Controllers/EventViewController.cs" Line="237" Column="16" />
-      <File FileName="iOS/Services/FirebaseReader.cs" Line="943" Column="37" />
+      <File FileName="Volunesia/Services/ReadWrite.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/EventViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/AlertShow.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/EventInformationViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/AddressHandler.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/EmailHandler.cs" Line="1" Column="1" />
+      <File FileName="Volunesia/Models/Event.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/FirebaseReader.cs" Line="397" Column="1" />
+      <File FileName="Volunesia/Models/Roster.cs" Line="1" Column="1" />
+      <File FileName="iOS/Services/PastEventsDataSource.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/HomeViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,9 +22,9 @@
           <Node name="Volunesia" expanded="True">
             <Node name="Volunesia.iOS" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Resources" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="AlertShow.cs" selected="True" />
+              <Node name="Services" expanded="True">
+                <Node name="FirebaseReader.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

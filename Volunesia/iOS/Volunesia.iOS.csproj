@@ -176,7 +176,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\AppData_iOS.cs" />
-    <Compile Include="AlertShow.cs" />
     <Compile Include="Services\NonprofitRegistration.cs" />
     <Compile Include="Services\Register.cs" />
     <Compile Include="Controllers\EmailRegistrationViewController.cs" />
@@ -284,6 +283,7 @@
     </Compile>
     <Compile Include="Services\AddressHandler.cs" />
     <Compile Include="Services\ImageStorageHandler.cs" />
+    <Compile Include="AlertShow.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
@@ -335,6 +335,7 @@
     <BundleResource Include="Resources\VolunesiaIcon.jpg" />
     <BundleResource Include="Resources\Images\OptionsButton.png" />
     <BundleResource Include="Resources\Images\Nonprofit.png" />
+    <BundleResource Include="Resources\Images\SendEmailButton.png" />
   </ItemGroup>
   <Import Project="..\Volunesia\Volunesia.projitems" Label="Shared" Condition="Exists('..\Volunesia\Volunesia.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

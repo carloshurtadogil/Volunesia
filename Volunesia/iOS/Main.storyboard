@@ -2136,6 +2136,15 @@
                                 </accessibility>
                                 <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="159872">
+                                <rect key="frame" x="115" y="728" width="147" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Images/SendEmailButton.png"/>
+                                <connections>
+                                    <action selector="LeaveButton_TouchUpInside:" destination="159874" eventType="touchUpInside" id="159873"/>
+                                    <action selector="SendCertificateButton_TouchUpInside:" destination="89985" id="159875" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -2165,6 +2174,7 @@
                         <segue id="140928" destination="140522" kind="show" identifier="ToNPProfileSegue_id"/>
                         <outlet property="LocationLabel" destination="152466" id="name-outlet-152466"/>
                         <outlet property="LocationTextLabel" destination="152467" id="name-outlet-152467"/>
+                        <outlet property="SendCertificateButton" destination="159872" id="name-outlet-159872"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90042" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2560,5 +2570,6 @@
         <image name="Images/OptionsButton.png" width="1175" height="435"/>
         <image name="Images/Nonprofit.png" width="1420" height="1420"/>
         <image name="red-cross.png" width="1030" height="436"/>
+        <image name="Images/SendEmailButton.png" width="1175" height="443"/>
     </resources>
 </document>

@@ -39,6 +39,26 @@ namespace Volunesia.Models
             return null;
         }
 
+        /// <summary>
+        /// Gets the attendee.
+        /// </summary>
+        /// <returns>The attendee.</returns>
+        /// <param name="uid">Uid.</param>
+        public Attendee GetAttendee(string uid)
+        {
+            if(AttendeeList.Count > 0)
+            {
+                foreach(Attendee a in AttendeeList)
+                {
+                    if(a.UID == uid)
+                    {
+                        return a; 
+                    } 
+                } 
+            }
+            return null; 
+        }
+
         // <summary>
         /// Return the size of the AttendeeList
         /// </summary>

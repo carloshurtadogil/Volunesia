@@ -282,8 +282,14 @@ namespace Volunesia.iOS.Services
                         var eventinfo = (NSDictionary)npevents[eid.ToString()];
 
                         var eventdate = Convert.ToDateTime(eventinfo["eventdate"].ToString());
+                        var endedstr = eventinfo["ended"].ToString();
+                        bool ended = false;
+                        if (endedstr == "Y")
+                        {
+                            ended = true;
+                        }
 
-                        if (eventdate.Date >= today.Date) //Event is currently happening or will happen
+                        if (eventdate.Date >= today.Date || !ended) //Event is currently happening or will happen
                         {
                             AlertShow.Print(eid.ToString());
                             var applicationdeadline = Convert.ToDateTime(eventinfo["applicationdeadline"].ToString());
@@ -296,6 +302,8 @@ namespace Volunesia.iOS.Services
                             var poster = eventinfo["poster"].ToString();
                             var rostercheck = eventinfo["roster"].ToString();
                             var location = eventinfo["location"].ToString();
+
+
                             Roster roster = new Roster();
                             if (rostercheck != "0")
                             {
@@ -340,7 +348,8 @@ namespace Volunesia.iOS.Services
                                 EventDescription = eventdesc,
                                 EventRoster = roster,
                                 Capacity = eventcaps,
-                                Location = location
+                                Location = location,
+                                Ended = ended
                             };
                             events.Add(@event);
                             AppData_iOS.CurrentEvents = events;
@@ -355,6 +364,71 @@ namespace Volunesia.iOS.Services
                     }
                 }
             });
+        }
+
+        /// <summary>
+        /// Checks the attended status.
+        /// </summary>
+        /// <param name="certificate">Certificate.</param>
+        /// <param name="e">E.</param>
+        public static void CheckAttendedStatus(UIButton certificate, Event e)
+        {
+            AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).ObserveEvent(DataEventType.Value,(snapshot) => 
+            {
+                if(snapshot.Exists)
+                {
+                    var data = snapshot.GetValue<NSDictionary>();
+                    if(data != null)
+                    {
+                        var rostercheck = data["roster"].ToString();
+                        int check = 0;
+                        bool result = int.TryParse(rostercheck, out check);
+
+                        if(!result)
+                        {
+                            var roster = (NSDictionary)data["roster"];
+                            foreach(var uid in roster.Keys)
+                            {
+                                if(uid.ToString() == AppData.CurUser.UID)
+                                {
+                                    var rosteritem = (NSDictionary)roster[uid.ToString()];
+                                    if(rosteritem != null)
+                                    {
+                                        var endedstr = rosteritem["attended"].ToString();
+                                        if(endedstr == "Y")
+                                        {
+                                            AlertShow.Print("User attended the event");
+                                            certificate.Enabled = true;
+                                            certificate.Hidden = false; 
+                                        }
+                                        else
+                                        {
+                                            AlertShow.Print("User did not attend the event"); 
+                                        }
+                                    }
+                                    else
+                                    {
+                                        AlertShow.Print("FirebaseReader.CheckAttendedStatus(): rosteritem is null");
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            AlertShow.Print("FirebaseReader.CheckAttendedStatus(): result is null");
+                        }
+                    }
+                    else 
+                    {
+                        AlertShow.Print("FirebaseReader.CheckAttendedStatus(): data is null");
+                    }
+                } 
+                else
+                {
+                    AlertShow.Print("FirebaseReader.CheckAttendedStatus(): snapshot is null"); 
+                }
+            }); 
         }
 
         /// <summary>
@@ -509,6 +583,12 @@ namespace Volunesia.iOS.Services
                             var rostercheck = eventinfo["roster"].ToString();
                             var wlcounter = Convert.ToInt32(eventinfo["wlcounter"].ToString());
                             var location = eventinfo["location"].ToString();
+                            var sended = eventinfo["ended"].ToString();
+                            bool ended = false;
+                            if(sended == "Y")
+                            {
+                                ended = true; 
+                            }
                             
                             Roster roster = new Roster();
                             if (rostercheck != "0")
@@ -551,7 +631,8 @@ namespace Volunesia.iOS.Services
                                 EventDescription = eventdesc,
                                 EventRoster = roster,
                                 Capacity = eventcaps,
-                                Location = location
+                                Location = location,
+                                Ended = ended
                             };
                             AlertShow.Print("About to add event to nonprofit events");
                             AppData_iOS.AddToNonprofitEvents(@event);
@@ -650,6 +731,12 @@ namespace Volunesia.iOS.Services
                                 var hourscompleted = Convert.ToDouble(data["hoursvolunteered"].ToString());
                                 var nonprofitid = data["nonprofitid"].ToString();
                                 var nonprofitname = data["nonprofitname"].ToString();
+                                var endedstr = data["ended"].ToString();
+                                bool ended = false;
+                                if (endedstr == "Y")
+                                {
+                                    ended = true;
+                                }
 
                                 DateTime date = DateTime.Parse(ed);
                                 DateTime now = DateTime.Now;
@@ -668,7 +755,7 @@ namespace Volunesia.iOS.Services
                                 hours += hourscompleted;
 
                                 int result = DateTime.Compare(date, now);
-                                if (result <= 0)//past event
+                                if (result <= 0 || ended)//past event
                                 {
                                     AlertShow.Print("Past: " + e.EventID);
                                     history.AddEvent(e);
@@ -716,6 +803,13 @@ namespace Volunesia.iOS.Services
                     var eventdate = Convert.ToDateTime(data["eventdate"].ToString());
                     var eventdescription = data["eventdesc"].ToString();
                     var location = data["location"].ToString();
+                    var endedstr = data["ended"].ToString();
+                    bool ended = false;
+
+                    if(endedstr == "Y")
+                    {
+                        ended = true; 
+                    }
                     Event e = new Event
                     {
                         EventName = eventname,
@@ -724,7 +818,8 @@ namespace Volunesia.iOS.Services
                         EventImagePath = imagepath,
                         EventID = eid,
                         HostID = npid,
-                        Location = location
+                        Location = location,
+                        Ended = ended
                     };
                     HomeViewController homeView = (HomeViewController)HomeController;
                     homeView.SelectedEvent = e;
@@ -762,8 +857,8 @@ namespace Volunesia.iOS.Services
             AppData_iOS.NonprofitEvents.Add(e);
             DateTime enddate = e.EventDate.AddHours(2);
             //Add to firebase
-            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid", "location", "eventenddate" };
-            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0, e.Location, enddate.ToString() };
+            object[] keys = { "applicationdeadline", "capacity", "eventdate", "eventname", "eventdesc", "poster", "imagepath", "roster", "waitlist", "wlcounter", "wlid", "location", "eventenddate", "ended" };
+            object[] vals = { e.ApplicationDeadline.ToString(), e.Capacity, e.EventDate.ToString(), e.EventName, e.EventDescription, AppData.CurUser.UID, e.EventImagePath, 0, 0, 0, 0, e.Location, enddate.ToString(), "N" };
             var newevent = NSDictionary.FromObjectsAndKeys(vals, keys);
             AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).SetValue(newevent);
             if (!e.EventImagePath.Equals("standard"))
@@ -846,8 +941,8 @@ namespace Volunesia.iOS.Services
                     {
                         var hostdata = snapshot1.GetValue<NSDictionary>();
                         var nname = hostdata["name"].ToString();
-                        object[] key = { "attended", "eventdate", "eventname", "hoursvolunteered", "nonprofitid", "nonprofitname" };
-                        object[] value = { "N", e.EventDate.ToString(), e.EventName, 0, e.HostID, nname };
+                        object[] key = { "attended", "eventdate", "eventname", "hoursvolunteered", "nonprofitid", "nonprofitname", "ended" };
+                        object[] value = { "N", e.EventDate.ToString(), e.EventName, 0, e.HostID, nname, "N" };
                         var eventdetails = NSDictionary.FromObjectsAndKeys(value, key);
                         AppData_iOS.VolunteerHistoryNode.GetChild(vol.UID).GetChild(eid).SetValue(eventdetails);
 
@@ -1000,6 +1095,27 @@ namespace Volunesia.iOS.Services
             }); 
         }
 
+        public static void EndEvent(Event e)
+        {
+            //End event
+            NSString std = (Foundation.NSString)"Y";
+            AppData_iOS.EventNode.GetChild(e.HostID).GetChild(e.EventID).GetChild("ended").SetValue(std);
+            if(e.EventRoster.Size() > 0) 
+            {
+                int size = e.EventRoster.Size();
+                for(int i = 0; i < size; i++)
+                {
+                    string uid = e.EventRoster.GetAttendee(i).UID;
+                    string eid = e.EventID;
+                    AppData_iOS.VolunteerHistoryNode.GetChild(uid).GetChild(eid).GetChild("ended").SetValue(std);
+                } 
+            }
+        }
+
+        /// <summary>
+        /// Reads the associated nonprofit.
+        /// </summary>
+        /// <param name="uid">Uid.</param>
         public static void ReadAssociatedNonprofit(string uid) 
         {
             AppData_iOS.UsersNode.GetChild(uid).ObserveEvent(DataEventType.Value, (snapshot) => 
@@ -1019,6 +1135,56 @@ namespace Volunesia.iOS.Services
 
         public static void WriteNewAttribute() 
         {
+
+            _ = AppData_iOS.VolunteerHistoryNode.ObserveEvent(DataEventType.Value, (snapshot) =>
+              {
+                  if (snapshot.Exists)
+                  {
+                      var data = snapshot.GetValue<NSDictionary>();
+                      if (data != null)
+                      {
+                          foreach (var uid in data.Keys)
+                          {
+                              var events = (NSDictionary)data[uid.ToString()];
+                              if (events != null)
+                              {
+                                  foreach (var eid in events.Keys)
+                                  {
+                                      var info = (NSDictionary)events[eid.ToString()];
+                                      if (info != null)
+                                      {
+                                          var edate = Convert.ToDateTime(info["eventdate"].ToString());
+                                          var today = DateTime.Now;
+                                          int results = DateTime.Compare(edate, today);
+                                          if (results <= 0)
+                                          {
+
+                                              NSString std = (Foundation.NSString)"Y";
+                                              string uids = uid.ToString();
+                                              string eids = eid.ToString();
+                                              AppData_iOS.VolunteerHistoryNode.GetChild(uids).GetChild(eids).GetChild("ended").SetValue(std);
+
+                                              AlertShow.Print("Done deal");
+                                          }
+                                          else
+                                          {
+                                              NSString std = (Foundation.NSString)"N";
+                                              string uids = uid.ToString();
+                                              string eids = eid.ToString();
+                                              AppData_iOS.VolunteerHistoryNode.GetChild(uids).GetChild(eids).GetChild("ended").SetValue(std);
+                                              AlertShow.Print("Other way around");
+                                          }
+                                      }
+                                      else
+                                      {
+                                          AlertShow.Print("Null Events");
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              });
             AppData_iOS.EventNode.ObserveEvent(DataEventType.Value, (snapshot) => 
             {
                 if(snapshot.Exists)
@@ -1034,8 +1200,33 @@ namespace Volunesia.iOS.Services
                             {
                                 foreach(var eid in events.Keys)
                                 {
-                                    NSString std = (Foundation.NSString)"3150 East 29th Street, Long Beach, CA 90806";
-                                    AppData_iOS.EventNode.GetChild(npid.ToString()).GetChild(eid.ToString()).GetChild("location").SetValue(std);
+                                    var info = (NSDictionary)events[eid.ToString()];
+                                    if(info != null) 
+                                    {
+                                        AlertShow.Print("PRINTING TESTERSDKFALSFLASKJDF");
+                                        var edate = Convert.ToDateTime(info["eventdate"].ToString());
+                                        var today = DateTime.Now;
+                                        int results = DateTime.Compare(edate, today);
+                                        if(results <= 0)
+                                        {
+
+                                             NSString std = (Foundation.NSString)"Y";
+                                             AppData_iOS.EventNode.GetChild(npid.ToString()).GetChild(eid.ToString()).GetChild("ended").SetValue(std);                                        
+                                            
+                                            AlertShow.Print("Done deal");
+                                        }
+                                        else
+                                        {
+                                            NSString std = (Foundation.NSString)"N";
+                                            AppData_iOS.EventNode.GetChild(npid.ToString()).GetChild(eid.ToString()).GetChild("ended").SetValue(std);
+                                            AlertShow.Print("Other way around"); 
+                                        }
+                                    }
+                                    else
+                                    {
+                                        AlertShow.Print("Null Events"); 
+                                    }
+
                                 } 
                             }
                         }
