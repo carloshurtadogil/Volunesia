@@ -5,11 +5,11 @@ namespace Volunesia.Services
 {
     public class AppData
     {
-        public static User CurUser;
-        public static Volunteer CurVolunteer;
-        public static NonprofitRepresentative NonprofitRepresentative;
-        public static VolunteerHistory VolunteerHistory;
-        public static VolunteerHistory FutureEvents;
+        public static User CurUser;//User who currently owns the device
+        public static Volunteer CurVolunteer;//Any and all information if the user is a volunteer
+        public static NonprofitRepresentative NonprofitRepresentative;//Any and all information if the user is a nonprofit representative.
+        public static VolunteerHistory VolunteerHistory;//The history of all events that the volunteer has attended
+        public static VolunteerHistory FutureEvents;//All events that the user plans on attending
         public static List<Event> VolunteerEventDetails;
 
         //NonprofitEventsHistory that contains all events of a nonprofit
@@ -19,7 +19,7 @@ namespace Volunesia.Services
         private static AppData Instance;
 
 
-        public static AppData GetInstance()
+        public static AppData GetInstance()//Initializes the data
         {
             if (Instance == null)
                 Instance = new AppData();

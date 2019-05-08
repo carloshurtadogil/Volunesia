@@ -70,6 +70,12 @@ namespace Volunesia.iOS.Services
             }
         }
 
+        /// <summary>
+        /// Edits the actions for row.
+        /// </summary>
+        /// <returns>The actions for row.</returns>
+        /// <param name="tableView">Table view.</param>
+        /// <param name="indexPath">Index path.</param>
         public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)
         {
             int index = indexPath.Row;

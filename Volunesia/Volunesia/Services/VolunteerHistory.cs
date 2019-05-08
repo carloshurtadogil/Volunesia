@@ -20,7 +20,9 @@ namespace Volunesia.Services
             System.Diagnostics.Debug.WriteLine(s); 
         }
 
-        // Sort events by date
+        /// <summary>
+        /// Sort events by date
+        /// </summary>
         private void SortEvents() 
         {
             int size = VolunteerEvents.Count;
@@ -41,6 +43,10 @@ namespace Volunesia.Services
             }
         }
 
+        /// <summary>
+        /// Size this instance.
+        /// </summary>
+        /// <returns>The size.</returns>
         public int Size()
         {
             return VolunteerEvents.Count; 
@@ -53,6 +59,9 @@ namespace Volunesia.Services
             SortEvents();
         }
 
+        /// <summary>
+        /// Prints the events.
+        /// </summary>
         public void PrintEvents()
         {
             if (VolunteerEvents.Count > 0)
@@ -72,7 +81,11 @@ namespace Volunesia.Services
         }
 
 
-        // Retrieve a particular event the user has attended
+        /// <summary>
+        /// Retrieve a particular event the user has attended
+        /// </summary>
+        /// <returns>The volunteer event.</returns>
+        /// <param name="eventid">Eventid.</param>
         public VolunteerEvent GetVolunteerEvent(string eventid) 
         {
             foreach(VolunteerEvent vevent in VolunteerEvents)
@@ -84,7 +97,11 @@ namespace Volunesia.Services
             return null; 
         }
 
-        // Remove an event from the list
+        /// <summary>
+        /// Remove an event from the list
+        /// </summary>
+        /// <returns>The volunteer event.</returns>
+        /// <param name="eventid">Eventid.</param>
         public VolunteerEvent RemoveVolunteerEvent(string eventid)
         {
             VolunteerEvent e = null;

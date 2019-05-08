@@ -3,6 +3,10 @@ namespace Volunesia.Services
 {
     public class IDGenerator
     {
+        /// <summary>
+        /// Generates an ID for whatever purpose
+        /// </summary>
+        /// <returns>The identifier.</returns>
         public string GenerateID()
         {
             Guid g;

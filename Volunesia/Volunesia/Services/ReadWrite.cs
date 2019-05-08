@@ -14,7 +14,9 @@ namespace Volunesia.Services
         static readonly string NonProfitRepPath = Path.Combine(MainPath, "nonprofitrep.json");
         static readonly string VolunteerHistoryPath = Path.Combine(MainPath, "volunteerhistory.json");
 
-        //Write user information to current device
+        /// <summary>
+        /// Write user information to current device
+        /// </summary>
         public static void WriteUser()
         {
             string userJson = JsonConvert.SerializeObject(AppData.CurUser, Formatting.Indented);
@@ -25,7 +27,9 @@ namespace Volunesia.Services
 
 
 
-        //Write information regarding nonprofit representative
+        /// <summary>
+        /// Write information regarding nonprofit representative
+        /// </summary>
         public static void WriteNonprofitRepresentative()
         {
             if (AppData.CurUser != null && AppData.CurUser.UserType == "NP")
@@ -35,7 +39,9 @@ namespace Volunesia.Services
             }
         }
 
-        //Write information regarding volunteer history
+        /// <summary>
+        /// Write information regarding volunteer history
+        /// </summary>
         public static void WriteVolunteerHistory()
         {
             //if(AppData.CurUser != null && AppData.CurUser.UserType == "V")
@@ -46,6 +52,10 @@ namespace Volunesia.Services
             }
         }
 
+
+        /// <summary>
+        /// Reads the volunteer history.
+        /// </summary>
         public static void ReadVolunteerHistory()
         {
             System.Diagnostics.Debug.WriteLine("Read 1");
@@ -75,7 +85,9 @@ namespace Volunesia.Services
             }
         }
 
-        //Read user information from current device
+        /// <summary>
+        /// Read user information from current device
+        /// </summary>
         public static void ReadUser()
         {
             if (File.Exists(UserPath))
@@ -88,7 +100,9 @@ namespace Volunesia.Services
             }
         }
 
-        //Read nonprofit representative information from current device
+        /// <summary>
+        /// Read nonprofit representative information from current device
+        /// </summary>
         public static void ReadNPRepresentative() 
         {
             System.Diagnostics.Debug.WriteLine("Reading Nonprofit Rep");
